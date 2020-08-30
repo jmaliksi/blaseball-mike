@@ -7,7 +7,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name='blaseball-mike',
-    version='0.0.1',
+    version='0.0.2',
     author='Joe Maliksi',
     author_email='joe.maliksi@gmail.com',
     url='https://github.com/jmaliksi/blaseball-mike',
