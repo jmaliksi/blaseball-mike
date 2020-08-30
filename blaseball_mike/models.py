@@ -1,6 +1,7 @@
 """For deserializing the json responses"""
 import abc
 import re
+import math
 
 from blaseball_mike import database
 
@@ -61,6 +62,10 @@ class Player(Base):
     def defense_stars(self):
         return self._rating_to_stars(((self.omniscience * self.tenaciousness) ** 0.2) *
                                      ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+
+    def get_vibe(self, day):
+        return 0.5 * ((self.pressurization + self.cinnamon) * math.cos((math.pi * day) / (5 * self.buoyancy + 3)) -
+                      self.pressurization + self.cinnamon)
 
     @classmethod
     def load(cls, *ids):
