@@ -36,6 +36,32 @@ class GlobalEvent(Base):
 
 class Player(Base):
 
+    @staticmethod
+    def _rating_to_stars(val):
+        return 0.5 * (round(val * 10))
+
+    @property
+    def batting_stars(self):
+        return self._rating_to_stars(((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
+                                     ((self.thwackability * self.divinity) ** 0.35) *
+                                     ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
+
+    @property
+    def pitching_stars(self):
+        return self._rating_to_stars((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
+                                     (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) *
+                                     (self.coldness ** 0.025))
+
+    @property
+    def baserunning_stars(self):
+        return self._rating_to_stars((self.laserlikeness**0.5) *
+                                     ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
+
+    @property
+    def defense_stars(self):
+        return self._rating_to_stars(((self.omniscience * self.tenaciousness) ** 0.2) *
+                                     ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+
     @classmethod
     def load(cls, *ids):
         """
