@@ -129,11 +129,11 @@ class Team(Base):
     def rotation(self):
         if self._rotation:
             return self._rotation
-        players = Player.load(self._rotation_ids)
+        players = Player.load(*self._rotation_ids)
         self._rotation = [players.get(id_) for id_ in self._rotation_ids]
         return self._rotation
 
-    @lineup.setter
+    @rotation.setter
     def rotation(self, value):
         self._rotation = None
         self._rotation_ids = value
@@ -142,11 +142,11 @@ class Team(Base):
     def bullpen(self):
         if self._bullpen:
             return self._bullpen
-        players = Player.load(self._bullpen_ids)
+        players = Player.load(*self._bullpen_ids)
         self._bullpen = [players.get(id_) for id_ in self._bullpen_ids]
         return self._bullpen
 
-    @lineup.setter
+    @bullpen.setter
     def bullpen(self, value):
         self._bullpen = None
         self._bullpen_ids = value
@@ -155,11 +155,11 @@ class Team(Base):
     def bench(self):
         if self._bench:
             return self._bench
-        players = Player.load(self._bench_ids)
+        players = Player.load(*self._bench_ids)
         self._bench = [players.get(id_) for id_ in self._bench_ids]
         return self._bench
 
-    @lineup.setter
+    @bench.setter
     def bench(self, value):
         self._bench = None
         self._bench_ids = value
