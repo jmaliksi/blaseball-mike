@@ -74,7 +74,7 @@ def get_game_by_id(id_):
     return res.json()
 
 
-def get_offseason_election_details(self):
+def get_offseason_election_details():
     res = requests.get(f'{BASE_URL}/offseasonSetup')
     return res.json()
 
