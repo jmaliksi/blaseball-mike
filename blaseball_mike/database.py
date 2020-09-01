@@ -94,7 +94,7 @@ def get_offseason_bonus_results(id_):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     res = requests.get(f'{BASE_URL}/bonusResults?ids={id_}')
-    return res.json()
+    return {g['id']: g for g in res.json()}
 
 
 def get_offseason_decree_results(id_):
@@ -104,7 +104,7 @@ def get_offseason_decree_results(id_):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     res = requests.get(f'{BASE_URL}/decreeResults?ids={id_}')
-    return res
+    return {g['id']: g for g in res.json()}
 
 
 def get_playoff_details(season):
