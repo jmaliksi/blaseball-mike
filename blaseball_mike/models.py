@@ -307,4 +307,118 @@ class Game(Base):
         self._base_runner_ids = value
 
 
-# TODO offseason and playoff stuff
+class DecreeResult(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        decrees = database.get_offseason_decree_results(list(ids))
+        return {
+            id_: cls(decree) for (id_, decree) in decrees.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
+
+
+class BlessingResult(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        blessings = database.get_offseason_bonus_results(list(ids))
+        return {
+            id_: cls(blessing) for (id_, blessing) in blessings.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
+
+    @property
+    def team_id(self):
+        if self._team:
+            return self._team
+        if not self._team_id:
+            return None
+        self._team = Team.load(self._team_id)
+        return self._team
+
+    @team_id.setter
+    def team_id(self, value):
+        self._team = None
+        self._team_id = value
+
+    # team is an alias to team_id
+    @property
+    def team(self):
+        return self.team_id
+
+    # Note: highest_team not present for Season 1
+    @property
+    def highest_team(self):
+        if self._highest_team:
+            return self._highest_team
+        if not self._highest_team_id:
+            return None
+        self._highest_team = Team.load(self._highest_team_id)
+        return self._highest_team
+
+    @highest_team.setter
+    def highest_team(self, value):
+        self._highest_team = None
+        self._highest_team_id = value
+
+    # blessing_title is an alias to bonus_title
+    @property
+    def blessing_title(self):
+        return self.bonus_title
+
+    # blessing_id is an alias to bonus_id
+    @property
+    def blessing_id(self):
+        return self.bonus_id
+
+
+class OffseasonResult(Base):
+
+    @classmethod
+    def load_by_season(cls, season):
+        return cls(database.get_offseason_recap(season))
+
+    @property
+    def bonus_results(self):
+        if self._bonus_results:
+            return self._bonus_results
+        if not self._bonus_results_ids:
+            return None
+        blessings = BlessingResult.load(*self._bonus_results_ids)
+        self._bonus_results = [blessings.get(id_) for id_ in self._bonus_results_ids]
+        return self._bonus_results
+
+    @bonus_results.setter
+    def bonus_results(self, value):
+        self._bonus_results = None
+        self._bonus_results_ids = value
+
+    # blessing_results is an alias to bonus_results
+    @property
+    def blessing_results(self):
+        return self.bonus_results
+
+    @property
+    def decree_results(self):
+        if self._decree_results:
+            return self._decree_results
+        if not self._decree_results_ids:
+            return None
+        decrees = DecreeResult.load(*self._decree_results_ids)
+        self._decree_results = [decrees.get(id_) for id_ in self._decree_results_ids]
+        return self._decree_results
+
+    @decree_results.setter
+    def decree_results(self, value):
+        self._decree_results = None
+        self._decree_results_ids = value
+
+
+# TODO offseason setup and playoff stuff
