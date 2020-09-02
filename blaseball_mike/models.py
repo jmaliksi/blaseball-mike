@@ -115,6 +115,54 @@ class Player(Base):
     def coffee(self, value):
         self._coffee = value
 
+    @property
+    def bat(self):
+        return tables.Item(self._bat)
+
+    @bat.setter
+    def bat(self, value):
+        self._bat = value
+
+    @property
+    def armor(self):
+        return tables.Item(self._armor)
+
+    @armor.setter
+    def armor(self, value):
+        self._armor = value
+
+    @property
+    def perm_attr(self):
+        return [tables.Attribute(attr) for attr in self._perm_attr]
+
+    @perm_attr.setter
+    def perm_attr(self, value):
+        self._perm_attr = value
+
+    @property
+    def seas_attr(self):
+        return [tables.Attribute(attr) for attr in self._seas_attr]
+
+    @seas_attr.setter
+    def seas_attr(self, value):
+        self._seas_attr = value
+
+    @property
+    def week_attr(self):
+        return [tables.Attribute(attr) for attr in self._week_attr]
+
+    @week_attr.setter
+    def week_attr(self, value):
+        self._week_attr = value
+
+    @property
+    def game_attr(self):
+        return [tables.Attribute(attr) for attr in self._game_attr]
+
+    @game_attr.setter
+    def game_attr(self, value):
+        self._game_attr = value
+
 
 class Team(Base):
 
@@ -194,6 +242,38 @@ class Team(Base):
     def bench(self, value):
         self._bench = None
         self._bench_ids = value
+
+    @property
+    def perm_attr(self):
+        return [tables.Attribute(attr) for attr in self._perm_attr]
+
+    @perm_attr.setter
+    def perm_attr(self, value):
+        self._perm_attr = value
+
+    @property
+    def seas_attr(self):
+        return [tables.Attribute(attr) for attr in self._seas_attr]
+
+    @seas_attr.setter
+    def seas_attr(self, value):
+        self._seas_attr = value
+
+    @property
+    def week_attr(self):
+        return [tables.Attribute(attr) for attr in self._week_attr]
+
+    @week_attr.setter
+    def week_attr(self, value):
+        self._week_attr = value
+
+    @property
+    def game_attr(self):
+        return [tables.Attribute(attr) for attr in self._game_attr]
+
+    @game_attr.setter
+    def game_attr(self, value):
+        self._game_attr = value
 
 
 class Division(Base):
