@@ -67,3 +67,42 @@ class Coffee:
         if value not in self._coffees:
             self.value = "Coffee?"
         self.value = self._coffees[value]
+
+
+class Item:
+    _items = {
+        "GUNBLADE_A": "The Dial Tone",
+        "GUNBLADE_B": "Vibe Check",
+        "ARM_CANNON": "Literal Arm Cannon",
+        "ENGLAND_MEMORABILIA": "Bangers & Smash",
+        "MUSHROOM": "Mushroom",
+        "GRAPPLING_HOOK": "Grappling Hook",
+        "FIREPROOF": "Fireproof Jacket",
+        "HEADPHONES": "Noise-Cancelling Headphones"
+    }
+
+    def __init__(self, value):
+        if value not in self._items:
+            self.value = "None"
+        self.value = self._items[value]
+
+
+class Attribute:
+    _attrs = {
+        "EXTRA_STRIKE": ("The Fourth Strike", "Those with the Fourth Strike will get an extra strike in each at bat."),
+        "SHAME_PIT": ("Targeted Shame", "Teams with Targeted Shame will star with negative runs the game after being shamed."),
+        "HOME_FIELD": ("Home Field Advantage", "Teams with Home Field Advantage will start each home game with one run."),
+        "FIREPROOF": ("Fireproof", "A Fireproof player can not be incinerated."),
+        "ALTERNATE": ("Alternate", "This player is an Alternate..."),
+        "SOUNDPROOF": ("Soundproof", "A Soundproof player can not be caught in Feedback's reality flickers."),
+        "SHELLED": ("Shelled", "A Shelled player is Shelled."),
+        "REVERBERATING": ("Reverberating", "A Reverberating player has a small chance of batting again after each of their At-Bats end.")
+    }
+
+    def __init__(self, value):
+        if value not in self._attrs:
+            self.title = "Invalid Attribute"
+            self.description = "Invalid Attribute"
+        val = self._attrs[value]
+        self.title = val[0]
+        self.description = val[1]
