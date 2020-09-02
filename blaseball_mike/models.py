@@ -3,7 +3,7 @@ import abc
 import re
 import math
 
-from blaseball_mike import database
+from blaseball_mike import database, tables
 
 
 
@@ -98,6 +98,22 @@ class Player(Base):
     def get_vibe(self, day):
         return 0.5 * ((self.pressurization + self.cinnamon) * math.cos((math.pi * day) / (5 * self.buoyancy + 3)) -
                       self.pressurization + self.cinnamon)
+
+    @property
+    def blood(self):
+        return tables.Blood(self._blood)
+
+    @blood.setter
+    def blood(self, value):
+        self._blood = value
+
+    @property
+    def coffee(self):
+        return tables.Coffee(self._coffee)
+
+    @coffee.setter
+    def coffee(self, value):
+        self._coffee = value
 
 
 class Team(Base):
@@ -320,6 +336,14 @@ class Game(Base):
             return
         self._base_runners = None
         self._base_runner_ids = value
+
+    @property
+    def weather(self):
+        return tables.Weather(self._weather)
+
+    @weather.setter
+    def weather(self, value):
+        self._weather = value
 
 
 class DecreeResult(Base):
