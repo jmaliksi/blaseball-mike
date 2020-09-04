@@ -27,6 +27,14 @@ Supported objects are:
 - League
 - Game
 
+## Simulated stlats
+If you want to see how a decree/blessing may shake out, you can make a simulated copy of a player with modified stats.
+```
+>>> york = Player.load_one('86d4e22b-f107-4bcf-9625-32d387fcb521')
+>>> yorks = [york.simulated_copy(multipliers={'overall_rating': n/100.0}) for n in range(1, 10)]
+>>> [y.batting_rating for y in yorks]
+[0.9823391734764451, 0.991192294100704, 1.000038548392815, 1.0088780122143204, 1.0177107598404203, 1.026536864008585, 1.0353563959652192, 1.0441694255104683, 1.0529760210412604]
+```
 
 # Development
 
