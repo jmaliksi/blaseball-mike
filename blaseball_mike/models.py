@@ -23,7 +23,7 @@ class Base(abc.ABC):
 
     def json(self):
         return {
-            f: getattr(self, f) for f in self.fields
+            f: getattr(self, self._camel_to_snake(f)) for f in self.fields
         }
 
 
@@ -162,6 +162,91 @@ class Player(Base):
     @game_attr.setter
     def game_attr(self, value):
         self._game_attr = value
+
+    def simulated_copy(self, overrides=None, multipliers=None, buffs=None):
+        """
+        Return a copy of this player with adjusted stats (ie to simulate blessings)
+        `overrides` is a dict where the key specifies an attribute to completely overwrite with new value.
+        `multipliers` is a dict where key specifies attr to multiply by value
+        `buffs` is a dict where key specifies attr to add value
+
+        `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
+        can additionally be passed to `multipliers` and `buffs` to automatically multiply the appropriate
+        related stats.
+        """
+        overrides = overrides or {}
+        multipliers = multipliers or {}
+        buffs = buffs or {}
+        original_json = self.json()
+
+        for override_key, override_value in overrides.items():
+            original_json[override_key] = override_value
+
+        for m_key, m_val in multipliers.items():
+            if m_key in ('batting_rating', 'overall_rating'):
+                original_json['tragicness'] *= (1.0 - m_val)
+                original_json['patheticism'] *= (1.0 - m_val)
+                original_json['thwackability'] *= (1.0 + m_val)
+                original_json['divinity'] *= (1.0 + m_val)
+                original_json['moxie'] *= (1.0 + m_val)
+                original_json['musclitude'] *= (1.0 + m_val)
+                original_json['martyrdom'] *= (1.0 + m_val)
+            if m_key in ('pitching_rating', 'overall_rating'):
+                original_json['unthwackability'] *= (1.0 + m_val)
+                original_json['ruthlessness'] *= (1.0 + m_val)
+                original_json['overpowerment'] *= (1.0 + m_val)
+                original_json['shakespearianism'] *= (1.0 + m_val)
+                original_json['coldness'] *= (1.0 + m_val)
+            if m_key in ('baserunning_rating', 'overall_rating'):
+                original_json['laserlikeness'] *= (1.0 + m_val)
+                original_json['continuation'] *= (1.0 + m_val)
+                original_json['baseThirst'] *= (1.0 + m_val)
+                original_json['indulgence'] *= (1.0 + m_val)
+                original_json['groundFriction'] *= (1.0 + m_val)
+            if m_key in ('defense_rating', 'overall_rating'):
+                original_json['omniscience'] *= (1.0 + m_val)
+                original_json['tenaciousness'] *= (1.0 + m_val)
+                original_json['watchfulness'] *= (1.0 + m_val)
+                original_json['anticapitalism'] *= (1.0 + m_val)
+                original_json['chasiness'] *= (1.0 + m_val)
+            if m_key in ('tragicness', 'patheticism'):
+                original_json[m_key] *= (1.0 - m_val)
+            elif m_key in original_json:
+                original_json[m_key] *= (1.0 + m_val)
+
+        for b_key, b_val in buffs.items():
+            if b_key in ('batting_rating', 'overall_rating'):
+                original_json['tragicness'] = max(0, original_json['tragicness'] - b_val)
+                original_json['patheticism'] = max(0, original_json['patheticism'] - b_val)
+                original_json['thwackability'] += b_val
+                original_json['divinity'] += b_val
+                original_json['moxie'] += b_val
+                original_json['musclitude'] += b_val
+                original_json['martyrdom'] += b_val
+            if b_key in ('pitching_rating', 'overall_rating'):
+                original_json['unthwackability'] += b_val
+                original_json['ruthlessness'] += b_val
+                original_json['overpowerment'] += b_val
+                original_json['shakespearianism'] += b_val
+                original_json['coldness'] += b_val
+            if b_key in ('baserunning_rating', 'overall_rating'):
+                original_json['laserlikeness'] += b_val
+                original_json['continuation'] += b_val
+                original_json['baseThirst'] += b_val
+                original_json['indulgence'] += b_val
+                original_json['groundFriction'] += b_val
+            if b_key in ('defense_rating', 'overall_rating'):
+                original_json['omniscience'] += b_val
+                original_json['tenaciousness'] += b_val
+                original_json['watchfulness'] += b_val
+                original_json['anticapitalism'] += b_val
+                original_json['chasiness'] += b_val
+            if b_key in ('tragicness', 'patheticism'):
+                original_json[b_key] = max(0, original_json[b_key] - b_val)
+            elif b_key in original_json:
+                original_json[b_key] += b_val
+
+        return Player(original_json)
 
 
 class Team(Base):

@@ -19,7 +19,10 @@ class Weather:
     def __init__(self, value):
         if value not in self._weathers:
             self.value = "Invalid Weather"
-        self.value = self._weathers[value]
+        elif isinstance(value, Weather):
+            self.value = value.value
+        else:
+            self.value = self._weathers[value]
 
 
 class Blood:
@@ -42,7 +45,10 @@ class Blood:
     def __init__(self, value):
         if value not in self._bloods:
             self.value = "Blood?"
-        self.value = self._bloods[value]
+        elif isinstance(value, Blood):
+            self.value = value.value
+        else:
+            self.value = self._bloods[value]
 
 
 class Coffee:
@@ -66,7 +72,10 @@ class Coffee:
     def __init__(self, value):
         if value not in self._coffees:
             self.value = "Coffee?"
-        self.value = self._coffees[value]
+        elif isinstance(value, Coffee):
+            self.value = value.value
+        else:
+            self.value = self._coffees[value]
 
 
 class Item:
@@ -84,7 +93,10 @@ class Item:
     def __init__(self, value):
         if value not in self._items:
             self.value = "None"
-        self.value = self._items[value]
+        elif isinstance(value, Item):
+            self.value = value.value
+        else:
+            self.value = self._items[value]
 
 
 class Attribute:
@@ -103,6 +115,10 @@ class Attribute:
         if value not in self._attrs:
             self.title = "Invalid Attribute"
             self.description = "Invalid Attribute"
-        val = self._attrs[value]
-        self.title = val[0]
-        self.description = val[1]
+        elif isinstance(value, Attribute):
+            self.title = value.title
+            self.description = value.description
+        else:
+            val = self._attrs[value]
+            self.title = val[0]
+            self.description = val[1]
