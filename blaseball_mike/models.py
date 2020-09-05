@@ -96,7 +96,10 @@ class Player(Base):
         return self._rating_to_stars(self.defense_rating)
 
     def get_vibe(self, day):
-        return 0.5 * ((self.pressurization + self.cinnamon) * math.cos((math.pi * day) / (5 * self.buoyancy + 3)) -
+        """
+        Day is 1-indexed
+        """
+        return 0.5 * ((self.pressurization + self.cinnamon) * math.cos((math.pi * (day-1)) / (5 * self.buoyancy + 3)) -
                       self.pressurization + self.cinnamon)
 
     @property
