@@ -99,7 +99,8 @@ class Player(Base):
         """
         Day is 1-indexed
         """
-        return 0.5 * ((self.pressurization + self.cinnamon) * math.cos((math.pi * (day-1)) / (5 * self.buoyancy + 3)) -
+        return 0.5 * ((self.pressurization + self.cinnamon) *
+                      math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
                       self.pressurization + self.cinnamon)
 
     @property
