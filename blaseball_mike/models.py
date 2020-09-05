@@ -40,7 +40,7 @@ class Player(Base):
     @classmethod
     def load(cls, *ids):
         """
-        Load dictioary of players
+        Load dictionary of players
         """
         players = database.get_player(list(ids))
         return {
@@ -432,6 +432,10 @@ class League(Base):
     def load(cls):
         return cls(database.get_league())
 
+    @classmethod
+    def load_by_id(cls, id_):
+        return cls(database.get_league(id_))
+
     @property
     def subleagues(self):
         if self._subleagues:
@@ -677,8 +681,8 @@ class PlayoffRound(Base):
 
     @classmethod
     def load(cls, id_):
-        round = database.get_playoff_round(id_)
-        return cls(round)
+        round_ = database.get_playoff_round(id_)
+        return cls(round_)
 
     @property
     def games(self):
@@ -713,6 +717,19 @@ class PlayoffRound(Base):
         return self._games[num]
 
     @property
+    def matchups(self):
+        if self._matchups:
+            return self._matchups
+        matchups = PlayoffMatchup.load(*self._matchups_ids)
+        self._matchups = [matchups.get(id_) for id_ in self._matchups_ids]
+        return self._matchups
+
+    @matchups.setter
+    def matchups(self, value):
+        self._matchups = None
+        self._matchups_ids = value
+
+    @property
     def winners(self):
         if self._winners:
             return self._winners
@@ -725,6 +742,44 @@ class PlayoffRound(Base):
         self._winners_ids = value
 
 
+class PlayoffMatchup(Base):
+
+    @classmethod
+    def load(cls, *ids_):
+        matchups = database.get_playoff_matchups(list(ids_))
+        return {
+            id_: cls(matchup) for (id_, matchup) in matchups.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
+
+    @property
+    def away_team(self):
+        if self._away_team:
+            return self._away_team
+        self._away_team = Team.load(self._away_team_id)
+        return self._away_team
+
+    @away_team.setter
+    def away_team(self, value):
+        self._away_team = None
+        self._away_team_id = value
+
+    @property
+    def home_team(self):
+        if self._home_team:
+            return self._home_team
+        self._home_team = Team.load(self._home_team_id)
+        return self._home_team
+
+    @home_team.setter
+    def home_team(self, value):
+        self._home_team = None
+        self._home_team_id = value
+
+
 class Election(Base):
 
     @classmethod
@@ -733,3 +788,46 @@ class Election(Base):
         return cls(offseason)
 
 OffseasonSetup = Election
+
+
+class Standings(Base):
+
+    @classmethod
+    def load(cls, id_):
+        standings = database.get_standings(id_)
+        return cls(standings)
+
+    def get_standings_by_team(self, id_):
+        return {"wins": self.wins.get(id_, None), "losses": self.losses.get(id_, None)}
+
+
+class Season(Base):
+
+    @classmethod
+    def load(cls, season_number):
+        season = database.get_season(season_number)
+        return cls(season)
+
+    @property
+    def league(self):
+        if self._league:
+            return self._league
+        self._league = League.load_by_id(self._league_id)
+        return self._league
+
+    @league.setter
+    def league(self, value):
+        self._league = None
+        self._league_id = value
+
+    @property
+    def standings(self):
+        if self._standings:
+            return self._standings
+        self._standings = Standings.load(self._standings_id)
+        return self._standings
+
+    @standings.setter
+    def standings(self, value):
+        self._standings = None
+        self._standings_id = value
