@@ -586,7 +586,7 @@ class BlessingResult(Base):
         return self.bonus_id
 
 
-class OffseasonResult(Base):
+class ElectionResult(Base):
 
     @classmethod
     def load_by_season(cls, season):
@@ -627,5 +627,108 @@ class OffseasonResult(Base):
         self._decree_results = None
         self._decree_results_ids = value
 
+OffseasonResult = ElectionResult
 
-# TODO offseason setup and playoff stuff
+
+class Playoff(Base):
+
+    @classmethod
+    def load_by_season(cls, season):
+        playoff = database.get_playoff_details(season)
+        return cls(playoff)
+
+    @property
+    def rounds(self):
+        if self._rounds:
+            return self._rounds
+        self._rounds = [PlayoffRound.load(id_) for id_ in self._rounds_ids]
+        return self._rounds
+
+    @rounds.setter
+    def rounds(self, value):
+        self._rounds = None
+        self._rounds_ids = value
+
+    def get_round_by_number(self, round_number):
+        """
+        Get games from a specific round of playoffs
+        Round number is 1-indexed
+        """
+        num = round_number - 1
+        if num >= len(self._rounds_ids) or num < 0:
+            return None
+        return self.rounds[num]
+
+    @property
+    def winner(self):
+        if self._winner:
+            return self._winner
+        self._winner = Team.load(self._winner_id)
+        return self._winner
+
+    @winner.setter
+    def winner(self, value):
+        self._winner = None
+        self._winner_id = value
+
+
+class PlayoffRound(Base):
+
+    @classmethod
+    def load(cls, id_):
+        round = database.get_playoff_round(id_)
+        return cls(round)
+
+    @property
+    def games(self):
+        """
+        Get all games
+        Lots of endpoint calls, not recommended
+        """
+        if all(self._games):
+            return self._games
+        for day, games in enumerate(self._games_ids):
+            if self._games[day]:
+                continue
+            self._games[day] = [Game.load_by_id(id_) for id_ in games if id_ != "none"]
+        return self._games
+
+    @games.setter
+    def games(self, value):
+        self._games = [None] * len(value)
+        self._games_ids = value
+
+    def get_games_by_number(self, game_number):
+        """
+        Get games by game number in series (IE: Game 1 of 5)
+        Game number is 1-indexed
+        """
+        num = game_number - 1
+        if num >= len(self._games_ids) or num < 0:
+            return []
+        if self._games[num]:
+            return self._games[num]
+        self._games[num] = [Game.load_by_id(id_) for id_ in self._games_ids[num] if id_ != "none"]
+        return self._games[num]
+
+    @property
+    def winners(self):
+        if self._winners:
+            return self._winners
+        self._winners = [Team.load(x) for x in self._winners_ids]
+        return self._winners
+
+    @winners.setter
+    def winners(self, value):
+        self._winners = None
+        self._winners_ids = value
+
+
+class Election(Base):
+
+    @classmethod
+    def load(cls):
+        offseason = database.get_offseason_election_details()
+        return cls(offseason)
+
+OffseasonSetup = Election
