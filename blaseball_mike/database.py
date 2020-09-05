@@ -118,3 +118,26 @@ def get_playoff_details(season):
 def get_playoff_round(id_):
     res = requests.get(f'{BASE_URL}/playoffRound?id={id_}')
     return res.json()
+
+
+def get_playoff_matchups(id_):
+    """
+    id_ can be a single string ID, comma separated string, or list.
+    """
+    if isinstance(id_, list):
+        id_ = ','.join(id_)
+    res = requests.get(f'{BASE_URL}/playoffMatchups?ids={id_}')
+    return {g['id']: g for g in res.json()}
+
+
+def get_standings(id_):
+    res = requests.get(f'{BASE_URL}/standings?id={id_}')
+    return res.json()
+
+
+def get_season(season_number):
+    """
+    Season number is 1 indexed
+    """
+    res = requests.get(f'{BASE_URL}/season?number={season_number - 1}')
+    return res.json()
