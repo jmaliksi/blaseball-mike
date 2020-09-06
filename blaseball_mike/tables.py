@@ -9,7 +9,7 @@ class Weather:
         6: "Acidic",
         7: "Solar Eclipse",
         8: "Glitter",
-        9: "Bloodwind",
+        9: "Blooddrain",
         10: "Peanuts",
         11: "Birds",
         12: "Feedback",
@@ -108,7 +108,14 @@ class Attribute:
         "ALTERNATE": ("Alternate", "This player is an Alternate..."),
         "SOUNDPROOF": ("Soundproof", "A Soundproof player can not be caught in Feedback's reality flickers."),
         "SHELLED": ("Shelled", "A Shelled player is Shelled."),
-        "REVERBERATING": ("Reverberating", "A Reverberating player has a small chance of batting again after each of their At-Bats end.")
+        "REVERBERATING": ("Reverberating", "A Reverberating player has a small chance of batting again after each of their At-Bats end."),
+        "BLOOD_DONOR": ("Blood Donor", "In the Blood Bath each season, this team will donate Stars to a division opponent that finished behind them in the standings."),
+        "BLOOD_THIEF": ("Blood Thief", "In the Blood Bath each season, this team will steal Stars from a division opponent that finished ahead of them in the standings."),
+        "BLOOD_PITY": ("Blood Pity", "In the Blood Bath each season, this team must give Stars to the team that finished last in their division."),
+        "BLOOD_WINNER": ("Blood Winner", "In the Blood Bath each season, this team must give Stars to the team that finished first in their division."),
+        "BLOOD_FAITH": ("Blood Faith", "In the Blood Bath each season, this player will receive a small boost to a random stat."),
+        "BLOOD_LAW": ("Blood Law", "In the Blood Bath each season, this team will gain or lose Stars depending on how low or high they finish in their division."),
+        "BLOOD_CHAOS": ("Blood Chaos", "In the Blood Bath each season, each player on this team will gain or lose a random amount of Stars.")
     }
 
     def __init__(self, value):
