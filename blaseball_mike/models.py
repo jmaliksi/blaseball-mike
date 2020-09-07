@@ -627,11 +627,39 @@ class Game(Base):
             return self.home_team
 
     @property
+    def at_bat_team_name(self):
+        if self.top_of_inning:
+            return self.away_team_name
+        else:
+            return self.home_team_name
+
+    @property
+    def at_bat_team_nickname(self):
+        if self.top_of_inning:
+            return self.away_team_nickname
+        else:
+            return self.home_team_nickname
+
+    @property
     def pitching_team(self):
         if self.top_of_inning:
             return self.home_team
         else:
             return self.away_team
+
+    @property
+    def pitching_team_name(self):
+        if self.top_of_inning:
+            return self.home_team_name
+        else:
+            return self.away_team_name
+
+    @property
+    def pitching_team_nickname(self):
+        if self.top_of_inning:
+            return self.home_team_nickname
+        else:
+            return self.away_team_nickname
 
     @property
     def current_pitcher(self):
@@ -641,11 +669,49 @@ class Game(Base):
             return self.away_pitcher
 
     @property
+    def current_pitcher_name(self):
+        if self.top_of_inning:
+            return self.home_pitcher_name
+        else:
+            return self.away_pitcher_name
+
+    @property
     def current_batter(self):
         if self.top_of_inning:
             return self.away_batter
         else:
             return self.home_batter
+
+    @property
+    def current_batter_name(self):
+        if self.top_of_inning:
+            return self.away_batter_name
+        else:
+            return self.home_batter_name
+
+    @property
+    def season(self):
+        return self._season
+
+    @season.setter
+    def season(self, value):
+        self._season = value + 1
+
+    @property
+    def day(self):
+        return self._day
+
+    @day.setter
+    def day(self, value):
+        self._day = value + 1
+
+    @property
+    def inning(self):
+        return self._inning
+
+    @inning.setter
+    def inning(self, value):
+        self._inning = value + 1
 
 
 class DecreeResult(Base):
