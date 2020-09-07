@@ -543,6 +543,110 @@ class Game(Base):
     def weather(self, value):
         self._weather = value
 
+    @property
+    def home_team(self):
+        if self._home_team:
+            return self._home_team
+        self._home_team = Team.load(self._home_team_id)
+        return self._home_team
+
+    @home_team.setter
+    def home_team(self, value):
+        self._home_team = None
+        self._home_team_id = value
+
+    @property
+    def away_team(self):
+        if self._away_team:
+            return self._away_team
+        self._away_team = Team.load(self._away_team_id)
+        return self._away_team
+
+    @away_team.setter
+    def away_team(self, value):
+        self._away_team = None
+        self._away_team_id = value
+
+    @property
+    def home_pitcher(self):
+        if self._home_pitcher:
+            return self._home_pitcher
+        self._home_pitcher = Player.load_one(self._home_pitcher_id)
+        return self._home_pitcher
+
+    @home_pitcher.setter
+    def home_pitcher(self, value):
+        self._home_pitcher = None
+        self._home_pitcher_id = value
+
+    @property
+    def away_pitcher(self):
+        if self._away_pitcher:
+            return self._away_pitcher
+        self._away_pitcher = Player.load_one(self._away_pitcher_id)
+        return self._away_pitcher
+
+    @away_pitcher.setter
+    def away_pitcher(self, value):
+        self._away_pitcher = None
+        self._away_pitcher_id = value
+
+    @property
+    def home_batter(self):
+        if not self._home_batter_id:
+            return None
+        if self._home_batter:
+            return self._home_batter
+        self._home_batter = Player.load_one(self._home_batter_id)
+        return self._home_batter
+
+    @home_batter.setter
+    def home_batter(self, value):
+        self._home_batter = None
+        self._home_batter_id = value
+
+    @property
+    def away_batter(self):
+        if not self._away_batter_id:
+            return None
+        if self._away_batter:
+            return self._away_batter
+        self._away_batter = Player.load_one(self._away_batter_id)
+        return self._away_batter
+
+    @away_batter.setter
+    def away_batter(self, value):
+        self._away_batter = None
+        self._away_batter_id = value
+
+    @property
+    def at_bat_team(self):
+        if self.top_of_inning:
+            return self.away_team
+        else:
+            return self.home_team
+
+    @property
+    def pitching_team(self):
+        if self.top_of_inning:
+            return self.home_team
+        else:
+            return self.away_team
+
+    @property
+    def current_pitcher(self):
+        if self.top_of_inning:
+            return self.home_pitcher
+        else:
+            return self.away_pitcher
+
+    @property
+    def current_batter(self):
+        if self.top_of_inning:
+            return self.away_batter
+        else:
+            return self.home_batter
+
 
 class DecreeResult(Base):
 
