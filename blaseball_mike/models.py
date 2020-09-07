@@ -409,6 +409,10 @@ class Division(Base):
 
 class Subleague(Base):
 
+    def __init__(self, data):
+        super().__init__(data)
+        self._teams = {}
+
     @classmethod
     def load(cls, id_):
         return cls(database.get_subleague(id_))
@@ -425,8 +429,20 @@ class Subleague(Base):
         self._divisions = None
         self._division_ids = value
 
+    @property
+    def teams(self):
+        if self._teams:
+            return self._teams
+        for division in self.divisions.values():
+            self._teams.update(division.teams)
+        return self._teams
+
 
 class League(Base):
+
+    def __init__(self, data):
+        super().__init__(data)
+        self._teams = {}
 
     @classmethod
     def load(cls):
@@ -447,6 +463,14 @@ class League(Base):
     def subleagues(self, value):
         self._subleagues = None
         self._subleague_ids = value
+
+    @property
+    def teams(self):
+        if self._teams:
+            return self._teams
+        for subleague in self.subleagues.values():
+            self._teams.update(subleague.teams)
+        return self._teams
 
 
 class Game(Base):
