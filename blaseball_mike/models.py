@@ -1,7 +1,8 @@
 """For deserializing the json responses"""
 import abc
-import re
 import math
+from collections import OrderedDict
+import re
 
 from blaseball_mike import database, tables
 
@@ -862,9 +863,10 @@ class Idol(Base):
     @classmethod
     def load(cls):
         idols = database.get_idols()
-        return {
-            idol['id']: cls(idol) for idol in idols
-        }
+        idols_dict = OrderedDict()
+        for idol in idols:
+            idols_dict[idol['id']] = cls(idol)
+        return idols_dict
 
     @property
     def player(self):
