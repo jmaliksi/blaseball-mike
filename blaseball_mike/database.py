@@ -141,3 +141,8 @@ def get_season(season_number):
     """
     res = requests.get(f'{BASE_URL}/season?number={season_number - 1}')
     return res.json()
+
+
+def get_idols():
+    res = requests.get('https://www.blaseball.com/api/getIdols')
+    return res.json()

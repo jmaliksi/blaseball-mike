@@ -831,3 +831,20 @@ class Season(Base):
     def standings(self, value):
         self._standings = None
         self._standings_id = value
+
+
+class Idol(Base):
+
+    @classmethod
+    def load(cls):
+        idols = database.get_idols()
+        return {
+            idol['id']: cls(idol) for idol in idols
+        }
+
+    @property
+    def player(self):
+        if self._player:
+            return self._player
+        self._player = Player.load_one(self.player_id)
+        return self._player
