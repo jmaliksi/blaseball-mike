@@ -17,7 +17,7 @@ class StreamData(Base):
     def __init__(self, data):
         self.games = StreamGames(data.get('games', {}), self)
         self.leagues = StreamLeagues(data.get('leagues', {}), self)
-        self.temporal = data['temporal']
+        self.temporal = data.get('temporal', {})
 
 
 class StreamComponent(Base):
