@@ -223,33 +223,33 @@ class Player(Base):
             if b_key in ('batting_rating', 'overall_rating'):
                 original_json['tragicness'] = max(0.01, original_json['tragicness'] - b_val)
                 original_json['patheticism'] = max(0.01, original_json['patheticism'] - b_val)
-                original_json['thwackability'] += b_val
-                original_json['divinity'] += b_val
-                original_json['moxie'] += b_val
-                original_json['musclitude'] += b_val
-                original_json['martyrdom'] += b_val
+                original_json['thwackability'] = max(0.01, original_json['thwackability'] + b_val)
+                original_json['divinity'] = max(0.01, original_json['divinity'] + b_val)
+                original_json['moxie'] = max(0.01, original_json['moxie'] + b_val)
+                original_json['musclitude'] = max(0.01, original_json['musclitude'] + b_val)
+                original_json['martyrdom'] = max(0.01, original_json['martyrdom'] + b_val)
             if b_key in ('pitching_rating', 'overall_rating'):
-                original_json['unthwackability'] += b_val
-                original_json['ruthlessness'] += b_val
-                original_json['overpowerment'] += b_val
-                original_json['shakespearianism'] += b_val
-                original_json['coldness'] += b_val
+                original_json['unthwackability'] = max(0.01, original_json['unthwackability'] + b_val)
+                original_json['ruthlessness'] = max(0.01, original_json['ruthlessness'] + b_val)
+                original_json['overpowerment'] = max(0.01, original_json['overpowerment'] + b_val)
+                original_json['shakespearianism'] = max(0.01, original_json['shakespearianism'] + b_val)
+                original_json['coldness'] = max(0.01, original_json['coldness'] + b_val)
             if b_key in ('baserunning_rating', 'overall_rating'):
-                original_json['laserlikeness'] += b_val
-                original_json['continuation'] += b_val
-                original_json['baseThirst'] += b_val
-                original_json['indulgence'] += b_val
-                original_json['groundFriction'] += b_val
+                original_json['laserlikeness'] = max(0.01, original_json['laserlikeness'] + b_val)
+                original_json['continuation'] = max(0.01, original_json['continuation'] + b_val)
+                original_json['baseThirst'] = max(0.01, original_json['baseThirst'] + b_val)
+                original_json['indulgence'] = max(0.01, original_json['indulgence'] + b_val)
+                original_json['groundFriction'] = max(0.01, original_json['groundFriction'] + b_val)
             if b_key in ('defense_rating', 'overall_rating'):
-                original_json['omniscience'] += b_val
-                original_json['tenaciousness'] += b_val
-                original_json['watchfulness'] += b_val
-                original_json['anticapitalism'] += b_val
-                original_json['chasiness'] += b_val
+                original_json['omniscience'] = max(0.01, original_json['omniscience'] + b_val)
+                original_json['tenaciousness'] = max(0.01, original_json['tenaciousness'] + b_val)
+                original_json['watchfulness'] = max(0.01, original_json['watchfulness'] + b_val)
+                original_json['anticapitalism'] = max(0.01, original_json['anticapitalism'] + b_val)
+                original_json['chasiness'] = max(0.01, original_json['chasiness'] + b_val)
             if b_key in ('tragicness', 'patheticism'):
-                original_json[b_key] = max(0, original_json[b_key] - b_val)
+                original_json[b_key] = max(0.01, original_json[b_key] - b_val)
             elif b_key in original_json:
-                original_json[b_key] += b_val
+                original_json[b_key] = max(0.01, original_json[b_key] + b_val)
 
         return Player(original_json)
 
