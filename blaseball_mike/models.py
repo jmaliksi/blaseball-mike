@@ -221,8 +221,8 @@ class Player(Base):
 
         for b_key, b_val in buffs.items():
             if b_key in ('batting_rating', 'overall_rating'):
-                original_json['tragicness'] = max(0.01, original_json['tragicness'] - b_val)
-                original_json['patheticism'] = max(0.01, original_json['patheticism'] - b_val)
+                original_json['tragicness'] = min(0.99, max(0.01, original_json['tragicness'] - b_val))
+                original_json['patheticism'] = min(0.99, original_json['patheticism'] - b_val)
                 original_json['thwackability'] = max(0.01, original_json['thwackability'] + b_val)
                 original_json['divinity'] = max(0.01, original_json['divinity'] + b_val)
                 original_json['moxie'] = max(0.01, original_json['moxie'] + b_val)
@@ -247,7 +247,7 @@ class Player(Base):
                 original_json['anticapitalism'] = max(0.01, original_json['anticapitalism'] + b_val)
                 original_json['chasiness'] = max(0.01, original_json['chasiness'] + b_val)
             if b_key in ('tragicness', 'patheticism'):
-                original_json[b_key] = max(0.01, original_json[b_key] - b_val)
+                original_json[b_key] = min(0.99, max(0.01, original_json[b_key] - b_val))
             elif b_key in original_json:
                 original_json[b_key] = max(0.01, original_json[b_key] + b_val)
 
