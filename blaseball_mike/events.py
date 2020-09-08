@@ -25,5 +25,5 @@ async def stream_events(retry_base=0.1, retry_max=300):
                     payload = ujson.loads(event.data)['value']
                     yield payload
         except (ConnectionError, TimeoutError, ClientPayloadError):
-            asyncio.sleep(retry_delay)
+            await asyncio.sleep(retry_delay)
             retry_delay = min(retry_delay * 2, retry_max)
