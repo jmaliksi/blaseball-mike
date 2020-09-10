@@ -1,5 +1,18 @@
-class Weather:
-    _weathers = {
+class Table:
+    _table = {}
+    _invalid = "Invalid Table Object"
+
+    def __init__(self, value):
+        if value not in self._table:
+            self.value = self._invalid
+        elif isinstance(value, type(self)):
+            self.value = value.value
+        else:
+            self.value = self._table[value]
+
+
+class Weather(Table):
+    _table = {
         0: "Void",
         1: "Sunny",
         2: "Overcast",
@@ -15,18 +28,11 @@ class Weather:
         12: "Feedback",
         13: "Reverb"
     }
-
-    def __init__(self, value):
-        if value not in self._weathers:
-            self.value = "Invalid Weather"
-        elif isinstance(value, Weather):
-            self.value = value.value
-        else:
-            self.value = self._weathers[value]
+    _invalid = "Invalid Weather"
 
 
-class Blood:
-    _bloods = {
+class Blood(Table):
+    _table = {
         0: "A",
         1: "AAA",
         2: "AA",
@@ -41,18 +47,11 @@ class Blood:
         11: "Psychic",
         12: "Grass"
     }
-
-    def __init__(self, value):
-        if value not in self._bloods:
-            self.value = "Blood?"
-        elif isinstance(value, Blood):
-            self.value = value.value
-        else:
-            self.value = self._bloods[value]
+    _invalid = "Blood?"
 
 
-class Coffee:
-    _coffees = {
+class Coffee(Table):
+    _table = {
         0: "Black",
         1: "Light & Sweet",
         2: "Macchiato",
@@ -68,35 +67,34 @@ class Coffee:
         12: "Plenty of Sugar",
         13: "Anything"
     }
-
-    def __init__(self, value):
-        if value not in self._coffees:
-            self.value = "Coffee?"
-        elif isinstance(value, Coffee):
-            self.value = value.value
-        else:
-            self.value = self._coffees[value]
+    _invalid = "Coffee?"
 
 
 class Item:
     _items = {
-        "GUNBLADE_A": "The Dial Tone",
-        "GUNBLADE_B": "Vibe Check",
-        "ARM_CANNON": "Literal Arm Cannon",
-        "ENGLAND_MEMORABILIA": "Bangers & Smash",
-        "MUSHROOM": "Mushroom",
-        "GRAPPLING_HOOK": "Grappling Hook",
-        "FIREPROOF": "Fireproof Jacket",
-        "HEADPHONES": "Noise-Cancelling Headphones"
+        "GUNBLADE_A": ("The Dial Tone", None),
+        "GUNBLADE_B": ("Vibe Check", None),
+        "ARM_CANNON": ("Literal Arm Cannon", None),
+        "ENGLAND_MEMORABILIA": ("Bangers & Smash", None),
+        "MUSHROOM": ("Mushroom", None),
+        "GRAPPLING_HOOK": ("Grappling Hook", None),
+        "FIREPROOF": ("Fireproof Jacket", "FIREPROOF"),
+        "HEADPHONES": ("Noise-Cancelling Headphones", "SOUNDPROOF")
     }
 
     def __init__(self, value):
-        if value not in self._items:
+        if value == None:
+            self.value = "None?"
+            self.attr = None
+        elif value not in self._items:
             self.value = "None"
+            self.attr = None
         elif isinstance(value, Item):
             self.value = value.value
+            self.attr = value.attr
         else:
-            self.value = self._items[value]
+            self.value = self._items[value][0]
+            self.attr = Attribute(self._items[value][1])
 
 
 class Attribute:
