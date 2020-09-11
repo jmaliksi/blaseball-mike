@@ -473,6 +473,18 @@ class League(Base):
             self._teams.update(subleague.teams)
         return self._teams
 
+    @property
+    def tiebreakers(self):
+        if self._tiebreakers:
+            return self._tiebreakers
+        self._tiebreakers = Tiebreaker.load(self._tiebreakers_id)
+        return self._tiebreakers
+
+    @tiebreakers.setter
+    def tiebreakers(self, value):
+        self._tiebreakers = None
+        self._tiebreakers_id = value
+
 
 class Game(Base):
 
@@ -1026,6 +1038,30 @@ class Season(Base):
     def standings(self, value):
         self._standings = None
         self._standings_id = value
+
+
+class Tiebreaker(Base):
+
+    @classmethod
+    def load(cls, id):
+        tiebreakers = database.get_tiebreakers(id)
+        return {
+            id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
+        }
+
+    @property
+    def order(self):
+        if self._order:
+            return self._order
+        self._order = OrderedDict()
+        for id_ in self._order_ids:
+            self._order[id_] = Team.load(id_)
+        return self._order
+
+    @order.setter
+    def order(self, value):
+        self._order = None
+        self._order_ids = value
 
 
 class Idol(Base):
