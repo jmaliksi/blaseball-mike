@@ -143,6 +143,11 @@ def get_season(season_number):
     return res.json()
 
 
+def get_tiebreakers(id):
+    res = requests.get(f'{BASE_URL}/tiebreakers?id={id}')
+    return {g['id']: g for g in res.json()}
+
+
 def get_idols():
     res = requests.get('https://www.blaseball.com/api/getIdols')
     return res.json()
