@@ -105,6 +105,22 @@ class Player(Base):
                       self.pressurization + self.cinnamon)
 
     @property
+    def soulscream(self):
+        letters = ["A", "E", "I", "O", "U", "X", "H", "A", "E", "I"]
+        stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
+
+        scream = []
+        for r in range(self.soul):
+            sub_scream = []
+            i = 10 ** -r
+            for s in stats:
+                c = math.floor((s % i) / i * 10)
+                sub_scream.append(letters[c])
+            scream.extend(sub_scream + sub_scream + [sub_scream[0]])
+
+        return ''.join(scream)
+
+    @property
     def blood(self):
         return tables.Blood(self._blood)
 
