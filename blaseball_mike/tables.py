@@ -79,7 +79,11 @@ class Item:
         "MUSHROOM": ("Mushroom", None),
         "GRAPPLING_HOOK": ("Grappling Hook", None),
         "FIREPROOF": ("Fireproof Jacket", "FIREPROOF"),
-        "HEADPHONES": ("Noise-Cancelling Headphones", "SOUNDPROOF")
+        "HEADPHONES": ("Noise-Cancelling Headphones", "SOUNDPROOF"),
+        "SHRINK_RAY": ("Shrink Ray", None),
+        "GRAVITY_BOOTS": ("Gravity Boots", None),
+        "BIRDSONG": ("Birdsong", None),
+        "NIGHT_VISION_GOGGLES": ("Night Vision Goggles", None)
     }
 
     def __init__(self, value):
@@ -105,7 +109,7 @@ class Attribute:
         "FIREPROOF": ("Fireproof", "A Fireproof player can not be incinerated."),
         "ALTERNATE": ("Alternate", "This player is an Alternate..."),
         "SOUNDPROOF": ("Soundproof", "A Soundproof player can not be caught in Feedback's reality flickers."),
-        "SHELLED": ("Shelled", "A Shelled player is Shelled."),
+        "SHELLED": ("Shelled", "A Shelled player is trapped in a big Peanut is unable to bat or pitch."),
         "REVERBERATING": ("Reverberating", "A Reverberating player has a small chance of batting again after each of their At-Bats end."),
         "BLOOD_DONOR": ("Blood Donor", "In the Blood Bath each season, this team will donate Stars to a division opponent that finished behind them in the standings."),
         "BLOOD_THIEF": ("Blood Thief", "In the Blood Bath each season, this team will steal Stars from a division opponent that finished ahead of them in the standings."),
@@ -113,7 +117,14 @@ class Attribute:
         "BLOOD_WINNER": ("Blood Winner", "In the Blood Bath each season, this team must give Stars to the team that finished first in their division."),
         "BLOOD_FAITH": ("Blood Faith", "In the Blood Bath each season, this player will receive a small boost to a random stat."),
         "BLOOD_LAW": ("Blood Law", "In the Blood Bath each season, this team will gain or lose Stars depending on how low or high they finish in their division."),
-        "BLOOD_CHAOS": ("Blood Chaos", "In the Blood Bath each season, each player on this team will gain or lose a random amount of Stars.")
+        "BLOOD_CHAOS": ("Blood Chaos", "In the Blood Bath each season, each player on this team will gain or lose a random amount of Stars."),
+        "RETURNED": ("Returned", "This player has Returned from the void."),
+        "INWARD": ("Inward", "This player has turned Inward."),
+        "MARKED": ("Unstable", "This player is Unstable."),
+        "PARTY_TIME": ("Party Time", "This team is mathematically eliminated from the Postseason, and will occasionally receive permanent stats boost in their games."),
+        "LIFE_OF_PARTY": ("Life of the Party", "This team gets 10% more from their Party Time stat boosts."),
+        "DEBT": ("Debted", "This player must fulfill a Debt."),
+        "SPICY": ("Spicy", "Spicy players can catch fire.")
     }
 
     def __init__(self, value):
