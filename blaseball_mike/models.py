@@ -5,6 +5,8 @@ import random
 from collections import OrderedDict
 import re
 
+from dateutil.parser import parse
+
 from blaseball_mike import database, tables
 
 
@@ -35,6 +37,49 @@ class GlobalEvent(Base):
     def load(cls):
         events = database.get_global_events()
         return [cls(event) for event in events]
+
+
+class SimulationData(Base):
+
+    @classmethod
+    def load(cls):
+        return cls(database.get_simulation_data())
+
+    @property
+    def league(self):
+        if self._league:
+            return self._league
+        self._league = League.load_by_id(self._league_id)
+        return self._league
+
+    @league.setter
+    def league(self, value):
+        self._league = None
+        self._league_id = value
+
+    @property
+    def next_election_end(self):
+        return self._next_election_end
+
+    @next_election_end.setter
+    def next_election_end(self, value):
+        self._next_election_end = parse(value)
+
+    @property
+    def next_phase_time(self):
+        return self._next_phase_time
+
+    @next_phase_time.setter
+    def next_phase_time(self, value):
+        self._next_phase_time = parse(value)
+
+    @property
+    def next_season_start(self):
+        return self._next_season_start
+
+    @next_season_start.setter
+    def next_season_start(self, value):
+        self._next_season_start = parse(value)
 
 
 class Player(Base):

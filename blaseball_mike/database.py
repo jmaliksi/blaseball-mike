@@ -179,3 +179,8 @@ def get_team_statsheets(ids):
 def get_idols():
     res = requests.get('https://www.blaseball.com/api/getIdols')
     return res.json()
+
+
+def get_simulation_data():
+    res = requests.get(f'{BASE_URL}/simulationData')
+    return res.json()
