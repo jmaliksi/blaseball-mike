@@ -1122,12 +1122,12 @@ class Idol(Base):
         idols = database.get_idols()
         idols_dict = OrderedDict()
         for idol in idols:
-            idols_dict[idol['id']] = cls(idol)
+            idols_dict[idol['playerId']] = cls(idol)
         return idols_dict
 
     @property
     def player(self):
-        if self._player:
+        if getattr(self, '_player', None):
             return self._player
         self._player = Player.load_one(self.player_id)
         return self._player
