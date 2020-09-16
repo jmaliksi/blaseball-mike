@@ -118,13 +118,16 @@ class Attribute:
         "BLOOD_FAITH": ("Blood Faith", "In the Blood Bath each season, this player will receive a small boost to a random stat."),
         "BLOOD_LAW": ("Blood Law", "In the Blood Bath each season, this team will gain or lose Stars depending on how low or high they finish in their division."),
         "BLOOD_CHAOS": ("Blood Chaos", "In the Blood Bath each season, each player on this team will gain or lose a random amount of Stars."),
-        "RETURNED": ("Returned", "This player has Returned from the void."),
+        "RETURNED": ("Returned", "This player has Returned from the void. At the end of each season, this player has a chance of being called back to the Void."),
         "INWARD": ("Inward", "This player has turned Inward."),
-        "MARKED": ("Unstable", "This player is Unstable."),
+        "MARKED": ("Unstable", "Unstable players have a much higher chance of being incinerated in a Solar Eclipse."),
         "PARTY_TIME": ("Party Time", "This team is mathematically eliminated from the Postseason, and will occasionally receive permanent stats boost in their games."),
         "LIFE_OF_PARTY": ("Life of the Party", "This team gets 10% more from their Party Time stat boosts."),
         "DEBT": ("Debted", "This player must fulfill a Debt."),
-        "SPICY": ("Spicy", "Spicy players can catch fire.")
+        "SPICY": ("Spicy", "Spicy players can catch fire."),
+        "HONEY_ROASTED": ("Honey Roasted", "This player has been Honey-Roasted."),
+        "FIRST_BORN": ("First Born", "This player was the first born from the New Field of Eggs."),
+        "SUPERALLERGIC": ("Superallergic", "This player is Superallergic")
     }
 
     def __init__(self, value):
