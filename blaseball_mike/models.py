@@ -1,6 +1,7 @@
 """For deserializing the json responses"""
 import abc
 import math
+import random
 from collections import OrderedDict
 import re
 
@@ -184,12 +185,13 @@ class Player(Base):
     def game_attr(self, value):
         self._game_attr = value
 
-    def simulated_copy(self, overrides=None, multipliers=None, buffs=None):
+    def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
         """
         Return a copy of this player with adjusted stats (ie to simulate blessings)
         `overrides` is a dict where the key specifies an attribute to completely overwrite with new value.
         `multipliers` is a dict where key specifies attr to multiply by value
         `buffs` is a dict where key specifies attr to add value
+        `reroll` is a dict where the key specifies attr to reroll (value is unused)
 
         `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
         can additionally be passed to `multipliers` and `buffs` to automatically multiply the appropriate
@@ -198,6 +200,7 @@ class Player(Base):
         overrides = overrides or {}
         multipliers = multipliers or {}
         buffs = buffs or {}
+        reroll = reroll or {}
         original_json = self.json()
 
         for override_key, override_value in overrides.items():
@@ -266,6 +269,38 @@ class Player(Base):
                 original_json[b_key] = min(0.99, max(0.01, original_json[b_key] - b_val))
             elif b_key in original_json:
                 original_json[b_key] = max(0.01, original_json[b_key] + b_val)
+
+        for r_key, _ in reroll.items():
+            if r_key in ('batting_rating', 'overall_rating'):
+                original_json['tragicness'] = random.uniform(0.01, 0.99)
+                original_json['patheticism'] = random.uniform(0.01, 0.99)
+                original_json['thwackability'] = random.uniform(0.01, 0.99)
+                original_json['divinity'] = random.uniform(0.01, 0.99)
+                original_json['moxie'] = random.uniform(0.01, 0.99)
+                original_json['musclitude'] = random.uniform(0.01, 0.99)
+                original_json['martyrdom'] = random.uniform(0.01, 0.99)
+            if r_key in ('pitching_rating', 'overall_rating'):
+                original_json['unthwackability'] = random.uniform(0.01, 0.99)
+                original_json['ruthlessness'] = random.uniform(0.01, 0.99)
+                original_json['overpowerment'] = random.uniform(0.01, 0.99)
+                original_json['shakespearianism'] = random.uniform(0.01, 0.99)
+                original_json['coldness'] = random.uniform(0.01, 0.99)
+            if r_key in ('baserunning_rating', 'overall_rating'):
+                original_json['laserlikeness'] = random.uniform(0.01, 0.99)
+                original_json['continuation'] = random.uniform(0.01, 0.99)
+                original_json['baseThirst'] = random.uniform(0.01, 0.99)
+                original_json['indulgence'] = random.uniform(0.01, 0.99)
+                original_json['groundFriction'] = random.uniform(0.01, 0.99)
+            if r_key in ('defense_rating', 'overall_rating'):
+                original_json['omniscience'] = random.uniform(0.01, 0.99)
+                original_json['tenaciousness'] = random.uniform(0.01, 0.99)
+                original_json['watchfulness'] = random.uniform(0.01, 0.99)
+                original_json['anticapitalism'] = random.uniform(0.01, 0.99)
+                original_json['chasiness'] = random.uniform(0.01, 0.99)
+            if r_key in ('tragicness', 'patheticism'):
+                original_json[r_key] = random.uniform(0.01, 0.99)
+            elif r_key in original_json:
+                original_json[r_key] = random.uniform(0.01, 0.99)
 
         return Player(original_json)
 
