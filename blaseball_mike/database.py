@@ -148,6 +148,34 @@ def get_tiebreakers(id):
     return {g['id']: g for g in res.json()}
 
 
+def get_game_statsheets(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    res = requests.get(f'{BASE_URL}/gameStatsheets?ids={ids}')
+    return {s['id']: s for s in res.json()}
+
+
+def get_player_statsheets(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    res = requests.get(f'{BASE_URL}/playerSeasonStats?ids={ids}')
+    return {s['id']: s for s in res.json()}
+
+
+def get_season_statsheets(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    res = requests.get(f'{BASE_URL}/seasonSeasonStats?ids={ids}')
+    return {s['id']: s for s in res.json()}
+
+
+def get_team_statsheets(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    res = requests.get(f'{BASE_URL}/teamSeasonStats?ids={ids}')
+    return {s['id']: s for s in res.json()}
+
+
 def get_idols():
     res = requests.get('https://www.blaseball.com/api/getIdols')
     return res.json()

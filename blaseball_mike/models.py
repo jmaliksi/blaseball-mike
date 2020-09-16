@@ -776,6 +776,18 @@ class Game(Base):
     def inning(self, value):
         self._inning = value + 1
 
+    @property
+    def statsheet(self):
+        if self._statsheet:
+            return self._statsheet
+        self._statsheet = GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
+        return self._statsheet
+
+    @statsheet.setter
+    def statsheet(self, value):
+        self._statsheet = None
+        self._statsheet_id = value
+
 
 class DecreeResult(Base):
 
@@ -1090,6 +1102,18 @@ class Season(Base):
         self._standings = None
         self._standings_id = value
 
+    @property
+    def stats(self):
+        if self._stats:
+            return self._stats
+        self._stats = SeasonStatsheet.load(self._stats_id)[self._stats_id]
+        return self._stats
+
+    @stats.setter
+    def stats(self, value):
+        self._stats_id = value
+        self._stats = None
+
 
 class Tiebreaker(Base):
 
@@ -1131,3 +1155,108 @@ class Idol(Base):
             return self._player
         self._player = Player.load_one(self.player_id)
         return self._player
+
+
+class PlayerStatsheet(Base):
+
+    @classmethod
+    def load(cls, ids):
+        stats = database.get_player_statsheets(ids)
+        stats_dict = OrderedDict()
+        for k, v in stats.items():
+            stats_dict[k] = cls(v)
+        return stats_dict
+
+
+class TeamStatsheet(Base):
+
+    @classmethod
+    def load(cls, ids):
+        stats = database.get_team_statsheets(ids)
+        stats_dict = OrderedDict()
+        for k, v in stats.items():
+            stats_dict[k] = cls(v)
+        return stats_dict
+
+    @property
+    def player_stats(self):
+        if self._player_stats:
+            return self._player_stats
+        self._player_stats = list(PlayerStatsheet.load(self._player_stat_ids).values())
+        return self._player_stats
+
+    @player_stats.setter
+    def player_stats(self, ids):
+        self._player_stat_ids = ids
+        self._player_stats = None
+
+
+class SeasonStatsheet(Base):
+
+    @classmethod
+    def load(cls, ids):
+        stats = database.get_season_statsheets(ids)
+        stats_dict = OrderedDict()
+        for k, v in stats.items():
+            stats_dict[k] = cls(v)
+        return stats_dict
+
+    def load_by_season(cls, season):
+        """Season is 1 indexed."""
+        season = Season.load(season)
+        return season.stats
+
+    @property
+    def team_stats(self):
+        if self._team_stats:
+            return self._team_stats
+        self._team_stats = list(TeamStatsheet.load(self._team_stat_ids).values())
+        return self._team_stats
+
+    @team_stats.setter
+    def team_stats(self, value):
+        self._team_stats = None
+        self._team_stat_ids = value
+
+
+class GameStatsheet(Base):
+
+    @classmethod
+    def load(cls, ids):
+        stats = database.get_game_statsheets(ids)
+        stats_dict = OrderedDict()
+        for k, v in stats.items():
+            stats_dict[k] = cls(v)
+        return stats_dict
+
+    @classmethod
+    def load_by_day(cls, season, day):
+        games = Game.load_by_day(season, day)
+        return {k: g.statsheet for k, g in games.items()}
+
+    def team_stats(self):
+        if getattr(self, '_team_stats', None):
+            return self._team_stats
+        self._team_stats = TeamStatsheet.load([
+            self._home_team_stats_id,
+            self._away_team_stats_id,
+        ])
+        return self._team_stats
+
+    @property
+    def away_team_stats(self):
+        return self.team_stats()[self._away_team_stats_id]
+
+    @away_team_stats.setter
+    def away_team_stats(self, value):
+        self._away_team_stats_id = value
+        self._team_stats = None
+
+    @property
+    def home_team_stats(self):
+        return self.team_stats()[self._home_team_stats_id]
+
+    @home_team_stats.setter
+    def home_team_stats(self, value):
+        self._home_team_stats_id = value
+        self._team_stats = None
