@@ -1081,13 +1081,14 @@ class Tiebreaker(Base):
 
 
 class Idol(Base):
+    _player = None
 
     @classmethod
     def load(cls):
         idols = database.get_idols()
         idols_dict = OrderedDict()
         for idol in idols:
-            idols_dict[idol['id']] = cls(idol)
+            idols_dict[idol['playerId']] = cls(idol)
         return idols_dict
 
     @property
