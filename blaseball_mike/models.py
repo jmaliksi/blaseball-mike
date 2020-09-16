@@ -1081,7 +1081,6 @@ class Tiebreaker(Base):
 
 
 class Idol(Base):
-    _player = None
 
     @classmethod
     def load(cls):
@@ -1093,7 +1092,7 @@ class Idol(Base):
 
     @property
     def player(self):
-        if self._player:
+        if getattr(self, '_player', None):
             return self._player
         self._player = Player.load_one(self.player_id)
         return self._player
