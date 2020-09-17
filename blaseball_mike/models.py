@@ -7,7 +7,7 @@ import re
 
 from dateutil.parser import parse
 
-from blaseball_mike import database, tables
+from blaseball_mike import database, reference, tables
 
 
 
@@ -100,6 +100,16 @@ class Player(Base):
         Load single player.
         """
         return cls.load(id_).get(id_)
+
+    @classmethod
+    def find_by_name(cls, name):
+        """
+        Try to find the player by their name (case sensitive) or return None.
+        """
+        ids = reference.get_player_ids_by_name(name)
+        if not ids:
+            return None
+        return cls.load_one(ids[0])
 
     @property
     def batting_rating(self):
