@@ -81,9 +81,12 @@ class Item:
         "FIREPROOF": ("Fireproof Jacket", "FIREPROOF"),
         "HEADPHONES": ("Noise-Cancelling Headphones", "SOUNDPROOF"),
         "SHRINK_RAY": ("Shrink Ray", None),
-        "GRAVITY_BOOTS": ("Gravity Boots", None),
+        "GRAVITY_BOOTS": ("Gravity Boots", "GRAVITY"),
         "BIRDSONG": ("Birdsong", None),
-        "NIGHT_VISION_GOGGLES": ("Night Vision Goggles", None)
+        "NIGHT_VISION_GOGGLES": ("Night Vision Goggles", None),
+        "SAWED_OFF_BAT": ("The Iffey Jr.", "FIRE_PROTECTOR"),
+        "INKY_BLAGONBALL": ("The 2-Blood Blagonball", None),
+        "SCORPLERS_JACKET": ("Scorpler's Jacket", "FIREPROOF")
     }
 
     def __init__(self, value):
@@ -124,10 +127,20 @@ class Attribute:
         "PARTY_TIME": ("Party Time", "This team is mathematically eliminated from the Postseason, and will occasionally receive permanent stats boost in their games."),
         "LIFE_OF_PARTY": ("Life of the Party", "This team gets 10% more from their Party Time stat boosts."),
         "DEBT": ("Debted", "This player must fulfill a Debt."),
-        "SPICY": ("Spicy", "Spicy players can catch fire."),
+        "SPICY": ("Spicy", "Spicy batters will be Red Hot when they get three consecutive hits."),
+        "HEATING_UP": ("Heating Up...", "This batter needs one more consecutive hit to enter Fire mode. This mod will disappear if the batter gets out."),
+        "ON_FIRE": ("Red Hot!", "Red Hot! This player's batting is greatly boosted. This mod will disappear if the batter gets out."),
         "HONEY_ROASTED": ("Honey Roasted", "This player has been Honey-Roasted."),
         "FIRST_BORN": ("First Born", "This player was the first born from the New Field of Eggs."),
-        "SUPERALLERGIC": ("Superallergic", "This player is Superallergic")
+        "SUPERALLERGIC": ("Superallergic", "This player is Superallergic"),
+        "EXTRA_BASE": ("Fifth Base", "This team must run five bases instead of four in order to score."),
+        "BLESS_OFF": ("Bless Off", "This team cannot win any Blessings in the upcoming Election."),
+        "NON_IDOLIZED": ("Idol Immune", "Idol Immune players cannot be Idolized by Fans."),
+        "GRAVITY": ("Gravity", "This player cannot be affected by Reverb."),
+        "ELECTRIC": ("Electric", "Electric teams have a chance of zapping away Strikes."),
+        "DOUBLE_PAYOUTS": ("Super Idol", "This player will earn Fans double the rewards from all Idol Pendants."),
+        "FIRE_PROTECTOR": ("Fire Protector", "This player will protect their team from incinerations."),
+        "FLICKERING": ("Flickering","This player is Flickering.")
     }
 
     def __init__(self, value):
