@@ -210,7 +210,7 @@ class Player(Base):
 
     @property
     def perm_attr(self):
-        return [tables.Attribute(attr) for attr in self._perm_attr]
+        return [tables.Modification(attr) for attr in self._perm_attr]
 
     @perm_attr.setter
     def perm_attr(self, value):
@@ -218,7 +218,7 @@ class Player(Base):
 
     @property
     def seas_attr(self):
-        return [tables.Attribute(attr) for attr in self._seas_attr]
+        return [tables.Modification(attr) for attr in self._seas_attr]
 
     @seas_attr.setter
     def seas_attr(self, value):
@@ -226,7 +226,7 @@ class Player(Base):
 
     @property
     def week_attr(self):
-        return [tables.Attribute(attr) for attr in self._week_attr]
+        return [tables.Modification(attr) for attr in self._week_attr]
 
     @week_attr.setter
     def week_attr(self, value):
@@ -234,7 +234,7 @@ class Player(Base):
 
     @property
     def game_attr(self):
-        return [tables.Attribute(attr) for attr in self._game_attr]
+        return [tables.Modification(attr) for attr in self._game_attr]
 
     @game_attr.setter
     def game_attr(self, value):
@@ -441,7 +441,7 @@ class Team(Base):
 
     @property
     def perm_attr(self):
-        return [tables.Attribute(attr) for attr in self._perm_attr]
+        return [tables.Modification(attr) for attr in self._perm_attr]
 
     @perm_attr.setter
     def perm_attr(self, value):
@@ -449,7 +449,7 @@ class Team(Base):
 
     @property
     def seas_attr(self):
-        return [tables.Attribute(attr) for attr in self._seas_attr]
+        return [tables.Modification(attr) for attr in self._seas_attr]
 
     @seas_attr.setter
     def seas_attr(self, value):
@@ -457,7 +457,7 @@ class Team(Base):
 
     @property
     def week_attr(self):
-        return [tables.Attribute(attr) for attr in self._week_attr]
+        return [tables.Modification(attr) for attr in self._week_attr]
 
     @week_attr.setter
     def week_attr(self, value):
@@ -465,7 +465,7 @@ class Team(Base):
 
     @property
     def game_attr(self):
-        return [tables.Attribute(attr) for attr in self._game_attr]
+        return [tables.Modification(attr) for attr in self._game_attr]
 
     @game_attr.setter
     def game_attr(self, value):
