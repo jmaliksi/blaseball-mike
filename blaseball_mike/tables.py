@@ -119,6 +119,7 @@ class Modification(Enum):
     DOUBLE_PAYOUTS = "DOUBLE_PAYOUTS", "Super Idol", \
                      "This player will earn Fans double the rewards from all Idol Pendants."
     FIRE_PROTECTOR = "FIRE_PROTECTOR", "Fire Protector", "This player will protect their team from incinerations."
+    RECEIVER = "RECEIVER", "Receiver", "This player is a Receiver."
     FLICKERING = "FLICKERING", "Flickering", "This player is Flickering."
 
     def __new__(cls, keycode, text, desc):
