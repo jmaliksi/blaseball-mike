@@ -96,13 +96,16 @@ class Modification(Enum):
                 "In the Blood Bath each season, this team will gain or lose Stars depending on how low or high they finish in their division."
     BLOOD_CHAOS = "BLOOD_CHAOS", "Blood Chaos", \
                   "In the Blood Bath each season, each player on this team will gain or lose a random amount of Stars."
-    RETURNED = "RETURNED", "Returned", "This player has Returned from the void. At the end of each season, this player has a chance of being called back to the Void."
+    RETURNED = "RETURNED", "Returned",\
+               "This player has Returned from the void. At the end of each season, this player has a chance of being called back to the Void."
     INWARD = "INWARD", "Inward", "This player has turned Inward."
     MARKED = "MARKED", "Unstable", "Unstable players have a much higher chance of being incinerated in a Solar Eclipse."
     PARTY_TIME = "PARTY_TIME", "Party Time", \
                  "This team is mathematically eliminated from the Postseason, and will occasionally receive permanent stats boost in their games."
     LIFE_OF_PARTY = "LIFE_OF_PARTY", "Life of the Party", "This team gets 10% more from their Party Time stat boosts."
-    DEBT = "DEBT", "Debted", "This player must fulfill a Debt."
+    DEBT_ZERO = "DEBT_ZERO", "Debt", "This player must fulfill a Debt."
+    DEBT = "DEBT", "Refinanced Debt", "This player must fulfill a \u24d3\u24d4\u24d1\u24e3."
+    DEBT_TWO = "DEBT_TWO", "Refinanced Debt", "This player must fulfill a \u24d3\u24d4\u24d1\u24e3."
     SPICY = "SPICY", "Spicy", "Spicy batters will be Red Hot when they get three consecutive hits."
     HEATING_UP = "HEATING_UP", "Heating Up...", \
                  "This batter needs one more consecutive hit to enter Fire mode. This mod will disappear if the batter gets out."
@@ -120,7 +123,15 @@ class Modification(Enum):
                      "This player will earn Fans double the rewards from all Idol Pendants."
     FIRE_PROTECTOR = "FIRE_PROTECTOR", "Fire Protector", "This player will protect their team from incinerations."
     RECEIVER = "RECEIVER", "Receiver", "This player is a Receiver."
-    FLICKERING = "FLICKERING", "Flickering", "This player is Flickering."
+    FLICKERING = "FLICKERING", "Flickering",\
+                 "Flickering players have a much higher chance of being Feedbacked to their opponent."
+    GROWTH = "GROWTH", "Growth",\
+             "Growth teams will play better as the season goes on, up to a 5% global boost by season's end."
+    BASE_INSTINCTS = "BASE_INSTINCTS", "Base Instincts",\
+                     "Batters with Base Instincts will have a chance of heading past first base when getting walked."
+    STABLE = "STABLE", "Stable", "Stable players cannot be made Unstable."
+    AFFINITY_FOR_CROWS = "AFFINITY_FOR_CROWS", "Affinity for Crows",\
+                         "Players with Affinity for Crows will hit and pitch 50% better during Birds weather."
 
     def __new__(cls, keycode, text, desc):
         obj = object.__new__(cls)
