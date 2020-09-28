@@ -170,8 +170,11 @@ class Player(Base):
             sub_scream = []
             i = 10 ** -r
             for s in stats:
-                c = math.floor((s % i) / i * 10)
-                sub_scream.append(letters[c])
+                try:
+                    c = math.floor((s % i) / i * 10)
+                    sub_scream.append(letters[c])
+                except ZeroDivisionError:
+                    sub_scream.append("undefined")
             scream.extend(sub_scream + sub_scream + [sub_scream[0]])
 
         return ''.join(scream)
