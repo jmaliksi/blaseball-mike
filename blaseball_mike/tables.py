@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Weather(Enum):
+    INVALID = -1, "Invalid Weather"
     VOID = 0, "Void"
     SUNNY = 1, "Sunny"
     OVERCAST = 2, "Overcast"
@@ -17,6 +18,12 @@ class Weather(Enum):
     FEEDBACK = 12, "Feedback"
     REVERB = 13, "Reverb"
 
+    @classmethod
+    def _missing_(cls, value):
+        t = cls.INVALID
+        t._value_ = value
+        return t
+
     def __new__(cls, keycode, text):
         obj = object.__new__(cls)
         obj._value_ = keycode
@@ -25,6 +32,7 @@ class Weather(Enum):
 
 
 class Blood(Enum):
+    INVALID = -1, "Blood?"
     SINGLE_A = 0, "A"
     TRIPLE_A = 1, "AAA"
     DOUBLE_A = 2, "AA"
@@ -39,6 +47,12 @@ class Blood(Enum):
     PSYCHIC = 11, "Psychic"
     GRASS = 12, "Grass"
 
+    @classmethod
+    def _missing_(cls, value):
+        t = cls.INVALID
+        t._value_ = value
+        return t
+
     def __new__(cls, keycode, text):
         obj = object.__new__(cls)
         obj._value_ = keycode
@@ -47,6 +61,7 @@ class Blood(Enum):
 
 
 class Coffee(Enum):
+    INVALID = -1, "Coffee?"
     BLACK = 0, "Black"
     LIGHT_AND_SWEET = 1, "Light & Sweet"
     MACCHIATO = 2, "Macchiato"
@@ -62,6 +77,12 @@ class Coffee(Enum):
     PLENTY_OF_SUGAR = 12, "Plenty of Sugar"
     ANYTHING = 13, "Anything"
 
+    @classmethod
+    def _missing_(cls, value):
+        t = cls.INVALID
+        t._value_ = value
+        return t
+
     def __new__(cls, keycode, text):
         obj = object.__new__(cls)
         obj._value_ = keycode
@@ -70,6 +91,7 @@ class Coffee(Enum):
 
 
 class Modification(Enum):
+    INVALID = None, "????", "This Modification is unknown."
     EXTRA_STRIKE = "EXTRA_STRIKE", "The Fourth Strike", \
                    "Those with the Fourth Strike will get an extra strike in each at bat."
     SHAME_PIT = "SHAME_PIT", "Targeted Shame", \
@@ -133,6 +155,12 @@ class Modification(Enum):
     AFFINITY_FOR_CROWS = "AFFINITY_FOR_CROWS", "Affinity for Crows",\
                          "Players with Affinity for Crows will hit and pitch 50% better during Birds weather."
 
+    @classmethod
+    def _missing_(cls, value):
+        t = cls.INVALID
+        t._value_ = value
+        return t
+
     def __new__(cls, keycode, text, desc):
         obj = object.__new__(cls)
         obj._value_ = keycode
@@ -159,6 +187,12 @@ class Item(Enum):
     SAWED_OFF_BAT = "SAWED_OFF_BAT", "The Iffey Jr.", Modification.FIRE_PROTECTOR
     INKY_BLAGONBALL = "INKY_BLAGONBALL", "The 2-Blood Blagonball", None
     SCORPLERS_JACKET = "SCORPLERS_JACKET", "Scorpler's Jacket", Modification.FIREPROOF
+
+    @classmethod
+    def _missing_(cls, value):
+        t = cls.INVALID_NULL
+        t._value_ = value
+        return t
 
     def __new__(cls, keycode, text, mod):
         obj = object.__new__(cls)
