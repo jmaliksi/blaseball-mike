@@ -1214,6 +1214,10 @@ class Idol(Base):
         self._player = Player.load_one(self.player_id)
         return self._player
 
+    @player.setter
+    def player(self, value):
+        self._player = value
+
 
 class Tribute(Base):
 
@@ -1231,6 +1235,10 @@ class Tribute(Base):
             return self._player
         self._player = Player.load_one(self.player_id)
         return self._player
+
+    @player.setter
+    def player(self, value):
+        self._player = value
 
 
 class PlayerStatsheet(Base):
