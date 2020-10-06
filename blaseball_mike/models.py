@@ -1215,6 +1215,24 @@ class Idol(Base):
         return self._player
 
 
+class Tribute(Base):
+
+    @classmethod
+    def load(cls):
+        tributes = database.get_tributes()
+        tributes_dict = OrderedDict()
+        for tribute in tributes:
+            tributes_dict[tribute['playerId']] = cls(tribute)
+        return tributes_dict
+
+    @property
+    def player(self):
+        if getattr(self, '_player', None):
+            return self._player
+        self._player = Player.load_one(self.player_id)
+        return self._player
+
+
 class PlayerStatsheet(Base):
 
     @classmethod
