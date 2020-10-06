@@ -32,7 +32,7 @@ async def test_stream_data():
 
 def test():
     loop = asyncio.get_event_loop()
-    loop.create_task(test_stream_data())
+    loop.create_task(test_stream())
     loop.run_forever()
 
 

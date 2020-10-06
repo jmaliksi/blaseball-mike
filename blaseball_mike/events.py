@@ -25,6 +25,6 @@ async def stream_events(url='https://www.blaseball.com/events/streamData', retry
                         continue
                     payload = ujson.loads(event.data)['value']
                     yield payload
-        except (ConnectionError, TimeoutError, ClientPayloadError, futures.TimeoutError):
+        except (ConnectionError, TimeoutError, ClientPayloadError, futures.TimeoutError, asyncio.exceptions.TimeoutError):
             await asyncio.sleep(retry_delay)
             retry_delay = min(retry_delay * 2, retry_max)
