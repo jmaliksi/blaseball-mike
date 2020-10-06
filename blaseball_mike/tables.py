@@ -125,9 +125,9 @@ class Modification(Enum):
     PARTY_TIME = "PARTY_TIME", "Party Time", \
                  "This team is mathematically eliminated from the Postseason, and will occasionally receive permanent stats boost in their games."
     LIFE_OF_PARTY = "LIFE_OF_PARTY", "Life of the Party", "This team gets 10% more from their Party Time stat boosts."
-    DEBT_ZERO = "DEBT_ZERO", "Debt", "This player must fulfill a Debt."
-    DEBT = "DEBT", "Refinanced Debt", "This player must fulfill a \u24d3\u24d4\u24d1\u24e3."
-    DEBT_TWO = "DEBT_TWO", "Refinanced Debt", "This player must fulfill a \u24d3\u24d4\u24d1\u24e3."
+    DEBT_ZERO = "DEBT_ZERO", "Debt", "This player must fulfill a debt."
+    DEBT = "DEBT", "Refinanced Debt", "This player must fulfill a debt."
+    DEBT_TWO = "DEBT_TWO", "Consolidated Debt", "This player must fulfill a debt."
     SPICY = "SPICY", "Spicy", "Spicy batters will be Red Hot when they get three consecutive hits."
     HEATING_UP = "HEATING_UP", "Heating Up...", \
                  "This batter needs one more consecutive hit to enter Fire mode. This mod will disappear if the batter gets out."
@@ -136,6 +136,7 @@ class Modification(Enum):
     HONEY_ROASTED = "HONEY_ROASTED", "Honey Roasted", "This player has been Honey-Roasted."
     FIRST_BORN = "FIRST_BORN", "First Born", "This player was the first born from the New Field of Eggs."
     SUPERALLERGIC = "SUPERALLERGIC", "Superallergic", "This player is Superallergic"
+    SUPERYUMMY = "SUPERYUMMY", "Superyummy", "This player seriously loves peanuts"
     EXTRA_BASE = "EXTRA_BASE", "Fifth Base", "This team must run five bases instead of four in order to score."
     BLESS_OFF = "BLESS_OFF", "Bless Off", "This team cannot win any Blessings in the upcoming Election."
     NON_IDOLIZED = "NON_IDOLIZED", "Idol Immune", "Idol Immune players cannot be Idolized by Fans."
@@ -154,6 +155,15 @@ class Modification(Enum):
     STABLE = "STABLE", "Stable", "Stable players cannot be made Unstable."
     AFFINITY_FOR_CROWS = "AFFINITY_FOR_CROWS", "Affinity for Crows",\
                          "Players with Affinity for Crows will hit and pitch 50% better during Birds weather."
+    SQUIDDISH = "SQUIDDISH", "Squiddish", ""
+    CRUNCHY = "CRUNCHY", "Crunchy", ""
+    REPEATING = "REPEATING", "Repeating", "In Reverb Weather, this player will Repeat."
+    SUBJECTION = "SUBJECTION", "Subjection", ""
+    LIBERATED = "LIBERATED", "Liberated", ""
+    FIRE_EATER = "FIRE_EATER", "Fire Eater", ""
+    MAGMATIC = "MAGMATIC", "Magmatic", ""
+    LOYALTY = "LOYALTY", "Loyalty", ""
+    SABOTEUR = "SABOTEUR", "Saboteur", ""
 
     @classmethod
     def _missing_(cls, value):
