@@ -155,15 +155,33 @@ class Modification(Enum):
     STABLE = "STABLE", "Stable", "Stable players cannot be made Unstable."
     AFFINITY_FOR_CROWS = "AFFINITY_FOR_CROWS", "Affinity for Crows",\
                          "Players with Affinity for Crows will hit and pitch 50% better during Birds weather."
-    SQUIDDISH = "SQUIDDISH", "Squiddish", ""
-    CRUNCHY = "CRUNCHY", "Crunchy", ""
+    CURSE_OF_CROWS = "CURSE_OF_CROWS", "Curse of Crows", "This team or player will be occasionally attacked by Birds."
+    SQUIDDISH = "SQUIDDISH", "Squiddish", "This player is a wee bit Squiddish."
+    CRUNCHY = "CRUNCHY", "Crunchy",\
+              "The Honey-Roasted players on a Crunchy team will hit 100% better and with +200% Power."
+    PITY = "PITY", "Pity", "This team is holding back, out of Pity."
+    GOD = "GOD", "God", "This team will start with 1,000x the amount of Team Spirit"
     REPEATING = "REPEATING", "Repeating", "In Reverb Weather, this player will Repeat."
-    SUBJECTION = "SUBJECTION", "Subjection", ""
-    LIBERATED = "LIBERATED", "Liberated", ""
-    FIRE_EATER = "FIRE_EATER", "Fire Eater", ""
-    MAGMATIC = "MAGMATIC", "Magmatic", ""
+    SUBJECTION = "SUBJECTION", "Subjection",\
+                 "Players leaving a team with Subjection will gain the Liberated modification."
+    LIBERATED = "LIBERATED", "Liberated", "Liberated players will be guaranteed extra bases when they get a hit."
+    FIRE_EATER = "FIRE_EATER", "Fire Eater", "Fire Eaters swallow fire instead of being incinerated."
+    MAGMATIC = "MAGMATIC", "Magmatic", "Magmatic players are guaranteed to hit a home run in their next At Bat."
     LOYALTY = "LOYALTY", "Loyalty", ""
     SABOTEUR = "SABOTEUR", "Saboteur", ""
+    CREDIT_TO_THE_TEAM = "CREDIT_TO_THE_TEAM", "Credit to the Team",\
+                         "This player will earn Fans 5x the rewards from all Idol Pendants."
+    LOVE = "LOVE", "Charm", "Players with Charm have a chance of convincing their opponents to fail."
+    PEANUT_RAIN = "PEANUT_RAIN", "Peanut Rain", "This Team weaponizes Peanut weather against their enemies."
+    FLINCH = "FLINCH", "Flinch", "Hitters with Flinch cannot swing until a strike has been thrown in the At Bat."
+    WILD = "WILD", "Mild", "Pitchers with Mild have a chance of throwing a Mild Pitch."
+    DESTRUCTION = "DESTRUCTION", "Destruction",\
+                  "Teams with Destruction will add 5 Curses to their Opponent when defeating them in battle."
+    SIPHON = "SIPHON", "Siphon", "Siphons will steal blood more often in Blooddrain and use it in more ways."
+    FLIICKERRRIIING = "FLIICKERRRIIING", "Fliickerrriiing",\
+                      "Fliickerrriiing players have a much much higher chance of being Feedbacked to their opponent."
+    FRIEND_OF_CROWS = "FRIEND_OF_CROWS", "Friend of Crows",\
+                      "In Birds weather, pitchers with Friend of Crows will encourage the Birds to attack hitters."
 
     @classmethod
     def _missing_(cls, value):
