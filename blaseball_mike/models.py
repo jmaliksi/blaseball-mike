@@ -392,6 +392,12 @@ class Player(Base):
             elif r_key in original_json:
                 original_json[r_key] = random.uniform(0.01, 0.99)
 
+        # Clear database-provided ratings to force a recalculation
+        original_json['hittingRating'] = None
+        original_json['pitchingRating'] = None
+        original_json['baserunningRating'] = None
+        original_json['defenseRating'] = None
+
         return Player(original_json)
 
 
