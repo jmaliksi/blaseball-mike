@@ -112,33 +112,65 @@ class Player(Base):
         return cls.load_one(ids[0])
 
     @property
-    def batting_rating(self):
+    def hitting_rating(self):
+        if getattr(self, "_hitting_rating", None):
+            return self._hitting_rating
         return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
                 ((self.thwackability * self.divinity) ** 0.35) *
                 ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
 
+    @hitting_rating.setter
+    def hitting_rating(self, value):
+        self._hitting_rating = value
+
+    @property
+    def batting_rating(self):
+        return self.hitting_rating
+
     @property
     def pitching_rating(self):
+        if getattr(self, "_pitching_rating", None):
+            return self._pitching_rating
         return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
                 (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
 
+    @pitching_rating.setter
+    def pitching_rating(self, value):
+        self._pitching_rating = value
+
     @property
     def baserunning_rating(self):
+        if getattr(self, "_baserunning_rating", None):
+            return self._baserunning_rating
         return ((self.laserlikeness**0.5) *
                 ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
 
+    @baserunning_rating.setter
+    def baserunning_rating(self, value):
+        self._baserunning_rating = value
+
     @property
     def defense_rating(self):
+        if getattr(self, "_defense_rating", None):
+            return self._defense_rating
         return (((self.omniscience * self.tenaciousness) ** 0.2) *
                 ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+
+    @defense_rating.setter
+    def defense_rating(self, value):
+        self._defense_rating = value
 
     @staticmethod
     def _rating_to_stars(val):
         return 0.5 * (round(val * 10))
 
     @property
+    def hitting_stars(self):
+        return self._rating_to_stars(self.hitting_rating)
+
+    @property
     def batting_stars(self):
-        return self._rating_to_stars(self.batting_rating)
+        return self.hitting_stars
 
     @property
     def pitching_stars(self):
