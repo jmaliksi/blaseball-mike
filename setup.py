@@ -5,6 +5,13 @@ with open('README.md', 'r') as f:
     long_desc = f.read()
 
 
+install_requires = [
+    'aiohttp',
+    'aiohttp-sse-client',
+    'requests',
+    'ujson'
+    ]
+
 setuptools.setup(
     name='blaseball-mike',
     version='3.1.2',
@@ -15,5 +22,6 @@ setuptools.setup(
     long_description=long_desc,
     long_description_content_type='text/markdown',
     packages=setuptools.find_packages(),
+    install_requires=install_requires,
     python_requires="~=3.6",
 )
