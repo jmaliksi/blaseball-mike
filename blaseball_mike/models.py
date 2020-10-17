@@ -885,6 +885,10 @@ class Game(Base):
         self._statsheet_id = value
 
 
+class Fight(Game):
+    pass  # will probalby need this eventually.
+
+
 class DecreeResult(Base):
 
     @classmethod

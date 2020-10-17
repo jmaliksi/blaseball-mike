@@ -5,6 +5,7 @@ from blaseball_mike.models import (
     Base,
     Division,
     Game,
+    Fight,
     League,
     Season,
     Subleague,
@@ -18,6 +19,7 @@ class StreamData(Base):
         self.games = StreamGames(data.get('games', {}), self)
         self.leagues = StreamLeagues(data.get('leagues', {}), self)
         self.temporal = data.get('temporal', {})
+        self.fights = data.get('fights', {})
 
 
 class StreamComponent(Base):
@@ -93,3 +95,10 @@ class Schedule(StreamComponent):
         self._parent = parent
         self.games = {g['id']: Game(g) for g in data}
         self.fields = [g['id'] for g in data]
+
+
+class Fights(StreamComponent):
+
+    def __init__(self, data, parent):
+        self._parent = parent
+        self.boss_fights = {g['id']: Fight(g) for g in data.get('bossFights', [])}
