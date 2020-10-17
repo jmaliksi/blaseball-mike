@@ -19,7 +19,7 @@ class StreamData(Base):
         self.games = StreamGames(data.get('games', {}), self)
         self.leagues = StreamLeagues(data.get('leagues', {}), self)
         self.temporal = data.get('temporal', {})
-        self.fights = data.get('fights', {})
+        self.fights = Fights(data.get('fights', {}), self)
 
 
 class StreamComponent(Base):
