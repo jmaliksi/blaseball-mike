@@ -9,12 +9,13 @@ install_requires = [
     'aiohttp',
     'aiohttp-sse-client',
     'requests',
-    'ujson'
+    'ujson',
+    'requests-cache'
     ]
 
 setuptools.setup(
     name='blaseball-mike',
-    version='3.2.1',
+    version='3.3.0',
     author='Joe Maliksi',
     author_email='joe.maliksi@gmail.com',
     url='https://github.com/jmaliksi/blaseball-mike',
@@ -23,5 +24,5 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     packages=setuptools.find_packages(),
     install_requires=install_requires,
-    python_requires="~=3.6",
+    python_requires="~=3.8",
 )
