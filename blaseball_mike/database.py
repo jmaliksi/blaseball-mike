@@ -6,6 +6,7 @@ import requests
 
 
 BASE_URL = 'https://www.blaseball.com/database'
+BASE_GITHUB = 'https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data'
 
 
 def get_global_events():
@@ -188,4 +189,19 @@ def get_tributes():
 
 def get_simulation_data():
     res = requests.get(f'{BASE_URL}/simulationData')
+    return res.json()
+
+
+def get_attributes():
+    res = requests.get(f'{BASE_GITHUB}/attributes.json')
+    return res.json()
+
+
+def get_items():
+    res = requests.get(f'{BASE_GITHUB}/items.json')
+    return res.json()
+
+
+def get_weather():
+    res = requests.get(f'{BASE_GITHUB}/weather.json')
     return res.json()
