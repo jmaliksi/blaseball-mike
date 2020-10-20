@@ -961,6 +961,22 @@ class BlessingResult(Base):
         return self.bonus_id
 
 
+class TidingResult(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        event = database.get_offseason_event_results(list(ids))
+        return {
+            id_: cls(event) for (id_, event) in event.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
+
+EventResult = TidingResult
+
+
 class ElectionResult(Base):
 
     @classmethod
@@ -1001,6 +1017,26 @@ class ElectionResult(Base):
     def decree_results(self, value):
         self._decree_results = None
         self._decree_results_ids = value
+
+    @property
+    def event_results(self):
+        if self._event_results:
+            return self._event_results
+        if not self._event_results_ids:
+            return None
+        events = TidingResult.load(*self._event_results_ids)
+        self._event_results = [events.get(id_) for id_ in self._event_results_ids]
+        return self._event_results
+
+    @event_results.setter
+    def event_results(self, value):
+        self._event_results = None
+        self._event_results_ids = value
+
+    # tiding_results is an alias to event_results
+    @property
+    def tiding_results(self):
+        return self.event_results
 
 OffseasonResult = ElectionResult
 

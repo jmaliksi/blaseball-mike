@@ -123,6 +123,14 @@ def get_offseason_decree_results(id_):
     return {g['id']: g for g in res.json()}
 
 
+def get_offseason_event_results(id_):
+    if isinstance(id_, list):
+        id_ = ','.join(id_)
+    s = requests_cache.CachedSession(backend="memory",expire_after=5)
+    res = s.get(f'{BASE_URL}/eventResults?ids={id_}')
+    return {g['id']: g for g in res.json()}
+
+
 def get_playoff_details(season):
     """
     Season will be 1 indexed.
