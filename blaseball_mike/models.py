@@ -512,6 +512,14 @@ class Team(Base):
     def game_attr(self, value):
         self._game_attr = value
 
+    @property
+    def card(self):
+        return tables.Tarot(self._card)
+
+    @card.setter
+    def card(self, value):
+        self._card = value
+
 
 class Division(Base):
 
