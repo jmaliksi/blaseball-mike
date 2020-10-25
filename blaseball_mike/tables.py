@@ -4,7 +4,7 @@ from enum import Enum
 class Weather(Enum):
     INVALID = -1, "Invalid Weather"
     VOID = 0, "Void"
-    SUNNY = 1, "Sunny"
+    SUNNY = 1, "Sun 2"
     OVERCAST = 2, "Overcast"
     RAINY = 3, "Rainy"
     SANDSTORM = 4, "Sandstorm"
@@ -17,6 +17,7 @@ class Weather(Enum):
     BIRDS = 11, "Birds"
     FEEDBACK = 12, "Feedback"
     REVERB = 13, "Reverb"
+    BLACK_HOLE = 14, "Black Hole"
 
     @classmethod
     def _missing_(cls, value):
@@ -167,8 +168,8 @@ class Modification(Enum):
     LIBERATED = "LIBERATED", "Liberated", "Liberated players will be guaranteed extra bases when they get a hit."
     FIRE_EATER = "FIRE_EATER", "Fire Eater", "Fire Eaters swallow fire instead of being incinerated."
     MAGMATIC = "MAGMATIC", "Magmatic", "Magmatic players are guaranteed to hit a home run in their next At Bat."
-    LOYALTY = "LOYALTY", "Loyalty", ""
-    SABOTEUR = "SABOTEUR", "Saboteur", ""
+    LOYALTY = "LOYALTY", "Loyalty", "Players leaving a team with Loyalty will gain the Saboteur modification."
+    SABOTEUR = "SABOTEUR", "Saboteur", "A Saboteur has a chance of intentionally failing."
     CREDIT_TO_THE_TEAM = "CREDIT_TO_THE_TEAM", "Credit to the Team",\
                          "This player will earn Fans 5x the rewards from all Idol Pendants."
     LOVE = "LOVE", "Charm", "Players with Charm have a chance of convincing their opponents to fail."
@@ -176,12 +177,34 @@ class Modification(Enum):
     FLINCH = "FLINCH", "Flinch", "Hitters with Flinch cannot swing until a strike has been thrown in the At Bat."
     WILD = "WILD", "Mild", "Pitchers with Mild have a chance of throwing a Mild Pitch."
     DESTRUCTION = "DESTRUCTION", "Destruction",\
-                  "Teams with Destruction will add 5 Curses to their Opponent when defeating them in battle."
+                  "Teams with Destruction will add a bunch of Curses to their Opponent when defeating them in battle."
     SIPHON = "SIPHON", "Siphon", "Siphons will steal blood more often in Blooddrain and use it in more ways."
     FLIICKERRRIIING = "FLIICKERRRIIING", "Fliickerrriiing",\
-                      "Fliickerrriiing players have a much much higher chance of being Feedbacked to their opponent."
+                      "Fliickerrriiing players are Flickering a lot."
     FRIEND_OF_CROWS = "FRIEND_OF_CROWS", "Friend of Crows",\
                       "In Birds weather, pitchers with Friend of Crows will encourage the Birds to attack hitters."
+    BLASERUNNING = "BLASERUNNING", "Blaserunning",\
+                   "Blaserunners will score .2 Runs for their Team whenever they steal a base."
+    WALK_IN_THE_PARK = "WALK_IN_THE_PARK", "Walk in the Park",\
+                       "Those with Walk in the Park will walk to first base on one less Ball."
+    BIRD_SEED = "BIRD_SEED", "Bird Seed",\
+                "Birds like to eat Bird Seed. They'll peck those with Bird Seed out of peanut shells more often. Because they like to eat Bird Seed."
+    HAUNTED = "HAUNTED", "Haunted", "Haunted players will occasionally be Inhabited."
+    TRAVELING = "TRAVELING", "Traveling", "Traveling teams will play 5% better in Away games."
+    SEALANT = "SEALANT", "Sealant", "Players with Sealant cannot have blood drained in Blooddrain."
+    O_NO = "O_NO", "0 No", "Players with 0 No are good"
+    FAIRNESS = "FAIRNESS", "Total Fairness",\
+               "Each team will win only one Blessing, and will be Happy with what they get."
+    ESCAPE = "ESCAPE", "Pending", "The players on this Team are Pending..."
+    UNFLAMED = "UNFLAMED", "Chaotic", "The Unstable players on a Chaotic team will hit 100% better."
+    TRIBUTE = "TRIBUTE", "Tribute",\
+              "When Hall of Flame players join this team, they'll add their Tribute as Team Spirit."
+    SQUIDDEST = "SQUIDDEST", "Squiddest",\
+                "This Team is the Squiddest. When a player joins the Team, they'll become Squiddish."
+    CONTAINMENT = "CONTAINMENT", "Containment",\
+                  "When an Unstable player on this team is incinerated, the Instability cannot chain to their opponent."
+    RETIRED = "RETIRED", "Released", ""
+    RESTING = "RESTING", "Resting", ""
 
     @classmethod
     def _missing_(cls, value):
@@ -215,6 +238,7 @@ class Item(Enum):
     SAWED_OFF_BAT = "SAWED_OFF_BAT", "The Iffey Jr.", Modification.FIRE_PROTECTOR
     INKY_BLAGONBALL = "INKY_BLAGONBALL", "The 2-Blood Blagonball", None
     SCORPLERS_JACKET = "SCORPLERS_JACKET", "Scorpler's Jacket", Modification.FIREPROOF
+    AN_ACTUAL_AIRPLANE = "AN_ACTUAL_AIRPLANE", "An Actual Airplane", Modification.BLASERUNNING
 
     @classmethod
     def _missing_(cls, value):
