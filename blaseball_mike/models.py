@@ -6,8 +6,9 @@ from collections import OrderedDict
 import re
 
 from dateutil.parser import parse
+from datetime import timedelta
 
-from blaseball_mike import database, reference, tables
+from blaseball_mike import database, reference, chronicler, tables
 
 
 
@@ -25,9 +26,13 @@ class Base(abc.ABC):
     def _camel_to_snake(name):
         return Base._camel_to_snake_re.sub('_', name).lower()
 
+    @staticmethod
+    def _remove_leading_underscores(name):
+        return name.strip('_')
+
     def json(self):
         return {
-            f: getattr(self, self._camel_to_snake(f)) for f in self.fields
+            f: getattr(self, self._remove_leading_underscores(self._camel_to_snake(f))) for f in self.fields
         }
 
 
@@ -100,6 +105,14 @@ class Player(Base):
         Load single player.
         """
         return cls.load(id_).get(id_)
+
+    @classmethod
+    def load_one_at_time(cls, id_, time):
+        if isinstance(time, str):
+            time = parse(time)
+
+        players = chronicler.get_player_updates(id_, before=time, order="desc", count=1)
+        return cls(dict(players.get(id_)["data"], **{"timestamp":time}))
 
     @classmethod
     def find_by_name(cls, name):
@@ -428,12 +441,23 @@ class Team(Base):
                 return team
         return None
 
+    @classmethod
+    def load_at_time(cls, id_, time):
+        if isinstance(time, str):
+            time = parse(time)
+
+        team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
+        return cls(dict(team.get(id_)["data"], **{"timestamp": time}))
+
     @property
     def lineup(self):
         if self._lineup:
             return self._lineup
-        players = Player.load(*self._lineup_ids)
-        self._lineup = [players.get(id_) for id_ in self._lineup_ids]
+        if getattr(self, "timestamp", None):
+            self._lineup = [Player.load_one_at_time(x, self.timestamp) for x in self._lineup_ids]
+        else:
+            players = Player.load(*self._lineup_ids)
+            self._lineup = [players.get(id_) for id_ in self._lineup_ids]
         return self._lineup
 
     @lineup.setter
@@ -445,8 +469,11 @@ class Team(Base):
     def rotation(self):
         if self._rotation:
             return self._rotation
-        players = Player.load(*self._rotation_ids)
-        self._rotation = [players.get(id_) for id_ in self._rotation_ids]
+        if getattr(self, "timestamp", None):
+            self._rotation = [Player.load_one_at_time(x, self.timestamp) for x in self._rotation_ids]
+        else:
+            players = Player.load(*self._rotation_ids)
+            self._rotation = [players.get(id_) for id_ in self._rotation_ids]
         return self._rotation
 
     @rotation.setter
@@ -458,8 +485,11 @@ class Team(Base):
     def bullpen(self):
         if self._bullpen:
             return self._bullpen
-        players = Player.load(*self._bullpen_ids)
-        self._bullpen = [players.get(id_) for id_ in self._bullpen_ids]
+        if getattr(self, "timestamp", None):
+            self._bullpen = [Player.load_one_at_time(x, self.timestamp) for x in self._bullpen_ids]
+        else:
+            players = Player.load(*self._bullpen_ids)
+            self._bullpen = [players.get(id_) for id_ in self._bullpen_ids]
         return self._bullpen
 
     @bullpen.setter
@@ -471,8 +501,11 @@ class Team(Base):
     def bench(self):
         if self._bench:
             return self._bench
-        players = Player.load(*self._bench_ids)
-        self._bench = [players.get(id_) for id_ in self._bench_ids]
+        if getattr(self, "timestamp", None):
+            self._bench = [Player.load_one_at_time(x, self.timestamp) for x in self._bench_ids]
+        else:
+            players = Player.load(*self._bench_ids)
+            self._bench = [players.get(id_) for id_ in self._bench_ids]
         return self._bench
 
     @bench.setter
@@ -651,6 +684,12 @@ class Game(Base):
     def load_by_day(cls, season, day):
         return {
             id_: cls(game) for id_, game in database.get_games(season, day).items()
+        }
+
+    @classmethod
+    def load_by_season(cls, season, team_id=None, day=None):
+        return {
+            id_: cls(game["data"]) for id_, game in chronicler.get_games(team_ids=team_id, season=season, day=day).items()
         }
 
     @property
@@ -1315,11 +1354,25 @@ class Tribute(Base):
             tributes_dict[tribute['playerId']] = cls(tribute)
         return tributes_dict
 
+    @classmethod
+    def load_at_time(cls, id_, time):
+        if isinstance(time, str):
+            time = parse(time)
+
+        tributes = chronicler.get_tribute_updates(before=time, order="desc", count=1)
+        tributes_dict = OrderedDict()
+        for tribute in tributes:
+            tributes_dict[tribute['player_id']] = cls(dict(tribute.get(id_)["data"], **{"timestamp": time}))
+        return tributes_dict
+
     @property
     def player(self):
         if getattr(self, '_player', None):
             return self._player
-        self._player = Player.load_one(self.player_id)
+        if getattr(self, "timestamp", None):
+            self._player = Player.load_one_at_time(self.player_id, self.timestamp)
+        else:
+            self._player = Player.load_one(self.player_id)
         return self._player
 
     @player.setter
