@@ -2,12 +2,14 @@
 
 API Reference (out of date): https://astrid.stoplight.io/docs/sibr/reference/Chronicler.v1.yaml
 """
+import requests_cache
 import requests
 from datetime import datetime
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
 
+cached_session = requests_cache.CachedSession(backend="memory")
 
 def prepare_id(id_):
     """if id_ is string uuid, return as is, if list, format as comma separated list."""
@@ -19,11 +21,13 @@ def prepare_id(id_):
         raise ValueError(f'Incorrect ID type: {type(id_)}')
 
 
-def paged_get(url, params):
+def paged_get(url, params, session=None):
     data = []
     while(True):
-        res = requests.get(url, params=params)
-        out = res.json()
+        if not session:
+            out = requests.get(url, params=params).json()
+        else:
+            out = session.get(url, params=params).json()
         d = out.get("data", [])
         page = out.get("nextPage")
         
@@ -58,7 +62,7 @@ def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=No
     if weather:
         params["weather"] = weather
 
-    data = paged_get(f'{BASE_URL}/games', params=params)
+    data = paged_get(f'{BASE_URL}/games', params=params, session=cached_session)
     return {p['gameId']: p for p in data}
 
 
@@ -80,7 +84,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if ids:
         params["player"] = prepare_id(ids)
 
-    data = paged_get(f'{BASE_URL}/players/updates', params=params)
+    data = paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
     return {p['playerId']: p for p in data}
 
 
@@ -102,7 +106,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
     if ids:
         params["team"] = prepare_id(ids)
 
-    data = paged_get(f'{BASE_URL}/teams/updates', params=params)
+    data = paged_get(f'{BASE_URL}/teams/updates', params=params, session=cached_session)
     return {p['teamId']: p for p in data}
 
 
@@ -122,5 +126,5 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params["count"] = count
 
-    data = paged_get(f'{BASE_URL}/tributes/hourly', params=params)
+    data = paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
     return {p['timestamp']: p for p in data}
