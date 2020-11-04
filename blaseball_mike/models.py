@@ -1035,7 +1035,7 @@ class ElectionResult(Base):
         if self._bonus_results:
             return self._bonus_results
         if not self._bonus_results_ids:
-            return None
+            return []
         blessings = BlessingResult.load(*self._bonus_results_ids)
         self._bonus_results = [blessings.get(id_) for id_ in self._bonus_results_ids]
         return self._bonus_results
@@ -1055,7 +1055,7 @@ class ElectionResult(Base):
         if self._decree_results:
             return self._decree_results
         if not self._decree_results_ids:
-            return None
+            return []
         decrees = DecreeResult.load(*self._decree_results_ids)
         self._decree_results = [decrees.get(id_) for id_ in self._decree_results_ids]
         return self._decree_results
@@ -1070,7 +1070,7 @@ class ElectionResult(Base):
         if self._event_results:
             return self._event_results
         if not self._event_results_ids:
-            return None
+            return []
         events = TidingResult.load(*self._event_results_ids)
         self._event_results = [events.get(id_) for id_ in self._event_results_ids]
         return self._event_results
