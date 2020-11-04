@@ -575,7 +575,7 @@ class Division(Base):
         Name can be full name or nickname, case insensitive.
         """
         divisions = cls.load_all()
-        for division in divisions:
+        for division in divisions.values():
             if name in division.name:
                 return division
         return None
