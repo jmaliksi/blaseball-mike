@@ -198,7 +198,7 @@ def get_season_statsheets(ids):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
-    res = s.get(f'{BASE_URL}/seasonSeasonStats?ids={ids}')
+    res = s.get(f'{BASE_URL}/seasonStatsheets?ids={ids}')
     return {s['id']: s for s in res.json()}
 
 

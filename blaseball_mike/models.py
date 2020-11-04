@@ -1424,6 +1424,7 @@ class SeasonStatsheet(Base):
             stats_dict[k] = cls(v)
         return stats_dict
 
+    @classmethod
     def load_by_season(cls, season):
         """Season is 1 indexed."""
         season = Season.load(season)
