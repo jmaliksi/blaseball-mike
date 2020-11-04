@@ -24,7 +24,7 @@ class Base(abc.ABC):
 
     @staticmethod
     def _camel_to_snake(name):
-        return Base._camel_to_snake_re.sub('_', name).lower()
+        return Base._remove_leading_underscores(Base._camel_to_snake_re.sub('_', name)).lower()
 
     @staticmethod
     def _remove_leading_underscores(name):
