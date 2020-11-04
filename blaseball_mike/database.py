@@ -63,6 +63,8 @@ def get_player(id_):
     Accepts single string id_, comma separated string, or list.
     Returns a dictionary with ID as key
     """
+    if len(id_) == 0:
+        return {}
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
@@ -198,7 +200,7 @@ def get_season_statsheets(ids):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
-    res = s.get(f'{BASE_URL}/seasonSeasonStats?ids={ids}')
+    res = s.get(f'{BASE_URL}/seasonStatsheets?ids={ids}')
     return {s['id']: s for s in res.json()}
 
 

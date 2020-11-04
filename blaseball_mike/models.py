@@ -24,7 +24,7 @@ class Base(abc.ABC):
 
     @staticmethod
     def _camel_to_snake(name):
-        return Base._camel_to_snake_re.sub('_', name).lower()
+        return Base._remove_leading_underscores(Base._camel_to_snake_re.sub('_', name)).lower()
 
     @staticmethod
     def _remove_leading_underscores(name):
@@ -575,7 +575,7 @@ class Division(Base):
         Name can be full name or nickname, case insensitive.
         """
         divisions = cls.load_all()
-        for division in divisions:
+        for division in divisions.values():
             if name in division.name:
                 return division
         return None
@@ -1035,7 +1035,7 @@ class ElectionResult(Base):
         if self._bonus_results:
             return self._bonus_results
         if not self._bonus_results_ids:
-            return None
+            return []
         blessings = BlessingResult.load(*self._bonus_results_ids)
         self._bonus_results = [blessings.get(id_) for id_ in self._bonus_results_ids]
         return self._bonus_results
@@ -1055,7 +1055,7 @@ class ElectionResult(Base):
         if self._decree_results:
             return self._decree_results
         if not self._decree_results_ids:
-            return None
+            return []
         decrees = DecreeResult.load(*self._decree_results_ids)
         self._decree_results = [decrees.get(id_) for id_ in self._decree_results_ids]
         return self._decree_results
@@ -1070,7 +1070,7 @@ class ElectionResult(Base):
         if self._event_results:
             return self._event_results
         if not self._event_results_ids:
-            return None
+            return []
         events = TidingResult.load(*self._event_results_ids)
         self._event_results = [events.get(id_) for id_ in self._event_results_ids]
         return self._event_results
@@ -1424,6 +1424,7 @@ class SeasonStatsheet(Base):
             stats_dict[k] = cls(v)
         return stats_dict
 
+    @classmethod
     def load_by_season(cls, season):
         """Season is 1 indexed."""
         season = Season.load(season)
