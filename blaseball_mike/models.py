@@ -115,6 +115,14 @@ class Player(Base):
         return cls(dict(players.get(id_)["data"], **{"timestamp":time}))
 
     @classmethod
+    def load_history(cls, id_, order='desc'):
+        """
+        Returns array of Player stat changes with most recent first.
+        """
+        players = chronicler.get_player_history(id_, order=order)
+        return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
+
+    @classmethod
     def find_by_name(cls, name):
         """
         Try to find the player by their name (case sensitive) or return None.

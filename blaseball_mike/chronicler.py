@@ -88,6 +88,29 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     return {p['playerId']: p for p in data}
 
 
+def get_player_history(id_, before=None, after=None, order=None, count=None):
+    """
+    Returns list of dicts of a single player's history
+    """
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+    params = {
+        'player': id_,
+    }
+    if before:
+        params["before"] = before
+    if after:
+        params["after"] = after
+    if order:
+        params["order"] = order
+    if count:
+        params["count"] = count
+    data = paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
+    return [d for d in data]
+
+
 def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
