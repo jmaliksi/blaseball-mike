@@ -234,7 +234,7 @@ class Player(Base):
 
     @property
     def blood(self):
-        return tables.Blood(self._blood)
+        return database.get_blood(self._blood)[0]
 
     @blood.setter
     def blood(self, value):
@@ -242,7 +242,7 @@ class Player(Base):
 
     @property
     def coffee(self):
-        return tables.Coffee(self._coffee)
+        return database.get_coffee(self._coffee)[0]
 
     @coffee.setter
     def coffee(self, value):

@@ -32,65 +32,6 @@ class Weather(Enum):
         return obj
 
 
-class Blood(Enum):
-    INVALID = -1, "Blood?"
-    SINGLE_A = 0, "A"
-    TRIPLE_A = 1, "AAA"
-    DOUBLE_A = 2, "AA"
-    ACID = 3, "Acidic"
-    BASE = 4, "Basic"
-    OH = 5, "O"
-    OH_NO = 6, "O No"
-    WATER = 7, "H\u2082O"
-    ELECTRIC = 8, "Electric"
-    LOVE = 9, "Love"
-    FIRE = 10, "Fire"
-    PSYCHIC = 11, "Psychic"
-    GRASS = 12, "Grass"
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        return obj
-
-
-class Coffee(Enum):
-    INVALID = -1, "Coffee?"
-    BLACK = 0, "Black"
-    LIGHT_AND_SWEET = 1, "Light & Sweet"
-    MACCHIATO = 2, "Macchiato"
-    CREAM_AND_SUGAR = 3, "Cream & Sugar"
-    COLD_BREW = 4, "Cold Brew"
-    FLAT_WHITE = 5, "Flat White"
-    AMERICANO = 6, "Americano"
-    ESPRESSO = 7, "Coffee?"
-    FOAM = 8, "Heavy Foam"
-    LATTE = 9, "Latte"
-    DECAF = 10, "Decaf"
-    MILK_SUBSTITUTE = 11, "Milk Substitute"
-    PLENTY_OF_SUGAR = 12, "Plenty of Sugar"
-    ANYTHING = 13, "Anything"
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        return obj
-
-
 class Tarot(Enum):
     INVALID = -1, "----"
     MAGICIAN = 0, "I The Magician"

@@ -246,3 +246,19 @@ def get_weather():
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
     res = s.get(f'{BASE_GITHUB}/weather.json')
     return res.json()
+
+
+def get_blood(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    s = requests_cache.CachedSession(backend="memory",expire_after=5)
+    res = s.get(f'{BASE_URL}/blood?ids={ids}')
+    return res.json()
+
+
+def get_coffee(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    s = requests_cache.CachedSession(backend="memory",expire_after=5)
+    res = s.get(f'{BASE_URL}/coffee?ids={ids}')
+    return res.json()
