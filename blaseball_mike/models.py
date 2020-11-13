@@ -6,7 +6,6 @@ from collections import OrderedDict
 import re
 
 from dateutil.parser import parse
-from datetime import timedelta
 
 from blaseball_mike import database, reference, chronicler, tables
 
@@ -234,7 +233,7 @@ class Player(Base):
 
     @property
     def blood(self):
-        return tables.Blood(self._blood)
+        return database.get_blood(self._blood)[0]
 
     @blood.setter
     def blood(self, value):
@@ -242,7 +241,7 @@ class Player(Base):
 
     @property
     def coffee(self):
-        return tables.Coffee(self._coffee)
+        return database.get_coffee(self._coffee)[0]
 
     @coffee.setter
     def coffee(self, value):
@@ -250,7 +249,7 @@ class Player(Base):
 
     @property
     def bat(self):
-        return tables.Item(self._bat)
+        return Item.load_one(self._bat)
 
     @bat.setter
     def bat(self, value):
@@ -258,7 +257,7 @@ class Player(Base):
 
     @property
     def armor(self):
-        return tables.Item(self._armor)
+        return Item.load_one(self._armor)
 
     @armor.setter
     def armor(self, value):
@@ -266,7 +265,8 @@ class Player(Base):
 
     @property
     def perm_attr(self):
-        return [tables.Modification(attr) for attr in self._perm_attr]
+        attrs = Modification.load(*self._perm_attr)
+        return [attrs.get(attr) for attr in self._perm_attr]
 
     @perm_attr.setter
     def perm_attr(self, value):
@@ -274,7 +274,8 @@ class Player(Base):
 
     @property
     def seas_attr(self):
-        return [tables.Modification(attr) for attr in self._seas_attr]
+        attrs = Modification.load(*self._seas_attr)
+        return [attrs.get(attr) for attr in self._seas_attr]
 
     @seas_attr.setter
     def seas_attr(self, value):
@@ -282,7 +283,8 @@ class Player(Base):
 
     @property
     def week_attr(self):
-        return [tables.Modification(attr) for attr in self._week_attr]
+        attrs = Modification.load(*self._week_attr)
+        return [attrs.get(attr) for attr in self._week_attr]
 
     @week_attr.setter
     def week_attr(self, value):
@@ -290,7 +292,8 @@ class Player(Base):
 
     @property
     def game_attr(self):
-        return [tables.Modification(attr) for attr in self._game_attr]
+        attrs = Modification.load(*self._game_attr)
+        return [attrs.get(attr) for attr in self._game_attr]
 
     @game_attr.setter
     def game_attr(self, value):
@@ -1492,3 +1495,33 @@ class GameStatsheet(Base):
     def home_team_stats(self, value):
         self._home_team_stats_id = value
         self._team_stats = None
+
+
+class Modification(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        return [cls(mod) for mod in database.get_attributes(list(ids))]
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_)[0]
+
+
+class Item(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        return [cls(item) for item in database.get_items(list(ids))]
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_)[0]
+
+    @property
+    def attr(self):
+        return Modification.load_one(self._attr)
+
+    @attr.setter
+    def attr(self, value):
+        self._attr = value

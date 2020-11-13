@@ -230,19 +230,39 @@ def get_simulation_data():
     return res.json()
 
 
-def get_attributes():
+def get_attributes(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
-    res = s.get(f'{BASE_GITHUB}/attributes.json')
+    res = s.get(f'{BASE_URL}/mods?ids={ids}')
     return res.json()
 
 
-def get_items():
+def get_items(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
-    res = s.get(f'{BASE_GITHUB}/items.json')
+    res = s.get(f'{BASE_URL}/items?ids={ids}')
     return res.json()
 
 
 def get_weather():
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
     res = s.get(f'{BASE_GITHUB}/weather.json')
+    return res.json()
+
+
+def get_blood(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    s = requests_cache.CachedSession(backend="memory",expire_after=5)
+    res = s.get(f'{BASE_URL}/blood?ids={ids}')
+    return res.json()
+
+
+def get_coffee(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    s = requests_cache.CachedSession(backend="memory",expire_after=5)
+    res = s.get(f'{BASE_URL}/coffee?ids={ids}')
     return res.json()
