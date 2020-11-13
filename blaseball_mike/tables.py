@@ -66,37 +66,3 @@ class Tarot(Enum):
         obj._value_ = keycode
         obj.text = text
         return obj
-
-
-class Item(Enum):
-    INVALID_NULL = None, "None?", None
-    INVALID_EMPTY = "", "None", None
-    GUNBLADE_A = "GUNBLADE_A", "The Dial Tone", None
-    GUNBLADE_B = "GUNBLADE_B", "Vibe Check", None
-    ARM_CANNON = "ARM_CANNON", "Literal Arm Cannon", None
-    ENGLAND_MEMORABILIA = "ENGLAND_MEMORABILIA", "Bangers & Smash", None
-    MUSHROOM = "MUSHROOM", "Mushroom", None
-    GRAPPLING_HOOK = "GRAPPLING_HOOK", "Grappling Hook", None
-    FIREPROOF = "FIREPROOF", "Fireproof Jacket", "FIREPROOF"
-    HEADPHONES = "HEADPHONES", "Noise-Cancelling Headphones", "SOUNDPROOF"
-    SHRINK_RAY = "SHRINK_RAY", "Shrink Ray", None
-    GRAVITY_BOOTS = "GRAVITY_BOOTS", "Gravity Boots", "GRAVITY"
-    BIRDSONG = "BIRDSONG", "Birdsong", None
-    NIGHT_VISION_GOGGLES = "NIGHT_VISION_GOGGLES", "Night Vision Goggles", None
-    SAWED_OFF_BAT = "SAWED_OFF_BAT", "The Iffey Jr.", "FIRE_PROTECTOR"
-    INKY_BLAGONBALL = "INKY_BLAGONBALL", "The 2-Blood Blagonball", None
-    SCORPLERS_JACKET = "SCORPLERS_JACKET", "Scorpler's Jacket", "FIREPROOF"
-    AN_ACTUAL_AIRPLANE = "AN_ACTUAL_AIRPLANE", "An Actual Airplane", "BLASERUNNING"
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID_NULL
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text, mod):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        obj.modification = mod
-        return obj

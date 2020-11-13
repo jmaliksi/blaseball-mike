@@ -6,7 +6,6 @@ from collections import OrderedDict
 import re
 
 from dateutil.parser import parse
-from datetime import timedelta
 
 from blaseball_mike import database, reference, chronicler, tables
 
@@ -250,7 +249,7 @@ class Player(Base):
 
     @property
     def bat(self):
-        return tables.Item(self._bat)
+        return Item.load_one(self._bat)
 
     @bat.setter
     def bat(self, value):
@@ -258,7 +257,7 @@ class Player(Base):
 
     @property
     def armor(self):
-        return tables.Item(self._armor)
+        return Item.load_one(self._armor)
 
     @armor.setter
     def armor(self, value):
@@ -1502,11 +1501,27 @@ class Modification(Base):
 
     @classmethod
     def load(cls, *ids):
-        mods = database.get_attributes(list(ids))
-        return {
-            id_: cls(mod) for (id_, mod) in mods.items()
-        }
+        return [cls(mod) for mod in database.get_attributes(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
-        return cls.load(id_).get(id_)
+        return cls.load(id_)[0]
+
+
+class Item(Base):
+
+    @classmethod
+    def load(cls, *ids):
+        return [cls(item) for item in database.get_items(list(ids))]
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_)[0]
+
+    @property
+    def attr(self):
+        return Modification.load_one(self._attr)
+
+    @attr.setter
+    def attr(self, value):
+        self._attr = value
