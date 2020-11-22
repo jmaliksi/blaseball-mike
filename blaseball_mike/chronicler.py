@@ -41,7 +41,7 @@ def paged_get(url, params, session=None):
 
 def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None):
     params = {}
-    if season:
+    if season is not None:
         params["season"] = season - 1
     if day:
         params["day"] = day - 1
