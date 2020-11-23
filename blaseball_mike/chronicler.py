@@ -149,5 +149,4 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params["count"] = count
 
-    data = paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
-    return {p['timestamp']: p for p in data}
+    return paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)

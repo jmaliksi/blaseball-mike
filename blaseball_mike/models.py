@@ -1466,14 +1466,19 @@ class Tribute(Base):
         return tributes_dict
 
     @classmethod
-    def load_at_time(cls, id_, time):
+    def load_at_time(cls, time):
         if isinstance(time, str):
             time = parse(time)
 
         tributes = chronicler.get_tribute_updates(before=time, order="desc", count=1)
+
+        # Sort output by number of peanuts
+        tributes = tributes[0]["players"]
+        data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
+
         tributes_dict = OrderedDict()
-        for tribute in tributes:
-            tributes_dict[tribute['player_id']] = cls(dict(tribute.get(id_)["data"], **{"timestamp": time}))
+        for key, value in data.items():
+            tributes_dict[key] = cls({"player_id": key, "peanuts": value, "timestamp": time})
         return tributes_dict
 
     @property
