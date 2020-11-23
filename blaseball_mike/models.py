@@ -21,6 +21,11 @@ class Base(abc.ABC):
             self.fields.append(key)
             setattr(self, Base._from_api_conversion(key), value)
 
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.json() == other.json()
+        return NotImplemented
+
     @staticmethod
     def _camel_to_snake(name):
         # Blaseball API uses camelCase for fields, convert to the more Pyhonistic snake_case
