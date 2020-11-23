@@ -299,6 +299,44 @@ class Player(Base):
     def game_attr(self, value):
         self._game_attr = value
 
+    @property
+    def league_team_id(self):
+        if getattr(self, "_league_team", None):
+            return self._league_team
+        if not getattr(self, "_league_team_id", None):
+            return None
+        self._league_team = Team.load(self._league_team_id)
+        return self._league_team
+
+    @league_team_id.setter
+    def league_team_id(self, value):
+        self._league_team = None
+        self._league_team_id = value
+
+    @property
+    def league_team(self):
+        # alias to league_team_id
+        return self.league_team_id
+
+    @property
+    def tournament_team_id(self):
+        if getattr(self, "_tournament_team", None):
+            return self._tournament_team
+        if not getattr(self, "_tournament_team_id", None):
+            return None
+        self._tournament_team = Team.load(self._tournament_team_id)
+        return self._tournament_team
+
+    @tournament_team_id.setter
+    def tournament_team_id(self, value):
+        self._tournament_team = None
+        self._tournament_team_id = value
+
+    @property
+    def tournament_team(self):
+        # alias to tournament_team_id
+        return self.tournament_team_id
+
     def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
         """
         Return a copy of this player with adjusted stats (ie to simulate blessings)
@@ -941,6 +979,68 @@ class Game(Base):
     def statsheet(self, value):
         self._statsheet = None
         self._statsheet_id = value
+
+    @property
+    def base_runner_mods(self):
+        if getattr(self, "_base_runner_mods", None):
+            return self._base_runner_mods
+        if not getattr(self, "_base_runner_mod_ids", None):
+            return []
+        self._base_runner_mods = Modification.load(*self._base_runner_mod_ids)
+        return self._base_runner_mods
+
+    @base_runner_mods.setter
+    def base_runner_mods(self, value):
+        self._base_runner_mods = None
+        self._base_runner_mod_ids = value
+
+    @property
+    def home_pitcher_mod(self):
+        if getattr(self, "_home_pitcher_mod", None):
+            return self._home_pitcher_mod
+        self._home_pitcher_mod = Modification.load_one(getattr(self, "_home_pitcher_mod_id", None))
+        return self._home_pitcher_mod
+
+    @home_pitcher_mod.setter
+    def home_pitcher_mod(self, value):
+        self._home_pitcher_mod = None
+        self._home_pitcher_mod_id = value
+
+    @property
+    def home_batter_mod(self):
+        if getattr(self, "_home_batter_mod", None):
+            return self._home_batter_mod
+        self._home_batter_mod = Modification.load_one(getattr(self, "_home_batter_mod_id", None))
+        return self._home_batter_mod
+
+    @home_batter_mod.setter
+    def home_batter_mod(self, value):
+        self._home_batter_mod = None
+        self._home_batter_mod_id = value
+
+    @property
+    def away_pitcher_mod(self):
+        if getattr(self, "_away_pitcher_mod", None):
+            return self._away_pitcher_mod
+        self._away_pitcher_mod = Modification.load_one(getattr(self, "_away_pitcher_mod_id", None))
+        return self._away_pitcher_mod
+
+    @away_pitcher_mod.setter
+    def away_pitcher_mod(self, value):
+        self._away_pitcher_mod = None
+        self._away_pitcher_mod_id = value
+
+    @property
+    def away_batter_mod(self):
+        if getattr(self, "_away_batter_mod", None):
+            return self._away_batter_mod
+        self._away_batter_mod = Modification.load_one(getattr(self, "_away_batter_mod_id", None))
+        return self._away_batter_mod
+
+    @away_batter_mod.setter
+    def away_batter_mod(self, value):
+        self._away_batter_mod = None
+        self._away_batter_mod_id = value
 
 
 class Fight(Game):
