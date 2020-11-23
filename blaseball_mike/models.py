@@ -19,19 +19,30 @@ class Base(abc.ABC):
         self.fields = []
         for key, value in data.items():
             self.fields.append(key)
-            setattr(self, Base._camel_to_snake(key), value)
+            setattr(self, Base._from_api_conversion(key), value)
 
     @staticmethod
     def _camel_to_snake(name):
-        return Base._remove_leading_underscores(Base._camel_to_snake_re.sub('_', name)).lower()
+        # Blaseball API uses camelCase for fields, convert to the more Pyhonistic snake_case
+        return Base._camel_to_snake_re.sub('_', name).lower()
 
     @staticmethod
     def _remove_leading_underscores(name):
+        # Some fields historically have underscores before them (_id)
         return name.strip('_')
+
+    @staticmethod
+    def _from_api_conversion(name):
+        return Base._remove_leading_underscores(Base._camel_to_snake(name))
+
+    @staticmethod
+    def _custom_key_transform(name):
+        # To be implemented by child classes
+        return name
 
     def json(self):
         return {
-            f: getattr(self, self._remove_leading_underscores(self._camel_to_snake(f))) for f in self.fields
+            f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
         }
 
 
@@ -44,6 +55,16 @@ class GlobalEvent(Base):
 
 
 class SimulationData(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "league":
+            return "_league_id"
+        if name == "day":
+            return "_day"
+        if name == "season":
+            return "_season"
+        return name
 
     @classmethod
     def load(cls):
@@ -87,6 +108,24 @@ class SimulationData(Base):
 
 
 class Player(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "blood": "_blood_id",
+            "coffee": "_coffee_id",
+            "bat": "_bat_id",
+            "armor": "_armor_id",
+            "perm_attr": "_perm_attr_ids",
+            "seas_attr": "_seas_attr_ids",
+            "week_attr": "_week_attr_ids",
+            "game_attr": "_game_attr_ids",
+            "tournament_team_id": "_tournament_team_id",
+            "league_team_id": "_league_team_id",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
 
     @classmethod
     def load(cls, *ids):
@@ -501,6 +540,23 @@ class Player(Base):
 
 class Team(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "lineup": "_lineup_ids",
+            "rotation": "_rotation_ids",
+            "bench": "_bench_ids",
+            "bullpen": "_bullpen_ids",
+            "perm_attr": "_perm_attr_ids",
+            "seas_attr": "_seas_attr_ids",
+            "week_attr": "_week_attr_ids",
+            "game_attr": "_game_attr_ids",
+            "card": "_card",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
+
     @classmethod
     def load(cls, id_):
         return cls(database.get_team(id_))
@@ -667,6 +723,12 @@ class Team(Base):
 
 class Division(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "teams":
+            return "_team_ids"
+        return name
+
     @classmethod
     def load(cls, id_):
         return cls(database.get_division(id_))
@@ -709,6 +771,12 @@ class Division(Base):
 
 class Subleague(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "divisions":
+            return "_division_ids"
+        return name
+
     def __init__(self, data):
         super().__init__(data)
         self._teams = {}
@@ -739,6 +807,14 @@ class Subleague(Base):
 
 
 class League(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "subleagues":
+            return "_subleague_ids"
+        if name == "tiebreakers":
+            return "_tiebreakers_id"
+        return name
 
     def __init__(self, data):
         super().__init__(data)
@@ -786,6 +862,31 @@ class League(Base):
 
 
 class Game(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "base_runners": "_base_runner_ids",
+            "home_team": "_home_team_id",
+            "away_team": "_away_team_id",
+            "home_pitcher": "_home_pitcher_id",
+            "away_pitcher": "_away_pitcher_id",
+            "home_batter": "_home_batter_id",
+            "away_batter": "_away_batter_id",
+            "weather": "_weather",
+            "statsheet": "_statsheet_id",
+            "season": "_season",
+            "day": "_day",
+            "inning": "_inning",
+            "base_runner_mods": "_base_runner_mod_ids",
+            "home_pitcher_mod": "_home_pitcher_mod_id",
+            "home_batter_mod": "_home_batter_mod_id",
+            "away_pitcher_mod": "_away_pitcher_mod_id",
+            "away_batter_mod": "_away_batter_mod_id",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
 
     @classmethod
     def load_by_id(cls, id_):
@@ -1125,6 +1226,14 @@ class DecreeResult(Base):
 
 class BlessingResult(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "team_id":
+            return "_team_id"
+        if name == "highest_team":
+            return "_highest_team_id"
+        return name
+
     @classmethod
     def load(cls, *ids):
         blessings = database.get_offseason_bonus_results(list(ids))
@@ -1199,6 +1308,16 @@ EventResult = TidingResult
 
 class ElectionResult(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "bonus_results":
+            return "_bonus_results_ids"
+        if name == "decree_results":
+            return "_decree_results_ids"
+        if name == "event_results":
+            return "_event_results_ids"
+        return name
+
     @classmethod
     def load_by_season(cls, season):
         return cls(database.get_offseason_recap(season))
@@ -1263,6 +1382,16 @@ OffseasonResult = ElectionResult
 
 class Playoff(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "rounds":
+            return "_rounds_ids"
+        if name == "winner":
+            return "_winner_id"
+        if name == "season":
+            return "_season"
+        return name
+
     @classmethod
     def load_by_season(cls, season):
         playoff = database.get_playoff_details(season)
@@ -1304,6 +1433,16 @@ class Playoff(Base):
 
 
 class PlayoffRound(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "games":
+            return "_game_ids_ids"
+        if name == "matchups":
+            return "_matchups_ids"
+        if name == "winners":
+            return "_winners_ids"
+        return name
 
     @classmethod
     def load(cls, id_):
@@ -1370,6 +1509,14 @@ class PlayoffRound(Base):
 
 class PlayoffMatchup(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "home_team":
+            return "_home_team_id"
+        if name == "away_team":
+            return "_away_team_id"
+        return name
+
     @classmethod
     def load(cls, *ids_):
         matchups = database.get_playoff_matchups(list(ids_))
@@ -1429,6 +1576,18 @@ class Standings(Base):
 
 class Season(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "league":
+            return "_league_id"
+        if name == "standings":
+            return "_standings_id"
+        if name == "stats":
+            return "_stats_id"
+        if name == "season_number":
+            return "_season_number"
+        return name
+
     @classmethod
     def load(cls, season_number):
         season = database.get_season(season_number)
@@ -1472,6 +1631,12 @@ class Season(Base):
 
 
 class Tiebreaker(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "order":
+            return "_order_ids"
+        return name
 
     @classmethod
     def load(cls, id):
@@ -1571,6 +1736,12 @@ class PlayerStatsheet(Base):
 
 class TeamStatsheet(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "player_stats":
+            return "_player_stat_ids"
+        return name
+
     @classmethod
     def load(cls, ids):
         stats = database.get_team_statsheets(ids)
@@ -1593,6 +1764,12 @@ class TeamStatsheet(Base):
 
 
 class SeasonStatsheet(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "team_stats":
+            return "_team_stat_ids"
+        return name
 
     @classmethod
     def load(cls, ids):
@@ -1622,6 +1799,14 @@ class SeasonStatsheet(Base):
 
 
 class GameStatsheet(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "home_team_stats":
+            return "_home_team_stats_id"
+        if name == "away_team_stats":
+            return "_away_team_stats_id"
+        return name
 
     @classmethod
     def load(cls, ids):
@@ -1678,6 +1863,12 @@ class Modification(Base):
 
 
 class Item(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "attr":
+            return "_attr"
+        return name
 
     @classmethod
     def load(cls, *ids):
