@@ -111,14 +111,14 @@ class Player(Base):
             time = parse(time)
 
         players = chronicler.get_player_updates(id_, before=time, order="desc", count=1)
-        return cls(dict(players.get(id_)["data"], **{"timestamp":time}))
+        return cls(dict(players[0]["data"], timestamp=time))
 
     @classmethod
     def load_history(cls, id_, order='desc'):
         """
         Returns array of Player stat changes with most recent first.
         """
-        players = chronicler.get_player_history(id_, order=order)
+        players = chronicler.get_player_updates(ids=id_, order=order)
         return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
 
     @classmethod
@@ -496,7 +496,7 @@ class Team(Base):
             time = parse(time)
 
         team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
-        return cls(dict(team.get(id_)["data"], **{"timestamp": time}))
+        return cls(dict(team[0]["data"], timestamp=time))
 
     @property
     def lineup(self):
@@ -738,7 +738,7 @@ class Game(Base):
     @classmethod
     def load_by_season(cls, season, team_id=None, day=None):
         return {
-            id_: cls(game["data"]) for id_, game in chronicler.get_games(team_ids=team_id, season=season, day=day).items()
+            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
         }
 
     @property
