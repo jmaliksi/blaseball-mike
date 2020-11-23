@@ -233,71 +233,107 @@ class Player(Base):
 
     @property
     def blood(self):
-        return database.get_blood(self._blood)[0]
+        if getattr(self, "_blood", None):
+            return self._blood
+        self._blood = database.get_blood(getattr(self, "_blood_id", None))[0]
+        return self._blood
 
     @blood.setter
     def blood(self, value):
-        self._blood = value
+        self._blood = None
+        self._blood_id = value
 
     @property
     def coffee(self):
-        return database.get_coffee(self._coffee)[0]
+        if getattr(self, "_coffee", None):
+            return self._coffee
+        self._coffee = database.get_coffee(getattr(self, "_coffee_id", None))[0]
+        return self._coffee
 
     @coffee.setter
     def coffee(self, value):
-        self._coffee = value
+        self._coffee = None
+        self._coffee_id = value
 
     @property
     def bat(self):
-        return Item.load_one(self._bat)
+        if getattr(self, "_bat", None):
+            return self._bat
+        self._bat = Item.load_one(getattr(self, "_bat_id", None))
+        return self._bat
 
     @bat.setter
     def bat(self, value):
-        self._bat = value
+        self._bat = None
+        self._bat_id = value
 
     @property
     def armor(self):
-        return Item.load_one(self._armor)
+        if getattr(self, "_armor", None):
+            return self._armor
+        self._armor = Item.load_one(getattr(self, "_armor_id", None))
+        return self._armor
 
     @armor.setter
     def armor(self, value):
-        self._armor = value
+        self._armor = None
+        self._armor_id = value
 
     @property
     def perm_attr(self):
-        attrs = Modification.load(*self._perm_attr)
-        return [attrs.get(attr) for attr in self._perm_attr]
+        if getattr(self, "_perm_attr", None):
+            return self._perm_attr
+        if not getattr(self, "_perm_attr_ids", None):
+            return []
+        self._perm_attr = Modification.load(*self._perm_attr_ids)
+        return self._perm_attr
 
     @perm_attr.setter
     def perm_attr(self, value):
-        self._perm_attr = value
+        self._perm_attr = None
+        self._perm_attr_ids = value
 
     @property
     def seas_attr(self):
-        attrs = Modification.load(*self._seas_attr)
-        return [attrs.get(attr) for attr in self._seas_attr]
+        if getattr(self, "_seas_attr", None):
+            return self._seas_attr
+        if not getattr(self, "_seas_attr_ids", None):
+            return []
+        self._seas_attr = Modification.load(*self._seas_attr_ids)
+        return self._seas_attr
 
     @seas_attr.setter
     def seas_attr(self, value):
-        self._seas_attr = value
+        self._seas_attr = None
+        self._seas_attr_ids = value
 
     @property
     def week_attr(self):
-        attrs = Modification.load(*self._week_attr)
-        return [attrs.get(attr) for attr in self._week_attr]
+        if getattr(self, "_week_attr", None):
+            return self._week_attr
+        if not getattr(self, "_week_attr_ids", None):
+            return []
+        self._week_attr = Modification.load(*self._week_attr_ids)
+        return self._week_attr
 
     @week_attr.setter
     def week_attr(self, value):
-        self._week_attr = value
+        self._week_attr = None
+        self._week_attr_ids = value
 
     @property
     def game_attr(self):
-        attrs = Modification.load(*self._game_attr)
-        return [attrs.get(attr) for attr in self._game_attr]
+        if getattr(self, "_game_attr", None):
+            return self._game_attr
+        if not getattr(self, "_game_attr_ids", None):
+            return []
+        self._game_attr = Modification.load(*self._game_attr_ids)
+        return self._game_attr
 
     @game_attr.setter
     def game_attr(self, value):
-        self._game_attr = value
+        self._game_attr = None
+        self._game_attr_ids = value
 
     @property
     def league_team_id(self):
@@ -564,38 +600,64 @@ class Team(Base):
 
     @property
     def perm_attr(self):
-        return [tables.Modification(attr) for attr in self._perm_attr]
+        if getattr(self, "_perm_attr", None):
+            return self._perm_attr
+        if not getattr(self, "_perm_attr_ids", None):
+            return []
+        self._perm_attr = Modification.load(*self._perm_attr_ids)
+        return self._perm_attr
 
     @perm_attr.setter
     def perm_attr(self, value):
-        self._perm_attr = value
+        self._perm_attr = None
+        self._perm_attr_ids = value
 
     @property
     def seas_attr(self):
-        return [tables.Modification(attr) for attr in self._seas_attr]
+        if getattr(self, "_seas_attr", None):
+            return self._seas_attr
+        if not getattr(self, "_seas_attr_ids", None):
+            return []
+        self._seas_attr = Modification.load(*self._seas_attr_ids)
+        return self._seas_attr
 
     @seas_attr.setter
     def seas_attr(self, value):
-        self._seas_attr = value
+        self._seas_attr = None
+        self._seas_attr_ids = value
 
     @property
     def week_attr(self):
-        return [tables.Modification(attr) for attr in self._week_attr]
+        if getattr(self, "_week_attr", None):
+            return self._week_attr
+        if not getattr(self, "_week_attr_ids", None):
+            return []
+        self._week_attr = Modification.load(*self._week_attr_ids)
+        return self._week_attr
 
     @week_attr.setter
     def week_attr(self, value):
-        self._week_attr = value
+        self._week_attr = None
+        self._week_attr_ids = value
 
     @property
     def game_attr(self):
-        return [tables.Modification(attr) for attr in self._game_attr]
+        if getattr(self, "_game_attr", None):
+            return self._game_attr
+        if not getattr(self, "_game_attr_ids", None):
+            return []
+        self._game_attr = Modification.load(*self._game_attr_ids)
+        return self._game_attr
 
     @game_attr.setter
     def game_attr(self, value):
-        self._game_attr = value
+        self._game_attr = None
+        self._game_attr_ids = value
 
     @property
     def card(self):
+        if not getattr(self, "_card", None):
+            return None
         return tables.Tarot(self._card)
 
     @card.setter
