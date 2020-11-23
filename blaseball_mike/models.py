@@ -1610,6 +1610,8 @@ class Modification(Base):
 
     @classmethod
     def load_one(cls, id_):
+        if id_ in (None, "NONE", ""):
+            return None
         return cls.load(id_)[0]
 
 
@@ -1621,6 +1623,10 @@ class Item(Base):
 
     @classmethod
     def load_one(cls, id_):
+        if id_ is None:
+            return cls({"id": id_, "name": "None?", "attr": "NONE"})
+        if id_ == "":
+            return cls({"id": id_, "name": "None", "attr": "NONE"})
         return cls.load(id_)[0]
 
     @property
