@@ -82,6 +82,16 @@ def get_games(season, day):
     return {g['id']: g for g in res.json()}
 
 
+def get_tournament(tournament, day):
+    """
+    Day will be 1 indexed. Tournament is 0 indexed.
+    Returns as dictionary with game ID as key.
+    """
+    s = requests_cache.CachedSession(backend="memory", expire_after=5)
+    res = s.get(f'{BASE_URL}/games?tournament={tournament}&day={day - 1}')
+    return {g['id']: g for g in res.json()}
+
+
 def get_game_by_id(id_):
     s = requests_cache.CachedSession(backend="memory",expire_after=5)
     res = s.get(f'{BASE_URL}/gameById/{id_}')

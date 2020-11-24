@@ -904,6 +904,12 @@ class Game(Base):
         }
 
     @classmethod
+    def load_tournament_by_day(cls, tournament, day):
+        return {
+            id_: cls(game) for id_, game in database.get_tournament(tournament, day).items()
+        }
+
+    @classmethod
     def load_by_season(cls, season, team_id=None, day=None):
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
