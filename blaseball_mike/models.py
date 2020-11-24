@@ -19,19 +19,35 @@ class Base(abc.ABC):
         self.fields = []
         for key, value in data.items():
             self.fields.append(key)
-            setattr(self, Base._camel_to_snake(key), value)
+            setattr(self, Base._from_api_conversion(key), value)
+
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.json() == other.json()
+        return NotImplemented
 
     @staticmethod
     def _camel_to_snake(name):
-        return Base._remove_leading_underscores(Base._camel_to_snake_re.sub('_', name)).lower()
+        # Blaseball API uses camelCase for fields, convert to the more Pyhonistic snake_case
+        return Base._camel_to_snake_re.sub('_', name).lower()
 
     @staticmethod
     def _remove_leading_underscores(name):
+        # Some fields historically have underscores before them (_id)
         return name.strip('_')
+
+    @staticmethod
+    def _from_api_conversion(name):
+        return Base._remove_leading_underscores(Base._camel_to_snake(name))
+
+    @staticmethod
+    def _custom_key_transform(name):
+        # To be implemented by child classes
+        return name
 
     def json(self):
         return {
-            f: getattr(self, self._remove_leading_underscores(self._camel_to_snake(f))) for f in self.fields
+            f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
         }
 
 
@@ -44,6 +60,16 @@ class GlobalEvent(Base):
 
 
 class SimulationData(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "league":
+            return "_league_id"
+        if name == "day":
+            return "_day"
+        if name == "season":
+            return "_season"
+        return name
 
     @classmethod
     def load(cls):
@@ -88,6 +114,24 @@ class SimulationData(Base):
 
 class Player(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "blood": "_blood_id",
+            "coffee": "_coffee_id",
+            "bat": "_bat_id",
+            "armor": "_armor_id",
+            "perm_attr": "_perm_attr_ids",
+            "seas_attr": "_seas_attr_ids",
+            "week_attr": "_week_attr_ids",
+            "game_attr": "_game_attr_ids",
+            "tournament_team_id": "_tournament_team_id",
+            "league_team_id": "_league_team_id",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
+
     @classmethod
     def load(cls, *ids):
         """
@@ -111,14 +155,14 @@ class Player(Base):
             time = parse(time)
 
         players = chronicler.get_player_updates(id_, before=time, order="desc", count=1)
-        return cls(dict(players.get(id_)["data"], **{"timestamp":time}))
+        return cls(dict(players[0]["data"], timestamp=time))
 
     @classmethod
     def load_history(cls, id_, order='desc'):
         """
         Returns array of Player stat changes with most recent first.
         """
-        players = chronicler.get_player_history(id_, order=order)
+        players = chronicler.get_player_updates(ids=id_, order=order)
         return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
 
     @classmethod
@@ -233,71 +277,145 @@ class Player(Base):
 
     @property
     def blood(self):
-        return database.get_blood(self._blood)[0]
+        if getattr(self, "_blood", None):
+            return self._blood
+        self._blood = database.get_blood(getattr(self, "_blood_id", None))[0]
+        return self._blood
 
     @blood.setter
     def blood(self, value):
-        self._blood = value
+        self._blood = None
+        self._blood_id = value
 
     @property
     def coffee(self):
-        return database.get_coffee(self._coffee)[0]
+        if getattr(self, "_coffee", None):
+            return self._coffee
+        self._coffee = database.get_coffee(getattr(self, "_coffee_id", None))[0]
+        return self._coffee
 
     @coffee.setter
     def coffee(self, value):
-        self._coffee = value
+        self._coffee = None
+        self._coffee_id = value
 
     @property
     def bat(self):
-        return Item.load_one(self._bat)
+        if getattr(self, "_bat", None):
+            return self._bat
+        self._bat = Item.load_one(getattr(self, "_bat_id", None))
+        return self._bat
 
     @bat.setter
     def bat(self, value):
-        self._bat = value
+        self._bat = None
+        self._bat_id = value
 
     @property
     def armor(self):
-        return Item.load_one(self._armor)
+        if getattr(self, "_armor", None):
+            return self._armor
+        self._armor = Item.load_one(getattr(self, "_armor_id", None))
+        return self._armor
 
     @armor.setter
     def armor(self, value):
-        self._armor = value
+        self._armor = None
+        self._armor_id = value
 
     @property
     def perm_attr(self):
-        attrs = Modification.load(*self._perm_attr)
-        return [attrs.get(attr) for attr in self._perm_attr]
+        if getattr(self, "_perm_attr", None):
+            return self._perm_attr
+        if not getattr(self, "_perm_attr_ids", None):
+            return []
+        self._perm_attr = Modification.load(*self._perm_attr_ids)
+        return self._perm_attr
 
     @perm_attr.setter
     def perm_attr(self, value):
-        self._perm_attr = value
+        self._perm_attr = None
+        self._perm_attr_ids = value
 
     @property
     def seas_attr(self):
-        attrs = Modification.load(*self._seas_attr)
-        return [attrs.get(attr) for attr in self._seas_attr]
+        if getattr(self, "_seas_attr", None):
+            return self._seas_attr
+        if not getattr(self, "_seas_attr_ids", None):
+            return []
+        self._seas_attr = Modification.load(*self._seas_attr_ids)
+        return self._seas_attr
 
     @seas_attr.setter
     def seas_attr(self, value):
-        self._seas_attr = value
+        self._seas_attr = None
+        self._seas_attr_ids = value
 
     @property
     def week_attr(self):
-        attrs = Modification.load(*self._week_attr)
-        return [attrs.get(attr) for attr in self._week_attr]
+        if getattr(self, "_week_attr", None):
+            return self._week_attr
+        if not getattr(self, "_week_attr_ids", None):
+            return []
+        self._week_attr = Modification.load(*self._week_attr_ids)
+        return self._week_attr
 
     @week_attr.setter
     def week_attr(self, value):
-        self._week_attr = value
+        self._week_attr = None
+        self._week_attr_ids = value
 
     @property
     def game_attr(self):
-        attrs = Modification.load(*self._game_attr)
-        return [attrs.get(attr) for attr in self._game_attr]
+        if getattr(self, "_game_attr", None):
+            return self._game_attr
+        if not getattr(self, "_game_attr_ids", None):
+            return []
+        self._game_attr = Modification.load(*self._game_attr_ids)
+        return self._game_attr
 
     @game_attr.setter
     def game_attr(self, value):
-        self._game_attr = value
+        self._game_attr = None
+        self._game_attr_ids = value
+
+    @property
+    def league_team_id(self):
+        if getattr(self, "_league_team", None):
+            return self._league_team
+        if not getattr(self, "_league_team_id", None):
+            return None
+        self._league_team = Team.load(self._league_team_id)
+        return self._league_team
+
+    @league_team_id.setter
+    def league_team_id(self, value):
+        self._league_team = None
+        self._league_team_id = value
+
+    @property
+    def league_team(self):
+        # alias to league_team_id
+        return self.league_team_id
+
+    @property
+    def tournament_team_id(self):
+        if getattr(self, "_tournament_team", None):
+            return self._tournament_team
+        if not getattr(self, "_tournament_team_id", None):
+            return None
+        self._tournament_team = Team.load(self._tournament_team_id)
+        return self._tournament_team
+
+    @tournament_team_id.setter
+    def tournament_team_id(self, value):
+        self._tournament_team = None
+        self._tournament_team_id = value
+
+    @property
+    def tournament_team(self):
+        # alias to tournament_team_id
+        return self.tournament_team_id
 
     def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
         """
@@ -427,6 +545,23 @@ class Player(Base):
 
 class Team(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "lineup": "_lineup_ids",
+            "rotation": "_rotation_ids",
+            "bench": "_bench_ids",
+            "bullpen": "_bullpen_ids",
+            "perm_attr": "_perm_attr_ids",
+            "seas_attr": "_seas_attr_ids",
+            "week_attr": "_week_attr_ids",
+            "game_attr": "_game_attr_ids",
+            "card": "_card",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
+
     @classmethod
     def load(cls, id_):
         return cls(database.get_team(id_))
@@ -458,7 +593,7 @@ class Team(Base):
             time = parse(time)
 
         team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
-        return cls(dict(team.get(id_)["data"], **{"timestamp": time}))
+        return cls(dict(team[0]["data"], timestamp=time))
 
     @property
     def lineup(self):
@@ -526,38 +661,64 @@ class Team(Base):
 
     @property
     def perm_attr(self):
-        return [tables.Modification(attr) for attr in self._perm_attr]
+        if getattr(self, "_perm_attr", None):
+            return self._perm_attr
+        if not getattr(self, "_perm_attr_ids", None):
+            return []
+        self._perm_attr = Modification.load(*self._perm_attr_ids)
+        return self._perm_attr
 
     @perm_attr.setter
     def perm_attr(self, value):
-        self._perm_attr = value
+        self._perm_attr = None
+        self._perm_attr_ids = value
 
     @property
     def seas_attr(self):
-        return [tables.Modification(attr) for attr in self._seas_attr]
+        if getattr(self, "_seas_attr", None):
+            return self._seas_attr
+        if not getattr(self, "_seas_attr_ids", None):
+            return []
+        self._seas_attr = Modification.load(*self._seas_attr_ids)
+        return self._seas_attr
 
     @seas_attr.setter
     def seas_attr(self, value):
-        self._seas_attr = value
+        self._seas_attr = None
+        self._seas_attr_ids = value
 
     @property
     def week_attr(self):
-        return [tables.Modification(attr) for attr in self._week_attr]
+        if getattr(self, "_week_attr", None):
+            return self._week_attr
+        if not getattr(self, "_week_attr_ids", None):
+            return []
+        self._week_attr = Modification.load(*self._week_attr_ids)
+        return self._week_attr
 
     @week_attr.setter
     def week_attr(self, value):
-        self._week_attr = value
+        self._week_attr = None
+        self._week_attr_ids = value
 
     @property
     def game_attr(self):
-        return [tables.Modification(attr) for attr in self._game_attr]
+        if getattr(self, "_game_attr", None):
+            return self._game_attr
+        if not getattr(self, "_game_attr_ids", None):
+            return []
+        self._game_attr = Modification.load(*self._game_attr_ids)
+        return self._game_attr
 
     @game_attr.setter
     def game_attr(self, value):
-        self._game_attr = value
+        self._game_attr = None
+        self._game_attr_ids = value
 
     @property
     def card(self):
+        if not getattr(self, "_card", None):
+            return None
         return tables.Tarot(self._card)
 
     @card.setter
@@ -566,6 +727,12 @@ class Team(Base):
 
 
 class Division(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "teams":
+            return "_team_ids"
+        return name
 
     @classmethod
     def load(cls, id_):
@@ -609,6 +776,12 @@ class Division(Base):
 
 class Subleague(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "divisions":
+            return "_division_ids"
+        return name
+
     def __init__(self, data):
         super().__init__(data)
         self._teams = {}
@@ -639,6 +812,14 @@ class Subleague(Base):
 
 
 class League(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "subleagues":
+            return "_subleague_ids"
+        if name == "tiebreakers":
+            return "_tiebreakers_id"
+        return name
 
     def __init__(self, data):
         super().__init__(data)
@@ -687,6 +868,31 @@ class League(Base):
 
 class Game(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        lookup_dict = {
+            "base_runners": "_base_runner_ids",
+            "home_team": "_home_team_id",
+            "away_team": "_away_team_id",
+            "home_pitcher": "_home_pitcher_id",
+            "away_pitcher": "_away_pitcher_id",
+            "home_batter": "_home_batter_id",
+            "away_batter": "_away_batter_id",
+            "weather": "_weather",
+            "statsheet": "_statsheet_id",
+            "season": "_season",
+            "day": "_day",
+            "inning": "_inning",
+            "base_runner_mods": "_base_runner_mod_ids",
+            "home_pitcher_mod": "_home_pitcher_mod_id",
+            "home_batter_mod": "_home_batter_mod_id",
+            "away_pitcher_mod": "_away_pitcher_mod_id",
+            "away_batter_mod": "_away_batter_mod_id",
+        }
+        if name in lookup_dict:
+            return lookup_dict[name]
+        return name
+
     @classmethod
     def load_by_id(cls, id_):
         return cls(database.get_game_by_id(id_))
@@ -698,9 +904,15 @@ class Game(Base):
         }
 
     @classmethod
+    def load_tournament_by_day(cls, tournament, day):
+        return {
+            id_: cls(game) for id_, game in database.get_tournament(tournament, day).items()
+        }
+
+    @classmethod
     def load_by_season(cls, season, team_id=None, day=None):
         return {
-            id_: cls(game["data"]) for id_, game in chronicler.get_games(team_ids=team_id, season=season, day=day).items()
+            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
         }
 
     @property
@@ -942,6 +1154,68 @@ class Game(Base):
         self._statsheet = None
         self._statsheet_id = value
 
+    @property
+    def base_runner_mods(self):
+        if getattr(self, "_base_runner_mods", None):
+            return self._base_runner_mods
+        if not getattr(self, "_base_runner_mod_ids", None):
+            return []
+        self._base_runner_mods = Modification.load(*self._base_runner_mod_ids)
+        return self._base_runner_mods
+
+    @base_runner_mods.setter
+    def base_runner_mods(self, value):
+        self._base_runner_mods = None
+        self._base_runner_mod_ids = value
+
+    @property
+    def home_pitcher_mod(self):
+        if getattr(self, "_home_pitcher_mod", None):
+            return self._home_pitcher_mod
+        self._home_pitcher_mod = Modification.load_one(getattr(self, "_home_pitcher_mod_id", None))
+        return self._home_pitcher_mod
+
+    @home_pitcher_mod.setter
+    def home_pitcher_mod(self, value):
+        self._home_pitcher_mod = None
+        self._home_pitcher_mod_id = value
+
+    @property
+    def home_batter_mod(self):
+        if getattr(self, "_home_batter_mod", None):
+            return self._home_batter_mod
+        self._home_batter_mod = Modification.load_one(getattr(self, "_home_batter_mod_id", None))
+        return self._home_batter_mod
+
+    @home_batter_mod.setter
+    def home_batter_mod(self, value):
+        self._home_batter_mod = None
+        self._home_batter_mod_id = value
+
+    @property
+    def away_pitcher_mod(self):
+        if getattr(self, "_away_pitcher_mod", None):
+            return self._away_pitcher_mod
+        self._away_pitcher_mod = Modification.load_one(getattr(self, "_away_pitcher_mod_id", None))
+        return self._away_pitcher_mod
+
+    @away_pitcher_mod.setter
+    def away_pitcher_mod(self, value):
+        self._away_pitcher_mod = None
+        self._away_pitcher_mod_id = value
+
+    @property
+    def away_batter_mod(self):
+        if getattr(self, "_away_batter_mod", None):
+            return self._away_batter_mod
+        self._away_batter_mod = Modification.load_one(getattr(self, "_away_batter_mod_id", None))
+        return self._away_batter_mod
+
+    @away_batter_mod.setter
+    def away_batter_mod(self, value):
+        self._away_batter_mod = None
+        self._away_batter_mod_id = value
+
 
 class Fight(Game):
     pass  # will probalby need this eventually.
@@ -962,6 +1236,14 @@ class DecreeResult(Base):
 
 
 class BlessingResult(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "team_id":
+            return "_team_id"
+        if name == "highest_team":
+            return "_highest_team_id"
+        return name
 
     @classmethod
     def load(cls, *ids):
@@ -1037,6 +1319,16 @@ EventResult = TidingResult
 
 class ElectionResult(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "bonus_results":
+            return "_bonus_results_ids"
+        if name == "decree_results":
+            return "_decree_results_ids"
+        if name == "event_results":
+            return "_event_results_ids"
+        return name
+
     @classmethod
     def load_by_season(cls, season):
         return cls(database.get_offseason_recap(season))
@@ -1101,6 +1393,16 @@ OffseasonResult = ElectionResult
 
 class Playoff(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "rounds":
+            return "_rounds_ids"
+        if name == "winner":
+            return "_winner_id"
+        if name == "season":
+            return "_season"
+        return name
+
     @classmethod
     def load_by_season(cls, season):
         playoff = database.get_playoff_details(season)
@@ -1142,6 +1444,16 @@ class Playoff(Base):
 
 
 class PlayoffRound(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "games":
+            return "_game_ids_ids"
+        if name == "matchups":
+            return "_matchups_ids"
+        if name == "winners":
+            return "_winners_ids"
+        return name
 
     @classmethod
     def load(cls, id_):
@@ -1208,6 +1520,14 @@ class PlayoffRound(Base):
 
 class PlayoffMatchup(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "home_team":
+            return "_home_team_id"
+        if name == "away_team":
+            return "_away_team_id"
+        return name
+
     @classmethod
     def load(cls, *ids_):
         matchups = database.get_playoff_matchups(list(ids_))
@@ -1267,6 +1587,18 @@ class Standings(Base):
 
 class Season(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "league":
+            return "_league_id"
+        if name == "standings":
+            return "_standings_id"
+        if name == "stats":
+            return "_stats_id"
+        if name == "season_number":
+            return "_season_number"
+        return name
+
     @classmethod
     def load(cls, season_number):
         season = database.get_season(season_number)
@@ -1310,6 +1642,12 @@ class Season(Base):
 
 
 class Tiebreaker(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "order":
+            return "_order_ids"
+        return name
 
     @classmethod
     def load(cls, id):
@@ -1366,14 +1704,19 @@ class Tribute(Base):
         return tributes_dict
 
     @classmethod
-    def load_at_time(cls, id_, time):
+    def load_at_time(cls, time):
         if isinstance(time, str):
             time = parse(time)
 
         tributes = chronicler.get_tribute_updates(before=time, order="desc", count=1)
+
+        # Sort output by number of peanuts
+        tributes = tributes[0]["players"]
+        data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
+
         tributes_dict = OrderedDict()
-        for tribute in tributes:
-            tributes_dict[tribute['player_id']] = cls(dict(tribute.get(id_)["data"], **{"timestamp": time}))
+        for key, value in data.items():
+            tributes_dict[key] = cls({"player_id": key, "peanuts": value, "timestamp": time})
         return tributes_dict
 
     @property
@@ -1404,6 +1747,12 @@ class PlayerStatsheet(Base):
 
 class TeamStatsheet(Base):
 
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "player_stats":
+            return "_player_stat_ids"
+        return name
+
     @classmethod
     def load(cls, ids):
         stats = database.get_team_statsheets(ids)
@@ -1426,6 +1775,12 @@ class TeamStatsheet(Base):
 
 
 class SeasonStatsheet(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "team_stats":
+            return "_team_stat_ids"
+        return name
 
     @classmethod
     def load(cls, ids):
@@ -1455,6 +1810,14 @@ class SeasonStatsheet(Base):
 
 
 class GameStatsheet(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "home_team_stats":
+            return "_home_team_stats_id"
+        if name == "away_team_stats":
+            return "_away_team_stats_id"
+        return name
 
     @classmethod
     def load(cls, ids):
@@ -1505,10 +1868,18 @@ class Modification(Base):
 
     @classmethod
     def load_one(cls, id_):
+        if id_ in (None, "NONE", ""):
+            return None
         return cls.load(id_)[0]
 
 
 class Item(Base):
+
+    @staticmethod
+    def _custom_key_transform(name):
+        if name == "attr":
+            return "_attr"
+        return name
 
     @classmethod
     def load(cls, *ids):
@@ -1516,6 +1887,10 @@ class Item(Base):
 
     @classmethod
     def load_one(cls, id_):
+        if id_ is None:
+            return cls({"id": id_, "name": "None?", "attr": "NONE"})
+        if id_ == "":
+            return cls({"id": id_, "name": "None", "attr": "NONE"})
         return cls.load(id_)[0]
 
     @property

@@ -23,7 +23,7 @@ def prepare_id(id_):
 
 def paged_get(url, params, session=None):
     data = []
-    while(True):
+    while True:
         if not session:
             out = requests.get(url, params=params).json()
         else:
@@ -39,7 +39,8 @@ def paged_get(url, params, session=None):
     return data
 
 
-def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None):
+def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None,
+              outcomes=None, order=None, count=None):
     params = {}
     if season is not None:
         params["season"] = season - 1
@@ -62,8 +63,7 @@ def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=No
     if weather:
         params["weather"] = weather
 
-    data = paged_get(f'{BASE_URL}/games', params=params, session=cached_session)
-    return {p['gameId']: p for p in data}
+    return paged_get(f'{BASE_URL}/games', params=params, session=cached_session)
 
 
 def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
@@ -84,31 +84,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if ids:
         params["player"] = prepare_id(ids)
 
-    data = paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
-    return {p['playerId']: p for p in data}
-
-
-def get_player_history(id_, before=None, after=None, order=None, count=None):
-    """
-    Returns list of dicts of a single player's history
-    """
-    if isinstance(before, datetime):
-        before = before.strftime(TIMESTAMP_FORMAT)
-    if isinstance(after, datetime):
-        after = after.strftime(TIMESTAMP_FORMAT)
-    params = {
-        'player': id_,
-    }
-    if before:
-        params["before"] = before
-    if after:
-        params["after"] = after
-    if order:
-        params["order"] = order
-    if count:
-        params["count"] = count
-    data = paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
-    return [d for d in data]
+    return paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
 
 
 def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
@@ -129,8 +105,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
     if ids:
         params["team"] = prepare_id(ids)
 
-    data = paged_get(f'{BASE_URL}/teams/updates', params=params, session=cached_session)
-    return {p['teamId']: p for p in data}
+    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=cached_session)
 
 
 def get_tribute_updates(before=None, after=None, order=None, count=None):
@@ -149,5 +124,4 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params["count"] = count
 
-    data = paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
-    return {p['timestamp']: p for p in data}
+    return paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
