@@ -39,10 +39,18 @@ def paged_get(url, params, session=None):
     return data
 
 
-def get_games(season=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None,
-              outcomes=None, order=None, count=None):
+def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
+              finished=None, outcomes=None, order=None, count=None):
+    """
+    Season & Day are 1 indexed
+    """
     params = {}
-    if season is not None:
+    if season and tournament is not None:
+        raise ValueError("Cannot set both Season and Tournament")
+
+    if tournament is not None:
+        params["tournament"] = tournament
+    if season:
         params["season"] = season - 1
     if day:
         params["day"] = day - 1

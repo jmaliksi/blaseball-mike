@@ -915,6 +915,12 @@ class Game(Base):
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
         }
 
+    @classmethod
+    def load_by_tournament(cls, tournament, team_id=None, day=None):
+        return {
+            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, tournament=tournament, day=day)
+        }
+
     @property
     def winning_team(self):
         return self.home_team if self.home_score > self.away_score else self.away_team
