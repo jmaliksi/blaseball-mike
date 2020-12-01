@@ -18,6 +18,8 @@ class Weather(Enum):
     FEEDBACK = 12, "Feedback"
     REVERB = 13, "Reverb"
     BLACK_HOLE = 14, "Black Hole"
+    COFFEE = 15, "Coffee"
+    COFFEE_2 = 16, "Coffee 2"
 
     @classmethod
     def _missing_(cls, value):
