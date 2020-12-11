@@ -8,7 +8,7 @@ with open('README.md', 'r') as f:
 install_requires = [
     'aiohttp',
     'aiohttp-sse-client',
-    'dateutil',
+    'python-dateutil',
     'requests',
     'ujson',
     'requests-cache'
