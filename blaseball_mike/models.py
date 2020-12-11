@@ -512,7 +512,7 @@ class Player(Base):
         for b_key, b_val in buffs.items():
             if b_key in ('batting_rating', 'overall_rating'):
                 original_json['tragicness'] = min(0.99, max(0.01, original_json['tragicness'] - b_val))
-                original_json['patheticism'] = min(0.99, original_json['patheticism'] - b_val)
+                original_json['patheticism'] = min(0.99, max(0.01, original_json['patheticism'] - b_val))
                 original_json['thwackability'] = max(0.01, original_json['thwackability'] + b_val)
                 original_json['divinity'] = max(0.01, original_json['divinity'] + b_val)
                 original_json['moxie'] = max(0.01, original_json['moxie'] + b_val)
@@ -952,6 +952,12 @@ class Game(Base):
     def load_by_season(cls, season, team_id=None, day=None):
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
+        }
+
+    @classmethod
+    def load_by_tournament(cls, tournament, team_id=None, day=None):
+        return {
+            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, tournament=tournament, day=day)
         }
 
     @property
