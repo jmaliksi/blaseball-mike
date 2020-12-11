@@ -28,6 +28,7 @@ def print_stlats(*players):
         'ruthlessness',
         'shakespearianism',
         'unthwackability',
+        'buoyancy',
         'cinnamon',
         'deceased',
         'peanut_allergy',

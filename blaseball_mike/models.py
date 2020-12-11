@@ -175,6 +175,45 @@ class Player(Base):
             return None
         return cls.load_one(ids[0])
 
+    @classmethod
+    def make_random(cls, name="Random Player", seed=None):
+        """
+        Generate a completely random player.
+        """
+        rng = random.Random(seed)
+        return Player({
+            'name': name,
+            'baseThirst': rng.random(),
+            'continuation': rng.random(),
+            'ground_friction': rng.random(),
+            'indulgence': rng.random(),
+            'laserlikeness': rng.random(),
+            'divinity': rng.random(),
+            'martyrdom': rng.random(),
+            'moxie': rng.random(),
+            'musclitude': rng.random(),
+            'patheticism': rng.random(),
+            'thwackability': rng.random(),
+            'tragicness': rng.random(),
+            'anticapitalism': rng.random(),
+            'chasiness': rng.random(),
+            'omniscience': rng.random(),
+            'tenaciousness': rng.random(),
+            'watchfulness': rng.random(),
+            'coldness': rng.random(),
+            'overpowerment': rng.random(),
+            'ruthlessness': rng.random(),
+            'shakespearianism': rng.random(),
+            'unthwackability': rng.random(),
+            'buoyancy': rng.random(),
+            'cinnamon': rng.random(),
+            'deceased': rng.random(),
+            'peanutAllergy': rng.random(),
+            'pressurization': rng.random(),
+            'soul': rng.random(),
+            'totalFingers': rng.random(),
+        })
+
     @property
     def hitting_rating(self):
         if getattr(self, "_hitting_rating", None):
