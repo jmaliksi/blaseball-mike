@@ -8,6 +8,7 @@ with open('README.md', 'r') as f:
 install_requires = [
     'aiohttp',
     'aiohttp-sse-client',
+    'dateutil',
     'requests',
     'ujson',
     'requests-cache'
@@ -15,7 +16,7 @@ install_requires = [
 
 setuptools.setup(
     name='blaseball-mike',
-    version='4.3.0',
+    version='4.3.1',
     author='Joe Maliksi',
     author_email='joe.maliksi@gmail.com',
     url='https://github.com/jmaliksi/blaseball-mike',
