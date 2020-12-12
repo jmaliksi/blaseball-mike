@@ -4,6 +4,7 @@ import math
 import random
 from collections import OrderedDict
 import re
+import uuid
 
 from dateutil.parser import parse
 
@@ -181,11 +182,17 @@ class Player(Base):
         Generate a completely random player.
         """
         rng = random.Random(seed)
+        if seed:
+            id = uuid.uuid3(uuid.NAMESPACE_X500, name=str(seed))
+        else:
+            id = uuid.uuid4()
+
         return Player({
             'name': name,
+            'id': str(id),
             'baseThirst': rng.random(),
             'continuation': rng.random(),
-            'ground_friction': rng.random(),
+            'groundFriction': rng.random(),
             'indulgence': rng.random(),
             'laserlikeness': rng.random(),
             'divinity': rng.random(),
@@ -205,13 +212,15 @@ class Player(Base):
             'ruthlessness': rng.random(),
             'shakespearianism': rng.random(),
             'unthwackability': rng.random(),
+            'suppression': rng.random(),
             'buoyancy': rng.random(),
             'cinnamon': rng.random(),
             'deceased': False,
             'peanutAllergy': rng.random() > .25,
             'pressurization': rng.random(),
-            'soul': rng.random(),
+            'soul': rng.randint(2, 9),
             'totalFingers': rng.randint(9, 42),
+            'fate': rng.randint(1,99),
         })
 
     @property
