@@ -207,11 +207,11 @@ class Player(Base):
             'unthwackability': rng.random(),
             'buoyancy': rng.random(),
             'cinnamon': rng.random(),
-            'deceased': rng.random(),
-            'peanutAllergy': rng.random(),
+            'deceased': False,
+            'peanutAllergy': rng.random() > .25,
             'pressurization': rng.random(),
             'soul': rng.random(),
-            'totalFingers': rng.random(),
+            'totalFingers': rng.randint(9, 42),
         })
 
     @property
