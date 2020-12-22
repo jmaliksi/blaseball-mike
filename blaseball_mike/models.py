@@ -11,6 +11,59 @@ from dateutil.parser import parse
 from blaseball_mike import database, reference, chronicler, tables
 
 
+class _LazyLoadDecorator:
+
+    def __init__(self, function, original_name, cache_name=None, default_value=None, use_default=True,
+                 key_replace_name=None):
+        """
+        Lazy Loading Class Decorator
+
+        This generates both a getter and setter for and attribute named after the attached function to allow for
+        custom processing of the data without requiring a different name for the field. When the attribute is set,
+        the value is instead saved in an attribute defined by `original_name`. This value can then be used
+        in the attached function to return a custom value without needing to lose the original.
+
+        This also includes some optional features:
+        * The computation can be cached to a separate attribute, defined by `cache_name`. This will then be used
+          if the value is requested multiple times rather than calling the function again. By default it will not cache.
+        * A default value can be returned if the variable has never been set, defined by `default_value`. If you
+          instead want this to call the attached function anyway, set `use_default` to False.
+        * A lookup dictionary (`key_replace_name`) can be generated upon the setter being called, which will map the
+          attribute name to the location of the original value. This is useful for cases where you want to map back to
+          the original value programmatically.
+        """
+        self.func = function
+        self.name = function.__name__
+        self.original_name = original_name
+        self.cache_name = cache_name
+        self.default_value = default_value
+        self.use_default = use_default
+        self.key_replace_name = key_replace_name
+
+    def __get__(self, obj, cls):
+        if self.use_default and not getattr(obj, self.original_name, None):
+            return self.default_value
+
+        if self.cache_name:
+            cache = getattr(obj, self.cache_name, None)
+            if cache:
+                return cache
+
+        value = self.func(obj)
+        if self.cache_name:
+            setattr(obj, self.cache_name, value)
+        return value
+
+    def __set__(self, obj, value):
+        setattr(obj, self.original_name, value)
+
+        if self.cache_name:
+            setattr(obj, self.cache_name, None)
+
+        if self.key_replace_name:
+            key_lookup = getattr(obj, self.key_replace_name)
+            key_lookup[self.name] = self.original_name
+            setattr(obj, self.key_replace_name, key_lookup)
 
 class Base(abc.ABC):
 
@@ -18,6 +71,7 @@ class Base(abc.ABC):
 
     def __init__(self, data):
         self.fields = []
+        self.key_transform_lookup = {}
         for key, value in data.items():
             self.fields.append(key)
             setattr(self, Base._from_api_conversion(key), value)
@@ -29,7 +83,7 @@ class Base(abc.ABC):
 
     @staticmethod
     def _camel_to_snake(name):
-        # Blaseball API uses camelCase for fields, convert to the more Pyhonistic snake_case
+        # Blaseball API uses camelCase for fields, convert to the more Pythonistic snake_case
         return Base._camel_to_snake_re.sub('_', name).lower()
 
     @staticmethod
@@ -42,8 +96,16 @@ class Base(abc.ABC):
         return Base._remove_leading_underscores(Base._camel_to_snake(name))
 
     @staticmethod
-    def _custom_key_transform(name):
-        # To be implemented by child classes
+    def lazy_load(original_name, cache_name=None, default_value=None, use_default=True,
+                 key_replace_name="key_transform_lookup"):
+        # Python requires Class Decorators with arguments to be wrapped by a function
+        def lazy_wrapper(function):
+            return _LazyLoadDecorator(function, original_name, cache_name, default_value, use_default, key_replace_name)
+        return lazy_wrapper
+
+    def _custom_key_transform(self, name):
+        if name in self.key_transform_lookup:
+            return self.key_transform_lookup[name]
         return name
 
     def json(self):
@@ -62,76 +124,28 @@ class GlobalEvent(Base):
 
 class SimulationData(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "league":
-            return "_league_id"
-        if name == "day":
-            return "_day"
-        if name == "season":
-            return "_season"
-        return name
-
     @classmethod
     def load(cls):
         return cls(database.get_simulation_data())
 
-    @property
+    @Base.lazy_load("_league_id", cache_name="_league")
     def league(self):
-        if self._league:
-            return self._league
-        self._league = League.load_by_id(self._league_id)
-        return self._league
+        return League.load_by_id(self._league_id)
 
-    @league.setter
-    def league(self, value):
-        self._league = None
-        self._league_id = value
-
-    @property
+    @Base.lazy_load("_next_election_end")
     def next_election_end(self):
-        return self._next_election_end
+        return parse(self._next_election_end)
 
-    @next_election_end.setter
-    def next_election_end(self, value):
-        self._next_election_end = parse(value)
-
-    @property
+    @Base.lazy_load("_next_phase_time")
     def next_phase_time(self):
-        return self._next_phase_time
+        return parse(self._next_phase_time)
 
-    @next_phase_time.setter
-    def next_phase_time(self, value):
-        self._next_phase_time = parse(value)
-
-    @property
+    @Base.lazy_load("_next_season_start")
     def next_season_start(self):
-        return self._next_season_start
-
-    @next_season_start.setter
-    def next_season_start(self, value):
-        self._next_season_start = parse(value)
+        return parse(self._next_season_start)
 
 
 class Player(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        lookup_dict = {
-            "blood": "_blood_id",
-            "coffee": "_coffee_id",
-            "bat": "_bat_id",
-            "armor": "_armor_id",
-            "perm_attr": "_perm_attr_ids",
-            "seas_attr": "_seas_attr_ids",
-            "week_attr": "_week_attr_ids",
-            "game_attr": "_game_attr_ids",
-            "tournament_team_id": "_tournament_team_id",
-            "league_team_id": "_league_team_id",
-        }
-        if name in lookup_dict:
-            return lookup_dict[name]
-        return name
 
     @classmethod
     def load(cls, *ids):
@@ -223,54 +237,30 @@ class Player(Base):
             'fate': rng.randint(1,99),
         })
 
-    @property
+    @Base.lazy_load("_hitting_rating", use_default=False)
     def hitting_rating(self):
-        if getattr(self, "_hitting_rating", None):
-            return self._hitting_rating
         return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
                 ((self.thwackability * self.divinity) ** 0.35) *
                 ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
-
-    @hitting_rating.setter
-    def hitting_rating(self, value):
-        self._hitting_rating = value
 
     @property
     def batting_rating(self):
         return self.hitting_rating
 
-    @property
+    @Base.lazy_load("_pitching_rating", use_default=False)
     def pitching_rating(self):
-        if getattr(self, "_pitching_rating", None):
-            return self._pitching_rating
         return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
                 (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
 
-    @pitching_rating.setter
-    def pitching_rating(self, value):
-        self._pitching_rating = value
-
-    @property
+    @Base.lazy_load("_baserunning_rating", use_default=False)
     def baserunning_rating(self):
-        if getattr(self, "_baserunning_rating", None):
-            return self._baserunning_rating
         return ((self.laserlikeness**0.5) *
                 ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
 
-    @baserunning_rating.setter
-    def baserunning_rating(self, value):
-        self._baserunning_rating = value
-
-    @property
+    @Base.lazy_load("_defense_rating", use_default=False)
     def defense_rating(self):
-        if getattr(self, "_defense_rating", None):
-            return self._defense_rating
         return (((self.omniscience * self.tenaciousness) ** 0.2) *
                 ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
-
-    @defense_rating.setter
-    def defense_rating(self, value):
-        self._defense_rating = value
 
     @staticmethod
     def _rating_to_stars(val):
@@ -300,6 +290,8 @@ class Player(Base):
         """
         Day is 1-indexed
         """
+        if not getattr(self, "pressurization", None) or not getattr(self, "cinnamon", None) or not getattr(self, "buoyancy", None):
+            return None
         return 0.5 * ((self.pressurization + self.cinnamon) *
                       math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
                       self.pressurization + self.cinnamon)
@@ -323,142 +315,50 @@ class Player(Base):
 
         return ''.join(scream)
 
-    @property
+    @Base.lazy_load("_blood_id", cache_name="_blood", use_default=False)
     def blood(self):
-        if getattr(self, "_blood", None):
-            return self._blood
-        self._blood = database.get_blood(getattr(self, "_blood_id", None))[0]
-        return self._blood
+        return database.get_blood(getattr(self, "_blood_id", None))[0]
 
-    @blood.setter
-    def blood(self, value):
-        self._blood = None
-        self._blood_id = value
-
-    @property
+    @Base.lazy_load("_coffee_id", cache_name="_coffee", use_default=False)
     def coffee(self):
-        if getattr(self, "_coffee", None):
-            return self._coffee
-        self._coffee = database.get_coffee(getattr(self, "_coffee_id", None))[0]
-        return self._coffee
+        return database.get_coffee(getattr(self, "_coffee_id", None))[0]
 
-    @coffee.setter
-    def coffee(self, value):
-        self._coffee = None
-        self._coffee_id = value
-
-    @property
+    @Base.lazy_load("_bat_id", cache_name="_bat", use_default=False)
     def bat(self):
-        if getattr(self, "_bat", None):
-            return self._bat
-        self._bat = Item.load_one(getattr(self, "_bat_id", None))
-        return self._bat
+        return Item.load_one(getattr(self, "_bat_id", None))
 
-    @bat.setter
-    def bat(self, value):
-        self._bat = None
-        self._bat_id = value
-
-    @property
+    @Base.lazy_load("_armor_id", cache_name="_armor", use_default=False)
     def armor(self):
-        if getattr(self, "_armor", None):
-            return self._armor
-        self._armor = Item.load_one(getattr(self, "_armor_id", None))
-        return self._armor
+        return Item.load_one(getattr(self, "_armor_id", None))
 
-    @armor.setter
-    def armor(self, value):
-        self._armor = None
-        self._armor_id = value
-
-    @property
+    @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
-        if getattr(self, "_perm_attr", None):
-            return self._perm_attr
-        if not getattr(self, "_perm_attr_ids", None):
-            return []
-        self._perm_attr = Modification.load(*self._perm_attr_ids)
-        return self._perm_attr
+        return Modification.load(*self._perm_attr_ids)
 
-    @perm_attr.setter
-    def perm_attr(self, value):
-        self._perm_attr = None
-        self._perm_attr_ids = value
-
-    @property
+    @Base.lazy_load("_seas_attr_ids", cache_name="_seas_attr", default_value=list())
     def seas_attr(self):
-        if getattr(self, "_seas_attr", None):
-            return self._seas_attr
-        if not getattr(self, "_seas_attr_ids", None):
-            return []
-        self._seas_attr = Modification.load(*self._seas_attr_ids)
-        return self._seas_attr
+        return Modification.load(*self._seas_attr_ids)
 
-    @seas_attr.setter
-    def seas_attr(self, value):
-        self._seas_attr = None
-        self._seas_attr_ids = value
-
-    @property
+    @Base.lazy_load("_week_attr_ids", cache_name="_week_attr", default_value=list())
     def week_attr(self):
-        if getattr(self, "_week_attr", None):
-            return self._week_attr
-        if not getattr(self, "_week_attr_ids", None):
-            return []
-        self._week_attr = Modification.load(*self._week_attr_ids)
-        return self._week_attr
+        return Modification.load(*self._week_attr_ids)
 
-    @week_attr.setter
-    def week_attr(self, value):
-        self._week_attr = None
-        self._week_attr_ids = value
-
-    @property
+    @Base.lazy_load("_game_attr_ids", cache_name="_game_attr", default_value=list())
     def game_attr(self):
-        if getattr(self, "_game_attr", None):
-            return self._game_attr
-        if not getattr(self, "_game_attr_ids", None):
-            return []
-        self._game_attr = Modification.load(*self._game_attr_ids)
-        return self._game_attr
+        return Modification.load(*self._game_attr_ids)
 
-    @game_attr.setter
-    def game_attr(self, value):
-        self._game_attr = None
-        self._game_attr_ids = value
-
-    @property
+    @Base.lazy_load("_league_team_id", cache_name="_league_team")
     def league_team_id(self):
-        if getattr(self, "_league_team", None):
-            return self._league_team
-        if not getattr(self, "_league_team_id", None):
-            return None
-        self._league_team = Team.load(self._league_team_id)
-        return self._league_team
-
-    @league_team_id.setter
-    def league_team_id(self, value):
-        self._league_team = None
-        self._league_team_id = value
+        return Team.load(self._league_team_id)
 
     @property
     def league_team(self):
         # alias to league_team_id
         return self.league_team_id
 
-    @property
+    @Base.lazy_load("_tournament_team_id", cache_name="_tournament_team")
     def tournament_team_id(self):
-        if getattr(self, "_tournament_team", None):
-            return self._tournament_team
-        if not getattr(self, "_tournament_team_id", None):
-            return None
-        self._tournament_team = Team.load(self._tournament_team_id)
-        return self._tournament_team
-
-    @tournament_team_id.setter
-    def tournament_team_id(self, value):
-        self._tournament_team = None
-        self._tournament_team_id = value
+        return Team.load(self._tournament_team_id)
 
     @property
     def tournament_team(self):
@@ -593,23 +493,6 @@ class Player(Base):
 
 class Team(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        lookup_dict = {
-            "lineup": "_lineup_ids",
-            "rotation": "_rotation_ids",
-            "bench": "_bench_ids",
-            "bullpen": "_bullpen_ids",
-            "perm_attr": "_perm_attr_ids",
-            "seas_attr": "_seas_attr_ids",
-            "week_attr": "_week_attr_ids",
-            "game_attr": "_game_attr_ids",
-            "card": "_card",
-        }
-        if name in lookup_dict:
-            return lookup_dict[name]
-        return name
-
     @classmethod
     def load(cls, id_):
         return cls(database.get_team(id_))
@@ -643,144 +526,60 @@ class Team(Base):
         team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
         return cls(dict(team[0]["data"], timestamp=time))
 
-    @property
+    @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        if self._lineup:
-            return self._lineup
         if getattr(self, "timestamp", None):
-            self._lineup = [Player.load_one_at_time(x, self.timestamp) for x in self._lineup_ids]
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._lineup_ids]
         else:
             players = Player.load(*self._lineup_ids)
-            self._lineup = [players.get(id_) for id_ in self._lineup_ids]
-        return self._lineup
+            return [players.get(id_) for id_ in self._lineup_ids]
 
-    @lineup.setter
-    def lineup(self, value):
-        self._lineup = None
-        self._lineup_ids = value
-
-    @property
+    @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        if self._rotation:
-            return self._rotation
         if getattr(self, "timestamp", None):
-            self._rotation = [Player.load_one_at_time(x, self.timestamp) for x in self._rotation_ids]
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._rotation_ids]
         else:
             players = Player.load(*self._rotation_ids)
-            self._rotation = [players.get(id_) for id_ in self._rotation_ids]
-        return self._rotation
+            return [players.get(id_) for id_ in self._rotation_ids]
 
-    @rotation.setter
-    def rotation(self, value):
-        self._rotation = None
-        self._rotation_ids = value
-
-    @property
+    @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        if self._bullpen:
-            return self._bullpen
         if getattr(self, "timestamp", None):
-            self._bullpen = [Player.load_one_at_time(x, self.timestamp) for x in self._bullpen_ids]
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._bullpen_ids]
         else:
             players = Player.load(*self._bullpen_ids)
-            self._bullpen = [players.get(id_) for id_ in self._bullpen_ids]
-        return self._bullpen
+            return [players.get(id_) for id_ in self._bullpen_ids]
 
-    @bullpen.setter
-    def bullpen(self, value):
-        self._bullpen = None
-        self._bullpen_ids = value
-
-    @property
+    @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
     def bench(self):
-        if self._bench:
-            return self._bench
         if getattr(self, "timestamp", None):
-            self._bench = [Player.load_one_at_time(x, self.timestamp) for x in self._bench_ids]
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._bench_ids]
         else:
             players = Player.load(*self._bench_ids)
-            self._bench = [players.get(id_) for id_ in self._bench_ids]
-        return self._bench
+            return [players.get(id_) for id_ in self._bench_ids]
 
-    @bench.setter
-    def bench(self, value):
-        self._bench = None
-        self._bench_ids = value
-
-    @property
+    @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
-        if getattr(self, "_perm_attr", None):
-            return self._perm_attr
-        if not getattr(self, "_perm_attr_ids", None):
-            return []
-        self._perm_attr = Modification.load(*self._perm_attr_ids)
-        return self._perm_attr
+        return Modification.load(*self._perm_attr_ids)
 
-    @perm_attr.setter
-    def perm_attr(self, value):
-        self._perm_attr = None
-        self._perm_attr_ids = value
-
-    @property
+    @Base.lazy_load("_seas_attr_ids", cache_name="_seas_attr", default_value=list())
     def seas_attr(self):
-        if getattr(self, "_seas_attr", None):
-            return self._seas_attr
-        if not getattr(self, "_seas_attr_ids", None):
-            return []
-        self._seas_attr = Modification.load(*self._seas_attr_ids)
-        return self._seas_attr
+        return Modification.load(*self._seas_attr_ids)
 
-    @seas_attr.setter
-    def seas_attr(self, value):
-        self._seas_attr = None
-        self._seas_attr_ids = value
-
-    @property
+    @Base.lazy_load("_week_attr_ids", cache_name="_week_attr", default_value=list())
     def week_attr(self):
-        if getattr(self, "_week_attr", None):
-            return self._week_attr
-        if not getattr(self, "_week_attr_ids", None):
-            return []
-        self._week_attr = Modification.load(*self._week_attr_ids)
-        return self._week_attr
+        return Modification.load(*self._week_attr_ids)
 
-    @week_attr.setter
-    def week_attr(self, value):
-        self._week_attr = None
-        self._week_attr_ids = value
-
-    @property
+    @Base.lazy_load("_game_attr_ids", cache_name="_game_attr", default_value=list())
     def game_attr(self):
-        if getattr(self, "_game_attr", None):
-            return self._game_attr
-        if not getattr(self, "_game_attr_ids", None):
-            return []
-        self._game_attr = Modification.load(*self._game_attr_ids)
-        return self._game_attr
+        return Modification.load(*self._game_attr_ids)
 
-    @game_attr.setter
-    def game_attr(self, value):
-        self._game_attr = None
-        self._game_attr_ids = value
-
-    @property
+    @Base.lazy_load("_card")
     def card(self):
-        if not getattr(self, "_card", None):
-            return None
         return tables.Tarot(self._card)
-
-    @card.setter
-    def card(self, value):
-        self._card = value
 
 
 class Division(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "teams":
-            return "_team_ids"
-        return name
 
     @classmethod
     def load(cls, id_):
@@ -806,29 +605,15 @@ class Division(Base):
                 return division
         return None
 
-    @property
+    @Base.lazy_load("_team_ids", cache_name="_teams", default_value=dict())
     def teams(self):
         """
         Comes back as dictionary keyed by team ID
         """
-        if self._teams:
-            return self._teams
-        self._teams = {id_: Team.load(id_) for id_ in self._team_ids}
-        return self._teams
-
-    @teams.setter
-    def teams(self, value):
-        self._teams = None
-        self._team_ids = value
+        return {id_: Team.load(id_) for id_ in self._team_ids}
 
 
 class Subleague(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "divisions":
-            return "_division_ids"
-        return name
 
     def __init__(self, data):
         super().__init__(data)
@@ -838,17 +623,9 @@ class Subleague(Base):
     def load(cls, id_):
         return cls(database.get_subleague(id_))
 
-    @property
+    @Base.lazy_load("_division_ids", cache_name="_divisions", default_value=dict())
     def divisions(self):
-        if self._divisions:
-            return self._divisions
-        self._divisions = {id_: Division.load(id_) for id_ in self._division_ids}
-        return self._divisions
-
-    @divisions.setter
-    def divisions(self, value):
-        self._divisions = None
-        self._division_ids = value
+        return {id_: Division.load(id_) for id_ in self._division_ids}
 
     @property
     def teams(self):
@@ -860,14 +637,6 @@ class Subleague(Base):
 
 
 class League(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "subleagues":
-            return "_subleague_ids"
-        if name == "tiebreakers":
-            return "_tiebreakers_id"
-        return name
 
     def __init__(self, data):
         super().__init__(data)
@@ -881,17 +650,9 @@ class League(Base):
     def load_by_id(cls, id_):
         return cls(database.get_league(id_))
 
-    @property
+    @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
-        if self._subleagues:
-            return self._subleagues
-        self._subleagues = {id_: Subleague.load(id_) for id_ in self._subleague_ids}
-        return self._subleagues
-
-    @subleagues.setter
-    def subleagues(self, value):
-        self._subleagues = None
-        self._subleague_ids = value
+        return {id_: Subleague.load(id_) for id_ in self._subleague_ids}
 
     @property
     def teams(self):
@@ -901,45 +662,12 @@ class League(Base):
             self._teams.update(subleague.teams)
         return self._teams
 
-    @property
+    @Base.lazy_load("_tiebreakers_id", cache_name="_tiebreaker")
     def tiebreakers(self):
-        if self._tiebreakers:
-            return self._tiebreakers
-        self._tiebreakers = Tiebreaker.load(self._tiebreakers_id)
-        return self._tiebreakers
-
-    @tiebreakers.setter
-    def tiebreakers(self, value):
-        self._tiebreakers = None
-        self._tiebreakers_id = value
+        return Tiebreaker.load(self._tiebreakers_id)
 
 
 class Game(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        lookup_dict = {
-            "base_runners": "_base_runner_ids",
-            "home_team": "_home_team_id",
-            "away_team": "_away_team_id",
-            "home_pitcher": "_home_pitcher_id",
-            "away_pitcher": "_away_pitcher_id",
-            "home_batter": "_home_batter_id",
-            "away_batter": "_away_batter_id",
-            "weather": "_weather",
-            "statsheet": "_statsheet_id",
-            "season": "_season",
-            "day": "_day",
-            "inning": "_inning",
-            "base_runner_mods": "_base_runner_mod_ids",
-            "home_pitcher_mod": "_home_pitcher_mod_id",
-            "home_batter_mod": "_home_batter_mod_id",
-            "away_pitcher_mod": "_away_pitcher_mod_id",
-            "away_batter_mod": "_away_batter_mod_id",
-        }
-        if name in lookup_dict:
-            return lookup_dict[name]
-        return name
 
     @classmethod
     def load_by_id(cls, id_):
@@ -1001,106 +729,38 @@ class Game(Base):
     def losing_score(self):
         return self.home_score if self.home_score < self.away_score else self.away_score
 
-    @property
+    @Base.lazy_load("_base_runner_ids", cache_name="_base_runners", default_value=list())
     def base_runners(self):
-        if self._base_runners:
-            return self._base_runners
-        if not self._base_runner_ids:
-            return []
         players = Player.load(*self._base_runner_ids)
-        self._base_runners = [players.get(id_) for id_ in self._base_runner_ids]
-        return self._base_runners
+        return [players.get(id_) for id_ in self._base_runner_ids]
 
-    @base_runners.setter
-    def base_runners(self, value):
-        if getattr(self, '_base_runner_ids', None) == value:
-            return
-        self._base_runners = None
-        self._base_runner_ids = value
-
-    @property
+    @Base.lazy_load("_weather", use_default=False)
     def weather(self):
         return tables.Weather(self._weather)
 
-    @weather.setter
-    def weather(self, value):
-        self._weather = value
-
-    @property
+    @Base.lazy_load("_home_team_id", cache_name="_home_team")
     def home_team(self):
-        if self._home_team:
-            return self._home_team
-        self._home_team = Team.load(self._home_team_id)
-        return self._home_team
+        return Team.load(self._home_team_id)
 
-    @home_team.setter
-    def home_team(self, value):
-        self._home_team = None
-        self._home_team_id = value
-
-    @property
+    @Base.lazy_load("_away_team_id", cache_name="_away_team")
     def away_team(self):
-        if self._away_team:
-            return self._away_team
-        self._away_team = Team.load(self._away_team_id)
-        return self._away_team
+        return Team.load(self._away_team_id)
 
-    @away_team.setter
-    def away_team(self, value):
-        self._away_team = None
-        self._away_team_id = value
-
-    @property
+    @Base.lazy_load("_home_pitcher_id", cache_name="_home_pitcher")
     def home_pitcher(self):
-        if self._home_pitcher:
-            return self._home_pitcher
-        self._home_pitcher = Player.load_one(self._home_pitcher_id)
-        return self._home_pitcher
+        return Player.load_one(self._home_pitcher_id)
 
-    @home_pitcher.setter
-    def home_pitcher(self, value):
-        self._home_pitcher = None
-        self._home_pitcher_id = value
-
-    @property
+    @Base.lazy_load("_away_pitcher_id", cache_name="_away_pitcher")
     def away_pitcher(self):
-        if self._away_pitcher:
-            return self._away_pitcher
-        self._away_pitcher = Player.load_one(self._away_pitcher_id)
-        return self._away_pitcher
+        return Player.load_one(self._away_pitcher_id)
 
-    @away_pitcher.setter
-    def away_pitcher(self, value):
-        self._away_pitcher = None
-        self._away_pitcher_id = value
-
-    @property
+    @Base.lazy_load("_home_batter_id", cache_name="_home_batter")
     def home_batter(self):
-        if not self._home_batter_id:
-            return None
-        if self._home_batter:
-            return self._home_batter
-        self._home_batter = Player.load_one(self._home_batter_id)
-        return self._home_batter
+        return Player.load_one(self._home_batter_id)
 
-    @home_batter.setter
-    def home_batter(self, value):
-        self._home_batter = None
-        self._home_batter_id = value
-
-    @property
+    @Base.lazy_load("_away_batter_id", cache_name="_away_batter")
     def away_batter(self):
-        if not self._away_batter_id:
-            return None
-        if self._away_batter:
-            return self._away_batter
-        self._away_batter = Player.load_one(self._away_batter_id)
-        return self._away_batter
-
-    @away_batter.setter
-    def away_batter(self, value):
-        self._away_batter = None
-        self._away_batter_id = value
+        return Player.load_one(self._away_batter_id)
 
     @property
     def at_bat_team(self):
@@ -1172,107 +832,45 @@ class Game(Base):
         else:
             return self.home_batter_name
 
-    @property
+    @Base.lazy_load("_season", use_default=False)
     def season(self):
-        return self._season
+        return self._season + 1
 
-    @season.setter
-    def season(self, value):
-        self._season = value + 1
-
-    @property
+    @Base.lazy_load("_day", use_default=False)
     def day(self):
-        return self._day
+        return self._day + 1
 
-    @day.setter
-    def day(self, value):
-        self._day = value + 1
-
-    @property
+    @Base.lazy_load("_inning", use_default=False)
     def inning(self):
-        return self._inning
+        return self._inning + 1
 
-    @inning.setter
-    def inning(self, value):
-        self._inning = value + 1
-
-    @property
+    @Base.lazy_load("_statsheet_id", cache_name="_statsheet")
     def statsheet(self):
-        if self._statsheet:
-            return self._statsheet
-        self._statsheet = GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
-        return self._statsheet
+        return GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
 
-    @statsheet.setter
-    def statsheet(self, value):
-        self._statsheet = None
-        self._statsheet_id = value
-
-    @property
+    @Base.lazy_load("_base_runner_mod_ids", cache_name="_base_runner_mods", default_value=list())
     def base_runner_mods(self):
-        if getattr(self, "_base_runner_mods", None):
-            return self._base_runner_mods
-        if not getattr(self, "_base_runner_mod_ids", None):
-            return []
-        self._base_runner_mods = Modification.load(*self._base_runner_mod_ids)
-        return self._base_runner_mods
+        return Modification.load(*self._base_runner_mod_ids)
 
-    @base_runner_mods.setter
-    def base_runner_mods(self, value):
-        self._base_runner_mods = None
-        self._base_runner_mod_ids = value
-
-    @property
+    @Base.lazy_load("_home_pitcher_mod_id", cache_name="_home_pitcher_mod", use_default=False)
     def home_pitcher_mod(self):
-        if getattr(self, "_home_pitcher_mod", None):
-            return self._home_pitcher_mod
-        self._home_pitcher_mod = Modification.load_one(getattr(self, "_home_pitcher_mod_id", None))
-        return self._home_pitcher_mod
+        return Modification.load_one(getattr(self, "_home_pitcher_mod_id", None))
 
-    @home_pitcher_mod.setter
-    def home_pitcher_mod(self, value):
-        self._home_pitcher_mod = None
-        self._home_pitcher_mod_id = value
-
-    @property
+    @Base.lazy_load("_home_batter_mod_id", cache_name="_home_batter_mod", use_default=False)
     def home_batter_mod(self):
-        if getattr(self, "_home_batter_mod", None):
-            return self._home_batter_mod
-        self._home_batter_mod = Modification.load_one(getattr(self, "_home_batter_mod_id", None))
-        return self._home_batter_mod
+        return Modification.load_one(getattr(self, "_home_batter_mod_id", None))
 
-    @home_batter_mod.setter
-    def home_batter_mod(self, value):
-        self._home_batter_mod = None
-        self._home_batter_mod_id = value
-
-    @property
+    @Base.lazy_load("_away_pitcher_mod_id", cache_name="_away_pitcher_mod", use_default=False)
     def away_pitcher_mod(self):
-        if getattr(self, "_away_pitcher_mod", None):
-            return self._away_pitcher_mod
-        self._away_pitcher_mod = Modification.load_one(getattr(self, "_away_pitcher_mod_id", None))
-        return self._away_pitcher_mod
+        return Modification.load_one(getattr(self, "_away_pitcher_mod_id", None))
 
-    @away_pitcher_mod.setter
-    def away_pitcher_mod(self, value):
-        self._away_pitcher_mod = None
-        self._away_pitcher_mod_id = value
-
-    @property
+    @Base.lazy_load("_away_batter_mod_id", cache_name="_away_batter_mod", use_default=False)
     def away_batter_mod(self):
-        if getattr(self, "_away_batter_mod", None):
-            return self._away_batter_mod
-        self._away_batter_mod = Modification.load_one(getattr(self, "_away_batter_mod_id", None))
-        return self._away_batter_mod
-
-    @away_batter_mod.setter
-    def away_batter_mod(self, value):
-        self._away_batter_mod = None
-        self._away_batter_mod_id = value
+        return Modification.load_one(getattr(self, "_away_batter_mod_id", None))
 
 
 class Fight(Game):
-    pass  # will probalby need this eventually.
+    pass  # will probably need this eventually.
 
 
 class DecreeResult(Base):
@@ -1291,14 +889,6 @@ class DecreeResult(Base):
 
 class BlessingResult(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "team_id":
-            return "_team_id"
-        if name == "highest_team":
-            return "_highest_team_id"
-        return name
-
     @classmethod
     def load(cls, *ids):
         blessings = database.get_offseason_bonus_results(list(ids))
@@ -1310,19 +900,9 @@ class BlessingResult(Base):
     def load_one(cls, id_):
         return cls.load(id_).get(id_)
 
-    @property
+    @Base.lazy_load("_team_id", cache_name="_team")
     def team_id(self):
-        if self._team:
-            return self._team
-        if not self._team_id:
-            return None
-        self._team = Team.load(self._team_id)
-        return self._team
-
-    @team_id.setter
-    def team_id(self, value):
-        self._team = None
-        self._team_id = value
+        return Team.load(self._team_id)
 
     # team is an alias to team_id
     @property
@@ -1330,19 +910,9 @@ class BlessingResult(Base):
         return self.team_id
 
     # Note: highest_team not present for Season 1
-    @property
+    @Base.lazy_load("_highest_team_id", cache_name="_highest_team")
     def highest_team(self):
-        if self._highest_team:
-            return self._highest_team
-        if not self._highest_team_id:
-            return None
-        self._highest_team = Team.load(self._highest_team_id)
-        return self._highest_team
-
-    @highest_team.setter
-    def highest_team(self, value):
-        self._highest_team = None
-        self._highest_team_id = value
+        return Team.load(self._highest_team_id)
 
     # blessing_title is an alias to bonus_title
     @property
@@ -1368,111 +938,55 @@ class TidingResult(Base):
     def load_one(cls, id_):
         return cls.load(id_).get(id_)
 
+
 EventResult = TidingResult
 
 
 class ElectionResult(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "bonus_results":
-            return "_bonus_results_ids"
-        if name == "decree_results":
-            return "_decree_results_ids"
-        if name == "event_results":
-            return "_event_results_ids"
-        return name
-
     @classmethod
     def load_by_season(cls, season):
         return cls(database.get_offseason_recap(season))
 
-    @property
+    @Base.lazy_load("_bonus_results_ids", cache_name="_bonus_results", default_value=list())
     def bonus_results(self):
-        if self._bonus_results:
-            return self._bonus_results
-        if not self._bonus_results_ids:
-            return []
         blessings = BlessingResult.load(*self._bonus_results_ids)
-        self._bonus_results = [blessings.get(id_) for id_ in self._bonus_results_ids]
-        return self._bonus_results
-
-    @bonus_results.setter
-    def bonus_results(self, value):
-        self._bonus_results = None
-        self._bonus_results_ids = value
+        return [blessings.get(id_) for id_ in self._bonus_results_ids]
 
     # blessing_results is an alias to bonus_results
     @property
     def blessing_results(self):
         return self.bonus_results
 
-    @property
+    @Base.lazy_load("_decree_results_ids", cache_name="_decree_results", default_value=list())
     def decree_results(self):
-        if self._decree_results:
-            return self._decree_results
-        if not self._decree_results_ids:
-            return []
         decrees = DecreeResult.load(*self._decree_results_ids)
-        self._decree_results = [decrees.get(id_) for id_ in self._decree_results_ids]
-        return self._decree_results
+        return[decrees.get(id_) for id_ in self._decree_results_ids]
 
-    @decree_results.setter
-    def decree_results(self, value):
-        self._decree_results = None
-        self._decree_results_ids = value
-
-    @property
+    @Base.lazy_load("_event_results_ids", cache_name="_event_results", default_value=list())
     def event_results(self):
-        if self._event_results:
-            return self._event_results
-        if not self._event_results_ids:
-            return []
         events = TidingResult.load(*self._event_results_ids)
-        self._event_results = [events.get(id_) for id_ in self._event_results_ids]
-        return self._event_results
-
-    @event_results.setter
-    def event_results(self, value):
-        self._event_results = None
-        self._event_results_ids = value
+        return [events.get(id_) for id_ in self._event_results_ids]
 
     # tiding_results is an alias to event_results
     @property
     def tiding_results(self):
         return self.event_results
 
+
 OffseasonResult = ElectionResult
 
 
 class Playoff(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "rounds":
-            return "_rounds_ids"
-        if name == "winner":
-            return "_winner_id"
-        if name == "season":
-            return "_season"
-        return name
 
     @classmethod
     def load_by_season(cls, season):
         playoff = database.get_playoff_details(season)
         return cls(playoff)
 
-    @property
+    @Base.lazy_load("_rounds_ids", cache_name="_rounds", default_value=list())
     def rounds(self):
-        if self._rounds:
-            return self._rounds
-        self._rounds = [PlayoffRound.load(id_) for id_ in self._rounds_ids]
-        return self._rounds
-
-    @rounds.setter
-    def rounds(self, value):
-        self._rounds = None
-        self._rounds_ids = value
+        return [PlayoffRound.load(id_) for id_ in self._rounds_ids]
 
     def get_round_by_number(self, round_number):
         """
@@ -1484,30 +998,12 @@ class Playoff(Base):
             return None
         return self.rounds[num]
 
-    @property
+    @Base.lazy_load("_winner_id", cache_name="_winner")
     def winner(self):
-        if self._winner:
-            return self._winner
-        self._winner = Team.load(self._winner_id)
-        return self._winner
-
-    @winner.setter
-    def winner(self, value):
-        self._winner = None
-        self._winner_id = value
+        return Team.load(self._winner_id)
 
 
 class PlayoffRound(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "games":
-            return "_game_ids_ids"
-        if name == "matchups":
-            return "_matchups_ids"
-        if name == "winners":
-            return "_winners_ids"
-        return name
 
     @classmethod
     def load(cls, id_):
@@ -1532,6 +1028,7 @@ class PlayoffRound(Base):
     def games(self, value):
         self._games = [None] * len(value)
         self._games_ids = value
+        self.key_transform_lookup["games"] = "_games_ids"
 
     def get_games_by_number(self, game_number):
         """
@@ -1546,41 +1043,17 @@ class PlayoffRound(Base):
         self._games[num] = [Game.load_by_id(id_) for id_ in self._games_ids[num] if id_ != "none"]
         return self._games[num]
 
-    @property
+    @Base.lazy_load("_matchups_ids", cache_name="_matchups", default_value=list())
     def matchups(self):
-        if self._matchups:
-            return self._matchups
         matchups = PlayoffMatchup.load(*self._matchups_ids)
-        self._matchups = [matchups.get(id_) for id_ in self._matchups_ids]
-        return self._matchups
+        return [matchups.get(id_) for id_ in self._matchups_ids]
 
-    @matchups.setter
-    def matchups(self, value):
-        self._matchups = None
-        self._matchups_ids = value
-
-    @property
+    @Base.lazy_load("_winners_ids", cache_name="_winners", default_value=list())
     def winners(self):
-        if self._winners:
-            return self._winners
-        self._winners = [Team.load(x) for x in self._winners_ids]
-        return self._winners
-
-    @winners.setter
-    def winners(self, value):
-        self._winners = None
-        self._winners_ids = value
+        return [Team.load(x) for x in self._winners_ids]
 
 
 class PlayoffMatchup(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "home_team":
-            return "_home_team_id"
-        if name == "away_team":
-            return "_away_team_id"
-        return name
 
     @classmethod
     def load(cls, *ids_):
@@ -1593,29 +1066,13 @@ class PlayoffMatchup(Base):
     def load_one(cls, id_):
         return cls.load(id_).get(id_)
 
-    @property
+    @Base.lazy_load("_away_team_id", cache_name="_away_team")
     def away_team(self):
-        if self._away_team:
-            return self._away_team
-        self._away_team = Team.load(self._away_team_id)
-        return self._away_team
+        return Team.load(self._away_team_id)
 
-    @away_team.setter
-    def away_team(self, value):
-        self._away_team = None
-        self._away_team_id = value
-
-    @property
+    @Base.lazy_load("_home_team_id", cache_name="_home_team")
     def home_team(self):
-        if self._home_team:
-            return self._home_team
-        self._home_team = Team.load(self._home_team_id)
-        return self._home_team
-
-    @home_team.setter
-    def home_team(self, value):
-        self._home_team = None
-        self._home_team_id = value
+        return Team.load(self._home_team_id)
 
 
 class Election(Base):
@@ -1641,88 +1098,43 @@ class Standings(Base):
 
 class Season(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "league":
-            return "_league_id"
-        if name == "standings":
-            return "_standings_id"
-        if name == "stats":
-            return "_stats_id"
-        if name == "season_number":
-            return "_season_number"
-        return name
-
     @classmethod
     def load(cls, season_number):
         season = database.get_season(season_number)
         return cls(season)
 
-    @property
+    @Base.lazy_load("_league_id", cache_name="_league")
     def league(self):
-        if self._league:
-            return self._league
-        self._league = League.load_by_id(self._league_id)
-        return self._league
+        return League.load_by_id(self._league_id)
 
-    @league.setter
-    def league(self, value):
-        self._league = None
-        self._league_id = value
-
-    @property
+    @Base.lazy_load("_standings_id", cache_name="_standings")
     def standings(self):
-        if self._standings:
-            return self._standings
-        self._standings = Standings.load(self._standings_id)
-        return self._standings
+        return Standings.load(self._standings_id)
 
-    @standings.setter
-    def standings(self, value):
-        self._standings = None
-        self._standings_id = value
-
-    @property
+    @Base.lazy_load("_stats_id", cache_name="_stats")
     def stats(self):
-        if self._stats:
-            return self._stats
-        self._stats = SeasonStatsheet.load(self._stats_id)[self._stats_id]
-        return self._stats
+        return SeasonStatsheet.load(self._stats_id)[self._stats_id]
 
-    @stats.setter
-    def stats(self, value):
-        self._stats_id = value
-        self._stats = None
+    @Base.lazy_load("_season_number", use_default=False)
+    def season_number(self):
+        return self._season_number + 1
 
 
 class Tiebreaker(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "order":
-            return "_order_ids"
-        return name
-
     @classmethod
-    def load(cls, id):
-        tiebreakers = database.get_tiebreakers(id)
+    def load(cls, id_):
+        tiebreakers = database.get_tiebreakers(id_)
         return {
             id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
         }
 
-    @property
+    @Base.lazy_load("_order_ids", cache_name="_order", default_value=OrderedDict())
     def order(self):
-        if self._order:
-            return self._order
-        self._order = OrderedDict()
+        order = OrderedDict()
         for id_ in self._order_ids:
-            self._order[id_] = Team.load(id_)
-        return self._order
-
-    @order.setter
-    def order(self, value):
-        self._order = None
-        self._order_ids = value
+            order[id_] = Team.load(id_)
+        return order
 
 
 class Idol(Base):
@@ -1735,16 +1147,13 @@ class Idol(Base):
             idols_dict[idol['playerId']] = cls(idol)
         return idols_dict
 
+    @Base.lazy_load("_player_id", cache_name="_player")
+    def player_id(self):
+        return Player.load_one(self._player_id)
+
     @property
     def player(self):
-        if getattr(self, '_player', None):
-            return self._player
-        self._player = Player.load_one(self.player_id)
-        return self._player
-
-    @player.setter
-    def player(self, value):
-        self._player = value
+        return self.player_id
 
 
 class Tribute(Base):
@@ -1773,19 +1182,17 @@ class Tribute(Base):
             tributes_dict[key] = cls({"player_id": key, "peanuts": value, "timestamp": time})
         return tributes_dict
 
+    @Base.lazy_load("_player_id", cache_name="_player")
+    def player_id(self):
+        if getattr(self, "timestamp", None):
+            player = Player.load_one_at_time(self._player_id, self.timestamp)
+        else:
+            player = Player.load_one(self._player_id)
+        return player
+
     @property
     def player(self):
-        if getattr(self, '_player', None):
-            return self._player
-        if getattr(self, "timestamp", None):
-            self._player = Player.load_one_at_time(self.player_id, self.timestamp)
-        else:
-            self._player = Player.load_one(self.player_id)
-        return self._player
-
-    @player.setter
-    def player(self, value):
-        self._player = value
+        return self.player_id
 
 
 class PlayerStatsheet(Base):
@@ -1801,12 +1208,6 @@ class PlayerStatsheet(Base):
 
 class TeamStatsheet(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "player_stats":
-            return "_player_stat_ids"
-        return name
-
     @classmethod
     def load(cls, ids):
         stats = database.get_team_statsheets(ids)
@@ -1815,26 +1216,12 @@ class TeamStatsheet(Base):
             stats_dict[k] = cls(v)
         return stats_dict
 
-    @property
+    @Base.lazy_load("_player_stat_ids", cache_name="_player_stats", default_value=list())
     def player_stats(self):
-        if self._player_stats:
-            return self._player_stats
-        self._player_stats = list(PlayerStatsheet.load(self._player_stat_ids).values())
-        return self._player_stats
-
-    @player_stats.setter
-    def player_stats(self, ids):
-        self._player_stat_ids = ids
-        self._player_stats = None
+        return list(PlayerStatsheet.load(self._player_stat_ids).values())
 
 
 class SeasonStatsheet(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "team_stats":
-            return "_team_stat_ids"
-        return name
 
     @classmethod
     def load(cls, ids):
@@ -1850,28 +1237,12 @@ class SeasonStatsheet(Base):
         season = Season.load(season)
         return season.stats
 
-    @property
+    @Base.lazy_load("_team_stat_ids", cache_name="_team_stats", default_value=list())
     def team_stats(self):
-        if self._team_stats:
-            return self._team_stats
-        self._team_stats = list(TeamStatsheet.load(self._team_stat_ids).values())
-        return self._team_stats
-
-    @team_stats.setter
-    def team_stats(self, value):
-        self._team_stats = None
-        self._team_stat_ids = value
+        return list(TeamStatsheet.load(self._team_stat_ids).values())
 
 
 class GameStatsheet(Base):
-
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "home_team_stats":
-            return "_home_team_stats_id"
-        if name == "away_team_stats":
-            return "_away_team_stats_id"
-        return name
 
     @classmethod
     def load(cls, ids):
@@ -1903,6 +1274,7 @@ class GameStatsheet(Base):
     def away_team_stats(self, value):
         self._away_team_stats_id = value
         self._team_stats = None
+        self.key_transform_lookup["away_team_stats"] = "_away_team_stats_id"
 
     @property
     def home_team_stats(self):
@@ -1912,6 +1284,7 @@ class GameStatsheet(Base):
     def home_team_stats(self, value):
         self._home_team_stats_id = value
         self._team_stats = None
+        self.key_transform_lookup["home_team_stats"] = "_home_team_stats_id"
 
 
 class Modification(Base):
@@ -1929,12 +1302,6 @@ class Modification(Base):
 
 class Item(Base):
 
-    @staticmethod
-    def _custom_key_transform(name):
-        if name == "attr":
-            return "_attr"
-        return name
-
     @classmethod
     def load(cls, *ids):
         return [cls(item) for item in database.get_items(list(ids))]
@@ -1947,10 +1314,7 @@ class Item(Base):
             return cls({"id": id_, "name": "None", "attr": "NONE"})
         return cls.load(id_)[0]
 
-    @property
+    @Base.lazy_load("_attr_id", cache_name="_attr", use_default=False)
     def attr(self):
-        return Modification.load_one(self._attr)
+        return Modification.load_one(self._attr_id)
 
-    @attr.setter
-    def attr(self, value):
-        self._attr = value
