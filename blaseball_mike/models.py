@@ -388,6 +388,7 @@ class Player(Base):
 
         for m_key, m_val in multipliers.items():
             if m_key in ('batting_rating', 'overall_rating'):
+                original_json['buoyancy'] *= (1.0 - m_val)
                 original_json['tragicness'] *= (1.0 - m_val)
                 original_json['patheticism'] *= (1.0 - m_val)
                 original_json['thwackability'] *= (1.0 + m_val)
@@ -401,6 +402,7 @@ class Player(Base):
                 original_json['overpowerment'] *= (1.0 + m_val)
                 original_json['shakespearianism'] *= (1.0 + m_val)
                 original_json['coldness'] *= (1.0 + m_val)
+                original_json['suppression'] *= (1.0 + m_val)
             if m_key in ('baserunning_rating', 'overall_rating'):
                 original_json['laserlikeness'] *= (1.0 + m_val)
                 original_json['continuation'] *= (1.0 + m_val)
@@ -422,6 +424,7 @@ class Player(Base):
             if b_key in ('batting_rating', 'overall_rating'):
                 original_json['tragicness'] = min(0.99, max(0.01, original_json['tragicness'] - b_val))
                 original_json['patheticism'] = min(0.99, max(0.01, original_json['patheticism'] - b_val))
+                original_json['buoyancy'] = max(0.01, original_json['buoyancy'] + b_val)
                 original_json['thwackability'] = max(0.01, original_json['thwackability'] + b_val)
                 original_json['divinity'] = max(0.01, original_json['divinity'] + b_val)
                 original_json['moxie'] = max(0.01, original_json['moxie'] + b_val)
@@ -433,6 +436,7 @@ class Player(Base):
                 original_json['overpowerment'] = max(0.01, original_json['overpowerment'] + b_val)
                 original_json['shakespearianism'] = max(0.01, original_json['shakespearianism'] + b_val)
                 original_json['coldness'] = max(0.01, original_json['coldness'] + b_val)
+                original_json['suppression'] = max(0.01, original_json['suppression'] + b_val)
             if b_key in ('baserunning_rating', 'overall_rating'):
                 original_json['laserlikeness'] = max(0.01, original_json['laserlikeness'] + b_val)
                 original_json['continuation'] = max(0.01, original_json['continuation'] + b_val)
@@ -452,6 +456,7 @@ class Player(Base):
 
         for r_key, _ in reroll.items():
             if r_key in ('batting_rating', 'overall_rating'):
+                original_json['buoyancy'] = random.uniform(0.01, 0.99)
                 original_json['tragicness'] = random.uniform(0.01, 0.99)
                 original_json['patheticism'] = random.uniform(0.01, 0.99)
                 original_json['thwackability'] = random.uniform(0.01, 0.99)
@@ -465,6 +470,7 @@ class Player(Base):
                 original_json['overpowerment'] = random.uniform(0.01, 0.99)
                 original_json['shakespearianism'] = random.uniform(0.01, 0.99)
                 original_json['coldness'] = random.uniform(0.01, 0.99)
+                original_json['suppression'] = random.uniform(0.01, 0.99)
             if r_key in ('baserunning_rating', 'overall_rating'):
                 original_json['laserlikeness'] = random.uniform(0.01, 0.99)
                 original_json['continuation'] = random.uniform(0.01, 0.99)
