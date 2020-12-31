@@ -95,6 +95,6 @@ pip install -r requirements.txt
 ## Documentation
 Use triple quotes to add docstrings to any public method and class. If adding/changing any docstrings, you'll need to update the docs
 1. `pip install pdoc3`
-2. `pdoc --html blaseball_mike --force -o docs`
+2. `pdoc --html blaseball_mike --force`
 
 Include the generated html files with your diff.
