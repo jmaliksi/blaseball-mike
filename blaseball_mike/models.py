@@ -1,4 +1,11 @@
-"""For deserializing the json responses"""
+"""For deserializing the json responses.
+
+To accomodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
+properties from the returned JSON rather than explicitly mapping each property. This means
+that documentation of available fields with ultimately be incomplete. The easiest way
+to find available properties outside of looking at the spec is to look at the `fields`
+property to see what JSON keys have been deserialized.
+"""
 import abc
 import math
 import random
@@ -66,6 +73,16 @@ class _LazyLoadDecorator:
             setattr(obj, self.key_replace_name, key_lookup)
 
 class Base(abc.ABC):
+    """
+    Base class for all blaseball-mike models. Provides common functionality for
+    deserializing blaseball API responses.
+
+    To accomodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
+    properties from the returned JSON rather than explicitly mapping each property. This means
+    that documentation of available fields with ultimately be incomplete. The easiest way
+    to find available properties outside of looking at the spec is to look at the `fields`
+    property to see what JSON keys have been deserialized.
+    """
 
     _camel_to_snake_re = re.compile(r'(?<!^)(?=[A-Z])')
 
@@ -115,6 +132,9 @@ class Base(abc.ABC):
 
 
 class GlobalEvent(Base):
+    """
+    Fetches global events, ie the events used to populate the ticker.
+    """
 
     @classmethod
     def load(cls):
@@ -146,6 +166,9 @@ class SimulationData(Base):
 
 
 class Player(Base):
+    """
+    Represents a blaseball player.
+    """
 
     @classmethod
     def load(cls, *ids):
@@ -166,6 +189,9 @@ class Player(Base):
 
     @classmethod
     def load_one_at_time(cls, id_, time):
+        """
+        Load player with historical stats at the provided IRL datetime.
+        """
         if isinstance(time, str):
             time = parse(time)
 
@@ -498,9 +524,15 @@ class Player(Base):
 
 
 class Team(Base):
+    """
+    Represents a blaseball team.
+    """
 
     @classmethod
     def load(cls, id_):
+        """
+        Load team by ID.
+        """
         return cls(database.get_team(id_))
 
     @classmethod
@@ -526,6 +558,9 @@ class Team(Base):
 
     @classmethod
     def load_at_time(cls, id_, time):
+        """
+        Load blaseball team with roster at given datetime.
+        """
         if isinstance(time, str):
             time = parse(time)
 
@@ -586,9 +621,15 @@ class Team(Base):
 
 
 class Division(Base):
+    """
+    Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High
+    """
 
     @classmethod
     def load(cls, id_):
+        """
+        Load by ID
+        """
         return cls(database.get_division(id_))
 
     @classmethod
@@ -620,6 +661,9 @@ class Division(Base):
 
 
 class Subleague(Base):
+    """
+    Represents a subleague, ie Mild vs Wild
+    """
 
     def __init__(self, data):
         super().__init__(data)
@@ -627,6 +671,9 @@ class Subleague(Base):
 
     @classmethod
     def load(cls, id_):
+        """
+        Load by ID.
+        """
         return cls(database.get_subleague(id_))
 
     @Base.lazy_load("_division_ids", cache_name="_divisions", default_value=dict())
@@ -643,6 +690,9 @@ class Subleague(Base):
 
 
 class League(Base):
+    """
+    Represents the entire league
+    """
 
     def __init__(self, data):
         super().__init__(data)
@@ -674,31 +724,49 @@ class League(Base):
 
 
 class Game(Base):
+    """
+    Represents one blaseball game
+    """
 
     @classmethod
     def load_by_id(cls, id_):
+        """
+        Load by ID
+        """
         return cls(database.get_game_by_id(id_))
 
     @classmethod
     def load_by_day(cls, season, day):
+        """
+        Load by in-game season and day. Season and Day are 1-indexed
+        """
         return {
             id_: cls(game) for id_, game in database.get_games(season, day).items()
         }
 
     @classmethod
     def load_tournament_by_day(cls, tournament, day):
+        """
+        Tournament refers to things such as the Coffee Cup which exist outside the normal blaseball timeline.
+        """
         return {
             id_: cls(game) for id_, game in database.get_tournament(tournament, day).items()
         }
 
     @classmethod
     def load_by_season(cls, season, team_id=None, day=None):
+        """
+        Return dictionary of games by ID for a given season.
+        """
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
         }
 
     @classmethod
     def load_by_tournament(cls, tournament, team_id=None, day=None):
+        """
+        Return dictionary of games by ID for a given tournament.
+        """
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, tournament=tournament, day=day)
         }

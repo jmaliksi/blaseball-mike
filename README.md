@@ -9,6 +9,9 @@ This is a python wrapper over blaseball's public APIs, including player/team/gam
 
 
 # Usage
+
+Full API definition can be found at https://jmaliksi.github.io/blaseball-mike/
+
 ```
 >>> from blaseball_mike.models import Team
 >>> fridays = Team.load_by_name('fridays')
@@ -88,3 +91,10 @@ pip install -r requirements.txt
 2. Delete `dist/*` and `build/*`
 3. `python3 setup.py sdist bdist_wheel`
 4. `python3 -m twine upload -r pypi dist/*`
+
+## Documentation
+Use triple quotes to add docstrings to any public method and class. If adding/changing any docstrings, you'll need to update the docs
+1. `pip install pdoc3`
+2. `pdoc --html blaseball_mike --force`
+
+Include the generated html files with your diff.

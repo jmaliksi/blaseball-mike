@@ -16,7 +16,7 @@ install_requires = [
 
 setuptools.setup(
     name='blaseball-mike',
-    version='4.4.1',
+    version='4.5.0',
     author='Joe Maliksi',
     author_email='joe.maliksi@gmail.com',
     url='https://github.com/jmaliksi/blaseball-mike',
