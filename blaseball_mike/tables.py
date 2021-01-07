@@ -1,3 +1,4 @@
+"""Enum-like tables for static elements"""
 from enum import Enum
 
 
