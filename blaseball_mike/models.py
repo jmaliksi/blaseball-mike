@@ -12,6 +12,7 @@ import random
 from collections import OrderedDict
 import re
 import uuid
+import functools
 
 from dateutil.parser import parse
 
@@ -39,6 +40,7 @@ class _LazyLoadDecorator:
           attribute name to the location of the original value. This is useful for cases where you want to map back to
           the original value programmatically.
         """
+        functools.update_wrapper(self, function)
         self.func = function
         self.name = function.__name__
         self.original_name = original_name
@@ -47,7 +49,7 @@ class _LazyLoadDecorator:
         self.use_default = use_default
         self.key_replace_name = key_replace_name
 
-    def __get__(self, obj, cls):
+    def __get__(self, obj, objtype=None):
         if self.use_default and not getattr(obj, self.original_name, None):
             return self.default_value
 
