@@ -1,6 +1,6 @@
 """For deserializing the json responses.
 
-To accomodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
+To accommodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
 properties from the returned JSON rather than explicitly mapping each property. This means
 that documentation of available fields with ultimately be incomplete. The easiest way
 to find available properties outside of looking at the spec is to look at the `fields`
@@ -12,6 +12,7 @@ import random
 from collections import OrderedDict
 import re
 import uuid
+import functools
 
 from dateutil.parser import parse
 
@@ -39,6 +40,7 @@ class _LazyLoadDecorator:
           attribute name to the location of the original value. This is useful for cases where you want to map back to
           the original value programmatically.
         """
+        functools.update_wrapper(self, function)
         self.func = function
         self.name = function.__name__
         self.original_name = original_name
@@ -47,7 +49,7 @@ class _LazyLoadDecorator:
         self.use_default = use_default
         self.key_replace_name = key_replace_name
 
-    def __get__(self, obj, cls):
+    def __get__(self, obj, objtype=None):
         if self.use_default and not getattr(obj, self.original_name, None):
             return self.default_value
 
@@ -72,12 +74,13 @@ class _LazyLoadDecorator:
             key_lookup[self.name] = self.original_name
             setattr(obj, self.key_replace_name, key_lookup)
 
+
 class Base(abc.ABC):
     """
     Base class for all blaseball-mike models. Provides common functionality for
     deserializing blaseball API responses.
 
-    To accomodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
+    To accommodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
     properties from the returned JSON rather than explicitly mapping each property. This means
     that documentation of available fields with ultimately be incomplete. The easiest way
     to find available properties outside of looking at the spec is to look at the `fields`
@@ -126,6 +129,7 @@ class Base(abc.ABC):
         return name
 
     def json(self):
+        """Returns dictionary of fields used to generate the original object"""
         return {
             f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
         }
@@ -133,19 +137,24 @@ class Base(abc.ABC):
 
 class GlobalEvent(Base):
     """
-    Fetches global events, ie the events used to populate the ticker.
+    Represents one global event, ie the events used to populate the ticker.
     """
 
     @classmethod
     def load(cls):
+        """Returns a list of all current global events"""
         events = database.get_global_events()
         return [cls(event) for event in events]
 
 
 class SimulationData(Base):
+    """
+    Represents the current simulation state.
+    """
 
     @classmethod
     def load(cls):
+        """Returns the current simulation state"""
         return cls(database.get_simulation_data())
 
     @Base.lazy_load("_league_id", cache_name="_league")
@@ -173,7 +182,9 @@ class Player(Base):
     @classmethod
     def load(cls, *ids):
         """
-        Load dictionary of players
+        Load one or more players by ID.
+
+        Returns a dictionary of players keyed by Player ID.
         """
         players = database.get_player(list(ids))
         return {
@@ -183,14 +194,14 @@ class Player(Base):
     @classmethod
     def load_one(cls, id_):
         """
-        Load single player.
+        Load single player by ID.
         """
         return cls.load(id_).get(id_)
 
     @classmethod
     def load_one_at_time(cls, id_, time):
         """
-        Load player with historical stats at the provided IRL datetime.
+        Load single player by ID with historical stats at the provided IRL datetime.
         """
         if isinstance(time, str):
             time = parse(time)
@@ -314,7 +325,7 @@ class Player(Base):
 
     def get_vibe(self, day):
         """
-        Day is 1-indexed
+        Get Player vibes for day. Day is 1-indexed
         """
         if not getattr(self, "pressurization", None) or not getattr(self, "cinnamon", None) or not getattr(self, "buoyancy", None):
             return None
@@ -400,8 +411,8 @@ class Player(Base):
         `reroll` is a dict where the key specifies attr to reroll (value is unused)
 
         `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
-        can additionally be passed to `multipliers` and `buffs` to automatically multiply the appropriate
-        related stats.
+        can additionally be passed to `multipliers`, `buffs`, and `reroll` to automatically multiply the
+        appropriate related stats.
         """
         overrides = overrides or {}
         multipliers = multipliers or {}
@@ -538,7 +549,9 @@ class Team(Base):
     @classmethod
     def load_all(cls):
         """
-        Returns dictionary keyed by team ID
+        Load all teams, including historical and tournament teams. Currently does not include the PODs.
+
+        Returns dictionary keyed by team ID.
         """
         return {
             id_: cls(team) for id_, team in database.get_all_teams().items()
@@ -622,7 +635,7 @@ class Team(Base):
 
 class Division(Base):
     """
-    Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High
+    Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High.
     """
 
     @classmethod
@@ -635,7 +648,9 @@ class Division(Base):
     @classmethod
     def load_all(cls):
         """
-        Returns dictionary keyed by division ID
+        Load all divisions, including historical divisions (Chaotic Good, Lawful Evil, etc.)
+
+        Returns dictionary keyed by division ID.
         """
         return {
             id_: cls(div) for id_, div in database.get_all_divisions().items()
@@ -678,6 +693,7 @@ class Subleague(Base):
 
     @Base.lazy_load("_division_ids", cache_name="_divisions", default_value=dict())
     def divisions(self):
+        """Returns dictionary keyed by division ID."""
         return {id_: Division.load(id_) for id_ in self._division_ids}
 
     @property
@@ -708,6 +724,7 @@ class League(Base):
 
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
+        """Returns dictionary keyed by subleague ID."""
         return {id_: Subleague.load(id_) for id_ in self._subleague_ids}
 
     @property
@@ -747,6 +764,7 @@ class Game(Base):
     @classmethod
     def load_tournament_by_day(cls, tournament, day):
         """
+        Loads all games played in a tournament on a given in-game day. Day is 1-indexed
         Tournament refers to things such as the Coffee Cup which exist outside the normal blaseball timeline.
         """
         return {
@@ -756,7 +774,8 @@ class Game(Base):
     @classmethod
     def load_by_season(cls, season, team_id=None, day=None):
         """
-        Return dictionary of games by ID for a given season.
+        Return dictionary of games for a given season keyed by game ID.
+        Can optionally be filtered by in-game day or team ID. Season and Day are 1-indexed
         """
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
@@ -765,7 +784,8 @@ class Game(Base):
     @classmethod
     def load_by_tournament(cls, tournament, team_id=None, day=None):
         """
-        Return dictionary of games by ID for a given tournament.
+        Return dictionary of games for a given tournament keyed by game ID.
+        Can optionally be filtered by in-game day or team ID. Day is 1-indexed
         """
         return {
             game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, tournament=tournament, day=day)
@@ -944,13 +964,18 @@ class Game(Base):
 
 
 class Fight(Game):
+    """Represents a Blaseball boss fight. Currently unimplemented."""
     pass  # will probably need this eventually.
 
 
 class DecreeResult(Base):
+    """Represents the results of a single decree."""
 
     @classmethod
     def load(cls, *ids):
+        """
+        Load one or more decree results by decree ID
+        """
         decrees = database.get_offseason_decree_results(list(ids))
         return {
             id_: cls(decree) for (id_, decree) in decrees.items()
@@ -958,13 +983,20 @@ class DecreeResult(Base):
 
     @classmethod
     def load_one(cls, id_):
+        """
+        Load a single decree result by decree ID
+        """
         return cls.load(id_).get(id_)
 
 
 class BlessingResult(Base):
+    """Represents the results of a single blessing"""
 
     @classmethod
     def load(cls, *ids):
+        """
+        Load one or more blessing results by blessing ID
+        """
         blessings = database.get_offseason_bonus_results(list(ids))
         return {
             id_: cls(blessing) for (id_, blessing) in blessings.items()
@@ -972,6 +1004,9 @@ class BlessingResult(Base):
 
     @classmethod
     def load_one(cls, id_):
+        """
+        Load a single blessing result by blessing ID
+        """
         return cls.load(id_).get(id_)
 
     @Base.lazy_load("_team_id", cache_name="_team")
@@ -1000,6 +1035,7 @@ class BlessingResult(Base):
 
 
 class TidingResult(Base):
+    """Represents the results of a single election tiding"""
 
     @classmethod
     def load(cls, *ids):
@@ -1017,9 +1053,13 @@ EventResult = TidingResult
 
 
 class ElectionResult(Base):
+    """Represents the results of an election"""
 
     @classmethod
     def load_by_season(cls, season):
+        """
+        Load results by season. Season is 1-indexed.
+        """
         return cls(database.get_offseason_recap(season))
 
     @Base.lazy_load("_bonus_results_ids", cache_name="_bonus_results", default_value=list())
@@ -1052,9 +1092,11 @@ OffseasonResult = ElectionResult
 
 
 class Playoff(Base):
+    """Represents a playoff bracket"""
 
     @classmethod
     def load_by_season(cls, season):
+        """Load playoffs by season. Season is 1-indexed."""
         playoff = database.get_playoff_details(season)
         return cls(playoff)
 
@@ -1064,8 +1106,7 @@ class Playoff(Base):
 
     def get_round_by_number(self, round_number):
         """
-        Get games from a specific round of playoffs
-        Round number is 1-indexed
+        Get games from a specific round of playoffs. Round number is 1-indexed
         """
         num = round_number - 1
         if num >= len(self._rounds_ids) or num < 0:
@@ -1078,17 +1119,18 @@ class Playoff(Base):
 
 
 class PlayoffRound(Base):
+    """Represents a round of playoff games"""
 
     @classmethod
     def load(cls, id_):
+        """Load round by ID."""
         round_ = database.get_playoff_round(id_)
         return cls(round_)
 
     @property
     def games(self):
         """
-        Get all games
-        Lots of endpoint calls, not recommended
+        Get all games in this round.
         """
         if all(self._games):
             return self._games
@@ -1106,8 +1148,7 @@ class PlayoffRound(Base):
 
     def get_games_by_number(self, game_number):
         """
-        Get games by game number in series (IE: Game 1 of 5)
-        Game number is 1-indexed
+        Get games by game number in series (IE: Game 1 of 5). Game number is 1-indexed
         """
         num = game_number - 1
         if num >= len(self._games_ids) or num < 0:
@@ -1128,9 +1169,11 @@ class PlayoffRound(Base):
 
 
 class PlayoffMatchup(Base):
+    """Represents a matchup information of teams in a playoff"""
 
     @classmethod
     def load(cls, *ids_):
+        """Load matchup by ID."""
         matchups = database.get_playoff_matchups(list(ids_))
         return {
             id_: cls(matchup) for (id_, matchup) in matchups.items()
@@ -1150,9 +1193,11 @@ class PlayoffMatchup(Base):
 
 
 class Election(Base):
+    """Represents the current election"""
 
     @classmethod
     def load(cls):
+        """Load the current election"""
         offseason = database.get_offseason_election_details()
         return cls(offseason)
 
@@ -1160,20 +1205,25 @@ OffseasonSetup = Election
 
 
 class Standings(Base):
+    """Represents the team standings"""
 
     @classmethod
     def load(cls, id_):
+        """Load standings by ID"""
         standings = database.get_standings(id_)
         return cls(standings)
 
     def get_standings_by_team(self, id_):
+        """Returns a dictionary of wins & losses of a single team"""
         return {"wins": self.wins.get(id_, None), "losses": self.losses.get(id_, None)}
 
 
 class Season(Base):
+    """Represents an individual season"""
 
     @classmethod
     def load(cls, season_number):
+        """Load season by season number. Season number is 1-indexed"""
         season = database.get_season(season_number)
         return cls(season)
 
@@ -1195,6 +1245,7 @@ class Season(Base):
 
 
 class Tiebreaker(Base):
+    """Represents a league's tiebreaker order"""
 
     @classmethod
     def load(cls, id_):
@@ -1212,9 +1263,11 @@ class Tiebreaker(Base):
 
 
 class Idol(Base):
+    """Represents a single idol board player"""
 
     @classmethod
     def load(cls):
+        """Load current idol board. Returns ordered dictionary of idols keyed by player ID."""
         idols = database.get_idols()
         idols_dict = OrderedDict()
         for idol in idols:
@@ -1231,9 +1284,11 @@ class Idol(Base):
 
 
 class Tribute(Base):
+    """Represents a single tribute recipient on the hall of flame"""
 
     @classmethod
     def load(cls):
+        """Load current hall of flame. Returns ordered dictionary of tributes keyed by player ID."""
         tributes = database.get_tributes()
         tributes_dict = OrderedDict()
         for tribute in tributes:
@@ -1242,6 +1297,7 @@ class Tribute(Base):
 
     @classmethod
     def load_at_time(cls, time):
+        """Load hall of flame at a given time. Returns ordered dictionary of tributes keyed by player ID."""
         if isinstance(time, str):
             time = parse(time)
 
@@ -1362,6 +1418,7 @@ class GameStatsheet(Base):
 
 
 class Modification(Base):
+    """Represents a player or team modification"""
 
     @classmethod
     def load(cls, *ids):
@@ -1375,6 +1432,7 @@ class Modification(Base):
 
 
 class Item(Base):
+    """Represents an single item, such as a bat or armor"""
 
     @classmethod
     def load(cls, *ids):
