@@ -5,6 +5,7 @@ API Reference (out of date): https://astrid.stoplight.io/docs/sibr/reference/Chr
 import requests_cache
 import requests
 from datetime import datetime
+from dateutil.parser import parse
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
@@ -133,3 +134,33 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
         params["count"] = count
 
     return paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
+
+def time_map(season=0, tournament=-1, day=0, include_nongame=False):
+    """
+    Map a season/day to a real-life timestamp
+
+    Returns a list of dictionaries containing time information
+    """
+    season = season - 1
+    day = day - 1
+
+    map_ = cached_session.get(f'{BASE_URL}/time/map').json()
+
+    # Filter out desired events
+    if tournament != -1:
+        # Season is not always -1 if a tournament is active, so ignore it
+        results = list(filter(lambda x: x['tournament'] == tournament and x['day'] == day, map_['data']))
+    else:
+        results = list(filter(lambda x: x['tournament'] == -1 and x['season'] == season and x['day'] == day, map_['data']))
+
+    # Optionally filter out phase-change events
+    if not include_nongame:
+        results = list(filter(lambda x: x['type'] in ('season', 'tournament', 'postseason'), results))
+
+    # Convert time strings into datetime objects
+    for result in results:
+        result["startTime"] = parse(result["startTime"])
+        if result["endTime"] is not None:
+            result["endTime"] = parse(result["endTime"])
+
+    return results
