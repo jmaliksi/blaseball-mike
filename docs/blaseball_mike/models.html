@@ -47,6 +47,7 @@ from collections import OrderedDict
 import re
 import uuid
 import functools
+import json
 
 from dateutil.parser import parse
 
@@ -998,8 +999,56 @@ class Game(Base):
 
 
 class Fight(Game):
-    &#34;&#34;&#34;Represents a Blaseball boss fight. Currently unimplemented.&#34;&#34;&#34;
-    pass  # will probably need this eventually.
+    &#34;&#34;&#34;Represents a Blaseball boss fight.&#34;&#34;&#34;
+
+    class DamageResults(Base):
+        &#34;&#34;&#34;
+        Information regarding a specific damage event
+        &#34;&#34;&#34;
+        @Base.lazy_load(&#34;_dmg_type&#34;)
+        def dmg_type(self):
+            return tables.DamageType(self._dmg_type)
+
+        @Base.lazy_load(&#34;_player_source_id&#34;, cache_name=&#34;_player_source&#34;)
+        def player_source(self):
+            return Player.load_one(self._player_source_id)
+
+        @Base.lazy_load(&#34;_team_target_id&#34;, cache_name=&#34;_team_target&#34;)
+        def team_target(self):
+            return Team.load(self._team_target_id)
+
+    @classmethod
+    def load_by_id(cls, id_):
+        fights = chronicler.get_fights(id_=id_)
+        if len(fights) != 1:
+            return None
+        return cls(fights[0][&#34;data&#34;])
+
+    @classmethod
+    def load_by_season(cls, season):
+        return {
+            x[&#39;id&#39;]: cls(x[&#34;data&#34;]) for x in chronicler.get_fights(season=season)
+        }
+
+    @Base.lazy_load(&#34;_away_hp&#34;)
+    def away_hp(self):
+        return int(self._away_hp)
+
+    @Base.lazy_load(&#34;_home_hp&#34;)
+    def home_hp(self):
+        return int(self._home_hp)
+
+    @Base.lazy_load(&#34;_away_max_hp&#34;)
+    def away_max_hp(self):
+        return int(self._away_max_hp)
+
+    @Base.lazy_load(&#34;_home_max_hp&#34;)
+    def home_max_hp(self):
+        return int(self._home_max_hp)
+
+    @Base.lazy_load(&#34;_damage_results_str&#34;, cache_name=&#34;_damage_results&#34;, default_value=list())
+    def damage_results(self):
+        return [self.DamageResults(x) for x in json.loads(self._damage_results_str)]
 
 
 class DecreeResult(Base):
@@ -1580,6 +1629,7 @@ property to see what JSON keys have been deserialized.</p></div>
 <li><a title="blaseball_mike.models.Division" href="#blaseball_mike.models.Division">Division</a></li>
 <li><a title="blaseball_mike.models.Election" href="#blaseball_mike.models.Election">Election</a></li>
 <li><a title="blaseball_mike.models.ElectionResult" href="#blaseball_mike.models.ElectionResult">ElectionResult</a></li>
+<li><a title="blaseball_mike.models.Fight.DamageResults" href="#blaseball_mike.models.Fight.DamageResults">Fight.DamageResults</a></li>
 <li><a title="blaseball_mike.models.Game" href="#blaseball_mike.models.Game">Game</a></li>
 <li><a title="blaseball_mike.models.GameStatsheet" href="#blaseball_mike.models.GameStatsheet">GameStatsheet</a></li>
 <li><a title="blaseball_mike.models.GlobalEvent" href="#blaseball_mike.models.GlobalEvent">GlobalEvent</a></li>
@@ -2358,14 +2408,62 @@ def tiding_results(self):
 <span>(</span><span>data)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Represents a Blaseball boss fight. Currently unimplemented.</p></div>
+<div class="desc"><p>Represents a Blaseball boss fight.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Fight(Game):
-    &#34;&#34;&#34;Represents a Blaseball boss fight. Currently unimplemented.&#34;&#34;&#34;
-    pass  # will probably need this eventually.</code></pre>
+    &#34;&#34;&#34;Represents a Blaseball boss fight.&#34;&#34;&#34;
+
+    class DamageResults(Base):
+        &#34;&#34;&#34;
+        Information regarding a specific damage event
+        &#34;&#34;&#34;
+        @Base.lazy_load(&#34;_dmg_type&#34;)
+        def dmg_type(self):
+            return tables.DamageType(self._dmg_type)
+
+        @Base.lazy_load(&#34;_player_source_id&#34;, cache_name=&#34;_player_source&#34;)
+        def player_source(self):
+            return Player.load_one(self._player_source_id)
+
+        @Base.lazy_load(&#34;_team_target_id&#34;, cache_name=&#34;_team_target&#34;)
+        def team_target(self):
+            return Team.load(self._team_target_id)
+
+    @classmethod
+    def load_by_id(cls, id_):
+        fights = chronicler.get_fights(id_=id_)
+        if len(fights) != 1:
+            return None
+        return cls(fights[0][&#34;data&#34;])
+
+    @classmethod
+    def load_by_season(cls, season):
+        return {
+            x[&#39;id&#39;]: cls(x[&#34;data&#34;]) for x in chronicler.get_fights(season=season)
+        }
+
+    @Base.lazy_load(&#34;_away_hp&#34;)
+    def away_hp(self):
+        return int(self._away_hp)
+
+    @Base.lazy_load(&#34;_home_hp&#34;)
+    def home_hp(self):
+        return int(self._home_hp)
+
+    @Base.lazy_load(&#34;_away_max_hp&#34;)
+    def away_max_hp(self):
+        return int(self._away_max_hp)
+
+    @Base.lazy_load(&#34;_home_max_hp&#34;)
+    def home_max_hp(self):
+        return int(self._home_max_hp)
+
+    @Base.lazy_load(&#34;_damage_results_str&#34;, cache_name=&#34;_damage_results&#34;, default_value=list())
+    def damage_results(self):
+        return [self.DamageResults(x) for x in json.loads(self._damage_results_str)]</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -2373,6 +2471,33 @@ def tiding_results(self):
 <li><a title="blaseball_mike.models.Base" href="#blaseball_mike.models.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.models.Fight.DamageResults"><code class="name">var <span class="ident">DamageResults</span></code></dt>
+<dd>
+<div class="desc"><p>Information regarding a specific damage event</p></div>
+</dd>
+<dt id="blaseball_mike.models.Fight.away_hp"><code class="name">var <span class="ident">away_hp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.Fight.away_max_hp"><code class="name">var <span class="ident">away_max_hp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.Fight.damage_results"><code class="name">var <span class="ident">damage_results</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.Fight.home_hp"><code class="name">var <span class="ident">home_hp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.Fight.home_max_hp"><code class="name">var <span class="ident">home_max_hp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Inherited members</h3>
 <ul class="hlist">
 <li><code><b><a title="blaseball_mike.models.Game" href="#blaseball_mike.models.Game">Game</a></b></code>:
@@ -6318,6 +6443,14 @@ def player(self):
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.Fight" href="#blaseball_mike.models.Fight">Fight</a></code></h4>
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.Fight.DamageResults" href="#blaseball_mike.models.Fight.DamageResults">DamageResults</a></code></li>
+<li><code><a title="blaseball_mike.models.Fight.away_hp" href="#blaseball_mike.models.Fight.away_hp">away_hp</a></code></li>
+<li><code><a title="blaseball_mike.models.Fight.away_max_hp" href="#blaseball_mike.models.Fight.away_max_hp">away_max_hp</a></code></li>
+<li><code><a title="blaseball_mike.models.Fight.damage_results" href="#blaseball_mike.models.Fight.damage_results">damage_results</a></code></li>
+<li><code><a title="blaseball_mike.models.Fight.home_hp" href="#blaseball_mike.models.Fight.home_hp">home_hp</a></code></li>
+<li><code><a title="blaseball_mike.models.Fight.home_max_hp" href="#blaseball_mike.models.Fight.home_max_hp">home_max_hp</a></code></li>
+</ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.Game" href="#blaseball_mike.models.Game">Game</a></code></h4>
