@@ -70,3 +70,40 @@ class Tarot(Enum):
         obj._value_ = keycode
         obj.text = text
         return obj
+
+
+class DamageType(Enum):
+    INVALID = -1
+    STEAL = 0
+    HOME_STEAL = 1
+    RUN = 2
+    HOME_RUN = 3
+    STRIKE = 4
+    FOUL_BALL = 5
+    STRIKE_OUT = 6
+    FLY_OUT = 7
+    GROUND_OUT = 8
+    SINGLE = 9
+    DOUBLE = 10
+    TRIPLE = 11
+    QUADRUPLE = 12
+    WALK = 13
+    CAUGHT_STEALING = 14
+    BALL = 15
+    SACRIFICE_FLY = 16
+    OUT = 17
+    CURSE_OF_CROWS = 18
+    GIVE_SPIRIT = 19
+    BIG_PEANUT = 20
+    BLOOD_DRAIN = 21
+    PEANUT_SWALLOWED = 22
+    INCINERATION = 23
+    FEEDBACK = 24
+    REVERB = 25
+    UNSHELLED = 26
+    PARTYING = 27
+    LOVE_SPELL = 28
+    PEANUT_YUMMY = 29
+    SUPER_PEANUT_YUMMY = 30
+    SUPER_PEANUT_ALLERGIC = 31
+    REBIRTH = 32

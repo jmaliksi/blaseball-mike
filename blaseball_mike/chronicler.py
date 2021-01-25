@@ -135,6 +135,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
 
     return paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
 
+
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     """
     Map a season/day to a real-life timestamp
@@ -164,3 +165,18 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
             result["endTime"] = parse(result["endTime"])
 
     return results
+
+
+def get_fights(id_=None, season=0):
+    """
+    Return a list of boss fights
+    """
+    season = season - 1
+
+    data = cached_session.get(f'{BASE_URL}/fights').json()["data"]
+    if id_:
+        data = list(filter(lambda x: x['id'] == id_, data))
+    if season > 1:
+        data = list(filter(lambda x: x['data']['season'] == season, data))
+
+    return data
