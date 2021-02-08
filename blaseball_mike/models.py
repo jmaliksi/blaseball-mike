@@ -90,12 +90,16 @@ class Base(abc.ABC):
 
     _camel_to_snake_re = re.compile(r'(?<!^)(?=[A-Z])')
 
-    def __init__(self, data):
+    def __init__(self, data, strict=False):
         self.fields = []
         self.key_transform_lookup = {}
         for key, value in data.items():
             self.fields.append(key)
-            setattr(self, Base._from_api_conversion(key), value)
+            try:
+                setattr(self, Base._from_api_conversion(key), value)
+            except AttributeError:
+                if strict:
+                    raise
 
     def __eq__(self, other):
         if isinstance(other, type(self)):
@@ -219,6 +223,23 @@ class Player(Base):
         return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
 
     @classmethod
+    def load_all_by_gameday(cls, season, day):
+        """
+        Returns dict of all players and their fk stats on the given season/day. 1-indexed.
+        """
+        players = reference.get_all_players_for_gameday(season, day)
+        return {
+            player['player_id']: cls(player) for player in players
+        }
+
+    @classmethod
+    def load_by_gameday(cls, id_, season, day):
+        """
+        Returns one player and their fk stats on the given season/day. 1-indexed.
+        """
+        return cls.load_all_by_gameday(season, day).get(id_)
+
+    @classmethod
     def find_by_name(cls, name):
         """
         Try to find the player by their name (case sensitive) or return None.
@@ -281,9 +302,7 @@ class Player(Base):
                 ((self.thwackability * self.divinity) ** 0.35) *
                 ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
 
-    @property
-    def batting_rating(self):
-        return self.hitting_rating
+    batting_rating = hitting_rating
 
     @Base.lazy_load("_pitching_rating", use_default=False)
     def pitching_rating(self):
@@ -533,6 +552,22 @@ class Player(Base):
         original_json['defenseRating'] = None
 
         return Player(original_json)
+
+    @property
+    def player_name(self):
+        return self.name
+
+    @player_name.setter
+    def player_name(self, v):
+        self.name = v
+
+    @property
+    def player_id(self):
+        return self.id
+
+    @player_id.setter
+    def player_id(self, v):
+        self.id = v
 
 
 class Team(Base):
