@@ -69,7 +69,28 @@ def print_stlats(*players):
     # hey wanna see something messed up
     print(&#39;name        &#39; + (&#39;{:&lt;6}&#39; * len(headers)).format(*[h[:4] for h in headers]))
     for player in players:
-        print(&#39;{:&lt;12}&#39;.format(player.name[:10]) + (&#39;{:&lt;6.2f}&#39; * len(headers)).format(*[float(getattr(player, h)) for h in headers]))</code></pre>
+        print(&#39;{:&lt;12}&#39;.format(player.name[:10]) + (&#39;{:&lt;6.2f}&#39; * len(headers)).format(*[float(getattr(player, h)) for h in headers]))
+
+
+def csv_format(*models, headers=None):
+    &#34;&#34;&#34;
+    Transforms an arbitrary list of models into a list of lists for easy export, ie to CSV.
+    By default, will extract all headers from the given models&#39; json, but specific headers can be given with
+    the `headers` param as a list.
+    &#34;&#34;&#34;
+    blobs = [model.json() for model in models]
+    if not headers:
+        # extract from models
+        headers = []
+        for blob in blobs:
+            for key in blob:
+                if key not in headers:
+                    headers.append(key)
+
+    res = [headers]
+    for model in models:
+        res.append([getattr(model, header, None) for header in headers])
+    return res</code></pre>
 </details>
 </section>
 <section>
@@ -79,6 +100,38 @@ def print_stlats(*players):
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="blaseball_mike.utils.csv_format"><code class="name flex">
+<span>def <span class="ident">csv_format</span></span>(<span>*models, headers=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Transforms an arbitrary list of models into a list of lists for easy export, ie to CSV.
+By default, will extract all headers from the given models' json, but specific headers can be given with
+the <code>headers</code> param as a list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def csv_format(*models, headers=None):
+    &#34;&#34;&#34;
+    Transforms an arbitrary list of models into a list of lists for easy export, ie to CSV.
+    By default, will extract all headers from the given models&#39; json, but specific headers can be given with
+    the `headers` param as a list.
+    &#34;&#34;&#34;
+    blobs = [model.json() for model in models]
+    if not headers:
+        # extract from models
+        headers = []
+        for blob in blobs:
+            for key in blob:
+                if key not in headers:
+                    headers.append(key)
+
+    res = [headers]
+    for model in models:
+        res.append([getattr(model, header, None) for header in headers])
+    return res</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.utils.print_stlats"><code class="name flex">
 <span>def <span class="ident">print_stlats</span></span>(<span>*players)</span>
 </code></dt>
@@ -148,6 +201,7 @@ def print_stlats(*players):
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
+<li><code><a title="blaseball_mike.utils.csv_format" href="#blaseball_mike.utils.csv_format">csv_format</a></code></li>
 <li><code><a title="blaseball_mike.utils.print_stlats" href="#blaseball_mike.utils.print_stlats">print_stlats</a></code></li>
 </ul>
 </li>
