@@ -65,7 +65,8 @@ def get_player_ids_by_name(name, current=True):
     """
     Returns the guid for a given player name.
     """
-    players = requests.get(f'{BASE_URL}/playerIdsByName?name={name}&current={current}')
+    s = session(3600)
+    players = s.get(f'{BASE_URL}/playerIdsByName?name={name}&current={current}')
     return [r['player_id'] for r in players.json()]
 
 
@@ -73,7 +74,8 @@ def get_all_players_for_gameday(season, day):
     """
     Returns fk stats for all players on the given gameday. 1-indexed.
     """
-    players = requests.get(f'{BASE_URL}/allPlayersForGameday?season={season - 1}&day={day - 1}')
+    s = session(600)
+    players = s.get(f'{BASE_URL}/allPlayersForGameday?season={season - 1}&day={day - 1}')
     return [_apply_type_map(p) for p in players.json()]
 
 
