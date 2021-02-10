@@ -151,6 +151,12 @@ class GlobalEvent(Base):
         events = database.get_global_events()
         return [cls(event) for event in events]
 
+    @Base.lazy_load("_expire", use_default=False)
+    def expire(self):
+        if self._expire is None:
+            return None
+        return parse(self._expire)
+
 
 class SimulationData(Base):
     """
