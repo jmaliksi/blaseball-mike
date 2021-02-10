@@ -178,6 +178,10 @@ class SimulationData(Base):
     def next_season_start(self):
         return parse(self._next_season_start)
 
+    @Base.lazy_load("_season", use_default=False)
+    def season(self):
+        return self._season + 1
+
 
 class Player(Base):
     """
@@ -1208,6 +1212,10 @@ class Playoff(Base):
     @Base.lazy_load("_winner_id", cache_name="_winner")
     def winner(self):
         return Team.load(self._winner_id)
+
+    @Base.lazy_load("_season", use_default=False)
+    def season(self):
+        return self._season + 1
 
 
 class PlayoffRound(Base):
