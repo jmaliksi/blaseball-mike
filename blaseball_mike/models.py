@@ -298,6 +298,8 @@ class Player(Base):
 
     @Base.lazy_load("_hitting_rating", use_default=False)
     def hitting_rating(self):
+        if getattr(self, "_hitting_rating", None):
+            return self._hitting_rating
         return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
                 ((self.thwackability * self.divinity) ** 0.35) *
                 ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
@@ -306,16 +308,22 @@ class Player(Base):
 
     @Base.lazy_load("_pitching_rating", use_default=False)
     def pitching_rating(self):
+        if getattr(self, "_pitching_rating", None):
+            return self._pitching_rating
         return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
                 (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
 
     @Base.lazy_load("_baserunning_rating", use_default=False)
     def baserunning_rating(self):
+        if getattr(self, "_baserunning_rating", None):
+            return self._baserunning_rating
         return ((self.laserlikeness**0.5) *
                 ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
 
     @Base.lazy_load("_defense_rating", use_default=False)
     def defense_rating(self):
+        if getattr(self, "_defense_rating", None):
+            return self._defense_rating
         return (((self.omniscience * self.tenaciousness) ** 0.2) *
                 ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
 
