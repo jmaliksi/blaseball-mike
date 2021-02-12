@@ -1016,6 +1016,27 @@ class Game(Base):
     def away_batter_mod(self):
         return Modification.load_one(getattr(self, "_away_batter_mod_id", None))
 
+    @staticmethod
+    def _payout_calc(odds, amount):
+        if odds == 0.5:
+            return round(2 * amount)
+        elif odds < 0.5:
+            return round(amount * (2 + 0.000555 * (100 * (0.5 - odds)) ** 2.4135))
+        else:
+            return round(amount * (2 - 0.000335 * (100 * (odds - 0.5)) ** 2.045))
+
+    def home_payout(self, bet):
+        """
+        Calculate the payout if the home team wins
+        """
+        return self._payout_calc(self.home_odds, bet)
+
+    def away_payout(self, bet):
+        """
+        Calculate the payout if the away team wins
+        """
+        return self._payout_calc(self.away_odds, bet)
+
 
 class Fight(Game):
     """Represents a Blaseball boss fight."""
