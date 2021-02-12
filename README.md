@@ -7,10 +7,11 @@ This is a python wrapper over blaseball's public APIs, including player/team/gam
 
 `pip install blaseball-mike`
 
+# Docs
 
-# Usage
+Full API documentation can be found at <https://jmaliksi.github.io/blaseball-mike/>
 
-Full API definition can be found at <https://jmaliksi.github.io/blaseball-mike/>
+# Example Usage
 
 ```
 >>> from blaseball_mike.models import Team
