@@ -93,8 +93,8 @@ pip install -r requirements.txt
 4. `python3 -m twine upload -r pypi dist/*`
 
 ## Documentation
-Use triple quotes to add docstrings to any public method and class. If adding/changing any docstrings, you'll need to update the docs
+Use triple quotes to add docstrings to any public method and class. Docs will be built and deployed on merges to `main`.
+
+Manual build
 1. `pip install pdoc3`
 2. `pdoc --html blaseball_mike --force -o docs`
-
-Include the generated html files with your diff.
