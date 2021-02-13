@@ -135,9 +135,12 @@ class Base(abc.ABC):
 
     def json(self):
         """Returns dictionary of fields used to generate the original object"""
-        return {
+        data = {
             f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
         }
+        if "timestamp" in data and not isinstance(data["timestamp"], str):
+            data["timestamp"] = data["timestamp"].strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+        return data
 
 
 class GlobalEvent(Base):
