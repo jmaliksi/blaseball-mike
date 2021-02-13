@@ -469,7 +469,12 @@ class Player(Base):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
+        
         original_json = self.json()
+        if not original_json.get("baseThirst") and original_json.get("base_thirst"):
+            original_json["baseThirst"] = original_json["base_thirst"]
+        if not original_json.get("groundFriction") and original_json.get("ground_friction"):
+            original_json["groundFriction"] = original_json["ground_friction"]
 
         for override_key, override_value in overrides.items():
             original_json[override_key] = override_value
