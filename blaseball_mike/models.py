@@ -106,6 +106,12 @@ class Base(abc.ABC):
             return self.json() == other.json()
         return NotImplemented
 
+    def __repr__(self):
+        try:
+            return f"<{self.__class__.__name__}: {self.id}>"
+        except AttributeError:
+            return super().__repr__()
+
     @staticmethod
     def _camel_to_snake(name):
         # Blaseball API uses camelCase for fields, convert to the more Pythonistic snake_case
