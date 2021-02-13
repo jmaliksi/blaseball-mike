@@ -392,10 +392,14 @@ class Player(Base):
 
     @Base.lazy_load("_blood_id", cache_name="_blood", use_default=False)
     def blood(self):
+        if isinstance(getattr(self, "_blood_id", None), str):
+            return self._blood_id
         return database.get_blood(getattr(self, "_blood_id", None))[0]
 
     @Base.lazy_load("_coffee_id", cache_name="_coffee", use_default=False)
     def coffee(self):
+        if isinstance(getattr(self, "_coffee_id", None), str):
+            return self._coffee_id
         return database.get_coffee(getattr(self, "_coffee_id", None))[0]
 
     @Base.lazy_load("_bat_id", cache_name="_bat", use_default=False)
