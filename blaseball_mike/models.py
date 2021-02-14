@@ -231,6 +231,8 @@ class Player(Base):
             time = parse(time)
 
         players = chronicler.get_player_updates(id_, before=time, order="desc", count=1)
+        if len(players) == 0:
+            return None
         return cls(dict(players[0]["data"], timestamp=time))
 
     @classmethod
@@ -650,6 +652,8 @@ class Team(Base):
             time = parse(time)
 
         team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
+        if len(team) == 0:
+            return None
         return cls(dict(team[0]["data"], timestamp=time))
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
@@ -1447,6 +1451,8 @@ class Tribute(Base):
             time = parse(time)
 
         tributes = chronicler.get_tribute_updates(before=time, order="desc", count=1)
+        if len(tributes) == 0:
+            return {}
 
         # Sort output by number of peanuts
         tributes = tributes[0]["players"]
