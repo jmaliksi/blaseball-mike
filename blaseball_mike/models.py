@@ -471,7 +471,7 @@ class Player(Base):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
-        
+
         original_json = self.json()
         if not original_json.get("baseThirst") and original_json.get("base_thirst"):
             original_json["baseThirst"] = original_json["base_thirst"]

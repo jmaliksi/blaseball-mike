@@ -4,7 +4,7 @@ Swagger docs: https://api.blaseball-reference.com/docs
 """
 import requests
 import requests_cache
-from blaseball_mike.session import session
+from blaseball_mike.session import session, check_network_response
 
 BASE_URL = 'https://api.blaseball-reference.com/v1'
 BASE_URL_V2 = 'https://api.blaseball-reference.com/v2'
@@ -49,6 +49,7 @@ TYPE_MAP = {
     'batting_stars': REMOVE_COL,
 }
 
+
 def _apply_type_map(blob):
     res = {}
     for k, v in blob.items():
@@ -64,19 +65,31 @@ def _apply_type_map(blob):
 def get_player_ids_by_name(name, current=True):
     """
     Returns the guid for a given player name.
+
+    Args:
+        name: Player name.
+        current: If false, include previous names in search.
     """
     s = session(3600)
     players = s.get(f'{BASE_URL}/playerIdsByName?name={name}&current={current}')
-    return [r['player_id'] for r in players.json()]
+    return [r['player_id'] for r in check_network_response(players)]
 
 
 def get_all_players_for_gameday(season, day):
     """
-    Returns fk stats for all players on the given gameday. 1-indexed.
+    Returns fk stats for all players on the given gameday.
+
+    Args:
+        season: 1-indexed int for season.
+        day: 1-indexed int for day.
     """
+    if season < 1:
+        raise ValueError("Season must be >= 1")
+    if day < 1:
+        raise ValueError("Day must be >= 1")
     s = session(600)
     players = s.get(f'{BASE_URL}/allPlayersForGameday?season={season - 1}&day={day - 1}')
-    return [_apply_type_map(p) for p in players.json()]
+    return [_apply_type_map(p) for p in check_network_response(players)]
 
 
 def get_stat_leaders(season='current', group='hitting,pitching'):
@@ -114,6 +127,8 @@ def get_stat_leaders(season='current', group='hitting,pitching'):
     ```
     """
     if isinstance(season, int):
+        if season < 1:
+            raise ValueError("Season must be >= 1")
         season = season - 1
     params = {
         'season': season,
@@ -121,7 +136,7 @@ def get_stat_leaders(season='current', group='hitting,pitching'):
     }
     s = session(600)
     stats = s.get(f'{BASE_URL_V2}/stats/leaders', params=params)
-    return stats.json()
+    return check_network_response(stats)
 
 
 def get_stats(type_='season',
@@ -139,11 +154,11 @@ def get_stats(type_='season',
     *extremely slow*, be warned.
 
     Args:
-        type (str): The type of stat split (defaults to season).
+        type_ (str): The type of stat split (defaults to season).
         group (str): The stat groups to return (e.g. hitting,pitching or hitting).
         fields (list): The stat fields to return (e.g. [strikeouts,home_runs] or [home_runs]).
         season: The (1-indexed) Blaseball season (or current for current season).
-        gameType (str): The type of game (e.g. R for regular season, P for postseason).
+        game_type (str): The type of game (e.g. R for regular season, P for postseason).
         sort_stat (str): The stat field to sort on.
         order (str): The order of the sorted stat field.
         player_id (str): The ID of a player.
@@ -221,6 +236,8 @@ def get_stats(type_='season',
     ```
     """
     if isinstance(season, int):
+        if season < 1:
+            raise ValueError("Season must be >= 1")
         season = season - 1
     params = {
         'type': type_,
@@ -245,4 +262,4 @@ def get_stats(type_='season',
 
     s = session(600)
     stats = s.get(f'{BASE_URL_V2}/stats', params=params)
-    return stats.json()
+    return check_network_response(stats)
