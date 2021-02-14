@@ -1,0 +1,176 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=COFFEE_RALLY
+  response:
+    body:
+      string: '[{"id":"COFFEE_RALLY","color":"#2e1406","textColor":"#fffcd9","background":"#44c97c","title":"Free
+        Refill","description":"Good for one Free Refill"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '149'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:38 GMT
+      Etag:
+      - W/"95-x2mmjrGVS/jr48p8gT7HMnPmDjk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A7nQNtN47uNuizRgMx0x5w1QxFMxK5Uwv.%2FZdL%2F7Lm72y%2B3RJmY797Nh0en8Uz2atvhL2ZXaANCKQ;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:38 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=TRIPLE_THREAT
+  response:
+    body:
+      string: '[{"id":"TRIPLE_THREAT","color":"#cc527a","textColor":"#cc527a","background":"#5dbcd2","title":"Triple
+        Threat","description":"This pitcher''s strikeouts score Unruns when there
+        are 3 runners on base, a runner on 3rd, or 3 Balls in the count. Each condition
+        met is worth .3 Unruns. At the end of the 3rd Inning, there''s a 33.33% chance
+        that this mod will disappear."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '365'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:38 GMT
+      Etag:
+      - W/"16d-jEOdPi/30rhsveRN8Sx+lpJuphQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ACL456DIY0w9imjLUIIDqUHIUeFvODk0d.S%2FShrPWvGSPZNOaoAqPIM2FeHtEOS5yBLL%2FF3cdcvDU;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:38 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=TRIPLE_THREAT
+  response:
+    body:
+      string: '[{"id":"TRIPLE_THREAT","color":"#cc527a","textColor":"#cc527a","background":"#5dbcd2","title":"Triple
+        Threat","description":"This pitcher''s strikeouts score Unruns when there
+        are 3 runners on base, a runner on 3rd, or 3 Balls in the count. Each condition
+        met is worth .3 Unruns. At the end of the 3rd Inning, there''s a 33.33% chance
+        that this mod will disappear."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '365'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:38 GMT
+      Etag:
+      - W/"16d-jEOdPi/30rhsveRN8Sx+lpJuphQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AzRpdcwpl8UV5uI1OAQ7r4986QlNtYPVM.9GJOsL8PvzkwxByX%2BQb1rOIv5n9LicXlU1knRqU4LgQ;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:38 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=COFFEE_RALLY
+  response:
+    body:
+      string: '[{"id":"COFFEE_RALLY","color":"#2e1406","textColor":"#fffcd9","background":"#44c97c","title":"Free
+        Refill","description":"Good for one Free Refill"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '149'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:38 GMT
+      Etag:
+      - W/"95-x2mmjrGVS/jr48p8gT7HMnPmDjk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ADsDcwPhXN9ccx-TB3wshR_xjBPlkMrfP.3Amw7SI6qcWq25Hkx%2F%2B12s3V%2BOOV1IUxaPGxtH3apx8;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:38 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

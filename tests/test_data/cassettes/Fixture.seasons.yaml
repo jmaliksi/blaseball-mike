@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/season?number=4
+  response:
+    body:
+      string: '{"id":"9465ef83-c4c7-4aaa-83d0-d78854652618","league":"d8545021-e9fc-48a3-af74-48685950a183","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","schedule":"de797ddc-e17f-4530-a336-ff13411a5c88","seasonNumber":4,"standings":"48789741-69b1-4aa9-a46c-eda3351a3f5e","stats":"51c29a58-a4c6-435a-8c60-ab49a493d98f","terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:20 GMT
+      Etag:
+      - W/"166-QJ15SdW6+FQkUA2vX/lmArU6WUs"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A1eoYuy4YXhG9DlJWc2CLHGspnWLzI5du.IzdptAmSxKHbRlCjSnXIIZOuB3Ihu5qDhpZMuFkt2sg;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:20 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

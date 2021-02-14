@@ -1,0 +1,128 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6
+  response:
+    body:
+      string: '{"id":"6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6","gameIndex":2,"games":[["none","5c8727f4-d86d-44cd-99db-d24ae1c0d864","none","none","none","00832262-2e01-439d-aa09-9eef90b53660","none","none","none","none","none","none","none","none","none","none"],["none","8f6a9062-2b83-421c-ac8b-418473a3ddb1","none","none","none","5298fbf5-e74a-43d2-bcdd-1561e5cf37d4","none","none"],["none","none","none","none","none","0f9ba0c2-4fca-4157-b615-b751b7868d2d","none","none"]],"matchups":["cb8208c2-6473-4ab2-990c-8a0f04d2f6f6","a7853495-54fe-4c8b-93a2-18c8075d9e7b","618b7f75-da29-4860-bbc6-c82a80d55c5f","136e7769-f3e2-4f86-9f34-8abbf6b7d58e","05664891-7844-470c-9b9f-212038380e89","24a8ff8a-d2bb-4d9b-ace2-8cd2be211326","d85ec2f7-a824-469b-bc84-1259172ccf17","969ac1c9-84ad-4d1a-8232-8bafa1a1ce51"],"name":"Round
+        1","roundNumber":0,"special":false,"winnerSeeds":[0,3,1,2,0,4,1,2],"winners":["f02aeae2-5e6a-4098-9842-02d2273f25c7","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","747b8e4a-7e50-4638-a973-ea7950a3e739","878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","7966eb04-efcc-499b-8f03-d13916330531","bfd38797-8404-4b38-8b82-341da28b1f83","105bc3ff-1320-4e37-8ef0-8d595cb95dd0"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1189'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:35 GMT
+      Etag:
+      - W/"4a5-5LSbN5h4dN9Nbj+mxBgqfoVYFT4"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A5U9YItApOUyGuWBenBtOzyjzwlfjs_Sq.xvB5q1FB7UPcVTSOOGTUjKvxPwkOo9cRazwJ8kub2h0;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=6e6206eb-1326-4c4e-a0cf-1d745aa611de
+  response:
+    body:
+      string: '{"id":"6e6206eb-1326-4c4e-a0cf-1d745aa611de","gameIndex":2,"games":[["4257b13c-fc09-4b80-8d99-862889502180","none"],["29588a2a-69a1-45bf-ae0b-7b80a301a343"],["7288ef24-842d-4ae1-aede-392e00330406"]],"matchups":["84f28e07-507a-4dd9-bc38-8c6c02be7542"],"name":"The
+        Internet Series","roundNumber":2,"special":true,"winnerSeeds":[2],"winners":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:35 GMT
+      Etag:
+      - W/"17c-NJ2e7gf4HP0S0fixUyObvWgNb0I"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ASONEhzgXOyGN1BfQ5xFQWhv1xklHCC6T.vohynZjwVvRMrN1twM8b%2FbpNP5LWuPjJa8kn6shIsw4;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=34c99cbf-1d7d-4715-8957-8abcba3c5b89
+  response:
+    body:
+      string: '{"id":"34c99cbf-1d7d-4715-8957-8abcba3c5b89","gameIndex":3,"games":[["812e7d93-0721-4e57-850a-d432de114184","7f29c6e2-cc61-4837-b83f-20eb203e2c41","068fd2ba-a8d3-41e2-8248-85962a45b434","6aec9c92-3227-492d-8391-fdae0f141765","none","none","none","none"],["33e148ee-86be-44d4-8628-8ff6612a4934","c91ec8e5-6335-451c-a3a4-0b1748988df4","8f52e572-bcb3-4f3b-a7f7-df3f41ed8640","3bead95b-6ddb-49d4-9fc5-b3b0cbd6c69f"],["746bc66d-eb9c-427a-91a2-7f41ee8b4543","fca6f5d2-e645-4354-985e-3080983eecb4","14c384cb-e44c-4736-806f-c3f3178c2da0","477f451a-7bc0-4c4d-887d-a3e2d057569c"],["58a17204-5ccc-4bcf-b115-7c9897104c55","b7db28d7-4838-481c-a7d7-04272fbf3f80","c092fb3b-4888-4294-8381-f4c7b3765cb4","none"]],"matchups":["3d4b8a9f-1a89-4597-be23-af21d1364820","bb167354-f57f-4ff5-8309-63e6b918c131","b4f6d880-02f3-42ab-9ee5-54a103d94808","6d3dd7f6-5bd2-4642-a5e7-5c1796579c3f"],"name":"Round
+        1","roundNumber":0,"special":false,"winnerSeeds":[0,2,3,1],"winners":["b72f3061-f573-40d7-832a-5ad475bd7909","ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","a37f9158-7f82-46bc-908c-c9e2dda7c33b"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1107'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:35 GMT
+      Etag:
+      - W/"453-WV8phylRZVnR82nTx22q31ouaWQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AhyjhzEtqFCQwoBmPcY49ijoj7rQnS_6w.D6KhXByY469Omc2546GcgyxyRRBLJQlWCROVHftVbHM;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

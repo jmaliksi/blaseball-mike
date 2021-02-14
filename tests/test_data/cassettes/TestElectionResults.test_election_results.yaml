@@ -1,0 +1,457 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/bonusResults?ids=cbb567c0-d770-4d22-92f6-ff16ebb94758,0d3ea692-e151-4629-8f88-d75b56107ebc,06a455d4-6bbc-4820-9256-e5c89e327720,b40b4946-9f1c-4328-969f-20fae50dc47e,ab2b02b4-935d-403e-81fc-d39c3e7c95ee,8b5fb689-1d47-473a-bfa1-2d3ca26426ed,468fcd69-fad7-4364-8426-24900db3e609,268580d3-7bbd-474d-a563-08044bafda8b,nagomi_mystery,winniehess_mystery
+  response:
+    body:
+      string: '[{"id":"cbb567c0-d770-4d22-92f6-ff16ebb94758","bonusId":"team_improve_hitting","bonusTitle":"Hitting
+        Boost","teamId":"7966eb04-efcc-499b-8f03-d13916330531","totalVotes":96,"description":"Improved
+        the Yellowstone Magic''s hitting by 10%","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"0d3ea692-e151-4629-8f88-d75b56107ebc","bonusId":"team_improve_pitching","bonusTitle":"Pitching
+        Boost","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":123,"description":"Improved
+        the Hades Tigers''s pitching by 10%","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"06a455d4-6bbc-4820-9256-e5c89e327720","bonusId":"reroll_worst_players_5","bonusTitle":"Randomize
+        Players","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":274,"description":"Randomized
+        the hitting stats for the Hades Tigers''s worst player, Daniel Duffy.\nRandomized
+        the hitting stats for the Hades Tigers''s worst player, Zion Aliciakeyes.\nRandomized
+        the hitting stats for the Hades Tigers''s worst player, Alyssa Harrell.\nRandomized
+        the hitting stats for the Hades Tigers''s worst player, Moody Cookbook.\nRandomized
+        the hitting stats for the Hades Tigers''s worst player, Moody Cookbook.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"b40b4946-9f1c-4328-969f-20fae50dc47e","bonusId":"max_random_hitter","bonusTitle":"Max
+        Out Hitter","teamId":"b024e975-1c4a-4575-8936-a3754a08806a","totalVotes":79,"description":"Jessica
+        Telephone''s hitting stats were maxed out.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"ab2b02b4-935d-403e-81fc-d39c3e7c95ee","bonusId":"steal_best_hitter","bonusTitle":"Steal
+        Best Hitter","teamId":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","totalVotes":122,"description":"The
+        Philly Pies stole the best hitter in the league, Jessica Telephone, from the
+        Dallas Steaks. They sent back August Mina.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"8b5fb689-1d47-473a-bfa1-2d3ca26426ed","bonusId":"max_random_pitcher","bonusTitle":"Max
+        Out Pitcher","teamId":"adc5b394-8f76-416d-9ce9-813706877b84","totalVotes":153,"description":"PolkaDot
+        Patterson''s pitching stats were maxed out.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"468fcd69-fad7-4364-8426-24900db3e609","bonusId":"team_improve_overall","bonusTitle":"Team
+        Boost","teamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","totalVotes":270,"description":"Improved
+        the Baltimore Crabs overall by 6%","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"268580d3-7bbd-474d-a563-08044bafda8b","bonusId":"steal_best_pitcher","bonusTitle":"Steal
+        Best Pitcher","teamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","totalVotes":178,"description":"The
+        Baltimore Crabs stole the best pitcher in the league, PolkaDot Patterson,
+        from the Kansas City Breath Mints. They sent back Winnie Hess.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"nagomi_mystery","bonusId":"mysterious_change","bonusTitle":"Mystery
+        Defection","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","totalVotes":0,"description":"Nagomi
+        Mcdaniel mysteriously defected to the Hawaii Fridays. Nolanestophia Patterson
+        swapped to the Tigers. There''s still no clear answer for why this happened.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null},{"id":"winniehess_mystery","bonusId":"mysterious_improvement","bonusTitle":"Mysterious
+        Improvement","teamId":"adc5b394-8f76-416d-9ce9-813706877b84","totalVotes":0,"description":"Winnie
+        Hess mysteriously improved to 2.5 stars after being traded from the Crabs
+        to the Breath Mints. An investigation may be incoming.","highestTeam":null,"highestTeamVotes":null,"teamVotes":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3677'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"e5d-XrOOQtgtHPBZ8p60do3tPxJGOy0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A-TVM5M2VMQKvVBIVWnpX_t5bAIRK6pIu.yL8Q7ZnstEZE%2BFGL%2F8EGxLWdVcjSqZgKhvs5ZO45ldI;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=b090fdfc-7d9d-414b-a4a5-bbc698028c15
+  response:
+    body:
+      string: '[{"id":"b090fdfc-7d9d-414b-a4a5-bbc698028c15","decreeId":"forbidden_book","decreeTitle":"Open
+        the Forbidden Book","description":"The Book Opens.\nSolar Eclipse.\nUmpires''
+        eyes turn white.\nStar player Jaylen Hotdogfingers is incinerated.\nHellmouth
+        swallows the Moab Desert.\nTHE DISCIPLINE ERA BEGINS","totalVotes":566}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '321'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"141-mVIUKOoV04v5KnPTaebQ4oyk29s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AXxKchyvA4T3iKSKRCc-kwLhPtblxqCiG.nWxCNKfjPHUXDzRq2rUssLOfEjklxVxMIai9jYrwzwI;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/bonusResults?ids=f0f15969-aecb-4f9e-8eb9-00f05ece732c,ec18f915-7b78-478c-93c6-305eddaeeaed,511260ad-b831-4ebc-a6b4-2582b661846e,068792c3-51a0-47ae-a359-9ee234acb74a,e59fbc74-c6ea-4064-8309-e397aa4b3679,8a2f2499-244d-4788-abd8-22b8e71a7ca9,fa34d625-5cb8-4f96-9bf9-4e6b916e93c2,c8b1de0c-1916-4181-a03a-0a831b0b8612,6fbb2192-bc11-4fbc-9d78-54b34c170534,1687cebf-9012-46f5-aeb3-1a4258a39b40,be2e2092-7572-4ece-ae7e-ce35721d0b4b,e6c853dc-75c8-4cd9-b637-5d894a346ed8,61237abf-8bc7-4fb3-9ef4-8c77253e9a27,b02c57d4-9aca-4fcd-86c7-3a834dcbdd5c,07b56f96-1e42-4eab-b852-9ca52e847c34,46e9edc7-2d93-40ca-9926-9802925be2f2,9cc4daf2-8f15-4cb5-a7cf-a5ce34562004,b7a5b9d0-55c9-45a7-8aba-be06f373872f,41e610a8-3f8d-4be7-a9a5-018f82e03baf,174f7f51-4d3a-44d4-ad15-27bbe1b37212
+  response:
+    body:
+      string: "[{\"id\":\"f0f15969-aecb-4f9e-8eb9-00f05ece732c\",\"bonusId\":\"popular_lineup_order\",\"bonusTitle\":\"Headliners\",\"teamId\":\"b72f3061-f573-40d7-832a-5ad475bd7909\",\"totalVotes\":15631,\"description\":\"Arranged
+        San Francisco Lovers's lineup in order of their Idolatry.\\n1 - Knight Urlacher\\n2
+        - Don Mitchell\\n3 - Kichiro Guerra\\n4 - Helga Burton\\n5 - Alexander Horne\\n6
+        - Ortiz Lopez\\n7 - Helga Moreno\\n8 - Theo King\\n9 - Kennedy Meh\",\"highestTeam\":\"b72f3061-f573-40d7-832a-5ad475bd7909\",\"highestTeamVotes\":11204,\"teamVotes\":11204},{\"id\":\"ec18f915-7b78-478c-93c6-305eddaeeaed\",\"bonusId\":\"steal_leaderboard_player_21\",\"bonusTitle\":\"Blind
+        Date\",\"teamId\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"totalVotes\":13642,\"description\":\"The
+        Seattle Garages stole hitter Oliver Notarobot from the Baltimore Crabs. They
+        sent back Luis Acevedo.\",\"highestTeam\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"highestTeamVotes\":2753,\"teamVotes\":2753},{\"id\":\"511260ad-b831-4ebc-a6b4-2582b661846e\",\"bonusId\":\"mod_player_hot_sauce\",\"bonusTitle\":\"Hot
+        Sauce Packet\",\"teamId\":\"36569151-a2fb-43c1-9df7-2df512424c82\",\"totalVotes\":115128,\"description\":\"Sandie
+        Turner is now Spicy!\",\"highestTeam\":\"57ec08cc-0411-4643-b304-0e80dbc15ac7\",\"highestTeamVotes\":64934,\"teamVotes\":2224},{\"id\":\"068792c3-51a0-47ae-a359-9ee234acb74a\",\"bonusId\":\"remove_worst_lineup\",\"bonusTitle\":\"Downsizing\",\"teamId\":\"f02aeae2-5e6a-4098-9842-02d2273f25c7\",\"totalVotes\":132603,\"description\":\"Hellmouth
+        Sunbeams's worst hitter, Joe Voorhees, retreats to the Shadows.\",\"highestTeam\":\"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16\",\"highestTeamVotes\":46840,\"teamVotes\":35979},{\"id\":\"e59fbc74-c6ea-4064-8309-e397aa4b3679\",\"bonusId\":\"reroll_worst_defense_3\",\"bonusTitle\":\"Stickum\",\"teamId\":\"f02aeae2-5e6a-4098-9842-02d2273f25c7\",\"totalVotes\":287116,\"description\":\"Randomized
+        Defense stats for the Hellmouth Sunbeams's worst defender, Eugenia Bickle.
+        3 -> 4\\nRandomized Defense stats for the Hellmouth Sunbeams's worst defender,
+        Sandoval Crossing. 3 -> 3.5\\nRandomized Defense stats for the Hellmouth Sunbeams's
+        worst defender, Miguel James. 3 -> 1.5\",\"highestTeam\":\"f02aeae2-5e6a-4098-9842-02d2273f25c7\",\"highestTeamVotes\":99681,\"teamVotes\":99681},{\"id\":\"8a2f2499-244d-4788-abd8-22b8e71a7ca9\",\"bonusId\":\"reroll_worst_hitters_3\",\"bonusTitle\":\"Paracausal
+        Event\",\"teamId\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"totalVotes\":421836,\"description\":\"Randomized
+        Hitting stats for the Hades Tigers's worst hitter, Richmond Harrison. 0.5
+        -> 1\\nRandomized Hitting stats for the Hades Tigers's worst hitter, Richmond
+        Harrison. 1 -> 3\\nRandomized Hitting stats for the Hades Tigers's worst hitter,
+        Spears Taylor. 1.5 -> 1\",\"highestTeam\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"highestTeamVotes\":97750,\"teamVotes\":97750},{\"id\":\"fa34d625-5cb8-4f96-9bf9-4e6b916e93c2\",\"bonusId\":\"variable_team_hitting\",\"bonusTitle\":\"Pretty
+        Plz?\",\"teamId\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"totalVotes\":330981,\"description\":\"Improved
+        the Hades Tigers's hitting by 4%\",\"highestTeam\":\"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff\",\"highestTeamVotes\":59145,\"teamVotes\":57312},{\"id\":\"c8b1de0c-1916-4181-a03a-0a831b0b8612\",\"bonusId\":\"steal_champion_players\",\"bonusTitle\":\"Champs
+        in the Making\",\"teamId\":\"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16\",\"totalVotes\":86394,\"description\":\"\\nThe
+        Chicago Firefighters stole hitter Axel Cardenas, from the Mexico City Wild
+        Wings. They sent back Joshua Watson.\\n\\nThe Chicago Firefighters stole hitter
+        Jos\xE9 Haley, from the Mexico City Wild Wings. They sent back Axel Cardenas.\\n\\nThe
+        Chicago Firefighters stole pitcher Kennedy Rodgers, from the Mexico City Wild
+        Wings. They sent back Mullen Peterson.\\n\",\"highestTeam\":\"57ec08cc-0411-4643-b304-0e80dbc15ac7\",\"highestTeamVotes\":42522,\"teamVotes\":5334},{\"id\":\"6fbb2192-bc11-4fbc-9d78-54b34c170534\",\"bonusId\":\"armor_steal_random\",\"bonusTitle\":\"Hand-Me
+        Downs\",\"teamId\":\"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16\",\"totalVotes\":21188,\"description\":\"Declan
+        Suzanne stole Oliver Mueller's armor, Fireproof Jacket.\",\"highestTeam\":\"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16\",\"highestTeamVotes\":1889,\"teamVotes\":1889},{\"id\":\"1687cebf-9012-46f5-aeb3-1a4258a39b40\",\"bonusId\":\"item_sawed_off_bat\",\"bonusTitle\":\"The
+        Iffey Jr.\",\"teamId\":\"b63be8c2-576a-4d6e-8daf-814f8bcea96f\",\"totalVotes\":119673,\"description\":\"Ra\xFAl
+        Leal gained the sawed off bat, the Iffey Jr. and has been Minimized.\",\"highestTeam\":\"36569151-a2fb-43c1-9df7-2df512424c82\",\"highestTeamVotes\":67467,\"teamVotes\":2492},{\"id\":\"be2e2092-7572-4ece-ae7e-ce35721d0b4b\",\"bonusId\":\"team_blood_type_electric\",\"bonusTitle\":\"Closed
+        Circuit\",\"teamId\":\"b63be8c2-576a-4d6e-8daf-814f8bcea96f\",\"totalVotes\":183694,\"description\":\"Blood
+        Transfusion.\\nAll of the Miami Dale's players now have Electric blood type!\\nThe
+        Miami Dale are now Electric!\",\"highestTeam\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"highestTeamVotes\":30453,\"teamVotes\":6411},{\"id\":\"e6c853dc-75c8-4cd9-b637-5d894a346ed8\",\"bonusId\":\"item_fireproof\",\"bonusTitle\":\"Scorpler's
+        Jacket\",\"teamId\":\"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff\",\"totalVotes\":35551,\"description\":\"Jes\xFAs
+        Koch gained Mclaughlin Scorpler's Memorial Fireproof Jacket.\",\"highestTeam\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"highestTeamVotes\":15914,\"teamVotes\":937},{\"id\":\"61237abf-8bc7-4fb3-9ef4-8c77253e9a27\",\"bonusId\":\"steal_random_leaderboard_player\",\"bonusTitle\":\"Popular
+        by Association\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":18579,\"description\":\"The
+        Hawaii Fridays stole hitter Aldon Cashmoney from the Breckenridge Jazz Hands.
+        They sent back Elijah Valenzuela.\",\"highestTeam\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"highestTeamVotes\":4641,\"teamVotes\":1734},{\"id\":\"b02c57d4-9aca-4fcd-86c7-3a834dcbdd5c\",\"bonusId\":\"steal_leaderboard_player_14\",\"bonusTitle\":\"Lottery
+        Pick\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":12292,\"description\":\"The
+        Hawaii Fridays stole hitter Evelton McBlase II from the Houston Spies. They
+        sent back Karato Bean.\",\"highestTeam\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"highestTeamVotes\":2007,\"teamVotes\":1482},{\"id\":\"07b56f96-1e42-4eab-b852-9ca52e847c34\",\"bonusId\":\"mod_non_division_targeted_shame\",\"bonusTitle\":\"The
+        Shame Bubble\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":52900,\"description\":\"The
+        Shame Bubble protects the Mild Low.\\nShame on the San Francisco Lovers!\\nShame
+        on the Baltimore Crabs!\\nShame on the New York Millennials!\\nShame on the
+        Chicago Firefighters!\\nShame on the Breckenridge Jazz Hands!\\nShame on the
+        Houston Spies!\\nShame on the Boston Flowers!\\nShame on the Miami Dale!\\nShame
+        on the Hellmouth Sunbeams!\\nShame on the Unlimited Tacos!\\nShame on the
+        Hades Tigers!\\nShame on the Canada Moist Talkers!\\nShame on the Seattle
+        Garages!\\nShame on the Dallas Steaks!\\nShame on the Kansas City Breath Mints!\",\"highestTeam\":\"7966eb04-efcc-499b-8f03-d13916330531\",\"highestTeamVotes\":6837,\"teamVotes\":3133},{\"id\":\"46e9edc7-2d93-40ca-9926-9802925be2f2\",\"bonusId\":\"mod_player_no_idolization\",\"bonusTitle\":\"Humblebrag\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":9709,\"description\":\"Hawaii
+        Fridays's player Jacob Winner cannot be Idolized anymore!\",\"highestTeam\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"highestTeamVotes\":1540,\"teamVotes\":1540},{\"id\":\"9cc4daf2-8f15-4cb5-a7cf-a5ce34562004\",\"bonusId\":\"mod_player_double_payouts\",\"bonusTitle\":\"Center
+        of Attention\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":23295,\"description\":\"York
+        Silk is now a Super Idol!\",\"highestTeam\":\"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff\",\"highestTeamVotes\":5855,\"teamVotes\":2541},{\"id\":\"b7a5b9d0-55c9-45a7-8aba-be06f373872f\",\"bonusId\":\"reroll_worst_pitchers_3\",\"bonusTitle\":\"Exploratory
+        Surgeries\",\"teamId\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"totalVotes\":337634,\"description\":\"Randomized
+        Pitching stats for the Hawaii Fridays's worst pitcher, James Mora. 1.5 ->
+        1.5\\nRandomized Pitching stats for the Hawaii Fridays's worst pitcher, James
+        Mora. 1.5 -> 1\\nRandomized Pitching stats for the Hawaii Fridays's worst
+        pitcher, James Mora. 1 -> 2\",\"highestTeam\":\"7966eb04-efcc-499b-8f03-d13916330531\",\"highestTeamVotes\":94720,\"teamVotes\":16159},{\"id\":\"41e610a8-3f8d-4be7-a9a5-018f82e03baf\",\"bonusId\":\"add_new_player_lineup\",\"bonusTitle\":\"New
+        Recruit\",\"teamId\":\"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e\",\"totalVotes\":175266,\"description\":\"Glabe
+        Moon has been recruited to join the Boston Flowers's lineup!\",\"highestTeam\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"highestTeamVotes\":39451,\"teamVotes\":31413},{\"id\":\"174f7f51-4d3a-44d4-ad15-27bbe1b37212\",\"bonusId\":\"reroll_worst_baserunners_3\",\"bonusTitle\":\"Jelly
+        Legs\",\"teamId\":\"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e\",\"totalVotes\":246182,\"description\":\"Randomized
+        Baserunning stats for the Boston Flowers's worst baserunner, Zeboriah Wilson.
+        1 -> 3.5\\nRandomized Baserunning stats for the Boston Flowers's worst baserunner,
+        Chambers Simmons. 1.5 -> 3.5\\nRandomized Baserunning stats for the Boston
+        Flowers's worst baserunner, Owen Picklestein. 1.5 -> 1.5\",\"highestTeam\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"highestTeamVotes\":51854,\"teamVotes\":14858}]"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8999'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"2327-qaf7oSTVlgRPsCEyz4u6eszQSCY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AWyIcUNot-xHSijSvk2uQrm1YxId9mQZ_.1TMvn1QnF96VoYDg%2B%2FYxyNvnpVNdAB4VqmgabTGb8gs;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=94ca62b2-fbba-4d32-a682-18b524ddd4a8
+  response:
+    body:
+      string: '[{"id":"94ca62b2-fbba-4d32-a682-18b524ddd4a8","decreeId":"bless_off","decreeTitle":"Bless
+        Off","description":"BLESS OFF PASSES\nSILENCE FALLS\nTHE CRABS ARE DENIED\nTHE
+        BREATH MINTS ARE DENIED\nTHE SHOE THIEVES ARE DENIED\nTHE JAZZ HANDS ARE DENIED\nIN
+        THE QUIET\nTHE MICROPHONE CRANKS THE GAIN","totalVotes":227274}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '317'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"13d-JsMdyR7hmEuWIXmnx//oYTLWkKM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A3PWNrr3Vm-eMDJJt2GNG6uPYsrb84KOJ.XASM1l7cU7jM%2BfwOxiKSCcU%2FG8w0otPl0MUkPDLz3g8;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/eventResults?ids=ascension_10,pods_10,stars_10
+  response:
+    body:
+      string: '[{"id":"ascension_10","msg":"The Baltimore Crabs have been Called Up.\nGood
+        Luck on your Journey!\nThey shall be replaced in the ILB by the Tokyo Lift."},{"id":"pods_10","msg":"The
+        Shelled One''s Pods have fallen back to the plane!\nPeanut Bong fell to the
+        Tacos.\nWyatt Quitter fell to the Lift.\nFrancisca Sasquatch fell to the Dale.\nPatel
+        Beyonce fell to the Steaks.\nAlejandro Leaf fell to the Millennials.\nWyatt
+        Pothos fell to the Jazz Hands.\nPitching Machine fell to the Garages.\nPeanutiel
+        Duffy fell to the Firefighters.\nYork Silk fell to the Moist Talkers.\nJessica
+        Telephone fell to the Breath Mints.\nPeanut Holloway fell to the Firefighters.\nJaylen
+        Hotdogfingers fell to the Lovers."},{"id":"stars_10","msg":"The Deal is complete.\nBoyfriend
+        Monreal has been Released.\nLandry Violence has been Released.\nRandall Marijuana
+        has been Released.\nWorkman Gloom has been Released.\nTyreek Olive has been
+        Released.\nDominic Marijuana has been Released.\nScrap Murphy has been Released.\nMorrow
+        Doyle has been Released.\nSebastian Sunshine has been Released.\nKiki Familia
+        has been Released.\nYazmin Mason has been Released.\nCaligula Lotus has been
+        Released.\nEmmett Internet has been Released.\nAxel Trololol has been Released.\n"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1244'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"4dc-iMH+gDNcOUPSaTLGsKMdaSof9r4"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AGZ08f1dhIYpWOne74_JLorGpaNt_Alzb.UOwcsM27uT8Z44%2FF4O8RWiewXrmnWyP6w%2B3JO9%2FDpj0;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/bonusResults?ids=241ce429-48fb-45f6-b761-cc03dd4a6d86,42f6ab98-8d39-4520-a6fa-7baf572d01cd,790aa0ae-c1dc-4457-bcdc-8da6fdb7be73,cd9d4dfe-66e8-402e-9bce-3915654c8ffe,316d3766-737b-4698-8f9b-72892d392a91,2f24687c-2c0d-48f5-8aa9-b485716ad443,6df271b6-6b90-4de5-baf7-bea9d8c5ed52,bf12231d-4128-4067-a4db-f6d9a41c9121,a0100c6b-4e38-435b-a2b7-c72aa772ce06,1e71b138-6b9a-439c-9b76-368ee9277b46,bfbead18-9907-4a9a-9756-cc0a97d1d34a,76432c31-f703-4442-b0e0-37a1b28810b7,db6ca571-a2fc-4598-a530-06d5a9571230,dee7fe16-a8df-4bd7-9eec-cfd8dfa285b8,8dc98a20-b4d4-46b8-b909-ac69627d739e,f4844a32-7551-413a-8986-0e1460923094,99bd606d-5206-4a83-a274-594464e0a70f,6116ac2b-7a39-47ad-9122-d40787f999f9,271299c2-a781-4dcd-b363-2b0445b5f839,7cad4419-d88d-4c7c-bff5-2e206bdb5e26
+  response:
+    body:
+      string: '[{"id":"241ce429-48fb-45f6-b761-cc03dd4a6d86","bonusId":"division_swap","bonusTitle":"Divisional
+        Swap","teamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","totalVotes":8913,"description":"The
+        Moist Talkers swapped into the Mild Low.\nThe Pies were swapped back to take
+        their place in the Mild High.","highestTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","highestTeamVotes":3343,"teamVotes":3343},{"id":"790aa0ae-c1dc-4457-bcdc-8da6fdb7be73","bonusId":"subleague_swap","bonusTitle":"Subleague
+        Swap","teamId":"b72f3061-f573-40d7-832a-5ad475bd7909","totalVotes":12298,"description":"The
+        Lovers swapped into the Mild High.\nThe Tigers were swapped back to take their
+        place in the Wild High.","highestTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","highestTeamVotes":3036,"teamVotes":3036},{"id":"316d3766-737b-4698-8f9b-72892d392a91","bonusId":"mod_team_traveling","bonusTitle":"Traveling
+        Team","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":672013,"description":"The
+        Shoe Thieves are now a Traveling team.","highestTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","highestTeamVotes":92179,"teamVotes":55436},{"id":"2f24687c-2c0d-48f5-8aa9-b485716ad443","bonusId":"shared_team_mod_fourth_strike","bonusTitle":"Tag-Team
+        Fourth Strike","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":141785,"description":"\nThe
+        Shoe Thieves get the Fourth Strike!\nThe Sunbeams get the Fourth Strike!","highestTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","highestTeamVotes":23033,"teamVotes":23033},{"id":"6df271b6-6b90-4de5-baf7-bea9d8c5ed52","bonusId":"mod_player_haunted","bonusTitle":"Haunted","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":631785,"description":"Esme
+        Ramsey is now Haunted!","highestTeam":"f02aeae2-5e6a-4098-9842-02d2273f25c7","highestTeamVotes":168860,"teamVotes":35284},{"id":"bf12231d-4128-4067-a4db-f6d9a41c9121","bonusId":"division_shadow_boost","bonusTitle":"Shadow
+        Ban Together","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":46219,"description":"\nThe
+        Breath Mints Shadows are boosted by 3%.\nThe Fridays Shadows are boosted by
+        3%.\nThe Moist Talkers Shadows are boosted by 3%.\nThe Shoe Thieves Shadows
+        are boosted by 3%.\nThe Magic Shadows are boosted by 3%.","highestTeam":"57ec08cc-0411-4643-b304-0e80dbc15ac7","highestTeamVotes":8938,"teamVotes":5281},{"id":"a0100c6b-4e38-435b-a2b7-c72aa772ce06","bonusId":"mod_hitters_repeating","bonusTitle":"Rogue
+        Waves","teamId":"adc5b394-8f76-416d-9ce9-813706877b84","totalVotes":250013,"description":"The
+        Breath Mints are hit by Rogue Waves!\nMarquez Clark is Repeating!\nGrey Alvarado
+        is Repeating!\nStew Briggs is Repeating!\nRodriguez Internet is Repeating!\nHewitt
+        Best is Repeating!","highestTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","highestTeamVotes":57006,"teamVotes":21614},{"id":"1e71b138-6b9a-439c-9b76-368ee9277b46","bonusId":"pull_best_player_from_bench","bonusTitle":"Hidden
+        Power","teamId":"adc5b394-8f76-416d-9ce9-813706877b84","totalVotes":383237,"description":"\nThe
+        Breath Mints call up Helga Washington. Marquez Clark retreats to the Shadows.","highestTeam":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","highestTeamVotes":157937,"teamVotes":33000},{"id":"bfbead18-9907-4a9a-9756-cc0a97d1d34a","bonusId":"mod_team_fireproof_permanent","bonusTitle":"Doctor
+        Smedley''s Umpire Cream","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":615442,"description":"The
+        Tigers have covered themselves with Doctor Smedley''s Umpire Cream, and are
+        now immune to Incinerations!","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":218110,"teamVotes":218110},{"id":"76432c31-f703-4442-b0e0-37a1b28810b7","bonusId":"mod_team_keep_blood","bonusTitle":"Sealant","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":745186,"description":"The
+        Tigers have gained Sealant.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":178074,"teamVotes":178074},{"id":"db6ca571-a2fc-4598-a530-06d5a9571230","bonusId":"division_pitching_tradeoff","bonusTitle":"Sharing
+        Signs","teamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","totalVotes":213710,"description":"Improved
+        the Wild Low''s hitting rating by 10% and impaired their pitching rating by
+        -5%","highestTeam":"878c1bf6-0d21-4659-bfee-916c8314d69c","highestTeamVotes":72834,"teamVotes":72834},{"id":"dee7fe16-a8df-4bd7-9eec-cfd8dfa285b8","bonusId":"pull_best_player_from_bullpen","bonusTitle":"Dark
+        Star","teamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","totalVotes":606129,"description":"\nThe
+        Garages call up Goodwin Morin. Mike Townsend retreats to the Shadows.","highestTeam":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","highestTeamVotes":212141,"teamVotes":212141},{"id":"8dc98a20-b4d4-46b8-b909-ac69627d739e","bonusId":"item_actual_airplane","bonusTitle":"An
+        Actual Airplane","teamId":"36569151-a2fb-43c1-9df7-2df512424c82","totalVotes":102708,"description":"Thomas
+        Dracaena gained An Actual Airplane.","highestTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","highestTeamVotes":21054,"teamVotes":1149},{"id":"f4844a32-7551-413a-8986-0e1460923094","bonusId":"mod_team_birds_unshell","bonusTitle":"Bird
+        Seed","teamId":"36569151-a2fb-43c1-9df7-2df512424c82","totalVotes":52311,"description":"The
+        Millennials have gained Bird Seed.","highestTeam":"878c1bf6-0d21-4659-bfee-916c8314d69c","highestTeamVotes":10741,"teamVotes":10502},{"id":"99bd606d-5206-4a83-a274-594464e0a70f","bonusId":"team_removes_allergies","bonusTitle":"The
+        Nut Button","teamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","totalVotes":477593,"description":"The
+        Sunbeams are no longer allergic to Peanuts!\nSandoval Crossing is suddenly
+        Superyummy!","highestTeam":"f02aeae2-5e6a-4098-9842-02d2273f25c7","highestTeamVotes":144747,"teamVotes":144747},{"id":"6116ac2b-7a39-47ad-9122-d40787f999f9","bonusId":"mod_division_walk_park","bonusTitle":"Divisional
+        Walk in the Park","teamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","totalVotes":129659,"description":"The
+        Wild Low teams all take a Walk in the Park together!","highestTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","highestTeamVotes":34335,"teamVotes":28822},{"id":"271299c2-a781-4dcd-b363-2b0445b5f839","bonusId":"team_ono_blood_type","bonusTitle":"O-No
+        Blood Type","teamId":"7966eb04-efcc-499b-8f03-d13916330531","totalVotes":913206,"description":"Blood
+        Transfusion.\nAll of the Yellowstone Magic''s players now have O No blood
+        type!\nThe Yellowstone Magic now have the power of O No!","highestTeam":"878c1bf6-0d21-4659-bfee-916c8314d69c","highestTeamVotes":215852,"teamVotes":211337},{"id":"7cad4419-d88d-4c7c-bff5-2e206bdb5e26","bonusId":"steal_champion_players","bonusTitle":"People''s
+        Champions","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","totalVotes":440594,"description":"\nThe
+        Hawai''i Fridays stole hitter Nagomi Mcdaniel, from the Baltimore Crabs. They
+        sent back Evelton McBlase II.\n\nThe Hawai''i Fridays stole hitter Sutton
+        Dreamy, from the Baltimore Crabs. They sent back Baldwin Breadwinner.\n\nThe
+        Hawai''i Fridays stole pitcher Montgomery Bullock, from the Baltimore Crabs.
+        They sent back Bevan Underbuck.\n","highestTeam":"36569151-a2fb-43c1-9df7-2df512424c82","highestTeamVotes":55217,"teamVotes":26650},{"id":"cd9d4dfe-66e8-402e-9bce-3915654c8ffe","bonusId":"item_team_headphones","bonusTitle":"Noise-Canceling
+        Headphones","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":160969,"description":"The
+        Charleston Shoe Thieves gain Noise-Canceling Headphones!","highestTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","highestTeamVotes":60645,"teamVotes":60645},{"id":"42f6ab98-8d39-4520-a6fa-7baf572d01cd","bonusId":"steal_random_leaderboard_player","bonusTitle":"Popular
+        by Association","teamId":"b72f3061-f573-40d7-832a-5ad475bd7909","totalVotes":412787,"description":"The
+        Lovers add Montgomery Bullock.\nMilo Brown retreats to the Shadows...\nTIME
+        UNTANGLES\nTWO THREADS EMERGE\nThe Lovers add Bontgomery Mullock.\nMilo Brown
+        retreats to the Shadows...","highestTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","highestTeamVotes":109333,"teamVotes":3259}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7976'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"1f28-5kVc9/XFIkkQ23InQH+wwaT76X8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ai6Sds9wmJDjrlUXns_BGE7RV_5pE9hiq.oo93y%2FcTgavK%2FLWoUMo%2FavW6T9oWgkF22IpKsUsN8Yc;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=b0317431-b707-4a76-af96-c46ac46c3834
+  response:
+    body:
+      string: '[{"id":"b0317431-b707-4a76-af96-c46ac46c3834","decreeId":"tactical_nuke","decreeTitle":"Black
+        Hole","description":"TIME TANGLES\nRETROCAUSAL EVENT RECORDED\nINITIATING
+        PLAYBACK:\n\nWARNING: SUN 1 LOW FUEL\nPRESSURE AT CRITICAL\nSUN 2 WAIVERS","totalVotes":343191}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '264'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:35 GMT
+      Etag:
+      - W/"108-gGxGs7GTNDLscU1NeCXj476IDvY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ac1HpxUg7Ag9bw2k2ZEc-oOAw5XTSbvnY.WQfRadXjycgaBUUQ4e1HYmhLvwHiohQ3GKL%2Fgl1LanE;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:35 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

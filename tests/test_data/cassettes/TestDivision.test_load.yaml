@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=f711d960-dc28-4ae2-9249-e1f320fec7d7
+  response:
+    body:
+      string: '{"id":"f711d960-dc28-4ae2-9249-e1f320fec7d7","teams":["b72f3061-f573-40d7-832a-5ad475bd7909","878c1bf6-0d21-4659-bfee-916c8314d69c","b024e975-1c4a-4575-8936-a3754a08806a","adc5b394-8f76-416d-9ce9-813706877b84","ca3f1c8c-c025-4d8e-8eef-5be6accbeb16"],"name":"Lawful
+        Good"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '271'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:16 GMT
+      Etag:
+      - W/"10f-x228bxPUmqChoIR7o1UwSqdiPEM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ABq98MDDpbKPsfi4_2jyXGiCYNdSww-Gh.wwFET1HGxrALJ9xOjyeQ4fyXYXOQrxogyVmbzv6Hz2Q;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:16 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 14 Feb 2021 01:10:16 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AnqKLfjX2yaZXb5IdhhfkCvHSnLrIcL3U.7xgfpzvh5ClQsMNyMEzbFc7ancP%2B1dWKToNDHY97gDY;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:16 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=b090fdfc-7d9d-414b-a4a5-bbc698028c15,a52b1257-9020-4582-8da0-dc97559dedbf
+  response:
+    body:
+      string: '[{"id":"b090fdfc-7d9d-414b-a4a5-bbc698028c15","decreeId":"forbidden_book","decreeTitle":"Open
+        the Forbidden Book","description":"The Book Opens.\nSolar Eclipse.\nUmpires''
+        eyes turn white.\nStar player Jaylen Hotdogfingers is incinerated.\nHellmouth
+        swallows the Moab Desert.\nTHE DISCIPLINE ERA BEGINS","totalVotes":566},{"id":"a52b1257-9020-4582-8da0-dc97559dedbf","decreeId":"targeted_shame","decreeTitle":"Targeted
+        Shame","description":"Targets appear.\nThe Hades Tigers are Targeted.\nThe
+        Chicago Firefighters are Targeted.\nThe New York Millennials are Targeted.\nThe
+        Breckenridge Jazz Hands are Targeted.\nShame Deepens.","totalVotes":72209}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '648'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Etag:
+      - W/"288-KaJDjDzeLnpZgM34cV5orGEAR5E"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AFWbpulkUd1Bi58oEEg4RklMPQAdLsaBZ.gx24aJYU6yRmSTDfd%2BgXlpeiMIeTN840uyPBp37ZwZc;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

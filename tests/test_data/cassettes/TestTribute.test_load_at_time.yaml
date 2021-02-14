@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/tributes/updates?before=2020-09-21T20%3A52%3A03.232000Z&count=1&order=desc
+  response:
+    body:
+      string: '{"nextPage":"Yv0kJ9hzPUup7PfBhnELf_AMJn0eQQAA","data":[{"updateId":"2724fd62-73d8-4b3d-a9ec-f7c186710b7f","timestamp":"2020-09-21T20:52:00.447Z","players":{"f9c0d3cb-d8be-4f53-94c9-fc53bcbce520":29600,"f967d064-0eaf-4445-b225-daed700e044b":3286,"f8c20693-f439-4a29-a421-05ed92749f10":77143,"f7715b05-ee69-43e5-a0e5-8e3d34270c82":127626,"f44a8b27-85c1-44de-b129-1b0f60bcb99c":28839,"ef32eb48-4866-49d0-ae58-9c4982e01142":9554,"d74a2473-1f29-40fa-a41e-66fa2281dfca":322910,"d744f534-2352-472b-9e42-cd91fa540f1b":13311,"d5b6b11d-3924-4634-bd50-76553f1f162b":2656,"d1a7c13f-8e78-4d2e-9cae-ebf3a5fcdb5d":17346,"cd68d3a6-7fbc-445d-90f1-970c955e32f4":44868,"c86b5add-6c9a-40e0-aa43-e4fd7dd4f2c7":6044,"c83f0fe0-44d1-4342-81e8-944bb38f8e23":2540,"c83a13f6-ee66-4b1c-9747-faa67395a6f1":5722,"c73d59dd-32a0-49ce-8ab4-b2dbb7dc94ec":3856,"be35caba-b16a-4e0d-b927-4da857f4cdb5":29378,"bd9d1d6e-7822-4ad9-bac4-89b8afd8a630":3375,"bd549bfe-b395-4dc0-8546-5c04c08e24a5":18802,"bd4c6837-eeaa-4675-ae48-061efa0fd11a":159522,"bca38809-81de-42ff-94e3-1c0ebfb1e797":5630,"b86237bb-ade6-4b1d-9199-a3cc354118d9":3120,"b4505c48-fc75-4f9e-8419-42b28dcc5273":2456,"b3d518b9-dc68-4902-b68c-0022ceb25aa0":3240,"afc90398-b891-4cdf-9dea-af8a3a79d793":136779,"ab9eb213-0917-4374-a259-458295045021":10689,"a5adc84c-80b8-49e4-9962-8b4ade99a922":31600,"a311c089-0df4-46bd-9f5d-8c45c7eb5ae2":84308,"a1628d97-16ca-4a75-b8df-569bae02bef9":87355,"a071a713-a6a1-4b4c-bb3f-45d9fba7a08c":6031,"98a98014-9636-4ece-a46a-4625b47c65d5":228421,"90c6e6ca-77fc-42b7-94d8-d8afd6d299e5":5262,"8e1fd784-99d5-41c1-a6c5-6b947cec6714":4160,"8ba7e1ff-4c6d-4963-8e0f-7096d14f4b12":2506,"8604e861-d784-43f0-b0f8-0d43ea6f7814":176335,"80a2f015-9d40-426b-a4f6-b9911ba3add8":2705,"7b0f91aa-4d66-4362-993d-6ff60f7ce0ef":5571,"773712f6-d76d-4caa-8a9b-56fe1d1a5a68":3285,"76c4853b-7fbc-4688-8cda-c5b8de1724e4":48014,"7310c32f-8f32-40f2-b086-54555a2c0e86":150911,"70ccff1e-6b53-40e2-8844-0a28621cb33e":62231,"70a458ed-25ca-4ff8-97fc-21cbf58f2c2a":2457,"6fc3689f-bb7d-4382-98a2-cf6ddc76909d":6841,"64b055d1-b691-4e0c-8583-fc08ba663846":4635,"5b9727f7-6a20-47d2-93d9-779f0a85c4ee":3100,"57448b62-f952-40e2-820c-48d8afe0f64d":13593,"4bda6584-6c21-4185-8895-47d07e8ad0c0":3565,"495a6bdc-174d-4ad6-8d51-9ee88b1c2e4a":16094,"4941976e-31fc-49b5-801a-18abe072178b":31345,"493a83de-6bcf-41a1-97dd-cc5e150548a3":334844,"472f50c0-ef98-4d05-91d0-d6359eec3946":22617,"43bf6a6d-cc03-4bcf-938d-620e185433e1":2761,"40db1b0b-6d04-4851-adab-dd6320ad2ed9":16545,"3d4545ed-6217-4d7a-9c4a-209265eb6404":104358,"3afb30c1-1b12-466a-968a-5a9a21458c7f":19216,"33fbfe23-37bd-4e37-a481-a87eadb8192d":27148,"31f83a89-44e3-47b7-8c9e-0dfdcd8bd30f":47015,"3064c7d6-91cc-4c2a-a433-1ce1aabc1ad4":9493,"2ca0c790-e1d5-4a14-ab3c-e9241c87fc23":4098,"2b1cb8a2-9eba-4fce-85cf-5d997ec45714":52704,"2ae8cbfc-2155-4647-9996-3f2591091baf":48485,"262c49c6-8301-487d-8356-747023fa46a9":59531,"25376b55-bb6f-48a7-9381-7b8210842fad":82915,"248ccf3d-d5f6-4b69-83d9-40230ca909cd":23037,"1ba715f2-caa3-44c0-9118-b045ea702a34":6669,"18798b8f-6391-4cb2-8a5f-6fb540d646d5":87566,"15ae64cd-f698-4b00-9d61-c9fffd037ae2":54557,"14d88771-7a96-48aa-ba59-07bae1733e96":149469,"0fe896e1-108c-4ce9-97be-3470dde73c21":2657,"05bd08d5-7d9f-450b-abfa-1788b8ee8b91":2880,"03097200-0d48-4236-a3d2-8bdb153aa8f7":2464}}]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:05 GMT
+      Server:
+      - Kestrel
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/tributes/updates?before=1980-01-01T00%3A00%3A00.000000Z&count=1&order=desc
+  response:
+    body:
+      string: '{"nextPage":null,"data":[]}'
+    headers:
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:05 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

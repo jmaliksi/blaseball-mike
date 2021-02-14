@@ -1,0 +1,37 @@
+[
+  {
+    "id": "80f2f436-123b-4c68-bf0b-fb50535c8379",
+    "homeOdds": 0.43861830524623113,
+    "awayOdds": 0.5613816947537688,
+    "bet": 860,
+    "reference_away_payout": 1708
+  },
+  {
+    "id": "e27c21a3-c880-4323-a5f9-7062c9b5e896",
+    "homeOdds": 0.4596203494692173,
+    "awayOdds": 0.5403796505307827,
+    "bet": 1000,
+    "reference_away_payout": 1994
+  },
+  {
+    "id": "40908a7c-ca05-4094-a699-4240bf86230f",
+    "homeOdds": 0.5315518885408405,
+    "awayOdds": 0.4684481114591596,
+    "bet": 1000,
+    "reference_home_payout": 1996
+  },
+  {
+    "id": "71b101ae-d358-4e6e-a965-d6c3768ffba3",
+    "homeOdds": 0.557613217888845,
+    "awayOdds": 0.4423867821111551,
+    "bet": 9,
+    "reference_home_payout": 18
+  },
+  {
+    "id": "d7e0c448-c3df-418e-a4dd-cf31e596e7e4",
+    "homeOdds": 0.6045396706428627,
+    "awayOdds": 0.39546032935713743,
+    "bet": 696,
+    "reference_home_payout": 1364
+  }
+]

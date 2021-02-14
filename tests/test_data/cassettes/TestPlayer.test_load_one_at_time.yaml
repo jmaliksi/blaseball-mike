@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-08-01T18%3A00%3A00.000000Z&count=1&order=desc&player=d97835fd-2e92-4698-8900-1f5abea0a3b6
+  response:
+    body:
+      string: '{"nextPage":"_TV42ZIumEaJAB9avqCjtmBMO2xFFgAA","data":[{"updateId":"2a3fc343-eb8d-4d3b-9327-adb0dca1071c","playerId":"d97835fd-2e92-4698-8900-1f5abea0a3b6","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:43.229Z","data":{"_id":"d97835fd-2e92-4698-8900-1f5abea0a3b6","name":"King
+        Roland","soul":4,"moxie":0.02518106278122967,"buoyancy":0.5008464028487001,"coldness":0.22506960329465775,"deceased":false,"divinity":0.8321560570146389,"chasiness":0.6401629714340105,"martyrdom":0.42436432323753137,"baseThirst":0.027515276958333557,"indulgence":0.046227851506215556,"musclitude":0.9847927314137912,"tragicness":0,"omniscience":0.6065274742006694,"patheticism":0.3453786901552993,"suppression":0.09419312075448039,"continuation":0.5762407690354707,"ruthlessness":0.8510934832513897,"totalFingers":10,"watchfulness":0.5708658431727858,"laserlikeness":0.7039199113062156,"overpowerment":0.4777364502319945,"tenaciousness":0.8048607766092684,"thwackability":0.1503839870895045,"anticapitalism":0.03491381782653513,"groundFriction":0.794436391616405,"pressurization":0.9509063179128374,"unthwackability":0.5517557593103859,"shakespearianism":0.3278484783026103}}]}'
+    headers:
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:25 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-08-01T18%3A00%3A00.000000Z&count=1&order=desc&player=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"nextPage":null,"data":[]}'
+    headers:
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:25 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=1980-01-01T00%3A00%3A00.000000Z&count=1&order=desc&player=d97835fd-2e92-4698-8900-1f5abea0a3b6
+  response:
+    body:
+      string: '{"nextPage":null,"data":[]}'
+    headers:
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:26 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

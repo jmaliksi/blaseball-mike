@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=643280fc-b7c6-4b6d-a164-9b53e1a3e47a,8af77570-ba69-46c6-9c7b-3064e7c5c1d5
+  response:
+    body:
+      string: '[{"id":"643280fc-b7c6-4b6d-a164-9b53e1a3e47a","decreeId":"forecast_birds","decreeTitle":"
+        ","description":"EMERGENCY ALERT\nSEVERE MURMURATION WARNING IN THIS AREA","totalVotes":304585},{"id":"8af77570-ba69-46c6-9c7b-3064e7c5c1d5","decreeId":"book_deface","decreeTitle":"Deface","description":"The
+        Book Defaces\nItself.\nIt Rewrites the Rules,\nRe-faces the Ballot.\nRegards
+        Itself.\nRecognizes Your Will.","totalVotes":213453}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '428'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Etag:
+      - W/"1ac-QGA2BbEiywIWbjQzLsSrOsMOto4"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Azw8hmiCA5ARGdJKdph9x7hHqqO-W06DY.Df%2B95JLV9%2BpXQmFL58fq2%2FKkOheoGLBHfB218vJpOug;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AMhvk_UZ2_VESOXhjnBsN9PAWRxekmvuT.Xp9Kcn%2BqH16EN77I2DflIsU5xIxlGxyG7R4JFP0FxUw;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameStatsheets?ids=aa1f981a-40dc-4b10-bc35-9f0f1928c810
+  response:
+    body:
+      string: '[{"id":"aa1f981a-40dc-4b10-bc35-9f0f1928c810","homeTeamRunsByInning":[2,0,0,1,1,0,1,5],"awayTeamRunsByInning":[0,3,0,0,1,0,1,0,0],"awayTeamTotalBatters":0,"homeTeamTotalBatters":0,"awayTeamStats":"9159eed6-332c-4b94-93f8-1c5cead381ec","homeTeamStats":"e2a55d72-5e88-403f-975e-9b1478c720fe"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '291'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:42 GMT
+      Etag:
+      - W/"123-RSgTULEOu8CNzIhAbMRslFJV8mk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A9Del0leLoihd8DHIi-0eks3rem-0F84U.qeo06j1yB36Tz%2FyH9CgXGpavJSNJ5SXxc%2FDd6PhQA2s;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameStatsheets?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:42 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AcW-wbLJbrP_FiMbayeJaVGiLs78EZZrR.xp%2FnmwBiWZvHZUqSv3ZHC45m239R5YmoPUG7j7vD1b8;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

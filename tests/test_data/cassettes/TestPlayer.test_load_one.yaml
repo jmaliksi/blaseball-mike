@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=6644d767-ab15-4528-a4ce-ae1f8aadb65f
+  response:
+    body:
+      string: '[{"id":"6644d767-ab15-4528-a4ce-ae1f8aadb65f","anticapitalism":0.09820482794626617,"baseThirst":0.5981758490869238,"buoyancy":0.0008908716441011766,"chasiness":0.16980266728260318,"coldness":0.7788441451386205,"continuation":0.5086997271165257,"divinity":0.9271603638578974,"groundFriction":0.216137470040763,"indulgence":0.2340110011984089,"laserlikeness":0.17516216161185794,"martyrdom":0.1845429646426302,"moxie":0.9844870828631578,"musclitude":0.015154132030299916,"name":"Paula
+        Reddick","bat":"","omniscience":0.6143125481352854,"overpowerment":0.8185466769535259,"patheticism":0.18583044463894738,"ruthlessness":0.4186738122956346,"shakespearianism":0.8242078709412874,"suppression":0.8453860628420269,"tenaciousness":0.8992208318642234,"thwackability":0.7857708881577676,"tragicness":0.1,"unthwackability":0.14476802181878257,"watchfulness":0.19231573226607757,"pressurization":0.040072109597423244,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.06429302817673332,"fate":62,"armor":"","ritual":"Reading
+        theory","coffee":7,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.27570574753839294,"pitchingRating":0.2540581293455701,"hittingRating":0.6241492841411685,"defenseRating":0.5001040425764154,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1385'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:24 GMT
+      Etag:
+      - W/"569-D44gOmqYmjDMpamyuJBBKxyfe+8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Aj_DFXqYl6endKKOdPUIpg8wSvvwArgXJ.ZLkbih8Je5RDUWisJ9ZdLUb3hvhn1GJYbKoLs0hWgSI;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:24 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:25 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AnyItE8pO6X5WjMrQaXnCXEHNZ46r9QTM.sGwztEyofIrKI7oG8u9TvheEZC81xY8W3HoMz8k3NFo;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:25 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

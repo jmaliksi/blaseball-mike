@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/teamSeasonStats?ids=80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1,407b8150-0bc5-4ce7-9e59-cf14a3a97497,a52c5612-31c1-4243-a25b-6f159a91dbe7
+  response:
+    body:
+      string: '[{"id":"80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1","playerStats":["5fb13222-3864-4498-a43b-c42b9bc89203","4b5bcf0d-3519-4e27-9bc3-00823f9a7983","014760a0-a685-4713-b944-67053725fde2","35423662-2e3f-4a8c-be6b-b6bf2cf46319","41f4c039-dc9f-4fda-8fa9-868d0b0349df","bf56014b-a21e-4cec-b598-d21dbfb8f31b","c630607f-792e-4d02-88c7-7ea104021268","b4b1fcec-590f-4d3b-aa8d-4f35dbca8db4","0ad65532-6a8f-427a-80bf-5f7535314c55","2e0d9611-316f-4974-af09-20a955b757a2"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Los
+        Angeles Tacos","teamId":null},{"id":"407b8150-0bc5-4ce7-9e59-cf14a3a97497","playerStats":["086d52ad-ef16-4cd9-b6d5-0e0d73b1150c","20e4445e-e44f-4899-bf74-160a5715e89f","bdebd89c-79f8-4bdc-ba20-07a0a851d9b7","fb452210-e573-4c71-b76c-b8e8f428d3c7","ba4c01df-1541-4d53-9fe3-8c19ff31000d","72d193f2-eec2-4ea6-bdca-5d4e577881db","410fd781-1ab8-4d85-a539-d3596ee1c604","ea55f080-a95c-4320-b3f3-bccf63685c85","a5e658bb-8001-4170-b033-33a9afe93261","aad1b0d3-e0b8-4457-98d2-e9b792e1f167","49de5278-4967-4219-9c64-ed5c6bcc5e75","042b58bc-3797-4cee-adb0-4ca69ce77a97","3f444d25-fce3-4a23-91f1-a17099ba1e29","8745b073-1eee-4511-83d6-2e284ebe81b0"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Hawaii
+        Fridays","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024"},{"id":"a52c5612-31c1-4243-a25b-6f159a91dbe7","playerStats":["c24bf126-b55d-4432-b4e4-aaf359f58d41","bc1082b5-94bc-4fdc-8db3-7871950affba","e2d3e9ec-5af7-468b-b43c-203f34cda548","edc9311f-c42a-4060-a036-0f7b1d48b808","48b8eb23-ddd0-49c4-a5f5-7013886930fd","fd1852f2-2cf3-4106-989f-92cdb8f53f38","bf1a1aa2-b402-4ca9-adac-33aecc9b361d","6e2d1e21-8651-4502-bc63-9f0020b33330","fcd13551-37ba-413e-9bb0-fac232b0ba12","6b8c9184-9b59-4d54-aa34-14e9f1abfc8b","1be09da5-bd99-4760-9cef-2d762110a639","f5252233-54af-43d1-b763-edc787897821","69b7847c-28a7-48ff-8710-6e71fae9d8ab","a4942b7e-6929-47ad-a00f-74a64bd8be5c"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Charleston
+        Shoe Thieves","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1971'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:45 GMT
+      Etag:
+      - W/"7b3-nRdT06l/stWaHii0sPjKQO/XqQQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A_pG0eMxbFfGDXeF2hZzFxOerxbDvgBnv.JoXMCYZeYp3WtftvETE11mVv%2Fz%2Fi2WskqNFgVw8Xy3E;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:45 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

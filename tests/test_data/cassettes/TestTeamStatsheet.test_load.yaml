@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/teamSeasonStats?ids=3204d6b4-73fa-4342-a1cc-3b22367402fd,3e8ab941-ea05-4ff1-a61d-0221002e50f7
+  response:
+    body:
+      string: '[{"id":"3204d6b4-73fa-4342-a1cc-3b22367402fd","playerStats":["cc2b096c-4e9d-474b-af27-457dd240b439","eceb1a78-20aa-4a11-8ec6-99d125815232","f4ee5b37-156d-418d-8353-b3c9dff5eb90","bdbb5196-cc39-4217-a6c1-52e2d4564b34","6cc7243a-9e0f-4ab8-a772-e34f3d8eb1a3","28ed51d5-d7e0-479b-b27f-fc76ba340d76","95ba45b5-1765-4c3d-959d-4a37541d985e","ed11ce83-8ccb-4d39-9ce4-890afabbb5c2","623de647-c63d-4754-88f7-23e1dc3f5d1e","064ac6cf-b863-4631-aa66-56ea0f9c05b5","30bfaa86-d210-45e3-a286-7c229b366d7b","4282575b-2b61-4176-a2e8-be801d504667","145fc1c1-75f2-4310-8f40-ecba47366542","f1c5d279-7edd-42e0-b5e8-d9e08fefedc9"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Yellowstone
+        Magic","teamId":"7966eb04-efcc-499b-8f03-d13916330531"},{"id":"3e8ab941-ea05-4ff1-a61d-0221002e50f7","playerStats":["cbb57f3d-e401-48d9-906e-f7986f0e16b2","96c8e760-33c4-4037-8409-d0f77c4c7e06","6e32ebf4-5e94-496d-b1f3-f6542774e039","e253fd93-e5c2-4e30-9c6e-0e58497725b5","32985621-78f2-4f1e-a803-1ce56ccf2f9b","7248d475-9d41-4b01-86f0-094be0eda6d9","ddb9fd2c-ebbb-4c47-be7c-56de399cdfef","76ed0460-a122-405d-8834-ecd66b7355bc","f21481f4-e4c5-4639-a90b-10b3d72ec1b2","be54a2b7-1ef8-4c66-abea-3b4e7c962727","daca14e7-4b34-4d01-bcc9-f5e823da28fd","538cf30c-8a5d-4482-b13f-8c8890d35d4a","e200771f-090e-4757-a2ca-54ad06a159a5","ae7f93fd-c6d0-428a-b4ca-7370625e5274"],"gamesPlayed":0,"wins":0,"losses":0,"name":"New
+        York Millennials","teamId":"36569151-a2fb-43c1-9df7-2df512424c82"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1442'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:46 GMT
+      Etag:
+      - W/"5a2-v7qhqUBrZGmLV4RZDTGWoQefe4s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A1tFxfX-lM92aEgQ5hgvpdnnkMWQkkPwQ.2EnPg3AlTUReX1%2FLFsPpAGQv0lBbIumr46pIhc8QoMw;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:46 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/teamSeasonStats?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:46 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Atu8zM1Wmp-swOr4vI2UiG3JY_Qm6Cc0C.D%2BRCaz6%2BhayA2h2LO6dpun%2Fk2hZ2f5kQ%2FsamZcYrQHw;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:46 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

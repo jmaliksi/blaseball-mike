@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=5eb2271a-3e49-48dc-b002-9cb615288836
+  response:
+    body:
+      string: '{"id":"5eb2271a-3e49-48dc-b002-9cb615288836","teams":["bfd38797-8404-4b38-8b82-341da28b1f83","3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","979aee4a-6d80-4863-bf1c-ee1a78e06024","7966eb04-efcc-499b-8f03-d13916330531","36569151-a2fb-43c1-9df7-2df512424c82"],"name":"Chaotic
+        Good"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '272'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:15 GMT
+      Etag:
+      - W/"110-OGxYBmHhcb0Ehl0oFA/mWl7vg/s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AWmpe5Dxy0KEZze0XaAveExGWb0nwUgOR.RtA%2FqIWSCzCqoDaVTvuAlhta%2Bcactkym8vweOqFAino;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:15 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

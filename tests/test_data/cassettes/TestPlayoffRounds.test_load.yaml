@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=5b21477d-0429-47f5-9f71-fb9d940b4b21
+  response:
+    body:
+      string: '{"id":"5b21477d-0429-47f5-9f71-fb9d940b4b21","gameIndex":2,"games":[["e2ba049a-01aa-4b7d-b89a-b1ba3ed80585","6e972a4a-cd9a-4a00-b2f7-bf0c26c52933","none","none"],["65e84b7d-a7bd-4c2f-9eac-123ef246df16","8e00e176-0b3e-471f-8e98-b48238925d47"],["27bb8518-0eec-4a49-ac4b-ac70fddffff9","bb147904-71c1-4013-8764-f712cde0a942"]],"matchups":["151b69fe-f2d1-45b4-b102-48db6aa4d5ab","f36afe19-c43d-477b-8f20-819147772170"],"name":"Round
+        3","roundNumber":2,"special":false,"winnerSeeds":[0,1],"winners":["8d87c468-699a-47a8-b40d-cfb73a5660ad","bfd38797-8404-4b38-8b82-341da28b1f83"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '573'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:40 GMT
+      Etag:
+      - W/"23d-yktKXQi0DT+OJMKnKKb/03eXJxY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ArlFyCsN_Yji8Tn_kcK0YVRA6aiAlEW76.qPCy8lnwlTzIWhtyPXV4EhMKzan5Fo0GDhHdhKHAjew;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 14 Feb 2021 01:10:40 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ae8QtbYmqXFIiVMvLhblEFcl9MiJmHNh1.qUFMHrPIpi6%2BGQKUNDufPolc5T1rJsJKRNohcD1EMVw;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

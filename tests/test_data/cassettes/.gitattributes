@@ -1,0 +1,2 @@
+# Treat cassettes as binary to simplify code reviews
+*.yaml -text -diff linguist-generated

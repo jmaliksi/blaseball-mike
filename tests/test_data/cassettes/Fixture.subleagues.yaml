@@ -1,0 +1,128 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=4fe65afa-804f-4bb2-9b15-1281b2eab110
+  response:
+    body:
+      string: '{"id":"4fe65afa-804f-4bb2-9b15-1281b2eab110","divisions":["456089f0-f338-4620-a014-9540868789c9","fadc9684-45b3-47a6-b647-3be3f0735a84"],"name":"The
+        Mild League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:09 GMT
+      Etag:
+      - W/"a2-5kddbcLANsZNv5GYOh2jKJnLKLE"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AAYbfBDci4lXttYxO-MQ8NFyWdPlz_dx6.MHgU5kVx62xlc3%2BDWs6w969W9KOOCAlagzjSRna4eQY;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:09 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=aabc11a1-81af-4036-9f18-229c759ca8a9
+  response:
+    body:
+      string: '{"id":"aabc11a1-81af-4036-9f18-229c759ca8a9","divisions":["d4cc18de-a136-4271-84f1-32516be91a80","98c92da4-0ea7-43be-bd75-c6150e184326"],"name":"The
+        Wild League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:10 GMT
+      Etag:
+      - W/"a2-J8V66KyPWL0yUy0ekkRrCMisoHw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AsNdxmDoNuLYSA4bLQpIvOMqplrAofB8U.ukRRrFsDdAeyHXWlXEDpmot23nc4TbjdkBioKxb%2BOYA;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:10 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=7d3a3dd6-9ea1-4535-9d91-bde875c85e80
+  response:
+    body:
+      string: '{"id":"7d3a3dd6-9ea1-4535-9d91-bde875c85e80","divisions":["f711d960-dc28-4ae2-9249-e1f320fec7d7","5eb2271a-3e49-48dc-b002-9cb615288836"],"name":"The
+        Good League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:10 GMT
+      Etag:
+      - W/"a2-LSORa3DQT4YEhyWC98Y8yKYEpeA"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A65HRzq1sYiiyHXjqiQmvF4K7rk0XEzqJ.zJZ2JoNueWqmXmxSz3lsCLGKHEazvFfAeVbd4Di0UeQ;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:10 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

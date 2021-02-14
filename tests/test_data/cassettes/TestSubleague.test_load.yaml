@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=7d3a3dd6-9ea1-4535-9d91-bde875c85e80
+  response:
+    body:
+      string: '{"id":"7d3a3dd6-9ea1-4535-9d91-bde875c85e80","divisions":["f711d960-dc28-4ae2-9249-e1f320fec7d7","5eb2271a-3e49-48dc-b002-9cb615288836"],"name":"The
+        Good League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:15 GMT
+      Etag:
+      - W/"a2-LSORa3DQT4YEhyWC98Y8yKYEpeA"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ar_t0iHpdt8lgYu0DLF11Cb_BFK7X-EID.ZsVfLdZqsZ96pcF7et356qjHciCdeHR7nTSTjQuc9aQ;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:15 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 14 Feb 2021 01:10:15 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AjcBGFzZsyo1-hBBjChKDiPU_36zIivyG.qZaP31jtnMhOT0MHagUMS3NHXcVjy%2Fn%2BQ5%2BCQcmL6i8;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:15 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

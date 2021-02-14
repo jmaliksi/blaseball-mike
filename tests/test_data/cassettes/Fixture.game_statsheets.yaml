@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameStatsheets?ids=8db2f386-3558-43bd-a9c7-ca9b7fd08d94,4b0ef2de-2d92-4d07-8753-3848f7b27036
+  response:
+    body:
+      string: '[{"id":"8db2f386-3558-43bd-a9c7-ca9b7fd08d94","homeTeamRunsByInning":[0,0,0,0,0,0,0,0,0,0,0],"awayTeamRunsByInning":[0,0,0,0,0,0,0,0,0,0,1],"awayTeamTotalBatters":0,"homeTeamTotalBatters":0,"awayTeamStats":"678269f7-a086-4d64-980b-bb9b92e7532d","homeTeamStats":"257d39f9-42ba-4918-bae3-f42291a6a928"},{"id":"4b0ef2de-2d92-4d07-8753-3848f7b27036","homeTeamRunsByInning":[0,0,0,0,1,0,0,0,2],"awayTeamRunsByInning":[1,0,2,0,0,0,0,1,0],"awayTeamTotalBatters":0,"homeTeamTotalBatters":0,"awayTeamStats":"3d07f58c-510c-4eaf-94d1-c6b91a2f31f7","homeTeamStats":"e526102d-40e1-4988-9cf4-c38475e15d57"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '593'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:41 GMT
+      Etag:
+      - W/"251-8q3RV4+6z41FUqwullI8nPyq614"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Adp99ev3AXyRT5b9IK9NYMITcS-Qwb5fu.RgFFnDfV3LpF2bhcrIvhy2qexBuHG4uLyBsk4ld832A;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

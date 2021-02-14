@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/blood?ids=2
+  response:
+    body:
+      string: '["AA"]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:59 GMT
+      Etag:
+      - W/"6-PriLNuuGZAsmh3L4RmIdjAOCELU"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AJPIsaQ0EgH2xQ4PJ5a2mrSe4gJF3bs_i.8ib9vn%2FtxOMeZlN7WQOOTZptEiaR%2Bm9kVLA1YgWReuI;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/coffee?ids=4
+  response:
+    body:
+      string: '["Cold Brew"]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '13'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:59 GMT
+      Etag:
+      - W/"d-z7Be6l8sZmw1BFM3AwyOjEkIDjQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ACNa9dtFTGgEHz3Ogibetgfh2EQqKDGIV.F7FHfi%2FdSD%2BgTu3%2FsnPApc5IHEqA4VJNbFXeUG%2Ba7u8;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

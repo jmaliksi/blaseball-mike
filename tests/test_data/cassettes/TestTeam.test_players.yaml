@@ -1,0 +1,971 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=90c2cec7-0ed5-426a-9de8-754f34d59b39,d35ccee1-9559-49a1-aaa4-7809f7b5c46e,2c4b2a6d-9961-4e40-882c-a338f4e72117,84a2b5f6-4955-4007-9299-3d35ae7135d3,425f3f84-bab0-4cf2-91c1-96e78cf5cd02,e4034192-4dc6-4901-bb30-07fe3cf77b5e,7dcf6902-632f-48c5-936a-7cf88802b93a,c6a19154-7438-4c4f-b786-2dfaf5951f0f,1a93a2d2-b5b6-479b-a595-703e4a2f3885
+  response:
+    body:
+      string: '[{"id":"e4034192-4dc6-4901-bb30-07fe3cf77b5e","anticapitalism":1.056900345840619,"baseThirst":0.8219746474414378,"buoyancy":0.5118591782775339,"chasiness":0.2729313459649551,"coldness":0.8705246918531906,"continuation":0.12618261929979635,"divinity":0.6973326448260432,"groundFriction":0.8537778371512051,"indulgence":0.791419648121383,"laserlikeness":0.4543591122438788,"martyrdom":0.9002202931678926,"moxie":0.39840783027934284,"musclitude":0.7709630726053277,"name":"Baldwin
+        Breadwinner","bat":"","omniscience":0.6042813816489021,"overpowerment":0.10963279020526522,"patheticism":0.8667836806466119,"ruthlessness":0.4569655362479358,"shakespearianism":0.731705446017842,"suppression":0.5399251354945234,"tenaciousness":0.11032434668192628,"thwackability":0.1369623463199825,"tragicness":0.1,"unthwackability":0.6521669532706306,"watchfulness":0.9082313214073571,"pressurization":0.3668300245679931,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":1.0629499778656835,"fate":39,"armor":"","ritual":"Gaming","coffee":7,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5167263252206826,"pitchingRating":0.40930966461455204,"hittingRating":0.362596656510293,"defenseRating":0.508874289200017,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"d35ccee1-9559-49a1-aaa4-7809f7b5c46e","anticapitalism":0.8520045091319592,"baseThirst":1.4893240543129698,"buoyancy":0.9607657176607342,"chasiness":0.27201058351485097,"coldness":1.0430399722279748,"continuation":1.0395923943820216,"divinity":0.8532003680926808,"groundFriction":0.8644676816956027,"indulgence":0.7209526288801629,"laserlikeness":1.3224608558884063,"martyrdom":1.013029637876206,"moxie":0.5736728653053265,"musclitude":1.4054172122657373,"name":"Forrest
+        Best","bat":"","omniscience":0.24196926815376682,"overpowerment":0.8834891099986169,"patheticism":0.4871488950894235,"ruthlessness":1.1200330981977529,"shakespearianism":1.0699241195347762,"suppression":0.7120063469761826,"tenaciousness":0.9519473371470683,"thwackability":0.6978219079631515,"tragicness":0.1,"unthwackability":1.1944804696542584,"watchfulness":0.8226059020910932,"pressurization":0.006728126764180775,"totalFingers":12,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.7649208443819819,"fate":44,"armor":"","ritual":"Doing
+        crimes","coffee":4,"blood":11,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":1.1458880540612733,"pitchingRating":1.1313705534119458,"hittingRating":0.7930820546328746,"defenseRating":0.6316792027315512,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"90c2cec7-0ed5-426a-9de8-754f34d59b39","anticapitalism":0.13601922669166672,"baseThirst":1.362307498224399,"buoyancy":0.01,"chasiness":0.7890826341135606,"coldness":0.7175838726638344,"continuation":0.7814454042112295,"divinity":0.7402986096486818,"groundFriction":0.8029491453999982,"indulgence":1.2734331850482659,"laserlikeness":0.6586391899233999,"martyrdom":0.14847426133558597,"moxie":0.8221201336165372,"musclitude":0.8619216289397401,"name":"Tot
+        Fox","bat":"","omniscience":0.2175101777198401,"overpowerment":0.08934638537427936,"patheticism":0.33478614508501436,"ruthlessness":0.31343497240274704,"shakespearianism":0.7981688932759639,"suppression":0.17131587975180845,"tenaciousness":0.7091929008032054,"thwackability":0.2084479017156479,"tragicness":0.1,"unthwackability":0.9869094843967716,"watchfulness":0.8720443010089913,"pressurization":0.1967169760847065,"totalFingers":11,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.22360260026010148,"fate":82,"armor":"","ritual":"Smoke
+        Cleansing","coffee":8,"blood":8,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8184790796393124,"pitchingRating":0.4215659125600151,"hittingRating":0.47735920782350144,"defenseRating":0.5429688639581627,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"84a2b5f6-4955-4007-9299-3d35ae7135d3","anticapitalism":0.4163307239991634,"baseThirst":0.9032851495332476,"buoyancy":0.3789715608992948,"chasiness":0.27488694903551303,"coldness":0.9117830548411008,"continuation":0.6792577510480381,"divinity":1.1175613696926168,"groundFriction":1.211833325450084,"indulgence":0.49548027102898384,"laserlikeness":0.5465406087242815,"martyrdom":0.7473957322893914,"moxie":0.4898845342105789,"musclitude":0.37551099125304127,"name":"Kennedy
+        Loser","bat":"","omniscience":0.6504888079308198,"overpowerment":0.29032596572441205,"patheticism":0.01,"ruthlessness":0.7706864161754488,"shakespearianism":1.2278771127655472,"suppression":1.0229009535525357,"tenaciousness":0.9224885877307732,"thwackability":0.6169535290537769,"tragicness":0.1,"unthwackability":0.9139170257920726,"watchfulness":0.2872511716092947,"pressurization":0.45612744390847126,"totalFingers":12,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.6858267018521764,"fate":83,"armor":"","ritual":"Tarot","coffee":10,"blood":9,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6690276873604838,"pitchingRating":0.7287022760716193,"hittingRating":0.7675952307379957,"defenseRating":0.6416904934218265,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"425f3f84-bab0-4cf2-91c1-96e78cf5cd02","anticapitalism":0.607913002968727,"baseThirst":0.33739081603870014,"buoyancy":0.6868325904112986,"chasiness":0.39996617623049713,"coldness":0.7774124888627569,"continuation":0.6332206671626727,"divinity":0.17746980367593146,"groundFriction":0.20859269824410923,"indulgence":0.6253578523116768,"laserlikeness":0.8062397029256781,"martyrdom":0.5741651702927348,"moxie":0.8492250070737182,"musclitude":0.2111148517575725,"name":"Luis
+        Acevedo","bat":"","omniscience":0.9941867408220675,"overpowerment":0.2464138545162533,"patheticism":0.6745795951727351,"ruthlessness":0.09934471617203067,"shakespearianism":0.7061657668830492,"suppression":0.6082682787233777,"tenaciousness":0.9378883950205759,"thwackability":0.31037888894061383,"tragicness":0.1,"unthwackability":0.7623084691996209,"watchfulness":0.5427444597794127,"pressurization":0.6939529114666245,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.881540879685154,"fate":67,"armor":"","ritual":"Bells","coffee":8,"blood":1,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6276878109767823,"pitchingRating":0.2696683661661037,"hittingRating":0.2976575091323545,"defenseRating":0.8053225046482438,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"7dcf6902-632f-48c5-936a-7cf88802b93a","anticapitalism":0.33771809847499745,"baseThirst":0.8921379838736734,"buoyancy":0.3692789971715511,"chasiness":0.5920647008148239,"coldness":0.3370205262976334,"continuation":1.0363834684329511,"divinity":1.0175035293875292,"groundFriction":0.4589074303320558,"indulgence":0.6905425073255786,"laserlikeness":0.9452896681185008,"martyrdom":0.5938553347361617,"moxie":0.6997817038035559,"musclitude":0.13603847442417716,"name":"Parker
+        Parra","bat":"","omniscience":0.9810326417926827,"overpowerment":0.6495953324654846,"patheticism":0.8485169579715954,"ruthlessness":0.09141544580820066,"shakespearianism":0.6174845523166823,"suppression":0.16897853913536892,"tenaciousness":0.1252213524746706,"thwackability":0.3266722275543412,"tragicness":0.1,"unthwackability":0.8540888863336424,"watchfulness":1.0841742948549242,"pressurization":0.44295933110478813,"totalFingers":11,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.5713790873803515,"fate":33,"armor":"","ritual":"Mourning","coffee":5,"blood":10,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.859942190798604,"pitchingRating":0.30853882471432215,"hittingRating":0.5128707284302548,"defenseRating":0.5642539794383394,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"c6a19154-7438-4c4f-b786-2dfaf5951f0f","anticapitalism":0.37131943152560143,"baseThirst":0.5394020681480318,"buoyancy":0.02919689538414727,"chasiness":0.279890585635741,"coldness":0.6287676460249405,"continuation":0.8099183326018289,"divinity":0.9950436284059454,"groundFriction":0.1411101977474547,"indulgence":0.2720137456995406,"laserlikeness":0.5476533180853311,"martyrdom":0.5096626321564692,"moxie":0.3243709635138783,"musclitude":0.2674120561125577,"name":"Silvaire
+        Roadhouse","bat":"","omniscience":0.5300853353132366,"overpowerment":0.9659426524569463,"patheticism":0.04841050071044717,"ruthlessness":0.885071004353041,"shakespearianism":0.9630311229273227,"suppression":0.9784594685866723,"tenaciousness":0.5318911418256553,"thwackability":0.36228481065579654,"tragicness":0.1,"unthwackability":0.0808132999905844,"watchfulness":0.7135819563442292,"pressurization":0.39393407677432024,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.23839952192257563,"fate":89,"armor":"","ritual":"Astrology","coffee":9,"blood":7,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.49170335370172397,"pitchingRating":0.2652171808711711,"hittingRating":0.5726504043813886,"defenseRating":0.5984828256952641,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"1a93a2d2-b5b6-479b-a595-703e4a2f3885","anticapitalism":0.7911772907102093,"baseThirst":1.1702072858143193,"buoyancy":0.48287432252513734,"chasiness":0.5659716249634208,"coldness":1.20049656865787,"continuation":0.8704345917046888,"divinity":1.1675709548510222,"groundFriction":1.538209473513306,"indulgence":1.1715545673259464,"laserlikeness":0.6491587849597291,"martyrdom":1.2472057118332625,"moxie":1.0440227063624261,"musclitude":0.4140791947393921,"name":"Pedro
+        Davids","bat":"","omniscience":1.119576387148443,"overpowerment":0.4945939634134616,"patheticism":0.6007252406024599,"ruthlessness":0.9537033429193607,"shakespearianism":1.0322092544512618,"suppression":1.238117781540886,"tenaciousness":0.3955731422694342,"thwackability":0.4229002943297034,"tragicness":0.1,"unthwackability":0.3399062491181045,"watchfulness":0.892527637323294,"pressurization":0.905892757793139,"totalFingers":12,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.42683200618645767,"fate":82,"armor":"","ritual":"Bragging","coffee":9,"blood":12,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":0.8561565106779865,"pitchingRating":0.5187319715618599,"hittingRating":0.7029779871444549,"defenseRating":0.7752202701226943,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"2c4b2a6d-9961-4e40-882c-a338f4e72117","anticapitalism":0.16161974288407663,"baseThirst":0.4339214091095732,"buoyancy":0.7721017710888856,"chasiness":1.133231886352516,"coldness":1.044637397681649,"continuation":0.5287032912957146,"divinity":0.22716037993506713,"groundFriction":0.40305775789512943,"indulgence":0.1816989123782993,"laserlikeness":0.4891285431070775,"martyrdom":0.4942331115357087,"moxie":0.1571109085459117,"musclitude":0.2280023699862832,"name":"Evelton
+        McBlase II","bat":"","omniscience":0.5467850372114981,"overpowerment":0.9176347769998041,"patheticism":0.6243287405304929,"ruthlessness":0.746017747631595,"shakespearianism":0.23547239524912078,"suppression":0.5361695063017288,"tenaciousness":0.6149195459789101,"thwackability":0.19356011990281108,"tragicness":0.1,"unthwackability":0.19019276968811397,"watchfulness":0.18485426670936883,"pressurization":0.8115882671698996,"totalFingers":13,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":1.021182753199892,"fate":10,"armor":"","ritual":"Crystals","coffee":8,"blood":5,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.4647782258958063,"pitchingRating":0.33171513265743174,"hittingRating":0.24480729326105366,"defenseRating":0.5731802948777818,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '12363'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:46 GMT
+      Etag:
+      - W/"304b-1JEoUW56+AuUan6BEfO0gBBKr3g"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AV-rlL3C8IshTAjVYLRHsCZOwqoJwDIJg.rveTKeriUJiAbxbwk4OZ0%2Bephc4PG9XPvNTrsP1aaw0;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:46 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5,e6114fd4-a11d-4f6c-b823-65691bb2d288,d0d7b8fe-bad8-481f-978e-cb659304ed49,f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71
+  response:
+    body:
+      string: '[{"id":"97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","anticapitalism":0.88828798460699,"baseThirst":0.6299707483931725,"buoyancy":0.9214153561250237,"chasiness":0.6447670859275663,"coldness":0.5014847619775987,"continuation":0.1736143643125459,"divinity":0.3184765530463455,"groundFriction":0.6825387871631676,"indulgence":0.4749007723201835,"laserlikeness":0.9160436688975373,"martyrdom":0.01,"moxie":0.01,"musclitude":0.21034003221959133,"name":"Brock
+        Forbes","bat":"","omniscience":0.6506331503894482,"overpowerment":0.3220308720293187,"patheticism":0.3376029085797788,"ruthlessness":1.1271340255990032,"shakespearianism":0.38615528198526883,"suppression":0.9087569645123662,"tenaciousness":0.534843923397867,"thwackability":0.07841643343618579,"tragicness":0.1,"unthwackability":0.8722779641628543,"watchfulness":0.23363100659004954,"pressurization":0.49843552394620527,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.5110705570395755,"fate":67,"armor":"","ritual":"Playing
+        fetch","coffee":6,"blood":7,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6853646711191063,"pitchingRating":0.7387286499361487,"hittingRating":0.15450305940799075,"defenseRating":0.6621575928048616,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"d0d7b8fe-bad8-481f-978e-cb659304ed49","anticapitalism":0.2709190487988691,"baseThirst":0.9879922032960449,"buoyancy":0.19760419136562626,"chasiness":0.5837626604947681,"coldness":0.44338586197589636,"continuation":0.7519352424312085,"divinity":0.4513929929118704,"groundFriction":0.31816692698941657,"indulgence":0.5090756430287888,"laserlikeness":0.6128642390404953,"martyrdom":0.7957819450269895,"moxie":0.06260014139031025,"musclitude":0.2418978017853836,"name":"Adalberto
+        Tosser","bat":"","omniscience":0.21681589114420485,"overpowerment":0.19077801392672833,"patheticism":0.13891439815619075,"ruthlessness":0.6743790837257131,"shakespearianism":0.778023605433741,"suppression":0.9785753465543412,"tenaciousness":1.0349252483562292,"thwackability":0.27008534924826233,"tragicness":0.1,"unthwackability":0.8679412298928559,"watchfulness":0.5790168318589048,"pressurization":0.6889340729236781,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":true,"cinnamon":0.02220104223285091,"fate":35,"armor":"","ritual":"Nursing
+        a grudge","coffee":10,"blood":11,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.633460109233229,"pitchingRating":0.5931367978789444,"hittingRating":0.3451005962803235,"defenseRating":0.5839514252665515,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71","anticapitalism":0.5114116673319105,"baseThirst":0.788321396784033,"buoyancy":0.9819959984670763,"chasiness":0.30432457463953694,"coldness":0.24005098927492924,"continuation":0.09685773349713483,"divinity":0.26371028074079567,"groundFriction":0.48945036482772847,"indulgence":1.0144798856841624,"laserlikeness":0.48380681547949594,"martyrdom":0.7374650975447492,"moxie":0.8396145204771313,"musclitude":0.976337147938954,"name":"Finn
+        James","bat":"","omniscience":0.07793056257926706,"overpowerment":0.9471020273511033,"patheticism":0.926332166229461,"ruthlessness":0.6317028842496994,"shakespearianism":0.15731474712180088,"suppression":0.942069882363006,"tenaciousness":0.7639700926234785,"thwackability":0.4321905903661905,"tragicness":0.1,"unthwackability":0.9846263662061803,"watchfulness":0.3167340085312083,"pressurization":0.6821710922051616,"totalFingers":11,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":0.6703936125410201,"fate":15,"armor":"","ritual":"Having
+        an epiphany","coffee":9,"blood":1,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.501435367294291,"pitchingRating":0.6568783081463693,"hittingRating":0.4014837389262917,"defenseRating":0.420956353807425,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"e6114fd4-a11d-4f6c-b823-65691bb2d288","anticapitalism":0.2741108769273313,"baseThirst":0.9695525028074288,"buoyancy":0.921329031800802,"chasiness":0.4217166918207204,"coldness":0.5003349813522934,"continuation":0.8094346430126829,"divinity":0.29369113426567306,"groundFriction":0.8864925711814212,"indulgence":0.6079631405424027,"laserlikeness":0.8560848348575162,"martyrdom":0.8439102310906617,"moxie":0.665419013105764,"musclitude":0.17400705335338948,"name":"Bevan
+        Underbuck","bat":"","omniscience":0.6368600321952337,"overpowerment":0.38521177382998956,"patheticism":0.01,"ruthlessness":0.2188221992846202,"shakespearianism":0.9984904494019299,"suppression":0.49098391353607745,"tenaciousness":1.0131129426378578,"thwackability":0.17524190129829462,"tragicness":0.1,"unthwackability":0.5760681235508462,"watchfulness":0.7603851304637349,"pressurization":0.19676937895865568,"totalFingers":13,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.6315505289737372,"fate":28,"armor":"","ritual":"Whispering","coffee":13,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8489633634188947,"pitchingRating":0.3520013424494833,"hittingRating":0.29968143650852136,"defenseRating":0.7183538755787042,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5479'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:46 GMT
+      Etag:
+      - W/"1567-SrY1Jgt5s6InLajSa5DE0aKLxk0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AvMGtMGjvaHdLGpQOLa2p3JFRxE3EyyCZ.648Uzhi90AUNlU%2FNRw17OrkBzCTnM33WctF5KX4fUXA;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:46 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=dd8a43a4-a024-44e9-a522-785d998b29c3,d2f827a5-0133-4d96-b403-85a5e50d49e0,34e1b683-ecd5-477f-b9e3-dd4bca76db45,e1e33aab-df8c-4f53-b30a-ca1cea9f046e,ce3fb736-d20e-4e2a-88cb-e136783d3a47,093af82c-84aa-4bd6-ad1a-401fae1fce44,7e160e9f-2c79-4e08-8b76-b816de388a98,dd6ba7f1-a97a-4374-a3a7-b3596e286bb3
+  response:
+    body:
+      string: '[{"id":"d2f827a5-0133-4d96-b403-85a5e50d49e0","anticapitalism":0.24712472255572515,"baseThirst":0.6601412569982414,"buoyancy":0.893355277927322,"chasiness":0.40061560956257103,"coldness":0.5861934708291645,"continuation":0.6644072090597619,"divinity":0.5084866524979323,"groundFriction":0.5349964666970026,"indulgence":0.7323002338435345,"laserlikeness":0.515421010436381,"martyrdom":0.1779299065861477,"moxie":0.01799406814775284,"musclitude":0.6603572590866171,"name":"Robbins
+        Schmitt","bat":"","omniscience":0.014938322626494083,"overpowerment":0.22001751961485083,"patheticism":0.4630698401791251,"ruthlessness":0.5002453542903458,"shakespearianism":0.8595363463506853,"suppression":0.7377622024924173,"tenaciousness":0.2678483460679164,"thwackability":0.7099626026060346,"tragicness":0.1,"unthwackability":0.09336739368465552,"watchfulness":0.09140709794358703,"pressurization":0.962876163281293,"totalFingers":10,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.3233555791511318,"fate":83,"armor":"","ritual":"Astral
+        projection","coffee":3,"blood":3,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6019940362165438,"pitchingRating":0.17937705198055184,"hittingRating":0.46966876472834457,"defenseRating":0.20706207366468038,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"34e1b683-ecd5-477f-b9e3-dd4bca76db45","anticapitalism":0.7044331223813718,"baseThirst":0.47290009448107706,"buoyancy":0.8674966871169576,"chasiness":0.05796448609891813,"coldness":0.7009156832230088,"continuation":0.15995209670306387,"divinity":0.06043533174327531,"groundFriction":0.464802638568413,"indulgence":0.6395934809472288,"laserlikeness":0.18038803767924172,"martyrdom":0.7666259180098651,"moxie":0.678194471307161,"musclitude":0.35647117796082184,"name":"Alexandria
+        Hess","bat":"","omniscience":0.2724017391866915,"overpowerment":0.6060108717388846,"patheticism":0.13700764960189482,"ruthlessness":0.7110687039171326,"shakespearianism":0.08979941521678358,"suppression":0.8395288015845397,"tenaciousness":0.030107373375157787,"thwackability":0.9229838183174914,"tragicness":0.1,"unthwackability":0.5541594390729223,"watchfulness":0.8771473926128228,"pressurization":0.473067255504779,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":true,"cinnamon":0.34703614865215027,"fate":12,"armor":"","ritual":"Breadmaking","coffee":13,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2906009717657608,"pitchingRating":0.4692702808225581,"hittingRating":0.3228922278114648,"defenseRating":0.2742735845077376,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"e1e33aab-df8c-4f53-b30a-ca1cea9f046e","anticapitalism":0.20313030755295203,"baseThirst":0.4683789882259215,"buoyancy":0.8508911989030055,"chasiness":0.9229244581388099,"coldness":0.8555287633906359,"continuation":0.8620966161445283,"divinity":0.9082976627777766,"groundFriction":0.1287338497504129,"indulgence":0.583410788845814,"laserlikeness":0.634260660235789,"martyrdom":0.5774124684855662,"moxie":0.28903010487025527,"musclitude":0.47828469939735885,"name":"Joyner
+        Rugrat","bat":"","omniscience":0.7657762115255853,"overpowerment":0.10221561554556469,"patheticism":0.08001548356926791,"ruthlessness":0.6655910514772352,"shakespearianism":0.003342016249550772,"suppression":0.8011626619676757,"tenaciousness":0.09216302352807149,"thwackability":0.6686910340238623,"tragicness":0.1,"unthwackability":0.48384305374701597,"watchfulness":0.650236661508808,"pressurization":0.41160925529364456,"totalFingers":10,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.6310333937005335,"fate":56,"armor":"","ritual":"Running
+        the bases backwards","coffee":9,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5614562794013372,"pitchingRating":0.2364664619280717,"hittingRating":0.7123889684115208,"defenseRating":0.47679638099762767,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"ce3fb736-d20e-4e2a-88cb-e136783d3a47","anticapitalism":0.4554728758004174,"baseThirst":0.883958917042724,"buoyancy":0.6738083921894165,"chasiness":0.1760756866025064,"coldness":0.7616840478286246,"continuation":0.4789454128336297,"divinity":0.32943539324319127,"groundFriction":0.5054088582100758,"indulgence":0.4403098278090436,"laserlikeness":0.6626893168208006,"martyrdom":0.2285831201013966,"moxie":0.8090832979850884,"musclitude":0.30294189926668125,"name":"Javier
+        Howe","bat":"","omniscience":0.953130223354125,"overpowerment":0.45650807985986286,"patheticism":0.6013173461971815,"ruthlessness":0.3195304758499704,"shakespearianism":0.8641406589396947,"suppression":0.7728264042943278,"tenaciousness":0.6727711008679806,"thwackability":0.9823305062282581,"tragicness":0.1,"unthwackability":0.8849765036183916,"watchfulness":0.6884915719169435,"pressurization":0.35770785906066593,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":0.7530609378548376,"fate":17,"armor":"","ritual":"Squats","coffee":6,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6427867523336045,"pitchingRating":0.5186696910634255,"hittingRating":0.5616501501961506,"defenseRating":0.6848728776130083,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"093af82c-84aa-4bd6-ad1a-401fae1fce44","anticapitalism":0.7345865132780911,"baseThirst":0.2675857031875015,"buoyancy":0.9408904834681111,"chasiness":0.8291024458293148,"coldness":0.5009571041613285,"continuation":0.1293196648486281,"divinity":0.49621025901117344,"groundFriction":0.4629531634198354,"indulgence":0.7624352670715107,"laserlikeness":0.6806634787387931,"martyrdom":0.0063508616688507935,"moxie":0.5880092723548143,"musclitude":0.7237322706616023,"name":"Elijah
+        Glover","bat":"","omniscience":0.49610199821975587,"overpowerment":0.49542402322875123,"patheticism":0.1497577280238207,"ruthlessness":0.19235930583937932,"shakespearianism":0.7546014401786432,"suppression":0.8604959772843923,"tenaciousness":0.94484123581746,"thwackability":0.6902191822166499,"tragicness":0.1,"unthwackability":0.6181786671004532,"watchfulness":0.0024853415146799396,"pressurization":0.0261920015207302,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.4394841605374722,"fate":18,"armor":"","ritual":"Reality
+        TV","coffee":11,"blood":5,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5310714753055144,"pitchingRating":0.34971609724233105,"hittingRating":0.5772671425016217,"defenseRating":0.4489414295859038,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"7e160e9f-2c79-4e08-8b76-b816de388a98","anticapitalism":0.1735012112967813,"baseThirst":0.5522758251257425,"buoyancy":0.24350850082588993,"chasiness":0.7297745994959632,"coldness":0.18506910050368908,"continuation":0.5965043628789684,"divinity":0.25310930872595283,"groundFriction":0.6095101018058664,"indulgence":0.07791746747941253,"laserlikeness":0.2558968005274247,"martyrdom":0.6616184870244215,"moxie":0.37595214205034466,"musclitude":0.6930113516800882,"name":"Thomas
+        Marsh","bat":"","omniscience":0.9755185063289085,"overpowerment":0.07296780925551993,"patheticism":0.8303793841936489,"ruthlessness":0.7020935483502415,"shakespearianism":0.824933448517384,"suppression":0.4084195581687988,"tenaciousness":0.09321848948272415,"thwackability":0.8957616402886173,"tragicness":0.1,"unthwackability":0.39444671541208676,"watchfulness":0.6156764570518038,"pressurization":0.11886531525976252,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.33611333765396356,"fate":20,"armor":"","ritual":"Painting","coffee":13,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3337881906422017,"pitchingRating":0.34621597269238513,"hittingRating":0.4875780883453271,"defenseRating":0.479658223833101,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"dd6ba7f1-a97a-4374-a3a7-b3596e286bb3","anticapitalism":0.5149053227274423,"baseThirst":0.3040998306290983,"buoyancy":0.27313242364353063,"chasiness":0.4313417542067082,"coldness":0.20376315100423614,"continuation":0.5391060491541346,"divinity":0.9320104908023839,"groundFriction":0.6878994213247158,"indulgence":0.5928116654293658,"laserlikeness":0.4179720148482595,"martyrdom":0.5807159586867681,"moxie":0.48655577156242114,"musclitude":0.8670784607207176,"name":"Matheo
+        Tanaka","bat":"","omniscience":0.697502031358034,"overpowerment":0.38241421641762874,"patheticism":0.3030974264096691,"ruthlessness":0.8032689804369131,"shakespearianism":0.4144982208173107,"suppression":0.6551528145885634,"tenaciousness":0.3960663202612018,"thwackability":0.22982485129614716,"tragicness":0.1,"unthwackability":0.6300277025103345,"watchfulness":0.05626223681017217,"pressurization":0.03152523546934627,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.16523514530466965,"fate":64,"armor":"","ritual":"Hot
+        tub","coffee":4,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.4932723921511749,"pitchingRating":0.5539680710498767,"hittingRating":0.5304639278721922,"defenseRating":0.4988147253140913,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"dd8a43a4-a024-44e9-a522-785d998b29c3","anticapitalism":0.040862020110119746,"baseThirst":0.7668359760838797,"buoyancy":0.035981534002304416,"chasiness":0.6012062220006253,"coldness":0.21864944932881292,"continuation":0.7126578994105126,"divinity":0.4004546879209754,"groundFriction":0.9067417027651381,"indulgence":0.8269645636380216,"laserlikeness":0.6241854814355823,"martyrdom":0.48677314509101044,"moxie":0.9051241372146377,"musclitude":0.3476488412375631,"name":"Miguel
+        Peterson","bat":"","omniscience":0.4656397448584084,"overpowerment":0.5805503065005115,"patheticism":0.664788196016399,"ruthlessness":0.6654658360570338,"shakespearianism":0.5415837519226192,"suppression":0.8886782323743874,"tenaciousness":0.7000769890574001,"thwackability":0.9028515440183928,"tragicness":0.1,"unthwackability":0.31803455590821184,"watchfulness":0.7551168227857972,"pressurization":0.9785880339800272,"totalFingers":10,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.3383748709952281,"fate":62,"armor":"","ritual":"Air
+        drumming","coffee":3,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7226237625681572,"pitchingRating":0.39987450200770996,"hittingRating":0.5987602994793467,"defenseRating":0.5363828872367016,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11018'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Etag:
+      - W/"2b0a-qkQJTAocgippxmTCTdHQg/1Fi+8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A5qiI-Xw1daMyfx6hxjdy1Y76EAdHysuU.8vCupaIKEEWQ%2FtWalZA718JY%2BEbYpMKZiyKVd5CLmwQ;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:47 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=7afedcd8-870d-4655-9659-3bdfb2e17730,4e63cb5d-4fce-441b-b9e4-dc6a467cf2fd,5915b7bb-e532-4036-9009-79f1e80c0e28,61bbbf34-98c1-4bf6-bd0c-56c19199b35e,ce7d33b7-1bba-48d6-a1d1-cd0e29231be8
+  response:
+    body:
+      string: '[{"id":"7afedcd8-870d-4655-9659-3bdfb2e17730","anticapitalism":0.6654184871703235,"baseThirst":0.5749528370573149,"buoyancy":0.7500288545284375,"chasiness":0.1095417069434046,"coldness":0.2972741155320473,"continuation":0.12340666104128162,"divinity":0.2926915933074141,"groundFriction":0.2111783726216887,"indulgence":0.4386493385884149,"laserlikeness":0.20012931527613298,"martyrdom":0.46956528346640414,"moxie":0.41714968558645116,"musclitude":0.40776279953696015,"name":"Pierre
+        Haley","bat":"","omniscience":0.7515628392287927,"overpowerment":0.9812056725808047,"patheticism":0.6435912280804161,"ruthlessness":0.19101626044045728,"shakespearianism":0.3840843587799214,"suppression":0.23470274908809596,"tenaciousness":0.7036710105088408,"thwackability":0.1667366483684385,"tragicness":0.1,"unthwackability":0.4613542744725687,"watchfulness":0.7743738528675119,"pressurization":0.17312259693364696,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.9728450586265991,"fate":98,"armor":"","ritual":"Jumping-jacks","coffee":9,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2706631481083823,"pitchingRating":0.30795056616790656,"hittingRating":0.28433524005389843,"defenseRating":0.6604341111444341,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"4e63cb5d-4fce-441b-b9e4-dc6a467cf2fd","anticapitalism":0.007780973052307072,"baseThirst":0.5867529195368897,"buoyancy":0.6851783620919014,"chasiness":0.9983638347680568,"coldness":0.8809536491688266,"continuation":0.8943866497011381,"divinity":0.812722286820512,"groundFriction":0.671232635146072,"indulgence":0.44945791185622275,"laserlikeness":0.30508523773577756,"martyrdom":0.18748256193017387,"moxie":0.5921913526202971,"musclitude":0.10406903792167643,"name":"Axel
+        Campbell","bat":"","omniscience":0.2709395898256297,"overpowerment":0.575028026154188,"patheticism":0.020718909755296666,"ruthlessness":0.8313974916917102,"shakespearianism":0.4655527480014858,"suppression":0.9542181911602481,"tenaciousness":0.6800979671835838,"thwackability":0.9173675014624443,"tragicness":0.1,"unthwackability":0.7577816557976058,"watchfulness":0.1543347596973803,"pressurization":0.37694664210498674,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.09067287750452824,"fate":71,"armor":"","ritual":"Bells","coffee":4,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.45937236253563307,"pitchingRating":0.6871785514056885,"hittingRating":0.7065627102127499,"defenseRating":0.3638877530878155,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"5915b7bb-e532-4036-9009-79f1e80c0e28","anticapitalism":0.23429380627167262,"baseThirst":0.6594647845808987,"buoyancy":0.5134270912002776,"chasiness":0.5997922922789032,"coldness":0.3003971683188662,"continuation":0.6606100200942644,"divinity":0.34339272286354494,"groundFriction":0.6005174508690545,"indulgence":0.20873284609412535,"laserlikeness":0.3105035297347112,"martyrdom":0.29460011008017806,"moxie":0.9552217430673406,"musclitude":0.07176407484539471,"name":"Rosa
+        Holloway","bat":"","omniscience":0.06880961215425829,"overpowerment":0.954575813084596,"patheticism":0.7301784660425332,"ruthlessness":0.22338658645141019,"shakespearianism":0.7817486565936069,"suppression":0.6870376972554184,"tenaciousness":0.09224978051479549,"thwackability":0.32154463193064275,"tragicness":0.1,"unthwackability":0.9603502238618171,"watchfulness":0.787790395167671,"pressurization":0.39402363015639374,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.2901914521109472,"fate":97,"armor":"","ritual":"Volunteering","coffee":6,"blood":3,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.4166377239630671,"pitchingRating":0.5058926058815232,"hittingRating":0.3453369771244907,"defenseRating":0.2917024839346983,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"61bbbf34-98c1-4bf6-bd0c-56c19199b35e","anticapitalism":0.6133750367074158,"baseThirst":0.7987815597619394,"buoyancy":0.041450526393126186,"chasiness":0.9831283802468198,"coldness":0.618600719283787,"continuation":0.037341110794408605,"divinity":0.3426448157207167,"groundFriction":0.14621093364242577,"indulgence":0.7755756277714607,"laserlikeness":0.860183966733685,"martyrdom":0.7656748346054454,"moxie":0.6331533925057771,"musclitude":0.6023604197361379,"name":"Squid
+        Galvanic","bat":"","omniscience":0.26763306546909216,"overpowerment":0.7150320411770739,"patheticism":0.6524888773169335,"ruthlessness":0.17306220769580993,"shakespearianism":0.6869691776419906,"suppression":0.7752795376896089,"tenaciousness":0.8699224844992746,"thwackability":0.9978771405404441,"tragicness":0.1,"unthwackability":0.6617678109544682,"watchfulness":0.9955846541239111,"pressurization":0.9587714168488901,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.24122967716081067,"fate":39,"armor":"","ritual":"Counting","coffee":6,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5250704749698167,"pitchingRating":0.3649736631201925,"hittingRating":0.6022080881406044,"defenseRating":0.7099790230562745,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"ce7d33b7-1bba-48d6-a1d1-cd0e29231be8","anticapitalism":0.40673805547753217,"baseThirst":0.651882488524907,"buoyancy":0.8642427625815408,"chasiness":0.14230555432375214,"coldness":0.923811373688106,"continuation":0.7456690222560041,"divinity":0.8518484677359479,"groundFriction":0.7596667074116559,"indulgence":0.3834321641862488,"laserlikeness":0.36133636877355957,"martyrdom":0.778574717981344,"moxie":0.42033647388022,"musclitude":0.8082924482397287,"name":"Jacoby
+        Podcast","bat":"","omniscience":0.5604906067738886,"overpowerment":0.5426766764585444,"patheticism":0.8255706763128394,"ruthlessness":0.974474146913376,"shakespearianism":0.8328173072356824,"suppression":0.09717967489129409,"tenaciousness":0.7408450598074015,"thwackability":0.4316558245323716,"tragicness":0.1,"unthwackability":0.5558250265197402,"watchfulness":0.8071216327586428,"pressurization":0.500281429099293,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.10288903031857877,"fate":26,"armor":"","ritual":"Playing
+        pranks","coffee":8,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.49437732465909423,"pitchingRating":0.6597097575656738,"hittingRating":0.5918502139207767,"defenseRating":0.617456988291231,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6868'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Etag:
+      - W/"1ad4-pVG2Ge/1Q8H+Bb1VI8g86Nw4jrs"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A98LGbFvqlM1PVfmKR5rp5MKR8iSr_JPd.0BpFYDr9vmf51mtI5thkDYrfmA1%2B6jx%2BWHzlALjuX0Y;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:47 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=555b0a07-a3e0-41bc-b3db-ca8f520857bc
+  response:
+    body:
+      string: '[{"id":"555b0a07-a3e0-41bc-b3db-ca8f520857bc","anticapitalism":0.5595608690594709,"baseThirst":0.04757662353334524,"buoyancy":0.08858130780444284,"chasiness":0.13122852935369878,"coldness":0.8227287237029124,"continuation":0.9249763689640531,"divinity":0.9241399541042874,"groundFriction":0.6003965317765747,"indulgence":0.8463684855589584,"laserlikeness":0.7459376737124472,"martyrdom":0.7298537333415389,"moxie":0.670643030719809,"musclitude":0.20566376385528784,"name":"Oops
+        All Keepers","bat":"","omniscience":0.8196603776707718,"overpowerment":0.5404437641361248,"patheticism":0.23419801626028658,"ruthlessness":0.5551297505227417,"shakespearianism":0.899112896577023,"suppression":0.7251926237221618,"tenaciousness":0.47144356834123613,"thwackability":0.5118920864938197,"tragicness":0.3143165384131521,"unthwackability":0.6116699084417228,"watchfulness":0.27822643298421923,"pressurization":0.866727452592432,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.3443454833555535,"fate":68,"armor":"","ritual":"Oops
+        All Groundskeeping","coffee":5,"blood":8,"permAttr":["COFFEE_PERIL","COFFEE_EXIT"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5906136259813624,"pitchingRating":0.5548706771689321,"hittingRating":0.6479270691622167,"defenseRating":0.5603251679694369,"leagueTeamId":null,"tournamentTeamId":"7fcb63bc-11f2-40b9-b465-f1d458692a63"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1431'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Etag:
+      - W/"597-JqqggO0umYsSb92tnpOJqOHACxI"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Aq8_Kx4usKphoSHDZLA9TQNzTI__N6VjC.hohPVNt4nD%2FJVYl3pFcDsblR7WB0voknWRzlw8vWgJI;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:47 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=1ba715f2-caa3-44c0-9118-b045ea702a34
+  response:
+    body:
+      string: '{"nextPage":"8hWnG6PKwESRGLBF6nAqNGBMO2xFFgAA","data":[{"updateId":"c4ef9e05-ed0f-471a-a8a2-bf063e7eba89","playerId":"1ba715f2-caa3-44c0-9118-b045ea702a34","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"1ba715f2-caa3-44c0-9118-b045ea702a34","name":"Juan
+        Rangel","soul":7,"moxie":0.7902667065860169,"buoyancy":0.5704539863180131,"coldness":0.8728283012639908,"deceased":false,"divinity":0.23092286428295772,"chasiness":0.45220067395227703,"martyrdom":0.15604374403800514,"baseThirst":0.2567450240376663,"indulgence":0.8987065506269727,"musclitude":0.761296177150365,"tragicness":0,"omniscience":0.8030959144190009,"patheticism":0.5600703314870863,"suppression":0.6315923651209989,"continuation":0.05203350816128083,"ruthlessness":0.568086727107028,"totalFingers":10,"watchfulness":0.483012047119856,"laserlikeness":0.6257205547810696,"overpowerment":0.5742813697105611,"tenaciousness":0.05779127133944528,"thwackability":0.5768468959098274,"anticapitalism":0.22083607963084173,"groundFriction":0.11941254093212628,"pressurization":0.708898424261198,"unthwackability":0.02624770155449463,"shakespearianism":0.042643577818908485}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=26cfccf2-850e-43eb-b085-ff73ad0749b8
+  response:
+    body:
+      string: '{"nextPage":"8szPJg6F60Owhf9zrQdJuGBMO2xFFgAA","data":[{"updateId":"36b28c69-d139-46c5-b840-59f9722450e7","playerId":"26cfccf2-850e-43eb-b085-ff73ad0749b8","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"26cfccf2-850e-43eb-b085-ff73ad0749b8","name":"Beasley
+        Day","soul":7,"moxie":0.21847893618360725,"buoyancy":0.7636715920818513,"coldness":0.42777417805875917,"deceased":false,"divinity":0.6988008268552313,"chasiness":0.3351822986456432,"martyrdom":0.5337063906006141,"baseThirst":0.9716688761224026,"indulgence":0.34023923654578336,"musclitude":0.08766872597987896,"tragicness":0,"omniscience":0.17034040121857275,"patheticism":0.4589637303345073,"suppression":0.027565210773816684,"continuation":0.42622108945969606,"ruthlessness":0.3210712206419353,"totalFingers":10,"watchfulness":0.9944423319354665,"laserlikeness":0.4060984087240962,"overpowerment":0.6391487424170927,"tenaciousness":0.20210984819198607,"thwackability":0.6949999691666375,"anticapitalism":0.25851172907829967,"groundFriction":0.6832047932250018,"pressurization":0.28545395980628685,"unthwackability":0.5582072005100558,"shakespearianism":0.9165470207578321}}]}'
+    headers:
+      Content-Length:
+      - '1179'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=13a05157-6172-4431-947b-a058217b4aa5
+  response:
+    body:
+      string: '{"nextPage":"V1GgE3JhMUSUe6BYIXtKpWBMO2xFFgAA","data":[{"updateId":"7aa10254-9996-4b90-a9be-a100d68e5d06","playerId":"13a05157-6172-4431-947b-a058217b4aa5","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"13a05157-6172-4431-947b-a058217b4aa5","name":"Spears
+        Taylor","soul":8,"moxie":0.5933545051300815,"buoyancy":0.9092949990370298,"coldness":0.3178665091324593,"deceased":false,"divinity":0.3363760308913626,"chasiness":0.8536497309348097,"martyrdom":0.7634234358765017,"baseThirst":0.06762117579774207,"indulgence":0.9277081797730382,"musclitude":0.8345433568436755,"tragicness":0,"omniscience":0.4469344514315474,"patheticism":0.44043909919994517,"suppression":0.6565264280384788,"continuation":0.8714992867626326,"ruthlessness":0.7155282241744596,"totalFingers":10,"watchfulness":0.8244479278902566,"laserlikeness":0.2998456607069935,"overpowerment":0.1852346723357048,"tenaciousness":0.854012384964312,"thwackability":0.40652171629982425,"anticapitalism":0.9991844847773148,"groundFriction":0.4386159394711977,"pressurization":0.7418632026108982,"unthwackability":0.45248562814012216,"shakespearianism":0.33066853312748745}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=80dff591-2393-448a-8d88-122bd424fa4c
+  response:
+    body:
+      string: '{"nextPage":"kfXfgJMjikSNiBIr1CT6TGBMO2xFFgAA","data":[{"updateId":"d7f4b569-60d0-4cbc-9680-28f4b10baa6d","playerId":"80dff591-2393-448a-8d88-122bd424fa4c","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"80dff591-2393-448a-8d88-122bd424fa4c","name":"Elvis
+        Figueroa","soul":4,"moxie":0.8505701339595302,"buoyancy":0.08564969961788105,"coldness":0.24985876945243635,"deceased":false,"divinity":0.28721908675667795,"chasiness":0.4225581160962857,"martyrdom":0.08990301483882934,"baseThirst":0.31052864740766095,"indulgence":0.12249448719924061,"musclitude":0.5882432491900036,"tragicness":0,"omniscience":0.6378472505104091,"patheticism":0.25819237392106364,"suppression":0.535254417147577,"continuation":0.18013776550053184,"ruthlessness":0.9466486055675885,"totalFingers":10,"watchfulness":0.14443656916164094,"laserlikeness":0.22919373225829642,"overpowerment":0.8651561819892015,"tenaciousness":0.6516541941832756,"thwackability":0.7658365637455811,"anticapitalism":0.17359097970473347,"groundFriction":0.05269413845935045,"pressurization":0.5638952031876983,"unthwackability":0.9502800523457162,"shakespearianism":0.6374082427315357}}]}'
+    headers:
+      Content-Length:
+      - '1182'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=6fc3689f-bb7d-4382-98a2-cf6ddc76909d
+  response:
+    body:
+      string: '{"nextPage":"n2jDb327gkOYos9t3HaQnWBMO2xFFgAA","data":[{"updateId":"3d3e0570-dd82-4928-a4ae-1c2ca8c0d71f","playerId":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-07-31T12:15:30.985Z","data":{"_id":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","name":"Cedric
+        Gonzalez","soul":8,"moxie":0.7308839766278601,"buoyancy":0.19754995199182424,"coldness":0.2259430797140487,"deceased":false,"divinity":0.7322778779056598,"chasiness":0.7594798365525544,"martyrdom":0.9212237424812677,"baseThirst":0.9071590101770224,"indulgence":0.9045394382951197,"musclitude":0.6556191033360019,"tragicness":0,"omniscience":0.38916781817839885,"patheticism":0.5579355445022727,"suppression":0.7943337786491538,"continuation":0.8417063586531535,"ruthlessness":0.7273262886629401,"totalFingers":10,"watchfulness":0.6245254149277251,"laserlikeness":0.5726688244379927,"overpowerment":0.6105835111933524,"tenaciousness":0.09401020478242028,"thwackability":0.06625030925194264,"anticapitalism":0.9861894229093435,"groundFriction":0.954107231870895,"pressurization":0.42325226322634646,"unthwackability":0.12351931476247424,"shakespearianism":0.7829229311315367}}]}'
+    headers:
+      Content-Length:
+      - '1177'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:47 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=15ae64cd-f698-4b00-9d61-c9fffd037ae2
+  response:
+    body:
+      string: '{"nextPage":"zWSuFZj2AEudYcn__QN64mBMO2xFFgAA","data":[{"updateId":"69421833-eb0b-4530-b60c-058f5eae9d7e","playerId":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","name":"Mickey
+        Woods","soul":4,"moxie":0.2890269139582906,"buoyancy":0.6985810897611886,"coldness":0.40507403414030874,"deceased":false,"divinity":0.31105894138310486,"chasiness":0.9197797502918548,"martyrdom":0.8290948975572121,"baseThirst":0.49670014370186943,"indulgence":0.6187203236772589,"musclitude":0.34656898625798127,"tragicness":0,"omniscience":0.6642324804650381,"patheticism":0.005840907993729161,"suppression":0.7122905143896505,"continuation":0.36522585172416044,"ruthlessness":0.09115864894752534,"totalFingers":10,"watchfulness":0.8340084576017894,"laserlikeness":0.3742030347824221,"overpowerment":0.3558625754862925,"tenaciousness":0.4822468488306879,"thwackability":0.50176169265881,"anticapitalism":0.9822432200909246,"groundFriction":0.5110373060438149,"pressurization":0.08906305153183114,"unthwackability":0.5991497958990193,"shakespearianism":0.9154691147302345}}]}'
+    headers:
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=083d09d4-7ed3-4100-b021-8fbe30dd43e8
+  response:
+    body:
+      string: '{"nextPage":"1Ak9CNN-AEGwIY--MN1D6GBMO2xFFgAA","data":[{"updateId":"59a55516-9a12-4179-9d7b-7181adc64e90","playerId":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","name":"Jessica
+        Telephone","soul":7,"moxie":0.7924746391865745,"buoyancy":0.7290386558929516,"coldness":0.36424907711844057,"deceased":false,"divinity":1.0264554950661913,"chasiness":0.49217601055241667,"martyrdom":1.3843961867934054,"baseThirst":0.8937081572225478,"indulgence":0.5791018871160651,"musclitude":1.1362941924123677,"tragicness":0,"omniscience":0.520428977901964,"patheticism":0.40590198952572454,"suppression":0.8128774318124143,"continuation":0.7851231462319437,"ruthlessness":0.3321803174782816,"totalFingers":10,"watchfulness":0.46690651205998646,"laserlikeness":0.3883179230872258,"overpowerment":0.49924279341878286,"tenaciousness":0.25571806043038703,"thwackability":0.9232820621017053,"anticapitalism":0.5815585414248714,"groundFriction":0.8970693806274312,"pressurization":0.19240544381174618,"unthwackability":0.21018316390635827,"shakespearianism":0.8057369039444793}}]}'
+    headers:
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=06ced607-7f96-41e7-a8cd-b501d11d1a7e
+  response:
+    body:
+      string: '{"nextPage":"B9bOBpZ_50GozbUB0R0afmBMO2xFFgAA","data":[{"updateId":"81029d96-6334-4899-89f5-8d2a378ec21a","playerId":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","name":"Morrow
+        Wilson","soul":8,"moxie":0.5098271735720075,"buoyancy":0.07180377008997119,"coldness":0.00996592432982002,"deceased":false,"divinity":0.4232458500138414,"chasiness":0.9482805780238897,"martyrdom":0.3762843951419368,"baseThirst":0.44753989326318,"indulgence":0.5031793286354087,"musclitude":0.39916927039006067,"tragicness":0,"omniscience":0.8771022885131188,"patheticism":0.8532119766355108,"suppression":0.2394163864630796,"continuation":0.6604766776265041,"ruthlessness":0.716770606203132,"totalFingers":10,"watchfulness":0.052403835248049147,"laserlikeness":0.33409359560637686,"overpowerment":0.06938720820506816,"tenaciousness":0.8385342961947018,"thwackability":0.41846803152729906,"anticapitalism":0.955766342313032,"groundFriction":0.05281653002680864,"pressurization":0.529783667036968,"unthwackability":0.01681987863259593,"shakespearianism":0.4036740566960553}}]}'
+    headers:
+      Content-Length:
+      - '1175'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=66cebbbf-9933-4329-924a-72bd3718f321
+  response:
+    body:
+      string: '{"nextPage":"v7vOZjOZKUOSSnK9NxjzIWBMO2xFFgAA","data":[{"updateId":"d0bc257b-84b8-4df1-ae5d-642791530934","playerId":"66cebbbf-9933-4329-924a-72bd3718f321","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"66cebbbf-9933-4329-924a-72bd3718f321","name":"Kennedy
+        Cena","soul":6,"moxie":0.4478996779949296,"buoyancy":0.17978069041392297,"coldness":0.2931454634699837,"deceased":false,"divinity":0.5511325080695815,"chasiness":0.9487743366133163,"martyrdom":0.5303331747298141,"baseThirst":0.43999887069828203,"indulgence":0.3043581420848025,"musclitude":0.7801343463508277,"tragicness":0,"omniscience":0.9509325710195569,"patheticism":0.33330406246142297,"suppression":0.9004684843462387,"continuation":0.838144810313604,"ruthlessness":0.6976902684669866,"totalFingers":10,"watchfulness":0.6179038615868464,"laserlikeness":0.25137056363043153,"overpowerment":0.8260308898644133,"tenaciousness":0.1702571411121696,"thwackability":0.43474454367616966,"anticapitalism":0.5675170593669698,"groundFriction":0.7430679512990324,"pressurization":0.96912891962523,"unthwackability":0.7999133768454478,"shakespearianism":0.9173213545773562}}]}'
+    headers:
+      Content-Length:
+      - '1171'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=1732e623-ffc2-40f0-87ba-fdcf97131f1f
+  response:
+    body:
+      string: '{"nextPage":"I-YyF8L_8ECHuv3PlxMfH2BMO2xFFgAA","data":[{"updateId":"3416d5c6-fa2e-4b95-b8a3-4859a54ec8fc","playerId":"1732e623-ffc2-40f0-87ba-fdcf97131f1f","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"1732e623-ffc2-40f0-87ba-fdcf97131f1f","name":"Betsy
+        Trombone","soul":3,"moxie":0.8506050189829093,"buoyancy":0.8267466077900696,"coldness":0.872848831945386,"deceased":false,"divinity":0.5434644899789711,"chasiness":0.31889236881684413,"martyrdom":0.7481246865847735,"baseThirst":0.016986546344093467,"indulgence":0.8047219602154017,"musclitude":0.2953982471920851,"tragicness":0,"omniscience":0.04848632803289665,"patheticism":0.6777060542972428,"suppression":0.02175303641092885,"continuation":0.7914469736255476,"ruthlessness":0.7253703025644835,"totalFingers":10,"watchfulness":0.0917071560446514,"laserlikeness":0.713425324007301,"overpowerment":0.47366414083200525,"tenaciousness":0.4729168176582932,"thwackability":0.7641399884791478,"anticapitalism":0.3333932436989364,"groundFriction":0.08645124959686368,"pressurization":0.14435710015681358,"unthwackability":0.4185482371382203,"shakespearianism":0.4749002512112459}}]}'
+    headers:
+      Content-Length:
+      - '1177'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=9786b2c9-1205-4718-b0f7-fc000ce91106
+  response:
+    body:
+      string: '{"nextPage":"ybKGlwUSGEew9_wADOkRBmBMO2xFFgAA","data":[{"updateId":"567282a8-66b7-44a5-b55a-71c4d48cdeae","playerId":"9786b2c9-1205-4718-b0f7-fc000ce91106","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"9786b2c9-1205-4718-b0f7-fc000ce91106","name":"Kevin
+        Dudley","soul":3,"moxie":0.573014893710974,"buoyancy":0.5406724617965464,"coldness":0.39436531303778666,"deceased":false,"divinity":0.4928203120372099,"chasiness":0.917247242994691,"martyrdom":0.2963008119491186,"baseThirst":0.3474006475464859,"indulgence":0.8010621975836121,"musclitude":0.8424068965249369,"tragicness":0,"omniscience":0.2386721860965093,"patheticism":0.04467578366354319,"suppression":0.907933727675005,"continuation":0.8526153538746923,"ruthlessness":0.2862317791209692,"totalFingers":10,"watchfulness":0.5973171073742043,"laserlikeness":0.9580046123466985,"overpowerment":0.11133017685796487,"tenaciousness":0.7077889151087153,"thwackability":0.519911078354452,"anticapitalism":0.9910937325915283,"groundFriction":0.8320606317453201,"pressurization":0.7429620816150075,"unthwackability":0.8386678634489944,"shakespearianism":0.7968860278234877}}]}'
+    headers:
+      Content-Length:
+      - '1168'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=b082ca6e-eb11-4eab-8d6a-30f8be522ec4
+  response:
+    body:
+      string: '{"nextPage":"bsqCsBHrq06NajD4vlIuxGBMO2xFFgAA","data":[{"updateId":"ef004d3e-3947-4b98-9393-d394b62fd78c","playerId":"b082ca6e-eb11-4eab-8d6a-30f8be522ec4","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"b082ca6e-eb11-4eab-8d6a-30f8be522ec4","name":"Nicholas
+        Mora","soul":9,"moxie":0.6245762864428941,"buoyancy":0.36917796934116986,"coldness":0.3477948418685758,"deceased":false,"divinity":0.8009595473173601,"chasiness":0.5507119757800671,"martyrdom":0.8503735744711147,"baseThirst":0.3427064590855966,"indulgence":0.8028596318468693,"musclitude":0.21515290717797764,"tragicness":0,"omniscience":0.9658698619476536,"patheticism":0.1788722089641026,"suppression":0.2691181491717106,"continuation":0.5230133223380473,"ruthlessness":0.18942835710465236,"totalFingers":11,"watchfulness":0.5289983858504459,"laserlikeness":0.7965069724560563,"overpowerment":0.3774542154308068,"tenaciousness":0.40334517084949395,"thwackability":0.9706643954623206,"anticapitalism":0.9107954544092891,"groundFriction":0.9508661549621495,"pressurization":0.9056106219154152,"unthwackability":0.9705582516530392,"shakespearianism":0.22343980794689436}}]}'
+    headers:
+      Content-Length:
+      - '1175'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=60026a9d-fc9a-4f5a-94fd-2225398fa3da
+  response:
+    body:
+      string: '{"nextPage":"nWoCYJr8Wk-U_SIlOY-j2mBMO2xFFgAA","data":[{"updateId":"227272f4-7d66-426f-ba4b-74a57ca6c84b","playerId":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","name":"Bright
+        Zimmerman","soul":4,"moxie":0.7526023498344847,"buoyancy":0.24612589707575316,"coldness":0.23855790587881254,"deceased":false,"divinity":0.7872570449137717,"chasiness":0.16559818096450685,"martyrdom":0.47698415788217297,"baseThirst":0.4665420730270071,"indulgence":0.40257632055821224,"musclitude":0.3000990478038792,"tragicness":0,"omniscience":0.4079440610929981,"patheticism":0.8457155664699907,"suppression":0.8351008848018011,"continuation":0.009714080453356644,"ruthlessness":0.4641073369493036,"totalFingers":10,"watchfulness":0.27049988464395924,"laserlikeness":0.041419179628070735,"overpowerment":0.8080760067943862,"tenaciousness":0.32176867732750813,"thwackability":0.7172047569139375,"anticapitalism":0.33827713223817035,"groundFriction":0.5782993929431977,"pressurization":0.4668944850477603,"unthwackability":0.1606849897364011,"shakespearianism":0.6215166269543513}}]}'
+    headers:
+      Content-Length:
+      - '1185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=814bae61-071a-449b-981e-e7afc839d6d6
+  response:
+    body:
+      string: '{"nextPage":"Ya5LgRoHm0SYHuevyDnW1mBMO2xFFgAA","data":[{"updateId":"324401a2-a658-4b9f-a8d1-5d3c523d9241","playerId":"814bae61-071a-449b-981e-e7afc839d6d6","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"814bae61-071a-449b-981e-e7afc839d6d6","name":"Ruslan
+        Greatness","soul":2,"moxie":0.9064923666060847,"buoyancy":0.07055854329958255,"coldness":0.04369114725153378,"deceased":false,"divinity":0.6627751956215542,"chasiness":0.6283116969342455,"martyrdom":0.6773725795858878,"baseThirst":0.18486394661678474,"indulgence":0.6889067569256935,"musclitude":0.9563598285742443,"tragicness":0,"omniscience":0.5270749383655369,"patheticism":0.07504240344412882,"suppression":0.8082621614282846,"continuation":0.09166811386169971,"ruthlessness":0.23707062315988603,"totalFingers":10,"watchfulness":0.192235304688553,"laserlikeness":0.8307713167420359,"overpowerment":0.6922541370536286,"tenaciousness":0.16692263674831898,"thwackability":0.05959364820416724,"anticapitalism":0.08954048779749102,"groundFriction":0.11067365467026158,"pressurization":0.9777448533424058,"unthwackability":0.17794162711375638,"shakespearianism":0.4292293849658777}}]}'
+    headers:
+      Content-Length:
+      - '1183'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=0672a4be-7e00-402c-b8d6-0b813f58ba96
+  response:
+    body:
+      string: '{"nextPage":"vqRyBgB-LEC41guBP1i6lmBMO2xFFgAA","data":[{"updateId":"560a777d-c360-4ef6-9298-d3e33c1b765f","playerId":"0672a4be-7e00-402c-b8d6-0b813f58ba96","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"0672a4be-7e00-402c-b8d6-0b813f58ba96","name":"Castillo
+        Logan","soul":8,"moxie":0.007738491812264048,"buoyancy":0.22151478241295175,"coldness":0.09006689224128905,"deceased":false,"divinity":0.6289827732856992,"chasiness":0.8198605904165859,"martyrdom":0.7502366761661856,"baseThirst":0.5002852188663769,"indulgence":0.7654869533223825,"musclitude":0.7336017020045906,"tragicness":0,"omniscience":0.7496143842806429,"patheticism":0.18160333703749232,"suppression":0.23083235365494637,"continuation":0.38201132934994453,"ruthlessness":0.6790438370738046,"totalFingers":10,"watchfulness":0.7176484136287455,"laserlikeness":0.4524484628135892,"overpowerment":0.1669838186222199,"tenaciousness":0.19175459591080912,"thwackability":0.2988160418306165,"anticapitalism":0.49162125377138977,"groundFriction":0.34854062412446796,"pressurization":0.3364096852713352,"unthwackability":0.9620564225342556,"shakespearianism":0.9942415785026826}}]}'
+    headers:
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=62111c49-1521-4ca7-8678-cd45dacf0858
+  response:
+    body:
+      string: '{"nextPage":"SRwRYiEVp0yGeM1F2s8IWGBMO2xFFgAA","data":[{"updateId":"2ae167d3-f485-4c14-86ac-fdaa5f98f64c","playerId":"62111c49-1521-4ca7-8678-cd45dacf0858","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"62111c49-1521-4ca7-8678-cd45dacf0858","name":"Bambi
+        Perez","soul":2,"moxie":0.8207791958207984,"buoyancy":0.5247106876089447,"coldness":0.5821469490519895,"deceased":false,"divinity":0.18656297205361239,"chasiness":0.10869974079345579,"martyrdom":0.6218691836162853,"baseThirst":0.4897243294550204,"indulgence":0.5752289878073249,"musclitude":0.3052034024107335,"tragicness":0,"omniscience":0.7220947167055534,"patheticism":0.5879768638552951,"suppression":0.11088055929839213,"continuation":0.7634598657124996,"ruthlessness":0.47863193307874785,"totalFingers":10,"watchfulness":0.7344003659419285,"laserlikeness":0.4059450164815881,"overpowerment":0.2742022087378202,"tenaciousness":0.7974956102923532,"thwackability":0.3674768215689128,"anticapitalism":0.14146474940609077,"groundFriction":0.17620303838561413,"pressurization":0.06862535255963564,"unthwackability":0.018421917275007305,"shakespearianism":0.15150618956494033}}]}'
+    headers:
+      Content-Length:
+      - '1178'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=7f379b72-f4f0-4d8f-b88b-63211cf50ba6
+  response:
+    body:
+      string: "{\"nextPage\":\"cps3f_D0j024i2MhHPULpmBMO2xFFgAA\",\"data\":[{\"updateId\":\"9503f0db-e24c-44b2-b60f-3268de04e6fd\",\"playerId\":\"7f379b72-f4f0-4d8f-b88b-63211cf50ba6\",\"firstSeen\":\"2020-07-29T08:12:22.438Z\",\"lastSeen\":\"2020-08-02T09:22:45.421Z\",\"data\":{\"_id\":\"7f379b72-f4f0-4d8f-b88b-63211cf50ba6\",\"name\":\"Jes\xFAs
+        Rodriguez\",\"soul\":5,\"moxie\":0.3161376434940708,\"buoyancy\":0.9129888864085247,\"coldness\":0.39103765598504525,\"deceased\":false,\"divinity\":0.12165004278444691,\"chasiness\":0.0057546013877769475,\"martyrdom\":0.7579394990247867,\"baseThirst\":0.22654852680798032,\"indulgence\":0.25201578918321665,\"musclitude\":0.06807212468831247,\"tragicness\":0,\"omniscience\":0.26742108235634143,\"patheticism\":0.09586692916470496,\"suppression\":0.8089214254034467,\"continuation\":0.854861784001721,\"ruthlessness\":0.6796460752725892,\"totalFingers\":10,\"watchfulness\":0.9616199331392457,\"laserlikeness\":0.5497230724367395,\"overpowerment\":0.28498937008196457,\"tenaciousness\":0.09510433013253872,\"thwackability\":0.7905600433774811,\"anticapitalism\":0.9343889957527955,\"groundFriction\":0.18779546271017455,\"pressurization\":0.8817244842466112,\"unthwackability\":0.19123695053147483,\"shakespearianism\":0.1866615640742697}}]}"
+    headers:
+      Content-Length:
+      - '1186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=906a5728-5454-44a0-adfe-fd8be15b8d9b
+  response:
+    body:
+      string: '{"nextPage":"KFdqkFRUoESt_v2L4VuNm2BMO2xFFgAA","data":[{"updateId":"58ac9bba-8b96-4658-a4e1-6fbaee00aa29","playerId":"906a5728-5454-44a0-adfe-fd8be15b8d9b","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"906a5728-5454-44a0-adfe-fd8be15b8d9b","name":"Jefferson
+        Delacruz","soul":2,"moxie":0.5377695809309,"buoyancy":0.6716885326469422,"coldness":0.6836628333972725,"deceased":false,"divinity":0.6437571457266429,"chasiness":0.8081875779554553,"martyrdom":0.434424413609372,"baseThirst":0.6906442175623262,"indulgence":0.840988728953632,"musclitude":0.9039861904706596,"tragicness":0,"omniscience":0.9763965259714031,"patheticism":0.5036750749388781,"suppression":0.0970562909798669,"continuation":0.6444379946434027,"ruthlessness":0.18570481406103423,"totalFingers":10,"watchfulness":0.8048075866521864,"laserlikeness":0.6542058867777056,"overpowerment":0.38677525179091754,"tenaciousness":0.421596376957615,"thwackability":0.4799396860570313,"anticapitalism":0.7844189913696471,"groundFriction":0.7037112282458151,"pressurization":0.0525049024040134,"unthwackability":0.20574118816192732,"shakespearianism":0.004881407245744596}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=90cc0211-cd04-4cac-bdac-646c792773fc
+  response:
+    body:
+      string: '{"nextPage":"EQLMkATNrEy9rGRseSdz_GBMO2xFFgAA","data":[{"updateId":"bf6afec9-85ba-4ee0-b1a9-57566eb3adbd","playerId":"90cc0211-cd04-4cac-bdac-646c792773fc","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"90cc0211-cd04-4cac-bdac-646c792773fc","name":"Case
+        Lancaster","soul":6,"moxie":0.6501088597031415,"buoyancy":0.2508023152353658,"coldness":0.8682508574400709,"deceased":false,"divinity":0.0002459416683509019,"chasiness":0.9602542681426132,"martyrdom":0.06678562968695645,"baseThirst":0.6754105020917467,"indulgence":0.10920020744703751,"musclitude":0.07353779146543094,"tragicness":0,"omniscience":0.9673587173625608,"patheticism":0.11033595306379684,"suppression":0.08211707302926086,"continuation":0.48927256685125875,"ruthlessness":0.8291971956644577,"totalFingers":10,"watchfulness":0.2616381719582366,"laserlikeness":0.39293176320731615,"overpowerment":0.19011940951301343,"tenaciousness":0.7291162727739977,"thwackability":0.7413877655358125,"anticapitalism":0.085624805517176,"groundFriction":0.8649580576986791,"pressurization":0.21394656179105498,"unthwackability":0.8670444617643731,"shakespearianism":0.8253331089225575}}]}'
+    headers:
+      Content-Length:
+      - '1182'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84
+  response:
+    body:
+      string: '{"nextPage":"876wpzzu1EKebWg82fXthGBMO2xFFgAA","data":[{"updateId":"2d0580ea-acf3-4792-bbcd-b3f0f06f2d53","playerId":"a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","name":"Haruta
+        Byrd","soul":9,"moxie":0.5859205013604731,"buoyancy":0.12416125117426602,"coldness":0.7552524972279595,"deceased":false,"divinity":0.9170771574512582,"chasiness":0.12647313362536616,"martyrdom":0.1692632410567092,"baseThirst":0.7050692433208812,"indulgence":0.07238763434081297,"musclitude":0.8530104930499196,"tragicness":0,"omniscience":0.3330769289258486,"patheticism":0.832203137484949,"suppression":0.36051521345801807,"continuation":0.7644529423058093,"ruthlessness":0.6847119771272854,"totalFingers":10,"watchfulness":0.6588676173436516,"laserlikeness":0.4954184095359615,"overpowerment":0.18910900493760452,"tenaciousness":0.43311635274008164,"thwackability":0.721432688759575,"anticapitalism":0.010078402642010653,"groundFriction":0.6724327088017987,"pressurization":0.2745020858440137,"unthwackability":0.7460090483943356,"shakespearianism":0.6020431196660248}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=b85161da-7f4c-42a8-b7f6-19789cf6861d
+  response:
+    body:
+      string: '{"nextPage":"2mFRuEx_qEK39hl4nPaGHWBMO2xFFgAA","data":[{"updateId":"4596b0a6-5a64-4515-aec9-c6b710238609","playerId":"b85161da-7f4c-42a8-b7f6-19789cf6861d","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"b85161da-7f4c-42a8-b7f6-19789cf6861d","name":"Javier
+        Lotus","soul":9,"moxie":0.9422112913105021,"buoyancy":0.8155920515041322,"coldness":0.4892653194307077,"deceased":false,"divinity":0.38670043814265664,"chasiness":0.9440348311629236,"martyrdom":0.8845257116269534,"baseThirst":0.5850503972971375,"indulgence":0.47148918209442425,"musclitude":0.9013280223428632,"tragicness":0,"omniscience":0.7913868179981662,"patheticism":0.20502658944951202,"suppression":0.6218861533334918,"continuation":0.934445886645878,"ruthlessness":0.2703030692589674,"totalFingers":10,"watchfulness":0.61832195688725,"laserlikeness":0.6638389737309154,"overpowerment":0.2707227633787008,"tenaciousness":0.8410546001502597,"thwackability":0.9389643931392062,"anticapitalism":0.3006427315773059,"groundFriction":0.48153141487500406,"pressurization":0.5091034467594442,"unthwackability":0.10719469569107698,"shakespearianism":0.7984126007362957}}]}'
+    headers:
+      Content-Length:
+      - '1171'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:49 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=d2a1e734-60d9-4989-b7d9-6eacda70486b
+  response:
+    body:
+      string: '{"nextPage":"NOeh0tlgiUm32W6s2nBIa2BMO2xFFgAA","data":[{"updateId":"0fad2722-a6fd-42f0-a75d-8c1fce2b418d","playerId":"d2a1e734-60d9-4989-b7d9-6eacda70486b","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"d2a1e734-60d9-4989-b7d9-6eacda70486b","name":"Tiana
+        Takahashi","soul":2,"moxie":0.836510066850155,"buoyancy":0.1169440274624649,"coldness":0.5961218486925706,"deceased":false,"divinity":0.041250455584755485,"chasiness":0.2672494024202783,"martyrdom":0.42574756252400703,"baseThirst":0.587106578113598,"indulgence":0.17679402024095747,"musclitude":0.9876983316849517,"tragicness":0,"omniscience":0.7779101759511464,"patheticism":0.4828712408410034,"suppression":0.945939967613159,"continuation":0.16036416262477093,"ruthlessness":0.9615915835777207,"totalFingers":10,"watchfulness":0.7961210324059489,"laserlikeness":0.5556055333017378,"overpowerment":0.7166770431675262,"tenaciousness":0.3046934004227704,"thwackability":0.22848011577602123,"anticapitalism":0.9610343518596542,"groundFriction":0.7491405791208103,"pressurization":0.10446151011552995,"unthwackability":0.9100649495283875,"shakespearianism":0.02895415324880779}}]}'
+    headers:
+      Content-Length:
+      - '1177'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:50 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=20395b48-279d-44ff-b5bf-7cf2624a2d30
+  response:
+    body:
+      string: '{"nextPage":"SFs5IJ0n_0S1v3zyYkotMGBMO2xFFgAA","data":[{"updateId":"1fdda9e4-d22c-4e05-ac6b-f49ca3efe32c","playerId":"20395b48-279d-44ff-b5bf-7cf2624a2d30","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"20395b48-279d-44ff-b5bf-7cf2624a2d30","name":"Adrian
+        Melon","soul":9,"moxie":0.10225877640000158,"buoyancy":0.5437635473095974,"coldness":0.5860902208807217,"deceased":false,"divinity":0.7081218819110053,"chasiness":0.9365502057757844,"martyrdom":0.3321696433918815,"baseThirst":0.48505135697445145,"indulgence":0.17639897173746566,"musclitude":0.9516492322832693,"tragicness":0,"omniscience":0.18883964504542616,"patheticism":0.2756779195238306,"suppression":0.7291815857899175,"continuation":0.5846402837130693,"ruthlessness":0.9567121749455225,"totalFingers":10,"watchfulness":0.9059084059051399,"laserlikeness":0.8408308179797273,"overpowerment":0.021131591106097636,"tenaciousness":0.3436618537062246,"thwackability":0.3021708129296865,"anticapitalism":0.516713166763427,"groundFriction":0.4212408963263039,"pressurization":0.8471593499885721,"unthwackability":0.19229073647690798,"shakespearianism":0.09248311272404242}}]}'
+    headers:
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:50 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=d8bc482e-9309-4230-abcb-2c5a6412446d
+  response:
+    body:
+      string: '{"nextPage":"Lki82AmTMEKryyxaZBJEbWBMO2xFFgAA","data":[{"updateId":"705e039e-9004-4054-9534-ab2e9c17de3a","playerId":"d8bc482e-9309-4230-abcb-2c5a6412446d","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"d8bc482e-9309-4230-abcb-2c5a6412446d","name":"August
+        Obrien","soul":7,"moxie":0.4927077729451237,"buoyancy":0.463957840433034,"coldness":0.10018759576122194,"deceased":false,"divinity":0.9275694151611666,"chasiness":0.6522605583404881,"martyrdom":0.5568485065916828,"baseThirst":0.7018121676191835,"indulgence":0.4811489817369903,"musclitude":0.913890776522519,"tragicness":0,"omniscience":0.054615220178514834,"patheticism":0.9238543398682508,"suppression":0.32270838379791233,"continuation":0.14038893524840823,"ruthlessness":0.26147707929592445,"totalFingers":10,"watchfulness":0.8371028453277864,"laserlikeness":0.9664701456330411,"overpowerment":0.8878299922012265,"tenaciousness":0.48336818288460215,"thwackability":0.6412171610190165,"anticapitalism":0.32792794611504017,"groundFriction":0.41534449839541443,"pressurization":0.33700819467736887,"unthwackability":0.23672335921111576,"shakespearianism":0.09774303312517918}}]}'
+    headers:
+      Content-Length:
+      - '1180'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:50 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=cd5494b4-05d0-4b2e-8578-357f0923ff4c
+  response:
+    body:
+      string: '{"nextPage":"tJRUzdAFLkuFeDV_CSP_TGBMO2xFFgAA","data":[{"updateId":"8be8ece3-4cbb-43e1-b361-167ac940b601","playerId":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","name":"Mcfarland
+        Vargas","soul":5,"moxie":0.17536565318653308,"buoyancy":0.5513425134621988,"coldness":0.810602623494298,"deceased":false,"divinity":0.7761498650873726,"chasiness":0.9041344884360119,"martyrdom":0.41783221023675665,"baseThirst":0.8121678499582619,"indulgence":0.4823765299344567,"musclitude":0.30771382366062583,"tragicness":0,"omniscience":0.054401227767283844,"patheticism":0.9842787327040725,"suppression":0.34918514042209337,"continuation":0.5570853001905556,"ruthlessness":0.8422971150742167,"totalFingers":10,"watchfulness":0.5902285286481459,"laserlikeness":0.9227647403979307,"overpowerment":0.28616424969491816,"tenaciousness":0.3561821586396947,"thwackability":0.11708364590817744,"anticapitalism":0.741914802161207,"groundFriction":0.42124604961685796,"pressurization":0.5190558277454449,"unthwackability":0.1879497991434833,"shakespearianism":0.34850304608233995}}]}'
+    headers:
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:50 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

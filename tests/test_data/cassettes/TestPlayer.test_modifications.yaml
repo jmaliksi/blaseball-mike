@@ -1,0 +1,171 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=SHELLED
+  response:
+    body:
+      string: '[{"id":"SHELLED","color":"#fffd85","textColor":"#fffd85","background":"#404040","title":"Shelled","description":"A
+        Shelled player is trapped in a big Peanut is unable to bat or pitch."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:58 GMT
+      Etag:
+      - W/"ba-m8NNd/lspRyQ46hjxuWiX/0C2yo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3An_wj-7DOR-Es2P_RPptCI1MH-NTKU9B2.hA4pdfLIAHaabiWL0pISMDNFnAHSu4oYHA6xB11hi00;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:58 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=SIPHON
+  response:
+    body:
+      string: '[{"id":"SIPHON","color":"#e30000","textColor":"#e30000","background":"#2b0000","title":"Siphon","description":"Siphons
+        will steal blood more often in Blooddrain and use it in more ways."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '188'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:58 GMT
+      Etag:
+      - W/"bc-3xVPHKH64zGM/9q0mQw2cFw64as"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AySMgrFNR9dsrT9dJXDn0Yki7NWTe6YJi.CzUHlvS0pth3UCkVIQgr%2FLHcGho9jHetq3VxmAvR03U;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:58 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=MARKED
+  response:
+    body:
+      string: '[{"id":"MARKED","color":"#eaabff","textColor":"#eaabff","background":"#1b1c80","title":"Unstable","description":"Unstable
+        players have a much higher chance of being incinerated in a Solar Eclipse."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:59 GMT
+      Etag:
+      - W/"c7-68fvd2w/dERheAMCmSaOCHnWS5s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Afd9tRY3u-7HFkeWqwS0--MO32arOoZTn.L7BM%2BuVAgb%2FuxPcBYRFOfv62qzJlzyF9%2FsPopWg4Tk0;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=EXTRA_BASE
+  response:
+    body:
+      string: '[{"id":"EXTRA_BASE","color":"#d9d9d9","textColor":"#d9d9d9","background":"#4a001a","title":"Fifth
+        Base","description":"This team must run five bases instead of four in order
+        to score."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:40:59 GMT
+      Etag:
+      - W/"ba-nK2HfXaPXrJCVW7BWsUOBMIjqLw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AUg_Q2jywna3grJDS_gtB_U_COobrocDs.hrtAEenltDtoa4qAZbgPeImBoX%2BxymzWFWGwF77l3q8;
+        Path=/; Expires=Sun, 21 Feb 2021 02:40:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

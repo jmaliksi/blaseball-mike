@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/seasonStatsheets?ids=8b0bb83b-ae1b-4b80-85a7-96eefc2d45cb,6941ee36-4622-43a0-bbd7-3d71f0ada00a
+  response:
+    body:
+      string: '[{"id":"8b0bb83b-ae1b-4b80-85a7-96eefc2d45cb","teamStats":["43bec39b-411e-4cab-9f41-862c7fcadd27","8ee1da76-ab62-4014-80a3-74eb29f82135","8f42ca65-7111-4918-b4f2-ab8036a13859","309c1641-ccc1-4cf6-a92d-b4263b94d9e7","2d776526-5cd9-4712-a224-b65b48041ef5","d1d7ecab-8ce2-427d-bf59-b369467c5b72","77019c18-4436-4abd-ae87-184786ae4ab7","2d418be3-600b-40b2-9d47-3ac8779aedad","a9af1878-da82-42a3-b584-f634bd22fa6a","fbf0a549-9e53-4d79-a05b-81c1de9f72e9","8892ca97-b9db-4087-8482-02ed3eef3855","36ae05c9-04d3-40d3-b38d-5fb618a8cfab","5c9dce20-49da-4786-a69b-fe11e1ea0ddc","823e0821-7d98-4072-8987-8750adbe4309","60b610e7-02a3-46a5-b93f-749cd7a0fe51","6e3355d8-b92b-4dbb-b3aa-cdb3d36c78ff","7d186ac2-2023-40e0-a6fe-56196613748b","f8e84fb0-4044-4550-9ea8-2550dcf8af45","fac247b2-6cad-42e6-a695-9503c2e82cad","8d9f80d0-1774-45f3-93e1-fd6bd12e3832"]},{"id":"6941ee36-4622-43a0-bbd7-3d71f0ada00a","teamStats":["a5fb509a-2eef-474f-a520-8e7aac587186","7646509f-403c-489b-872e-9c8e5b8a2c22","175fdfd2-5e31-4332-8d7a-37aebf6fcd54","39446819-031e-4c4e-8eb6-5cf5a8521a17","aa998361-4890-4842-a09b-27b150ee92fd","88d24fda-d386-4ef1-855c-8430dd04fcbc","e6e84ff7-930f-4217-9c6c-18ac602e29d8","38bb05e3-7300-4783-a88c-213d56756a40","9b561a2b-8687-4f47-a0cd-959fcf9b2b9f","70f9318e-7747-40dd-9e80-2818608003bb","c6109419-4741-43ac-92d8-288780a07dbe","e05d7cfa-2774-4d81-ae47-dc99ae14bec6","7e725425-1bc4-4abe-bb09-cda5a4485108","17c151be-fe08-4cf0-aa96-60639d25384c","a602f19a-34e0-4397-a054-096c39166370","c97955bc-f8de-451e-aa08-7b5d3da37b95","9f51c1c6-6bd8-4758-90a4-0ecf9484f0b4","b45dbdcc-4e2f-4634-80a2-0fdefb41744c","099ec057-1322-4579-a5d5-31e2bbc6bcdf","d61aaf97-f7cc-4544-905f-3fa5802fe698"]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1681'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:44 GMT
+      Etag:
+      - W/"691-4Bv0cppvxxNSYUk4nOOj3Jv5afE"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AAlXIo4QxNzhz7uH6m6wwjbSlhCFxbd15.MgojG4jbXqCKi33f1EUPESuSPnoHZoaWvtcLDMy6L0U;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:44 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffMatchups?ids=bee2a1e6-50d6-4866-a7b4-f13705873052,937187dc-4d7d-45d3-95f6-dfb2ae2972a9
+  response:
+    body:
+      string: '[{"id":"bee2a1e6-50d6-4866-a7b4-f13705873052","name":null,"awaySeed":0,"awayTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","awayWins":3,"homeSeed":1,"homeTeam":"36569151-a2fb-43c1-9df7-2df512424c82","homeWins":0,"gamesPlayed":0,"gamesNeeded":"0"},{"id":"937187dc-4d7d-45d3-95f6-dfb2ae2972a9","name":null,"awaySeed":2,"awayTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","awayWins":3,"homeSeed":1,"homeTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","homeWins":2,"gamesPlayed":0,"gamesNeeded":"0"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '489'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:40 GMT
+      Etag:
+      - W/"1e9-nR1tNBEGzs/dLq9fJOUGgiXufd8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AKqfTGD3i_rSPoStYc9TiZ3GSdjEpjruF.httFrd79PdzQKp6aScGCbGkLO5zfJXRCyZn9dHSPikI;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

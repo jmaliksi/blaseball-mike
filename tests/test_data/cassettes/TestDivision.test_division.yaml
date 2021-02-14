@@ -1,0 +1,218 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=bfd38797-8404-4b38-8b82-341da28b1f83
+  response:
+    body:
+      string: '{"id":"bfd38797-8404-4b38-8b82-341da28b1f83","lineup":["2175cda0-a427-40fd-b497-347edcc1cd61","b1b141fc-e867-40d1-842a-cea30a97ca4f","4ca52626-58cd-449d-88bb-f6d631588640","020ed630-8bae-4441-95cc-0e4ecc27253b","d47dd08e-833c-4302-a965-a391d345455c","15d3a844-df6b-4193-a8f5-9ab129312d8d","fa477c92-39b6-4a52-b065-40af2f29840a","b8ab86c6-9054-4832-9b96-508dbd4eb624","f7847de2-df43-4236-8dbe-ae403f5f3ab3"],"rotation":["f0594932-8ef7-4d70-9894-df4be64875d8","34267632-8c32-4a8b-b5e6-ce1568bb0639","f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1","03f920cc-411f-44ef-ae66-98a44e883291","5e4dfa16-f1b9-400f-b8ef-a1613c2b026a"],"bullpen":["5b5bcc6c-d011-490f-b084-6fdc2c52f958","99e7de75-d2b8-4330-b897-a7334708aff9","50154d56-c58a-461f-976d-b06a4ae467f9","5b3f0a43-45e7-44e7-9496-512c24c040f0","93502db3-85fa-4393-acae-2a5ff3980dde","eaaef47e-82cc-4c90-b77d-75c3fb279e83","2d22f026-2873-410b-a45f-3b1dac665ffd","d002946f-e7ed-4ce4-a405-63bdaf5eabb5"],"bench":["d6e9a211-7b33-45d9-8f09-6d1a1a7a3c78","3531c282-cb48-43df-b549-c5276296aaa7","b056a825-b629-4856-856b-53a15ad34acb","94844fad-9519-4c14-8ab3-d38606a7bb44","fe3e8ba5-6687-400d-9828-2b70d63ea8be","3e0f7f48-675b-4f72-bb40-8a8c676f0054"],"seasAttr":[],"permAttr":["TRAVELING"],"fullName":"Charleston
+        Shoe Thieves","location":"Charleston","mainColor":"#ffce0a","nickname":"Shoe
+        Thieves","secondaryColor":"#ffce0a","shorthand":"CHST","emoji":"0x1F45F","slogan":"Your
+        Kicks are My Kicks.","shameRuns":0,"totalShames":57,"totalShamings":36,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":9,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1623'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:41 GMT
+      Etag:
+      - W/"657-PFAvAhEZ42MQgs1M6gv45aef3pw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AowlCNGOHooLci-GOZ7szEqq5U5jINh4j.Ss0wBdHJnEHxg0IsAAy2afU%2B1QaKvi7KB%2BZzoLOnrrA;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e
+  response:
+    body:
+      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["28964497-0efe-420c-9c1d-8574f224a4e9","718dea1a-d9a8-4c2b-933a-f0667b5250e6","855775c1-266f-40f6-b07b-3a67ccdf8551","defbc540-a36d-460b-afd8-07da2375ee63","51c5473a-7545-4a9a-920d-d9b718d0e8d1","f2468055-e880-40bf-8ac6-a0763d846eb2","d51f1fe8-4ab8-411e-b836-5bba92984d32","8cd06abf-be10-4a35-a3ab-1a408a329147","75f9d874-5e69-438d-900d-a3fcb1d429b3","04931546-1b4a-469f-b391-7ed67afe824c","be18d363-752d-4e4a-b06b-1a7e4641400b"],"rotation":["ff5a37d9-a6dd-49aa-b6fb-b935fd670820","3e008f60-6842-42e7-b125-b88c7e5c1a95","dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","24f6829e-7bb4-4e1e-8b59-a07514657e72","a647388d-fc59-4c1b-90d3-8c1826e07775"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f"],"bench":["d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","8acc97fa-4bf1-49f6-bb93-fb52513a015b"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
+        Flowers","location":"Boston","mainColor":"#f7d1ff","nickname":"Flowers","secondaryColor":"#f7d1ff","shorthand":"BOF","emoji":"0x1F339","slogan":"Bloom
+        Goes The Dynamite!","shameRuns":0,"totalShames":40,"totalShamings":42,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":2,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1640'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:41 GMT
+      Etag:
+      - W/"668-pgL7UZvfa4PT7VJuSPa/0Prinx0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A0gxg53VIwj2ZEOlnCNhBuZ33jprif72r.mbctRoYES4PPwCjsGfgMyq5hrGSmdFILDHgCiqLmWBw;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=979aee4a-6d80-4863-bf1c-ee1a78e06024
+  response:
+    body:
+      string: '{"id":"979aee4a-6d80-4863-bf1c-ee1a78e06024","lineup":["1e8b09bd-fbdd-444e-bd7e-10326bd57156","167751d5-210c-4a6e-9568-e92d61bab185","21cbbfaa-100e-48c5-9cea-7118b0d08a34","c0732e36-3731-4f1a-abdc-daa9563b6506","13a05157-6172-4431-947b-a058217b4aa5","4ecee7be-93e4-4f04-b114-6b333e0e6408","80de2b05-e0d4-4d33-9297-9951b2b5c950","9ac2e7c5-5a34-4738-98d8-9f917bc6d119"],"rotation":["1ffb1153-909d-44c7-9df1-6ed3a9a45bbd","7b55d484-6ea9-4670-8145-986cb9e32412","89ec77d8-c186-4027-bd45-f407b4800c2c","94baa9ac-ff96-4f56-a987-10358e917d91","a5f8ce83-02b2-498c-9e48-533a1d81aebf"],"bullpen":["a2483925-697f-468f-931c-bcd0071394e5","527c1f6e-a7e4-4447-a824-703b662bae4e","62823073-84b8-46c2-8451-28fd10dff250","805ba480-df4d-4f56-a4cf-0b99959111b5","cd6b102e-1881-4079-9a37-455038bbf10e","3954bdfa-931f-4787-b9ac-f44b72fe09d7","ccc99f2f-2feb-4f32-a9b9-c289f619d84c","fbb5291c-2438-400e-ab32-30ce1259c600"],"bench":["03d06163-6f06-4817-abe5-0d14c3154236","960f041a-f795-4001-bd88-5ddcf58ee520","0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","4cd0ac8f-6c2e-4bf1-a232-a5ac6fd4a677"],"seasAttr":[],"permAttr":[],"fullName":"Hawai''i
+        Fridays","location":"Hawai''i","mainColor":"#3ee652","nickname":"Fridays","secondaryColor":"#3ee652","shorthand":"HF","emoji":"0x1F3DD","slogan":"It''s
+        Island Time!","shameRuns":0,"totalShames":47,"totalShamings":40,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":1,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1470'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:41 GMT
+      Etag:
+      - W/"5be-Xy7+PZ3HUGqTtC+67GzWcybAzRM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A1YhrnU2Qb6KK4Ihbojc6mQaoh1mA9yBc.Yo4H0ZzWF1NQ%2BLZxg7ylqlYO0uMIAamAEDmiYX76yeY;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=7966eb04-efcc-499b-8f03-d13916330531
+  response:
+    body:
+      string: '{"id":"7966eb04-efcc-499b-8f03-d13916330531","lineup":["17392be2-7344-48a0-b4db-8a040a7fb532","4e6ad1a1-7c71-49de-8bd5-c286712faf9e","44c92d97-bb39-469d-a13b-f2dd9ae644d1","ac69dba3-6225-4afd-ab4b-23fc78f730fb","2ffbaec8-a646-4435-a17a-3a0a2b5f3e16","a3947fbc-50ec-45a4-bca4-49ffebb77dbe","e16c3f28-eecd-4571-be1a-606bbac36b2b","aa6c2662-75f8-4506-aa06-9a0993313216","63512571-2eca-4bc4-8ad9-a5308a22ae22"],"rotation":["9397ed91-608e-4b13-98ea-e94c795f651e","8adb084b-19fe-4295-bcd2-f92afdb62bd7","b6aa8ce8-2587-4627-83c1-2a48d44afaee","09f2787a-3352-41a6-8810-d80e97b253b5","2da49de2-34e5-49d0-b752-af2a2ee061be"],"bullpen":["9a031b9a-16f8-4165-a468-5d0e28a81151","450e6483-d116-41d8-933b-1b541d5f0026","1af239ae-7e12-42be-9120-feff90453c85","94f30f21-f889-4a2e-9b94-818475bb1ca0","1ded0384-d290-4ea1-a72b-4f9d220cbe37","82733eb4-103d-4be1-843e-6eb6df35ecd7","db53211c-f841-4f33-accf-0c3e167889a0","b77dffaa-e0f5-408f-b9f2-1894ed26e744"],"bench":["945974c5-17d9-43e7-92f6-ba49064bbc59","c6146c45-3d9b-4749-9f03-d4faae61e2c3","ac57cf28-556f-47af-9154-6bcea2ace9fc","7b779947-46ef-4b77-be37-962d60875647"],"seasAttr":[],"permAttr":["O_NO"],"fullName":"Yellowstone
+        Magic","location":"Yellowstone","mainColor":"#bf0043","nickname":"Magic","secondaryColor":"#f60f63","shorthand":"YELL","emoji":"0x2728","slogan":"As
+        Above, So Below","shameRuns":0,"totalShames":44,"totalShamings":35,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":0,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1521'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:41 GMT
+      Etag:
+      - W/"5f1-VoiQ9L8wJA+UztSNReXW4ojem4Y"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AmMEdk_BRdqTTFR8JGdD2atLFk4L2a-oZ.DZEpe%2FvDhMmjEnYtJ5LptV%2B%2BGzG2%2B9A0ZCKx2wgKdc4;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=36569151-a2fb-43c1-9df7-2df512424c82
+  response:
+    body:
+      string: '{"id":"36569151-a2fb-43c1-9df7-2df512424c82","lineup":["4b3e8e9b-6de1-4840-8751-b1fb45dc5605","766dfd1e-11c3-42b6-a167-9b2d568b5dc0","c4dec95e-78a1-4840-b209-b3b597181534","413b3ddb-d933-4567-a60e-6d157480239d","198fd9c8-cb75-482d-873e-e6b91d42a446","f38c5d80-093f-46eb-99d6-942aa45cd921","ec68845f-3b26-412f-8446-4fef34e09c77","4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d","9965eed5-086c-4977-9470-fe410f92d353"],"rotation":["ae4acebd-edb5-4d20-bf69-f2d5151312ff","81d7d022-19d6-427d-aafc-031fcb79b29e","378c07b0-5645-44b5-869f-497d144c7b35","0c83e3b6-360e-4b7d-85e3-d906633c9ca0","18af933a-4afa-4cba-bda5-45160f3af99b","f741dc01-2bae-4459-bfc0-f97536193eea"],"bullpen":["ab9b2592-a64a-4913-bf6c-3ae5bd5d26a5","29bf512a-cd8c-4ceb-b25a-d96300c184bb","94d772c7-0254-4f08-814c-f6fc58fcfb9b","1e229fe5-a191-48ef-a7dd-6f6e13d6d73f","9e724d9a-92a0-436e-bde1-da0b2af85d8f","5c60f834-a133-4dc6-9c07-392fb37b3e6a","b7cdb93b-6f9d-468a-ae00-54cbc324ee84","c4951cae-0b47-468b-a3ac-390cc8e9fd05"],"bench":["1e7b02b7-6981-427a-b249-8e9bd35f3882","6a869b40-be99-4520-89e5-d382b07e4a3c","8d81b190-d3b8-4cd9-bcec-0e59fdd7f2bc","662f34f0-bd74-49a7-8506-50d4dd333c4c"],"seasAttr":[],"permAttr":["BIRD_SEED"],"fullName":"New
+        York Millennials","location":"New York","mainColor":"#ffd4d8","nickname":"Millennials","secondaryColor":"#ffd4d8","shorthand":"NYMI","emoji":"0x1F4F1","slogan":"Youth
+        Will Save Us","shameRuns":0,"totalShames":51,"totalShamings":38,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":5,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1572'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 02:43:41 GMT
+      Etag:
+      - W/"624-pzp3rP1z8iZKOAdRl21DftDI9qo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AQ_WKRo0ySQx7l7GGEczvF0ultsI0dzix.zceIMxhM%2BxNqLzT92s61dmIorExBE2ZTV%2BrzeInqreo;
+        Path=/; Expires=Sun, 21 Feb 2021 02:43:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

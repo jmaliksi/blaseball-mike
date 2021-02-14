@@ -1,0 +1,250 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=0&day=2
+  response:
+    body:
+      string: "[{\"id\":\"a6c5dcd0-a9b9-4ccf-99db-c0b29fa5457d\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"e83bcd67-48ed-4114-9f85-49be970e156f\",\"awayPitcher\":\"fedbceb8-e2aa-4868-ac35-74cd0445893f\",\"awayPitcherName\":\"Uncle
+        Plasma\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"f29d6e60-8fce-4ac6-8bc2-b5e3cabc5696\",\"awayTeamName\":\"BC
+        Noir\",\"awayTeamNickname\":\"BC Noir\",\"awayTeamColor\":\"#231709\",\"awayTeamEmoji\":\"0x1F50D\",\"awayOdds\":0.43674751642705106,\"awayStrikes\":3,\"awayScore\":1,\"awayTeamBatterCount\":31,\"homePitcher\":\"2720559e-9173-4042-aaa0-d3852b72ab2e\",\"homePitcherName\":\"Hiroto
+        Wilcox\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"e8f7ffee-ec53-4fe0-8e87-ea8ff1d0b4a9\",\"homeTeamName\":\"Heavy
+        FC\",\"homeTeamNickname\":\"Heavy\",\"homeTeamColor\":\"#a9e8c9\",\"homeTeamEmoji\":\"0x2693\",\"homeOdds\":0.5632524835729489,\"homeStrikes\":3,\"homeScore\":3.5,\"homeTeamBatterCount\":31,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#7f6f5c\",\"homeTeamSecondaryColor\":\"#a9e8c9\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":280,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"4080ce32-9d3c-4712-b124-5447dd67de57\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"b992b95e-dd8e-4f91-a3a1-6b5f3c6e7de4\",\"awayPitcher\":\"df4da81a-917b-434f-b309-f00423ee4967\",\"awayPitcherName\":\"Eugenia
+        Bickle\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"a7592bd7-1d3c-4ffb-8b3a-0b1e4bc321fd\",\"awayTeamName\":\"Milk
+        Proxy Society\",\"awayTeamNickname\":\"Milk Proxy\",\"awayTeamColor\":\"#ffffff\",\"awayTeamEmoji\":\"0x1F95B\",\"awayOdds\":0.4218943998613708,\"awayStrikes\":3,\"awayScore\":10,\"awayTeamBatterCount\":36,\"homePitcher\":\"ef9f8b95-9e73-49cd-be54-60f84858a285\",\"homePitcherName\":\"Collins
+        Melon\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"9a5ab308-41f2-4889-a3c3-733b9aab806e\",\"homeTeamName\":\"Royal
+        PoS\",\"homeTeamNickname\":\"Royal PoS\",\"homeTeamColor\":\"#470094\",\"homeTeamEmoji\":\"0x1F451\",\"homeOdds\":0.5781056001386291,\"homeStrikes\":3,\"homeScore\":4.5,\"homeTeamBatterCount\":36,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#ffffff\",\"homeTeamSecondaryColor\":\"#a959ff\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":309,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"cda524b2-338d-43c0-a91c-63e968b40ad1\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"7277e057-6e64-4199-9a96-4217375a95d5\",\"awayPitcher\":\"3c331c87-1634-46c4-87ce-e4b9c59e2969\",\"awayPitcherName\":\"Yosh
+        Carpenter\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"4d921519-410b-41e2-882e-9726a4e54a6a\",\"awayTeamName\":\"Cold
+        Brew Crew\",\"awayTeamNickname\":\"Cold Brew\",\"awayTeamColor\":\"#2a5e6c\",\"awayTeamEmoji\":\"0x2744\",\"awayOdds\":0.4921403349717568,\"awayStrikes\":3,\"awayScore\":3,\"awayTeamBatterCount\":33,\"homePitcher\":\"4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d\",\"homePitcherName\":\"Schneider
+        Bendie\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"49181b72-7f1c-4f1c-929f-928d763ad7fb\",\"homeTeamName\":\"Atl\xE9tico
+        Latte\",\"homeTeamNickname\":\"Atl\xE9tico\",\"homeTeamColor\":\"#094f12\",\"homeTeamEmoji\":\"0x1F3C6\",\"homeOdds\":0.5078596650282433,\"homeStrikes\":3,\"homeScore\":6.5,\"homeTeamBatterCount\":32,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#92c7d6\",\"homeTeamSecondaryColor\":\"#36ad45\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":272,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"d026b073-8222-4979-9b4c-fb74653359ab\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"fad305ae-a232-4700-aeba-26a812441e29\",\"awayPitcher\":\"2ffbaec8-a646-4435-a17a-3a0a2b5f3e16\",\"awayPitcherName\":\"Bonk
+        Jokes\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"70eab4ab-6cb1-41e7-ac8b-1050ee12eecc\",\"awayTeamName\":\"Light
+        & Sweet Electric Co.\",\"awayTeamNickname\":\"Light & Sweet\",\"awayTeamColor\":\"#f07800\",\"awayTeamEmoji\":\"0x1F4A1\",\"awayOdds\":0.5248768119413151,\"awayStrikes\":3,\"awayScore\":6,\"awayTeamBatterCount\":37,\"homePitcher\":\"6a567da6-7c96-44d3-85de-e5a08a919250\",\"homePitcherName\":\"Cudi
+        Di Batterino\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"a3ea6358-ce03-4f23-85f9-deb38cb81b20\",\"homeTeamName\":\"Club
+        de Calf\",\"homeTeamNickname\":\"de Calf\",\"homeTeamColor\":\"#ffc6df\",\"homeTeamEmoji\":\"0x1F42E\",\"homeOdds\":0.47512318805868503,\"homeStrikes\":3,\"homeScore\":13,\"homeTeamBatterCount\":41,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#ffd86e\",\"homeTeamSecondaryColor\":\"#ffc6df\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":354,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"e2a01b76-92a7-4abc-889a-f80c39eafca0\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"ff7bb6c9-c0b1-4e75-b313-7095d430cfe8\",\"awayPitcher\":\"5eac7fd9-0d19-4bf4-a013-994acc0c40c0\",\"awayPitcherName\":\"Sutton
+        Bishop\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1\",\"awayTeamName\":\"Inter
+        Xpresso\",\"awayTeamNickname\":\"Xpresso\",\"awayTeamColor\":\"#8a2444\",\"awayTeamEmoji\":\"0x274C\",\"awayOdds\":0.45409903659639395,\"awayStrikes\":3,\"awayScore\":0,\"awayTeamBatterCount\":29,\"homePitcher\":\"82d1b7b4-ce00-4536-8631-a025f05150ce\",\"homePitcherName\":\"Sam
+        Scandal\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"4e5d0063-73b4-440a-b2d1-214a7345cf16\",\"homeTeamName\":\"Americano
+        Water Works\",\"homeTeamNickname\":\"Americano\",\"homeTeamColor\":\"#005d9c\",\"homeTeamEmoji\":\"0x1F4A7\",\"homeOdds\":0.5459009634036062,\"homeStrikes\":3,\"homeScore\":1.5,\"homeTeamBatterCount\":27,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#e6608b\",\"homeTeamSecondaryColor\":\"#8dd4f0\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":259,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"9b9d4bbd-f6fb-4b81-84dd-800a7e31ed9b\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"c18f4463-cd66-4584-b96d-0f914f1cbb5a\",\"awayPitcher\":\"30dc0652-2608-49ba-8929-36494fc2bd29\",\"awayPitcherName\":\"Watson
+        Ward\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"3b0a289b-aebd-493c-bc11-96793e7216d5\",\"awayTeamName\":\"Pandemonium
+        Artists\",\"awayTeamNickname\":\"Artists\",\"awayTeamColor\":\"#000000\",\"awayTeamEmoji\":\"0x1F3A8\",\"awayOdds\":0.4177592424649768,\"awayStrikes\":3,\"awayScore\":5,\"awayTeamBatterCount\":36,\"homePitcher\":\"81a0889a-4606-4f49-b419-866b57331383\",\"homePitcherName\":\"Summers
+        Pony\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"e3f90fa1-0bbe-40df-88ce-578d0723a23b\",\"homeTeamName\":\"FWXBC\",\"homeTeamNickname\":\"FWXBC\",\"homeTeamColor\":\"#505050\",\"homeTeamEmoji\":\"0x1F3F3\",\"homeOdds\":0.5822407575350231,\"homeStrikes\":3,\"homeScore\":6.5,\"homeTeamBatterCount\":31,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#ffffff\",\"homeTeamSecondaryColor\":\"#b8b8b8\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":297,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"d869166e-ad9e-480c-804c-ef0dc7e75727\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[\"Slam
+        Rosenthal was Percolated by the Tractor Bean!\",\"Oops All Keepers was Percolated
+        by the Tractor Bean! Oops All Keepers was fired into outer space!\",\"The
+        Murph was Percolated by the Tractor Bean!\",\"Nlikki Hart was Percolated by
+        the Tractor Bean!\"],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"795fdf01-0e33-4af2-b42d-cb37914ceb26\",\"awayPitcher\":\"09f2787a-3352-41a6-8810-d80e97b253b5\",\"awayPitcherName\":\"Curry
+        Aliciakeyes\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"9e42c12a-7561-42a2-b2d0-7cf81a817a5e\",\"awayTeamName\":\"Macchiato
+        City\",\"awayTeamNickname\":\"Macchiato\",\"awayTeamColor\":\"#1f1636\",\"awayTeamEmoji\":\"0x1F303\",\"awayOdds\":0.5322854669926501,\"awayStrikes\":3,\"awayScore\":8,\"awayTeamBatterCount\":43,\"homePitcher\":\"a11242ae-936a-46b4-9101-be2cabafeed4\",\"homePitcherName\":\"Electric
+        Kettle\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"7fcb63bc-11f2-40b9-b465-f1d458692a63\",\"homeTeamName\":\"Real
+        Game Band\",\"homeTeamNickname\":\"Game Band\",\"homeTeamColor\":\"#de0000\",\"homeTeamEmoji\":\"0x1F579\",\"homeOdds\":0.46771453300734994,\"homeStrikes\":3,\"homeScore\":2.5,\"homeTeamBatterCount\":36,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#b5abd1\",\"homeTeamSecondaryColor\":\"#de0000\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":315,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"0cebf6b5-b440-4956-9d7d-42cadec6c821\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"5b306618-97a1-4772-a11c-b63b5f7a959e\",\"awayPitcher\":\"be4f288b-ef87-4e8e-b8ee-20eec18e80b8\",\"awayPitcherName\":\"PolkaDot
+        Matrix\",\"awayBatter\":null,\"awayBatterName\":\"\",\"awayTeam\":\"d2634113-b650-47b9-ad95-673f8e28e687\",\"awayTeamName\":\"Society
+        Data Witches\",\"awayTeamNickname\":\"Data Witches\",\"awayTeamColor\":\"#691a8f\",\"awayTeamEmoji\":\"0x1F52E\",\"awayOdds\":0.4865841790614586,\"awayStrikes\":3,\"awayScore\":9,\"awayTeamBatterCount\":36,\"homePitcher\":\"86adac6f-c694-44ac-9560-758de7eac937\",\"homePitcherName\":\"Quack
+        Enjoyable\",\"homeBatter\":null,\"homeBatterName\":\"\",\"homeTeam\":\"b3b9636a-f88a-47dc-a91d-86ecc79f9934\",\"homeTeamName\":\"Cream
+        & Sugar United\",\"homeTeamNickname\":\"Cream & Sugar\",\"homeTeamColor\":\"#b89600\",\"homeTeamEmoji\":\"0x1F91D\",\"homeOdds\":0.5134158209385413,\"homeStrikes\":3,\"homeScore\":4,\"homeTeamBatterCount\":44,\"season\":-1,\"isPostseason\":true,\"day\":2,\"phase\":6,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":9,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":3,\"seriesLength\":3,\"shame\":false,\"weather\":15,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"#bc60e2\",\"homeTeamSecondaryColor\":\"#ffd20f\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":374,\"tournament\":0,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"}]"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '13566'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:51 GMT
+      Etag:
+      - W/"34fe-oVKs1Ek69qVp4rXlz2Y+5FFe0jY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AHXtjZqF_KfGFmh_XRwj8AFB2_KSfXsWV.Gp26gDmum7s9hkzXNsOBK5APBvk9cNKeN%2F%2BvHWNjlVA;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:51 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=-2&day=0
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:51 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AmxMjWNrYIMjpTNFnsx_zbeqxiK4ECEud.lIRLqxsMhTP8GbT5t5eSWYbdZd%2FEi54QqD9GSB7QKIA;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:51 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=999&day=0
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:52 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AwKTGo7WKxqyjrsem3rPLN4AjO5-3dKOR.yZcj7Azg8DOC5G8LGtcbx550gZ70FDf5gPPI4upi9x8;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:52 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=0&day=-2
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:52 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AxxF-ZT9RyRjscnEkezNah54knxNSGcn7.UZiLw8pYkiSawnl7BBSQSFIneIcZeOSGQfXsj2FwqIc;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:52 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=0&day=998
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:52 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Aln9_DfFub3D5QSZQ-J6K8ALHPSsLnRfL.G5fjrSy0O4YqGQt%2F2lddAuML9YJcsXdRvyuJiPu7oNU;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:52 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
