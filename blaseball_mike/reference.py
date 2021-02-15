@@ -244,5 +244,5 @@ def get_stats(type_='season',
         params['limit'] = limit
 
     s = session(600)
-    stats = s.get(f'{BASE_URL_v2}/stats', params=params)
+    stats = s.get(f'{BASE_URL_V2}/stats', params=params)
     return stats.json()
