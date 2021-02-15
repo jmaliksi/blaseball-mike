@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=FAKE_MODIFICATION
+  response:
+    body:
+      string: '[{"id":"????","color":"#FFFFFF","background":"#FFFFFF","textColor":"#FFFFFF","title":"????","description":"This
+        Modification is unknown."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '139'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 20:55:43 GMT
+      Etag:
+      - W/"8b-Jr+pw03BmVOTZOoK1eDdvyY2d4c"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AZIoOe7nPdFd_9IgUAYn5oI0DmVa0UqHb.rYdcv%2BuZ34vOKt8rzJHaV610IjaD9YtEg7B7ZAGaT6A;
+        Path=/; Expires=Mon, 22 Feb 2021 20:55:43 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

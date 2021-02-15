@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/games?tournament=0&day=-2
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 20:54:33 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AxIIkr3INDELxAiA3s80vUwdegtnmYiHX.WtXJFloFn3a7vM1fVCUT%2F39ASJ%2Fm57CFLXhwWWKw5BI;
+        Path=/; Expires=Mon, 22 Feb 2021 20:54:33 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

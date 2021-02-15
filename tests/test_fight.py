@@ -40,6 +40,8 @@ class TestFight(TestBase):
         fight = Fight.load_by_id("6754f45d-52a6-4b2f-b63c-15dcd520f8cf")
         assert isinstance(fight, Fight)
 
+    @pytest.mark.vcr
+    def test_load_by_id_bad_id(self):
         bad_id = Fight.load_by_id("00000000-0000-0000-0000-000000000000")
         assert bad_id is None
 
@@ -53,6 +55,8 @@ class TestFight(TestBase):
             assert isinstance(fight, Fight)
             assert key == fight.id
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_invalid(self):
         bad_season = Fight.load_by_season(3)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0

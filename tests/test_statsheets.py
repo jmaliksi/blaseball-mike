@@ -26,6 +26,7 @@ class TestGameStatsheet(TestBase):
             assert isinstance(game_statsheet.away_team_stats, TeamStatsheet)
             assert isinstance(game_statsheet.home_team_stats, TeamStatsheet)
 
+    # TODO: Load more than one here
     @pytest.mark.vcr
     def test_load(self):
         sheets = GameStatsheet.load(["aa1f981a-40dc-4b10-bc35-9f0f1928c810"])
@@ -36,6 +37,8 @@ class TestGameStatsheet(TestBase):
             assert isinstance(sheet, GameStatsheet)
             assert key == sheet.id
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = GameStatsheet.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 0
@@ -49,18 +52,26 @@ class TestGameStatsheet(TestBase):
             assert isinstance(key, str)
             assert isinstance(sheet, GameStatsheet)
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_season_low(self):
         bad_season = GameStatsheet.load_by_day(season=-1, day=3)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_season_high(self):
         bad_season = GameStatsheet.load_by_day(season=999, day=1)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_day_low(self):
         bad_day = GameStatsheet.load_by_day(season=4, day=0)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_day_high(self):
         bad_day = GameStatsheet.load_by_day(season=1, day=999)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
@@ -90,7 +101,8 @@ class TestSeasonStatsheet(TestBase):
             assert isinstance(sheet, SeasonStatsheet)
             assert key == sheet.id
 
-
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = SeasonStatsheet.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 0
@@ -100,9 +112,13 @@ class TestSeasonStatsheet(TestBase):
         sheet = SeasonStatsheet.load_by_season(4)
         assert isinstance(sheet, SeasonStatsheet)
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_low(self):
         with pytest.raises(ValueError):
             bad_season = SeasonStatsheet.load_by_season(-1)
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_high(self):
         with pytest.raises(ValueError):
             bad_season = SeasonStatsheet.load_by_season(999)
 
@@ -137,6 +153,8 @@ class TestTeamStatsheet(TestBase):
             assert isinstance(sheet, TeamStatsheet)
             assert key == sheet.id
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = TeamStatsheet.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 0
@@ -190,6 +208,8 @@ class TestPlayerStatsheet(TestBase):
             assert isinstance(sheet, PlayerStatsheet)
             assert key == sheet.id
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = PlayerStatsheet.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 0

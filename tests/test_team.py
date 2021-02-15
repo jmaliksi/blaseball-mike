@@ -87,6 +87,8 @@ class TestTeam(TestBase):
         bad_team = Team.load("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e")
         assert isinstance(bad_team, Team)
 
+    @pytest.mark.vcr
+    def test_load_bad_team(self):
         with pytest.raises(ValueError):
             bad_team = Team.load("00000000-0000-0000-0000-000000000000")
 
@@ -95,6 +97,8 @@ class TestTeam(TestBase):
         team = Team.load_by_name("Boston Flowers")
         assert isinstance(team, Team)
 
+    @pytest.mark.vcr
+    def test_load_by_name_bad_name(self):
         bad_name = Team.load_by_name("Ohio Astronauts")
         assert bad_name is None
 
@@ -113,8 +117,12 @@ class TestTeam(TestBase):
         team = Team.load_at_time("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e", time="2020-08-01T18:00:00Z")
         assert isinstance(team, Team)
 
+    @pytest.mark.vcr
+    def test_load_at_time_bad_team(self):
         bad_team = Team.load_at_time("00000000-0000-0000-0000-000000000000", time="2020-08-01T18:00:00Z")
         assert bad_team is None
 
+    @pytest.mark.vcr
+    def test_load_one_at_time_bad_time(self):
         bad_time = Team.load_at_time("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e", time="1980-01-01T00:00:00Z")
         assert bad_time is None

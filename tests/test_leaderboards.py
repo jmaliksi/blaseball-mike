@@ -79,6 +79,8 @@ class TestTribute(TestBase):
             assert isinstance(key, str)
             assert isinstance(tribute, Tribute)
 
+    @pytest.mark.vcr
+    def test_load_at_time_bad_time(self):
         bad_time = Tribute.load_at_time("1980-01-01T00:00:00.000Z")
         assert isinstance(bad_time, dict)
         assert len(bad_time) == 0

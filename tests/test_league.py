@@ -37,6 +37,8 @@ class TestLeague(TestBase):
         league = League.load_by_id("d8545021-e9fc-48a3-af74-48685950a183")
         assert isinstance(league, League)
 
+    @pytest.mark.vcr
+    def test_load_by_id_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = League.load_by_id("00000000-0000-0000-0000-000000000000")
 
@@ -67,6 +69,8 @@ class TestSubleague(TestBase):
         subleague = Subleague.load("7d3a3dd6-9ea1-4535-9d91-bde875c85e80")
         assert isinstance(subleague, Subleague)
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = Subleague.load("00000000-0000-0000-0000-000000000000")
 
@@ -92,6 +96,8 @@ class TestDivision(TestBase):
         division = Division.load("f711d960-dc28-4ae2-9249-e1f320fec7d7")
         assert isinstance(division, Division)
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = Division.load("00000000-0000-0000-0000-000000000000")
 
@@ -110,6 +116,8 @@ class TestDivision(TestBase):
         division = Division.load_by_name("Chaotic Evil")
         assert isinstance(division, Division)
 
+    @pytest.mark.vcr
+    def test_load_by_name_bad_name(self):
         bad_name = Division.load_by_name("Not A Division")
         assert bad_name is None
 
@@ -135,6 +143,8 @@ class TestTiebreaker(TestBase):
         assert isinstance(tiebreaker, dict)
         assert len(tiebreaker) > 0
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = Tiebreaker.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 0

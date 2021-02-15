@@ -53,11 +53,16 @@ class TestElectionResults(TestBase):
     def test_load_by_season(self):
         result = ElectionResult.load_by_season(1)
         assert isinstance(result, ElectionResult)
+        # TODO: oops whoops uh oh
         #assert result.season == 1
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_low(self):
         with pytest.raises(ValueError):
             bad_season = ElectionResult.load_by_season(0)
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_high(self):
         with pytest.raises(ValueError):
             bad_season = ElectionResult.load_by_season(999)
 
@@ -89,15 +94,19 @@ class TestDecreeResults(TestBase):
             assert isinstance(result, DecreeResult)
             assert key == result.id
 
-        bad_id = DecreeResult.load("00000000-0000-0000-0000-000000000000")
+    @pytest.mark.vcr
+    def tset_load_bad_id(self):
+        bad_id = DecreeResult.load("643280fc-b7c6-4b6d-a164-9b53e1a3e47a", "00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
-        assert len(bad_id) == 0
+        assert len(bad_id) == 1
 
     @pytest.mark.vcr
     def test_load_one(self):
         result = DecreeResult.load_one("b090fdfc-7d9d-414b-a4a5-bbc698028c15")
         assert isinstance(result, DecreeResult)
 
+    @pytest.mark.vcr
+    def test_load_one_bad_id(self):
         bad_id = DecreeResult.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_id is None
 
@@ -134,6 +143,8 @@ class TestBlessingResults(TestBase):
             assert isinstance(result, BlessingResult)
             assert key == result.id
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_id = BlessingResult.load("cbb567c0-d770-4d22-92f6-ff16ebb94758", "00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
         assert len(bad_id) == 1
@@ -143,6 +154,8 @@ class TestBlessingResults(TestBase):
         result = BlessingResult.load_one("268580d3-7bbd-474d-a563-08044bafda8b")
         assert isinstance(result, BlessingResult)
 
+    @pytest.mark.vcr
+    def test_load_one_bad_id(self):
         bad_id = BlessingResult.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_id is None
 
@@ -171,15 +184,18 @@ class TestTidingResults(TestBase):
             assert isinstance(result, TidingResult)
             assert key == result.id
 
-
-        bad_id = TidingResult.load("00000000-0000-0000-0000-000000000000")
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
+        bad_id = TidingResult.load("future_written", "00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
-        assert len(bad_id) == 0
+        assert len(bad_id) == 1
 
     @pytest.mark.vcr
     def test_load_one(self):
         result = TidingResult.load_one("future_written")
         assert isinstance(result, TidingResult)
 
+    @pytest.mark.vcr
+    def test_load_one_bad_id(self):
         bad_id = TidingResult.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_id is None

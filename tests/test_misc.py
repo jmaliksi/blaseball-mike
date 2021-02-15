@@ -65,6 +65,8 @@ class TestGlobalEvents(TestBase):
                 assert isinstance(ticker_event.msg, str)
                 assert isinstance(ticker_event.expire, (datetime, type(None)))
 
+    # TODO: Load tests???
+
 
 class TestSeason(TestBase):
     def test_base_compliance(self, seasons):
@@ -92,9 +94,13 @@ class TestSeason(TestBase):
         assert isinstance(season, Season)
         assert season.season_number == 4
 
+    @pytest.mark.vcr
+    def test_load_bad_season_low(self):
         with pytest.raises(ValueError):
             bad_season = Season.load(-1)
 
+    @pytest.mark.vcr
+    def test_load_bad_season_high(self):
         with pytest.raises(ValueError):
             bad_season = Season.load(999)
 
@@ -121,6 +127,8 @@ class TestStandings(TestBase):
         standing = Standings.load("34f02581-a284-4e2d-8123-28b38334d053")
         assert isinstance(standing, Standings)
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = Standings.load("00000000-0000-0000-0000-000000000000")
 
@@ -133,6 +141,9 @@ def test_modifications():
     assert modification.id == "PARTY_TIME"
     assert modification.title == "Party Time"
 
+
+@pytest.mark.vcr
+def test_modification_bad_id():
     modification = Modification.load_one("FAKE_MODIFICATION")
     assert isinstance(modification, Modification)
     base_test(modification)
@@ -151,6 +162,9 @@ def test_items():
     assert item._attr_id == "FIREPROOF"
     assert isinstance(item.attr, Modification)
 
+
+@pytest.mark.vcr
+def test_items_bad_id():
     item = Item.load_one("RICHMONDS_HAT")
     assert isinstance(item, Item)
     base_test(item)
@@ -160,19 +174,23 @@ def test_items():
     assert item.attr is None
 
 
-def test_weather():
+def test_weather_by_enum():
     weather = Weather.FEEDBACK
     assert isinstance(weather, Weather)
     assert weather.value == 12
     assert weather.name == "FEEDBACK"
     assert weather.text == "Feedback"
 
+
+def test_weather_by_id():
     weather = Weather(7)
     assert isinstance(weather, Weather)
     assert weather.value == 7
     assert weather.name == "SOLAR_ECLIPSE"
     assert weather.text == "Solar Eclipse"
 
+
+def test_weather_bad_id():
     weather = Weather(-3)
     assert isinstance(weather, Weather)
     assert weather.value == -3
@@ -180,19 +198,23 @@ def test_weather():
     assert weather.text == "Invalid Weather"
 
 
-def test_tarot():
+def test_tarot_by_enum():
     tarot = Tarot.DEVIL
     assert isinstance(tarot, Tarot)
     assert tarot.value == 14
     assert tarot.name == "DEVIL"
     assert tarot.text == "XV The Devil"
 
+
+def test_tarot_by_id():
     tarot = Tarot(9)
     assert isinstance(tarot, Tarot)
     assert tarot.value == 9
     assert tarot.name == "WHEEL_OF_FORTUNE"
     assert tarot.text == "X The Wheel of Fortune"
 
+
+def test_tarot_bad_id():
     tarot = Tarot(21)
     assert isinstance(tarot, Tarot)
     assert tarot.value == 21

@@ -245,6 +245,8 @@ class TestGame(TestBase):
         game = Game.load_by_id("2eb1b614-2a5c-440b-bbac-74e3ae054fc6")
         assert isinstance(game, Game)
 
+    @pytest.mark.vcr
+    def test_load_by_id_bad_id(self):
         with pytest.raises(ValueError):
             bad_game = Game.load_by_id("00000000-0000-0000-0000-000000000000")
 
@@ -259,22 +261,32 @@ class TestGame(TestBase):
             assert key == game.id
             assert game.season == 6
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_low(self):
         bad_season = Game.load_by_season(season=-1)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_high(self):
         bad_season = Game.load_by_season(season=999)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_day_low(self):
         bad_day = Game.load_by_season(season=5, day=-1)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_day_high(self):
         bad_day = Game.load_by_season(season=5, day=999)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_team_id(self):
         bad_team = Game.load_by_season(season=5, team_id="00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_team, dict)
         assert len(bad_team) == 0
@@ -291,18 +303,26 @@ class TestGame(TestBase):
             assert game.season == 1
             assert game.day == 5
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_season_low(self):
         bad_season = Game.load_by_day(season=-1, day=6)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_season_high(self):
         bad_season = Game.load_by_day(season=999, day=6)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_day_low(self):
         bad_day = Game.load_by_day(season=4, day=-1)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
 
+    @pytest.mark.vcr
+    def test_load_by_day_bad_day_high(self):
         bad_day = Game.load_by_day(season=4, day=999)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
@@ -319,18 +339,26 @@ class TestGame(TestBase):
             assert game.tournament == 0
             assert game.day == 3
 
+    @pytest.mark.vcr
+    def test_load_tournament_by_day_bad_tournament_low(self):
         bad_tournament = Game.load_tournament_by_day(tournament=-2, day=1)
         assert isinstance(bad_tournament, dict)
         assert len(bad_tournament) == 0
 
+    @pytest.mark.vcr
+    def test_load_tournament_by_day_bad_tournament_high(self):
         bad_tournament = Game.load_tournament_by_day(tournament=999, day=1)
         assert isinstance(bad_tournament, dict)
         assert len(bad_tournament) == 0
 
+    @pytest.mark.vcr
+    def test_load_tournament_by_day_bad_day_low(self):
         bad_day = Game.load_tournament_by_day(tournament=0, day=-1)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
 
+    @pytest.mark.vcr
+    def test_load_tournament_by_day_bad_day_high(self):
         bad_day = Game.load_tournament_by_day(tournament=0, day=999)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
@@ -346,10 +374,14 @@ class TestGame(TestBase):
             assert key == game.id
             assert game.tournament == 0
 
+    @pytest.mark.vcr
+    def test_load_by_tournament_bad_tournament_low(self):
         bad_tournament = Game.load_by_tournament(tournament=-2)
         assert isinstance(bad_tournament, dict)
         assert len(bad_tournament) == 0
 
+    @pytest.mark.vcr
+    def test_load_tournament_bad_tournament_high(self):
         bad_tournament = Game.load_by_tournament(tournament=999)
         assert isinstance(bad_tournament, dict)
         assert len(bad_tournament) == 0

@@ -349,6 +349,7 @@ class TestPlayer(TestBase):
         assert test_value[-9:] == "undefined"
 
     def test_player_make_random_noseed(self):
+        """Verify players can be generated with no seed defined"""
         rando = Player.make_random(name="Rando Calrissian")
         assert isinstance(rando, Player)
 
@@ -367,6 +368,8 @@ class TestPlayer(TestBase):
             assert isinstance(player, Player)
             assert key == player.id
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         bad_player = Player.load("6644d767-ab15-4528-a4ce-ae1f8aadb65f", "00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_player, dict)
         assert len(bad_player) == 1
@@ -376,6 +379,8 @@ class TestPlayer(TestBase):
         player = Player.load_one("6644d767-ab15-4528-a4ce-ae1f8aadb65f")
         assert isinstance(player, Player)
 
+    @pytest.mark.vcr
+    def test_load_one_bad_id(self):
         bad_player = Player.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_player is None
 
@@ -384,6 +389,8 @@ class TestPlayer(TestBase):
         player = Player.find_by_name("August Mina")
         assert isinstance(player, Player)
 
+    @pytest.mark.vcr
+    def test_find_by_name_bad_name(self):
         bad_player = Player.find_by_name("Test Playerson")
         assert bad_player is None
 
@@ -392,9 +399,13 @@ class TestPlayer(TestBase):
         player = Player.load_one_at_time("d97835fd-2e92-4698-8900-1f5abea0a3b6", time="2020-08-01T18:00:00Z")
         assert isinstance(player, Player)
 
+    @pytest.mark.vcr
+    def test_load_one_at_time_bad_id(self):
         bad_player = Player.load_one_at_time("00000000-0000-0000-0000-000000000000", time="2020-08-01T18:00:00Z")
         assert bad_player is None
 
+    @pytest.mark.vcr
+    def test_load_one_at_time_bad_time(self):
         bad_time = Player.load_one_at_time("d97835fd-2e92-4698-8900-1f5abea0a3b6", time="1980-01-01T00:00:00Z")
         assert bad_time is None
 
@@ -406,6 +417,8 @@ class TestPlayer(TestBase):
         for player in player:
             assert isinstance(player, Player)
 
+    @pytest.mark.vcr
+    def test_load_history_bad_id(self):
         bad_player = Player.load_history("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_player, list)
         assert len(bad_player) == 0
@@ -420,16 +433,24 @@ class TestPlayer(TestBase):
             assert isinstance(player, Player)
             assert key == player.id
 
+    @pytest.mark.vcr
+    def test_load_all_by_gameday_bad_season_low(self):
         with pytest.raises(ValueError):
-            bad_season = Player.load_all_by_gameday(season=0, day=5)
+            bad_season = Player.load_all_by_gameday(season=-1, day=5)
 
+    @pytest.mark.vcr
+    def test_load_all_by_gameday_bad_season_high(self):
         bad_season = Player.load_all_by_gameday(season=999, day=5)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
 
+    @pytest.mark.vcr
+    def test_load_all_by_gameday_bad_day_low(self):
         with pytest.raises(ValueError):
-            bad_day = Player.load_all_by_gameday(season=6, day=0)
+            bad_day = Player.load_all_by_gameday(season=6, day=-1)
 
+    @pytest.mark.vcr
+    def test_load_all_by_gameday_bad_day_high(self):
         bad_day = Player.load_all_by_gameday(season=6, day=999)
         assert isinstance(bad_day, dict)
         assert len(bad_day) == 0
@@ -439,17 +460,27 @@ class TestPlayer(TestBase):
         player = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=2, day=100)
         assert isinstance(player, Player)
 
+    @pytest.mark.vcr
+    def test_load_by_gameday_bad_id(self):
         bad_player = Player.load_by_gameday("00000000-0000-0000-0000-000000000000", season=4, day=1)
         assert bad_player is None
 
+    @pytest.mark.vcr
+    def test_load_by_gameday_bad_season_low(self):
         with pytest.raises(ValueError):
-            bad_season = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=0, day=100)
+            bad_season = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=-1, day=100)
 
+    @pytest.mark.vcr
+    def test_load_by_gameday_bad_season_high(self):
         bad_season = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=999, day=100)
         assert bad_season is None
 
+    @pytest.mark.vcr
+    def test_load_by_gameday_bad_day_low(self):
         with pytest.raises(ValueError):
-            bad_day = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=6, day=0)
+            bad_day = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=6, day=-1)
 
+    @pytest.mark.vcr
+    def test_load_by_gameday_bad_day_high(self):
         bad_day = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=6, day=999)
         assert bad_day is None

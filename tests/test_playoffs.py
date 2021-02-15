@@ -42,9 +42,15 @@ class TestPlayoffs(TestBase):
         assert isinstance(playoff, Playoff)
         assert playoff.season == 4
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_low(self):
         with pytest.raises(ValueError):
             bad_season = Playoff.load_by_season(-1)
 
+    @pytest.mark.vcr
+    def test_load_by_season_bad_season_high(self):
+        with pytest.raises(ValueError):
+            bad_season = Playoff.load_by_season(999)
 
 class TestPlayoffRounds(TestBase):
     def test_base_compliance(self, playoff_rounds):
@@ -101,6 +107,8 @@ class TestPlayoffRounds(TestBase):
         round_ = PlayoffRound.load("5b21477d-0429-47f5-9f71-fb9d940b4b21")
         assert isinstance(round_, PlayoffRound)
 
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = PlayoffRound.load("00000000-0000-0000-0000-000000000000")
 
@@ -136,14 +144,18 @@ class TestPlayoffMatchups(TestBase):
             assert isinstance(matchup, PlayoffMatchup)
             assert key == matchup.id
 
-        bad_id = PlayoffMatchup.load("00000000-0000-0000-0000-000000000000")
+    @pytest.mark.vcr
+    def test_load_bad_id(self):
+        bad_id = PlayoffMatchup.load("3d4b8a9f-1a89-4597-be23-af21d1364820", "00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)
-        assert len(bad_id) == 0
+        assert len(bad_id) == 1
 
     @pytest.mark.vcr
     def test_load_one(self):
         matchup = PlayoffMatchup.load_one("196c2a47-240b-4418-bf96-20c5232fe782")
         assert isinstance(matchup, PlayoffMatchup)
 
+    @pytest.mark.vcr
+    def test_load_one_bad_id(self):
         bad_id = PlayoffMatchup.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_id is None

@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 15 Feb 2021 20:55:33 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AtjoKn2aMjg-qpPoC5wd_sOv2AJmRHNdQ.cppSjGSwGu2Te6ajt0ckM8%2FiWjjDcOaPTLWkLAzmR4I;
+        Path=/; Expires=Mon, 22 Feb 2021 20:55:33 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
