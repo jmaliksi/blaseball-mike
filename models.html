@@ -140,6 +140,12 @@ class Base(abc.ABC):
             return self.json() == other.json()
         return NotImplemented
 
+    def __repr__(self):
+        try:
+            return f&#34;&lt;{self.__class__.__name__}: {self.id}&gt;&#34;
+        except AttributeError:
+            return super().__repr__()
+
     @staticmethod
     def _camel_to_snake(name):
         # Blaseball API uses camelCase for fields, convert to the more Pythonistic snake_case
@@ -169,9 +175,12 @@ class Base(abc.ABC):
 
     def json(self):
         &#34;&#34;&#34;Returns dictionary of fields used to generate the original object&#34;&#34;&#34;
-        return {
+        data = {
             f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
         }
+        if &#34;timestamp&#34; in data and not isinstance(data[&#34;timestamp&#34;], str):
+            data[&#34;timestamp&#34;] = data[&#34;timestamp&#34;].strftime(&#34;%Y-%m-%dT%H:%M:%S.%fZ&#34;)
+        return data
 
 
 class GlobalEvent(Base):
@@ -256,6 +265,8 @@ class Player(Base):
             time = parse(time)
 
         players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(players) == 0:
+            return None
         return cls(dict(players[0][&#34;data&#34;], timestamp=time))
 
     @classmethod
@@ -426,10 +437,14 @@ class Player(Base):
 
     @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
     def blood(self):
+        if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+            return self._blood_id
         return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]
 
     @Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
     def coffee(self):
+        if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+            return self._coffee_id
         return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]
 
     @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
@@ -490,7 +505,12 @@ class Player(Base):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
+        
         original_json = self.json()
+        if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+            original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+        if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+            original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
 
         for override_key, override_value in overrides.items():
             original_json[override_key] = override_value
@@ -666,6 +686,8 @@ class Team(Base):
             time = parse(time)
 
         team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(team) == 0:
+            return None
         return cls(dict(team[0][&#34;data&#34;], timestamp=time))
 
     @Base.lazy_load(&#34;_lineup_ids&#34;, cache_name=&#34;_lineup&#34;, default_value=list())
@@ -1463,6 +1485,8 @@ class Tribute(Base):
             time = parse(time)
 
         tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
+        if len(tributes) == 0:
+            return {}
 
         # Sort output by number of peanuts
         tributes = tributes[0][&#34;players&#34;]
@@ -1667,6 +1691,12 @@ property to see what JSON keys have been deserialized.</p></div>
             return self.json() == other.json()
         return NotImplemented
 
+    def __repr__(self):
+        try:
+            return f&#34;&lt;{self.__class__.__name__}: {self.id}&gt;&#34;
+        except AttributeError:
+            return super().__repr__()
+
     @staticmethod
     def _camel_to_snake(name):
         # Blaseball API uses camelCase for fields, convert to the more Pythonistic snake_case
@@ -1696,9 +1726,12 @@ property to see what JSON keys have been deserialized.</p></div>
 
     def json(self):
         &#34;&#34;&#34;Returns dictionary of fields used to generate the original object&#34;&#34;&#34;
-        return {
+        data = {
             f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
-        }</code></pre>
+        }
+        if &#34;timestamp&#34; in data and not isinstance(data[&#34;timestamp&#34;], str):
+            data[&#34;timestamp&#34;] = data[&#34;timestamp&#34;].strftime(&#34;%Y-%m-%dT%H:%M:%S.%fZ&#34;)
+        return data</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -1771,9 +1804,12 @@ def lazy_load(original_name, cache_name=None, default_value=None, use_default=Tr
 </summary>
 <pre><code class="python">def json(self):
     &#34;&#34;&#34;Returns dictionary of fields used to generate the original object&#34;&#34;&#34;
-    return {
+    data = {
         f: getattr(self, self._custom_key_transform(self._from_api_conversion(f))) for f in self.fields
-    }</code></pre>
+    }
+    if &#34;timestamp&#34; in data and not isinstance(data[&#34;timestamp&#34;], str):
+        data[&#34;timestamp&#34;] = data[&#34;timestamp&#34;].strftime(&#34;%Y-%m-%dT%H:%M:%S.%fZ&#34;)
+    return data</code></pre>
 </details>
 </dd>
 </dl>
@@ -4057,6 +4093,8 @@ def load_one(cls, id_):
             time = parse(time)
 
         players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(players) == 0:
+            return None
         return cls(dict(players[0][&#34;data&#34;], timestamp=time))
 
     @classmethod
@@ -4227,10 +4265,14 @@ def load_one(cls, id_):
 
     @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
     def blood(self):
+        if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+            return self._blood_id
         return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]
 
     @Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
     def coffee(self):
+        if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+            return self._coffee_id
         return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]
 
     @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
@@ -4291,7 +4333,12 @@ def load_one(cls, id_):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
+        
         original_json = self.json()
+        if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+            original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+        if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+            original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
 
         for override_key, override_value in overrides.items():
             original_json[override_key] = override_value
@@ -4589,6 +4636,8 @@ def load_one_at_time(cls, id_, time):
         time = parse(time)
 
     players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+    if len(players) == 0:
+        return None
     return cls(dict(players[0][&#34;data&#34;], timestamp=time))</code></pre>
 </details>
 </dd>
@@ -4866,6 +4915,8 @@ def hitting_rating(self):
 </summary>
 <pre><code class="python">@Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
 def blood(self):
+    if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+        return self._blood_id
     return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]</code></pre>
 </details>
 </dd>
@@ -4880,6 +4931,8 @@ def blood(self):
 </summary>
 <pre><code class="python">@Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
 def coffee(self):
+    if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+        return self._coffee_id
     return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]</code></pre>
 </details>
 </dd>
@@ -4987,7 +5040,12 @@ appropriate related stats.</p></div>
     multipliers = multipliers or {}
     buffs = buffs or {}
     reroll = reroll or {}
+    
     original_json = self.json()
+    if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+        original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+    if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+        original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
 
     for override_key, override_value in overrides.items():
         original_json[override_key] = override_value
@@ -6067,6 +6125,8 @@ def teams(self):
             time = parse(time)
 
         team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(team) == 0:
+            return None
         return cls(dict(team[0][&#34;data&#34;], timestamp=time))
 
     @Base.lazy_load(&#34;_lineup_ids&#34;, cache_name=&#34;_lineup&#34;, default_value=list())
@@ -6224,6 +6284,8 @@ def load_at_time(cls, id_, time):
         time = parse(time)
 
     team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+    if len(team) == 0:
+        return None
     return cls(dict(team[0][&#34;data&#34;], timestamp=time))</code></pre>
 </details>
 </dd>
@@ -6564,6 +6626,8 @@ def load(cls, id_):
             time = parse(time)
 
         tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
+        if len(tributes) == 0:
+            return {}
 
         # Sort output by number of peanuts
         tributes = tributes[0][&#34;players&#34;]
@@ -6635,6 +6699,8 @@ def load_at_time(cls, time):
         time = parse(time)
 
     tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
+    if len(tributes) == 0:
+        return {}
 
     # Sort output by number of peanuts
     tributes = tributes[0][&#34;players&#34;]
