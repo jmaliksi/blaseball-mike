@@ -29,6 +29,7 @@ class TestIdol(TestBase):
     def test_load(self):
         board = Idol.load()
         assert isinstance(board, dict)
+        assert len(board) > 0
         for key, idol in board.items():
             assert isinstance(key, str)
             assert isinstance(idol, Idol)
@@ -64,6 +65,7 @@ class TestTribute(TestBase):
     def test_load(self):
         hall = Tribute.load()
         assert isinstance(hall, dict)
+        assert len(hall) > 0
         for key, tribute in hall.items():
             assert isinstance(key, str)
             assert isinstance(tribute, Tribute)
@@ -72,6 +74,7 @@ class TestTribute(TestBase):
     def test_load_at_time(self):
         hall = Tribute.load_at_time("2020-09-21T20:52:03.232Z")
         assert isinstance(hall, dict)
+        assert len(hall) > 0
         for key, tribute in hall.items():
             assert isinstance(key, str)
             assert isinstance(tribute, Tribute)

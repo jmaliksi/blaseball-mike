@@ -102,6 +102,7 @@ class TestTeam(TestBase):
     def test_load_all(self):
         teams = Team.load_all()
         assert isinstance(teams, dict)
+        assert len(teams) > 0
         for key, team in teams.items():
             assert isinstance(key, str)
             assert isinstance(team, Team)

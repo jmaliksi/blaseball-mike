@@ -44,6 +44,7 @@ class TestGameStatsheet(TestBase):
     def test_load_by_day(self):
         sheets = GameStatsheet.load_by_day(season=3, day=55)
         assert isinstance(sheets, dict)
+        assert len(sheets) > 0
         for key, sheet in sheets.items():
             assert isinstance(key, str)
             assert isinstance(sheet, GameStatsheet)

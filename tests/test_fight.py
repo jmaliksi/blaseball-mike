@@ -47,6 +47,7 @@ class TestFight(TestBase):
     def test_load_by_season(self):
         fights = Fight.load_by_season(season=9)
         assert isinstance(fights, dict)
+        assert len(fights) > 0
         for key, fight in fights.items():
             assert isinstance(key, str)
             assert isinstance(fight, Fight)

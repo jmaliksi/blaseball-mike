@@ -219,14 +219,26 @@ class TestGame(TestBase):
             assert isinstance(game.home_payout(1000), int)
             assert isinstance(game.away_payout(1000), int)
 
-    def test_bet_payouts_bounded(self):
-        with open(f"{TEST_DATA_DIR}/game/payouts.json", "r") as fp:
-            games = [Game(data) for data in json.load(fp)]
-            for game in games:
-                if getattr(game, "reference_home_payout", None):
-                    assert game.home_payout(game.bet) == game.reference_home_payout
-                if getattr(game, "reference_away_payout", None):
-                    assert game.away_payout(game.bet) == game.reference_away_payout
+    @pytest.mark.parametrize(
+        ['home_odds', 'away_odds', 'bet', 'home_payout', 'away_payout'],
+        [
+            (0.6045396706428627, 0.39546032935713743, 696, 1364, None),
+            (0.557613217888845, 0.4423867821111551, 9, 18, None),
+            (0.4596203494692173, 0.5403796505307827, 1000, None, 1994),
+            (0.43861830524623113, 0.5613816947537688, 860, None, 1708)
+
+        ]
+    )
+    def test_bet_payouts_bounded(self, home_odds, away_odds, bet, home_payout, away_payout):
+        game = Game(
+            {
+                "homeOdds": home_odds,
+                "awayOdds": away_odds,
+            })
+        if home_payout:
+            assert game.home_payout(bet) == home_payout
+        if away_payout:
+            assert game.away_payout(bet) == away_payout
 
     @pytest.mark.vcr
     def test_load_by_id(self):
@@ -240,6 +252,7 @@ class TestGame(TestBase):
     def test_load_by_season(self):
         games = Game.load_by_season(season=6)
         assert isinstance(games, dict)
+        assert len(games) > 0
         for key, game in games.items():
             assert isinstance(key, str)
             assert isinstance(game, Game)
@@ -270,6 +283,7 @@ class TestGame(TestBase):
     def test_load_by_day(self):
         games = Game.load_by_day(season=1, day=5)
         assert isinstance(games, dict)
+        assert len(games) > 0
         for key, game in games.items():
             assert isinstance(key, str)
             assert isinstance(game, Game)
@@ -297,6 +311,7 @@ class TestGame(TestBase):
     def test_load_tournament_by_day(self):
         games = Game.load_tournament_by_day(tournament=0, day=3)
         assert isinstance(games, dict)
+        assert len(games) > 0
         for key, game in games.items():
             assert isinstance(key, str)
             assert isinstance(game, Game)
@@ -324,6 +339,7 @@ class TestGame(TestBase):
     def test_load_by_tournament(self):
         games = Game.load_by_tournament(tournament=0)
         assert isinstance(games, dict)
+        assert len(games) > 0
         for key, game in games.items():
             assert isinstance(key, str)
             assert isinstance(game, Game)

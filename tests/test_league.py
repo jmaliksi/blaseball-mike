@@ -99,6 +99,7 @@ class TestDivision(TestBase):
     def test_load_all(self):
         divisions = Division.load_all()
         assert isinstance(divisions, dict)
+        assert len(divisions) > 0
         for key, division in divisions.items():
             assert isinstance(key, str)
             assert isinstance(division, Division)
@@ -132,6 +133,7 @@ class TestTiebreaker(TestBase):
     def test_load(self):
         tiebreaker = Tiebreaker.load("72a618ed-c61c-4162-a455-3959a2d0e738")
         assert isinstance(tiebreaker, dict)
+        assert len(tiebreaker) > 0
 
         bad_id = Tiebreaker.load("00000000-0000-0000-0000-000000000000")
         assert isinstance(bad_id, dict)

@@ -3,7 +3,7 @@
 ### Run test suite
 ```shell
 # Install dependancies
-pip install pytest pytest-cov pytest-vcr
+pip install pytest pytest-cov pytest-recording
 
 # Run whole test suite
 pytest
@@ -20,8 +20,9 @@ pytest -k "TestGame and payout"
 ---
 ### I'm getting 'vcr.errors.CannotOverwriteExistingCassetteException' errors...
 We use [vcrpy](https://vcrpy.readthedocs.io/en/latest/index.html) to record network calls
-to speed up test runs. In order to make sure that the tests are deterministic, it will
-not let you modify or overwrite existing records. If you have modified a test to add or
-modify a network request, you should be able to safely delete the file in `tests/test_data/cassettes`
-and let the library re-generate it on the next test run. You do not need to do this when
-running a newly written test function.
+to speed up test runs. In order to make sure that the tests are deterministic, by default it
+will  not let you add, modify, or overwrite records. To generate new cassettes or update existing
+ones when tests change, use the `--record-mode` command line flag.
+```shell
+pytest --record-mode=rewrite
+```
