@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=083d09d4-7ed3-4100-b021-8fbe30dd43e8
+  response:
+    body:
+      string: '[{"id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","anticapitalism":0.6715585414248714,"baseThirst":1.0837081572225478,"buoyancy":0.9190386558929515,"chasiness":0.5821760105524166,"coldness":0.5542490771184405,"continuation":0.9751231462319436,"divinity":1.2164554950661912,"groundFriction":1.0870693806274312,"indulgence":0.7691018871160651,"laserlikeness":0.5783179230872257,"martyrdom":1.5743961867934053,"moxie":0.9824746391865744,"musclitude":1.3262941924123677,"name":"Jessica
+        Telephone","bat":"GUNBLADE_A","omniscience":0.6104289779019639,"overpowerment":0.6892427934187828,"patheticism":0.21590198952572454,"ruthlessness":0.5221803174782815,"shakespearianism":0.9957369039444792,"suppression":1.0028774318124143,"tenaciousness":0.3457180604303871,"thwackability":1.1132820621017052,"tragicness":0.1,"unthwackability":0.40018316390635833,"watchfulness":0.5569065120599864,"pressurization":0.19240544381174618,"totalFingers":13,"soul":7,"deceased":false,"peanutAllergy":true,"cinnamon":0.3542455840750931,"fate":16,"armor":"","ritual":"Batting
+        Practice","coffee":2,"blood":5,"permAttr":["SUPERALLERGIC","HONEY_ROASTED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7511118622491207,"pitchingRating":0.4543813795792961,"hittingRating":1.1295899431099057,"defenseRating":0.6290186032002889,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1455'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:49 GMT
+      Etag:
+      - W/"5af-5biGHurPVOJbbrzqZgok+wmwi5c"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AsD1kwGg7dbACnYdmPTTgeyy7-axwUcE9.Mg96UwxfdB8MoataGwsrSxmqHuL%2Bb7tzYBzK11v0%2Bi8;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:49 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

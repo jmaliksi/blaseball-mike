@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playerSeasonStats?ids=086d52ad-ef16-4cd9-b6d5-0e0d73b1150c,20e4445e-e44f-4899-bf74-160a5715e89f,bdebd89c-79f8-4bdc-ba20-07a0a851d9b7,fb452210-e573-4c71-b76c-b8e8f428d3c7,ba4c01df-1541-4d53-9fe3-8c19ff31000d,72d193f2-eec2-4ea6-bdca-5d4e577881db,410fd781-1ab8-4d85-a539-d3596ee1c604,ea55f080-a95c-4320-b3f3-bccf63685c85,a5e658bb-8001-4170-b033-33a9afe93261,aad1b0d3-e0b8-4457-98d2-e9b792e1f167,49de5278-4967-4219-9c64-ed5c6bcc5e75,042b58bc-3797-4cee-adb0-4ca69ce77a97,3f444d25-fce3-4a23-91f1-a17099ba1e29,8745b073-1eee-4511-83d6-2e284ebe81b0
+  response:
+    body:
+      string: '[{"id":"042b58bc-3797-4cee-adb0-4ca69ce77a97","playerId":null,"teamId":null,"team":"Hawaii
+        Fridays","name":"Sixpack Dogwalker","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":8,"groundIntoDp":0,"hits":0,"hitsAllowed":14,"homeRuns":0,"losses":1,"outsRecorded":27,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":6,"struckouts":0,"triples":0,"walks":0,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"086d52ad-ef16-4cd9-b6d5-0e0d73b1150c","playerId":"7b55d484-6ea9-4670-8145-986cb9e32412","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Stevenson Heat","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":4,"groundIntoDp":0,"hits":0,"hitsAllowed":12,"homeRuns":0,"losses":1,"outsRecorded":63,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":17,"struckouts":0,"triples":0,"walks":0,"walksIssued":2,"wins":1,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"20e4445e-e44f-4899-bf74-160a5715e89f","playerId":"1e8b09bd-fbdd-444e-bd7e-10326bd57156","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Fletcher Yamamoto","atBats":27,"caughtStealing":1,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":6,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":0,"rbis":0,"runs":1,"stolenBases":0,"strikeouts":0,"struckouts":9,"triples":0,"walks":0,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"3f444d25-fce3-4a23-91f1-a17099ba1e29","playerId":null,"teamId":null,"team":"Hawaii
+        Fridays","name":"Evelton McBlase","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":4,"groundIntoDp":0,"hits":0,"hitsAllowed":10,"homeRuns":0,"losses":0,"outsRecorded":27,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":4,"struckouts":0,"triples":0,"walks":0,"walksIssued":0,"wins":1,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"410fd781-1ab8-4d85-a539-d3596ee1c604","playerId":"86d4e22b-f107-4bcf-9625-32d387fcb521","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"York Silk","atBats":22,"caughtStealing":0,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":5,"hitsAllowed":0,"homeRuns":2,"losses":0,"outsRecorded":0,"rbis":6,"runs":5,"stolenBases":1,"strikeouts":0,"struckouts":4,"triples":0,"walks":2,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"49de5278-4967-4219-9c64-ed5c6bcc5e75","playerId":null,"teamId":null,"team":"Hawaii
+        Fridays","name":"James Mora","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":5,"groundIntoDp":0,"hits":0,"hitsAllowed":10,"homeRuns":0,"losses":1,"outsRecorded":27,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":5,"struckouts":0,"triples":0,"walks":0,"walksIssued":3,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"72d193f2-eec2-4ea6-bdca-5d4e577881db","playerId":"efafe75e-2f00-4418-914c-9b6675d39264","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Aldon Cashmoney","atBats":20,"caughtStealing":0,"doubles":1,"earnedRuns":0,"groundIntoDp":0,"hits":7,"hitsAllowed":0,"homeRuns":1,"losses":0,"outsRecorded":0,"rbis":3,"runs":7,"stolenBases":2,"strikeouts":0,"struckouts":4,"triples":0,"walks":5,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"8745b073-1eee-4511-83d6-2e284ebe81b0","playerId":null,"teamId":null,"team":"Hawaii
+        Fridays","name":"Bevan Underbuck","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":6,"groundIntoDp":0,"hits":0,"hitsAllowed":10,"homeRuns":0,"losses":1,"outsRecorded":24,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":4,"struckouts":0,"triples":0,"walks":0,"walksIssued":8,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"a5e658bb-8001-4170-b033-33a9afe93261","playerId":"80de2b05-e0d4-4d33-9297-9951b2b5c950","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Alyssa Harrell","atBats":20,"caughtStealing":1,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":8,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":0,"rbis":2,"runs":1,"stolenBases":0,"strikeouts":0,"struckouts":3,"triples":1,"walks":3,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"aad1b0d3-e0b8-4457-98d2-e9b792e1f167","playerId":"9ac2e7c5-5a34-4738-98d8-9f917bc6d119","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Christian Combs","atBats":22,"caughtStealing":0,"doubles":0,"earnedRuns":0,"groundIntoDp":1,"hits":4,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":0,"rbis":2,"runs":1,"stolenBases":0,"strikeouts":0,"struckouts":2,"triples":0,"walks":0,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"ba4c01df-1541-4d53-9fe3-8c19ff31000d","playerId":"2c4b2a6d-9961-4e40-882c-a338f4e72117","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Evelton McBlase II","atBats":22,"caughtStealing":0,"doubles":1,"earnedRuns":0,"groundIntoDp":0,"hits":2,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":0,"rbis":0,"runs":3,"stolenBases":0,"strikeouts":0,"struckouts":5,"triples":0,"walks":4,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"bdebd89c-79f8-4bdc-ba20-07a0a851d9b7","playerId":"167751d5-210c-4a6e-9568-e92d61bab185","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Jacob Winner","atBats":26,"caughtStealing":0,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":4,"hitsAllowed":0,"homeRuns":1,"losses":0,"outsRecorded":0,"rbis":2,"runs":1,"stolenBases":0,"strikeouts":0,"struckouts":7,"triples":0,"walks":1,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"ea55f080-a95c-4320-b3f3-bccf63685c85","playerId":"e4034192-4dc6-4901-bb30-07fe3cf77b5e","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Baldwin Breadwinner","atBats":24,"caughtStealing":0,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":4,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":0,"rbis":5,"runs":2,"stolenBases":0,"strikeouts":0,"struckouts":5,"triples":1,"walks":0,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0},{"id":"fb452210-e573-4c71-b76c-b8e8f428d3c7","playerId":"21cbbfaa-100e-48c5-9cea-7118b0d08a34","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","team":"Hawaii
+        Fridays","name":"Juice Collins","atBats":27,"caughtStealing":0,"doubles":1,"earnedRuns":0,"groundIntoDp":0,"hits":5,"hitsAllowed":0,"homeRuns":1,"losses":0,"outsRecorded":0,"rbis":3,"runs":3,"stolenBases":1,"strikeouts":0,"struckouts":5,"triples":0,"walks":0,"walksIssued":0,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6840'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:14 GMT
+      Etag:
+      - W/"1ab8-oQiv7kNACSFdMzI1NP6fsa/VEyo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AgWQZkIrZUwgbq-CXpdmYdh6VgBmIB29v.K9F1WdihgYxkwqtHmoOcQ33Mxo646oVMzL6OIT4bU40;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:14 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

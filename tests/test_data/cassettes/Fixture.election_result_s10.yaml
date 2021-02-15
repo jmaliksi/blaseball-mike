@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/offseasonRecap?season=10
+  response:
+    body:
+      string: '{"id":"30cb08ef-5e5a-4352-9294-9f0b7c63ff95","bonusResults":["cc2b337d-0e78-4abd-827a-8dad1317618f","3851674e-aa9c-4be4-93f0-c5968e5569a7","aea8c352-6a5d-4e2c-bf01-d6f2f133ab22","d7bb91c5-ead5-485c-83fb-89c56a7066f0","8a8cc6b9-5dda-4613-ba99-37f762cd7120","23b3c1a3-90e9-46e7-9182-b673ef8c2a46","d7280e1d-1d7d-45de-b15e-d79f2f95576f","f265dece-6293-4159-8acf-8152bb7aa086","ea9930de-2bd4-44b1-9c03-cde3752265a0","325b0812-1b00-4016-8fe2-db02fd81219e","3676a21d-540e-41e0-b384-95250428602b","5243aca3-b628-4ff8-9e65-6f68dc9d625a","34a6ec5f-2b37-4988-a43e-54f1f5cbde85","a78381ad-2c26-4332-b26f-feab6a8af60b","c015588b-d302-4640-a5c5-d597d9156cd1","6a4f8148-bc3c-4fe8-8164-1364a2cd6b37","11523b4d-b344-4424-8c6f-eac142588f09","f9c20d0e-ba7c-457e-8838-c6e5a080c454","dec21227-6f65-4f6a-8f2b-b8217c42634f","106a25e2-c4c5-4b5a-9c9f-47a4b73adf16"],"decreeResults":["90a316e5-0edc-43e4-8278-2c241ced5f5b","8af77570-ba69-46c6-9c7b-3064e7c5c1d5","ca1be37f-3a48-40a0-ba39-92bf03116ba2"],"name":"The
+        Season 11 Election","season":10,"totalBonusVotes":3430081,"totalDecreeVotes":1581531,"voteCount":5011612,"eventResults":["future_written"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1128'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:45 GMT
+      Etag:
+      - W/"468-vo+UX2C5V/U38bQzJJr4dvp0Dqo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AG4IapSJu2yDA2P9uj-ZCv9ky5RHfwNya.42xnJq7cz3GWfQ%2BOzryPCrAjZU5uSZRPwRbSDdAgSNY;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:45 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

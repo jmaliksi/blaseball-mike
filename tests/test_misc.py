@@ -52,41 +52,37 @@ class TestSimulationData(TestBase):
 
 
 class TestGlobalEvents(TestBase):
-    def test_base_compliance(self, global_events):
-        for ticker in global_events:
-            for event in ticker:
-                self.base_test(event)
+    def test_base_compliance(self, global_event):
+        for event in global_event:
+            self.base_test(event)
 
-    def test_global_event(self, global_events):
-        for ticker in global_events:
-            for ticker_event in ticker:
-                assert isinstance(ticker_event, GlobalEvent)
-                assert isinstance(ticker_event.id, str)
-                assert isinstance(ticker_event.msg, str)
-                assert isinstance(ticker_event.expire, (datetime, type(None)))
+    def test_global_event(self, global_event):
+        for ticker_event in global_event:
+            assert isinstance(ticker_event, GlobalEvent)
+            assert isinstance(ticker_event.id, str)
+            assert isinstance(ticker_event.msg, str)
+            assert isinstance(ticker_event.expire, (datetime, type(None)))
 
     # TODO: Load tests???
 
 
 class TestSeason(TestBase):
-    def test_base_compliance(self, seasons):
-        for season in seasons:
-            self.base_test(season)
+    def test_base_compliance(self, season):
+        self.base_test(season)
 
     @pytest.mark.vcr
-    def test_season(self, seasons):
-        for season in seasons:
-            assert isinstance(season, Season)
-            assert isinstance(season.id, str)
-            assert isinstance(season.season_number, int)
-            assert season.season_number > 0
+    def test_season(self, season):
+        assert isinstance(season, Season)
+        assert isinstance(season.id, str)
+        assert isinstance(season.season_number, int)
+        assert season.season_number > 0
 
-            assert isinstance(season.rules, str)
-            assert isinstance(season.terminology, str)
-            assert isinstance(season.stats, SeasonStatsheet)
-            assert isinstance(season.standings, Standings)
-            assert isinstance(season.league, League)
-            assert isinstance(season.schedule, str)
+        assert isinstance(season.rules, str)
+        assert isinstance(season.terminology, str)
+        assert isinstance(season.stats, SeasonStatsheet)
+        assert isinstance(season.standings, Standings)
+        assert isinstance(season.league, League)
+        assert isinstance(season.schedule, str)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -106,21 +102,19 @@ class TestSeason(TestBase):
 
 
 class TestStandings(TestBase):
-    def test_base_compliance(self, standings):
-        for standing in standings:
-            self.base_test(standing)
+    def test_base_compliance(self, standing):
+        self.base_test(standing)
 
-    def test_standings(self, standings):
-        for standing in standings:
-            assert isinstance(standing, Standings)
-            assert isinstance(standing.id, str)
-            assert isinstance(standing.losses, dict)
-            assert isinstance(standing.wins, dict)
+    def test_standings(self, standing):
+        assert isinstance(standing, Standings)
+        assert isinstance(standing.id, str)
+        assert isinstance(standing.losses, dict)
+        assert isinstance(standing.wins, dict)
 
-            team_standings = standing.get_standings_by_team("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e")
-            assert isinstance(team_standings, dict)
-            assert isinstance(team_standings["wins"], (int, type(None)))
-            assert isinstance(team_standings["losses"], (int, type(None)))
+        team_standings = standing.get_standings_by_team("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e")
+        assert isinstance(team_standings, dict)
+        assert isinstance(team_standings["wins"], (int, type(None)))
+        assert isinstance(team_standings["losses"], (int, type(None)))
 
     @pytest.mark.vcr
     def test_load(self):

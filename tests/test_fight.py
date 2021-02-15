@@ -10,30 +10,27 @@ from .test_game import game_test_generic
 
 
 class TestFight(TestBase):
-    def test_base_compliance(self, fights):
-        for fight in fights:
-            self.base_test(fight)
+    def test_base_compliance(self, fight):
+        self.base_test(fight)
 
-    def test_hp(self, fights):
-        for fight in fights:
-            assert isinstance(fight.away_hp, int)
-            assert isinstance(fight.home_hp, int)
-            assert isinstance(fight.away_max_hp, int)
-            assert isinstance(fight.home_max_hp, int)
+    def test_hp(self, fight):
+        assert isinstance(fight.away_hp, int)
+        assert isinstance(fight.home_hp, int)
+        assert isinstance(fight.away_max_hp, int)
+        assert isinstance(fight.home_max_hp, int)
 
     @pytest.mark.vcr
-    def test_damage_results(self, fights):
-        for fight in fights:
-            assert isinstance(fight.damage_results, list)
-            for result in fight.damage_results:
-                assert isinstance(result.dmg_type, DamageType)
-                assert isinstance(result.player_source, Player)
-                # assert isinstance(result.team_target, Team)  # PODs are broken
-                assert isinstance(result.dmg, int)
+    def test_damage_results(self, fight):
+        assert isinstance(fight.damage_results, list)
+        for result in fight.damage_results:
+            assert isinstance(result.dmg_type, DamageType)
+            assert isinstance(result.player_source, Player)
+            # assert isinstance(result.team_target, Team)  # PODs are broken
+            assert isinstance(result.dmg, int)
 
     @pytest.mark.vcr
-    def test_game_components(self, fights):
-        game_test_generic(fights)
+    def test_game_components(self, fight):
+        game_test_generic(fight)
 
     @pytest.mark.vcr
     def test_load_by_id(self):

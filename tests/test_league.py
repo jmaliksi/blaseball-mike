@@ -8,29 +8,27 @@ from .helpers import TestBase
 
 
 class TestLeague(TestBase):
-    def test_base_compliance(self, leagues):
-        for league in leagues:
-            self.base_test(league)
+    def test_base_compliance(self, league):
+        self.base_test(league)
 
     @pytest.mark.vcr
-    def test_league(self, leagues):
-        for league in leagues:
-            assert isinstance(league, League)
+    def test_league(self, league):
+        assert isinstance(league, League)
 
-            assert isinstance(league.id, str)
-            assert isinstance(league.name, str)
+        assert isinstance(league.id, str)
+        assert isinstance(league.name, str)
 
-            assert isinstance(league.tiebreakers, dict)
-            for tiebreaker in league.tiebreakers.values():
-                assert isinstance(tiebreaker, Tiebreaker)
+        assert isinstance(league.tiebreakers, dict)
+        for tiebreaker in league.tiebreakers.values():
+            assert isinstance(tiebreaker, Tiebreaker)
 
-            assert isinstance(league.subleagues, dict)
-            for subleague in league.subleagues.values():
-                assert isinstance(subleague, Subleague)
+        assert isinstance(league.subleagues, dict)
+        for subleague in league.subleagues.values():
+            assert isinstance(subleague, Subleague)
 
-            assert isinstance(league.teams, dict)
-            for team in league.teams.values():
-                assert isinstance(team, Team)
+        assert isinstance(league.teams, dict)
+        for team in league.teams.values():
+            assert isinstance(team, Team)
 
     @pytest.mark.vcr
     def test_load_by_id(self):
@@ -44,25 +42,23 @@ class TestLeague(TestBase):
 
 
 class TestSubleague(TestBase):
-    def test_base_compliance(self, subleagues):
-        for subleague in subleagues:
-            self.base_test(subleague)
+    def test_base_compliance(self, subleague):
+        self.base_test(subleague)
 
     @pytest.mark.vcr
-    def test_subleague(self, subleagues):
-        for subleague in subleagues:
-            assert isinstance(subleague, Subleague)
+    def test_subleague(self, subleague):
+        assert isinstance(subleague, Subleague)
 
-            assert isinstance(subleague.id, str)
-            assert isinstance(subleague.name, str)
+        assert isinstance(subleague.id, str)
+        assert isinstance(subleague.name, str)
 
-            assert isinstance(subleague.divisions, dict)
-            for division in subleague.divisions.values():
-                assert isinstance(division, Division)
+        assert isinstance(subleague.divisions, dict)
+        for division in subleague.divisions.values():
+            assert isinstance(division, Division)
 
-            assert isinstance(subleague.teams, dict)
-            for team in subleague.teams.values():
-                assert isinstance(team, Team)
+        assert isinstance(subleague.teams, dict)
+        for team in subleague.teams.values():
+            assert isinstance(team, Team)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -76,20 +72,18 @@ class TestSubleague(TestBase):
 
 
 class TestDivision(TestBase):
-    def test_base_compliance(self, divisions):
-        for division in divisions:
-            self.base_test(division)
+    def test_base_compliance(self, division):
+        self.base_test(division)
 
     @pytest.mark.vcr
-    def test_division(self, divisions):
-        for division in divisions:
-            assert isinstance(division, Division)
+    def test_division(self, division):
+        assert isinstance(division, Division)
 
-            assert isinstance(division.id, str)
-            assert isinstance(division.name, str)
-            assert isinstance(division.teams, dict)
-            for team in division.teams.values():
-                assert isinstance(team, Team)
+        assert isinstance(division.id, str)
+        assert isinstance(division.name, str)
+        assert isinstance(division.teams, dict)
+        for team in division.teams.values():
+            assert isinstance(team, Team)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -123,19 +117,17 @@ class TestDivision(TestBase):
 
 
 class TestTiebreaker(TestBase):
-    def test_base_compliance(self, tiebreakers):
-        for tiebreaker in tiebreakers:
-            self.base_test(tiebreaker)
+    def test_base_compliance(self, tiebreaker):
+        self.base_test(tiebreaker)
 
     @pytest.mark.vcr
-    def test_tiebreaker(self, tiebreakers):
-        for tiebreaker in tiebreakers:
-            assert isinstance(tiebreaker, Tiebreaker)
-            assert isinstance(tiebreaker.id, str)
-            assert isinstance(tiebreaker.order, dict)
+    def test_tiebreaker(self, tiebreaker):
+        assert isinstance(tiebreaker, Tiebreaker)
+        assert isinstance(tiebreaker.id, str)
+        assert isinstance(tiebreaker.order, dict)
 
-            for team in tiebreaker.order.values():
-                assert isinstance(team, Team)
+        for team in tiebreaker.order.values():
+            assert isinstance(team, Team)
 
     @pytest.mark.vcr
     def test_load(self):

@@ -4,50 +4,48 @@ Unit Tests for Election Models
 
 import pytest
 from blaseball_mike.models import ElectionResult, Election, DecreeResult, BlessingResult, TidingResult, Team
-from .helpers import TestBase
+from .helpers import TestBase, base_test
 
 
-def test_current_election(elections):
+def test_current_election(election):
     """
     Test that the currently running Election does not error
     """
-    for election in elections:
-        assert isinstance(election, Election)
-        assert isinstance(election.decrees, list)
-        assert isinstance(election.blessings, list)
+    assert isinstance(election, Election)
+    base_test(election)
+    assert isinstance(election.decrees, list)
+    assert isinstance(election.blessings, list)
 
 
 class TestElectionResults(TestBase):
-    def test_base_compliance(self, election_results):
-        for result in election_results:
-            self.base_test(result)
+    def test_base_compliance(self, election_result):
+        self.base_test(election_result)
 
     @pytest.mark.vcr
-    def test_election_results(self, election_results):
+    def test_election_results(self, election_result):
         """
         Test that previous season Election results do not error
         """
-        for election_result in election_results:
-            assert isinstance(election_result, ElectionResult)
+        assert isinstance(election_result, ElectionResult)
 
-            assert isinstance(election_result.id, str)
-            assert isinstance(election_result.name, str)
-            assert isinstance(election_result.total_bonus_votes, int)
-            assert isinstance(election_result.total_decree_votes, int)
-            assert isinstance(election_result.vote_count, int)
+        assert isinstance(election_result.id, str)
+        assert isinstance(election_result.name, str)
+        assert isinstance(election_result.total_bonus_votes, int)
+        assert isinstance(election_result.total_decree_votes, int)
+        assert isinstance(election_result.vote_count, int)
 
-            assert isinstance(election_result.event_results, list)
-            assert isinstance(election_result.blessing_results, list)
-            assert isinstance(election_result.decree_results, list)
+        assert isinstance(election_result.event_results, list)
+        assert isinstance(election_result.blessing_results, list)
+        assert isinstance(election_result.decree_results, list)
 
-            for blessing in election_result.bonus_results:
-                assert isinstance(blessing, BlessingResult)
+        for blessing in election_result.bonus_results:
+            assert isinstance(blessing, BlessingResult)
 
-            for decree in election_result.decree_results:
-                assert isinstance(decree, DecreeResult)
+        for decree in election_result.decree_results:
+            assert isinstance(decree, DecreeResult)
 
-            for tiding in election_result.tiding_results:
-                assert isinstance(tiding, TidingResult)
+        for tiding in election_result.tiding_results:
+            assert isinstance(tiding, TidingResult)
 
     @pytest.mark.vcr
     def test_load_by_season(self):
@@ -68,21 +66,19 @@ class TestElectionResults(TestBase):
 
 
 class TestDecreeResults(TestBase):
-    def test_base_compliance(self, decree_results):
-        for result in decree_results:
-            self.base_test(result)
+    def test_base_compliance(self, decree_result):
+        self.base_test(decree_result)
 
-    def test_decree_results(self, decree_results):
+    def test_decree_results(self, decree_result):
         """
         Test that previous season decree results do not error
         """
-        for decree in decree_results:
-            assert isinstance(decree, DecreeResult)
-            assert isinstance(decree.id, str)
-            assert isinstance(decree.decree_id, str)
-            assert isinstance(decree.decree_title, str)
-            assert isinstance(decree.description, str)
-            assert isinstance(decree.total_votes, int)
+        assert isinstance(decree_result, DecreeResult)
+        assert isinstance(decree_result.id, str)
+        assert isinstance(decree_result.decree_id, str)
+        assert isinstance(decree_result.decree_title, str)
+        assert isinstance(decree_result.description, str)
+        assert isinstance(decree_result.total_votes, int)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -112,26 +108,24 @@ class TestDecreeResults(TestBase):
 
 
 class TestBlessingResults(TestBase):
-    def test_base_compliance(self, blessing_results):
-        for result in blessing_results:
-            self.base_test(result)
+    def test_base_compliance(self, blessing_result):
+        self.base_test(blessing_result)
 
     @pytest.mark.vcr
-    def test_blessing_results(self, blessing_results):
+    def test_blessing_results(self, blessing_result):
         """
         Test that previous season blessing results do not error
         """
-        for blessing in blessing_results:
-            assert isinstance(blessing, BlessingResult)
-            assert isinstance(blessing.id, str)
-            assert isinstance(blessing.blessing_id, str)
-            assert isinstance(blessing.blessing_title, str)
-            assert isinstance(blessing.description, str)
-            assert isinstance(blessing.team, Team)
-            assert isinstance(blessing.highest_team, (Team, type(None)))
-            assert isinstance(blessing.total_votes, int)
-            assert isinstance(blessing.team_votes, (int, type(None)))
-            assert isinstance(blessing.highest_team_votes, (int, type(None)))
+        assert isinstance(blessing_result, BlessingResult)
+        assert isinstance(blessing_result.id, str)
+        assert isinstance(blessing_result.blessing_id, str)
+        assert isinstance(blessing_result.blessing_title, str)
+        assert isinstance(blessing_result.description, str)
+        assert isinstance(blessing_result.team, Team)
+        assert isinstance(blessing_result.highest_team, (Team, type(None)))
+        assert isinstance(blessing_result.total_votes, int)
+        assert isinstance(blessing_result.team_votes, (int, type(None)))
+        assert isinstance(blessing_result.highest_team_votes, (int, type(None)))
 
     @pytest.mark.vcr
     def test_load(self):
@@ -161,18 +155,16 @@ class TestBlessingResults(TestBase):
 
 
 class TestTidingResults(TestBase):
-    def test_base_compliance(self, tiding_results):
-        for result in tiding_results:
-            self.base_test(result)
+    def test_base_compliance(self, tiding_result):
+        self.base_test(tiding_result)
 
-    def test_tiding_results(self, tiding_results):
+    def test_tiding_results(self, tiding_result):
         """
         Test that previous season tiding results do not error
         """
-        for tiding in tiding_results:
-            assert isinstance(tiding, TidingResult)
-            assert isinstance(tiding.id, str)
-            assert isinstance(tiding.msg, str)
+        assert isinstance(tiding_result, TidingResult)
+        assert isinstance(tiding_result.id, str)
+        assert isinstance(tiding_result.msg, str)
 
     @pytest.mark.vcr
     def test_load(self):

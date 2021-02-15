@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/eventResults?ids=future_written
+  response:
+    body:
+      string: '[{"id":"future_written","msg":"A New Era is Written:"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:48 GMT
+      Etag:
+      - W/"37-snJ44ptVKjhMLipybgv2wpeRRiM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ae7bkOFqNOP-5sflTiATL7QXoShRDxjUX.2iB5QUj0gEqpKKSBEmFLePC3W3t7HBUpdY3qrC0Tw8o;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:48 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

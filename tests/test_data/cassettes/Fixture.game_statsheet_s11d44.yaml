@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameStatsheets?ids=9033b003-5205-4fcd-bc35-49fe8cd33062
+  response:
+    body:
+      string: '[{"id":"9033b003-5205-4fcd-bc35-49fe8cd33062","homeTeamRunsByInning":[0,0,0,1,0,0,0,0,1,2,0,4],"awayTeamRunsByInning":[0,0,0,2,0,0,0,0,0,2,0,0],"awayTeamTotalBatters":0,"homeTeamTotalBatters":0,"awayTeamStats":"5bd186cd-3fec-44bd-962f-4c30e91bd63e","homeTeamStats":"ba51a850-113c-4211-8d58-10dc5fc9cff2"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '305'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:06 GMT
+      Etag:
+      - W/"131-z3ahYdU2DJ27Sekvi3ER8h1ES9Y"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ADRboadl6bA8JCHa41Ab1aFfqw5qA5APK.fVg%2FrRFynYnksqei01e72bNuFz3AzcCFPhr0mBYLaU0;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:06 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

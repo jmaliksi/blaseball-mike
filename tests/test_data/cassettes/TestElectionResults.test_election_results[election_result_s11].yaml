@@ -1,0 +1,150 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/eventResults?ids=future_written
+  response:
+    body:
+      string: '[{"id":"future_written","msg":"A New Era is Written:"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '55'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:45 GMT
+      Etag:
+      - W/"37-snJ44ptVKjhMLipybgv2wpeRRiM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A6KPsv5E_CsoNyFB904r5Hj54KD9VwDUJ.%2F3RhL2uCwFwbvh0lz3N88g%2FW8YiiJ3YE9dTSrHahLh0;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:45 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/bonusResults?ids=cc2b337d-0e78-4abd-827a-8dad1317618f,3851674e-aa9c-4be4-93f0-c5968e5569a7,aea8c352-6a5d-4e2c-bf01-d6f2f133ab22,d7bb91c5-ead5-485c-83fb-89c56a7066f0,8a8cc6b9-5dda-4613-ba99-37f762cd7120,23b3c1a3-90e9-46e7-9182-b673ef8c2a46,d7280e1d-1d7d-45de-b15e-d79f2f95576f,f265dece-6293-4159-8acf-8152bb7aa086,ea9930de-2bd4-44b1-9c03-cde3752265a0,325b0812-1b00-4016-8fe2-db02fd81219e,3676a21d-540e-41e0-b384-95250428602b,5243aca3-b628-4ff8-9e65-6f68dc9d625a,34a6ec5f-2b37-4988-a43e-54f1f5cbde85,a78381ad-2c26-4332-b26f-feab6a8af60b,c015588b-d302-4640-a5c5-d597d9156cd1,6a4f8148-bc3c-4fe8-8164-1364a2cd6b37,11523b4d-b344-4424-8c6f-eac142588f09,f9c20d0e-ba7c-457e-8838-c6e5a080c454,dec21227-6f65-4f6a-8f2b-b8217c42634f,106a25e2-c4c5-4b5a-9c9f-47a4b73adf16
+  response:
+    body:
+      string: '[{"id":"cc2b337d-0e78-4abd-827a-8dad1317618f","bonusId":"tarot_hanged_man","bonusTitle":"XII","teamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","totalVotes":79176,"description":"The
+        Sunbeams receive XII The Hanged Man.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":8789,"teamVotes":2642},{"id":"3851674e-aa9c-4be4-93f0-c5968e5569a7","bonusId":"tarot_pope","bonusTitle":"V","teamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","totalVotes":59745,"description":"The
+        Moist Talkers receive V The Pope.","highestTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","highestTeamVotes":30269,"teamVotes":30269},{"id":"aea8c352-6a5d-4e2c-bf01-d6f2f133ab22","bonusId":"tarot_devil","bonusTitle":"XV","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":110141,"description":"The
+        Tigers receive XV The Devil.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":48589,"teamVotes":48589},{"id":"d7bb91c5-ead5-485c-83fb-89c56a7066f0","bonusId":"tarot_chariot","bonusTitle":"VII","teamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","totalVotes":155798,"description":"The
+        Tacos receive VII The Chariot.","highestTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","highestTeamVotes":45714,"teamVotes":38982},{"id":"8a8cc6b9-5dda-4613-ba99-37f762cd7120","bonusId":"tarot_moon","bonusTitle":"XVIII","teamId":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","totalVotes":243779,"description":"The
+        Spies receive XVIII The Moon.","highestTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","highestTeamVotes":85356,"teamVotes":85356},{"id":"23b3c1a3-90e9-46e7-9182-b673ef8c2a46","bonusId":"tarot_wheel","bonusTitle":"X","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","totalVotes":218243,"description":"The
+        Shoe Thieves receive X The Wheel of Fortune.","highestTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","highestTeamVotes":109259,"teamVotes":109259},{"id":"d7280e1d-1d7d-45de-b15e-d79f2f95576f","bonusId":"tarot_temperance","bonusTitle":"XIIII","teamId":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","totalVotes":59403,"description":"The
+        Firefighters receive XIIII Temperance.","highestTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","highestTeamVotes":3046,"teamVotes":1515},{"id":"f265dece-6293-4159-8acf-8152bb7aa086","bonusId":"tarot_justice","bonusTitle":"VIII","teamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","totalVotes":141916,"description":"The
+        Garages receive VIII Justice.","highestTeam":"57ec08cc-0411-4643-b304-0e80dbc15ac7","highestTeamVotes":63570,"teamVotes":19169},{"id":"ea9930de-2bd4-44b1-9c03-cde3752265a0","bonusId":"tarot_emperor","bonusTitle":"IIII","teamId":"b024e975-1c4a-4575-8936-a3754a08806a","totalVotes":66368,"description":"The
+        Steaks receive IIII The Emperor.","highestTeam":"b024e975-1c4a-4575-8936-a3754a08806a","highestTeamVotes":33278,"teamVotes":33278},{"id":"325b0812-1b00-4016-8fe2-db02fd81219e","bonusId":"tarot_high_priestess","bonusTitle":"II","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","totalVotes":175170,"description":"The
+        Fridays receive II The High Priestess.","highestTeam":"979aee4a-6d80-4863-bf1c-ee1a78e06024","highestTeamVotes":110505,"teamVotes":110505},{"id":"3676a21d-540e-41e0-b384-95250428602b","bonusId":"tarot_star","bonusTitle":"XVII","teamId":"b63be8c2-576a-4d6e-8daf-814f8bcea96f","totalVotes":186948,"description":"The
+        Dale receive XVII The Star.","highestTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","highestTeamVotes":2998,"teamVotes":2169},{"id":"5243aca3-b628-4ff8-9e65-6f68dc9d625a","bonusId":"tarot_judgment","bonusTitle":"XX","teamId":"b72f3061-f573-40d7-832a-5ad475bd7909","totalVotes":80266,"description":"The
+        Lovers receive XX Judgment.","highestTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","highestTeamVotes":1423,"teamVotes":1423},{"id":"34a6ec5f-2b37-4988-a43e-54f1f5cbde85","bonusId":"tarot_empress","bonusTitle":"III","teamId":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","totalVotes":130939,"description":"The
+        Flowers receive III The Empress.","highestTeam":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","highestTeamVotes":91456,"teamVotes":91456},{"id":"a78381ad-2c26-4332-b26f-feab6a8af60b","bonusId":"tarot_tower","bonusTitle":"XVI","teamId":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","totalVotes":241646,"description":"The
+        Jazz Hands receive XVI The Tower.","highestTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","highestTeamVotes":6767,"teamVotes":6767},{"id":"c015588b-d302-4640-a5c5-d597d9156cd1","bonusId":"tarot_xiii","bonusTitle":"XIII","teamId":"adc5b394-8f76-416d-9ce9-813706877b84","totalVotes":380337,"description":"The
+        Breath Mints receive XIII.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":102699,"teamVotes":12995},{"id":"6a4f8148-bc3c-4fe8-8164-1364a2cd6b37","bonusId":"tarot_magician","bonusTitle":"I","teamId":"7966eb04-efcc-499b-8f03-d13916330531","totalVotes":271830,"description":"The
+        Magic receive I The Magician.","highestTeam":"7966eb04-efcc-499b-8f03-d13916330531","highestTeamVotes":228087,"teamVotes":228087},{"id":"11523b4d-b344-4424-8c6f-eac142588f09","bonusId":"tarot_lover","bonusTitle":"VI","teamId":"36569151-a2fb-43c1-9df7-2df512424c82","totalVotes":217517,"description":"The
+        Millennials receive VI The Lover.","highestTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","highestTeamVotes":180577,"teamVotes":2862},{"id":"f9c20d0e-ba7c-457e-8838-c6e5a080c454","bonusId":"tarot_hermit","bonusTitle":"VIIII","teamId":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","totalVotes":62458,"description":"The
+        Pies receive VIIII The Hermit.","highestTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","highestTeamVotes":7118,"teamVotes":5468},{"id":"dec21227-6f65-4f6a-8f2b-b8217c42634f","bonusId":"tarot_sun","bonusTitle":"XVIIII","teamId":"57ec08cc-0411-4643-b304-0e80dbc15ac7","totalVotes":434921,"description":"The
+        Wild Wings receive XVIIII The Sun.","highestTeam":"57ec08cc-0411-4643-b304-0e80dbc15ac7","highestTeamVotes":1179,"teamVotes":1179},{"id":"106a25e2-c4c5-4b5a-9c9f-47a4b73adf16","bonusId":"tarot_strength","bonusTitle":"XI","teamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","totalVotes":104824,"description":"The
+        Lift receive XI Strength.","highestTeam":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","highestTeamVotes":66854,"teamVotes":66854}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6134'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:45 GMT
+      Etag:
+      - W/"17f6-liXKo38wixE5jS8+Ln4wB9b1KcI"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AfZ2LwKP1o4IJLj6zZy8Bd9X2HE_YPE_K.1s0BCvPWnJEdnWiEWwgxub%2BNnXb%2FUgJk9dGUWjR3ZV0;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:45 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=90a316e5-0edc-43e4-8278-2c241ced5f5b,8af77570-ba69-46c6-9c7b-3064e7c5c1d5,ca1be37f-3a48-40a0-ba39-92bf03116ba2
+  response:
+    body:
+      string: '[{"id":"90a316e5-0edc-43e4-8278-2c241ced5f5b","decreeId":"book_eat","decreeTitle":"Eat","description":"The
+        Book Eats\nEverything in Sight.\nStomachs Rumble.\nConcessions are Made.","totalVotes":747270},{"id":"8af77570-ba69-46c6-9c7b-3064e7c5c1d5","decreeId":"book_deface","decreeTitle":"Deface","description":"The
+        Book Defaces\nItself.\nIt Rewrites the Rules,\nRe-faces the Ballot.\nRegards
+        Itself.\nRecognizes Your Will.","totalVotes":213453},{"id":"ca1be37f-3a48-40a0-ba39-92bf03116ba2","decreeId":"book_close","decreeTitle":"Close","description":"The
+        Book Closes\nOn a Prime Piece of Property in Baltimore.\nPeanut Debris is
+        Cleared\nGround is Broken on the Crabitat.","totalVotes":198178}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '693'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:45 GMT
+      Etag:
+      - W/"2b5-FFb+IOPTAK7ycqzmtezvGCSteao"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ArMtLUC60mCiqKmqgkD1wAryueSNcoSCt.0dhfV%2F36MiKoTaKPAkMeWGFPHp%2FfZ7cBUYDNzBF2O38;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:45 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

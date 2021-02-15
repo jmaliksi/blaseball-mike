@@ -8,22 +8,21 @@ from .helpers import TestBase
 
 
 class TestIdol(TestBase):
-    def test_base_compliance(self, idol_boards):
-        for board in idol_boards:
-            for idol in board.values():
-                self.base_test(idol)
+    def test_base_compliance(self, idol_board):
+        for idol in idol_board.values():
+            self.base_test(idol)
 
     @pytest.mark.vcr
-    def test_idol_board(self, idol_boards):
+    def test_idol_board(self, idol_board):
         # TODO: some method of checking that this is the correct order
-        for board in idol_boards:
-            for idol in board.values():
-                assert isinstance(idol, Idol)
-                assert isinstance(idol.player, Player)
-                if getattr(idol, "total", None):
-                    assert isinstance(idol.total, int)
-                if getattr(idol, "id", None):
-                    assert isinstance(idol.id, str)
+        assert isinstance(idol_board, dict)
+        for idol in idol_board.values():
+            assert isinstance(idol, Idol)
+            assert isinstance(idol.player, Player)
+            if getattr(idol, "total", None):
+                assert isinstance(idol.total, int)
+            if getattr(idol, "id", None):
+                assert isinstance(idol.id, str)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -36,30 +35,28 @@ class TestIdol(TestBase):
 
 
 class TestTribute(TestBase):
-    def test_base_compliance(self, hall_of_flames):
-        for board in hall_of_flames:
-            for tribute in board.values():
-                self.base_test(tribute)
+    def test_base_compliance(self, hall_of_flame):
+        for tribute in hall_of_flame.values():
+            self.base_test(tribute)
 
     @pytest.mark.vcr
-    def test_hall_of_flame(self, hall_of_flames):
-        for hall in hall_of_flames:
-            for tribute in hall.values():
-                assert isinstance(tribute, Tribute)
+    def test_hall_of_flame(self, hall_of_flame):
+        assert isinstance(hall_of_flame, dict)
+        for tribute in hall_of_flame.values():
+            assert isinstance(tribute, Tribute)
 
-                assert isinstance(tribute.player, Player)
-                assert isinstance(tribute.peanuts, int)
+            assert isinstance(tribute.player, Player)
+            assert isinstance(tribute.peanuts, int)
 
-    def test_ordering(self, hall_of_flames):
-        for hall in hall_of_flames:
-            prev_peanuts = None
-            for tribute in hall.values():
-                assert isinstance(tribute.peanuts, int)
+    def test_ordering(self, hall_of_flame):
+        prev_peanuts = None
+        for tribute in hall_of_flame.values():
+            assert isinstance(tribute.peanuts, int)
 
-                # Use peanut numbers to verify ordering
-                if prev_peanuts:
-                    assert prev_peanuts >= tribute.peanuts
-                prev_peanuts = tribute.peanuts
+            # Use peanut numbers to verify ordering
+            if prev_peanuts:
+                assert prev_peanuts >= tribute.peanuts
+            prev_peanuts = tribute.peanuts
 
     @pytest.mark.vcr
     def test_load(self):

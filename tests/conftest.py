@@ -22,12 +22,14 @@ def vcr_config():
 # GAMES
 
 
+@pytest.fixture(scope="module")
 @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_s7d95.yaml')
 def game_s7d95():
     """common case"""
     return Game.load_by_id("2eb1b614-2a5c-440b-bbac-74e3ae054fc6")
 
 
+@pytest.fixture(scope="module")
 def game_s2d99_chronicler():
     """chronicler data, S2"""
     return Game({
@@ -86,6 +88,7 @@ def game_s2d99_chronicler():
     })
 
 
+@pytest.fixture(scope="module")
 def game_s9d1_crovertime():
     """Maximum Crowvertime, mid-game"""
     return Game({
@@ -157,6 +160,7 @@ def game_s9d1_crovertime():
     )
 
 
+@pytest.fixture(scope="module")
 def game_coffee_cup_d11():
     """batter/pitcher/baserunner mods, non-integer away score, mid-game"""
     return Game({
@@ -242,6 +246,7 @@ def game_coffee_cup_d11():
     })
 
 
+@pytest.fixture(scope="module")
 def game_s2d10_none_awaypitcher():
     """None Away Pitcher with Left Beef"""
     return Game({
@@ -319,20 +324,22 @@ def game_s2d10_none_awaypitcher():
     })
 
 
-@pytest.fixture(scope="module")
-def games():
-    return [game_s7d95(), game_s2d99_chronicler(), game_s9d1_crovertime(), game_s2d10_none_awaypitcher(), game_coffee_cup_d11()]
+@pytest.fixture(scope="module", params=['game_s7d95', 'game_s2d99_chronicler', 'game_s9d1_crovertime',
+                                        'game_s2d10_none_awaypitcher', 'game_coffee_cup_d11'])
+def game(request):
+    """Parameterized fixture of various games"""
+    return request.getfixturevalue(request.param)
 
 
 # PLAYERS
 
-
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.player_tot_clark.yaml')
+@pytest.fixture(scope="module")
 def player_tot_clark():
     """player common case"""
     return Player.load_one("e3c514ae-f813-470e-9c91-d5baf5ffcf16")
 
 
+@pytest.fixture(scope="module")
 def player_test_playerson():
     """worst possible player, invalid ID, modifications, items"""
     return Player({
@@ -385,6 +392,7 @@ def player_test_playerson():
         })
 
 
+@pytest.fixture(scope="module")
 def player_jose_haley_chronicler():
     """Chronicler data, S2"""
     return Player({
@@ -421,7 +429,7 @@ def player_jose_haley_chronicler():
         "shakespearianism": 0.9898894978911135
     })
 
-
+@pytest.fixture(scope="module")
 def player_ortiz_lopez_datablase():
     """Datablase data"""
     return Player({
@@ -491,12 +499,6 @@ def player_ortiz_lopez_datablase():
     })
 
 
-# List of player to perform Generic Tests on
-@pytest.fixture(scope="module")
-def players():
-    return [player_tot_clark(), player_test_playerson(), player_jose_haley_chronicler(), player_ortiz_lopez_datablase()]
-
-
 @pytest.fixture(scope="module")
 def player_blintz_chamberlain():
     """popular Onomancer player, used for random-generation tests"""
@@ -537,6 +539,13 @@ def player_blintz_chamberlain():
     })
 
 
+@pytest.fixture(scope="module", params=['player_tot_clark', 'player_test_playerson',
+                                        'player_jose_haley_chronicler', 'player_ortiz_lopez_datablase'])
+def player(request):
+    """Parameterized fixture of various players"""
+    return request.getfixturevalue(request.param)
+
+
 @pytest.fixture(scope="module")
 def player_vibes():
     with open(f"{TEST_DATA_DIR}/player/vibes.json", "r") as fp:
@@ -545,13 +554,13 @@ def player_vibes():
 
 # TEAM
 
-
+@pytest.fixture(scope="module")
 @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_crabs.yaml')
 def team_crabs():
     """common case"""
     return Team.load("8d87c468-699a-47a8-b40d-cfb73a5660ad")
 
-
+@pytest.fixture(scope="module")
 def team_ohio_astronauts():
     """invalid ID, multi-codepoint emoji, modifications, empty player lists, invalid Tarot"""
     return Team({
@@ -584,7 +593,7 @@ def team_ohio_astronauts():
         "tournamentWins": 0
     })
 
-
+@pytest.fixture(scope="module")
 def team_pies_chronicler():
     """chronicler historical data, S2"""
     return Team({
@@ -642,219 +651,331 @@ def team_pies_chronicler():
     })
 
 
+@pytest.fixture(scope="module", params=['team_crabs', 'team_pies_chronicler', 'team_ohio_astronauts'])
+def team(request):
+    """Parameterized fixture of various teams"""
+    return request.getfixturevalue(request.param)
+
+
+# FIGHT
+
 @pytest.fixture(scope="module")
-def teams():
-    return [team_crabs(), team_pies_chronicler(), team_ohio_astronauts()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_shoethieves_vs_pods.yaml')
+def fight_shoethieves_vs_pods():
+    return Fight.load_by_id("3e2882a7-1553-49bd-b271-49cab930d9fc")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fights.yaml')
-def fights():
-    fight_ids = [
-        "3e2882a7-1553-49bd-b271-49cab930d9fc",
-        "6754f45d-52a6-4b2f-b63c-15dcd520f8cf",
-        "9bb560d9-4925-4845-ad03-26012742ee23"
-    ]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_crabs_vs_pods.yaml')
+def fight_crabs_vs_pods():
+    return Fight.load_by_id("6754f45d-52a6-4b2f-b63c-15dcd520f8cf")
 
-    fight_list = []
-    for id_ in fight_ids:
-        fight_list.append(Fight.load_by_id(id_))
-    return fight_list
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_hallstars_vs_pods.yaml')
+def fight_hallstars_vs_pods():
+    return Fight.load_by_id("9bb560d9-4925-4845-ad03-26012742ee23")
+
+
+@pytest.fixture(scope="module", params=['fight_shoethieves_vs_pods', 'fight_crabs_vs_pods', 'fight_hallstars_vs_pods'])
+def fight(request):
+    """Parameterized fixture of various fights"""
+    return request.getfixturevalue(request.param)
 
 
 # ELECTIONS
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.elections.yaml')
-def elections():
-    return [Election.load()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election.yaml')
+def election():
+    return Election.load()
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_results.yaml')
-def election_results():
-    results = [
-        ElectionResult.load_by_season(season=1),
-        ElectionResult.load_by_season(season=7),
-        ElectionResult.load_by_season(season=10)
-    ]
-    return results
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_result_s1.yaml')
+def election_result_s1():
+    """S1 missing some fields"""
+    return ElectionResult.load_by_season(1)
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.decree_results.yaml')
-def decree_results():
-    decree_ids = [
-        "b090fdfc-7d9d-414b-a4a5-bbc698028c15",
-        "a52b1257-9020-4582-8da0-dc97559dedbf"
-    ]
-    return list(DecreeResult.load(*decree_ids).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_result_s7.yaml')
+def election_result_s7():
+    """common case"""
+    return ElectionResult.load_by_season(7)
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.blessing_results.yaml')
-def blessing_results():
-    blessing_ids = [
-        "nagomi_mystery",
-        "762670ae-8bf9-4165-bf36-7a78697bd927"
-    ]
-    return list(BlessingResult.load(*blessing_ids).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_result_s10.yaml')
+def election_result_s11():
+    """S11 adds Tidings"""
+    return ElectionResult.load_by_season(11)
+
+
+@pytest.fixture(scope="module", params=['election_result_s1', 'election_result_s7', 'election_result_s11'])
+def election_result(request):
+    """Parameterized fixture of various election results"""
+    return request.getfixturevalue(request.param)
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.tiding_results.yaml')
-def tiding_results():
-    tiding_ids = [
-        "future_written"
-    ]
-    return list(TidingResult.load(*tiding_ids).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.decree_result_book.yaml')
+def decree_result_book():
+    """Open the Forbidden Book, S1 test"""
+    return DecreeResult.load_one('b090fdfc-7d9d-414b-a4a5-bbc698028c15')
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.decree_result_forecast_birds.yaml')
+def decree_result_forecast_birds():
+    """Test empty decree title"""
+    return DecreeResult.load_one('643280fc-b7c6-4b6d-a164-9b53e1a3e47a')
+
+
+@pytest.fixture(scope="module", params=['decree_result_book', 'decree_result_forecast_birds'])
+def decree_result(request):
+    """Parameterized fixture of various decree results"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.blessing_result_nagomi_mystery.yaml')
+def blessing_result_nagomi_mystery():
+    """non-uuid ID, S1"""
+    return BlessingResult.load_one("nagomi_mystery")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.blessing_result_grappling_hook.yaml')
+def blessing_result_grappling_hook():
+    """common case"""
+    return BlessingResult.load_one("762670ae-8bf9-4165-bf36-7a78697bd927")
+
+
+@pytest.fixture(scope="module", params=['blessing_result_nagomi_mystery', 'blessing_result_grappling_hook'])
+def blessing_result(request):
+    """Parameterized fixture of various blessing results"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module", params=["future_written"])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.tiding_result.yaml')
+def tiding_result(request):
+    return TidingResult.load_one(request.param)
 
 
 # STATSHEETS
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_statsheets.yaml')
-def game_statsheets():
-    sheet_ids = [
-        "8db2f386-3558-43bd-a9c7-ca9b7fd08d94",  # S1
-        "4b0ef2de-2d92-4d07-8753-3848f7b27036",
-    ]
-    return list(GameStatsheet.load(sheet_ids).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_statsheet_s1d1.yaml')
+def game_statsheet_s1d1():
+    return GameStatsheet.load("6ca27ca4-e2d4-43d8-818e-c83462ee9608").get("6ca27ca4-e2d4-43d8-818e-c83462ee9608")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.season_statsheets.yaml')
-def season_statsheets():
-    sheet_ids = [
-        "8b0bb83b-ae1b-4b80-85a7-96eefc2d45cb",  # S1
-        "6941ee36-4622-43a0-bbd7-3d71f0ada00a"
-    ]
-    return list(SeasonStatsheet.load(sheet_ids).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_statsheet_s1d44.yaml')
+def game_statsheet_s1d44():
+    return GameStatsheet.load("a979d2e9-f8d8-47e9-9bf8-05807cf49ffa").get("a979d2e9-f8d8-47e9-9bf8-05807cf49ffa")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_statsheets.yaml')
-def team_statsheets():
-    team_sheet_list = [
-        "80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1",
-        "407b8150-0bc5-4ce7-9e59-cf14a3a97497",
-        "a52c5612-31c1-4243-a25b-6f159a91dbe7"
-    ]
-    return list(TeamStatsheet.load(team_sheet_list).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_statsheet_s11d44.yaml')
+def game_statsheet_s11d44():
+    return GameStatsheet.load("9033b003-5205-4fcd-bc35-49fe8cd33062").get("9033b003-5205-4fcd-bc35-49fe8cd33062")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.player_statsheets.yaml')
-def player_statsheets():
-    player_sheet_list = [
-        "5fb13222-3864-4498-a43b-c42b9bc89203",
-        "c339dd13-e3fa-478f-871f-371fff8fbe8d"
-    ]
-    return list(PlayerStatsheet.load(player_sheet_list).values())
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.game_statsheet_s8d1.yaml')
+def game_statsheet_s8d1():
+    return GameStatsheet.load("ffc0181c-1b8c-43b4-9af8-4b4042ec3078").get("ffc0181c-1b8c-43b4-9af8-4b4042ec3078")
+
+
+@pytest.fixture(scope="module", params=['game_statsheet_s1d1', 'game_statsheet_s1d44', 'game_statsheet_s8d1', 'game_statsheet_s11d44'])
+def game_statsheet(request):
+    """Parameterized fixture of various game statsheets"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.season_statsheet_s1.yaml')
+def season_statsheet_s1():
+    return SeasonStatsheet.load("8b0bb83b-ae1b-4b80-85a7-96eefc2d45cb").get("8b0bb83b-ae1b-4b80-85a7-96eefc2d45cb")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.season_statsheet_s11.yaml')
+def season_statsheet_s11():
+    return SeasonStatsheet.load("fe1d4070-efbf-4c7e-973d-06e9226fd4de").get("fe1d4070-efbf-4c7e-973d-06e9226fd4de")
+
+
+@pytest.fixture(scope="module", params=['season_statsheet_s1', 'season_statsheet_s11'])
+def season_statsheet(request):
+    """Parameterized fixture of various season statsheets"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_statsheet_1.yaml')
+def team_statsheet_1():
+    return TeamStatsheet.load("80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1").get("80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_statsheet_2.yaml')
+def team_statsheet_2():
+    return TeamStatsheet.load("407b8150-0bc5-4ce7-9e59-cf14a3a97497").get("407b8150-0bc5-4ce7-9e59-cf14a3a97497")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_statsheet_3.yaml')
+def team_statsheet_3():
+    return TeamStatsheet.load("a52c5612-31c1-4243-a25b-6f159a91dbe7").get("a52c5612-31c1-4243-a25b-6f159a91dbe7")
+
+
+@pytest.fixture(scope="module", params=['team_statsheet_1', 'team_statsheet_2', 'team_statsheet_3'])
+def team_statsheet(request):
+    """Parameterized fixture of various team statsheets"""
+    return request.getfixturevalue(request.param)
+
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.player_statsheet_1.yaml')
+def player_statsheet_1():
+    return PlayerStatsheet.load("5fb13222-3864-4498-a43b-c42b9bc89203").get("5fb13222-3864-4498-a43b-c42b9bc89203")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.player_statsheet_2.yaml')
+def player_statsheet_2():
+    return PlayerStatsheet.load("c339dd13-e3fa-478f-871f-371fff8fbe8d").get("c339dd13-e3fa-478f-871f-371fff8fbe8d")
+
+
+@pytest.fixture(scope="module", params=['player_statsheet_1', 'player_statsheet_2'])
+def player_statsheet(request):
+    """Parameterized fixture of various player statsheets"""
+    return request.getfixturevalue(request.param)
 
 
 # PLAYOFFS
 
 
-@pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoffs.yaml')
-def playoffs():
-    playoff_list = [Playoff.load_by_season(5)]
-    return playoff_list
+@pytest.fixture(scope="module", params=[5])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff.yaml')
+def playoff(request):
+    return Playoff.load_by_season(request.param)
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_rounds.yaml')
-def playoff_rounds():
-    round_list = ["6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6",
-                  "6e6206eb-1326-4c4e-a0cf-1d745aa611de",
-                  "34c99cbf-1d7d-4715-8957-8abcba3c5b89"]
-    rounds = []
-    for id_ in round_list:
-        rounds.append(PlayoffRound.load(id_))
-    return rounds
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_1.yaml')
+def playoff_round_1():
+    return PlayoffRound.load("6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_matchups.yaml')
-def playoff_matchups():
-    matchup_list = ["bee2a1e6-50d6-4866-a7b4-f13705873052",
-                    "937187dc-4d7d-45d3-95f6-dfb2ae2972a9"]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_2.yaml')
+def playoff_round_2():
+    return PlayoffRound.load("6e6206eb-1326-4c4e-a0cf-1d745aa611de")
 
-    return list(PlayoffMatchup.load(*matchup_list).values())
 
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_3.yaml')
+def playoff_round_3():
+    return PlayoffRound.load("34c99cbf-1d7d-4715-8957-8abcba3c5b89")
+
+
+@pytest.fixture(scope="module", params=['playoff_round_1', 'playoff_round_2', 'playoff_round_3'])
+def playoff_round(request):
+    """Parameterized fixture of various playoff rounds"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_matchup_1.yaml')
+def playoff_matchup_1():
+    return PlayoffMatchup.load_one("bee2a1e6-50d6-4866-a7b4-f13705873052")
+
+
+@pytest.fixture(scope="module")
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_matchup_2.yaml')
+def playoff_matchup_2():
+    return PlayoffMatchup.load_one("937187dc-4d7d-45d3-95f6-dfb2ae2972a9")
+
+
+@pytest.fixture(scope="module", params=['playoff_matchup_1', 'playoff_matchup_2'])
+def playoff_matchup(request):
+    """Parameterized fixture of various playoff matchups"""
+    return request.getfixturevalue(request.param)
 
 # LEAGUE
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.leagues.yaml')
-def leagues():
-    return [League.load()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.league.yaml')
+def league():
+    return League.load()
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.subleagues.yaml')
-def subleagues():
-    subleague_list = [
-        "4fe65afa-804f-4bb2-9b15-1281b2eab110",
-        "aabc11a1-81af-4036-9f18-229c759ca8a9",
-        "7d3a3dd6-9ea1-4535-9d91-bde875c85e80"
-    ]
-    subleagues = []
-    for id_ in subleague_list:
-        subleagues.append(Subleague.load(id_))
-    return subleagues
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.subleague_1.yaml')
+def subleague_1():
+    return Subleague.load("4fe65afa-804f-4bb2-9b15-1281b2eab110")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.divisions.yaml')
-def divisions():
-    division_list = [
-        "5eb2271a-3e49-48dc-b002-9cb615288836"
-    ]
-    divisions = []
-    for id_ in division_list:
-        divisions.append(Division.load(id_))
-    return divisions
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.subleague_2.yaml')
+def subleague_2():
+    return Subleague.load("aabc11a1-81af-4036-9f18-229c759ca8a9")
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.tiebreakers.yaml')
-def tiebreakers():
-    tiebreaker_list = [
-        "370c436f-79fa-418b-bc98-5db48442ba3f"
-    ]
-    tiebreakers = []
-    for id_ in tiebreaker_list:
-        tiebreakers.extend(Tiebreaker.load(id_).values())
-    return tiebreakers
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.subleague_3.yaml')
+def subleague_3():
+    return Subleague.load("7d3a3dd6-9ea1-4535-9d91-bde875c85e80")
+
+
+@pytest.fixture(scope="module", params=['subleague_1', 'subleague_2', 'subleague_3'])
+def subleague(request):
+    """Parameterized fixture of various subleagues"""
+    return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="module", params=["5eb2271a-3e49-48dc-b002-9cb615288836"])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.division.yaml')
+def division(request):
+    return Division.load(request.param)
+
+
+@pytest.fixture(scope="module", params=["370c436f-79fa-418b-bc98-5db48442ba3f"])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.tiebreaker.yaml')
+def tiebreaker(request):
+    return Tiebreaker.load(request.param).get(request.param)
 
 
 # LEADERBOARDS
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.idolboards.yaml')
-def idol_boards():
-    return [Idol.load()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.idolboard.yaml')
+def idol_board():
+    return Idol.load()
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.hall_of_flames.yaml')
-def hall_of_flames():
-    return [Tribute.load()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.hall_of_flame.yaml')
+def hall_of_flame():
+    return Tribute.load()
 
 
 # MISC
 
 
 @pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.global_events.yaml')
-def global_events():
-    return [GlobalEvent.load()]
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.global_event.yaml')
+def global_event():
+    return GlobalEvent.load()
 
 
 @pytest.fixture(scope="module")
@@ -863,13 +984,13 @@ def simulation_data():
     return SimulationData.load()
 
 
-@pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.seasons.yaml')
-def seasons():
-    return [Season.load(5)]
+@pytest.fixture(scope="module", params=[5])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.season.yaml')
+def season(request):
+    return Season.load(request.param)
 
 
-@pytest.fixture(scope="module")
-@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.standings.yaml')
-def standings():
-    return [Standings.load("dbcb0a13-2d59-4f13-8681-fd969aefdcc6")]
+@pytest.fixture(scope="module", params=["dbcb0a13-2d59-4f13-8681-fd969aefdcc6"])
+@vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.standing.yaml')
+def standing(request):
+    return Standings.load(request.param)

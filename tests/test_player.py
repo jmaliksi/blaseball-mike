@@ -4,145 +4,135 @@ Unit Tests for Player Model
 
 import pytest
 from blaseball_mike.models import Player, Team, Item, Modification
-from .helpers import TestBase, TEST_DATA_DIR
+from .helpers import TestBase
 
 
 class TestPlayer(TestBase):
 
-    def test_base_compliance(self, players):
+    def test_base_compliance(self, player):
         """
         Verify players pass subclass tests
         """
-        for player in players:
-            self.base_test(player)
+        self.base_test(player)
 
-    def test_stars(self, players):
+    def test_stars(self, player):
         """
         Test that star equations do not error
         """
-        for player in players:
-            assert isinstance(player.batting_stars, float)
-            assert isinstance(player.pitching_stars, float)
-            assert isinstance(player.baserunning_stars, float)
-            assert isinstance(player.defense_stars, float)
-            assert isinstance(player.batting_rating, float)
+        assert isinstance(player.batting_stars, float)
+        assert isinstance(player.pitching_stars, float)
+        assert isinstance(player.baserunning_stars, float)
+        assert isinstance(player.defense_stars, float)
+        assert isinstance(player.batting_rating, float)
 
-    def test_soulscream(self, players):
+    def test_soulscream(self, player):
         """
         Test that soulscream does not error
         """
-        for player in players:
-            assert isinstance(player.soulscream, str)
+        assert isinstance(player.soulscream, str)
 
-    def test_vibes(self, players):
+    # TODO: parametrize day
+    def test_vibes(self, player):
         """
         Test that vibe equation does not error
         """
-        for player in players:
-            days = [1, 4, 25, 40, 52, 84, 99]
-            for day in days:
-                assert isinstance(player.get_vibe(day), (float, type(None)))
+        days = [1, 4, 25, 40, 52, 84, 99]
+        for day in days:
+            assert isinstance(player.get_vibe(day), (float, type(None)))
 
     @pytest.mark.vcr
-    def test_blood(self, players):
+    def test_blood(self, player):
         """
         Test that blood referencing does not error
         """
-        for player in players:
-            assert isinstance(player.blood, str)
+        assert isinstance(player.blood, str)
 
     @pytest.mark.vcr
-    def test_coffee(self, players):
+    def test_coffee(self, player):
         """
         Test that coffee referencing does not error
         """
-        for player in players:
-            assert isinstance(player.coffee, str)
+        assert isinstance(player.coffee, str)
 
     @pytest.mark.vcr
-    def test_items(self, players):
+    def test_items(self, player):
         """
         Test that item referencing does not error
         """
-        for player in players:
-            assert isinstance(player.bat, Item)
-            assert isinstance(player.armor, Item)
+        assert isinstance(player.bat, Item)
+        assert isinstance(player.armor, Item)
 
     @pytest.mark.vcr
-    def test_modifications(self, players):
+    def test_modifications(self, player):
         """
         Test that modification referencing does not error
         """
-        for player in players:
-            assert isinstance(player.perm_attr, list)
-            for attr in player.perm_attr:
-                assert isinstance(attr, Modification)
+        assert isinstance(player.perm_attr, list)
+        for attr in player.perm_attr:
+            assert isinstance(attr, Modification)
 
-            assert isinstance(player.seas_attr, list)
-            for attr in player.seas_attr:
-                assert isinstance(attr, Modification)
+        assert isinstance(player.seas_attr, list)
+        for attr in player.seas_attr:
+            assert isinstance(attr, Modification)
 
-            assert isinstance(player.week_attr, list)
-            for attr in player.week_attr:
-                assert isinstance(attr, Modification)
+        assert isinstance(player.week_attr, list)
+        for attr in player.week_attr:
+            assert isinstance(attr, Modification)
 
-            assert isinstance(player.game_attr, list)
-            for attr in player.game_attr:
-                assert isinstance(attr, Modification)
+        assert isinstance(player.game_attr, list)
+        for attr in player.game_attr:
+            assert isinstance(attr, Modification)
 
     @pytest.mark.vcr
-    def test_team(self, players):
+    def test_team(self, player):
         """
         Test that player team referencing does not error
         """
-        for player in players:
-            assert isinstance(player.tournament_team, (Team, type(None)))
-            assert isinstance(player.league_team, (Team, type(None)))
+        assert isinstance(player.tournament_team, (Team, type(None)))
+        assert isinstance(player.league_team, (Team, type(None)))
 
-    def test_misc(self, players):
+    def test_misc(self, player):
         """
         Test player fields that are not included in the other tests
         """
-        for player in players:
-            assert isinstance(player.id, str)
-            assert isinstance(player.name, str)
-            assert isinstance(player.total_fingers, int)
-            assert isinstance(player.deceased, bool)
+        assert isinstance(player.id, str)
+        assert isinstance(player.name, str)
+        assert isinstance(player.total_fingers, int)
+        assert isinstance(player.deceased, bool)
 
-    def test_added_fields(self, players):
+    def test_added_fields(self, player):
         """
         Test misc fields that may not be present in historical records
         """
-        for player in players:
-            if getattr(player, "ritual", None):
-                assert isinstance(player.ritual, str)
-            if getattr(player, "peanut_allergy", None):
-                assert isinstance(player.peanut_allergy, bool)
-            if getattr(player, "fate", None):
-                assert isinstance(player.fate, int)
+        if getattr(player, "ritual", None):
+            assert isinstance(player.ritual, str)
+        if getattr(player, "peanut_allergy", None):
+            assert isinstance(player.peanut_allergy, bool)
+        if getattr(player, "fate", None):
+            assert isinstance(player.fate, int)
 
-    def test_simulated_copy(self, players):
-        for player in players:
-            mult = player.simulated_copy(multipliers={"overall_rating": 2.0, "patheticism": 0.01, "cinnamon": 6.9})
-            assert isinstance(mult, Player)
-            assert mult.batting_stars >= player.batting_stars
-            assert mult.patheticism < player.patheticism
-            if getattr(player, "cinnamon", None):
-                assert mult.cinnamon > player.cinnamon
+    # TODO: split per-type
+    def test_simulated_copy(self, player):
+        mult = player.simulated_copy(multipliers={"overall_rating": 2.0, "patheticism": 0.01, "cinnamon": 6.9})
+        assert isinstance(mult, Player)
+        assert mult.batting_stars >= player.batting_stars
+        assert mult.patheticism < player.patheticism
+        if getattr(player, "cinnamon", None):
+            assert mult.cinnamon > player.cinnamon
 
-            buff = player.simulated_copy(buffs={"overall_rating": -2.0, "patheticism": -0.99, "cinnamon": 4.20})
-            assert isinstance(buff, Player)
-            assert buff.batting_stars <= player.batting_stars
-            assert buff.patheticism >= player.patheticism
-            if getattr(player, "cinnamon", None):
-                assert buff.cinnamon > player.cinnamon
+        buff = player.simulated_copy(buffs={"overall_rating": -2.0, "patheticism": -0.99, "cinnamon": 4.20})
+        assert isinstance(buff, Player)
+        assert buff.batting_stars <= player.batting_stars
+        assert buff.patheticism >= player.patheticism
+        if getattr(player, "cinnamon", None):
+            assert buff.cinnamon > player.cinnamon
 
-            reroll = player.simulated_copy(reroll={"overall_rating": True, "patheticism": True, "cinnamon": True})
-            assert isinstance(reroll, Player)
+        reroll = player.simulated_copy(reroll={"overall_rating": True, "patheticism": True, "cinnamon": True})
+        assert isinstance(reroll, Player)
 
-            override = player.simulated_copy(overrides={"cinnamon": 6.9})
-            assert isinstance(override, Player)
-            assert override.cinnamon == 6.9
+        override = player.simulated_copy(overrides={"cinnamon": 6.9})
+        assert isinstance(override, Player)
+        assert override.cinnamon == 6.9
 
     @pytest.mark.parametrize(
         ["player_data", "batting_stars"],

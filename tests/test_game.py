@@ -10,214 +10,203 @@ from .helpers import TestBase, TEST_DATA_DIR
 
 
 class TestGame(TestBase):
-    def test_base_compliance(self, games):
+    def test_base_compliance(self, game):
         """
         Verify games pass subclass tests
         """
-        for game in games:
-            self.base_test(game)
+        self.base_test(game)
 
     @staticmethod
-    def test_game_state(games):
+    def test_game_state(game):
         """
         Test various game state fields do not error
         """
-        for game in games:
-            assert isinstance(game.day, int)
-            assert isinstance(game.season, int)
-            assert game.day > 0
-            assert isinstance(game.series_index, int)
-            assert isinstance(game.series_length, int)
-            assert isinstance(game.is_postseason, bool)
+        assert isinstance(game.day, int)
+        assert isinstance(game.season, int)
+        assert game.day > 0
+        assert isinstance(game.series_index, int)
+        assert isinstance(game.series_length, int)
+        assert isinstance(game.is_postseason, bool)
 
-            assert isinstance(game.game_start, bool)
-            assert isinstance(game.game_complete, bool)
-            assert isinstance(game.finalized, bool)
+        assert isinstance(game.game_start, bool)
+        assert isinstance(game.game_complete, bool)
+        assert isinstance(game.finalized, bool)
 
-            assert isinstance(game.inning, int)
-            assert isinstance(game.top_of_inning, bool)
-            assert isinstance(game.home_score, (int, float))
-            assert isinstance(game.away_score, (int, float))
-            assert isinstance(game.winning_score, (int, float))
-            assert isinstance(game.losing_score, (int, float))
-            assert isinstance(game.half_inning_score, (int, float))
+        assert isinstance(game.inning, int)
+        assert isinstance(game.top_of_inning, bool)
+        assert isinstance(game.home_score, (int, float))
+        assert isinstance(game.away_score, (int, float))
+        assert isinstance(game.winning_score, (int, float))
+        assert isinstance(game.losing_score, (int, float))
+        assert isinstance(game.half_inning_score, (int, float))
 
-            assert isinstance(game.half_inning_outs, int)
-            assert isinstance(game.baserunner_count, int)
-            assert isinstance(game.at_bat_balls, int)
-            assert isinstance(game.at_bat_strikes, int)
-            assert isinstance(game.home_team_batter_count, int)
-            assert isinstance(game.away_team_batter_count, int)
+        assert isinstance(game.half_inning_outs, int)
+        assert isinstance(game.baserunner_count, int)
+        assert isinstance(game.at_bat_balls, int)
+        assert isinstance(game.at_bat_strikes, int)
+        assert isinstance(game.home_team_batter_count, int)
+        assert isinstance(game.away_team_batter_count, int)
 
     @staticmethod
     @pytest.mark.vcr
-    def test_mods(games):
+    def test_mods(game):
         """
         Test that game modifications do not error
         """
-        for game in games:
-            assert isinstance(game.base_runner_mods, list)
-            for mod in game.base_runner_mods:
-                assert isinstance(mod, Modification)
-            assert isinstance(game.home_pitcher_mod, (Modification, type(None)))
-            assert isinstance(game.away_pitcher_mod, (Modification, type(None)))
-            assert isinstance(game.home_batter_mod, (Modification, type(None)))
-            assert isinstance(game.away_batter_mod, (Modification, type(None)))
+        assert isinstance(game.base_runner_mods, list)
+        for mod in game.base_runner_mods:
+            assert isinstance(mod, Modification)
+        assert isinstance(game.home_pitcher_mod, (Modification, type(None)))
+        assert isinstance(game.away_pitcher_mod, (Modification, type(None)))
+        assert isinstance(game.home_batter_mod, (Modification, type(None)))
+        assert isinstance(game.away_batter_mod, (Modification, type(None)))
 
     @staticmethod
-    def test_weather(games):
+    def test_weather(game):
         """
         Test that weather does not error
         """
-        for game in games:
-            assert isinstance(game.weather, Weather)
-            if game.weather.value != None:
-                assert game.weather.text != "Invalid Weather"
+        assert isinstance(game.weather, Weather)
+        if game.weather.value != None:
+            assert game.weather.text != "Invalid Weather"
 
     @staticmethod
     @pytest.mark.vcr
-    def test_teams(games):
+    def test_teams(game):
         """
         Test that teams & team fields do not error
         """
-        for game in games:
-            assert isinstance(game.away_team, Team)
-            assert isinstance(game.home_team, Team)
-            assert isinstance(game.winning_team, Team)
-            assert isinstance(game.losing_team, Team)
-            assert isinstance(game.losing_team, Team)
-            assert isinstance(game.at_bat_team, Team)
-            assert isinstance(game.pitching_team, Team)
+        assert isinstance(game.away_team, Team)
+        assert isinstance(game.home_team, Team)
+        assert isinstance(game.winning_team, Team)
+        assert isinstance(game.losing_team, Team)
+        assert isinstance(game.losing_team, Team)
+        assert isinstance(game.at_bat_team, Team)
+        assert isinstance(game.pitching_team, Team)
 
-            assert isinstance(game.away_team_name, str)
-            assert isinstance(game.away_team_nickname, str)
-            assert isinstance(game.home_team_name, str)
-            assert isinstance(game.home_team_nickname, str)
-            assert isinstance(game.winning_team_name, str)
-            assert isinstance(game.winning_team_nickname, str)
-            assert isinstance(game.losing_team_name, str)
-            assert isinstance(game.losing_team_nickname, str)
-            assert isinstance(game.at_bat_team_name, str)
-            assert isinstance(game.at_bat_team_nickname, str)
-            assert isinstance(game.pitching_team_name, str)
-            assert isinstance(game.pitching_team_nickname, str)
+        assert isinstance(game.away_team_name, str)
+        assert isinstance(game.away_team_nickname, str)
+        assert isinstance(game.home_team_name, str)
+        assert isinstance(game.home_team_nickname, str)
+        assert isinstance(game.winning_team_name, str)
+        assert isinstance(game.winning_team_nickname, str)
+        assert isinstance(game.losing_team_name, str)
+        assert isinstance(game.losing_team_nickname, str)
+        assert isinstance(game.at_bat_team_name, str)
+        assert isinstance(game.at_bat_team_nickname, str)
+        assert isinstance(game.pitching_team_name, str)
+        assert isinstance(game.pitching_team_nickname, str)
 
-            assert isinstance(game.away_team_color, str)
-            assert isinstance(game.away_team_emoji, str)
-            assert isinstance(game.home_team_color, str)
-            assert isinstance(game.home_team_emoji, str)
+        assert isinstance(game.away_team_color, str)
+        assert isinstance(game.away_team_emoji, str)
+        assert isinstance(game.home_team_color, str)
+        assert isinstance(game.home_team_emoji, str)
 
     @staticmethod
     @pytest.mark.vcr
-    def test_players(games):
+    def test_players(game):
         """
         Test that players & player fields do not error
         """
-        for game in games:
-            assert isinstance(game.away_pitcher, (Player, type(None)))
-            assert isinstance(game.away_batter, (Player, type(None)))
-            assert isinstance(game.home_pitcher, (Player, type(None)))
-            assert isinstance(game.home_batter, (Player, type(None)))
-            assert isinstance(game.current_pitcher, (Player, type(None)))
-            assert isinstance(game.current_batter, (Player, type(None)))
+        assert isinstance(game.away_pitcher, (Player, type(None)))
+        assert isinstance(game.away_batter, (Player, type(None)))
+        assert isinstance(game.home_pitcher, (Player, type(None)))
+        assert isinstance(game.home_batter, (Player, type(None)))
+        assert isinstance(game.current_pitcher, (Player, type(None)))
+        assert isinstance(game.current_batter, (Player, type(None)))
 
-            assert isinstance(game.away_pitcher_name, (str, type(None)))
-            assert isinstance(game.away_batter_name, (str, type(None)))
-            assert isinstance(game.home_pitcher_name, (str, type(None)))
-            assert isinstance(game.home_batter_name, (str, type(None)))
-            assert isinstance(game.current_pitcher_name, (str, type(None)))
-            assert isinstance(game.current_batter_name, (str, type(None)))
+        assert isinstance(game.away_pitcher_name, (str, type(None)))
+        assert isinstance(game.away_batter_name, (str, type(None)))
+        assert isinstance(game.home_pitcher_name, (str, type(None)))
+        assert isinstance(game.home_batter_name, (str, type(None)))
+        assert isinstance(game.current_pitcher_name, (str, type(None)))
+        assert isinstance(game.current_batter_name, (str, type(None)))
 
-            assert isinstance(game.base_runners, list)
-            for runner in game.base_runners:
-                assert isinstance(runner, Player)
+        assert isinstance(game.base_runners, list)
+        for runner in game.base_runners:
+            assert isinstance(runner, Player)
 
-            assert isinstance(game.bases_occupied, list)
-            for base in game.bases_occupied:
-                assert isinstance(base, int)
+        assert isinstance(game.bases_occupied, list)
+        for base in game.bases_occupied:
+            assert isinstance(base, int)
 
     @staticmethod
-    def test_misc(games):
+    def test_misc(game):
         """
         Test game fields that are not included in the other tests
         """
-        for game in games:
-            assert isinstance(game.id, str)
-            assert isinstance(game.phase, int)
-            assert isinstance(game.shame, bool)
-            assert isinstance(game.home_odds, float)
-            assert isinstance(game.away_odds, float)
-            assert isinstance(game.last_update, str)
-            assert isinstance(game.outcomes, list)
-            for outcome in game.outcomes:
-                assert isinstance(outcome, str)
+        assert isinstance(game.id, str)
+        assert isinstance(game.phase, int)
+        assert isinstance(game.shame, bool)
+        assert isinstance(game.home_odds, float)
+        assert isinstance(game.away_odds, float)
+        assert isinstance(game.last_update, str)
+        assert isinstance(game.outcomes, list)
+        for outcome in game.outcomes:
+            assert isinstance(outcome, str)
 
-            assert isinstance(game.rules, str)
-            assert isinstance(game.terminology, str)
+        assert isinstance(game.rules, str)
+        assert isinstance(game.terminology, str)
 
     @staticmethod
     @pytest.mark.vcr
-    def test_statsheet(games):
-        for game in games:
-            assert isinstance(game.statsheet, GameStatsheet)
+    def test_statsheet(game):
+        assert isinstance(game.statsheet, GameStatsheet)
 
     @staticmethod
-    def test_added_fields(games):
+    def test_added_fields(game):
         """
         Test misc fields that may not be present in historical records
         """
-        for game in games:
-            if getattr(game, "home_team_secondary_color", None):
-                assert isinstance(game.home_team_secondary_color, str)
-            if getattr(game, "away_team_secondary_color", None):
-                assert isinstance(game.away_team_secondary_color, str)
-            if getattr(game, "play_count", None):
-                assert isinstance(game.play_count, int)
-            if getattr(game, "repeat_count", None):
-                assert isinstance(game.repeat_count, int)
-            if getattr(game, "score_update", None):
-                assert isinstance(game.score_update, str)
-            if getattr(game, "score_ledger", None):
-                assert isinstance(game.score_ledger, str)
-            if getattr(game, "home_balls", None):
-                assert isinstance(game.home_balls, int)
-            if getattr(game, "home_outs", None):
-                assert isinstance(game.home_outs, int)
-            if getattr(game, "home_strikes", None):
-                assert isinstance(game.home_strikes, int)
-            if getattr(game, "away_balls", None):
-                assert isinstance(game.away_balls, int)
-            if getattr(game, "away_outs", None):
-                assert isinstance(game.away_outs, int)
-            if getattr(game, "away_strikes", None):
-                assert isinstance(game.away_strikes, int)
-            if getattr(game, "home_bases", None):
-                assert isinstance(game.home_bases, int)
-            if getattr(game, "away_bases", None):
-                assert isinstance(game.away_bases, int)
+        if getattr(game, "home_team_secondary_color", None):
+            assert isinstance(game.home_team_secondary_color, str)
+        if getattr(game, "away_team_secondary_color", None):
+            assert isinstance(game.away_team_secondary_color, str)
+        if getattr(game, "play_count", None):
+            assert isinstance(game.play_count, int)
+        if getattr(game, "repeat_count", None):
+            assert isinstance(game.repeat_count, int)
+        if getattr(game, "score_update", None):
+            assert isinstance(game.score_update, str)
+        if getattr(game, "score_ledger", None):
+            assert isinstance(game.score_ledger, str)
+        if getattr(game, "home_balls", None):
+            assert isinstance(game.home_balls, int)
+        if getattr(game, "home_outs", None):
+            assert isinstance(game.home_outs, int)
+        if getattr(game, "home_strikes", None):
+            assert isinstance(game.home_strikes, int)
+        if getattr(game, "away_balls", None):
+            assert isinstance(game.away_balls, int)
+        if getattr(game, "away_outs", None):
+            assert isinstance(game.away_outs, int)
+        if getattr(game, "away_strikes", None):
+            assert isinstance(game.away_strikes, int)
+        if getattr(game, "home_bases", None):
+            assert isinstance(game.home_bases, int)
+        if getattr(game, "away_bases", None):
+            assert isinstance(game.away_bases, int)
 
-            if getattr(game, "base_runner_names", None):
-                assert isinstance(game.base_runner_names, list)
-                for runner in game.base_runner_names:
-                    assert isinstance(runner, str)
+        if getattr(game, "base_runner_names", None):
+            assert isinstance(game.base_runner_names, list)
+            for runner in game.base_runner_names:
+                assert isinstance(runner, str)
 
     @staticmethod
-    def test_tournament_state(games):
+    def test_tournament_state(game):
         """
         Test tournament or season specific state
         """
-        for game in games:
-            if getattr(game, "tournament", None):
-                assert isinstance(game.tournament, int)
-                assert game.season >= 0 or game.tournament >= 0
-            else:
-                assert game.season >= 0
+        if getattr(game, "tournament", None):
+            assert isinstance(game.tournament, int)
+            assert game.season >= 0 or game.tournament >= 0
+        else:
+            assert game.season >= 0
 
     @staticmethod
-    def test_bet_payouts(games):
-        for game in games:
-            assert isinstance(game.home_payout(1000), int)
-            assert isinstance(game.away_payout(1000), int)
+    def test_bet_payouts(game):
+        assert isinstance(game.home_payout(1000), int)
+        assert isinstance(game.away_payout(1000), int)
 
     @pytest.mark.parametrize(
         ['home_odds', 'away_odds', 'bet', 'home_payout', 'away_payout'],
@@ -389,13 +378,14 @@ class TestGame(TestBase):
 
 # This is used for test inheritance for the Fight class
 #   It's here rather than in test_fight.py because importing the TestGame causes it to run twice :(
-def game_test_generic(games):
-    TestGame.test_players(games)
-    TestGame.test_game_state(games)
-    TestGame.test_mods(games)
-    TestGame.test_weather(games)
-    TestGame.test_added_fields(games)
-    TestGame.test_misc(games)
-    TestGame.test_bet_payouts(games)
-    # TestGame.test_statsheet(games)  # Fight statsheets are broken
-    # TestGame.test_teams(games)  # PODs are broken
+def game_test_generic(game):
+    # TODO: could we iterate over the class's functions to dynamically generate this list? Is it even worth it?
+    TestGame.test_players(game)
+    TestGame.test_game_state(game)
+    TestGame.test_mods(game)
+    TestGame.test_weather(game)
+    TestGame.test_added_fields(game)
+    TestGame.test_misc(game)
+    TestGame.test_bet_payouts(game)
+    # TestGame.test_statsheet(game)  # Fight statsheets are broken
+    # TestGame.test_teams(game)  # PODs are broken

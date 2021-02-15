@@ -9,78 +9,72 @@ from .helpers import TestBase
 
 
 class TestTeam(TestBase):
-    def test_base_compliance(self, teams):
-        for team in teams:
-            self.base_test(team)
+    def test_base_compliance(self, team):
+        self.base_test(team)
 
     @pytest.mark.vcr
-    def test_players(self, teams):
-        for team in teams:
-            assert isinstance(team.lineup, list)
-            for player in team.lineup:
-                assert isinstance(player, Player)
+    def test_players(self, team):
+        assert isinstance(team.lineup, list)
+        for player in team.lineup:
+            assert isinstance(player, Player)
 
-            assert isinstance(team.rotation, list)
-            for player in team.rotation:
-                assert isinstance(player, Player)
+        assert isinstance(team.rotation, list)
+        for player in team.rotation:
+            assert isinstance(player, Player)
 
-            assert isinstance(team.bullpen, list)
-            for player in team.bullpen:
-                assert isinstance(player, Player)
+        assert isinstance(team.bullpen, list)
+        for player in team.bullpen:
+            assert isinstance(player, Player)
 
-            assert isinstance(team.bench, list)
-            for player in team.bench:
-                assert isinstance(player, Player)
+        assert isinstance(team.bench, list)
+        for player in team.bench:
+            assert isinstance(player, Player)
 
     @pytest.mark.vcr
-    def test_modifications(self, teams):
-        for team in teams:
-            assert isinstance(team.perm_attr, list)
-            for mod in team.perm_attr:
-                assert isinstance(mod, Modification)
+    def test_modifications(self, team):
+        assert isinstance(team.perm_attr, list)
+        for mod in team.perm_attr:
+            assert isinstance(mod, Modification)
 
-            assert isinstance(team.seas_attr, list)
-            for mod in team.seas_attr:
-                assert isinstance(mod, Modification)
+        assert isinstance(team.seas_attr, list)
+        for mod in team.seas_attr:
+            assert isinstance(mod, Modification)
 
-            assert isinstance(team.week_attr, list)
-            for mod in team.week_attr:
-                assert isinstance(mod, Modification)
+        assert isinstance(team.week_attr, list)
+        for mod in team.week_attr:
+            assert isinstance(mod, Modification)
 
-            assert isinstance(team.game_attr, list)
-            for mod in team.game_attr:
-                assert isinstance(mod, Modification)
+        assert isinstance(team.game_attr, list)
+        for mod in team.game_attr:
+            assert isinstance(mod, Modification)
 
-    def test_tarot(self, teams):
-        for team in teams:
-            assert isinstance(team.card, (Tarot, type(None)))
+    def test_tarot(self, team):
+        assert isinstance(team.card, (Tarot, type(None)))
 
-    def test_misc(self, teams):
-        for team in teams:
-            assert isinstance(team.id, str)
-            assert isinstance(team.full_name, str)
-            assert isinstance(team.location, str)
-            assert isinstance(team.nickname, str)
-            assert isinstance(team.shorthand, str)
-            assert isinstance(team.slogan, str)
-            assert isinstance(team.emoji, str)
-            assert isinstance(team.main_color, str)
-            assert isinstance(team.secondary_color, str)
+    def test_misc(self, team):
+        assert isinstance(team.id, str)
+        assert isinstance(team.full_name, str)
+        assert isinstance(team.location, str)
+        assert isinstance(team.nickname, str)
+        assert isinstance(team.shorthand, str)
+        assert isinstance(team.slogan, str)
+        assert isinstance(team.emoji, str)
+        assert isinstance(team.main_color, str)
+        assert isinstance(team.secondary_color, str)
 
-            assert isinstance(team.shame_runs, (int, float))
-            assert isinstance(team.total_shames, int)
-            assert isinstance(team.total_shamings, int)
-            assert isinstance(team.season_shames, int)
-            assert isinstance(team.season_shamings, int)
+        assert isinstance(team.shame_runs, (int, float))
+        assert isinstance(team.total_shames, int)
+        assert isinstance(team.total_shamings, int)
+        assert isinstance(team.season_shames, int)
+        assert isinstance(team.season_shamings, int)
 
-    def test_added_fields(self, teams):
-        for team in teams:
-            if getattr(team, "team_spirit", None):
-                assert isinstance(team.team_spirit, int)
-            if getattr(team, "rotation_slot", None):
-                assert isinstance(team.rotation_slot, int)
-            if getattr(team, "tournament_wins", None):
-                assert isinstance(team.tournament_wins, int)
+    def test_added_fields(self, team):
+        if getattr(team, "team_spirit", None):
+            assert isinstance(team.team_spirit, int)
+        if getattr(team, "rotation_slot", None):
+            assert isinstance(team.rotation_slot, int)
+        if getattr(team, "tournament_wins", None):
+            assert isinstance(team.tournament_wins, int)
 
     @pytest.mark.vcr
     def test_load(self):

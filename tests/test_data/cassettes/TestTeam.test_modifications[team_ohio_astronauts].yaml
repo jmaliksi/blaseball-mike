@@ -1,0 +1,172 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=PARTY_TIME
+  response:
+    body:
+      string: '[{"id":"PARTY_TIME","color":"#ff66f9","textColor":"#ff66f9","background":"#fff947","title":"Party
+        Time","description":"This team is mathematically eliminated from the Postseason,
+        and will occasionally receive permanent stats boost in their games."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '249'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:21 GMT
+      Etag:
+      - W/"f9-+5d3oQdJOQNbjGwCSgWLcC9G2xk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AKwaqh_1VB6QQ29SvJ-d5XGE-BggJFsey.D0NfU4WR3j9SEwpUnRwiA%2FBJLYZH%2BbDrYSM0nLRXeLg;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=SHELLED
+  response:
+    body:
+      string: '[{"id":"SHELLED","color":"#fffd85","textColor":"#fffd85","background":"#404040","title":"Shelled","description":"A
+        Shelled player is trapped in a big Peanut is unable to bat or pitch."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:21 GMT
+      Etag:
+      - W/"ba-m8NNd/lspRyQ46hjxuWiX/0C2yo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AV50yrT30jPNZKKcOot3IVBxPdOGwNt1q.vxnaJbJBHBtu9ZzyEPGwjTsSs7uBMARst%2FhuKUpI8mA;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=HEATING_UP
+  response:
+    body:
+      string: '[{"id":"HEATING_UP","color":"#9e0022","textColor":"#9e0022","background":"#d15700","title":"Heating
+        Up...","description":"This batter needs one more consecutive hit to enter
+        Fire mode. This mod will disappear if the batter gets out."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '235'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:21 GMT
+      Etag:
+      - W/"eb-qJ63xl9g7mpCcokXLCgqhBslnhk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AzwhHrUPEwSZCTkgu7cEoQP7MJNW6GSmJ.MS4tRL6XzffCT5XeQyPPQGru4LePzi72tLfZo1O832A;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=GRAVITY
+  response:
+    body:
+      string: '[{"id":"GRAVITY","color":"#759bc9","textColor":"#759bc9","background":"#4c5052","title":"Gravity","description":"This
+        player cannot be affected by Reverb."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:21 GMT
+      Etag:
+      - W/"9d-++gmzOTapPgl2zRXoKNXQlYFBWQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AWJiZa6jiENtmh9tN8VKB5UchDg-alXM8.RO7AHG0jLmWs%2FHzDyYb%2FZ5saIYnSvUvfx6SrF8SLWoA;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

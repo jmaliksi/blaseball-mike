@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=34c99cbf-1d7d-4715-8957-8abcba3c5b89
+  response:
+    body:
+      string: '{"id":"34c99cbf-1d7d-4715-8957-8abcba3c5b89","gameIndex":3,"games":[["812e7d93-0721-4e57-850a-d432de114184","7f29c6e2-cc61-4837-b83f-20eb203e2c41","068fd2ba-a8d3-41e2-8248-85962a45b434","6aec9c92-3227-492d-8391-fdae0f141765","none","none","none","none"],["33e148ee-86be-44d4-8628-8ff6612a4934","c91ec8e5-6335-451c-a3a4-0b1748988df4","8f52e572-bcb3-4f3b-a7f7-df3f41ed8640","3bead95b-6ddb-49d4-9fc5-b3b0cbd6c69f"],["746bc66d-eb9c-427a-91a2-7f41ee8b4543","fca6f5d2-e645-4354-985e-3080983eecb4","14c384cb-e44c-4736-806f-c3f3178c2da0","477f451a-7bc0-4c4d-887d-a3e2d057569c"],["58a17204-5ccc-4bcf-b115-7c9897104c55","b7db28d7-4838-481c-a7d7-04272fbf3f80","c092fb3b-4888-4294-8381-f4c7b3765cb4","none"]],"matchups":["3d4b8a9f-1a89-4597-be23-af21d1364820","bb167354-f57f-4ff5-8309-63e6b918c131","b4f6d880-02f3-42ab-9ee5-54a103d94808","6d3dd7f6-5bd2-4642-a5e7-5c1796579c3f"],"name":"Round
+        1","roundNumber":0,"special":false,"winnerSeeds":[0,2,3,1],"winners":["b72f3061-f573-40d7-832a-5ad475bd7909","ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","a37f9158-7f82-46bc-908c-c9e2dda7c33b"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1107'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:00 GMT
+      Etag:
+      - W/"453-WV8phylRZVnR82nTx22q31ouaWQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AOSeZRl5pLN2ic5UVOFbdEFkFP9jVBxOa.Jy%2FSS0KkupP8IrJ8SQPcj1iIRE5ITQaPK3V2wtAc6b0;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

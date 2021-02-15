@@ -19,10 +19,11 @@ pytest -k "TestGame and payout"
 ```
 ---
 ### I'm getting 'vcr.errors.CannotOverwriteExistingCassetteException' errors...
-We use [vcrpy](https://vcrpy.readthedocs.io/en/latest/index.html) to record network calls
+We use [vcrpy](https://vcrpy.readthedocs.io/en/latest/index.html) and the
+[pytest-recording](https://github.com/kiwicom/pytest-recording) library to record network calls
 to speed up test runs. In order to make sure that the tests are deterministic, by default it
 will  not let you add, modify, or overwrite records. To generate new cassettes or update existing
-ones when tests change, use the `--record-mode` command line flag.
+ones when tests change, use the `--record-mode` command line flag when running tests.
 ```shell
 pytest --record-mode=rewrite
 ```

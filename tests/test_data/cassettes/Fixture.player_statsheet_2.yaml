@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playerSeasonStats?ids=c339dd13-e3fa-478f-871f-371fff8fbe8d
+  response:
+    body:
+      string: '[{"id":"c339dd13-e3fa-478f-871f-371fff8fbe8d","playerId":"de21c97e-f575-43b7-8be7-ecc5d8c4eaff","teamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","team":"Unlimited
+        Tacos","name":"Pitching Machine","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":32,"groundIntoDp":0,"hits":0,"hitsAllowed":63,"homeRuns":0,"losses":4,"outsRecorded":168,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":43,"struckouts":0,"triples":0,"walks":0,"walksIssued":3,"wins":2,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '515'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:15 GMT
+      Etag:
+      - W/"203-6bXnkvADlWj0edLztD+R0nXINkg"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ATGbrexI6bJhB20rT9yPwVjYxqNXkWnpK.8bU8NC1c6HVoLmGiOOLaZjheiocMiI2lD0ost1skPpw;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:15 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

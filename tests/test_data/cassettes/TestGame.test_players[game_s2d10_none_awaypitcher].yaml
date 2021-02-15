@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=89ec77d8-c186-4027-bd45-f407b4800c2c
+  response:
+    body:
+      string: '[{"id":"89ec77d8-c186-4027-bd45-f407b4800c2c","anticapitalism":0.7265073678975756,"baseThirst":1.0408946997105568,"buoyancy":1.105011747467393,"chasiness":0.8391015242881261,"coldness":1.0238535612162454,"continuation":0.6549305965470463,"divinity":0.6022290468903302,"groundFriction":0.6011394187029648,"indulgence":0.934812748766314,"laserlikeness":0.3592601437173563,"martyrdom":1.1207471840119156,"moxie":0.7289797742482456,"musclitude":1.0102564370882483,"name":"James
+        Mora","bat":"","omniscience":0.9332228947713155,"overpowerment":0.8280463455890331,"patheticism":0.01,"ruthlessness":0.5403698045992193,"shakespearianism":1.0367010951280908,"suppression":1.2430472772781929,"tenaciousness":0.686751974381347,"thwackability":1.1775459914749187,"tragicness":0.1,"unthwackability":0.7399049394298526,"watchfulness":1.3318068436931978,"pressurization":0.5408376821510407,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.40406239993994353,"fate":70,"armor":"","ritual":"Pre-visualizing","coffee":3,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5445461736091863,"pitchingRating":0.6564382682332552,"hittingRating":0.8671799396224653,"defenseRating":0.895997169753654,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1386'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:23:55 GMT
+      Etag:
+      - W/"56a-AW77LN4lwpFhN2fI1D7gBeE6Hu8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Af3pJehhaaBwlj3QPnjjSlvWBAzd799Bh.N3CzQvi49UHFu1M2Jo2KIHe1Q3qRD0vFQ3j7Hxcs%2Bo0;
+        Path=/; Expires=Mon, 22 Feb 2021 23:23:55 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

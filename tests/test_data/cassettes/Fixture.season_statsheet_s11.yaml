@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/seasonStatsheets?ids=fe1d4070-efbf-4c7e-973d-06e9226fd4de
+  response:
+    body:
+      string: '[{"id":"fe1d4070-efbf-4c7e-973d-06e9226fd4de","teamStats":["28c40d9c-78f1-4b40-8cea-df4d1e7f7531","73a675da-04ce-4c40-abb9-be8bbfe8af6a","091f8384-6c9c-4768-bd8d-d59c1e07b228","0d52374a-1883-4a43-89ea-ff3ea9a2fc07","776eb1c9-dd8e-42d1-81a2-c824bcd0a461","2ab800dd-5f80-40fd-be6d-e359ea49da20","a9923e1c-7aa7-42d2-bc5f-964d96af5e6d","f4a2722f-ddb4-4ba2-a2aa-47f0fbe4f801","21ab4547-2058-4be5-944a-36aa90881390","9bc8e5f3-4f76-42ae-b668-f27ac2cfa942","1148677b-1063-40be-a3c6-6dc7241a18d8","d8faa202-203f-45a2-9c07-a749f55baf4c","045354c7-c200-474a-b796-921a7d2d575a","94c1b7af-a2c9-4b23-bc51-81e9f564e508","cfbcf289-7c25-4e39-9c18-fb2da66f3b99","a9e22821-8fde-4308-9ec1-b8c9abb63814","4dac9723-937e-4235-a7eb-3a5b41722eb3","61589d68-f552-444b-a184-8f1fc4062dbe","f4b0375a-c63c-4ede-986c-bc5952c57590","3c77880e-62f7-4543-ba6b-aa44acbf1d0a"]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '841'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:11 GMT
+      Etag:
+      - W/"349-jytdeLWfOR6CheRQNfq/Gq3NhSc"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3APviCozgA9j7GwM0gZpdK-b4q6vLZFbT9.TPvkfluWi7RrNeFwz4aLnPNnNo7J%2FKnYRQiJLA%2FhTlU;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:11 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

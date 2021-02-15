@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/blood?ids=0
+  response:
+    body:
+      string: '["A"]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:24:42 GMT
+      Etag:
+      - W/"5-tqHZpoYWLvn001yqZdyEBEfC0Ww"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AtXeomUOSWlSg8YPRdPL9xK3Dkcn27cVN.zq3YryFPS1wah1iMj6UzMJiOPd1nNs3a4B2QlVgmRAs;
+        Path=/; Expires=Mon, 22 Feb 2021 23:24:42 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -10,21 +10,19 @@ from .helpers import TestBase
 
 
 class TestGameStatsheet(TestBase):
-    def test_base_compliance(self, game_statsheets):
-        for sheet in game_statsheets:
-            self.base_test(sheet)
+    def test_base_compliance(self, game_statsheet):
+        self.base_test(game_statsheet)
 
     @pytest.mark.vcr
-    def test_game_statsheet(self, game_statsheets):
-        for game_statsheet in game_statsheets:
-            assert isinstance(game_statsheet, GameStatsheet)
-            assert isinstance(game_statsheet.id, str)
-            assert isinstance(game_statsheet.home_team_runs_by_inning, list)
-            assert isinstance(game_statsheet.home_team_total_batters, int)
-            assert isinstance(game_statsheet.away_team_runs_by_inning, list)
-            assert isinstance(game_statsheet.away_team_total_batters, int)
-            assert isinstance(game_statsheet.away_team_stats, TeamStatsheet)
-            assert isinstance(game_statsheet.home_team_stats, TeamStatsheet)
+    def test_game_statsheet(self, game_statsheet):
+        assert isinstance(game_statsheet, GameStatsheet)
+        assert isinstance(game_statsheet.id, str)
+        assert isinstance(game_statsheet.home_team_runs_by_inning, list)
+        assert isinstance(game_statsheet.home_team_total_batters, int)
+        assert isinstance(game_statsheet.away_team_runs_by_inning, list)
+        assert isinstance(game_statsheet.away_team_total_batters, int)
+        assert isinstance(game_statsheet.away_team_stats, TeamStatsheet)
+        assert isinstance(game_statsheet.home_team_stats, TeamStatsheet)
 
     # TODO: Load more than one here
     @pytest.mark.vcr
@@ -78,18 +76,16 @@ class TestGameStatsheet(TestBase):
 
 
 class TestSeasonStatsheet(TestBase):
-    def test_base_compliance(self, season_statsheets):
-        for sheet in season_statsheets:
-            self.base_test(sheet)
+    def test_base_compliance(self, season_statsheet):
+        self.base_test(season_statsheet)
 
     @pytest.mark.vcr
-    def test_season_statsheet(self, season_statsheets):
-        for season_statsheet in season_statsheets:
-            assert isinstance(season_statsheet, SeasonStatsheet)
-            assert isinstance(season_statsheet.id, str)
-            assert isinstance(season_statsheet.team_stats, list)
-            for team_sheet in season_statsheet.team_stats:
-                assert isinstance(team_sheet, TeamStatsheet)
+    def test_season_statsheet(self, season_statsheet):
+        assert isinstance(season_statsheet, SeasonStatsheet)
+        assert isinstance(season_statsheet.id, str)
+        assert isinstance(season_statsheet.team_stats, list)
+        for team_sheet in season_statsheet.team_stats:
+            assert isinstance(team_sheet, TeamStatsheet)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -124,24 +120,22 @@ class TestSeasonStatsheet(TestBase):
 
 
 class TestTeamStatsheet(TestBase):
-    def test_base_compliance(self, team_statsheets):
-        for sheet in team_statsheets:
-            self.base_test(sheet)
+    def test_base_compliance(self, team_statsheet):
+        self.base_test(team_statsheet)
 
     @pytest.mark.vcr
-    def test_team_statsheet(self, team_statsheets):
-        for team_statsheet in team_statsheets:
-            assert isinstance(team_statsheet, TeamStatsheet)
-            assert isinstance(team_statsheet.id, str)
-            assert isinstance(team_statsheet.name, str)
-            assert isinstance(team_statsheet.team_id, (str, type(None)))
-            assert isinstance(team_statsheet.games_played, int)
-            assert isinstance(team_statsheet.wins, int)
-            assert isinstance(team_statsheet.losses, int)
+    def test_team_statsheet(self, team_statsheet):
+        assert isinstance(team_statsheet, TeamStatsheet)
+        assert isinstance(team_statsheet.id, str)
+        assert isinstance(team_statsheet.name, str)
+        assert isinstance(team_statsheet.team_id, (str, type(None)))
+        assert isinstance(team_statsheet.games_played, int)
+        assert isinstance(team_statsheet.wins, int)
+        assert isinstance(team_statsheet.losses, int)
 
-            assert isinstance(team_statsheet.player_stats, list)
-            for player_sheet in team_statsheet.player_stats:
-                assert isinstance(player_sheet, PlayerStatsheet)
+        assert isinstance(team_statsheet.player_stats, list)
+        for player_sheet in team_statsheet.player_stats:
+            assert isinstance(player_sheet, PlayerStatsheet)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -161,42 +155,40 @@ class TestTeamStatsheet(TestBase):
 
 
 class TestPlayerStatsheet(TestBase):
-    def test_base_compliance(self, player_statsheets):
-        for sheet in player_statsheets:
-            self.base_test(sheet)
+    def test_base_compliance(self, player_statsheet):
+        self.base_test(player_statsheet)
 
-    def test_player_statsheet(self, player_statsheets):
-        for player_statsheet in player_statsheets:
-            assert isinstance(player_statsheet, PlayerStatsheet)
-            assert isinstance(player_statsheet.id, str)
-            assert isinstance(player_statsheet.player_id, (str, type(None)))
-            assert isinstance(player_statsheet.name, str)
-            assert isinstance(player_statsheet.team_id, (str, type(None)))
-            assert isinstance(player_statsheet.team, str)
+    def test_player_statsheet(self, player_statsheet):
+        assert isinstance(player_statsheet, PlayerStatsheet)
+        assert isinstance(player_statsheet.id, str)
+        assert isinstance(player_statsheet.player_id, (str, type(None)))
+        assert isinstance(player_statsheet.name, str)
+        assert isinstance(player_statsheet.team_id, (str, type(None)))
+        assert isinstance(player_statsheet.team, str)
 
-            assert isinstance(player_statsheet.at_bats, int)
-            assert isinstance(player_statsheet.caught_stealing, int)
-            assert isinstance(player_statsheet.doubles, int)
-            assert isinstance(player_statsheet.earned_runs, (int, float))
-            assert isinstance(player_statsheet.ground_into_dp, int)
-            assert isinstance(player_statsheet.hits, int)
-            assert isinstance(player_statsheet.hits_allowed, int)
-            assert isinstance(player_statsheet.home_runs, int)
-            assert isinstance(player_statsheet.losses, int)
-            assert isinstance(player_statsheet.outs_recorded, int)
-            assert isinstance(player_statsheet.rbis, (int, float))
-            assert isinstance(player_statsheet.runs, (int, float))
-            assert isinstance(player_statsheet.stolen_bases, int)
-            assert isinstance(player_statsheet.strikeouts, int)
-            assert isinstance(player_statsheet.struckouts, int)
-            assert isinstance(player_statsheet.triples, int)
-            assert isinstance(player_statsheet.walks, int)
-            assert isinstance(player_statsheet.walks_issued, int)
-            assert isinstance(player_statsheet.wins, int)
-            assert isinstance(player_statsheet.hit_by_pitch, int)
-            assert isinstance(player_statsheet.hit_batters, int)
-            assert isinstance(player_statsheet.quadruples, int)
-            assert isinstance(player_statsheet.pitches_thrown, int)
+        assert isinstance(player_statsheet.at_bats, int)
+        assert isinstance(player_statsheet.caught_stealing, int)
+        assert isinstance(player_statsheet.doubles, int)
+        assert isinstance(player_statsheet.earned_runs, (int, float))
+        assert isinstance(player_statsheet.ground_into_dp, int)
+        assert isinstance(player_statsheet.hits, int)
+        assert isinstance(player_statsheet.hits_allowed, int)
+        assert isinstance(player_statsheet.home_runs, int)
+        assert isinstance(player_statsheet.losses, int)
+        assert isinstance(player_statsheet.outs_recorded, int)
+        assert isinstance(player_statsheet.rbis, (int, float))
+        assert isinstance(player_statsheet.runs, (int, float))
+        assert isinstance(player_statsheet.stolen_bases, int)
+        assert isinstance(player_statsheet.strikeouts, int)
+        assert isinstance(player_statsheet.struckouts, int)
+        assert isinstance(player_statsheet.triples, int)
+        assert isinstance(player_statsheet.walks, int)
+        assert isinstance(player_statsheet.walks_issued, int)
+        assert isinstance(player_statsheet.wins, int)
+        assert isinstance(player_statsheet.hit_by_pitch, int)
+        assert isinstance(player_statsheet.hit_batters, int)
+        assert isinstance(player_statsheet.quadruples, int)
+        assert isinstance(player_statsheet.pitches_thrown, int)
 
     @pytest.mark.vcr
     def test_load(self):

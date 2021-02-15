@@ -3,8 +3,8 @@ import json
 
 TEST_DATA_DIR = "tests/test_data"
 
-class TestBase:
 
+class TestBase:
     def base_test(self, base):
         self.json_test(base)
         self.json_feedback_test(base)
