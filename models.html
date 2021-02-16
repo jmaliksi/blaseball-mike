@@ -1501,6 +1501,16 @@ class Tribute(Base):
     def player_id(self):
         if getattr(self, &#34;timestamp&#34;, None):
             player = Player.load_one_at_time(self._player_id, self.timestamp)
+            if player is not None:
+                return player
+
+            # Due to early archiving issues we do not have accurate data for players incinerated before S2D38. If we
+            # cannot find a player at the timestamp passed by the user, instead return the closest data we have and
+            # update the player&#39;s timestamp accordingly.
+            players = chronicler.get_player_updates(self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
+            if len(players) == 0:
+                return None
+            player = Player(dict(players[0][&#34;data&#34;], timestamp=players[0][&#34;firstSeen&#34;]))
         else:
             player = Player.load_one(self._player_id)
         return player
@@ -6642,6 +6652,16 @@ def load(cls, id_):
     def player_id(self):
         if getattr(self, &#34;timestamp&#34;, None):
             player = Player.load_one_at_time(self._player_id, self.timestamp)
+            if player is not None:
+                return player
+
+            # Due to early archiving issues we do not have accurate data for players incinerated before S2D38. If we
+            # cannot find a player at the timestamp passed by the user, instead return the closest data we have and
+            # update the player&#39;s timestamp accordingly.
+            players = chronicler.get_player_updates(self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
+            if len(players) == 0:
+                return None
+            player = Player(dict(players[0][&#34;data&#34;], timestamp=players[0][&#34;firstSeen&#34;]))
         else:
             player = Player.load_one(self._player_id)
         return player
