@@ -3,8 +3,9 @@ Unit Tests for Playoff Models
 """
 
 import pytest
+import vcr
 from blaseball_mike.models import Playoff, PlayoffMatchup, PlayoffRound, Team, Game
-from .helpers import TestBase
+from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestPlayoffs(TestBase):
@@ -49,6 +50,17 @@ class TestPlayoffs(TestBase):
     def test_load_by_season_bad_season_high(self):
         with pytest.raises(ValueError):
             bad_season = Playoff.load_by_season(999)
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_s5.yaml')
+    def playoff_s5(self):
+        return Playoff.load_by_season(5)
+
+    @pytest.fixture(scope="module", params=['playoff_s5'])
+    def playoff(self, request):
+        """Parameterized fixture of various playoffs"""
+        return request.getfixturevalue(request.param)
+
 
 class TestPlayoffRounds(TestBase):
     def test_base_compliance(self, playoff_round):
@@ -107,6 +119,27 @@ class TestPlayoffRounds(TestBase):
         with pytest.raises(ValueError):
             bad_id = PlayoffRound.load("00000000-0000-0000-0000-000000000000")
 
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_1.yaml')
+    def playoff_round_1(self):
+        return PlayoffRound.load("6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_2.yaml')
+    def playoff_round_2(self):
+        return PlayoffRound.load("6e6206eb-1326-4c4e-a0cf-1d745aa611de")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_round_3.yaml')
+    def playoff_round_3(self):
+        return PlayoffRound.load("34c99cbf-1d7d-4715-8957-8abcba3c5b89")
+
+    @pytest.fixture(scope="module", params=['playoff_round_1', 'playoff_round_2', 'playoff_round_3'])
+    def playoff_round(self, request):
+        """Parameterized fixture of various playoff rounds"""
+        return request.getfixturevalue(request.param)
+
+
 
 class TestPlayoffMatchups(TestBase):
     def test_base_compliance(self, playoff_matchup):
@@ -152,3 +185,18 @@ class TestPlayoffMatchups(TestBase):
     def test_load_one_bad_id(self):
         bad_id = PlayoffMatchup.load_one("00000000-0000-0000-0000-000000000000")
         assert bad_id is None
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_matchup_1.yaml')
+    def playoff_matchup_1(self):
+        return PlayoffMatchup.load_one("bee2a1e6-50d6-4866-a7b4-f13705873052")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.playoff_matchup_2.yaml')
+    def playoff_matchup_2(self):
+        return PlayoffMatchup.load_one("937187dc-4d7d-45d3-95f6-dfb2ae2972a9")
+
+    @pytest.fixture(scope="module", params=['playoff_matchup_1', 'playoff_matchup_2'])
+    def playoff_matchup(self, request):
+        """Parameterized fixture of various playoff matchups"""
+        return request.getfixturevalue(request.param)

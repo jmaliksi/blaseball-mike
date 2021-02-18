@@ -3,10 +3,11 @@ Unit Tests for Misc Models
 """
 
 import pytest
+import vcr
 from blaseball_mike.models import SimulationData, League, Season, GlobalEvent, \
     SeasonStatsheet, Standings, Item, Modification
 from blaseball_mike.tables import Weather, Tarot
-from .helpers import TestBase, base_test
+from .helpers import TestBase, base_test, CASSETTE_DIR
 from datetime import datetime
 
 
@@ -50,6 +51,11 @@ class TestSimulationData(TestBase):
         for attr in simulation_data.attr:
             assert isinstance(attr, str)
 
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data.yaml')
+    def simulation_data(self):
+        return SimulationData.load()
+
 
 class TestGlobalEvents(TestBase):
     def test_base_compliance(self, global_event):
@@ -63,7 +69,21 @@ class TestGlobalEvents(TestBase):
             assert isinstance(ticker_event.msg, str)
             assert isinstance(ticker_event.expire, (datetime, type(None)))
 
-    # TODO: Load tests???
+    def test_load(self, global_event_current):
+        assert isinstance(global_event_current, list)
+        assert len(global_event_current) > 0
+        for event in global_event_current:
+            assert isinstance(event, GlobalEvent)
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.global_event_current.yaml')
+    def global_event_current(self):
+        return GlobalEvent.load()
+
+    @pytest.fixture(scope="module", params=['global_event_current'])
+    def global_event(self, request):
+        """Parameterized fixture of various global event tickers"""
+        return request.getfixturevalue(request.param)
 
 
 class TestSeason(TestBase):
@@ -100,6 +120,16 @@ class TestSeason(TestBase):
         with pytest.raises(ValueError):
             bad_season = Season.load(999)
 
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.season_5.yaml')
+    def season_5(self):
+        return Season.load(5)
+
+    @pytest.fixture(scope="module", params=['season_5'])
+    def season(self, request):
+        """Parameterized fixture of various seasons"""
+        return request.getfixturevalue(request.param)
+
 
 class TestStandings(TestBase):
     def test_base_compliance(self, standing):
@@ -125,6 +155,16 @@ class TestStandings(TestBase):
     def test_load_bad_id(self):
         with pytest.raises(ValueError):
             bad_id = Standings.load("00000000-0000-0000-0000-000000000000")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.standing_1.yaml')
+    def standing_1(self):
+        return Standings.load("dbcb0a13-2d59-4f13-8681-fd969aefdcc6")
+
+    @pytest.fixture(scope="module", params=['standing_1'])
+    def standing(self, request):
+        """Parameterized fixture of various standings"""
+        return request.getfixturevalue(request.param)
 
 
 @pytest.mark.vcr

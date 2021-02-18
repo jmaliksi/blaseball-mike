@@ -2,7 +2,7 @@ from blaseball_mike.models import Base
 import json
 
 TEST_DATA_DIR = "tests/test_data"
-
+CASSETTE_DIR = f'{TEST_DATA_DIR}/cassettes'
 
 class TestBase:
     def base_test(self, base):

@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=94baa9ac-ff96-4f56-a987-10358e917d91
+  response:
+    body:
+      string: '[{"id":"94baa9ac-ff96-4f56-a987-10358e917d91","anticapitalism":1.2355757479878369,"baseThirst":0.7993015965754517,"buoyancy":0.48988171922034746,"chasiness":1.1619076692694286,"coldness":0.6742244475935921,"continuation":1.1340981122166858,"divinity":1.1376387668465915,"groundFriction":1.2352687575823542,"indulgence":0.7930824925867156,"laserlikeness":0.9240368144144294,"martyrdom":1.4161927020390328,"moxie":0.888852079259128,"musclitude":1.0385028654227457,"name":"Gabriel
+        Griffith","bat":"","omniscience":1.3863540248474848,"overpowerment":0.5823392342581437,"patheticism":0.017319002028081946,"ruthlessness":1.2698471993172757,"shakespearianism":0.6267792108284096,"suppression":0.5971445864098474,"tenaciousness":0.5231485025776172,"thwackability":0.8508814782701133,"tragicness":0.1,"unthwackability":1.1509890688577238,"watchfulness":0.5559520510680547,"pressurization":0.3911165382493247,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6516797486088906,"fate":44,"armor":"","ritual":"Counting","coffee":3,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.9499237585176266,"pitchingRating":1.0285944202628479,"hittingRating":0.9877203417769146,"defenseRating":0.9168697826279435,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1406'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:08:10 GMT
+      Etag:
+      - W/"57e-WcQrMS4Z6VUrJaB9KRqom9xfbHY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AS4lcdEyTgg-6VzGcAkGRpiT4jC2yMMSk.qetn%2F6BF5%2Bg1FHf6VpFzkMek1iebY6EqYy9gwUrBtSo;
+        Path=/; Expires=Tue, 23 Feb 2021 20:08:10 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

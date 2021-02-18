@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=643280fc-b7c6-4b6d-a164-9b53e1a3e47a,00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[{"id":"643280fc-b7c6-4b6d-a164-9b53e1a3e47a","decreeId":"forecast_birds","decreeTitle":"
+        ","description":"EMERGENCY ALERT\nSEVERE MURMURATION WARNING IN THIS AREA","totalVotes":304585}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:26:59 GMT
+      Etag:
+      - W/"ba-OwEG5u7uomB/p+VxqB6WMZjEkPU"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AW4_JMEor3nqZx9qkbgHhXT7E3wFy7KhC.KknAxjA4fx5%2FuPYB2pomdoAPvbd%2BUoaHVtIQOgpC35c;
+        Path=/; Expires=Tue, 23 Feb 2021 17:26:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

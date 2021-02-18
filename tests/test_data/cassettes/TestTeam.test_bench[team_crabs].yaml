@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=7afedcd8-870d-4655-9659-3bdfb2e17730,4e63cb5d-4fce-441b-b9e4-dc6a467cf2fd,5915b7bb-e532-4036-9009-79f1e80c0e28,61bbbf34-98c1-4bf6-bd0c-56c19199b35e,ce7d33b7-1bba-48d6-a1d1-cd0e29231be8
+  response:
+    body:
+      string: '[{"id":"7afedcd8-870d-4655-9659-3bdfb2e17730","anticapitalism":0.6654184871703235,"baseThirst":0.5749528370573149,"buoyancy":0.7500288545284375,"chasiness":0.1095417069434046,"coldness":0.2972741155320473,"continuation":0.12340666104128162,"divinity":0.2926915933074141,"groundFriction":0.2111783726216887,"indulgence":0.4386493385884149,"laserlikeness":0.20012931527613298,"martyrdom":0.46956528346640414,"moxie":0.41714968558645116,"musclitude":0.40776279953696015,"name":"Pierre
+        Haley","bat":"","omniscience":0.7515628392287927,"overpowerment":0.9812056725808047,"patheticism":0.6435912280804161,"ruthlessness":0.19101626044045728,"shakespearianism":0.3840843587799214,"suppression":0.23470274908809596,"tenaciousness":0.7036710105088408,"thwackability":0.1667366483684385,"tragicness":0.1,"unthwackability":0.4613542744725687,"watchfulness":0.7743738528675119,"pressurization":0.17312259693364696,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.9728450586265991,"fate":98,"armor":"","ritual":"Jumping-jacks","coffee":9,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2706631481083823,"pitchingRating":0.30795056616790656,"hittingRating":0.28433524005389843,"defenseRating":0.6604341111444341,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"4e63cb5d-4fce-441b-b9e4-dc6a467cf2fd","anticapitalism":0.007780973052307072,"baseThirst":0.5867529195368897,"buoyancy":0.6851783620919014,"chasiness":0.9983638347680568,"coldness":0.8809536491688266,"continuation":0.8943866497011381,"divinity":0.812722286820512,"groundFriction":0.671232635146072,"indulgence":0.44945791185622275,"laserlikeness":0.30508523773577756,"martyrdom":0.18748256193017387,"moxie":0.5921913526202971,"musclitude":0.10406903792167643,"name":"Axel
+        Campbell","bat":"","omniscience":0.2709395898256297,"overpowerment":0.575028026154188,"patheticism":0.020718909755296666,"ruthlessness":0.8313974916917102,"shakespearianism":0.4655527480014858,"suppression":0.9542181911602481,"tenaciousness":0.6800979671835838,"thwackability":0.9173675014624443,"tragicness":0.1,"unthwackability":0.7577816557976058,"watchfulness":0.1543347596973803,"pressurization":0.37694664210498674,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.09067287750452824,"fate":71,"armor":"","ritual":"Bells","coffee":4,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.45937236253563307,"pitchingRating":0.6871785514056885,"hittingRating":0.7065627102127499,"defenseRating":0.3638877530878155,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"5915b7bb-e532-4036-9009-79f1e80c0e28","anticapitalism":0.23429380627167262,"baseThirst":0.6594647845808987,"buoyancy":0.5134270912002776,"chasiness":0.5997922922789032,"coldness":0.3003971683188662,"continuation":0.6606100200942644,"divinity":0.34339272286354494,"groundFriction":0.6005174508690545,"indulgence":0.20873284609412535,"laserlikeness":0.3105035297347112,"martyrdom":0.29460011008017806,"moxie":0.9552217430673406,"musclitude":0.07176407484539471,"name":"Rosa
+        Holloway","bat":"","omniscience":0.06880961215425829,"overpowerment":0.954575813084596,"patheticism":0.7301784660425332,"ruthlessness":0.22338658645141019,"shakespearianism":0.7817486565936069,"suppression":0.6870376972554184,"tenaciousness":0.09224978051479549,"thwackability":0.32154463193064275,"tragicness":0.1,"unthwackability":0.9603502238618171,"watchfulness":0.787790395167671,"pressurization":0.39402363015639374,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.2901914521109472,"fate":97,"armor":"","ritual":"Volunteering","coffee":6,"blood":3,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.4166377239630671,"pitchingRating":0.5058926058815232,"hittingRating":0.3453369771244907,"defenseRating":0.2917024839346983,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"61bbbf34-98c1-4bf6-bd0c-56c19199b35e","anticapitalism":0.6133750367074158,"baseThirst":0.7987815597619394,"buoyancy":0.041450526393126186,"chasiness":0.9831283802468198,"coldness":0.618600719283787,"continuation":0.037341110794408605,"divinity":0.3426448157207167,"groundFriction":0.14621093364242577,"indulgence":0.7755756277714607,"laserlikeness":0.860183966733685,"martyrdom":0.7656748346054454,"moxie":0.6331533925057771,"musclitude":0.6023604197361379,"name":"Squid
+        Galvanic","bat":"","omniscience":0.26763306546909216,"overpowerment":0.7150320411770739,"patheticism":0.6524888773169335,"ruthlessness":0.17306220769580993,"shakespearianism":0.6869691776419906,"suppression":0.7752795376896089,"tenaciousness":0.8699224844992746,"thwackability":0.9978771405404441,"tragicness":0.1,"unthwackability":0.6617678109544682,"watchfulness":0.9955846541239111,"pressurization":0.9587714168488901,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.24122967716081067,"fate":39,"armor":"","ritual":"Counting","coffee":6,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5250704749698167,"pitchingRating":0.3649736631201925,"hittingRating":0.6022080881406044,"defenseRating":0.7099790230562745,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"ce7d33b7-1bba-48d6-a1d1-cd0e29231be8","anticapitalism":0.40673805547753217,"baseThirst":0.651882488524907,"buoyancy":0.8642427625815408,"chasiness":0.14230555432375214,"coldness":0.923811373688106,"continuation":0.7456690222560041,"divinity":0.8518484677359479,"groundFriction":0.7596667074116559,"indulgence":0.3834321641862488,"laserlikeness":0.36133636877355957,"martyrdom":0.778574717981344,"moxie":0.42033647388022,"musclitude":0.8082924482397287,"name":"Jacoby
+        Podcast","bat":"","omniscience":0.5604906067738886,"overpowerment":0.5426766764585444,"patheticism":0.8255706763128394,"ruthlessness":0.974474146913376,"shakespearianism":0.8328173072356824,"suppression":0.09717967489129409,"tenaciousness":0.7408450598074015,"thwackability":0.4316558245323716,"tragicness":0.1,"unthwackability":0.5558250265197402,"watchfulness":0.8071216327586428,"pressurization":0.500281429099293,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.10288903031857877,"fate":26,"armor":"","ritual":"Playing
+        pranks","coffee":8,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.49437732465909423,"pitchingRating":0.6597097575656738,"hittingRating":0.5918502139207767,"defenseRating":0.617456988291231,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6868'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:14 GMT
+      Etag:
+      - W/"1ad4-pVG2Ge/1Q8H+Bb1VI8g86Nw4jrs"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AkZu02pViBncnDZYjMnJtTq3JfHM-5KmL.u57RdA%2FzR6fKMEIxi1K28YSQ5dbrJQp%2FuGRb4h%2BSc%2Fc;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:14 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=PARTY_TIME
+  response:
+    body:
+      string: '[{"id":"PARTY_TIME","color":"#ff66f9","textColor":"#ff66f9","background":"#fff947","title":"Party
+        Time","description":"This team is mathematically eliminated from the Postseason,
+        and will occasionally receive permanent stats boost in their games."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '249'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:21 GMT
+      Etag:
+      - W/"f9-+5d3oQdJOQNbjGwCSgWLcC9G2xk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AYauf0-lkEMQs8RfNGryXDIm07KVnARNl.rT8eoxcfSvJqCh3PrwGfRN1zMwdxvqJ12DDu0STRpoY;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

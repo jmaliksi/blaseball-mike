@@ -1,0 +1,517 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=d4cc18de-a136-4271-84f1-32516be91a80
+  response:
+    body:
+      string: '{"id":"d4cc18de-a136-4271-84f1-32516be91a80","teams":["c73b705c-40ad-4633-a6ed-d357ee2e2bcf","a37f9158-7f82-46bc-908c-c9e2dda7c33b","ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","747b8e4a-7e50-4638-a973-ea7950a3e739","57ec08cc-0411-4643-b304-0e80dbc15ac7"],"name":"Wild
+        High"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 00:59:59 GMT
+      Etag:
+      - W/"10d-BjOr82xcvgQsDVbbl08ML95X73s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ArJF9zFVez65vvpkehUH16E6sy5-HsPMc.Xr96HgRNXQ4zhusEbjKJ%2BlN15ELu%2FTVWsNFmO4MUJRU;
+        Path=/; Expires=Tue, 23 Feb 2021 00:59:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/division?id=98c92da4-0ea7-43be-bd75-c6150e184326
+  response:
+    body:
+      string: '{"id":"98c92da4-0ea7-43be-bd75-c6150e184326","teams":["878c1bf6-0d21-4659-bfee-916c8314d69c","b63be8c2-576a-4d6e-8daf-814f8bcea96f","3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","f02aeae2-5e6a-4098-9842-02d2273f25c7","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"name":"Wild
+        Low"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '268'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 00:59:59 GMT
+      Etag:
+      - W/"10c-7oSwUhPs5NqtCmrc4k4s8pBb+zM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AWVo6snjSrCLBjkXstIIUlDO24l9lGIA5.hEnqJLH7bLUa%2Fic6KKMP0dlcg8diw5k6UiHTQxl%2FHr8;
+        Path=/; Expires=Tue, 23 Feb 2021 00:59:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=c73b705c-40ad-4633-a6ed-d357ee2e2bcf
+  response:
+    body:
+      string: "{\"id\":\"c73b705c-40ad-4633-a6ed-d357ee2e2bcf\",\"lineup\":[\"da67c196-4cac-428b-8c18-2a411055ea35\",\"b60605e6-ff41-4388-a61a-fafd2175f7ad\",\"e2f39815-5291-4dcf-ba19-97dcf0c015e9\",\"d86f836e-4edf-4dbd-9743-14f30461ee14\",\"6a567da6-7c96-44d3-85de-e5a08a919250\",\"89c8f6bf-94a2-4e56-8412-bdb0182509a9\",\"19241aa4-38e3-45ed-9750-68f4401f80e1\",\"9f218ed1-d793-437d-a1b9-79f88f69154d\",\"adcbc290-81c5-4da9-b4da-2e594b080710\",\"5ca7e854-dc00-4955-9235-d7fcd732ddcf\"],\"rotation\":[\"62ae6aa9-e346-4faa-b07c-1f7623580015\",\"c549f280-82ba-4d8e-a4ce-c49e56461fb6\",\"fa40d6ea-e24b-4422-9df1-0643ab202c5f\",\"9c23702b-f0c2-4668-8bcc-61bbdbbfd93e\",\"cfb42325-592a-4119-9b40-4cdc19959b09\"],\"bullpen\":[\"7088350c-905b-4ac0-a982-64191ecaecaa\",\"831b1121-ca14-4dbb-afee-56660bb11f0c\",\"8f357c9c-521a-4062-a771-2e547746a164\",\"f90c398b-eef0-40cb-8b07-302a759e8bd1\",\"6833ca7d-910e-48f5-b25d-2886cdb08d0e\",\"15840c01-d8ea-4823-a802-9b635c51efa2\",\"f106291a-5935-449e-b075-75e62d1d1b07\",\"51c70634-c50a-47a9-bc11-60fa72329875\"],\"bench\":[\"3188d641-4fcc-4d5e-887d-5f454b4c4ff8\",\"2d07ccd0-cac7-4ccd-bab6-a078bb983174\",\"6f39a2f9-76d7-44fd-8a6d-00f87d7bb004\"],\"seasAttr\":[],\"permAttr\":[],\"fullName\":\"Tokyo
+        Lift\",\"location\":\"Tokyo\",\"mainColor\":\"#e830ab\",\"nickname\":\"Lift\",\"secondaryColor\":\"#e830ab\",\"shorthand\":\"TKL\",\"emoji\":\"\U0001F3CB\uFE0F\u200D\u2640\uFE0F\",\"slogan\":\"We've
+        got swole\",\"shameRuns\":0,\"totalShames\":4,\"totalShamings\":1,\"seasonShames\":0,\"seasonShamings\":0,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":0,\"teamSpirit\":0,\"card\":10,\"tournamentWins\":0}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1506'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"5e2-H0pz1av5kSLLkr8sLo9IaD7X3yg"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ADguoZAaMRieybJfJKFkvyMUmV1ogiskv.64EjKBxH8m%2FW%2FOQfm%2BPtl5zH1f%2F%2BSa%2BAozIgy1OEc2U;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=a37f9158-7f82-46bc-908c-c9e2dda7c33b
+  response:
+    body:
+      string: "{\"id\":\"a37f9158-7f82-46bc-908c-c9e2dda7c33b\",\"lineup\":[\"0f61d948-4f0c-4550-8410-ae1c7f9f5613\",\"5dbf11c0-994a-4482-bd1e-99379148ee45\",\"ef9f8b95-9e73-49cd-be54-60f84858a285\",\"18f45a1b-76eb-4b59-a275-c64cf62afce0\",\"2f3d7bc7-6ffb-40c3-a94f-5e626be413c9\",\"678170e4-0688-436d-a02d-c0467f9af8c0\",\"4f328502-d347-4d2c-8fad-6ae59431d781\",\"9c3273a0-2711-4958-b716-bfcf60857013\",\"817dee99-9ccf-4f41-84e3-dc9773237bc8\"],\"rotation\":[\"0295c6c2-b33c-47dd-affa-349da7fa1760\",\"b348c037-eefc-4b81-8edd-dfa96188a97e\",\"bf122660-df52-4fc4-9e70-ee185423ff93\",\"f4a5d734-0ade-4410-abb6-c0cd5a7a1c26\",\"f3c07eaf-3d6c-4cc3-9e54-cbecc9c08286\",\"ea44bd36-65b4-4f3b-ac71-78d87a540b48\"],\"bullpen\":[\"e376a90b-7ffe-47a2-a934-f36d6806f17d\",\"f6342729-a38a-4204-af8d-64b7accb5620\",\"b9293beb-d199-4b46-add9-c02f9362d802\",\"dac2fd55-5686-465f-a1b6-6fbed0b417c5\",\"5fbf04bb-f5ec-4589-ab19-1d89cda056bd\",\"ecf19925-dc57-4b89-b114-923d5a714dbe\",\"52cfebfb-8008-4b9f-a566-72a30e0b64bf\",\"b5c95dba-2624-41b0-aacd-ac3e1e1fe828\"],\"bench\":[\"16a59f5f-ef0f-4ada-8682-891ad571a0b6\",\"3de17e21-17db-4a6b-b7ab-0b2f3c154f42\",\"f10ba06e-d509-414b-90cd-4d70d43c75f9\"],\"seasAttr\":[],\"permAttr\":[],\"fullName\":\"Breckenridge
+        Jazz Hands\",\"location\":\"Breckenridge\",\"mainColor\":\"#6388ad\",\"nickname\":\"Jazz
+        Hands\",\"secondaryColor\":\"#7ba9d7\",\"shorthand\":\"BJAZ\",\"emoji\":\"0x1F450\",\"slogan\":\"We\u2019ve
+        Got Winning to Do. Just for You.\",\"shameRuns\":0,\"totalShames\":53,\"totalShamings\":40,\"seasonShames\":0,\"seasonShamings\":0,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":0,\"teamSpirit\":0,\"card\":15,\"tournamentWins\":0}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1551'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"60f-5dPM03SQ/pGHVoG3ZcKi8+t+zDk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ac11MzHJkYl-crRU-PMiJixb4-sj4wwYJ.1DBRn6tuvxKu%2F8Jxwi3OYtggzNTseglHJJ3Clx%2F0ueI;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=ca3f1c8c-c025-4d8e-8eef-5be6accbeb16
+  response:
+    body:
+      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","69196296-f652-42ff-b2ca-0d9b50bd9b7b","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","667cb445-c288-4e62-b603-27291c1e475d"],"rotation":["e4e4c17d-8128-4704-9e04-f244d4573c4d","1513aab6-142c-48c6-b43e-fbda65fd64e8","4bf352d2-6a57-420a-9d45-b23b2b947375","316abea7-9890-4fb8-aaea-86b35e24d9be","d23a1f7e-0071-444e-8361-6ae01f13036f"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","28162da7-eafa-4eb1-8bc1-5a625f03ae57"],"seasAttr":[],"permAttr":[],"fullName":"Chicago
+        Firefighters","location":"Chicago","mainColor":"#8c2a3e","nickname":"Firefighters","secondaryColor":"#d13757","shorthand":"CHIF","emoji":"0x1F525","slogan":"We
+        Are From Chicago","shameRuns":0,"totalShames":45,"totalShamings":42,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":13,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1602'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"642-jKlEKFCtjTBIaCyJ6ApsEJ4R4y0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AP4x2fJXGNKlc8Hsy2d8g4qCrZQc6gq_c.S6jQnKlC82%2FvYT15aiH4h%2BqvO7tVjkQdGixjNuvEaq8;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=747b8e4a-7e50-4638-a973-ea7950a3e739
+  response:
+    body:
+      string: '{"id":"747b8e4a-7e50-4638-a973-ea7950a3e739","lineup":["d4a10c2a-0c28-466a-9213-38ba3339b65e","c0177f76-67fc-4316-b650-894159dede45","efafe75e-2f00-4418-914c-9b6675d39264","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e","c18961e9-ef3f-4954-bd6b-9fe01c615186","32c9bce6-6e52-40fa-9f64-3629b3d026a8","2e86de11-a2dd-4b28-b5fe-f4d0c38cd20b","7932c7c7-babb-4245-b9f5-cdadb97c99fb"],"rotation":["1db2f602-64b1-4a5c-8697-1932cc2c6df1","2720559e-9173-4042-aaa0-d3852b72ab2e","7aeb8e0b-f6fb-4a9e-bba2-335dada5f0a3","b3e512df-c411-4100-9544-0ceadddb28cf"],"bullpen":["5fc4713c-45e1-4593-a968-7defeb00a0d4","77a41c29-8abd-4456-b6e0-a034252700d2","a73427b3-e96a-4156-a9ab-844edc696fed","04f955fe-9cc9-4482-a4d2-07fe033b59ee","6e744b21-c4fa-4fa8-b4ea-e0e97f68ded5","37efef78-2df4-4c76-800c-43d4faf07737","58fca5fa-e559-4f5e-ac87-dc99dd19e410","2727215d-3714-438d-b1ba-2ed15ec481c0"],"bench":["9abe02fb-2b5a-432f-b0af-176be6bd62cf","7cf83bdc-f95f-49d3-b716-06f2cf60a78d","695daf02-113d-4e76-b802-0862df16afbd","db3ff6f0-1045-4223-b3a8-a016ca987af9","6f71667b-59f2-46df-adac-a8885a4f6ac5","df34d168-4d6a-403c-aca5-2b1ebe90444d"],"seasAttr":[],"permAttr":["FIREPROOF","SEALANT"],"fullName":"Hades
+        Tigers","location":"Hades","mainColor":"#5c1c1c","nickname":"Tigers","secondaryColor":"#e83622","shorthand":"HAT","emoji":"0x1F405","slogan":"Never
+        Look Back.","shameRuns":-9,"totalShames":40,"totalShamings":58,"seasonShames":0,"seasonShamings":0,"championships":2,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":14,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1526'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"5f6-Hq/1UzSIqAsFdBd7nf0qPMIxLL8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AqpdKaHXTHNSMW-WKyfJYbBJyPOyW4x0w.c0fOBKtCleRM3mWlbJca4ljEBQR1IUKQhigHFL%2B2QkA;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=57ec08cc-0411-4643-b304-0e80dbc15ac7
+  response:
+    body:
+      string: '{"id":"57ec08cc-0411-4643-b304-0e80dbc15ac7","lineup":["80e474a3-7d2b-431d-8192-2f1e27162607","4542f0b0-3409-4a4a-a9e1-e8e8e5d73fcf","2b9f9c25-43ec-4f0b-9937-a5aa23be0d9e","f4ca437c-c31c-4508-afe7-6dae4330d717","ce0e57a7-89f5-41ea-80f9-6e649dd54089","d6c69d2d-9344-4b19-85a4-6cfcbaead5d2","e4f1f358-ee1f-4466-863e-f329766279d0","bd8778e5-02e8-4d1f-9c31-7b63942cc570","4204c2d1-ca48-4af7-b827-e99907f12d61","8d337b47-2a7d-418d-a44e-ef81e401c2ef"],"rotation":["65273615-22d5-4df1-9a73-707b23e828d5","16aff709-e855-47c8-8818-b9ba66e90fe8","7007cbd3-7c7b-44fd-9d6b-393e82b1c06e","ad1e670a-f346-4bf7-a02f-a91649c41ccb","089af518-e27c-4256-adc8-62e3f4b30f43"],"bullpen":["aa7ac9cb-e9db-4313-9941-9f3431728dce","1750de38-8f5f-426a-9e23-2899a15a2031","e919dfae-91c3-475c-b5d5-8b0c14940c41","ceac785e-55fd-4a4e-9bc8-17a662a58a38","ca709205-226d-4d92-8be6-5f7871f48e26","6bd4cf6e-fefe-499a-aa7a-890bcc7b53fa","094ad9a1-e2c7-49a0-af18-da0e3eb656ba","19af0d67-c73b-4ef2-bc84-e923c1336db5"],"bench":["23110c0f-2cf9-4d9c-ab2d-634f2f18867e","7951836f-581a-49d5-ae2f-049c6bcc575e"],"seasAttr":[],"permAttr":[],"fullName":"Mexico
+        City Wild Wings","location":"Mexico City","mainColor":"#d15700","nickname":"Wild
+        Wings","secondaryColor":"#ee6300","shorthand":"MCWW","emoji":"0x1F357","slogan":"Wings.
+        Beer. Blaseball.","shameRuns":0,"totalShames":54,"totalShamings":34,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":18,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1493'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"5d5-dwlVszttEb2aUBNEp+w2bcmbbMU"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A2x7BxBOdoQW_hDXH9rXNXL_yEQDw1PHD.UBf1ZJiYCL13nnybgicF94SSCUcJQpxFoK1dCrUzsxs;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=878c1bf6-0d21-4659-bfee-916c8314d69c
+  response:
+    body:
+      string: "{\"id\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"lineup\":[\"03b80a57-77ea-4913-9be4-7a85c3594745\",\"63df8701-1871-4987-87d7-b55d4f1df2e9\",\"c675fcdf-6117-49a6-ac32-99a89a3a88aa\",\"bf6a24d1-4e89-4790-a4ba-eeb2870cbf6f\",\"27c68d7f-5e40-4afa-8b6f-9df47b79e7dd\",\"c755efce-d04d-4e00-b5c1-d801070d3808\",\"2e13249e-38ff-46a2-a55e-d15fa692468a\"],\"rotation\":[\"0bb35615-63f2-4492-80ec-b6b322dc5450\",\"9820f2c5-f9da-4a07-b610-c2dd7bee2ef6\"],\"bullpen\":[\"0ecf6190-f869-421a-b339-29195d30d37c\",\"d81ce662-07b6-4a73-baa4-acbbb41f9dc5\",\"10ea5d50-ec88-40a0-ab53-c6e11cc1e479\",\"d8758c1b-afbb-43a5-b00b-6004d419e2c5\",\"9786b2c9-1205-4718-b0f7-fc000ce91106\",\"dfe3bc1b-fca8-47eb-965f-6cf947c35447\",\"3db02423-92af-485f-b30f-78256721dcc6\",\"6192daab-3318-44b5-953f-14d68cdb2722\"],\"bench\":[\"0d5300f6-0966-430f-903f-a4c2338abf00\",\"5149c919-48fe-45c6-b7ee-bb8e5828a095\",\"63a31035-2e6d-4922-a3f9-fa6e659b54ad\",\"937c1a37-4b05-4dc5-a86d-d75226f8490a\",\"cc725a58-38cc-42af-9ff8-ace76541ac26\",\"0cb44026-ebf0-4870-b98e-e620b0814808\"],\"seasAttr\":[],\"permAttr\":[],\"fullName\":\"Unlimited
+        Tacos\",\"location\":\"Unlimited\",\"mainColor\":\"#64376e\",\"nickname\":\"Tacos\",\"secondaryColor\":\"#b063c1\",\"shorthand\":\"LATA\",\"emoji\":\"0x1F32E\",\"slogan\":\"72\xB0
+        and Infinite\",\"shameRuns\":0,\"totalShames\":73,\"totalShamings\":20,\"seasonShames\":0,\"seasonShamings\":0,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":0,\"teamSpirit\":0,\"card\":6,\"tournamentWins\":0}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1394'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"572-g9PeuoJ6QNvR/9Mt9sjrNgkckEI"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ACbsOJNs83QyPcq6zg9x1pWM1RgeFR6wb.TuVKEkmUZmqYKa6As5JR4yWlP8K9LJEQ2DAZNjzFkdQ;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=b63be8c2-576a-4d6e-8daf-814f8bcea96f
+  response:
+    body:
+      string: "{\"id\":\"b63be8c2-576a-4d6e-8daf-814f8bcea96f\",\"lineup\":[\"0cc5bd39-e90d-42f9-9dd8-7e703f316436\",\"2e6d4fa9-f930-47bd-971a-dd54a3cf7db1\",\"0eddd056-9d72-4804-bd60-53144b785d5c\",\"c0998a08-de15-4187-b903-2e096ffa08e5\",\"5a26fc61-d75d-4c01-9ce2-1880ffb5550f\",\"7a75d626-d4fd-474f-a862-473138d8c376\",\"8cf78b49-d0ca-4703-88e8-4bcad26c44b1\",\"c22e3af5-9001-465f-b450-864d7db2b4a0\",\"12577256-bc4e-4955-81d6-b422d895fb12\",\"8903a74f-f322-41d2-bd75-dbf7563c4abb\"],\"rotation\":[\"a38ada0a-aeac-4a3d-b9a5-968687ccd2f9\",\"af6b3edc-ed52-4edc-b0c9-14e0a5ae0ee3\",\"20be1c34-071d-40c6-8824-dde2af184b4d\",\"21d52455-6c2c-4ee4-8673-ab46b4b926b4\"],\"bullpen\":[\"b019fb2b-9f4b-4deb-bf78-6bee2f16d98d\",\"c4418663-7aa4-4c9f-ae73-0e81e442e8a2\",\"4aa843a4-baa1-4f35-8748-63aa82bd0e03\",\"97ec5a2f-ac1a-4cde-86b7-897c030a1fa8\",\"d5192d95-a547-498a-b4ea-6770dde4b9f5\",\"b7adbbcc-0679-43f3-a939-07f009a393db\",\"7fed72df-87de-407d-8253-2295a2b60d3b\",\"889c9ef9-d521-4436-b41c-9021b81b4dfb\"],\"bench\":[\"66cebbbf-9933-4329-924a-72bd3718f321\",\"1aec2c01-b766-4018-a271-419e5371bc8f\",\"0daf04fc-8d0d-4513-8e98-4f610616453b\"],\"seasAttr\":[],\"permAttr\":[\"LIFE_OF_PARTY\",\"ELECTRIC\"],\"fullName\":\"Miami
+        Dale\",\"location\":\"Miami\",\"mainColor\":\"#9141ba\",\"nickname\":\"Dale\",\"secondaryColor\":\"#cd76fa\",\"shorthand\":\"MIA\",\"emoji\":\"0x1F6A4\",\"slogan\":\"\xA1Dale!\",\"shameRuns\":0,\"totalShames\":53,\"totalShamings\":27,\"seasonShames\":0,\"seasonShamings\":0,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":0,\"teamSpirit\":0,\"card\":16,\"tournamentWins\":0}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1478'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:00 GMT
+      Etag:
+      - W/"5c6-Q8/OzI85A1SJ3luwBcEGR3dudkY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A-8nRERPuUi2U3Ftr9R1Jai8iigvX_U2y.NiyI5phono2IcN5d%2Fn6GEdF3fcjDMitNxedASiE34gQ;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e
+  response:
+    body:
+      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["28964497-0efe-420c-9c1d-8574f224a4e9","718dea1a-d9a8-4c2b-933a-f0667b5250e6","855775c1-266f-40f6-b07b-3a67ccdf8551","defbc540-a36d-460b-afd8-07da2375ee63","51c5473a-7545-4a9a-920d-d9b718d0e8d1","f2468055-e880-40bf-8ac6-a0763d846eb2","d51f1fe8-4ab8-411e-b836-5bba92984d32","8cd06abf-be10-4a35-a3ab-1a408a329147","75f9d874-5e69-438d-900d-a3fcb1d429b3","04931546-1b4a-469f-b391-7ed67afe824c","be18d363-752d-4e4a-b06b-1a7e4641400b"],"rotation":["ff5a37d9-a6dd-49aa-b6fb-b935fd670820","3e008f60-6842-42e7-b125-b88c7e5c1a95","dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","24f6829e-7bb4-4e1e-8b59-a07514657e72","a647388d-fc59-4c1b-90d3-8c1826e07775"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f"],"bench":["d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","8acc97fa-4bf1-49f6-bb93-fb52513a015b"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
+        Flowers","location":"Boston","mainColor":"#f7d1ff","nickname":"Flowers","secondaryColor":"#f7d1ff","shorthand":"BOF","emoji":"0x1F339","slogan":"Bloom
+        Goes The Dynamite!","shameRuns":0,"totalShames":40,"totalShamings":42,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":2,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1640'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:01 GMT
+      Etag:
+      - W/"668-pgL7UZvfa4PT7VJuSPa/0Prinx0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AcXzMahY-IDCiCdHzstnBkyTMRrc-hjTT.3xeMUOt3TdlDaJLVe1qx4UBOXJJ82TmQVyGJJQ0kd1g;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:01 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=f02aeae2-5e6a-4098-9842-02d2273f25c7
+  response:
+    body:
+      string: '{"id":"f02aeae2-5e6a-4098-9842-02d2273f25c7","lineup":["f0bcf4bb-74b3-412e-a54c-04c12ad28ecb","cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","2b5f5dd7-e31f-4829-bec5-546652103bc0","5eac7fd9-0d19-4bf4-a013-994acc0c40c0","126fb128-7c53-45b5-ac2b-5dbf9943d71b","4f69e8c2-b2a1-4e98-996a-ccf35ac844c5","190a0f31-d686-4ac4-a7f3-cfc87b72c145","89f74891-2e25-4b5a-bd99-c95ba3f36aa0"],"rotation":["5703141c-25d9-46d0-b680-0cf9cfbf4777","3d3be7b8-1cbf-450d-8503-fce0daf46cbf","df4da81a-917b-434f-b309-f00423ee4967","20fd71e7-4fa0-4132-9f47-06a314ed539a","333067fd-c2b4-4045-a9a4-e87a8d0332d0"],"bullpen":["3dd85c20-a251-4903-8a3b-1b96941c07b7","206bd649-4f5f-4707-ad85-92784be4eb95","f883269f-117e-45ec-bb1e-fa8dbcf40d3e","088884af-f38d-4914-9d67-b319287481b4","6644d767-ab15-4528-a4ce-ae1f8aadb65f","14bfad43-2638-41ec-8964-8351f22e9c4f","459f7700-521e-40da-9483-4d111119d659","b69aa26f-71f7-4e17-bc36-49c875872cc1"],"bench":["1f145436-b25d-49b9-a1e3-2d3c91626211","4562ac1f-026c-472c-b4e9-ee6ff800d701","e3c06405-0564-47ce-bbbd-552bee4dd66f","8b0d717f-ae42-4492-b2ed-106912e2b530","5a6b0c6d-1cc8-4acb-991c-0ffe62f3d990","5f5b3b18-ebc5-4611-b8bf-61b8c6a3ba12","24ca976f-ddf2-4966-ba14-4fd2b9b20341"],"seasAttr":[],"permAttr":["BASE_INSTINCTS"],"fullName":"Hellmouth
+        Sunbeams","location":"Hellmouth","mainColor":"#fffbab","nickname":"Sunbeams","secondaryColor":"#fffbab","shorthand":"SUN","emoji":"0x1F31E","slogan":"Stare
+        into the Sun...","shameRuns":0,"totalShames":53,"totalShamings":41,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":11,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1615'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:01 GMT
+      Etag:
+      - W/"64f-nYurZGMctopAuNZdL2ZnnWcfu5M"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AFMbI3U7Yd3f7qeWJT94oUNWmuWZeBh6m.w3W212neo1Okk5ET1y3hURMSkbrPkF4Mv5%2FsMi%2BxMp4;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:01 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=9debc64f-74b7-4ae1-a4d6-fce0144b6ea5
+  response:
+    body:
+      string: '{"id":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","lineup":["d2d76815-cbdc-4c4b-9c9e-32ebf2297cc7","d8ee256f-e3d0-46cb-8c77-b1f88d8c9df9","8ecea7e0-b1fb-4b74-8c8c-3271cb54f659","f56657d3-3bdc-4840-a20c-91aca9cc360e","285ce77d-e5cd-4daa-9784-801347140d48","32551e28-3a40-47ae-aed1-ff5bc66be879","06ced607-7f96-41e7-a8cd-b501d11d1a7e","503a235f-9fa6-41b5-8514-9475c944273f","3a8c52d7-4124-4a65-a20d-d51abcbe6540"],"rotation":["e111a46d-5ada-4311-ac4f-175cca3357da","b7267aba-6114-4d53-a519-bf6c99f4e3a9","446a3366-3fe3-41bb-bfdd-d8717f2152a9","7158d158-e7bf-4e9b-9259-62e5b25e3de8","30218684-7fa1-41a5-a3b3-5d9cd97dd36b"],"bullpen":["ceb8f8cd-80b2-47f0-b43e-4d885fa48aa4","a8530be5-8923-4f74-9675-bf8a1a8f7878","57b4827b-26b0-4384-a431-9f63f715bc5b","7dca7137-b872-46f5-8e59-8c9c996e9d22","97981e86-4a42-4f85-8783-9f29833c192b","b7c4f986-e62a-4a8f-b5f0-8f30ecc35c5d","b7c1ddda-945c-4b2e-8831-ad9f2ec4a608","24ad200d-a45f-4286-bfa5-48909f98a1f7","68462bfa-9006-4637-8830-2e7840d9089a"],"bench":["e972984c-2895-451c-b518-f06a0d8bd375","07ac91e9-0269-4e2c-a62d-a87ef61e3bbe","6bac62ad-7117-4e41-80f9-5a155a434856","c9339f5e-1040-4642-a4a7-07cd36d281f8","cc933b79-9218-4693-8172-f23d4eaccdf7","1dadee11-a11f-442a-9be3-cb0b10b86719"],"seasAttr":[],"permAttr":[],"fullName":"Houston
+        Spies","location":"Houston","mainColor":"#67556b","nickname":"Spies","secondaryColor":"#9e82a4","shorthand":"HOU","emoji":"0x1F575","slogan":"Bang
+        BANG","shameRuns":1,"totalShames":40,"totalShamings":49,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":17,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1616'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 01:00:01 GMT
+      Etag:
+      - W/"650-mkdvQs8nhx8r/s1sHHLBpIuVfQw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Avt8GNVkjPO-6P6GNBmh6gXMugI5Cfl7k.i4e6HmQqWBlYRPHsdyto9C3z9cAPvwaCKcbljLywVHU;
+        Path=/; Expires=Tue, 23 Feb 2021 01:00:01 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

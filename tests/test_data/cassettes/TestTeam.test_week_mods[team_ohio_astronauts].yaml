@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=HEATING_UP
+  response:
+    body:
+      string: '[{"id":"HEATING_UP","color":"#9e0022","textColor":"#9e0022","background":"#d15700","title":"Heating
+        Up...","description":"This batter needs one more consecutive hit to enter
+        Fire mode. This mod will disappear if the batter gets out."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '235'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:21 GMT
+      Etag:
+      - W/"eb-qJ63xl9g7mpCcokXLCgqhBslnhk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AU_3UjFvAWYm-zQplIo1HHJ9l0HG-yq4Y.iJpNaOCe3PNOVlS5AEFCGiz2dbaUOy1b9Rt5U4d4QKw;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:21 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

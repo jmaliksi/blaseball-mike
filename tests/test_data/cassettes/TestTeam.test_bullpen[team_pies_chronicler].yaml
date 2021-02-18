@@ -1,0 +1,234 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=0672a4be-7e00-402c-b8d6-0b813f58ba96
+  response:
+    body:
+      string: '{"nextPage":"vqRyBgB-LEC41guBP1i6lmBMO2xFFgAA","data":[{"updateId":"560a777d-c360-4ef6-9298-d3e33c1b765f","playerId":"0672a4be-7e00-402c-b8d6-0b813f58ba96","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"0672a4be-7e00-402c-b8d6-0b813f58ba96","name":"Castillo
+        Logan","soul":8,"moxie":0.007738491812264048,"buoyancy":0.22151478241295175,"coldness":0.09006689224128905,"deceased":false,"divinity":0.6289827732856992,"chasiness":0.8198605904165859,"martyrdom":0.7502366761661856,"baseThirst":0.5002852188663769,"indulgence":0.7654869533223825,"musclitude":0.7336017020045906,"tragicness":0,"omniscience":0.7496143842806429,"patheticism":0.18160333703749232,"suppression":0.23083235365494637,"continuation":0.38201132934994453,"ruthlessness":0.6790438370738046,"totalFingers":10,"watchfulness":0.7176484136287455,"laserlikeness":0.4524484628135892,"overpowerment":0.1669838186222199,"tenaciousness":0.19175459591080912,"thwackability":0.2988160418306165,"anticapitalism":0.49162125377138977,"groundFriction":0.34854062412446796,"pressurization":0.3364096852713352,"unthwackability":0.9620564225342556,"shakespearianism":0.9942415785026826}}]}'
+    headers:
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=62111c49-1521-4ca7-8678-cd45dacf0858
+  response:
+    body:
+      string: '{"nextPage":"SRwRYiEVp0yGeM1F2s8IWGBMO2xFFgAA","data":[{"updateId":"2ae167d3-f485-4c14-86ac-fdaa5f98f64c","playerId":"62111c49-1521-4ca7-8678-cd45dacf0858","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"62111c49-1521-4ca7-8678-cd45dacf0858","name":"Bambi
+        Perez","soul":2,"moxie":0.8207791958207984,"buoyancy":0.5247106876089447,"coldness":0.5821469490519895,"deceased":false,"divinity":0.18656297205361239,"chasiness":0.10869974079345579,"martyrdom":0.6218691836162853,"baseThirst":0.4897243294550204,"indulgence":0.5752289878073249,"musclitude":0.3052034024107335,"tragicness":0,"omniscience":0.7220947167055534,"patheticism":0.5879768638552951,"suppression":0.11088055929839213,"continuation":0.7634598657124996,"ruthlessness":0.47863193307874785,"totalFingers":10,"watchfulness":0.7344003659419285,"laserlikeness":0.4059450164815881,"overpowerment":0.2742022087378202,"tenaciousness":0.7974956102923532,"thwackability":0.3674768215689128,"anticapitalism":0.14146474940609077,"groundFriction":0.17620303838561413,"pressurization":0.06862535255963564,"unthwackability":0.018421917275007305,"shakespearianism":0.15150618956494033}}]}'
+    headers:
+      Content-Length:
+      - '1178'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=7f379b72-f4f0-4d8f-b88b-63211cf50ba6
+  response:
+    body:
+      string: "{\"nextPage\":\"cps3f_D0j024i2MhHPULpmBMO2xFFgAA\",\"data\":[{\"updateId\":\"9503f0db-e24c-44b2-b60f-3268de04e6fd\",\"playerId\":\"7f379b72-f4f0-4d8f-b88b-63211cf50ba6\",\"firstSeen\":\"2020-07-29T08:12:22.438Z\",\"lastSeen\":\"2020-08-02T09:22:45.421Z\",\"data\":{\"_id\":\"7f379b72-f4f0-4d8f-b88b-63211cf50ba6\",\"name\":\"Jes\xFAs
+        Rodriguez\",\"soul\":5,\"moxie\":0.3161376434940708,\"buoyancy\":0.9129888864085247,\"coldness\":0.39103765598504525,\"deceased\":false,\"divinity\":0.12165004278444691,\"chasiness\":0.0057546013877769475,\"martyrdom\":0.7579394990247867,\"baseThirst\":0.22654852680798032,\"indulgence\":0.25201578918321665,\"musclitude\":0.06807212468831247,\"tragicness\":0,\"omniscience\":0.26742108235634143,\"patheticism\":0.09586692916470496,\"suppression\":0.8089214254034467,\"continuation\":0.854861784001721,\"ruthlessness\":0.6796460752725892,\"totalFingers\":10,\"watchfulness\":0.9616199331392457,\"laserlikeness\":0.5497230724367395,\"overpowerment\":0.28498937008196457,\"tenaciousness\":0.09510433013253872,\"thwackability\":0.7905600433774811,\"anticapitalism\":0.9343889957527955,\"groundFriction\":0.18779546271017455,\"pressurization\":0.8817244842466112,\"unthwackability\":0.19123695053147483,\"shakespearianism\":0.1866615640742697}}]}"
+    headers:
+      Content-Length:
+      - '1186'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=906a5728-5454-44a0-adfe-fd8be15b8d9b
+  response:
+    body:
+      string: '{"nextPage":"KFdqkFRUoESt_v2L4VuNm2BMO2xFFgAA","data":[{"updateId":"58ac9bba-8b96-4658-a4e1-6fbaee00aa29","playerId":"906a5728-5454-44a0-adfe-fd8be15b8d9b","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"906a5728-5454-44a0-adfe-fd8be15b8d9b","name":"Jefferson
+        Delacruz","soul":2,"moxie":0.5377695809309,"buoyancy":0.6716885326469422,"coldness":0.6836628333972725,"deceased":false,"divinity":0.6437571457266429,"chasiness":0.8081875779554553,"martyrdom":0.434424413609372,"baseThirst":0.6906442175623262,"indulgence":0.840988728953632,"musclitude":0.9039861904706596,"tragicness":0,"omniscience":0.9763965259714031,"patheticism":0.5036750749388781,"suppression":0.0970562909798669,"continuation":0.6444379946434027,"ruthlessness":0.18570481406103423,"totalFingers":10,"watchfulness":0.8048075866521864,"laserlikeness":0.6542058867777056,"overpowerment":0.38677525179091754,"tenaciousness":0.421596376957615,"thwackability":0.4799396860570313,"anticapitalism":0.7844189913696471,"groundFriction":0.7037112282458151,"pressurization":0.0525049024040134,"unthwackability":0.20574118816192732,"shakespearianism":0.004881407245744596}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=90cc0211-cd04-4cac-bdac-646c792773fc
+  response:
+    body:
+      string: '{"nextPage":"EQLMkATNrEy9rGRseSdz_GBMO2xFFgAA","data":[{"updateId":"bf6afec9-85ba-4ee0-b1a9-57566eb3adbd","playerId":"90cc0211-cd04-4cac-bdac-646c792773fc","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"90cc0211-cd04-4cac-bdac-646c792773fc","name":"Case
+        Lancaster","soul":6,"moxie":0.6501088597031415,"buoyancy":0.2508023152353658,"coldness":0.8682508574400709,"deceased":false,"divinity":0.0002459416683509019,"chasiness":0.9602542681426132,"martyrdom":0.06678562968695645,"baseThirst":0.6754105020917467,"indulgence":0.10920020744703751,"musclitude":0.07353779146543094,"tragicness":0,"omniscience":0.9673587173625608,"patheticism":0.11033595306379684,"suppression":0.08211707302926086,"continuation":0.48927256685125875,"ruthlessness":0.8291971956644577,"totalFingers":10,"watchfulness":0.2616381719582366,"laserlikeness":0.39293176320731615,"overpowerment":0.19011940951301343,"tenaciousness":0.7291162727739977,"thwackability":0.7413877655358125,"anticapitalism":0.085624805517176,"groundFriction":0.8649580576986791,"pressurization":0.21394656179105498,"unthwackability":0.8670444617643731,"shakespearianism":0.8253331089225575}}]}'
+    headers:
+      Content-Length:
+      - '1182'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84
+  response:
+    body:
+      string: '{"nextPage":"876wpzzu1EKebWg82fXthGBMO2xFFgAA","data":[{"updateId":"2d0580ea-acf3-4792-bbcd-b3f0f06f2d53","playerId":"a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","name":"Haruta
+        Byrd","soul":9,"moxie":0.5859205013604731,"buoyancy":0.12416125117426602,"coldness":0.7552524972279595,"deceased":false,"divinity":0.9170771574512582,"chasiness":0.12647313362536616,"martyrdom":0.1692632410567092,"baseThirst":0.7050692433208812,"indulgence":0.07238763434081297,"musclitude":0.8530104930499196,"tragicness":0,"omniscience":0.3330769289258486,"patheticism":0.832203137484949,"suppression":0.36051521345801807,"continuation":0.7644529423058093,"ruthlessness":0.6847119771272854,"totalFingers":10,"watchfulness":0.6588676173436516,"laserlikeness":0.4954184095359615,"overpowerment":0.18910900493760452,"tenaciousness":0.43311635274008164,"thwackability":0.721432688759575,"anticapitalism":0.010078402642010653,"groundFriction":0.6724327088017987,"pressurization":0.2745020858440137,"unthwackability":0.7460090483943356,"shakespearianism":0.6020431196660248}}]}'
+    headers:
+      Content-Length:
+      - '1174'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=b85161da-7f4c-42a8-b7f6-19789cf6861d
+  response:
+    body:
+      string: '{"nextPage":"2mFRuEx_qEK39hl4nPaGHWBMO2xFFgAA","data":[{"updateId":"4596b0a6-5a64-4515-aec9-c6b710238609","playerId":"b85161da-7f4c-42a8-b7f6-19789cf6861d","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"b85161da-7f4c-42a8-b7f6-19789cf6861d","name":"Javier
+        Lotus","soul":9,"moxie":0.9422112913105021,"buoyancy":0.8155920515041322,"coldness":0.4892653194307077,"deceased":false,"divinity":0.38670043814265664,"chasiness":0.9440348311629236,"martyrdom":0.8845257116269534,"baseThirst":0.5850503972971375,"indulgence":0.47148918209442425,"musclitude":0.9013280223428632,"tragicness":0,"omniscience":0.7913868179981662,"patheticism":0.20502658944951202,"suppression":0.6218861533334918,"continuation":0.934445886645878,"ruthlessness":0.2703030692589674,"totalFingers":10,"watchfulness":0.61832195688725,"laserlikeness":0.6638389737309154,"overpowerment":0.2707227633787008,"tenaciousness":0.8410546001502597,"thwackability":0.9389643931392062,"anticapitalism":0.3006427315773059,"groundFriction":0.48153141487500406,"pressurization":0.5091034467594442,"unthwackability":0.10719469569107698,"shakespearianism":0.7984126007362957}}]}'
+    headers:
+      Content-Length:
+      - '1171'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=d2a1e734-60d9-4989-b7d9-6eacda70486b
+  response:
+    body:
+      string: '{"nextPage":"NOeh0tlgiUm32W6s2nBIa2BMO2xFFgAA","data":[{"updateId":"0fad2722-a6fd-42f0-a75d-8c1fce2b418d","playerId":"d2a1e734-60d9-4989-b7d9-6eacda70486b","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"d2a1e734-60d9-4989-b7d9-6eacda70486b","name":"Tiana
+        Takahashi","soul":2,"moxie":0.836510066850155,"buoyancy":0.1169440274624649,"coldness":0.5961218486925706,"deceased":false,"divinity":0.041250455584755485,"chasiness":0.2672494024202783,"martyrdom":0.42574756252400703,"baseThirst":0.587106578113598,"indulgence":0.17679402024095747,"musclitude":0.9876983316849517,"tragicness":0,"omniscience":0.7779101759511464,"patheticism":0.4828712408410034,"suppression":0.945939967613159,"continuation":0.16036416262477093,"ruthlessness":0.9615915835777207,"totalFingers":10,"watchfulness":0.7961210324059489,"laserlikeness":0.5556055333017378,"overpowerment":0.7166770431675262,"tenaciousness":0.3046934004227704,"thwackability":0.22848011577602123,"anticapitalism":0.9610343518596542,"groundFriction":0.7491405791208103,"pressurization":0.10446151011552995,"unthwackability":0.9100649495283875,"shakespearianism":0.02895415324880779}}]}'
+    headers:
+      Content-Length:
+      - '1177'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:17 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

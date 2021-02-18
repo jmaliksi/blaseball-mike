@@ -3,9 +3,10 @@ Unit Tests for Fight Model
 """
 
 import pytest
+import vcr
 from blaseball_mike.models import Fight, Player
 from blaseball_mike.tables import DamageType
-from .helpers import TestBase
+from .helpers import TestBase, CASSETTE_DIR
 from .test_game import game_test_generic
 
 
@@ -25,7 +26,8 @@ class TestFight(TestBase):
         for result in fight.damage_results:
             assert isinstance(result.dmg_type, DamageType)
             assert isinstance(result.player_source, Player)
-            # assert isinstance(result.team_target, Team)  # PODs are broken
+            # TODO: PODs are broken
+            # assert isinstance(result.team_target, Team)
             assert isinstance(result.dmg, int)
 
     @pytest.mark.vcr
@@ -57,3 +59,27 @@ class TestFight(TestBase):
         bad_season = Fight.load_by_season(3)
         assert isinstance(bad_season, dict)
         assert len(bad_season) == 0
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_shoethieves_vs_pods.yaml')
+    def fight_shoethieves_vs_pods(self):
+        """S9 example"""
+        return Fight.load_by_id("3e2882a7-1553-49bd-b271-49cab930d9fc")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_crabs_vs_pods.yaml')
+    def fight_crabs_vs_pods(self):
+        """common case"""
+        return Fight.load_by_id("6754f45d-52a6-4b2f-b63c-15dcd520f8cf")
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.fight_hallstars_vs_pods.yaml')
+    def fight_hallstars_vs_pods(self):
+        """S10, Final damage on PODs"""
+        return Fight.load_by_id("9bb560d9-4925-4845-ad03-26012742ee23")
+
+    @pytest.fixture(scope="module", params=['fight_shoethieves_vs_pods', 'fight_crabs_vs_pods',
+                                            'fight_hallstars_vs_pods'])
+    def fight(self, request):
+        """Parameterized fixture of various fights"""
+        return request.getfixturevalue(request.param)

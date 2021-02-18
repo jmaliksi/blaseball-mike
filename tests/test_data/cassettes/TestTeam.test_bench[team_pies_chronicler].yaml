@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=20395b48-279d-44ff-b5bf-7cf2624a2d30
+  response:
+    body:
+      string: '{"nextPage":"SFs5IJ0n_0S1v3zyYkotMGBMO2xFFgAA","data":[{"updateId":"1fdda9e4-d22c-4e05-ac6b-f49ca3efe32c","playerId":"20395b48-279d-44ff-b5bf-7cf2624a2d30","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"20395b48-279d-44ff-b5bf-7cf2624a2d30","name":"Adrian
+        Melon","soul":9,"moxie":0.10225877640000158,"buoyancy":0.5437635473095974,"coldness":0.5860902208807217,"deceased":false,"divinity":0.7081218819110053,"chasiness":0.9365502057757844,"martyrdom":0.3321696433918815,"baseThirst":0.48505135697445145,"indulgence":0.17639897173746566,"musclitude":0.9516492322832693,"tragicness":0,"omniscience":0.18883964504542616,"patheticism":0.2756779195238306,"suppression":0.7291815857899175,"continuation":0.5846402837130693,"ruthlessness":0.9567121749455225,"totalFingers":10,"watchfulness":0.9059084059051399,"laserlikeness":0.8408308179797273,"overpowerment":0.021131591106097636,"tenaciousness":0.3436618537062246,"thwackability":0.3021708129296865,"anticapitalism":0.516713166763427,"groundFriction":0.4212408963263039,"pressurization":0.8471593499885721,"unthwackability":0.19229073647690798,"shakespearianism":0.09248311272404242}}]}'
+    headers:
+      Content-Length:
+      - '1176'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:18 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=d8bc482e-9309-4230-abcb-2c5a6412446d
+  response:
+    body:
+      string: '{"nextPage":"Lki82AmTMEKryyxaZBJEbWBMO2xFFgAA","data":[{"updateId":"705e039e-9004-4054-9534-ab2e9c17de3a","playerId":"d8bc482e-9309-4230-abcb-2c5a6412446d","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"d8bc482e-9309-4230-abcb-2c5a6412446d","name":"August
+        Obrien","soul":7,"moxie":0.4927077729451237,"buoyancy":0.463957840433034,"coldness":0.10018759576122194,"deceased":false,"divinity":0.9275694151611666,"chasiness":0.6522605583404881,"martyrdom":0.5568485065916828,"baseThirst":0.7018121676191835,"indulgence":0.4811489817369903,"musclitude":0.913890776522519,"tragicness":0,"omniscience":0.054615220178514834,"patheticism":0.9238543398682508,"suppression":0.32270838379791233,"continuation":0.14038893524840823,"ruthlessness":0.26147707929592445,"totalFingers":10,"watchfulness":0.8371028453277864,"laserlikeness":0.9664701456330411,"overpowerment":0.8878299922012265,"tenaciousness":0.48336818288460215,"thwackability":0.6412171610190165,"anticapitalism":0.32792794611504017,"groundFriction":0.41534449839541443,"pressurization":0.33700819467736887,"unthwackability":0.23672335921111576,"shakespearianism":0.09774303312517918}}]}'
+    headers:
+      Content-Length:
+      - '1180'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:18 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=cd5494b4-05d0-4b2e-8578-357f0923ff4c
+  response:
+    body:
+      string: '{"nextPage":"tJRUzdAFLkuFeDV_CSP_TGBMO2xFFgAA","data":[{"updateId":"8be8ece3-4cbb-43e1-b361-167ac940b601","playerId":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","name":"Mcfarland
+        Vargas","soul":5,"moxie":0.17536565318653308,"buoyancy":0.5513425134621988,"coldness":0.810602623494298,"deceased":false,"divinity":0.7761498650873726,"chasiness":0.9041344884360119,"martyrdom":0.41783221023675665,"baseThirst":0.8121678499582619,"indulgence":0.4823765299344567,"musclitude":0.30771382366062583,"tragicness":0,"omniscience":0.054401227767283844,"patheticism":0.9842787327040725,"suppression":0.34918514042209337,"continuation":0.5570853001905556,"ruthlessness":0.8422971150742167,"totalFingers":10,"watchfulness":0.5902285286481459,"laserlikeness":0.9227647403979307,"overpowerment":0.28616424969491816,"tenaciousness":0.3561821586396947,"thwackability":0.11708364590817744,"anticapitalism":0.741914802161207,"groundFriction":0.42124604961685796,"pressurization":0.5190558277454449,"unthwackability":0.1879497991434833,"shakespearianism":0.34850304608233995}}]}'
+    headers:
+      Content-Length:
+      - '1181'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:18 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,147 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=1732e623-ffc2-40f0-87ba-fdcf97131f1f
+  response:
+    body:
+      string: '{"nextPage":"I-YyF8L_8ECHuv3PlxMfH2BMO2xFFgAA","data":[{"updateId":"3416d5c6-fa2e-4b95-b8a3-4859a54ec8fc","playerId":"1732e623-ffc2-40f0-87ba-fdcf97131f1f","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"1732e623-ffc2-40f0-87ba-fdcf97131f1f","name":"Betsy
+        Trombone","soul":3,"moxie":0.8506050189829093,"buoyancy":0.8267466077900696,"coldness":0.872848831945386,"deceased":false,"divinity":0.5434644899789711,"chasiness":0.31889236881684413,"martyrdom":0.7481246865847735,"baseThirst":0.016986546344093467,"indulgence":0.8047219602154017,"musclitude":0.2953982471920851,"tragicness":0,"omniscience":0.04848632803289665,"patheticism":0.6777060542972428,"suppression":0.02175303641092885,"continuation":0.7914469736255476,"ruthlessness":0.7253703025644835,"totalFingers":10,"watchfulness":0.0917071560446514,"laserlikeness":0.713425324007301,"overpowerment":0.47366414083200525,"tenaciousness":0.4729168176582932,"thwackability":0.7641399884791478,"anticapitalism":0.3333932436989364,"groundFriction":0.08645124959686368,"pressurization":0.14435710015681358,"unthwackability":0.4185482371382203,"shakespearianism":0.4749002512112459}}]}'
+    headers:
+      Content-Length:
+      - '1177'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:15 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=9786b2c9-1205-4718-b0f7-fc000ce91106
+  response:
+    body:
+      string: '{"nextPage":"ybKGlwUSGEew9_wADOkRBmBMO2xFFgAA","data":[{"updateId":"567282a8-66b7-44a5-b55a-71c4d48cdeae","playerId":"9786b2c9-1205-4718-b0f7-fc000ce91106","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"9786b2c9-1205-4718-b0f7-fc000ce91106","name":"Kevin
+        Dudley","soul":3,"moxie":0.573014893710974,"buoyancy":0.5406724617965464,"coldness":0.39436531303778666,"deceased":false,"divinity":0.4928203120372099,"chasiness":0.917247242994691,"martyrdom":0.2963008119491186,"baseThirst":0.3474006475464859,"indulgence":0.8010621975836121,"musclitude":0.8424068965249369,"tragicness":0,"omniscience":0.2386721860965093,"patheticism":0.04467578366354319,"suppression":0.907933727675005,"continuation":0.8526153538746923,"ruthlessness":0.2862317791209692,"totalFingers":10,"watchfulness":0.5973171073742043,"laserlikeness":0.9580046123466985,"overpowerment":0.11133017685796487,"tenaciousness":0.7077889151087153,"thwackability":0.519911078354452,"anticapitalism":0.9910937325915283,"groundFriction":0.8320606317453201,"pressurization":0.7429620816150075,"unthwackability":0.8386678634489944,"shakespearianism":0.7968860278234877}}]}'
+    headers:
+      Content-Length:
+      - '1168'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=b082ca6e-eb11-4eab-8d6a-30f8be522ec4
+  response:
+    body:
+      string: '{"nextPage":"bsqCsBHrq06NajD4vlIuxGBMO2xFFgAA","data":[{"updateId":"ef004d3e-3947-4b98-9393-d394b62fd78c","playerId":"b082ca6e-eb11-4eab-8d6a-30f8be522ec4","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"b082ca6e-eb11-4eab-8d6a-30f8be522ec4","name":"Nicholas
+        Mora","soul":9,"moxie":0.6245762864428941,"buoyancy":0.36917796934116986,"coldness":0.3477948418685758,"deceased":false,"divinity":0.8009595473173601,"chasiness":0.5507119757800671,"martyrdom":0.8503735744711147,"baseThirst":0.3427064590855966,"indulgence":0.8028596318468693,"musclitude":0.21515290717797764,"tragicness":0,"omniscience":0.9658698619476536,"patheticism":0.1788722089641026,"suppression":0.2691181491717106,"continuation":0.5230133223380473,"ruthlessness":0.18942835710465236,"totalFingers":11,"watchfulness":0.5289983858504459,"laserlikeness":0.7965069724560563,"overpowerment":0.3774542154308068,"tenaciousness":0.40334517084949395,"thwackability":0.9706643954623206,"anticapitalism":0.9107954544092891,"groundFriction":0.9508661549621495,"pressurization":0.9056106219154152,"unthwackability":0.9705582516530392,"shakespearianism":0.22343980794689436}}]}'
+    headers:
+      Content-Length:
+      - '1175'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=60026a9d-fc9a-4f5a-94fd-2225398fa3da
+  response:
+    body:
+      string: '{"nextPage":"nWoCYJr8Wk-U_SIlOY-j2mBMO2xFFgAA","data":[{"updateId":"227272f4-7d66-426f-ba4b-74a57ca6c84b","playerId":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","name":"Bright
+        Zimmerman","soul":4,"moxie":0.7526023498344847,"buoyancy":0.24612589707575316,"coldness":0.23855790587881254,"deceased":false,"divinity":0.7872570449137717,"chasiness":0.16559818096450685,"martyrdom":0.47698415788217297,"baseThirst":0.4665420730270071,"indulgence":0.40257632055821224,"musclitude":0.3000990478038792,"tragicness":0,"omniscience":0.4079440610929981,"patheticism":0.8457155664699907,"suppression":0.8351008848018011,"continuation":0.009714080453356644,"ruthlessness":0.4641073369493036,"totalFingers":10,"watchfulness":0.27049988464395924,"laserlikeness":0.041419179628070735,"overpowerment":0.8080760067943862,"tenaciousness":0.32176867732750813,"thwackability":0.7172047569139375,"anticapitalism":0.33827713223817035,"groundFriction":0.5782993929431977,"pressurization":0.4668944850477603,"unthwackability":0.1606849897364011,"shakespearianism":0.6215166269543513}}]}'
+    headers:
+      Content-Length:
+      - '1185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?before=2020-07-30T02%3A13%3A38.328000Z&count=1&order=desc&player=814bae61-071a-449b-981e-e7afc839d6d6
+  response:
+    body:
+      string: '{"nextPage":"Ya5LgRoHm0SYHuevyDnW1mBMO2xFFgAA","data":[{"updateId":"324401a2-a658-4b9f-a8d1-5d3c523d9241","playerId":"814bae61-071a-449b-981e-e7afc839d6d6","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:45.421Z","data":{"_id":"814bae61-071a-449b-981e-e7afc839d6d6","name":"Ruslan
+        Greatness","soul":2,"moxie":0.9064923666060847,"buoyancy":0.07055854329958255,"coldness":0.04369114725153378,"deceased":false,"divinity":0.6627751956215542,"chasiness":0.6283116969342455,"martyrdom":0.6773725795858878,"baseThirst":0.18486394661678474,"indulgence":0.6889067569256935,"musclitude":0.9563598285742443,"tragicness":0,"omniscience":0.5270749383655369,"patheticism":0.07504240344412882,"suppression":0.8082621614282846,"continuation":0.09166811386169971,"ruthlessness":0.23707062315988603,"totalFingers":10,"watchfulness":0.192235304688553,"laserlikeness":0.8307713167420359,"overpowerment":0.6922541370536286,"tenaciousness":0.16692263674831898,"thwackability":0.05959364820416724,"anticapitalism":0.08954048779749102,"groundFriction":0.11067365467026158,"pressurization":0.9777448533424058,"unthwackability":0.17794162711375638,"shakespearianism":0.4292293849658777}}]}'
+    headers:
+      Content-Length:
+      - '1183'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1
