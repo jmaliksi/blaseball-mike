@@ -1232,6 +1232,10 @@ class ElectionResult(Base):
     def tiding_results(self):
         return self.event_results
 
+    @Base.lazy_load("_season", use_default=False)
+    def season(self):
+        return self._season + 1
+
 
 OffseasonResult = ElectionResult
 

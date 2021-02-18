@@ -62,8 +62,7 @@ class TestElectionResults(TestBase):
     def test_load_by_season(self):
         result = ElectionResult.load_by_season(1)
         assert isinstance(result, ElectionResult)
-        # TODO: oops whoops uh oh
-        #assert result.season == 1
+        assert result.season == 1
 
     @pytest.mark.vcr
     def test_load_by_season_bad_season_low(self):
