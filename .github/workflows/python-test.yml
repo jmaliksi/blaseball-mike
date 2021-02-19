@@ -2,12 +2,14 @@ name: Test Library
 
 on:
   push:
-    paths-ignore:
-    - 'docs/**'
+    paths:
+    - 'blaseball_mike/**'
+    - 'tests/**'
   pull_request:
     types: [opened, reopened, synchronize]
-    paths-ignore:
-      - 'docs/**'
+    paths:
+    - 'blaseball_mike/**'
+    - 'tests/**'
   workflow_dispatch: {}
 
 jobs:
