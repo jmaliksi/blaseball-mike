@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffRound?id=6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6
+  response:
+    body:
+      string: '{"id":"6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6","gameIndex":2,"games":[["none","5c8727f4-d86d-44cd-99db-d24ae1c0d864","none","none","none","00832262-2e01-439d-aa09-9eef90b53660","none","none","none","none","none","none","none","none","none","none"],["none","8f6a9062-2b83-421c-ac8b-418473a3ddb1","none","none","none","5298fbf5-e74a-43d2-bcdd-1561e5cf37d4","none","none"],["none","none","none","none","none","0f9ba0c2-4fca-4157-b615-b751b7868d2d","none","none"]],"matchups":["cb8208c2-6473-4ab2-990c-8a0f04d2f6f6","a7853495-54fe-4c8b-93a2-18c8075d9e7b","618b7f75-da29-4860-bbc6-c82a80d55c5f","136e7769-f3e2-4f86-9f34-8abbf6b7d58e","05664891-7844-470c-9b9f-212038380e89","24a8ff8a-d2bb-4d9b-ace2-8cd2be211326","d85ec2f7-a824-469b-bc84-1259172ccf17","969ac1c9-84ad-4d1a-8232-8bafa1a1ce51"],"name":"Round
+        1","roundNumber":0,"special":false,"winnerSeeds":[0,3,1,2,0,4,1,2],"winners":["f02aeae2-5e6a-4098-9842-02d2273f25c7","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","747b8e4a-7e50-4638-a973-ea7950a3e739","878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","7966eb04-efcc-499b-8f03-d13916330531","bfd38797-8404-4b38-8b82-341da28b1f83","105bc3ff-1320-4e37-8ef0-8d595cb95dd0"]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1189'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:24:56 GMT
+      Etag:
+      - W/"4a5-5LSbN5h4dN9Nbj+mxBgqfoVYFT4"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A9zufnlQU7u9frN0Ay7ibrtSRC4CrNiEh.EA3XmKwOxiXJH8EPURNTu2DRR%2F42fpdAkVXFZO%2FxVss;
+        Path=/; Expires=Mon, 22 Feb 2021 23:24:56 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

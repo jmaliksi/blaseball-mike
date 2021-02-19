@@ -2,13 +2,14 @@
 This isn't actually a unit test lol.
 """
 import asyncio
-import pprint
+import pytest
 
 from blaseball_mike.events import stream_events
 from blaseball_mike.models import Game
 from blaseball_mike.stream_model import StreamData
 
 
+@pytest.mark.skip()
 async def test_stream():
     async for event in stream_events():
         payload = event
@@ -19,8 +20,9 @@ async def test_stream():
         print(schedule)
 
 
+@pytest.mark.skip()
 async def test_stream_data():
-    async for event in stream_events(url='http://localhost:8080/streamData'):
+    async for event in stream_events(url='http://api-test.sibr.dev/replay/v1/replay?from=2020-10-07T13:02:00Z'):
         payload = StreamData(event)
         print(payload)
         schedule = {
@@ -30,6 +32,7 @@ async def test_stream_data():
         print(payload.leagues.teams)
 
 
+@pytest.mark.skip()
 def test():
     loop = asyncio.get_event_loop()
     loop.create_task(test_stream())

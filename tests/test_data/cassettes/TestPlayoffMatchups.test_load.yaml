@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffMatchups?ids=3d4b8a9f-1a89-4597-be23-af21d1364820,196c2a47-240b-4418-bf96-20c5232fe782
+  response:
+    body:
+      string: '[{"id":"196c2a47-240b-4418-bf96-20c5232fe782","name":null,"awaySeed":1,"awayTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","awayWins":0,"homeSeed":0,"homeTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","homeWins":3,"gamesPlayed":0,"gamesNeeded":"0"},{"id":"3d4b8a9f-1a89-4597-be23-af21d1364820","name":null,"awaySeed":3,"awayTeam":"b024e975-1c4a-4575-8936-a3754a08806a","awayWins":1,"homeSeed":0,"homeTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","homeWins":3,"gamesPlayed":0,"gamesNeeded":"0"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '489'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:41 GMT
+      Etag:
+      - W/"1e9-jxjSICzMIQJP8gDqncGjGfkXZUQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A2fRaNiOe5cfdHc_BkQ4AHrqnXXTCgo42.j3LBrSN9BmGfg48rHlzmrur6Fk5e2QqfBdnRnLL3044;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffMatchups?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:41 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AldNMslxx9BSBCLkjJvCcRkSmNNU_Z3sD.1OD7ADme6vj4a3MAjyImQKRc%2FZldNyY1vFlsJP9hfeo;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:41 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

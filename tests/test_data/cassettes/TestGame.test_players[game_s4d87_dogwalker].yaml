@@ -1,0 +1,168 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=a5f8ce83-02b2-498c-9e48-533a1d81aebf
+  response:
+    body:
+      string: '[{"id":"a5f8ce83-02b2-498c-9e48-533a1d81aebf","anticapitalism":0.5948890899973641,"baseThirst":0.7669080780425239,"buoyancy":1.135978020359,"chasiness":1.5788067637535603,"coldness":1.4246522121839487,"continuation":0.7843494300780347,"divinity":0.5440169085140667,"groundFriction":0.6315156629586318,"indulgence":0.38822339047173743,"laserlikeness":0.8045480398909114,"martyrdom":0.8416514846498364,"moxie":0.452752299262041,"musclitude":0.5275741128606339,"name":"Evelton
+        McBlase","bat":"","omniscience":0.9467715551002912,"overpowerment":1.180111054711619,"patheticism":0.3299192012869875,"ruthlessness":1.020406054513987,"shakespearianism":0.5664630157434315,"suppression":0.8661948043600205,"tenaciousness":1.0277922377860569,"thwackability":0.5157381028842192,"tragicness":0.1,"unthwackability":0.49441921880122197,"watchfulness":0.5870600288735768,"pressurization":0.8115882671698996,"totalFingers":12,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":1.2816043397343542,"fate":10,"armor":"","ritual":"Crystals","coffee":8,"blood":5,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7407094113586079,"pitchingRating":0.69263620984836,"hittingRating":0.561728949024749,"defenseRating":0.9370760891958829,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","tournamentTeamId":"e8f7ffee-ec53-4fe0-8e87-ea8ff1d0b4a9"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1393'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:47:25 GMT
+      Etag:
+      - W/"571-qtlmhrPcrnCgWm9FytMkxI6eqBM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3A0xWZ8hqkBcdy0fBV1-AWRs8twgMeb753.3vRctMX2EUrWbyWIvmErGCwcfzMgBmYPsx1nmaEW1B4;
+        Path=/; Expires=Tue, 23 Feb 2021 17:47:25 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=bc4187fa-459a-4c06-bbf2-4e0e013d27ce
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:47:26 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Ah8ZlEJ3DnJEVCqjDQhwAgrgLUT4JJg4s.6M90nOf3k15NOWkJcBcq5mBHDzKp4Y2EPhlXLMWU3DA;
+        Path=/; Expires=Tue, 23 Feb 2021 17:47:26 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=138fccc3-e66f-4b07-8327-d4b6f372f654
+  response:
+    body:
+      string: '[{"id":"138fccc3-e66f-4b07-8327-d4b6f372f654","anticapitalism":0.8680530780912592,"baseThirst":0.40269916176903375,"buoyancy":0.01,"chasiness":1.0216942303351553,"coldness":0.48600995912213385,"continuation":0.434357223761566,"divinity":0.01,"groundFriction":1.0093123360563918,"indulgence":0.5060695162285549,"laserlikeness":0.8428225228076685,"martyrdom":0.642501370170344,"moxie":0.5395033696176093,"musclitude":0.3440954811262603,"name":"Oscar
+        Vaughan","bat":"","omniscience":0.1851387653642818,"overpowerment":0.8438107028395048,"patheticism":0.48397475666936995,"ruthlessness":0.7683355127289149,"shakespearianism":0.3002542950044008,"suppression":0.21053429229931023,"tenaciousness":0.16383684509012414,"thwackability":0.01,"tragicness":0.1,"unthwackability":0.35823901514812895,"watchfulness":0.5068004820178018,"pressurization":0.01,"totalFingers":11,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.3352539774828601,"fate":47,"armor":"","ritual":"Rally-cap","coffee":7,"blood":6,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.721065006652857,"pitchingRating":0.4572551551038684,"hittingRating":0.033611193834568724,"defenseRating":0.45883042909427985,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1327'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:47:26 GMT
+      Etag:
+      - W/"52f-5trQuUIRq++p1foO6DfgyzDaY7s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AmXCt_tLRFSRAPundeSO75AgmjHrs_nM_.74v6OMObonv8zAaWD5hS1qdX35ifExK2H7jVPtmyO4A;
+        Path=/; Expires=Tue, 23 Feb 2021 17:47:26 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=bc4187fa-459a-4c06-bbf2-4e0e013d27ce
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:47:26 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AsOlnXkQUR7aaKPifqTxRDQQnJqGH4e15.w9ay3o9HXNLQJsYlsB83fZ4PGyCGTwJ%2BS1gw%2FoTyugw;
+        Path=/; Expires=Tue, 23 Feb 2021 17:47:26 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

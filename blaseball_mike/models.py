@@ -471,7 +471,7 @@ class Player(Base):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
-        
+
         original_json = self.json()
         if not original_json.get("baseThirst") and original_json.get("base_thirst"):
             original_json["baseThirst"] = original_json["base_thirst"]
@@ -1231,6 +1231,10 @@ class ElectionResult(Base):
     @property
     def tiding_results(self):
         return self.event_results
+
+    @Base.lazy_load("_season", use_default=False)
+    def season(self):
+        return self._season + 1
 
 
 OffseasonResult = ElectionResult

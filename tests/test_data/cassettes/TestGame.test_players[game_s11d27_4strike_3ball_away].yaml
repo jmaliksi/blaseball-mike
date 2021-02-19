@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=3d3be7b8-1cbf-450d-8503-fce0daf46cbf
+  response:
+    body:
+      string: '[{"id":"3d3be7b8-1cbf-450d-8503-fce0daf46cbf","anticapitalism":0.35177594247862404,"baseThirst":0.5970519521755473,"buoyancy":0.24664456862154877,"chasiness":0.5334055435645227,"coldness":0.4086419585989069,"continuation":0.9079556934833422,"divinity":0.6679051571873152,"groundFriction":0.9206647606734248,"indulgence":0.184760341061531,"laserlikeness":0.8085809838000829,"martyrdom":0.40566006647064207,"moxie":0.6549453653348354,"musclitude":0.3570868909689747,"name":"Zack
+        Sanders","bat":"","omniscience":1.0658345336922888,"overpowerment":0.6447460123881854,"patheticism":0.01,"ruthlessness":0.8873624778126253,"shakespearianism":0.4018161067130752,"suppression":0.560616814702228,"tenaciousness":1.067906689383709,"thwackability":0.4459699439282889,"tragicness":0.1,"unthwackability":0.28400382163068255,"watchfulness":0.39449000520064587,"pressurization":0.9398150163500756,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.559123014779645,"fate":72,"armor":"","ritual":"Whispering","coffee":9,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.708500999347072,"pitchingRating":0.4246167520810171,"hittingRating":0.5755300298670479,"defenseRating":0.7910074709321011,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"49181b72-7f1c-4f1c-929f-928d763ad7fb"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1387'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:07:31 GMT
+      Etag:
+      - W/"56b-t8MvOeO/BL+FCpmvdwAf91+OQqI"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AqxVfK1UUr3MkgXHvBKVDonfM_PcSRg9J.Lu9eTmUzdUcV1ugF9GJ61tIbiHn39mFT8cWdAnpkMOY;
+        Path=/; Expires=Tue, 23 Feb 2021 20:07:31 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=cf8e152e-2d27-4dcc-ba2b-68127de4e6a4
+  response:
+    body:
+      string: '[{"id":"cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","anticapitalism":0.438976753723757,"baseThirst":0.5700165936799051,"buoyancy":0.21163706371290772,"chasiness":0.30732188287168416,"coldness":0.575743863953883,"continuation":0.38,"divinity":0.3566743202211887,"groundFriction":0.9215033731221033,"indulgence":0.9294892039116197,"laserlikeness":0.7450704745504269,"martyrdom":0.9542777315656379,"moxie":0.5372779914216733,"musclitude":0.5664185499663931,"name":"Hendricks
+        Richardson","bat":"","omniscience":0.03,"overpowerment":0.29532449952165485,"patheticism":0.27376890259039455,"ruthlessness":0.5690675590427077,"shakespearianism":0.3578218176028243,"suppression":0.4212366013843887,"tenaciousness":0.2971364495207882,"thwackability":0.6887945032755325,"tragicness":0.1,"unthwackability":0.03,"watchfulness":0.6811420259877998,"pressurization":0.6638795184418913,"totalFingers":15,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.8387872345132348,"fate":65,"armor":"","ritual":"Cold
+        tub","coffee":10,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7293565949085329,"pitchingRating":0.10245743870510812,"hittingRating":0.5496249410978278,"defenseRating":0.30643806077518637,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"a3ea6358-ce03-4f23-85f9-deb38cb81b20"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1370'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:07:32 GMT
+      Etag:
+      - W/"55a-eeZFY8MAJOQXsfnikcQKlV+l2Sk"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ArS77vFzo1Ftx-NwrjWCVRGd_lRl9Qbcv.DrW084y8nIGxoos3tW4DSCKzPioaHQXW%2Fuu2HZkD4U8;
+        Path=/; Expires=Tue, 23 Feb 2021 20:07:32 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=c549f280-82ba-4d8e-a4ce-c49e56461fb6
+  response:
+    body:
+      string: '[{"id":"c549f280-82ba-4d8e-a4ce-c49e56461fb6","anticapitalism":0.35579929069444227,"baseThirst":0.41811924186048777,"buoyancy":0.22182172959925706,"chasiness":0.5847829198379533,"coldness":0.04097450949960524,"continuation":0.6327153403883086,"divinity":0.3470365757463991,"groundFriction":0.10298541078166656,"indulgence":0.6595128865181599,"laserlikeness":0.3006335642256204,"martyrdom":0.0031875418436966285,"moxie":0.83496252373416,"musclitude":0.5344748523864922,"name":"Val
+        Hitherto","bat":"","omniscience":0.6043217507743368,"overpowerment":0.5169413211524534,"patheticism":0.22289549235573536,"ruthlessness":0.35561881453503896,"shakespearianism":0.16853566372094742,"suppression":0.5285967711551909,"tenaciousness":0.9958977704767378,"thwackability":0.2762974058800345,"tragicness":0.1,"unthwackability":0.578335073068355,"watchfulness":0.3881025497055788,"pressurization":0.9890302659779149,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.23710397827323892,"fate":86,"armor":"","ritual":"Cup
+        of tea","coffee":5,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3668339175867957,"pitchingRating":0.35195072997048393,"hittingRating":0.3643076606995048,"defenseRating":0.7024432158733905,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1377'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:07:32 GMT
+      Etag:
+      - W/"561-cge8QkDebIhz0Gohh8VXkO3tidw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AawbhJEIpNgrphdKblAjF5FIKZfzZsfz0.xIbDCaBz1mfOMO5%2FjiE5T6elXaffLL28oUZ3aV%2FTUmU;
+        Path=/; Expires=Tue, 23 Feb 2021 20:07:32 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

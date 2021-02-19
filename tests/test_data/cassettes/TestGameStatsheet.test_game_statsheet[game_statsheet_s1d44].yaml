@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/teamSeasonStats?ids=be8d4b1c-aa03-45f2-948d-36573c541604,3e027c20-a5bf-4989-b9c8-28f24e1c84b1
+  response:
+    body:
+      string: '[{"id":"be8d4b1c-aa03-45f2-948d-36573c541604","playerStats":["b1dc64a2-e53d-48bb-884f-15d315736784","ba72a722-20ff-4f3b-84b5-4c92cd86ca25","50e243f2-0f3e-4dcd-8c35-34ef3d05962f","fc2cf31e-3f5e-4a43-8352-32f31ba8aaec","9efe0409-3870-4d3d-877a-828ef12863f5","40aa54f0-06f3-4638-bd65-7b37801457ee","b261f280-abef-467c-b3b3-197de69349ff","29971002-710c-4653-95d4-7130cf598692","8e38d810-9b37-43cb-b369-f15b09fd71ca","f02c9096-13e0-44ff-86d7-251b6a03d42f"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Hawaii
+        Fridays","teamId":null},{"id":"3e027c20-a5bf-4989-b9c8-28f24e1c84b1","playerStats":["02bb5015-2a7c-4ab1-8268-5371d940690e","502fea0e-1ef2-4ca0-83a2-0d66e71f630b","343b3d3b-ff6c-4272-9828-be9feabb44c2","1f6f38e6-e3fd-41f6-abcf-0fb686affb23","3c9a532d-d2e0-4808-824a-16edc28df256","04895b68-be91-4aa4-a9a2-6184a6f98623","7497301f-c58c-42e7-85fb-a2e85e241f23","d32c1d38-3ac4-4448-8fdd-b54f2ebd6994","e2312e68-630a-47a3-8898-c562815cfa6e","6f10ceec-5444-4a37-a717-2864db7b7182"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Yellowstone
+        Magic","teamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1056'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:06 GMT
+      Etag:
+      - W/"420-dJTLqnIdEYBWS9zR3d96Dm/HZWw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AyYH7mXVa6lKMkONsUzAxOohLVQX1uSQH.JbzXL49NJUl2pHco6QIUnhV6%2FgXYM5PUFQjVJjiJSIs;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:06 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

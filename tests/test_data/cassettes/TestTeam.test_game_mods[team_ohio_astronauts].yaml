@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=GRAVITY
+  response:
+    body:
+      string: '[{"id":"GRAVITY","color":"#759bc9","textColor":"#759bc9","background":"#4c5052","title":"Gravity","description":"This
+        player cannot be affected by Reverb."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:22 GMT
+      Etag:
+      - W/"9d-++gmzOTapPgl2zRXoKNXQlYFBWQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AgwN6ZMVdf5j1SPke8AlStjncegB19czO.JLKk6CydnC1zeT%2FwhOnWQJGmhx5m4aj0ssxIcc1XodE;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:22 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

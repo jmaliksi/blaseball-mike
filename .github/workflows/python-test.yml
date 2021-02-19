@@ -1,0 +1,44 @@
+name: Test Library
+
+on:
+  push:
+    paths-ignore:
+    - 'docs/**'
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8, 3.9 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-recording pytest-cov junit2html
+      - name: Test with pytest
+        run: |
+          pytest tests --junitxml=results-${{ matrix.python-version }}.xml --cov=blaseball_mike --cov-report=html:cov-${{ matrix.python-version }}
+          junit2html results-${{ matrix.python-version }}.xml results-${{ matrix.python-version }}.html
+      - name: Upload pytest test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: pytest-results-${{ matrix.python-version }}
+          path: |
+            results-${{ matrix.python-version }}.html
+            results-${{ matrix.python-version }}.xml
+            cov-${{ matrix.python-version }}/
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}

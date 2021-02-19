@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/offseasonRecap?season=0
+  response:
+    body:
+      string: '{"id":"dfb49299-a2cc-40b4-b1c3-f4444beb7336","bonusResults":["cbb567c0-d770-4d22-92f6-ff16ebb94758","0d3ea692-e151-4629-8f88-d75b56107ebc","06a455d4-6bbc-4820-9256-e5c89e327720","b40b4946-9f1c-4328-969f-20fae50dc47e","ab2b02b4-935d-403e-81fc-d39c3e7c95ee","8b5fb689-1d47-473a-bfa1-2d3ca26426ed","468fcd69-fad7-4364-8426-24900db3e609","268580d3-7bbd-474d-a563-08044bafda8b","nagomi_mystery","winniehess_mystery"],"decreeResults":["b090fdfc-7d9d-414b-a4a5-bbc698028c15"],"name":"The
+        Season 1 Election","season":0,"totalBonusVotes":1295,"totalDecreeVotes":925,"voteCount":2220,"eventResults":[]}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '592'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:39 GMT
+      Etag:
+      - W/"250-Qy2WVgeIKGbR/OTqbED5tEAtOjU"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AQh9T8hzTN0KlQPQX30Fif7l5JiaY093_.4n85gKbq1lL%2FJqsqpZZ4wkyXVN8JgT1K%2B4D0yfyIvZs;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:39 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/offseasonRecap?season=-1
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AR47xT6wjScye_JrjqGKTGhPtd8zYtG2G.gvdkh5BLKBHjOAdE1xp%2BRPHfv01Ih4DeWrGYRHKfHto;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/offseasonRecap?season=998
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AypLvNEOZhvDun8-a_HCsfhVR4ElN-z4b.DG4ewIvE6KYSndN5LpPws08hwXg%2FnMFnknOxMHbf5Xo;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=b090fdfc-7d9d-414b-a4a5-bbc698028c15
+  response:
+    body:
+      string: '[{"id":"b090fdfc-7d9d-414b-a4a5-bbc698028c15","decreeId":"forbidden_book","decreeTitle":"Open
+        the Forbidden Book","description":"The Book Opens.\nSolar Eclipse.\nUmpires''
+        eyes turn white.\nStar player Jaylen Hotdogfingers is incinerated.\nHellmouth
+        swallows the Moab Desert.\nTHE DISCIPLINE ERA BEGINS","totalVotes":566}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '321'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Etag:
+      - W/"141-mVIUKOoV04v5KnPTaebQ4oyk29s"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AtTkLv-oy_Gw9A-rGzxFyuv1Io_bZKp4T.ClxCrcJRc71V%2FTqxDicOHJtsazZumeX4nVEAptzapUE;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:09:40 GMT
+      Etag:
+      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AlR1q8ZKzcIrz0itsRNxz9ydtkaoPz1he.e6XrLnVVg90ciqAClFoQXfZNQeKEkEi9LMdpZOnnhTY;
+        Path=/; Expires=Sun, 21 Feb 2021 01:09:40 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

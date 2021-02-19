@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=36569151-a2fb-43c1-9df7-2df512424c82
+  response:
+    body:
+      string: '{"id":"36569151-a2fb-43c1-9df7-2df512424c82","lineup":["4b3e8e9b-6de1-4840-8751-b1fb45dc5605","766dfd1e-11c3-42b6-a167-9b2d568b5dc0","c4dec95e-78a1-4840-b209-b3b597181534","413b3ddb-d933-4567-a60e-6d157480239d","198fd9c8-cb75-482d-873e-e6b91d42a446","f38c5d80-093f-46eb-99d6-942aa45cd921","ec68845f-3b26-412f-8446-4fef34e09c77","4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d","9965eed5-086c-4977-9470-fe410f92d353"],"rotation":["ae4acebd-edb5-4d20-bf69-f2d5151312ff","81d7d022-19d6-427d-aafc-031fcb79b29e","378c07b0-5645-44b5-869f-497d144c7b35","0c83e3b6-360e-4b7d-85e3-d906633c9ca0","18af933a-4afa-4cba-bda5-45160f3af99b","f741dc01-2bae-4459-bfc0-f97536193eea"],"bullpen":["ab9b2592-a64a-4913-bf6c-3ae5bd5d26a5","29bf512a-cd8c-4ceb-b25a-d96300c184bb","94d772c7-0254-4f08-814c-f6fc58fcfb9b","1e229fe5-a191-48ef-a7dd-6f6e13d6d73f","9e724d9a-92a0-436e-bde1-da0b2af85d8f","5c60f834-a133-4dc6-9c07-392fb37b3e6a","b7cdb93b-6f9d-468a-ae00-54cbc324ee84","c4951cae-0b47-468b-a3ac-390cc8e9fd05"],"bench":["1e7b02b7-6981-427a-b249-8e9bd35f3882","6a869b40-be99-4520-89e5-d382b07e4a3c","8d81b190-d3b8-4cd9-bcec-0e59fdd7f2bc","662f34f0-bd74-49a7-8506-50d4dd333c4c"],"seasAttr":[],"permAttr":["BIRD_SEED"],"fullName":"New
+        York Millennials","location":"New York","mainColor":"#ffd4d8","nickname":"Millennials","secondaryColor":"#ffd4d8","shorthand":"NYMI","emoji":"0x1F4F1","slogan":"Youth
+        Will Save Us","shameRuns":0,"totalShames":51,"totalShamings":38,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":5,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1572'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:23:57 GMT
+      Etag:
+      - W/"624-pzp3rP1z8iZKOAdRl21DftDI9qo"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3APEgobrPOEJ4ckliyllKTdyfsOrJVO3Dz.bKSL57MDRL3roS2n6%2Fsoj9yrT8ga2fpjMf9wzO%2Bvb5o;
+        Path=/; Expires=Tue, 23 Feb 2021 17:23:57 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=979aee4a-6d80-4863-bf1c-ee1a78e06024
+  response:
+    body:
+      string: '{"id":"979aee4a-6d80-4863-bf1c-ee1a78e06024","lineup":["1e8b09bd-fbdd-444e-bd7e-10326bd57156","167751d5-210c-4a6e-9568-e92d61bab185","21cbbfaa-100e-48c5-9cea-7118b0d08a34","c0732e36-3731-4f1a-abdc-daa9563b6506","13a05157-6172-4431-947b-a058217b4aa5","4ecee7be-93e4-4f04-b114-6b333e0e6408","80de2b05-e0d4-4d33-9297-9951b2b5c950","9ac2e7c5-5a34-4738-98d8-9f917bc6d119"],"rotation":["1ffb1153-909d-44c7-9df1-6ed3a9a45bbd","7b55d484-6ea9-4670-8145-986cb9e32412","89ec77d8-c186-4027-bd45-f407b4800c2c","94baa9ac-ff96-4f56-a987-10358e917d91","a5f8ce83-02b2-498c-9e48-533a1d81aebf"],"bullpen":["a2483925-697f-468f-931c-bcd0071394e5","527c1f6e-a7e4-4447-a824-703b662bae4e","62823073-84b8-46c2-8451-28fd10dff250","805ba480-df4d-4f56-a4cf-0b99959111b5","cd6b102e-1881-4079-9a37-455038bbf10e","3954bdfa-931f-4787-b9ac-f44b72fe09d7","ccc99f2f-2feb-4f32-a9b9-c289f619d84c","fbb5291c-2438-400e-ab32-30ce1259c600"],"bench":["03d06163-6f06-4817-abe5-0d14c3154236","960f041a-f795-4001-bd88-5ddcf58ee520","0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","4cd0ac8f-6c2e-4bf1-a232-a5ac6fd4a677"],"seasAttr":[],"permAttr":[],"fullName":"Hawai''i
+        Fridays","location":"Hawai''i","mainColor":"#3ee652","nickname":"Fridays","secondaryColor":"#3ee652","shorthand":"HF","emoji":"0x1F3DD","slogan":"It''s
+        Island Time!","shameRuns":0,"totalShames":47,"totalShamings":40,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":1,"tournamentWins":0}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1470'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 17:23:57 GMT
+      Etag:
+      - W/"5be-Xy7+PZ3HUGqTtC+67GzWcybAzRM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AHYoTBFsgX6m-CvG9XVBKiXT72yjGnMP5.uP5aGjArP585h5iJxsxK92R%2FPsQFVQySefUkGqZVp5k;
+        Path=/; Expires=Tue, 23 Feb 2021 17:23:57 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

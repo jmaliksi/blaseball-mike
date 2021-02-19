@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=6644d767-ab15-4528-a4ce-ae1f8aadb65f,d97835fd-2e92-4698-8900-1f5abea0a3b6
+  response:
+    body:
+      string: '[{"id":"6644d767-ab15-4528-a4ce-ae1f8aadb65f","anticapitalism":0.09820482794626617,"baseThirst":0.5981758490869238,"buoyancy":0.0008908716441011766,"chasiness":0.16980266728260318,"coldness":0.7788441451386205,"continuation":0.5086997271165257,"divinity":0.9271603638578974,"groundFriction":0.216137470040763,"indulgence":0.2340110011984089,"laserlikeness":0.17516216161185794,"martyrdom":0.1845429646426302,"moxie":0.9844870828631578,"musclitude":0.015154132030299916,"name":"Paula
+        Reddick","bat":"","omniscience":0.6143125481352854,"overpowerment":0.8185466769535259,"patheticism":0.18583044463894738,"ruthlessness":0.4186738122956346,"shakespearianism":0.8242078709412874,"suppression":0.8453860628420269,"tenaciousness":0.8992208318642234,"thwackability":0.7857708881577676,"tragicness":0.1,"unthwackability":0.14476802181878257,"watchfulness":0.19231573226607757,"pressurization":0.040072109597423244,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.06429302817673332,"fate":62,"armor":"","ritual":"Reading
+        theory","coffee":7,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.27570574753839294,"pitchingRating":0.2540581293455701,"hittingRating":0.6241492841411685,"defenseRating":0.5001040425764154,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":null},{"id":"d97835fd-2e92-4698-8900-1f5abea0a3b6","anticapitalism":0.03491381782653513,"baseThirst":0.027515276958333557,"buoyancy":0.5008464028487001,"chasiness":0.6401629714340105,"coldness":0.22506960329465775,"continuation":0.5762407690354707,"divinity":0.8321560570146389,"groundFriction":0.794436391616405,"indulgence":0.046227851506215556,"laserlikeness":0.7039199113062156,"martyrdom":0.42436432323753137,"moxie":0.02518106278122967,"musclitude":0.9847927314137912,"name":"King
+        Roland","bat":"","omniscience":0.6065274742006694,"overpowerment":0.4777364502319945,"patheticism":0.3453786901552993,"ruthlessness":0.8510934832513897,"shakespearianism":0.3278484783026103,"suppression":0.09419312075448039,"tenaciousness":0.8048607766092684,"thwackability":0.1503839870895045,"tragicness":0.1,"unthwackability":0.5517557593103859,"watchfulness":0.5708658431727858,"pressurization":0.9509063179128374,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":0.6520369695921371,"fate":68,"armor":"","ritual":"Eating","coffee":12,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.39835997455078714,"pitchingRating":0.5371775309452849,"hittingRating":0.35202244648368863,"defenseRating":0.5601398145713733,"leagueTeamId":"b72f3061-f573-40d7-832a-5ad475bd7909","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2756'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:24 GMT
+      Etag:
+      - W/"ac4-hB36Az+arNOmnrkdU8SzZ7WhNLE"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AhvRbRoq8LgmxOlnZ3cADESoxb2tzsW4c.etjJgYcjzdyP%2BNXZ%2FtNE%2FM3RkvU%2BTY6OqZrKu5HHTVc;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:24 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=6644d767-ab15-4528-a4ce-ae1f8aadb65f,00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '[{"id":"6644d767-ab15-4528-a4ce-ae1f8aadb65f","anticapitalism":0.09820482794626617,"baseThirst":0.5981758490869238,"buoyancy":0.0008908716441011766,"chasiness":0.16980266728260318,"coldness":0.7788441451386205,"continuation":0.5086997271165257,"divinity":0.9271603638578974,"groundFriction":0.216137470040763,"indulgence":0.2340110011984089,"laserlikeness":0.17516216161185794,"martyrdom":0.1845429646426302,"moxie":0.9844870828631578,"musclitude":0.015154132030299916,"name":"Paula
+        Reddick","bat":"","omniscience":0.6143125481352854,"overpowerment":0.8185466769535259,"patheticism":0.18583044463894738,"ruthlessness":0.4186738122956346,"shakespearianism":0.8242078709412874,"suppression":0.8453860628420269,"tenaciousness":0.8992208318642234,"thwackability":0.7857708881577676,"tragicness":0.1,"unthwackability":0.14476802181878257,"watchfulness":0.19231573226607757,"pressurization":0.040072109597423244,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.06429302817673332,"fate":62,"armor":"","ritual":"Reading
+        theory","coffee":7,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.27570574753839294,"pitchingRating":0.2540581293455701,"hittingRating":0.6241492841411685,"defenseRating":0.5001040425764154,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1385'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Feb 2021 01:10:24 GMT
+      Etag:
+      - W/"569-D44gOmqYmjDMpamyuJBBKxyfe+8"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AtrbTLzGOJ6coFPlFT8IGM0VkspzQfQuz.pKi7O7y5ZqrFcRrRjcv99fBV1BFDHbVmSytj2iDi%2FGA;
+        Path=/; Expires=Sun, 21 Feb 2021 01:10:24 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

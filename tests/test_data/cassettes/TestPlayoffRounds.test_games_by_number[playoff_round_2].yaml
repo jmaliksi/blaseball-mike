@@ -1,0 +1,140 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameById/7288ef24-842d-4ae1-aede-392e00330406
+  response:
+    body:
+      string: '{"id":"7288ef24-842d-4ae1-aede-392e00330406","basesOccupied":[],"baseRunners":[],"baseRunnerNames":[],"outcomes":[],"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","lastUpdate":"Game
+        over.","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","statsheet":"1687a5be-3f66-4619-8a89-2970c9c2e67b","awayPitcher":"1732e623-ffc2-40f0-87ba-fdcf97131f1f","awayPitcherName":"Betsy
+        Trombone","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
+        Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.4662638491705753,"awayStrikes":null,"awayScore":3,"awayTeamBatterCount":33,"homePitcher":"1513aab6-142c-48c6-b43e-fbda65fd64e8","homePitcherName":"Caleb
+        Alvarado","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5337361508294247,"homeStrikes":null,"homeScore":2,"homeTeamBatterCount":32,"season":0,"isPostseason":true,"day":110,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1661'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:00 GMT
+      Etag:
+      - W/"67d-lAD+0RXJETdyc1d/e6XA9MPGQTM"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AsMXH4S2R-tAOUYWJ7spUwNpiBjggukUI.HZvVjhc7Jhk2a6zXJqvvcUt0mdj%2BCFlAx0QZv3nJkKc;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameById/4257b13c-fc09-4b80-8d99-862889502180
+  response:
+    body:
+      string: '{"id":"4257b13c-fc09-4b80-8d99-862889502180","basesOccupied":[],"baseRunners":[],"baseRunnerNames":[],"outcomes":[],"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","lastUpdate":"Game
+        over.","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","statsheet":"2ede5fcf-2027-43e4-878f-8b4bb5972d2c","awayPitcher":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","awayPitcherName":"Bright
+        Zimmerman","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
+        Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.5731573223580191,"awayStrikes":null,"awayScore":8,"awayTeamBatterCount":44,"homePitcher":"c182f33c-aea5-48a2-97ed-dc74fa29b3c0","homePitcherName":"Swamuel
+        Mora","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.42684267764198086,"homeStrikes":null,"homeScore":3,"homeTeamBatterCount":39,"season":0,"isPostseason":true,"day":108,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1662'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:00 GMT
+      Etag:
+      - W/"67e-uHRzFO90xpZKQ9XWnl13Y1m3woI"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3Arb2unzuZgY1Vt2bAOi0I1mR1RL0WLuV9.oAj0OF4j35s785mU7SEIie8mQs1KyQ%2FacWzSq3KWqcU;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameById/29588a2a-69a1-45bf-ae0b-7b80a301a343
+  response:
+    body:
+      string: '{"id":"29588a2a-69a1-45bf-ae0b-7b80a301a343","basesOccupied":[],"baseRunners":[],"baseRunnerNames":[],"outcomes":[],"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","lastUpdate":"Game
+        over.","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","statsheet":"96530c9d-1e33-423b-9946-179b5491a2fc","awayPitcher":"814bae61-071a-449b-981e-e7afc839d6d6","awayPitcherName":"Ruslan
+        Greatness","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
+        Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.43656531220224226,"awayStrikes":null,"awayScore":10,"awayTeamBatterCount":38,"homePitcher":"16aff709-e855-47c8-8818-b9ba66e90fe8","homePitcherName":"Mullen
+        Peterson","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5634346877977578,"homeStrikes":null,"homeScore":7,"homeTeamBatterCount":36,"season":0,"isPostseason":true,"day":109,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Feb 2021 23:25:00 GMT
+      Etag:
+      - W/"682-ezgcnBy6l5wTjvcYOJDVI+D8bcY"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ALBBC1Pc3abl-Szzsmn9x_tbjOsGUvplf.NBEzHO7tgazDxrdR7g2BiDG8fD0q4nd2FEIaO6uf624;
+        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

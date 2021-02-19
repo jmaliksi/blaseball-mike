@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5,e6114fd4-a11d-4f6c-b823-65691bb2d288,d0d7b8fe-bad8-481f-978e-cb659304ed49,f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71
+  response:
+    body:
+      string: '[{"id":"97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","anticapitalism":0.88828798460699,"baseThirst":0.6299707483931725,"buoyancy":0.9214153561250237,"chasiness":0.6447670859275663,"coldness":0.5014847619775987,"continuation":0.1736143643125459,"divinity":0.3184765530463455,"groundFriction":0.6825387871631676,"indulgence":0.4749007723201835,"laserlikeness":0.9160436688975373,"martyrdom":0.01,"moxie":0.01,"musclitude":0.21034003221959133,"name":"Brock
+        Forbes","bat":"","omniscience":0.6506331503894482,"overpowerment":0.3220308720293187,"patheticism":0.3376029085797788,"ruthlessness":1.1271340255990032,"shakespearianism":0.38615528198526883,"suppression":0.9087569645123662,"tenaciousness":0.534843923397867,"thwackability":0.07841643343618579,"tragicness":0.1,"unthwackability":0.8722779641628543,"watchfulness":0.23363100659004954,"pressurization":0.49843552394620527,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.5110705570395755,"fate":67,"armor":"","ritual":"Playing
+        fetch","coffee":6,"blood":7,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6853646711191063,"pitchingRating":0.7387286499361487,"hittingRating":0.15450305940799075,"defenseRating":0.6621575928048616,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"d0d7b8fe-bad8-481f-978e-cb659304ed49","anticapitalism":0.2709190487988691,"baseThirst":0.9879922032960449,"buoyancy":0.19760419136562626,"chasiness":0.5837626604947681,"coldness":0.44338586197589636,"continuation":0.7519352424312085,"divinity":0.4513929929118704,"groundFriction":0.31816692698941657,"indulgence":0.5090756430287888,"laserlikeness":0.6128642390404953,"martyrdom":0.7957819450269895,"moxie":0.06260014139031025,"musclitude":0.2418978017853836,"name":"Adalberto
+        Tosser","bat":"","omniscience":0.21681589114420485,"overpowerment":0.19077801392672833,"patheticism":0.13891439815619075,"ruthlessness":0.6743790837257131,"shakespearianism":0.778023605433741,"suppression":0.9785753465543412,"tenaciousness":1.0349252483562292,"thwackability":0.27008534924826233,"tragicness":0.1,"unthwackability":0.8679412298928559,"watchfulness":0.5790168318589048,"pressurization":0.6889340729236781,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":true,"cinnamon":0.02220104223285091,"fate":35,"armor":"","ritual":"Nursing
+        a grudge","coffee":10,"blood":11,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.633460109233229,"pitchingRating":0.5931367978789444,"hittingRating":0.3451005962803235,"defenseRating":0.5839514252665515,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71","anticapitalism":0.5114116673319105,"baseThirst":0.788321396784033,"buoyancy":0.9819959984670763,"chasiness":0.30432457463953694,"coldness":0.24005098927492924,"continuation":0.09685773349713483,"divinity":0.26371028074079567,"groundFriction":0.48945036482772847,"indulgence":1.0144798856841624,"laserlikeness":0.48380681547949594,"martyrdom":0.7374650975447492,"moxie":0.8396145204771313,"musclitude":0.976337147938954,"name":"Finn
+        James","bat":"","omniscience":0.07793056257926706,"overpowerment":0.9471020273511033,"patheticism":0.926332166229461,"ruthlessness":0.6317028842496994,"shakespearianism":0.15731474712180088,"suppression":0.942069882363006,"tenaciousness":0.7639700926234785,"thwackability":0.4321905903661905,"tragicness":0.1,"unthwackability":0.9846263662061803,"watchfulness":0.3167340085312083,"pressurization":0.6821710922051616,"totalFingers":11,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":0.6703936125410201,"fate":15,"armor":"","ritual":"Having
+        an epiphany","coffee":9,"blood":1,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.501435367294291,"pitchingRating":0.6568783081463693,"hittingRating":0.4014837389262917,"defenseRating":0.420956353807425,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null},{"id":"e6114fd4-a11d-4f6c-b823-65691bb2d288","anticapitalism":0.2741108769273313,"baseThirst":0.9695525028074288,"buoyancy":0.921329031800802,"chasiness":0.4217166918207204,"coldness":0.5003349813522934,"continuation":0.8094346430126829,"divinity":0.29369113426567306,"groundFriction":0.8864925711814212,"indulgence":0.6079631405424027,"laserlikeness":0.8560848348575162,"martyrdom":0.8439102310906617,"moxie":0.665419013105764,"musclitude":0.17400705335338948,"name":"Bevan
+        Underbuck","bat":"","omniscience":0.6368600321952337,"overpowerment":0.38521177382998956,"patheticism":0.01,"ruthlessness":0.2188221992846202,"shakespearianism":0.9984904494019299,"suppression":0.49098391353607745,"tenaciousness":1.0131129426378578,"thwackability":0.17524190129829462,"tragicness":0.1,"unthwackability":0.5760681235508462,"watchfulness":0.7603851304637349,"pressurization":0.19676937895865568,"totalFingers":13,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.6315505289737372,"fate":28,"armor":"","ritual":"Whispering","coffee":13,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8489633634188947,"pitchingRating":0.3520013424494833,"hittingRating":0.29968143650852136,"defenseRating":0.7183538755787042,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5479'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:13 GMT
+      Etag:
+      - W/"1567-SrY1Jgt5s6InLajSa5DE0aKLxk0"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ANDMqiSAQleb29LXlTLFUbxc7CC4bKkJI.vyYDqU8hEpi9jMlXKOkTE0pFHbeweMReju7Dz6H8fnM;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:13 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

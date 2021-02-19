@@ -6,14 +6,18 @@ import requests_cache
 import requests
 from datetime import datetime
 from dateutil.parser import parse
+from blaseball_mike.session import session, check_network_response
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
 
 cached_session = requests_cache.CachedSession(backend="memory")
 
+
 def prepare_id(id_):
-    """if id_ is string uuid, return as is, if list, format as comma separated list."""
+    """
+    if id_ is string uuid, return as is, if list, format as comma separated list.
+    """
     if isinstance(id_, list):
         return ','.join(id_)
     elif isinstance(id_, str):
@@ -23,12 +27,15 @@ def prepare_id(id_):
 
 
 def paged_get(url, params, session=None):
+    """
+    Combine paged URL responses
+    """
     data = []
     while True:
         if not session:
-            out = requests.get(url, params=params).json()
+            out = check_network_response(requests.get(url, params=params))
         else:
-            out = session.get(url, params=params).json()
+            out = check_network_response(session.get(url, params=params))
         d = out.get("data", [])
         page = out.get("nextPage")
         
@@ -43,10 +50,23 @@ def paged_get(url, params, session=None):
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
               finished=None, outcomes=None, order=None, count=None):
     """
-    Season & Day are 1 indexed
+    Get Games
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        day: 1-indexed season.
+        team_ids: list or comma-separated string of team IDs.
+        pitcher_ids: list of comma-separated string of team IDs.
+        weather: integer weather ID.
+        started: boolean for if game has started.
+        finished: boolean for if game has ended.
+        outcomes: search string to filter game outcomes.
+        order: sort in ascending ('asc') or descending ('desc') order.
+        count: number of entries to return.
     """
     params = {}
-    if season and tournament is not None:
+    if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
 
     if tournament is not None:
@@ -76,6 +96,16 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
 
 
 def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+    """
+    Get player at time
+
+    Args:
+        ids: list or comma-separated string of player IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending ('asc') or descending ('desc') order.
+        count: number of entries to return.
+    """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -97,6 +127,16 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
 
 
 def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+    """
+    Get team at time
+
+    Args:
+        ids: list or comma-separated string of team IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending ('asc') or descending ('desc') order.
+        count: number of entries to return.
+    """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -118,6 +158,15 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
 
 
 def get_tribute_updates(before=None, after=None, order=None, count=None):
+    """
+    Get Hall of Flame at time
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending ('asc') or descending ('desc') order.
+        count: number of entries to return.
+    """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -133,14 +182,31 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params["count"] = count
 
-    return paged_get(f'{BASE_URL}/tributes/hourly', params=params, session=cached_session)
+    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=cached_session)
 
 
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     """
     Map a season/day to a real-life timestamp
 
-    Returns a list of dictionaries containing time information
+    Args:
+        season: 1-indexed season. if 0 do not filter by season.
+        tournament: tournament identifier.
+        day: 1-indexed day. if 0 do not filter by season.
+        include_nongame: if True, include timestamps for phase changes, such as pre & post elections.
+
+    Returns:
+    ```
+    [
+      {
+        'season': 1,
+        'tournament': -1,
+        'day': 98,
+        'type': "season",
+        'startTime': datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        'endTime': datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+      }
+    ]
     """
     season = season - 1
     day = day - 1
@@ -170,6 +236,10 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
 def get_fights(id_=None, season=0):
     """
     Return a list of boss fights
+
+    Args:
+        id_: fight ID.
+        season: 1-indexed season. if 0 do not filter by season.
     """
     season = season - 1
 

@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=57290370-6723-4d33-929e-b4fc190e6a9a,c9e4a49e-e35a-4034-a4c7-293896b40c58,6b8d128f-ed51-496d-a965-6614476f8256,8b53ce82-4b1a-48f0-999d-1774b3719202,138fccc3-e66f-4b07-8327-d4b6f372f654
+  response:
+    body:
+      string: '[{"id":"138fccc3-e66f-4b07-8327-d4b6f372f654","anticapitalism":0.8680530780912592,"baseThirst":0.40269916176903375,"buoyancy":0.01,"chasiness":1.0216942303351553,"coldness":0.48600995912213385,"continuation":0.434357223761566,"divinity":0.01,"groundFriction":1.0093123360563918,"indulgence":0.5060695162285549,"laserlikeness":0.8428225228076685,"martyrdom":0.642501370170344,"moxie":0.5395033696176093,"musclitude":0.3440954811262603,"name":"Oscar
+        Vaughan","bat":"","omniscience":0.1851387653642818,"overpowerment":0.8438107028395048,"patheticism":0.48397475666936995,"ruthlessness":0.7683355127289149,"shakespearianism":0.3002542950044008,"suppression":0.21053429229931023,"tenaciousness":0.16383684509012414,"thwackability":0.01,"tragicness":0.1,"unthwackability":0.35823901514812895,"watchfulness":0.5068004820178018,"pressurization":0.01,"totalFingers":11,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.3352539774828601,"fate":47,"armor":"","ritual":"Rally-cap","coffee":7,"blood":6,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.721065006652857,"pitchingRating":0.4572551551038684,"hittingRating":0.033611193834568724,"defenseRating":0.45883042909427985,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null},{"id":"57290370-6723-4d33-929e-b4fc190e6a9a","anticapitalism":0.4176621175635872,"baseThirst":0.8398817031674477,"buoyancy":0.8877706186575443,"chasiness":0.8740188622874997,"coldness":0.41291027918716106,"continuation":0.44740707600118046,"divinity":0.495121351081772,"groundFriction":0.5783202924918166,"indulgence":1.018686893922129,"laserlikeness":0.9963195661280817,"martyrdom":0.41005864352366733,"moxie":0.5519254458949825,"musclitude":0.8874201130680853,"name":"Mooney
+        Doctor II","bat":"","omniscience":0.26858770782534136,"overpowerment":1.1825032163885107,"patheticism":0.05550988145267946,"ruthlessness":0.5977757956066335,"shakespearianism":1.0165161758786723,"suppression":1.185417653371144,"tenaciousness":0.44331946547786794,"thwackability":0.8357101814565517,"tragicness":0.1,"unthwackability":0.7350133363381529,"watchfulness":0.7734680671672939,"pressurization":0.2389176666127779,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.3588437416006455,"fate":22,"armor":"","ritual":"Stretching","coffee":7,"blood":9,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8584447352785135,"pitchingRating":0.7011179909223805,"hittingRating":0.6810492415189042,"defenseRating":0.5757572491815892,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null},{"id":"c9e4a49e-e35a-4034-a4c7-293896b40c58","anticapitalism":0.7674701924700937,"baseThirst":0.4813956010301392,"buoyancy":0.13041565458204102,"chasiness":0.555661781665263,"coldness":0.6448240331775138,"continuation":0.8591185252454525,"divinity":0.3964800313926656,"groundFriction":0.6861708190838193,"indulgence":1.0782780313868574,"laserlikeness":0.8462223001729333,"martyrdom":0.7030897078787854,"moxie":0.6223353235519289,"musclitude":0.11917028007794576,"name":"Alexander
+        Horne","bat":"","omniscience":1.0536232891474795,"overpowerment":0.2831215116910555,"patheticism":0.4384864177230044,"ruthlessness":0.42346742362702944,"shakespearianism":0.6233489563827709,"suppression":0.5605754398313326,"tenaciousness":0.6329025403704165,"thwackability":0.31943291112333433,"tragicness":0.1,"unthwackability":0.6426333079877898,"watchfulness":0.2939315098863539,"pressurization":0.725807241207326,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.8045469615120213,"fate":12,"armor":"","ritual":"Mourning","coffee":7,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8171730837258485,"pitchingRating":0.4438280055565345,"hittingRating":0.3847028702529066,"defenseRating":0.7492318983597548,"leagueTeamId":"b72f3061-f573-40d7-832a-5ad475bd7909","tournamentTeamId":null},{"id":"6b8d128f-ed51-496d-a965-6614476f8256","anticapitalism":0.888059839050486,"baseThirst":0.9249418977688818,"buoyancy":0.7148821822385913,"chasiness":0.11694425106899803,"coldness":0.48811726386293597,"continuation":0.466762914920029,"divinity":0.3757125695901599,"groundFriction":0.1605597202835483,"indulgence":0.10311704612332348,"laserlikeness":0.3295632415916062,"martyrdom":0.8564677298401965,"moxie":0.8178051655560172,"musclitude":0.9527622480521809,"name":"Orville
+        Manco","bat":"","omniscience":1.0342224680006356,"overpowerment":0.7253631065906119,"patheticism":0.4614170843909727,"ruthlessness":0.7206452040034892,"shakespearianism":0.16833218106653214,"suppression":0.7568675376862085,"tenaciousness":0.13165046950052534,"thwackability":0.6269019168583696,"tragicness":0.1,"unthwackability":0.8416650412468916,"watchfulness":0.5703846320786203,"pressurization":0.501814646990403,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.5609839213910567,"fate":10,"armor":"","ritual":"Swearing
+        an oath","coffee":7,"blood":5,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.35025727876740026,"pitchingRating":0.6303349434188059,"hittingRating":0.5712828885303919,"defenseRating":0.5059017345281516,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null},{"id":"8b53ce82-4b1a-48f0-999d-1774b3719202","anticapitalism":0.2510674462348137,"baseThirst":0.1752942999015851,"buoyancy":0.41812498660086417,"chasiness":0.520063895286182,"coldness":0.6402385582499026,"continuation":0.5636715098216775,"divinity":0.4138681064100481,"groundFriction":0.9739828973039489,"indulgence":0.6591340242777256,"laserlikeness":0.2266587159865662,"martyrdom":0.889694617093071,"moxie":0.7706231325746634,"musclitude":0.1070531675577323,"name":"Oliver
+        Mueller","bat":"","omniscience":0.01,"overpowerment":0.31736651031387075,"patheticism":0.14110769325025252,"ruthlessness":0.7607422098958234,"shakespearianism":0.6822727244514708,"suppression":0.1436452348157029,"tenaciousness":0.31607088091281543,"thwackability":0.855556323697564,"tragicness":0.1,"unthwackability":0.8028879500467829,"watchfulness":0.01,"pressurization":1.0116190656532684,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.42169511004787075,"fate":42,"armor":"","ritual":"TV","coffee":7,"blood":5,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3613417188331917,"pitchingRating":0.6435925179488863,"hittingRating":0.5703559745984538,"defenseRating":0.16275772410288367,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":null}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6809'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 20:19:22 GMT
+      Etag:
+      - W/"1a99-jEwc/Ice821zZWhjc9NU5PQYITQ"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3ArJPrFEqOti2K74rXjK2BOb5fFXbswPRU.XsBGUNCB%2BkRi3Mty19nSItwLLZpF7Q9a6IacUEz4ixs;
+        Path=/; Expires=Tue, 23 Feb 2021 20:19:22 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

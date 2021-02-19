@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=aabc11a1-81af-4036-9f18-229c759ca8a9
+  response:
+    body:
+      string: '{"id":"aabc11a1-81af-4036-9f18-229c759ca8a9","divisions":["d4cc18de-a136-4271-84f1-32516be91a80","98c92da4-0ea7-43be-bd75-c6150e184326"],"name":"The
+        Wild League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Feb 2021 00:59:59 GMT
+      Etag:
+      - W/"a2-J8V66KyPWL0yUy0ekkRrCMisoHw"
+      Server:
+      - Cowboy
+      Set-Cookie:
+      - connect.sid=s%3AvVbAjURfQlPlG7IaU-bJe9wQ7RCB42eP.3R6NB6PALyEgtcYRcBBAFOQ0vtGkL09XcQKMqQSb4co;
+        Path=/; Expires=Tue, 23 Feb 2021 00:59:59 GMT; HttpOnly
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
