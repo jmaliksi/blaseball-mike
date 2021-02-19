@@ -36,14 +36,18 @@ import requests_cache
 import requests
 from datetime import datetime
 from dateutil.parser import parse
+from blaseball_mike.session import session, check_network_response
 
 BASE_URL = &#39;https://api.sibr.dev/chronicler/v1&#39;
 TIMESTAMP_FORMAT = &#34;%Y-%m-%dT%H:%M:%S.%fZ&#34;
 
 cached_session = requests_cache.CachedSession(backend=&#34;memory&#34;)
 
+
 def prepare_id(id_):
-    &#34;&#34;&#34;if id_ is string uuid, return as is, if list, format as comma separated list.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    if id_ is string uuid, return as is, if list, format as comma separated list.
+    &#34;&#34;&#34;
     if isinstance(id_, list):
         return &#39;,&#39;.join(id_)
     elif isinstance(id_, str):
@@ -53,12 +57,15 @@ def prepare_id(id_):
 
 
 def paged_get(url, params, session=None):
+    &#34;&#34;&#34;
+    Combine paged URL responses
+    &#34;&#34;&#34;
     data = []
     while True:
         if not session:
-            out = requests.get(url, params=params).json()
+            out = check_network_response(requests.get(url, params=params))
         else:
-            out = session.get(url, params=params).json()
+            out = check_network_response(session.get(url, params=params))
         d = out.get(&#34;data&#34;, [])
         page = out.get(&#34;nextPage&#34;)
         
@@ -73,10 +80,23 @@ def paged_get(url, params, session=None):
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
               finished=None, outcomes=None, order=None, count=None):
     &#34;&#34;&#34;
-    Season &amp; Day are 1 indexed
+    Get Games
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        day: 1-indexed season.
+        team_ids: list or comma-separated string of team IDs.
+        pitcher_ids: list of comma-separated string of team IDs.
+        weather: integer weather ID.
+        started: boolean for if game has started.
+        finished: boolean for if game has ended.
+        outcomes: search string to filter game outcomes.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
     &#34;&#34;&#34;
     params = {}
-    if season and tournament is not None:
+    if season is not None and tournament is not None:
         raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
 
     if tournament is not None:
@@ -106,6 +126,16 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
 
 
 def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get player at time
+
+    Args:
+        ids: list or comma-separated string of player IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -127,6 +157,16 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
 
 
 def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get team at time
+
+    Args:
+        ids: list or comma-separated string of team IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -148,6 +188,15 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
 
 
 def get_tribute_updates(before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get Hall of Flame at time
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -163,14 +212,31 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params[&#34;count&#34;] = count
 
-    return paged_get(f&#39;{BASE_URL}/tributes/hourly&#39;, params=params, session=cached_session)
+    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=cached_session)
 
 
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     &#34;&#34;&#34;
     Map a season/day to a real-life timestamp
 
-    Returns a list of dictionaries containing time information
+    Args:
+        season: 1-indexed season. if 0 do not filter by season.
+        tournament: tournament identifier.
+        day: 1-indexed day. if 0 do not filter by season.
+        include_nongame: if True, include timestamps for phase changes, such as pre &amp; post elections.
+
+    Returns:
+    ```
+    [
+      {
+        &#39;season&#39;: 1,
+        &#39;tournament&#39;: -1,
+        &#39;day&#39;: 98,
+        &#39;type&#39;: &#34;season&#34;,
+        &#39;startTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;endTime&#39;: datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+      }
+    ]
     &#34;&#34;&#34;
     season = season - 1
     day = day - 1
@@ -200,6 +266,10 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
 def get_fights(id_=None, season=0):
     &#34;&#34;&#34;
     Return a list of boss fights
+
+    Args:
+        id_: fight ID.
+        season: 1-indexed season. if 0 do not filter by season.
     &#34;&#34;&#34;
     season = season - 1
 
@@ -223,7 +293,14 @@ def get_fights(id_=None, season=0):
 <span>def <span class="ident">get_fights</span></span>(<span>id_=None, season=0)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return a list of boss fights</p></div>
+<div class="desc"><p>Return a list of boss fights</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>fight ID.</dd>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed season. if 0 do not filter by season.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -231,6 +308,10 @@ def get_fights(id_=None, season=0):
 <pre><code class="python">def get_fights(id_=None, season=0):
     &#34;&#34;&#34;
     Return a list of boss fights
+
+    Args:
+        id_: fight ID.
+        season: 1-indexed season. if 0 do not filter by season.
     &#34;&#34;&#34;
     season = season - 1
 
@@ -247,7 +328,32 @@ def get_fights(id_=None, season=0):
 <span>def <span class="ident">get_games</span></span>(<span>season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Season &amp; Day are 1 indexed</p></div>
+<div class="desc"><p>Get Games</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed season.</dd>
+<dt><strong><code>tournament</code></strong></dt>
+<dd>tournament identifier.</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>1-indexed season.</dd>
+<dt><strong><code>team_ids</code></strong></dt>
+<dd>list or comma-separated string of team IDs.</dd>
+<dt><strong><code>pitcher_ids</code></strong></dt>
+<dd>list of comma-separated string of team IDs.</dd>
+<dt><strong><code>weather</code></strong></dt>
+<dd>integer weather ID.</dd>
+<dt><strong><code>started</code></strong></dt>
+<dd>boolean for if game has started.</dd>
+<dt><strong><code>finished</code></strong></dt>
+<dd>boolean for if game has ended.</dd>
+<dt><strong><code>outcomes</code></strong></dt>
+<dd>search string to filter game outcomes.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -255,10 +361,23 @@ def get_fights(id_=None, season=0):
 <pre><code class="python">def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
               finished=None, outcomes=None, order=None, count=None):
     &#34;&#34;&#34;
-    Season &amp; Day are 1 indexed
+    Get Games
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        day: 1-indexed season.
+        team_ids: list or comma-separated string of team IDs.
+        pitcher_ids: list of comma-separated string of team IDs.
+        weather: integer weather ID.
+        started: boolean for if game has started.
+        finished: boolean for if game has ended.
+        outcomes: search string to filter game outcomes.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
     &#34;&#34;&#34;
     params = {}
-    if season and tournament is not None:
+    if season is not None and tournament is not None:
         raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
 
     if tournament is not None:
@@ -291,12 +410,35 @@ def get_fights(id_=None, season=0):
 <span>def <span class="ident">get_player_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get player at time</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>list or comma-separated string of player IDs.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get player at time
+
+    Args:
+        ids: list or comma-separated string of player IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -321,12 +463,35 @@ def get_fights(id_=None, season=0):
 <span>def <span class="ident">get_team_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get team at time</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>list or comma-separated string of team IDs.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get team at time
+
+    Args:
+        ids: list or comma-separated string of team IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -351,12 +516,32 @@ def get_fights(id_=None, season=0):
 <span>def <span class="ident">get_tribute_updates</span></span>(<span>before=None, after=None, order=None, count=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get Hall of Flame at time</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tribute_updates(before=None, after=None, order=None, count=None):
+    &#34;&#34;&#34;
+    Get Hall of Flame at time
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+    &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -372,25 +557,28 @@ def get_fights(id_=None, season=0):
     if count:
         params[&#34;count&#34;] = count
 
-    return paged_get(f&#39;{BASE_URL}/tributes/hourly&#39;, params=params, session=cached_session)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=cached_session)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.paged_get"><code class="name flex">
 <span>def <span class="ident">paged_get</span></span>(<span>url, params, session=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Combine paged URL responses</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def paged_get(url, params, session=None):
+    &#34;&#34;&#34;
+    Combine paged URL responses
+    &#34;&#34;&#34;
     data = []
     while True:
         if not session:
-            out = requests.get(url, params=params).json()
+            out = check_network_response(requests.get(url, params=params))
         else:
-            out = session.get(url, params=params).json()
+            out = check_network_response(session.get(url, params=params))
         d = out.get(&#34;data&#34;, [])
         page = out.get(&#34;nextPage&#34;)
         
@@ -412,7 +600,9 @@ def get_fights(id_=None, season=0):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def prepare_id(id_):
-    &#34;&#34;&#34;if id_ is string uuid, return as is, if list, format as comma separated list.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    if id_ is string uuid, return as is, if list, format as comma separated list.
+    &#34;&#34;&#34;
     if isinstance(id_, list):
         return &#39;,&#39;.join(id_)
     elif isinstance(id_, str):
@@ -426,7 +616,29 @@ def get_fights(id_=None, season=0):
 </code></dt>
 <dd>
 <div class="desc"><p>Map a season/day to a real-life timestamp</p>
-<p>Returns a list of dictionaries containing time information</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed season. if 0 do not filter by season.</dd>
+<dt><strong><code>tournament</code></strong></dt>
+<dd>tournament identifier.</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>1-indexed day. if 0 do not filter by season.</dd>
+<dt><strong><code>include_nongame</code></strong></dt>
+<dd>if True, include timestamps for phase changes, such as pre &amp; post elections.</dd>
+</dl>
+<p>Returns:
+```
+[
+{
+'season': 1,
+'tournament': -1,
+'day': 98,
+'type': "season",
+'startTime': datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+'endTime': datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+}
+]</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -435,7 +647,24 @@ def get_fights(id_=None, season=0):
     &#34;&#34;&#34;
     Map a season/day to a real-life timestamp
 
-    Returns a list of dictionaries containing time information
+    Args:
+        season: 1-indexed season. if 0 do not filter by season.
+        tournament: tournament identifier.
+        day: 1-indexed day. if 0 do not filter by season.
+        include_nongame: if True, include timestamps for phase changes, such as pre &amp; post elections.
+
+    Returns:
+    ```
+    [
+      {
+        &#39;season&#39;: 1,
+        &#39;tournament&#39;: -1,
+        &#39;day&#39;: 98,
+        &#39;type&#39;: &#34;season&#34;,
+        &#39;startTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;endTime&#39;: datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+      }
+    ]
     &#34;&#34;&#34;
     season = season - 1
     day = day - 1

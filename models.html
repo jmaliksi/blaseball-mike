@@ -505,7 +505,7 @@ class Player(Base):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
-        
+
         original_json = self.json()
         if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
             original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
@@ -1265,6 +1265,10 @@ class ElectionResult(Base):
     @property
     def tiding_results(self):
         return self.event_results
+
+    @Base.lazy_load(&#34;_season&#34;, use_default=False)
+    def season(self):
+        return self._season + 1
 
 
 OffseasonResult = ElectionResult
@@ -2340,7 +2344,11 @@ def load(cls):
     # tiding_results is an alias to event_results
     @property
     def tiding_results(self):
-        return self.event_results</code></pre>
+        return self.event_results
+
+    @Base.lazy_load(&#34;_season&#34;, use_default=False)
+    def season(self):
+        return self._season + 1</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -2406,6 +2414,23 @@ def blessing_results(self):
 <pre><code class="python">@property
 def tiding_results(self):
     return self.event_results</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="blaseball_mike.models.ElectionResult.season"><code class="name flex">
+<span>def <span class="ident">season</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
+def season(self):
+    return self._season + 1</code></pre>
 </details>
 </dd>
 </dl>
@@ -2453,7 +2478,11 @@ def tiding_results(self):
     # tiding_results is an alias to event_results
     @property
     def tiding_results(self):
-        return self.event_results</code></pre>
+        return self.event_results
+
+    @Base.lazy_load(&#34;_season&#34;, use_default=False)
+    def season(self):
+        return self._season + 1</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -2519,6 +2548,23 @@ def blessing_results(self):
 <pre><code class="python">@property
 def tiding_results(self):
     return self.event_results</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="blaseball_mike.models.ElectionResult.season"><code class="name flex">
+<span>def <span class="ident">season</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
+def season(self):
+    return self._season + 1</code></pre>
 </details>
 </dd>
 </dl>
@@ -4343,7 +4389,7 @@ def load_one(cls, id_):
         multipliers = multipliers or {}
         buffs = buffs or {}
         reroll = reroll or {}
-        
+
         original_json = self.json()
         if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
             original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
@@ -5050,7 +5096,7 @@ appropriate related stats.</p></div>
     multipliers = multipliers or {}
     buffs = buffs or {}
     reroll = reroll or {}
-    
+
     original_json = self.json()
     if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
         original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
@@ -6828,6 +6874,7 @@ def player(self):
 <li><code><a title="blaseball_mike.models.ElectionResult.decree_results" href="#blaseball_mike.models.ElectionResult.decree_results">decree_results</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.event_results" href="#blaseball_mike.models.ElectionResult.event_results">event_results</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.load_by_season" href="#blaseball_mike.models.ElectionResult.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.ElectionResult.season" href="#blaseball_mike.models.ElectionResult.season">season</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.tiding_results" href="#blaseball_mike.models.ElectionResult.tiding_results">tiding_results</a></code></li>
 </ul>
 </li>
@@ -6839,6 +6886,7 @@ def player(self):
 <li><code><a title="blaseball_mike.models.ElectionResult.decree_results" href="#blaseball_mike.models.ElectionResult.decree_results">decree_results</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.event_results" href="#blaseball_mike.models.ElectionResult.event_results">event_results</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.load_by_season" href="#blaseball_mike.models.ElectionResult.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.ElectionResult.season" href="#blaseball_mike.models.ElectionResult.season">season</a></code></li>
 <li><code><a title="blaseball_mike.models.ElectionResult.tiding_results" href="#blaseball_mike.models.ElectionResult.tiding_results">tiding_results</a></code></li>
 </ul>
 </li>
