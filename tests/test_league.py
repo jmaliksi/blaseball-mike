@@ -138,7 +138,7 @@ class TestDivision(TestBase):
 
     @pytest.mark.vcr
     def test_load_by_name(self):
-        division = Division.load_by_name("Chaotic Evil")
+        division = Division.load_by_name("chaotic evil")
         assert isinstance(division, Division)
 
     @pytest.mark.vcr

@@ -739,7 +739,7 @@ class Division(Base):
         """
         divisions = cls.load_all()
         for division in divisions.values():
-            if name in division.name:
+            if name in division.name.lower():
                 return division
         return None
 
