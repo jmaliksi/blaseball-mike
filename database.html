@@ -32,8 +32,6 @@
 
 Based off spec: https://github.com/Society-for-Internet-Blaseball-Research/blaseball-api-spec
 &#34;&#34;&#34;
-import requests
-import requests_cache
 from blaseball_mike.session import session, check_network_response
 
 
@@ -42,7 +40,7 @@ BASE_GITHUB = &#39;https://raw.githubusercontent.com/xSke/blaseball-site-files/m
 
 
 def get_global_events():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)
 
@@ -51,7 +49,7 @@ def get_all_teams():
     &#34;&#34;&#34;
     Returns dictionary keyed by team ID
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
     return {t[&#39;id&#39;]: t for t in check_network_response(res)}
 
@@ -60,31 +58,31 @@ def get_all_divisions():
     &#34;&#34;&#34;
     Returns dictionary keyed by division ID
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
     return {d[&#39;id&#39;]: d for d in check_network_response(res)}
 
 
 def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_subleague(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_division(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_team(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)
 
@@ -98,7 +96,7 @@ def get_player(id_):
         return {}
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/players?ids={id_}&#39;)
     return {p[&#39;id&#39;]: p for p in check_network_response(res)}
 
@@ -108,7 +106,7 @@ def get_games(season, day):
     Season and day will be 1 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
@@ -118,19 +116,19 @@ def get_tournament(tournament, day):
     Day will be 1 indexed. Tournament is 0 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;, expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
 def get_game_by_id(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)
 
 
 def get_offseason_election_details():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)
 
@@ -139,7 +137,7 @@ def get_offseason_recap(season):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
     return check_network_response(res)
 
@@ -150,7 +148,7 @@ def get_offseason_bonus_results(id_):
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/bonusResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
@@ -161,7 +159,7 @@ def get_offseason_decree_results(id_):
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/decreeResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
@@ -169,7 +167,7 @@ def get_offseason_decree_results(id_):
 def get_offseason_event_results(id_):
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/eventResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
@@ -178,13 +176,13 @@ def get_playoff_details(season):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
     return check_network_response(res)
 
 
 def get_playoff_round(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)
 
@@ -195,13 +193,13 @@ def get_playoff_matchups(id_):
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffMatchups?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
 def get_standings(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)
 
@@ -210,13 +208,13 @@ def get_season(season_number):
     &#34;&#34;&#34;
     Season number is 1 indexed
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
     return check_network_response(res)
 
 
 def get_tiebreakers(id):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
@@ -224,7 +222,7 @@ def get_tiebreakers(id):
 def get_game_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/gameStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
@@ -232,7 +230,7 @@ def get_game_statsheets(ids):
 def get_player_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playerSeasonStats?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
@@ -240,7 +238,7 @@ def get_player_statsheets(ids):
 def get_season_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/seasonStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
@@ -248,25 +246,25 @@ def get_season_statsheets(ids):
 def get_team_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/teamSeasonStats?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
 def get_idols():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)
 
 
 def get_tributes():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)
 
 
 def get_simulation_data():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)
 
@@ -274,7 +272,7 @@ def get_simulation_data():
 def get_attributes(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/mods?ids={ids}&#39;)
     return check_network_response(res)
 
@@ -282,13 +280,13 @@ def get_attributes(ids):
 def get_items(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/items?ids={ids}&#39;)
     return check_network_response(res)
 
 
 def get_weather():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)
 
@@ -296,7 +294,7 @@ def get_weather():
 def get_blood(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/blood?ids={ids}&#39;)
     return check_network_response(res)
 
@@ -304,7 +302,7 @@ def get_blood(ids):
 def get_coffee(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/coffee?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -329,7 +327,7 @@ def get_coffee(ids):
     &#34;&#34;&#34;
     Returns dictionary keyed by division ID
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
     return {d[&#39;id&#39;]: d for d in check_network_response(res)}</code></pre>
 </details>
@@ -347,7 +345,7 @@ def get_coffee(ids):
     &#34;&#34;&#34;
     Returns dictionary keyed by team ID
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
     return {t[&#39;id&#39;]: t for t in check_network_response(res)}</code></pre>
 </details>
@@ -364,7 +362,7 @@ def get_coffee(ids):
 <pre><code class="python">def get_attributes(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/mods?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -381,7 +379,7 @@ def get_coffee(ids):
 <pre><code class="python">def get_blood(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/blood?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -398,7 +396,7 @@ def get_coffee(ids):
 <pre><code class="python">def get_coffee(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/coffee?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -413,7 +411,7 @@ def get_coffee(ids):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_division(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -428,7 +426,7 @@ def get_coffee(ids):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_game_by_id(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -445,7 +443,7 @@ def get_coffee(ids):
 <pre><code class="python">def get_game_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/gameStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
@@ -465,7 +463,7 @@ Returns as dictionary with game ID as key.</p></div>
     Season and day will be 1 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -480,7 +478,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_global_events():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -495,7 +493,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_idols():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -512,7 +510,7 @@ Returns as dictionary with game ID as key.</p></div>
 <pre><code class="python">def get_items(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/items?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -527,7 +525,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -547,7 +545,7 @@ Returns as dictionary with game ID as key.</p></div>
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/bonusResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -567,7 +565,7 @@ Returns as dictionary with game ID as key.</p></div>
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/decreeResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -582,7 +580,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_election_details():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -599,7 +597,7 @@ Returns as dictionary with game ID as key.</p></div>
 <pre><code class="python">def get_offseason_event_results(id_):
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/eventResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -617,7 +615,7 @@ Returns as dictionary with game ID as key.</p></div>
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -641,7 +639,7 @@ Returns a dictionary with ID as key</p></div>
         return {}
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/players?ids={id_}&#39;)
     return {p[&#39;id&#39;]: p for p in check_network_response(res)}</code></pre>
 </details>
@@ -658,7 +656,7 @@ Returns a dictionary with ID as key</p></div>
 <pre><code class="python">def get_player_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playerSeasonStats?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
@@ -676,7 +674,7 @@ Returns a dictionary with ID as key</p></div>
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -696,7 +694,7 @@ Returns a dictionary with ID as key</p></div>
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffMatchups?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -711,7 +709,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_playoff_round(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -729,7 +727,7 @@ Returns a dictionary with ID as key</p></div>
     &#34;&#34;&#34;
     Season number is 1 indexed
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -746,7 +744,7 @@ Returns a dictionary with ID as key</p></div>
 <pre><code class="python">def get_season_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/seasonStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
@@ -761,7 +759,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_simulation_data():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -776,7 +774,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_standings(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -791,7 +789,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_subleague(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -806,7 +804,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_team(id_):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -823,7 +821,7 @@ Returns a dictionary with ID as key</p></div>
 <pre><code class="python">def get_team_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/teamSeasonStats?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
@@ -838,7 +836,7 @@ Returns a dictionary with ID as key</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tiebreakers(id):
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -858,7 +856,7 @@ Returns as dictionary with game ID as key.</p></div>
     Day will be 1 indexed. Tournament is 0 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;, expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
@@ -873,7 +871,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tributes():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -888,7 +886,7 @@ Returns as dictionary with game ID as key.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_weather():
-    s = requests_cache.CachedSession(backend=&#34;memory&#34;,expire_after=5)
+    s = session(5)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)</code></pre>
 </details>
