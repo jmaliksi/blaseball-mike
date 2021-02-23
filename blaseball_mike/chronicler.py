@@ -2,16 +2,12 @@
 
 API Reference (out of date): https://astrid.stoplight.io/docs/sibr/reference/Chronicler.v1.yaml
 """
-import requests_cache
-import requests
 from datetime import datetime
 from dateutil.parser import parse
 from blaseball_mike.session import session, check_network_response
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
-
-cached_session = requests_cache.CachedSession(backend="memory")
 
 
 def prepare_id(id_):
@@ -26,16 +22,13 @@ def prepare_id(id_):
         raise ValueError(f'Incorrect ID type: {type(id_)}')
 
 
-def paged_get(url, params, session=None):
+def paged_get(url, params, session):
     """
     Combine paged URL responses
     """
     data = []
     while True:
-        if not session:
-            out = check_network_response(requests.get(url, params=params))
-        else:
-            out = check_network_response(session.get(url, params=params))
+        out = check_network_response(session.get(url, params=params))
         d = out.get("data", [])
         page = out.get("nextPage")
         
@@ -92,7 +85,8 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if weather:
         params["weather"] = weather
 
-    return paged_get(f'{BASE_URL}/games', params=params, session=cached_session)
+    s = session(None)
+    return paged_get(f'{BASE_URL}/games', params=params, session=s)
 
 
 def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
@@ -123,7 +117,8 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if ids:
         params["player"] = prepare_id(ids)
 
-    return paged_get(f'{BASE_URL}/players/updates', params=params, session=cached_session)
+    s = session(None)
+    return paged_get(f'{BASE_URL}/players/updates', params=params, session=s)
 
 
 def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
@@ -154,7 +149,8 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
     if ids:
         params["team"] = prepare_id(ids)
 
-    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=cached_session)
+    s = session(None)
+    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s)
 
 
 def get_tribute_updates(before=None, after=None, order=None, count=None):
@@ -182,7 +178,8 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
     if count:
         params["count"] = count
 
-    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=cached_session)
+    s = session(None)
+    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s)
 
 
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
@@ -211,7 +208,8 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     season = season - 1
     day = day - 1
 
-    map_ = cached_session.get(f'{BASE_URL}/time/map').json()
+    s = session(3600)
+    map_ = s.get(f'{BASE_URL}/time/map').json()
 
     # Filter out desired events
     if tournament != -1:
@@ -243,7 +241,8 @@ def get_fights(id_=None, season=0):
     """
     season = season - 1
 
-    data = cached_session.get(f'{BASE_URL}/fights').json()["data"]
+    s = session(3600)
+    data = s.get(f'{BASE_URL}/fights').json()["data"]
     if id_:
         data = list(filter(lambda x: x['id'] == id_, data))
     if season > 1:
