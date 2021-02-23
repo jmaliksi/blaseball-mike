@@ -773,7 +773,7 @@ class Division(Base):
         &#34;&#34;&#34;
         divisions = cls.load_all()
         for division in divisions.values():
-            if name in division.name:
+            if name in division.name.lower():
                 return division
         return None
 
@@ -2110,7 +2110,7 @@ def load_one(cls, id_):
         &#34;&#34;&#34;
         divisions = cls.load_all()
         for division in divisions.values():
-            if name in division.name:
+            if name in division.name.lower():
                 return division
         return None
 
@@ -2190,7 +2190,7 @@ def load_by_name(cls, name):
     &#34;&#34;&#34;
     divisions = cls.load_all()
     for division in divisions.values():
-        if name in division.name:
+        if name in division.name.lower():
             return division
     return None</code></pre>
 </details>
