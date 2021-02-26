@@ -1,0 +1,1653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>blaseball_mike.models.player API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>blaseball_mike.models.player</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+import random
+import uuid
+
+from dateutil.parser import parse
+
+from .base import Base
+from .item import Item
+from .modification import Modification
+from .. import database, chronicler, reference
+
+
+class Player(Base):
+    &#34;&#34;&#34;
+    Represents a blaseball player.
+    &#34;&#34;&#34;
+
+    @classmethod
+    def load(cls, *ids):
+        &#34;&#34;&#34;
+        Load one or more players by ID.
+
+        Returns a dictionary of players keyed by Player ID.
+        &#34;&#34;&#34;
+        players = database.get_player(list(ids))
+        return {
+            id_: cls(player) for (id_, player) in players.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        &#34;&#34;&#34;
+        Load single player by ID.
+        &#34;&#34;&#34;
+        return cls.load(id_).get(id_)
+
+    @classmethod
+    def load_one_at_time(cls, id_, time):
+        &#34;&#34;&#34;
+        Load single player by ID with historical stats at the provided IRL datetime.
+        &#34;&#34;&#34;
+        if isinstance(time, str):
+            time = parse(time)
+
+        players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(players) == 0:
+            return None
+        return cls(dict(players[0][&#34;data&#34;], timestamp=time))
+
+    @classmethod
+    def load_history(cls, id_, order=&#39;desc&#39;):
+        &#34;&#34;&#34;
+        Returns array of Player stat changes with most recent first.
+        &#34;&#34;&#34;
+        players = chronicler.get_player_updates(ids=id_, order=order)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in players]
+
+    @classmethod
+    def load_all_by_gameday(cls, season, day):
+        &#34;&#34;&#34;
+        Returns dict of all players and their fk stats on the given season/day. 1-indexed.
+        &#34;&#34;&#34;
+        players = reference.get_all_players_for_gameday(season, day)
+        return {
+            player[&#39;player_id&#39;]: cls(player) for player in players
+        }
+
+    @classmethod
+    def load_by_gameday(cls, id_, season, day):
+        &#34;&#34;&#34;
+        Returns one player and their fk stats on the given season/day. 1-indexed.
+        &#34;&#34;&#34;
+        return cls.load_all_by_gameday(season, day).get(id_)
+
+    @classmethod
+    def find_by_name(cls, name):
+        &#34;&#34;&#34;
+        Try to find the player by their name (case sensitive) or return None.
+        &#34;&#34;&#34;
+        ids = reference.get_player_ids_by_name(name)
+        if not ids:
+            return None
+        return cls.load_one(ids[0])
+
+    @classmethod
+    def make_random(cls, name=&#34;Random Player&#34;, seed=None):
+        &#34;&#34;&#34;
+        Generate a completely random player.
+        &#34;&#34;&#34;
+        rng = random.Random(seed)
+        if seed:
+            id_ = uuid.uuid3(uuid.NAMESPACE_X500, name=str(seed))
+        else:
+            id_ = uuid.uuid4()
+
+        return Player({
+            &#39;name&#39;: name,
+            &#39;id&#39;: str(id_),
+            &#39;baseThirst&#39;: rng.random(),
+            &#39;continuation&#39;: rng.random(),
+            &#39;groundFriction&#39;: rng.random(),
+            &#39;indulgence&#39;: rng.random(),
+            &#39;laserlikeness&#39;: rng.random(),
+            &#39;divinity&#39;: rng.random(),
+            &#39;martyrdom&#39;: rng.random(),
+            &#39;moxie&#39;: rng.random(),
+            &#39;musclitude&#39;: rng.random(),
+            &#39;patheticism&#39;: rng.random(),
+            &#39;thwackability&#39;: rng.random(),
+            &#39;tragicness&#39;: rng.random(),
+            &#39;anticapitalism&#39;: rng.random(),
+            &#39;chasiness&#39;: rng.random(),
+            &#39;omniscience&#39;: rng.random(),
+            &#39;tenaciousness&#39;: rng.random(),
+            &#39;watchfulness&#39;: rng.random(),
+            &#39;coldness&#39;: rng.random(),
+            &#39;overpowerment&#39;: rng.random(),
+            &#39;ruthlessness&#39;: rng.random(),
+            &#39;shakespearianism&#39;: rng.random(),
+            &#39;unthwackability&#39;: rng.random(),
+            &#39;suppression&#39;: rng.random(),
+            &#39;buoyancy&#39;: rng.random(),
+            &#39;cinnamon&#39;: rng.random(),
+            &#39;deceased&#39;: False,
+            &#39;peanutAllergy&#39;: rng.random() &gt; .25,
+            &#39;pressurization&#39;: rng.random(),
+            &#39;soul&#39;: rng.randint(2, 9),
+            &#39;totalFingers&#39;: rng.randint(9, 42),
+            &#39;fate&#39;: rng.randint(1, 99),
+        })
+
+    @Base.lazy_load(&#34;_hitting_rating&#34;, use_default=False)
+    def hitting_rating(self):
+        if getattr(self, &#34;_hitting_rating&#34;, None):
+            return self._hitting_rating
+        return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
+                ((self.thwackability * self.divinity) ** 0.35) *
+                ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
+
+    batting_rating = hitting_rating
+
+    @Base.lazy_load(&#34;_pitching_rating&#34;, use_default=False)
+    def pitching_rating(self):
+        if getattr(self, &#34;_pitching_rating&#34;, None):
+            return self._pitching_rating
+        return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
+                (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
+
+    @Base.lazy_load(&#34;_baserunning_rating&#34;, use_default=False)
+    def baserunning_rating(self):
+        if getattr(self, &#34;_baserunning_rating&#34;, None):
+            return self._baserunning_rating
+        return ((self.laserlikeness**0.5) *
+                ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
+
+    @Base.lazy_load(&#34;_defense_rating&#34;, use_default=False)
+    def defense_rating(self):
+        if getattr(self, &#34;_defense_rating&#34;, None):
+            return self._defense_rating
+        return (((self.omniscience * self.tenaciousness) ** 0.2) *
+                ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+
+    @staticmethod
+    def _rating_to_stars(val):
+        return 0.5 * (round(val * 10))
+
+    @property
+    def hitting_stars(self):
+        return self._rating_to_stars(self.hitting_rating)
+
+    @property
+    def batting_stars(self):
+        return self.hitting_stars
+
+    @property
+    def pitching_stars(self):
+        return self._rating_to_stars(self.pitching_rating)
+
+    @property
+    def baserunning_stars(self):
+        return self._rating_to_stars(self.baserunning_rating)
+
+    @property
+    def defense_stars(self):
+        return self._rating_to_stars(self.defense_rating)
+
+    def get_vibe(self, day):
+        &#34;&#34;&#34;
+        Get Player vibes for day. Day is 1-indexed
+        &#34;&#34;&#34;
+        if not getattr(self, &#34;pressurization&#34;, None) or not getattr(self, &#34;cinnamon&#34;, None) \
+                or not getattr(self, &#34;buoyancy&#34;, None):
+            return None
+        return 0.5 * ((self.pressurization + self.cinnamon) *
+                      math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
+                      self.pressurization + self.cinnamon)
+
+    @property
+    def soulscream(self):
+        letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
+        stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
+
+        scream = []
+        for r in range(self.soul):
+            sub_scream = []
+            i = 10 ** -r
+            for s in stats:
+                try:
+                    c = math.floor((s % i) / i * 10)
+                    sub_scream.append(letters[c])
+                except ZeroDivisionError:
+                    sub_scream.append(&#34;undefined&#34;)
+            scream.extend(sub_scream + sub_scream + [sub_scream[0]])
+
+        return &#39;&#39;.join(scream)
+
+    @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
+    def blood(self):
+        if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+            return self._blood_id
+        return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]
+
+    @Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
+    def coffee(self):
+        if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+            return self._coffee_id
+        return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]
+
+    @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
+    def bat(self):
+        return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))
+
+    @Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
+    def armor(self):
+        return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))
+
+    @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
+    def perm_attr(self):
+        return Modification.load(*self._perm_attr_ids)
+
+    @Base.lazy_load(&#34;_seas_attr_ids&#34;, cache_name=&#34;_seas_attr&#34;, default_value=list())
+    def seas_attr(self):
+        return Modification.load(*self._seas_attr_ids)
+
+    @Base.lazy_load(&#34;_week_attr_ids&#34;, cache_name=&#34;_week_attr&#34;, default_value=list())
+    def week_attr(self):
+        return Modification.load(*self._week_attr_ids)
+
+    @Base.lazy_load(&#34;_game_attr_ids&#34;, cache_name=&#34;_game_attr&#34;, default_value=list())
+    def game_attr(self):
+        return Modification.load(*self._game_attr_ids)
+
+    @Base.lazy_load(&#34;_league_team_id&#34;, cache_name=&#34;_league_team&#34;)
+    def league_team_id(self):
+        from .team import Team
+        return Team.load(self._league_team_id)
+
+    @property
+    def league_team(self):
+        # alias to league_team_id
+        return self.league_team_id
+
+    @Base.lazy_load(&#34;_tournament_team_id&#34;, cache_name=&#34;_tournament_team&#34;)
+    def tournament_team_id(self):
+        from .team import Team
+        return Team.load(self._tournament_team_id)
+
+    @property
+    def tournament_team(self):
+        # alias to tournament_team_id
+        return self.tournament_team_id
+
+    def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
+        &#34;&#34;&#34;
+        Return a copy of this player with adjusted stats (ie to simulate blessings)
+        `overrides` is a dict where the key specifies an attribute to completely overwrite with new value.
+        `multipliers` is a dict where key specifies attr to multiply by value
+        `buffs` is a dict where key specifies attr to add value
+        `reroll` is a dict where the key specifies attr to reroll (value is unused)
+
+        `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
+        can additionally be passed to `multipliers`, `buffs`, and `reroll` to automatically multiply the
+        appropriate related stats.
+        &#34;&#34;&#34;
+        overrides = overrides or {}
+        multipliers = multipliers or {}
+        buffs = buffs or {}
+        reroll = reroll or {}
+
+        original_json = self.json()
+        if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+            original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+        if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+            original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
+
+        for override_key, override_value in overrides.items():
+            original_json[override_key] = override_value
+
+        for m_key, m_val in multipliers.items():
+            if m_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;buoyancy&#39;] *= (1.0 - m_val)
+                original_json[&#39;tragicness&#39;] *= (1.0 - m_val)
+                original_json[&#39;patheticism&#39;] *= (1.0 - m_val)
+                original_json[&#39;thwackability&#39;] *= (1.0 + m_val)
+                original_json[&#39;divinity&#39;] *= (1.0 + m_val)
+                original_json[&#39;moxie&#39;] *= (1.0 + m_val)
+                original_json[&#39;musclitude&#39;] *= (1.0 + m_val)
+                original_json[&#39;martyrdom&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] *= (1.0 + m_val)
+                original_json[&#39;ruthlessness&#39;] *= (1.0 + m_val)
+                original_json[&#39;overpowerment&#39;] *= (1.0 + m_val)
+                original_json[&#39;shakespearianism&#39;] *= (1.0 + m_val)
+                original_json[&#39;coldness&#39;] *= (1.0 + m_val)
+                original_json[&#39;suppression&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] *= (1.0 + m_val)
+                original_json[&#39;continuation&#39;] *= (1.0 + m_val)
+                original_json[&#39;baseThirst&#39;] *= (1.0 + m_val)
+                original_json[&#39;indulgence&#39;] *= (1.0 + m_val)
+                original_json[&#39;groundFriction&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] *= (1.0 + m_val)
+                original_json[&#39;tenaciousness&#39;] *= (1.0 + m_val)
+                original_json[&#39;watchfulness&#39;] *= (1.0 + m_val)
+                original_json[&#39;anticapitalism&#39;] *= (1.0 + m_val)
+                original_json[&#39;chasiness&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[m_key] *= (1.0 - m_val)
+            elif m_key in original_json:
+                original_json[m_key] *= (1.0 + m_val)
+
+        for b_key, b_val in buffs.items():
+            if b_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;tragicness&#39;] = min(0.99, max(0.01, original_json[&#39;tragicness&#39;] - b_val))
+                original_json[&#39;patheticism&#39;] = min(0.99, max(0.01, original_json[&#39;patheticism&#39;] - b_val))
+                original_json[&#39;buoyancy&#39;] = max(0.01, original_json[&#39;buoyancy&#39;] + b_val)
+                original_json[&#39;thwackability&#39;] = max(0.01, original_json[&#39;thwackability&#39;] + b_val)
+                original_json[&#39;divinity&#39;] = max(0.01, original_json[&#39;divinity&#39;] + b_val)
+                original_json[&#39;moxie&#39;] = max(0.01, original_json[&#39;moxie&#39;] + b_val)
+                original_json[&#39;musclitude&#39;] = max(0.01, original_json[&#39;musclitude&#39;] + b_val)
+                original_json[&#39;martyrdom&#39;] = max(0.01, original_json[&#39;martyrdom&#39;] + b_val)
+            if b_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] = max(0.01, original_json[&#39;unthwackability&#39;] + b_val)
+                original_json[&#39;ruthlessness&#39;] = max(0.01, original_json[&#39;ruthlessness&#39;] + b_val)
+                original_json[&#39;overpowerment&#39;] = max(0.01, original_json[&#39;overpowerment&#39;] + b_val)
+                original_json[&#39;shakespearianism&#39;] = max(0.01, original_json[&#39;shakespearianism&#39;] + b_val)
+                original_json[&#39;coldness&#39;] = max(0.01, original_json[&#39;coldness&#39;] + b_val)
+                original_json[&#39;suppression&#39;] = max(0.01, original_json[&#39;suppression&#39;] + b_val)
+            if b_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] = max(0.01, original_json[&#39;laserlikeness&#39;] + b_val)
+                original_json[&#39;continuation&#39;] = max(0.01, original_json[&#39;continuation&#39;] + b_val)
+                original_json[&#39;baseThirst&#39;] = max(0.01, original_json[&#39;baseThirst&#39;] + b_val)
+                original_json[&#39;indulgence&#39;] = max(0.01, original_json[&#39;indulgence&#39;] + b_val)
+                original_json[&#39;groundFriction&#39;] = max(0.01, original_json[&#39;groundFriction&#39;] + b_val)
+            if b_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] = max(0.01, original_json[&#39;omniscience&#39;] + b_val)
+                original_json[&#39;tenaciousness&#39;] = max(0.01, original_json[&#39;tenaciousness&#39;] + b_val)
+                original_json[&#39;watchfulness&#39;] = max(0.01, original_json[&#39;watchfulness&#39;] + b_val)
+                original_json[&#39;anticapitalism&#39;] = max(0.01, original_json[&#39;anticapitalism&#39;] + b_val)
+                original_json[&#39;chasiness&#39;] = max(0.01, original_json[&#39;chasiness&#39;] + b_val)
+            if b_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[b_key] = min(0.99, max(0.01, original_json[b_key] - b_val))
+            elif b_key in original_json:
+                original_json[b_key] = max(0.01, original_json[b_key] + b_val)
+
+        for r_key, _ in reroll.items():
+            if r_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;buoyancy&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;tragicness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;patheticism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;thwackability&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;divinity&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;moxie&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;musclitude&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;martyrdom&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;ruthlessness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;overpowerment&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;shakespearianism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;coldness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;suppression&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;continuation&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;baseThirst&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;indulgence&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;groundFriction&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;tenaciousness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;watchfulness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;anticapitalism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;chasiness&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[r_key] = random.uniform(0.01, 0.99)
+            elif r_key in original_json:
+                original_json[r_key] = random.uniform(0.01, 0.99)
+
+        # Clear database-provided ratings to force a recalculation
+        original_json[&#39;hittingRating&#39;] = None
+        original_json[&#39;pitchingRating&#39;] = None
+        original_json[&#39;baserunningRating&#39;] = None
+        original_json[&#39;defenseRating&#39;] = None
+
+        return Player(original_json)
+
+    @property
+    def player_name(self):
+        return self.name
+
+    @player_name.setter
+    def player_name(self, v):
+        self.name = v
+
+    @property
+    def player_id(self):
+        return self.id
+
+    @player_id.setter
+    def player_id(self, v):
+        self.id = v</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="blaseball_mike.models.player.Player"><code class="flex name class">
+<span>class <span class="ident">Player</span></span>
+<span>(</span><span>data, strict=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a blaseball player.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Player(Base):
+    &#34;&#34;&#34;
+    Represents a blaseball player.
+    &#34;&#34;&#34;
+
+    @classmethod
+    def load(cls, *ids):
+        &#34;&#34;&#34;
+        Load one or more players by ID.
+
+        Returns a dictionary of players keyed by Player ID.
+        &#34;&#34;&#34;
+        players = database.get_player(list(ids))
+        return {
+            id_: cls(player) for (id_, player) in players.items()
+        }
+
+    @classmethod
+    def load_one(cls, id_):
+        &#34;&#34;&#34;
+        Load single player by ID.
+        &#34;&#34;&#34;
+        return cls.load(id_).get(id_)
+
+    @classmethod
+    def load_one_at_time(cls, id_, time):
+        &#34;&#34;&#34;
+        Load single player by ID with historical stats at the provided IRL datetime.
+        &#34;&#34;&#34;
+        if isinstance(time, str):
+            time = parse(time)
+
+        players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        if len(players) == 0:
+            return None
+        return cls(dict(players[0][&#34;data&#34;], timestamp=time))
+
+    @classmethod
+    def load_history(cls, id_, order=&#39;desc&#39;):
+        &#34;&#34;&#34;
+        Returns array of Player stat changes with most recent first.
+        &#34;&#34;&#34;
+        players = chronicler.get_player_updates(ids=id_, order=order)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in players]
+
+    @classmethod
+    def load_all_by_gameday(cls, season, day):
+        &#34;&#34;&#34;
+        Returns dict of all players and their fk stats on the given season/day. 1-indexed.
+        &#34;&#34;&#34;
+        players = reference.get_all_players_for_gameday(season, day)
+        return {
+            player[&#39;player_id&#39;]: cls(player) for player in players
+        }
+
+    @classmethod
+    def load_by_gameday(cls, id_, season, day):
+        &#34;&#34;&#34;
+        Returns one player and their fk stats on the given season/day. 1-indexed.
+        &#34;&#34;&#34;
+        return cls.load_all_by_gameday(season, day).get(id_)
+
+    @classmethod
+    def find_by_name(cls, name):
+        &#34;&#34;&#34;
+        Try to find the player by their name (case sensitive) or return None.
+        &#34;&#34;&#34;
+        ids = reference.get_player_ids_by_name(name)
+        if not ids:
+            return None
+        return cls.load_one(ids[0])
+
+    @classmethod
+    def make_random(cls, name=&#34;Random Player&#34;, seed=None):
+        &#34;&#34;&#34;
+        Generate a completely random player.
+        &#34;&#34;&#34;
+        rng = random.Random(seed)
+        if seed:
+            id_ = uuid.uuid3(uuid.NAMESPACE_X500, name=str(seed))
+        else:
+            id_ = uuid.uuid4()
+
+        return Player({
+            &#39;name&#39;: name,
+            &#39;id&#39;: str(id_),
+            &#39;baseThirst&#39;: rng.random(),
+            &#39;continuation&#39;: rng.random(),
+            &#39;groundFriction&#39;: rng.random(),
+            &#39;indulgence&#39;: rng.random(),
+            &#39;laserlikeness&#39;: rng.random(),
+            &#39;divinity&#39;: rng.random(),
+            &#39;martyrdom&#39;: rng.random(),
+            &#39;moxie&#39;: rng.random(),
+            &#39;musclitude&#39;: rng.random(),
+            &#39;patheticism&#39;: rng.random(),
+            &#39;thwackability&#39;: rng.random(),
+            &#39;tragicness&#39;: rng.random(),
+            &#39;anticapitalism&#39;: rng.random(),
+            &#39;chasiness&#39;: rng.random(),
+            &#39;omniscience&#39;: rng.random(),
+            &#39;tenaciousness&#39;: rng.random(),
+            &#39;watchfulness&#39;: rng.random(),
+            &#39;coldness&#39;: rng.random(),
+            &#39;overpowerment&#39;: rng.random(),
+            &#39;ruthlessness&#39;: rng.random(),
+            &#39;shakespearianism&#39;: rng.random(),
+            &#39;unthwackability&#39;: rng.random(),
+            &#39;suppression&#39;: rng.random(),
+            &#39;buoyancy&#39;: rng.random(),
+            &#39;cinnamon&#39;: rng.random(),
+            &#39;deceased&#39;: False,
+            &#39;peanutAllergy&#39;: rng.random() &gt; .25,
+            &#39;pressurization&#39;: rng.random(),
+            &#39;soul&#39;: rng.randint(2, 9),
+            &#39;totalFingers&#39;: rng.randint(9, 42),
+            &#39;fate&#39;: rng.randint(1, 99),
+        })
+
+    @Base.lazy_load(&#34;_hitting_rating&#34;, use_default=False)
+    def hitting_rating(self):
+        if getattr(self, &#34;_hitting_rating&#34;, None):
+            return self._hitting_rating
+        return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
+                ((self.thwackability * self.divinity) ** 0.35) *
+                ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
+
+    batting_rating = hitting_rating
+
+    @Base.lazy_load(&#34;_pitching_rating&#34;, use_default=False)
+    def pitching_rating(self):
+        if getattr(self, &#34;_pitching_rating&#34;, None):
+            return self._pitching_rating
+        return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
+                (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
+
+    @Base.lazy_load(&#34;_baserunning_rating&#34;, use_default=False)
+    def baserunning_rating(self):
+        if getattr(self, &#34;_baserunning_rating&#34;, None):
+            return self._baserunning_rating
+        return ((self.laserlikeness**0.5) *
+                ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
+
+    @Base.lazy_load(&#34;_defense_rating&#34;, use_default=False)
+    def defense_rating(self):
+        if getattr(self, &#34;_defense_rating&#34;, None):
+            return self._defense_rating
+        return (((self.omniscience * self.tenaciousness) ** 0.2) *
+                ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+
+    @staticmethod
+    def _rating_to_stars(val):
+        return 0.5 * (round(val * 10))
+
+    @property
+    def hitting_stars(self):
+        return self._rating_to_stars(self.hitting_rating)
+
+    @property
+    def batting_stars(self):
+        return self.hitting_stars
+
+    @property
+    def pitching_stars(self):
+        return self._rating_to_stars(self.pitching_rating)
+
+    @property
+    def baserunning_stars(self):
+        return self._rating_to_stars(self.baserunning_rating)
+
+    @property
+    def defense_stars(self):
+        return self._rating_to_stars(self.defense_rating)
+
+    def get_vibe(self, day):
+        &#34;&#34;&#34;
+        Get Player vibes for day. Day is 1-indexed
+        &#34;&#34;&#34;
+        if not getattr(self, &#34;pressurization&#34;, None) or not getattr(self, &#34;cinnamon&#34;, None) \
+                or not getattr(self, &#34;buoyancy&#34;, None):
+            return None
+        return 0.5 * ((self.pressurization + self.cinnamon) *
+                      math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
+                      self.pressurization + self.cinnamon)
+
+    @property
+    def soulscream(self):
+        letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
+        stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
+
+        scream = []
+        for r in range(self.soul):
+            sub_scream = []
+            i = 10 ** -r
+            for s in stats:
+                try:
+                    c = math.floor((s % i) / i * 10)
+                    sub_scream.append(letters[c])
+                except ZeroDivisionError:
+                    sub_scream.append(&#34;undefined&#34;)
+            scream.extend(sub_scream + sub_scream + [sub_scream[0]])
+
+        return &#39;&#39;.join(scream)
+
+    @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
+    def blood(self):
+        if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+            return self._blood_id
+        return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]
+
+    @Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
+    def coffee(self):
+        if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+            return self._coffee_id
+        return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]
+
+    @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
+    def bat(self):
+        return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))
+
+    @Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
+    def armor(self):
+        return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))
+
+    @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
+    def perm_attr(self):
+        return Modification.load(*self._perm_attr_ids)
+
+    @Base.lazy_load(&#34;_seas_attr_ids&#34;, cache_name=&#34;_seas_attr&#34;, default_value=list())
+    def seas_attr(self):
+        return Modification.load(*self._seas_attr_ids)
+
+    @Base.lazy_load(&#34;_week_attr_ids&#34;, cache_name=&#34;_week_attr&#34;, default_value=list())
+    def week_attr(self):
+        return Modification.load(*self._week_attr_ids)
+
+    @Base.lazy_load(&#34;_game_attr_ids&#34;, cache_name=&#34;_game_attr&#34;, default_value=list())
+    def game_attr(self):
+        return Modification.load(*self._game_attr_ids)
+
+    @Base.lazy_load(&#34;_league_team_id&#34;, cache_name=&#34;_league_team&#34;)
+    def league_team_id(self):
+        from .team import Team
+        return Team.load(self._league_team_id)
+
+    @property
+    def league_team(self):
+        # alias to league_team_id
+        return self.league_team_id
+
+    @Base.lazy_load(&#34;_tournament_team_id&#34;, cache_name=&#34;_tournament_team&#34;)
+    def tournament_team_id(self):
+        from .team import Team
+        return Team.load(self._tournament_team_id)
+
+    @property
+    def tournament_team(self):
+        # alias to tournament_team_id
+        return self.tournament_team_id
+
+    def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
+        &#34;&#34;&#34;
+        Return a copy of this player with adjusted stats (ie to simulate blessings)
+        `overrides` is a dict where the key specifies an attribute to completely overwrite with new value.
+        `multipliers` is a dict where key specifies attr to multiply by value
+        `buffs` is a dict where key specifies attr to add value
+        `reroll` is a dict where the key specifies attr to reroll (value is unused)
+
+        `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
+        can additionally be passed to `multipliers`, `buffs`, and `reroll` to automatically multiply the
+        appropriate related stats.
+        &#34;&#34;&#34;
+        overrides = overrides or {}
+        multipliers = multipliers or {}
+        buffs = buffs or {}
+        reroll = reroll or {}
+
+        original_json = self.json()
+        if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+            original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+        if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+            original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
+
+        for override_key, override_value in overrides.items():
+            original_json[override_key] = override_value
+
+        for m_key, m_val in multipliers.items():
+            if m_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;buoyancy&#39;] *= (1.0 - m_val)
+                original_json[&#39;tragicness&#39;] *= (1.0 - m_val)
+                original_json[&#39;patheticism&#39;] *= (1.0 - m_val)
+                original_json[&#39;thwackability&#39;] *= (1.0 + m_val)
+                original_json[&#39;divinity&#39;] *= (1.0 + m_val)
+                original_json[&#39;moxie&#39;] *= (1.0 + m_val)
+                original_json[&#39;musclitude&#39;] *= (1.0 + m_val)
+                original_json[&#39;martyrdom&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] *= (1.0 + m_val)
+                original_json[&#39;ruthlessness&#39;] *= (1.0 + m_val)
+                original_json[&#39;overpowerment&#39;] *= (1.0 + m_val)
+                original_json[&#39;shakespearianism&#39;] *= (1.0 + m_val)
+                original_json[&#39;coldness&#39;] *= (1.0 + m_val)
+                original_json[&#39;suppression&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] *= (1.0 + m_val)
+                original_json[&#39;continuation&#39;] *= (1.0 + m_val)
+                original_json[&#39;baseThirst&#39;] *= (1.0 + m_val)
+                original_json[&#39;indulgence&#39;] *= (1.0 + m_val)
+                original_json[&#39;groundFriction&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] *= (1.0 + m_val)
+                original_json[&#39;tenaciousness&#39;] *= (1.0 + m_val)
+                original_json[&#39;watchfulness&#39;] *= (1.0 + m_val)
+                original_json[&#39;anticapitalism&#39;] *= (1.0 + m_val)
+                original_json[&#39;chasiness&#39;] *= (1.0 + m_val)
+            if m_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[m_key] *= (1.0 - m_val)
+            elif m_key in original_json:
+                original_json[m_key] *= (1.0 + m_val)
+
+        for b_key, b_val in buffs.items():
+            if b_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;tragicness&#39;] = min(0.99, max(0.01, original_json[&#39;tragicness&#39;] - b_val))
+                original_json[&#39;patheticism&#39;] = min(0.99, max(0.01, original_json[&#39;patheticism&#39;] - b_val))
+                original_json[&#39;buoyancy&#39;] = max(0.01, original_json[&#39;buoyancy&#39;] + b_val)
+                original_json[&#39;thwackability&#39;] = max(0.01, original_json[&#39;thwackability&#39;] + b_val)
+                original_json[&#39;divinity&#39;] = max(0.01, original_json[&#39;divinity&#39;] + b_val)
+                original_json[&#39;moxie&#39;] = max(0.01, original_json[&#39;moxie&#39;] + b_val)
+                original_json[&#39;musclitude&#39;] = max(0.01, original_json[&#39;musclitude&#39;] + b_val)
+                original_json[&#39;martyrdom&#39;] = max(0.01, original_json[&#39;martyrdom&#39;] + b_val)
+            if b_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] = max(0.01, original_json[&#39;unthwackability&#39;] + b_val)
+                original_json[&#39;ruthlessness&#39;] = max(0.01, original_json[&#39;ruthlessness&#39;] + b_val)
+                original_json[&#39;overpowerment&#39;] = max(0.01, original_json[&#39;overpowerment&#39;] + b_val)
+                original_json[&#39;shakespearianism&#39;] = max(0.01, original_json[&#39;shakespearianism&#39;] + b_val)
+                original_json[&#39;coldness&#39;] = max(0.01, original_json[&#39;coldness&#39;] + b_val)
+                original_json[&#39;suppression&#39;] = max(0.01, original_json[&#39;suppression&#39;] + b_val)
+            if b_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] = max(0.01, original_json[&#39;laserlikeness&#39;] + b_val)
+                original_json[&#39;continuation&#39;] = max(0.01, original_json[&#39;continuation&#39;] + b_val)
+                original_json[&#39;baseThirst&#39;] = max(0.01, original_json[&#39;baseThirst&#39;] + b_val)
+                original_json[&#39;indulgence&#39;] = max(0.01, original_json[&#39;indulgence&#39;] + b_val)
+                original_json[&#39;groundFriction&#39;] = max(0.01, original_json[&#39;groundFriction&#39;] + b_val)
+            if b_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] = max(0.01, original_json[&#39;omniscience&#39;] + b_val)
+                original_json[&#39;tenaciousness&#39;] = max(0.01, original_json[&#39;tenaciousness&#39;] + b_val)
+                original_json[&#39;watchfulness&#39;] = max(0.01, original_json[&#39;watchfulness&#39;] + b_val)
+                original_json[&#39;anticapitalism&#39;] = max(0.01, original_json[&#39;anticapitalism&#39;] + b_val)
+                original_json[&#39;chasiness&#39;] = max(0.01, original_json[&#39;chasiness&#39;] + b_val)
+            if b_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[b_key] = min(0.99, max(0.01, original_json[b_key] - b_val))
+            elif b_key in original_json:
+                original_json[b_key] = max(0.01, original_json[b_key] + b_val)
+
+        for r_key, _ in reroll.items():
+            if r_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;buoyancy&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;tragicness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;patheticism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;thwackability&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;divinity&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;moxie&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;musclitude&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;martyrdom&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;unthwackability&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;ruthlessness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;overpowerment&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;shakespearianism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;coldness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;suppression&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;laserlikeness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;continuation&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;baseThirst&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;indulgence&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;groundFriction&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+                original_json[&#39;omniscience&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;tenaciousness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;watchfulness&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;anticapitalism&#39;] = random.uniform(0.01, 0.99)
+                original_json[&#39;chasiness&#39;] = random.uniform(0.01, 0.99)
+            if r_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+                original_json[r_key] = random.uniform(0.01, 0.99)
+            elif r_key in original_json:
+                original_json[r_key] = random.uniform(0.01, 0.99)
+
+        # Clear database-provided ratings to force a recalculation
+        original_json[&#39;hittingRating&#39;] = None
+        original_json[&#39;pitchingRating&#39;] = None
+        original_json[&#39;baserunningRating&#39;] = None
+        original_json[&#39;defenseRating&#39;] = None
+
+        return Player(original_json)
+
+    @property
+    def player_name(self):
+        return self.name
+
+    @player_name.setter
+    def player_name(self, v):
+        self.name = v
+
+    @property
+    def player_id(self):
+        return self.id
+
+    @player_id.setter
+    def player_id(self, v):
+        self.id = v</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
+<li>abc.ABC</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.models.player.Player.game_attr"><code class="name">var <span class="ident">game_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.league_team_id"><code class="name">var <span class="ident">league_team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.perm_attr"><code class="name">var <span class="ident">perm_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.seas_attr"><code class="name">var <span class="ident">seas_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.tournament_team_id"><code class="name">var <span class="ident">tournament_team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.week_attr"><code class="name">var <span class="ident">week_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="blaseball_mike.models.player.Player.find_by_name"><code class="name flex">
+<span>def <span class="ident">find_by_name</span></span>(<span>name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Try to find the player by their name (case sensitive) or return None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def find_by_name(cls, name):
+    &#34;&#34;&#34;
+    Try to find the player by their name (case sensitive) or return None.
+    &#34;&#34;&#34;
+    ids = reference.get_player_ids_by_name(name)
+    if not ids:
+        return None
+    return cls.load_one(ids[0])</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>*ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load one or more players by ID.</p>
+<p>Returns a dictionary of players keyed by Player ID.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load(cls, *ids):
+    &#34;&#34;&#34;
+    Load one or more players by ID.
+
+    Returns a dictionary of players keyed by Player ID.
+    &#34;&#34;&#34;
+    players = database.get_player(list(ids))
+    return {
+        id_: cls(player) for (id_, player) in players.items()
+    }</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load_all_by_gameday"><code class="name flex">
+<span>def <span class="ident">load_all_by_gameday</span></span>(<span>season, day)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns dict of all players and their fk stats on the given season/day. 1-indexed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_all_by_gameday(cls, season, day):
+    &#34;&#34;&#34;
+    Returns dict of all players and their fk stats on the given season/day. 1-indexed.
+    &#34;&#34;&#34;
+    players = reference.get_all_players_for_gameday(season, day)
+    return {
+        player[&#39;player_id&#39;]: cls(player) for player in players
+    }</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load_by_gameday"><code class="name flex">
+<span>def <span class="ident">load_by_gameday</span></span>(<span>id_, season, day)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns one player and their fk stats on the given season/day. 1-indexed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_by_gameday(cls, id_, season, day):
+    &#34;&#34;&#34;
+    Returns one player and their fk stats on the given season/day. 1-indexed.
+    &#34;&#34;&#34;
+    return cls.load_all_by_gameday(season, day).get(id_)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load_history"><code class="name flex">
+<span>def <span class="ident">load_history</span></span>(<span>id_, order='desc')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns array of Player stat changes with most recent first.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_history(cls, id_, order=&#39;desc&#39;):
+    &#34;&#34;&#34;
+    Returns array of Player stat changes with most recent first.
+    &#34;&#34;&#34;
+    players = chronicler.get_player_updates(ids=id_, order=order)
+    return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in players]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load_one"><code class="name flex">
+<span>def <span class="ident">load_one</span></span>(<span>id_)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load single player by ID.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_one(cls, id_):
+    &#34;&#34;&#34;
+    Load single player by ID.
+    &#34;&#34;&#34;
+    return cls.load(id_).get(id_)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.load_one_at_time"><code class="name flex">
+<span>def <span class="ident">load_one_at_time</span></span>(<span>id_, time)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load single player by ID with historical stats at the provided IRL datetime.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_one_at_time(cls, id_, time):
+    &#34;&#34;&#34;
+    Load single player by ID with historical stats at the provided IRL datetime.
+    &#34;&#34;&#34;
+    if isinstance(time, str):
+        time = parse(time)
+
+    players = chronicler.get_player_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+    if len(players) == 0:
+        return None
+    return cls(dict(players[0][&#34;data&#34;], timestamp=time))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.make_random"><code class="name flex">
+<span>def <span class="ident">make_random</span></span>(<span>name='Random Player', seed=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate a completely random player.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def make_random(cls, name=&#34;Random Player&#34;, seed=None):
+    &#34;&#34;&#34;
+    Generate a completely random player.
+    &#34;&#34;&#34;
+    rng = random.Random(seed)
+    if seed:
+        id_ = uuid.uuid3(uuid.NAMESPACE_X500, name=str(seed))
+    else:
+        id_ = uuid.uuid4()
+
+    return Player({
+        &#39;name&#39;: name,
+        &#39;id&#39;: str(id_),
+        &#39;baseThirst&#39;: rng.random(),
+        &#39;continuation&#39;: rng.random(),
+        &#39;groundFriction&#39;: rng.random(),
+        &#39;indulgence&#39;: rng.random(),
+        &#39;laserlikeness&#39;: rng.random(),
+        &#39;divinity&#39;: rng.random(),
+        &#39;martyrdom&#39;: rng.random(),
+        &#39;moxie&#39;: rng.random(),
+        &#39;musclitude&#39;: rng.random(),
+        &#39;patheticism&#39;: rng.random(),
+        &#39;thwackability&#39;: rng.random(),
+        &#39;tragicness&#39;: rng.random(),
+        &#39;anticapitalism&#39;: rng.random(),
+        &#39;chasiness&#39;: rng.random(),
+        &#39;omniscience&#39;: rng.random(),
+        &#39;tenaciousness&#39;: rng.random(),
+        &#39;watchfulness&#39;: rng.random(),
+        &#39;coldness&#39;: rng.random(),
+        &#39;overpowerment&#39;: rng.random(),
+        &#39;ruthlessness&#39;: rng.random(),
+        &#39;shakespearianism&#39;: rng.random(),
+        &#39;unthwackability&#39;: rng.random(),
+        &#39;suppression&#39;: rng.random(),
+        &#39;buoyancy&#39;: rng.random(),
+        &#39;cinnamon&#39;: rng.random(),
+        &#39;deceased&#39;: False,
+        &#39;peanutAllergy&#39;: rng.random() &gt; .25,
+        &#39;pressurization&#39;: rng.random(),
+        &#39;soul&#39;: rng.randint(2, 9),
+        &#39;totalFingers&#39;: rng.randint(9, 42),
+        &#39;fate&#39;: rng.randint(1, 99),
+    })</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.player.Player.baserunning_stars"><code class="name">var <span class="ident">baserunning_stars</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def baserunning_stars(self):
+    return self._rating_to_stars(self.baserunning_rating)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.batting_stars"><code class="name">var <span class="ident">batting_stars</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def batting_stars(self):
+    return self.hitting_stars</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.defense_stars"><code class="name">var <span class="ident">defense_stars</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def defense_stars(self):
+    return self._rating_to_stars(self.defense_rating)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.hitting_stars"><code class="name">var <span class="ident">hitting_stars</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def hitting_stars(self):
+    return self._rating_to_stars(self.hitting_rating)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.league_team"><code class="name">var <span class="ident">league_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def league_team(self):
+    # alias to league_team_id
+    return self.league_team_id</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.pitching_stars"><code class="name">var <span class="ident">pitching_stars</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def pitching_stars(self):
+    return self._rating_to_stars(self.pitching_rating)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.player_id"><code class="name">var <span class="ident">player_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def player_id(self):
+    return self.id</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.player_name"><code class="name">var <span class="ident">player_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def player_name(self):
+    return self.name</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.soulscream"><code class="name">var <span class="ident">soulscream</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def soulscream(self):
+    letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
+    stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
+
+    scream = []
+    for r in range(self.soul):
+        sub_scream = []
+        i = 10 ** -r
+        for s in stats:
+            try:
+                c = math.floor((s % i) / i * 10)
+                sub_scream.append(letters[c])
+            except ZeroDivisionError:
+                sub_scream.append(&#34;undefined&#34;)
+        scream.extend(sub_scream + sub_scream + [sub_scream[0]])
+
+    return &#39;&#39;.join(scream)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.tournament_team"><code class="name">var <span class="ident">tournament_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def tournament_team(self):
+    # alias to tournament_team_id
+    return self.tournament_team_id</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="blaseball_mike.models.player.Player.armor"><code class="name flex">
+<span>def <span class="ident">armor</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
+def armor(self):
+    return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.baserunning_rating"><code class="name flex">
+<span>def <span class="ident">baserunning_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_baserunning_rating&#34;, use_default=False)
+def baserunning_rating(self):
+    if getattr(self, &#34;_baserunning_rating&#34;, None):
+        return self._baserunning_rating
+    return ((self.laserlikeness**0.5) *
+            ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.bat"><code class="name flex">
+<span>def <span class="ident">bat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
+def bat(self):
+    return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.batting_rating"><code class="name flex">
+<span>def <span class="ident">batting_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_hitting_rating&#34;, use_default=False)
+def hitting_rating(self):
+    if getattr(self, &#34;_hitting_rating&#34;, None):
+        return self._hitting_rating
+    return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
+            ((self.thwackability * self.divinity) ** 0.35) *
+            ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.blood"><code class="name flex">
+<span>def <span class="ident">blood</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
+def blood(self):
+    if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
+        return self._blood_id
+    return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.coffee"><code class="name flex">
+<span>def <span class="ident">coffee</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
+def coffee(self):
+    if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
+        return self._coffee_id
+    return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.defense_rating"><code class="name flex">
+<span>def <span class="ident">defense_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_defense_rating&#34;, use_default=False)
+def defense_rating(self):
+    if getattr(self, &#34;_defense_rating&#34;, None):
+        return self._defense_rating
+    return (((self.omniscience * self.tenaciousness) ** 0.2) *
+            ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.get_vibe"><code class="name flex">
+<span>def <span class="ident">get_vibe</span></span>(<span>self, day)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Player vibes for day. Day is 1-indexed</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_vibe(self, day):
+    &#34;&#34;&#34;
+    Get Player vibes for day. Day is 1-indexed
+    &#34;&#34;&#34;
+    if not getattr(self, &#34;pressurization&#34;, None) or not getattr(self, &#34;cinnamon&#34;, None) \
+            or not getattr(self, &#34;buoyancy&#34;, None):
+        return None
+    return 0.5 * ((self.pressurization + self.cinnamon) *
+                  math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
+                  self.pressurization + self.cinnamon)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.hitting_rating"><code class="name flex">
+<span>def <span class="ident">hitting_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_hitting_rating&#34;, use_default=False)
+def hitting_rating(self):
+    if getattr(self, &#34;_hitting_rating&#34;, None):
+        return self._hitting_rating
+    return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
+            ((self.thwackability * self.divinity) ** 0.35) *
+            ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.pitching_rating"><code class="name flex">
+<span>def <span class="ident">pitching_rating</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@Base.lazy_load(&#34;_pitching_rating&#34;, use_default=False)
+def pitching_rating(self):
+    if getattr(self, &#34;_pitching_rating&#34;, None):
+        return self._pitching_rating
+    return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
+            (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.simulated_copy"><code class="name flex">
+<span>def <span class="ident">simulated_copy</span></span>(<span>self, overrides=None, multipliers=None, buffs=None, reroll=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a copy of this player with adjusted stats (ie to simulate blessings)
+<code>overrides</code> is a dict where the key specifies an attribute to completely overwrite with new value.
+<code>multipliers</code> is a dict where key specifies attr to multiply by value
+<code>buffs</code> is a dict where key specifies attr to add value
+<code>reroll</code> is a dict where the key specifies attr to reroll (value is unused)</p>
+<p><code>batting_rating</code>, <code>pitching_rating</code>, <code>baserunning_rating</code>, <code>defense_rating</code>, and <code>overall_rating</code>
+can additionally be passed to <code>multipliers</code>, <code>buffs</code>, and <code>reroll</code> to automatically multiply the
+appropriate related stats.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def simulated_copy(self, overrides=None, multipliers=None, buffs=None, reroll=None):
+    &#34;&#34;&#34;
+    Return a copy of this player with adjusted stats (ie to simulate blessings)
+    `overrides` is a dict where the key specifies an attribute to completely overwrite with new value.
+    `multipliers` is a dict where key specifies attr to multiply by value
+    `buffs` is a dict where key specifies attr to add value
+    `reroll` is a dict where the key specifies attr to reroll (value is unused)
+
+    `batting_rating`, `pitching_rating`, `baserunning_rating`, `defense_rating`, and `overall_rating`
+    can additionally be passed to `multipliers`, `buffs`, and `reroll` to automatically multiply the
+    appropriate related stats.
+    &#34;&#34;&#34;
+    overrides = overrides or {}
+    multipliers = multipliers or {}
+    buffs = buffs or {}
+    reroll = reroll or {}
+
+    original_json = self.json()
+    if not original_json.get(&#34;baseThirst&#34;) and original_json.get(&#34;base_thirst&#34;):
+        original_json[&#34;baseThirst&#34;] = original_json[&#34;base_thirst&#34;]
+    if not original_json.get(&#34;groundFriction&#34;) and original_json.get(&#34;ground_friction&#34;):
+        original_json[&#34;groundFriction&#34;] = original_json[&#34;ground_friction&#34;]
+
+    for override_key, override_value in overrides.items():
+        original_json[override_key] = override_value
+
+    for m_key, m_val in multipliers.items():
+        if m_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;buoyancy&#39;] *= (1.0 - m_val)
+            original_json[&#39;tragicness&#39;] *= (1.0 - m_val)
+            original_json[&#39;patheticism&#39;] *= (1.0 - m_val)
+            original_json[&#39;thwackability&#39;] *= (1.0 + m_val)
+            original_json[&#39;divinity&#39;] *= (1.0 + m_val)
+            original_json[&#39;moxie&#39;] *= (1.0 + m_val)
+            original_json[&#39;musclitude&#39;] *= (1.0 + m_val)
+            original_json[&#39;martyrdom&#39;] *= (1.0 + m_val)
+        if m_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;unthwackability&#39;] *= (1.0 + m_val)
+            original_json[&#39;ruthlessness&#39;] *= (1.0 + m_val)
+            original_json[&#39;overpowerment&#39;] *= (1.0 + m_val)
+            original_json[&#39;shakespearianism&#39;] *= (1.0 + m_val)
+            original_json[&#39;coldness&#39;] *= (1.0 + m_val)
+            original_json[&#39;suppression&#39;] *= (1.0 + m_val)
+        if m_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;laserlikeness&#39;] *= (1.0 + m_val)
+            original_json[&#39;continuation&#39;] *= (1.0 + m_val)
+            original_json[&#39;baseThirst&#39;] *= (1.0 + m_val)
+            original_json[&#39;indulgence&#39;] *= (1.0 + m_val)
+            original_json[&#39;groundFriction&#39;] *= (1.0 + m_val)
+        if m_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;omniscience&#39;] *= (1.0 + m_val)
+            original_json[&#39;tenaciousness&#39;] *= (1.0 + m_val)
+            original_json[&#39;watchfulness&#39;] *= (1.0 + m_val)
+            original_json[&#39;anticapitalism&#39;] *= (1.0 + m_val)
+            original_json[&#39;chasiness&#39;] *= (1.0 + m_val)
+        if m_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+            original_json[m_key] *= (1.0 - m_val)
+        elif m_key in original_json:
+            original_json[m_key] *= (1.0 + m_val)
+
+    for b_key, b_val in buffs.items():
+        if b_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;tragicness&#39;] = min(0.99, max(0.01, original_json[&#39;tragicness&#39;] - b_val))
+            original_json[&#39;patheticism&#39;] = min(0.99, max(0.01, original_json[&#39;patheticism&#39;] - b_val))
+            original_json[&#39;buoyancy&#39;] = max(0.01, original_json[&#39;buoyancy&#39;] + b_val)
+            original_json[&#39;thwackability&#39;] = max(0.01, original_json[&#39;thwackability&#39;] + b_val)
+            original_json[&#39;divinity&#39;] = max(0.01, original_json[&#39;divinity&#39;] + b_val)
+            original_json[&#39;moxie&#39;] = max(0.01, original_json[&#39;moxie&#39;] + b_val)
+            original_json[&#39;musclitude&#39;] = max(0.01, original_json[&#39;musclitude&#39;] + b_val)
+            original_json[&#39;martyrdom&#39;] = max(0.01, original_json[&#39;martyrdom&#39;] + b_val)
+        if b_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;unthwackability&#39;] = max(0.01, original_json[&#39;unthwackability&#39;] + b_val)
+            original_json[&#39;ruthlessness&#39;] = max(0.01, original_json[&#39;ruthlessness&#39;] + b_val)
+            original_json[&#39;overpowerment&#39;] = max(0.01, original_json[&#39;overpowerment&#39;] + b_val)
+            original_json[&#39;shakespearianism&#39;] = max(0.01, original_json[&#39;shakespearianism&#39;] + b_val)
+            original_json[&#39;coldness&#39;] = max(0.01, original_json[&#39;coldness&#39;] + b_val)
+            original_json[&#39;suppression&#39;] = max(0.01, original_json[&#39;suppression&#39;] + b_val)
+        if b_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;laserlikeness&#39;] = max(0.01, original_json[&#39;laserlikeness&#39;] + b_val)
+            original_json[&#39;continuation&#39;] = max(0.01, original_json[&#39;continuation&#39;] + b_val)
+            original_json[&#39;baseThirst&#39;] = max(0.01, original_json[&#39;baseThirst&#39;] + b_val)
+            original_json[&#39;indulgence&#39;] = max(0.01, original_json[&#39;indulgence&#39;] + b_val)
+            original_json[&#39;groundFriction&#39;] = max(0.01, original_json[&#39;groundFriction&#39;] + b_val)
+        if b_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;omniscience&#39;] = max(0.01, original_json[&#39;omniscience&#39;] + b_val)
+            original_json[&#39;tenaciousness&#39;] = max(0.01, original_json[&#39;tenaciousness&#39;] + b_val)
+            original_json[&#39;watchfulness&#39;] = max(0.01, original_json[&#39;watchfulness&#39;] + b_val)
+            original_json[&#39;anticapitalism&#39;] = max(0.01, original_json[&#39;anticapitalism&#39;] + b_val)
+            original_json[&#39;chasiness&#39;] = max(0.01, original_json[&#39;chasiness&#39;] + b_val)
+        if b_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+            original_json[b_key] = min(0.99, max(0.01, original_json[b_key] - b_val))
+        elif b_key in original_json:
+            original_json[b_key] = max(0.01, original_json[b_key] + b_val)
+
+    for r_key, _ in reroll.items():
+        if r_key in (&#39;batting_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;buoyancy&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;tragicness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;patheticism&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;thwackability&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;divinity&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;moxie&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;musclitude&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;martyrdom&#39;] = random.uniform(0.01, 0.99)
+        if r_key in (&#39;pitching_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;unthwackability&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;ruthlessness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;overpowerment&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;shakespearianism&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;coldness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;suppression&#39;] = random.uniform(0.01, 0.99)
+        if r_key in (&#39;baserunning_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;laserlikeness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;continuation&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;baseThirst&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;indulgence&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;groundFriction&#39;] = random.uniform(0.01, 0.99)
+        if r_key in (&#39;defense_rating&#39;, &#39;overall_rating&#39;):
+            original_json[&#39;omniscience&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;tenaciousness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;watchfulness&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;anticapitalism&#39;] = random.uniform(0.01, 0.99)
+            original_json[&#39;chasiness&#39;] = random.uniform(0.01, 0.99)
+        if r_key in (&#39;tragicness&#39;, &#39;patheticism&#39;):
+            original_json[r_key] = random.uniform(0.01, 0.99)
+        elif r_key in original_json:
+            original_json[r_key] = random.uniform(0.01, 0.99)
+
+    # Clear database-provided ratings to force a recalculation
+    original_json[&#39;hittingRating&#39;] = None
+    original_json[&#39;pitchingRating&#39;] = None
+    original_json[&#39;baserunningRating&#39;] = None
+    original_json[&#39;defenseRating&#39;] = None
+
+    return Player(original_json)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
+<ul class="hlist">
+<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="blaseball_mike.models" href="index.html">blaseball_mike.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="blaseball_mike.models.player.Player" href="#blaseball_mike.models.player.Player">Player</a></code></h4>
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.player.Player.armor" href="#blaseball_mike.models.player.Player.armor">armor</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.baserunning_rating" href="#blaseball_mike.models.player.Player.baserunning_rating">baserunning_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.baserunning_stars" href="#blaseball_mike.models.player.Player.baserunning_stars">baserunning_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.bat" href="#blaseball_mike.models.player.Player.bat">bat</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.batting_rating" href="#blaseball_mike.models.player.Player.batting_rating">batting_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.batting_stars" href="#blaseball_mike.models.player.Player.batting_stars">batting_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.blood" href="#blaseball_mike.models.player.Player.blood">blood</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.coffee" href="#blaseball_mike.models.player.Player.coffee">coffee</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.defense_rating" href="#blaseball_mike.models.player.Player.defense_rating">defense_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.defense_stars" href="#blaseball_mike.models.player.Player.defense_stars">defense_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.find_by_name" href="#blaseball_mike.models.player.Player.find_by_name">find_by_name</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.game_attr" href="#blaseball_mike.models.player.Player.game_attr">game_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.get_vibe" href="#blaseball_mike.models.player.Player.get_vibe">get_vibe</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.hitting_rating" href="#blaseball_mike.models.player.Player.hitting_rating">hitting_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.hitting_stars" href="#blaseball_mike.models.player.Player.hitting_stars">hitting_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.league_team" href="#blaseball_mike.models.player.Player.league_team">league_team</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.league_team_id" href="#blaseball_mike.models.player.Player.league_team_id">league_team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load" href="#blaseball_mike.models.player.Player.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load_all_by_gameday" href="#blaseball_mike.models.player.Player.load_all_by_gameday">load_all_by_gameday</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load_by_gameday" href="#blaseball_mike.models.player.Player.load_by_gameday">load_by_gameday</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load_history" href="#blaseball_mike.models.player.Player.load_history">load_history</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load_one" href="#blaseball_mike.models.player.Player.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.load_one_at_time" href="#blaseball_mike.models.player.Player.load_one_at_time">load_one_at_time</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.make_random" href="#blaseball_mike.models.player.Player.make_random">make_random</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.perm_attr" href="#blaseball_mike.models.player.Player.perm_attr">perm_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.pitching_rating" href="#blaseball_mike.models.player.Player.pitching_rating">pitching_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.pitching_stars" href="#blaseball_mike.models.player.Player.pitching_stars">pitching_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.player_id" href="#blaseball_mike.models.player.Player.player_id">player_id</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.player_name" href="#blaseball_mike.models.player.Player.player_name">player_name</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.seas_attr" href="#blaseball_mike.models.player.Player.seas_attr">seas_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.simulated_copy" href="#blaseball_mike.models.player.Player.simulated_copy">simulated_copy</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.soulscream" href="#blaseball_mike.models.player.Player.soulscream">soulscream</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.tournament_team" href="#blaseball_mike.models.player.Player.tournament_team">tournament_team</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.tournament_team_id" href="#blaseball_mike.models.player.Player.tournament_team_id">tournament_team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.week_attr" href="#blaseball_mike.models.player.Player.week_attr">week_attr</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
