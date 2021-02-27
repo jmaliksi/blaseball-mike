@@ -5,6 +5,10 @@ from .. import database
 
 class Item(Base):
     """Represents an single item, such as a bat or armor"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("GUNBLADE_A")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):

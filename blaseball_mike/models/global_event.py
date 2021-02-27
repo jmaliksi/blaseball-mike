@@ -8,6 +8,12 @@ class GlobalEvent(Base):
     """
     Represents one global event, ie the events used to populate the ticker.
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        if len(p) < 1:
+            return []
+        return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
     def load(cls):

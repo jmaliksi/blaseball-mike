@@ -9,6 +9,10 @@ from .. import database, chronicler
 
 class Idol(Base):
     """Represents a single idol board player"""
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -30,6 +34,10 @@ class Idol(Base):
 
 class Tribute(Base):
     """Represents a single tribute recipient on the hall of flame"""
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):

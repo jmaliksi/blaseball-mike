@@ -9,6 +9,10 @@ class SimulationData(Base):
     """
     Represents the current simulation state.
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):

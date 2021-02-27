@@ -10,6 +10,10 @@ class Game(Base):
     """
     Represents one blaseball game
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_id("1cbd9d82-89e6-46b2-9082-815f59e1a130")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_id(cls, id_):
