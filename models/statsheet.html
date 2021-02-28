@@ -33,6 +33,11 @@ from .. import database
 
 
 class PlayerStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;e80b9497-c604-456d-9bee-c860d4759b14&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -44,6 +49,11 @@ class PlayerStatsheet(Base):
 
 
 class TeamStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;07b2b5bf-9eeb-4eff-9be9-d0f66c687f76&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -59,6 +69,11 @@ class TeamStatsheet(Base):
 
 
 class GameStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;f852abec-b80e-40e2-b213-f0368d4e7f57&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -105,6 +120,11 @@ class GameStatsheet(Base):
 
 
 class SeasonStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;64392ad5-e14c-42c0-825c-c85da29addaa&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -152,6 +172,11 @@ property to see what JSON keys have been deserialized.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class GameStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;f852abec-b80e-40e2-b213-f0368d4e7f57&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -240,6 +265,10 @@ def load_by_day(cls, season, day):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.statsheet.GameStatsheet.away_team_runs_by_inning"><code class="name">var <span class="ident">away_team_runs_by_inning</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.away_team_stats"><code class="name">var <span class="ident">away_team_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -252,6 +281,14 @@ def away_team_stats(self):
     return self.team_stats()[self._away_team_stats_id]</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.statsheet.GameStatsheet.away_team_total_batters"><code class="name">var <span class="ident">away_team_total_batters</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.GameStatsheet.home_team_runs_by_inning"><code class="name">var <span class="ident">home_team_runs_by_inning</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.home_team_stats"><code class="name">var <span class="ident">home_team_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -263,6 +300,14 @@ def away_team_stats(self):
 def home_team_stats(self):
     return self.team_stats()[self._home_team_stats_id]</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.statsheet.GameStatsheet.home_team_total_batters"><code class="name">var <span class="ident">home_team_total_batters</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.GameStatsheet.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -287,14 +332,6 @@ def home_team_stats(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.statsheet.PlayerStatsheet"><code class="flex name class">
 <span>class <span class="ident">PlayerStatsheet</span></span>
@@ -313,6 +350,11 @@ property to see what JSON keys have been deserialized.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class PlayerStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;e80b9497-c604-456d-9bee-c860d4759b14&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -348,14 +390,121 @@ def load(cls, ids):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.at_bats"><code class="name">var <span class="ident">at_bats</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.caught_stealing"><code class="name">var <span class="ident">caught_stealing</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.doubles"><code class="name">var <span class="ident">doubles</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.earned_runs"><code class="name">var <span class="ident">earned_runs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.ground_into_dp"><code class="name">var <span class="ident">ground_into_dp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.hit_batters"><code class="name">var <span class="ident">hit_batters</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.hit_by_pitch"><code class="name">var <span class="ident">hit_by_pitch</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.hits"><code class="name">var <span class="ident">hits</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.hits_allowed"><code class="name">var <span class="ident">hits_allowed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.home_runs"><code class="name">var <span class="ident">home_runs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.losses"><code class="name">var <span class="ident">losses</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.outs_recorded"><code class="name">var <span class="ident">outs_recorded</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.pitches_thrown"><code class="name">var <span class="ident">pitches_thrown</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.player_id"><code class="name">var <span class="ident">player_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.quadruples"><code class="name">var <span class="ident">quadruples</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.rbis"><code class="name">var <span class="ident">rbis</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.runs"><code class="name">var <span class="ident">runs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.stolen_bases"><code class="name">var <span class="ident">stolen_bases</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.strikeouts"><code class="name">var <span class="ident">strikeouts</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.struckouts"><code class="name">var <span class="ident">struckouts</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.team"><code class="name">var <span class="ident">team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.team_id"><code class="name">var <span class="ident">team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.triples"><code class="name">var <span class="ident">triples</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.walks"><code class="name">var <span class="ident">walks</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.walks_issued"><code class="name">var <span class="ident">walks_issued</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.PlayerStatsheet.wins"><code class="name">var <span class="ident">wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.statsheet.SeasonStatsheet"><code class="flex name class">
 <span>class <span class="ident">SeasonStatsheet</span></span>
@@ -374,6 +523,11 @@ property to see what JSON keys have been deserialized.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class SeasonStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;64392ad5-e14c-42c0-825c-c85da29addaa&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -444,14 +598,13 @@ def load_by_season(cls, season):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.statsheet.SeasonStatsheet.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.statsheet.TeamStatsheet"><code class="flex name class">
 <span>class <span class="ident">TeamStatsheet</span></span>
@@ -470,6 +623,11 @@ property to see what JSON keys have been deserialized.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class TeamStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = &#34;07b2b5bf-9eeb-4eff-9be9-d0f66c687f76&#34;
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -516,14 +674,33 @@ def load(cls, ids):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.games_played"><code class="name">var <span class="ident">games_played</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.losses"><code class="name">var <span class="ident">losses</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.team_id"><code class="name">var <span class="ident">team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.wins"><code class="name">var <span class="ident">wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -544,8 +721,13 @@ def load(cls, ids):
 <li>
 <h4><code><a title="blaseball_mike.models.statsheet.GameStatsheet" href="#blaseball_mike.models.statsheet.GameStatsheet">GameStatsheet</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.away_team_runs_by_inning" href="#blaseball_mike.models.statsheet.GameStatsheet.away_team_runs_by_inning">away_team_runs_by_inning</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.away_team_stats" href="#blaseball_mike.models.statsheet.GameStatsheet.away_team_stats">away_team_stats</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.away_team_total_batters" href="#blaseball_mike.models.statsheet.GameStatsheet.away_team_total_batters">away_team_total_batters</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.home_team_runs_by_inning" href="#blaseball_mike.models.statsheet.GameStatsheet.home_team_runs_by_inning">home_team_runs_by_inning</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.home_team_stats" href="#blaseball_mike.models.statsheet.GameStatsheet.home_team_stats">home_team_stats</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.home_team_total_batters" href="#blaseball_mike.models.statsheet.GameStatsheet.home_team_total_batters">home_team_total_batters</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.id" href="#blaseball_mike.models.statsheet.GameStatsheet.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.load" href="#blaseball_mike.models.statsheet.GameStatsheet.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.load_by_day" href="#blaseball_mike.models.statsheet.GameStatsheet.load_by_day">load_by_day</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.GameStatsheet.team_stats" href="#blaseball_mike.models.statsheet.GameStatsheet.team_stats">team_stats</a></code></li>
@@ -553,13 +735,42 @@ def load(cls, ids):
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet" href="#blaseball_mike.models.statsheet.PlayerStatsheet">PlayerStatsheet</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.at_bats" href="#blaseball_mike.models.statsheet.PlayerStatsheet.at_bats">at_bats</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.caught_stealing" href="#blaseball_mike.models.statsheet.PlayerStatsheet.caught_stealing">caught_stealing</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.doubles" href="#blaseball_mike.models.statsheet.PlayerStatsheet.doubles">doubles</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.earned_runs" href="#blaseball_mike.models.statsheet.PlayerStatsheet.earned_runs">earned_runs</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.ground_into_dp" href="#blaseball_mike.models.statsheet.PlayerStatsheet.ground_into_dp">ground_into_dp</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.hit_batters" href="#blaseball_mike.models.statsheet.PlayerStatsheet.hit_batters">hit_batters</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.hit_by_pitch" href="#blaseball_mike.models.statsheet.PlayerStatsheet.hit_by_pitch">hit_by_pitch</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.hits" href="#blaseball_mike.models.statsheet.PlayerStatsheet.hits">hits</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.hits_allowed" href="#blaseball_mike.models.statsheet.PlayerStatsheet.hits_allowed">hits_allowed</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.home_runs" href="#blaseball_mike.models.statsheet.PlayerStatsheet.home_runs">home_runs</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.id" href="#blaseball_mike.models.statsheet.PlayerStatsheet.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.load" href="#blaseball_mike.models.statsheet.PlayerStatsheet.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.losses" href="#blaseball_mike.models.statsheet.PlayerStatsheet.losses">losses</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.name" href="#blaseball_mike.models.statsheet.PlayerStatsheet.name">name</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.outs_recorded" href="#blaseball_mike.models.statsheet.PlayerStatsheet.outs_recorded">outs_recorded</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.pitches_thrown" href="#blaseball_mike.models.statsheet.PlayerStatsheet.pitches_thrown">pitches_thrown</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.player_id" href="#blaseball_mike.models.statsheet.PlayerStatsheet.player_id">player_id</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.quadruples" href="#blaseball_mike.models.statsheet.PlayerStatsheet.quadruples">quadruples</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.rbis" href="#blaseball_mike.models.statsheet.PlayerStatsheet.rbis">rbis</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.runs" href="#blaseball_mike.models.statsheet.PlayerStatsheet.runs">runs</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.stolen_bases" href="#blaseball_mike.models.statsheet.PlayerStatsheet.stolen_bases">stolen_bases</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.strikeouts" href="#blaseball_mike.models.statsheet.PlayerStatsheet.strikeouts">strikeouts</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.struckouts" href="#blaseball_mike.models.statsheet.PlayerStatsheet.struckouts">struckouts</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.team" href="#blaseball_mike.models.statsheet.PlayerStatsheet.team">team</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.team_id" href="#blaseball_mike.models.statsheet.PlayerStatsheet.team_id">team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.triples" href="#blaseball_mike.models.statsheet.PlayerStatsheet.triples">triples</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.walks" href="#blaseball_mike.models.statsheet.PlayerStatsheet.walks">walks</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.walks_issued" href="#blaseball_mike.models.statsheet.PlayerStatsheet.walks_issued">walks_issued</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.PlayerStatsheet.wins" href="#blaseball_mike.models.statsheet.PlayerStatsheet.wins">wins</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.statsheet.SeasonStatsheet" href="#blaseball_mike.models.statsheet.SeasonStatsheet">SeasonStatsheet</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.statsheet.SeasonStatsheet.id" href="#blaseball_mike.models.statsheet.SeasonStatsheet.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.SeasonStatsheet.load" href="#blaseball_mike.models.statsheet.SeasonStatsheet.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.SeasonStatsheet.load_by_season" href="#blaseball_mike.models.statsheet.SeasonStatsheet.load_by_season">load_by_season</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.SeasonStatsheet.team_stats" href="#blaseball_mike.models.statsheet.SeasonStatsheet.team_stats">team_stats</a></code></li>
@@ -567,9 +778,15 @@ def load(cls, ids):
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.statsheet.TeamStatsheet" href="#blaseball_mike.models.statsheet.TeamStatsheet">TeamStatsheet</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.games_played" href="#blaseball_mike.models.statsheet.TeamStatsheet.games_played">games_played</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.id" href="#blaseball_mike.models.statsheet.TeamStatsheet.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.load" href="#blaseball_mike.models.statsheet.TeamStatsheet.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.losses" href="#blaseball_mike.models.statsheet.TeamStatsheet.losses">losses</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.name" href="#blaseball_mike.models.statsheet.TeamStatsheet.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.player_stats" href="#blaseball_mike.models.statsheet.TeamStatsheet.player_stats">player_stats</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.team_id" href="#blaseball_mike.models.statsheet.TeamStatsheet.team_id">team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.statsheet.TeamStatsheet.wins" href="#blaseball_mike.models.statsheet.TeamStatsheet.wins">wins</a></code></li>
 </ul>
 </li>
 </ul>

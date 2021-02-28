@@ -36,6 +36,12 @@ class GlobalEvent(Base):
     &#34;&#34;&#34;
     Represents one global event, ie the events used to populate the ticker.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        if len(p) &lt; 1:
+            return []
+        return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
     def load(cls):
@@ -73,6 +79,12 @@ class GlobalEvent(Base):
     &#34;&#34;&#34;
     Represents one global event, ie the events used to populate the ticker.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        if len(p) &lt; 1:
+            return []
+        return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
     def load(cls):
@@ -110,6 +122,17 @@ def load(cls):
 </details>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.global_event.GlobalEvent.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.global_event.GlobalEvent.msg"><code class="name">var <span class="ident">msg</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="blaseball_mike.models.global_event.GlobalEvent.expire"><code class="name flex">
@@ -129,14 +152,6 @@ def expire(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -158,7 +173,9 @@ def expire(self):
 <h4><code><a title="blaseball_mike.models.global_event.GlobalEvent" href="#blaseball_mike.models.global_event.GlobalEvent">GlobalEvent</a></code></h4>
 <ul class="">
 <li><code><a title="blaseball_mike.models.global_event.GlobalEvent.expire" href="#blaseball_mike.models.global_event.GlobalEvent.expire">expire</a></code></li>
+<li><code><a title="blaseball_mike.models.global_event.GlobalEvent.id" href="#blaseball_mike.models.global_event.GlobalEvent.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.global_event.GlobalEvent.load" href="#blaseball_mike.models.global_event.GlobalEvent.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.global_event.GlobalEvent.msg" href="#blaseball_mike.models.global_event.GlobalEvent.msg">msg</a></code></li>
 </ul>
 </li>
 </ul>

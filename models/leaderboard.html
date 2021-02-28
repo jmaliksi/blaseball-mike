@@ -37,6 +37,10 @@ from .. import database, chronicler
 
 class Idol(Base):
     &#34;&#34;&#34;Represents a single idol board player&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -58,6 +62,10 @@ class Idol(Base):
 
 class Tribute(Base):
     &#34;&#34;&#34;Represents a single tribute recipient on the hall of flame&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -131,6 +139,10 @@ class Tribute(Base):
 </summary>
 <pre><code class="python">class Idol(Base):
     &#34;&#34;&#34;Represents a single idol board player&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -198,14 +210,6 @@ def player(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.leaderboard.Tribute"><code class="flex name class">
 <span>class <span class="ident">Tribute</span></span>
@@ -219,6 +223,10 @@ def player(self):
 </summary>
 <pre><code class="python">class Tribute(Base):
     &#34;&#34;&#34;Represents a single tribute recipient on the hall of flame&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = list(cls.load().values())[0]
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -335,6 +343,10 @@ def load_at_time(cls, time):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.leaderboard.Tribute.peanuts"><code class="name">var <span class="ident">peanuts</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.leaderboard.Tribute.player"><code class="name">var <span class="ident">player</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -348,14 +360,6 @@ def player(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -386,6 +390,7 @@ def player(self):
 <ul class="">
 <li><code><a title="blaseball_mike.models.leaderboard.Tribute.load" href="#blaseball_mike.models.leaderboard.Tribute.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.leaderboard.Tribute.load_at_time" href="#blaseball_mike.models.leaderboard.Tribute.load_at_time">load_at_time</a></code></li>
+<li><code><a title="blaseball_mike.models.leaderboard.Tribute.peanuts" href="#blaseball_mike.models.leaderboard.Tribute.peanuts">peanuts</a></code></li>
 <li><code><a title="blaseball_mike.models.leaderboard.Tribute.player" href="#blaseball_mike.models.leaderboard.Tribute.player">player</a></code></li>
 <li><code><a title="blaseball_mike.models.leaderboard.Tribute.player_id" href="#blaseball_mike.models.leaderboard.Tribute.player_id">player_id</a></code></li>
 </ul>

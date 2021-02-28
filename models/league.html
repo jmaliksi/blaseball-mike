@@ -37,6 +37,10 @@ class League(Base):
     &#34;&#34;&#34;
     Represents the entire league
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -72,6 +76,10 @@ class Subleague(Base):
     &#34;&#34;&#34;
     Represents a subleague, ie Mild vs Wild
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;4fe65afa-804f-4bb2-9b15-1281b2eab110&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -102,6 +110,10 @@ class Division(Base):
     &#34;&#34;&#34;
     Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;f711d960-dc28-4ae2-9249-e1f320fec7d7&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -142,6 +154,10 @@ class Division(Base):
 
 class Tiebreaker(Base):
     &#34;&#34;&#34;Represents a league&#39;s tiebreaker order&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;370c436f-79fa-418b-bc98-5db48442ba3f&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -149,6 +165,10 @@ class Tiebreaker(Base):
         return {
             id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
         }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
 
     @Base.lazy_load(&#34;_order_ids&#34;, cache_name=&#34;_order&#34;, default_value=OrderedDict())
     def order(self):
@@ -181,6 +201,10 @@ class Tiebreaker(Base):
     &#34;&#34;&#34;
     Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;f711d960-dc28-4ae2-9249-e1f320fec7d7&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -293,14 +317,17 @@ def load_by_name(cls, name):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.league.Division.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.league.Division.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.league.League"><code class="flex name class">
 <span>class <span class="ident">League</span></span>
@@ -316,6 +343,10 @@ def load_by_name(cls, name):
     &#34;&#34;&#34;
     Represents the entire league
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -395,6 +426,14 @@ def load_by_id(cls, id_):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.league.League.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.league.League.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.league.League.teams"><code class="name">var <span class="ident">teams</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -412,14 +451,6 @@ def teams(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.league.Subleague"><code class="flex name class">
 <span>class <span class="ident">Subleague</span></span>
@@ -435,6 +466,10 @@ def teams(self):
     &#34;&#34;&#34;
     Represents a subleague, ie Mild vs Wild
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;4fe65afa-804f-4bb2-9b15-1281b2eab110&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -494,6 +529,14 @@ def load(cls, id_):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.league.Subleague.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.league.Subleague.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.league.Subleague.teams"><code class="name">var <span class="ident">teams</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -511,14 +554,6 @@ def teams(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.league.Tiebreaker"><code class="flex name class">
 <span>class <span class="ident">Tiebreaker</span></span>
@@ -532,6 +567,10 @@ def teams(self):
 </summary>
 <pre><code class="python">class Tiebreaker(Base):
     &#34;&#34;&#34;Represents a league&#39;s tiebreaker order&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;370c436f-79fa-418b-bc98-5db48442ba3f&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -539,6 +578,10 @@ def teams(self):
         return {
             id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
         }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
 
     @Base.lazy_load(&#34;_order_ids&#34;, cache_name=&#34;_order&#34;, default_value=OrderedDict())
     def order(self):
@@ -578,15 +621,28 @@ def load(cls, id_):
     }</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.league.Tiebreaker.load_one"><code class="name flex">
+<span>def <span class="ident">load_one</span></span>(<span>id_)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_one(cls, id_):
+    return cls.load(id_).get(id_)</code></pre>
+</details>
+</dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.league.Tiebreaker.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -606,18 +662,22 @@ def load(cls, id_):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.league.Division" href="#blaseball_mike.models.league.Division">Division</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.league.Division.id" href="#blaseball_mike.models.league.Division.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Division.load" href="#blaseball_mike.models.league.Division.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Division.load_all" href="#blaseball_mike.models.league.Division.load_all">load_all</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Division.load_by_name" href="#blaseball_mike.models.league.Division.load_by_name">load_by_name</a></code></li>
+<li><code><a title="blaseball_mike.models.league.Division.name" href="#blaseball_mike.models.league.Division.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Division.teams" href="#blaseball_mike.models.league.Division.teams">teams</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.league.League" href="#blaseball_mike.models.league.League">League</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.league.League.id" href="#blaseball_mike.models.league.League.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.league.League.load" href="#blaseball_mike.models.league.League.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.league.League.load_by_id" href="#blaseball_mike.models.league.League.load_by_id">load_by_id</a></code></li>
+<li><code><a title="blaseball_mike.models.league.League.name" href="#blaseball_mike.models.league.League.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.league.League.subleagues" href="#blaseball_mike.models.league.League.subleagues">subleagues</a></code></li>
 <li><code><a title="blaseball_mike.models.league.League.teams" href="#blaseball_mike.models.league.League.teams">teams</a></code></li>
 <li><code><a title="blaseball_mike.models.league.League.tiebreakers" href="#blaseball_mike.models.league.League.tiebreakers">tiebreakers</a></code></li>
@@ -627,14 +687,18 @@ def load(cls, id_):
 <h4><code><a title="blaseball_mike.models.league.Subleague" href="#blaseball_mike.models.league.Subleague">Subleague</a></code></h4>
 <ul class="">
 <li><code><a title="blaseball_mike.models.league.Subleague.divisions" href="#blaseball_mike.models.league.Subleague.divisions">divisions</a></code></li>
+<li><code><a title="blaseball_mike.models.league.Subleague.id" href="#blaseball_mike.models.league.Subleague.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Subleague.load" href="#blaseball_mike.models.league.Subleague.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.league.Subleague.name" href="#blaseball_mike.models.league.Subleague.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Subleague.teams" href="#blaseball_mike.models.league.Subleague.teams">teams</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.league.Tiebreaker" href="#blaseball_mike.models.league.Tiebreaker">Tiebreaker</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.league.Tiebreaker.id" href="#blaseball_mike.models.league.Tiebreaker.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Tiebreaker.load" href="#blaseball_mike.models.league.Tiebreaker.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.league.Tiebreaker.load_one" href="#blaseball_mike.models.league.Tiebreaker.load_one">load_one</a></code></li>
 <li><code><a title="blaseball_mike.models.league.Tiebreaker.order" href="#blaseball_mike.models.league.Tiebreaker.order">order</a></code></li>
 </ul>
 </li>

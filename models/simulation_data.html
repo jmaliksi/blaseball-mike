@@ -37,6 +37,10 @@ class SimulationData(Base):
     &#34;&#34;&#34;
     Represents the current simulation state.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -87,6 +91,10 @@ class SimulationData(Base):
     &#34;&#34;&#34;
     Represents the current simulation state.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -155,6 +163,81 @@ def load(cls):
 </details>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.agitations"><code class="name">var <span class="ident">agitations</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.attr"><code class="name">var <span class="ident">attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.day"><code class="name">var <span class="ident">day</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.era_color"><code class="name">var <span class="ident">era_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.era_title"><code class="name">var <span class="ident">era_title</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.phase"><code class="name">var <span class="ident">phase</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.play_off_round"><code class="name">var <span class="ident">play_off_round</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.playoffs"><code class="name">var <span class="ident">playoffs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.rules"><code class="name">var <span class="ident">rules</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.salutations"><code class="name">var <span class="ident">salutations</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.season_id"><code class="name">var <span class="ident">season_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.sub_era_color"><code class="name">var <span class="ident">sub_era_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.sub_era_title"><code class="name">var <span class="ident">sub_era_title</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.tournament"><code class="name">var <span class="ident">tournament</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.tournament_round"><code class="name">var <span class="ident">tournament_round</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.twgo"><code class="name">var <span class="ident">twgo</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.season"><code class="name flex">
@@ -172,14 +255,6 @@ def season(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -200,12 +275,30 @@ def season(self):
 <li>
 <h4><code><a title="blaseball_mike.models.simulation_data.SimulationData" href="#blaseball_mike.models.simulation_data.SimulationData">SimulationData</a></code></h4>
 <ul class="two-column">
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.agitations" href="#blaseball_mike.models.simulation_data.SimulationData.agitations">agitations</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.attr" href="#blaseball_mike.models.simulation_data.SimulationData.attr">attr</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.day" href="#blaseball_mike.models.simulation_data.SimulationData.day">day</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.era_color" href="#blaseball_mike.models.simulation_data.SimulationData.era_color">era_color</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.era_title" href="#blaseball_mike.models.simulation_data.SimulationData.era_title">era_title</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.id" href="#blaseball_mike.models.simulation_data.SimulationData.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.league" href="#blaseball_mike.models.simulation_data.SimulationData.league">league</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.load" href="#blaseball_mike.models.simulation_data.SimulationData.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.next_election_end" href="#blaseball_mike.models.simulation_data.SimulationData.next_election_end">next_election_end</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.next_phase_time" href="#blaseball_mike.models.simulation_data.SimulationData.next_phase_time">next_phase_time</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.next_season_start" href="#blaseball_mike.models.simulation_data.SimulationData.next_season_start">next_season_start</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.phase" href="#blaseball_mike.models.simulation_data.SimulationData.phase">phase</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.play_off_round" href="#blaseball_mike.models.simulation_data.SimulationData.play_off_round">play_off_round</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.playoffs" href="#blaseball_mike.models.simulation_data.SimulationData.playoffs">playoffs</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.rules" href="#blaseball_mike.models.simulation_data.SimulationData.rules">rules</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.salutations" href="#blaseball_mike.models.simulation_data.SimulationData.salutations">salutations</a></code></li>
 <li><code><a title="blaseball_mike.models.simulation_data.SimulationData.season" href="#blaseball_mike.models.simulation_data.SimulationData.season">season</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.season_id" href="#blaseball_mike.models.simulation_data.SimulationData.season_id">season_id</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.sub_era_color" href="#blaseball_mike.models.simulation_data.SimulationData.sub_era_color">sub_era_color</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.sub_era_title" href="#blaseball_mike.models.simulation_data.SimulationData.sub_era_title">sub_era_title</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.terminology" href="#blaseball_mike.models.simulation_data.SimulationData.terminology">terminology</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.tournament" href="#blaseball_mike.models.simulation_data.SimulationData.tournament">tournament</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.tournament_round" href="#blaseball_mike.models.simulation_data.SimulationData.tournament_round">tournament_round</a></code></li>
+<li><code><a title="blaseball_mike.models.simulation_data.SimulationData.twgo" href="#blaseball_mike.models.simulation_data.SimulationData.twgo">twgo</a></code></li>
 </ul>
 </li>
 </ul>

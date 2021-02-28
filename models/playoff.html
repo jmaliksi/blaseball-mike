@@ -34,6 +34,10 @@ from .. import database
 
 class Playoff(Base):
     &#34;&#34;&#34;Represents a playoff bracket&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -65,6 +69,10 @@ class Playoff(Base):
 
 class PlayoffRound(Base):
     &#34;&#34;&#34;Represents a round of playoff games&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;34c99cbf-1d7d-4715-8957-8abcba3c5b89&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -115,6 +123,10 @@ class PlayoffRound(Base):
 
 class PlayoffMatchup(Base):
     &#34;&#34;&#34;Represents a matchup information of teams in a playoff&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;bee2a1e6-50d6-4866-a7b4-f13705873052&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids_):
@@ -158,6 +170,10 @@ class PlayoffMatchup(Base):
 </summary>
 <pre><code class="python">class Playoff(Base):
     &#34;&#34;&#34;Represents a playoff bracket&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -221,6 +237,33 @@ def load_by_season(cls, season):
 </details>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.playoff.Playoff.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.number_of_rounds"><code class="name">var <span class="ident">number_of_rounds</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.playoff_day"><code class="name">var <span class="ident">playoff_day</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.tomorrow_round"><code class="name">var <span class="ident">tomorrow_round</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.tournament"><code class="name">var <span class="ident">tournament</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="blaseball_mike.models.playoff.Playoff.get_round_by_number"><code class="name flex">
@@ -257,14 +300,6 @@ def season(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffMatchup"><code class="flex name class">
 <span>class <span class="ident">PlayoffMatchup</span></span>
@@ -278,6 +313,10 @@ def season(self):
 </summary>
 <pre><code class="python">class PlayoffMatchup(Base):
     &#34;&#34;&#34;Represents a matchup information of teams in a playoff&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;bee2a1e6-50d6-4866-a7b4-f13705873052&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids_):
@@ -350,14 +389,41 @@ def load_one(cls, id_):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.away_seed"><code class="name">var <span class="ident">away_seed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.away_wins"><code class="name">var <span class="ident">away_wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.games_needed"><code class="name">var <span class="ident">games_needed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.games_played"><code class="name">var <span class="ident">games_played</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.home_seed"><code class="name">var <span class="ident">home_seed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.home_wins"><code class="name">var <span class="ident">home_wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffRound"><code class="flex name class">
 <span>class <span class="ident">PlayoffRound</span></span>
@@ -371,6 +437,10 @@ def load_one(cls, id_):
 </summary>
 <pre><code class="python">class PlayoffRound(Base):
     &#34;&#34;&#34;Represents a round of playoff games&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;34c99cbf-1d7d-4715-8957-8abcba3c5b89&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -455,6 +525,10 @@ def load(cls, id_):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.game_index"><code class="name">var <span class="ident">game_index</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.playoff.PlayoffRound.games"><code class="name">var <span class="ident">games</span></code></dt>
 <dd>
 <div class="desc"><p>Get all games in this round.</p></div>
@@ -475,6 +549,26 @@ def games(self):
         self._games[day] = [Game.load_by_id(id_) for id_ in games if id_ != &#34;none&#34;]
     return self._games</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.round_number"><code class="name">var <span class="ident">round_number</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.special"><code class="name">var <span class="ident">special</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.winner_seeds"><code class="name">var <span class="ident">winner_seeds</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -502,14 +596,6 @@ def games(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -529,30 +615,50 @@ def games(self):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.playoff.Playoff" href="#blaseball_mike.models.playoff.Playoff">Playoff</a></code></h4>
-<ul class="">
+<ul class="two-column">
 <li><code><a title="blaseball_mike.models.playoff.Playoff.get_round_by_number" href="#blaseball_mike.models.playoff.Playoff.get_round_by_number">get_round_by_number</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.id" href="#blaseball_mike.models.playoff.Playoff.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.Playoff.load_by_season" href="#blaseball_mike.models.playoff.Playoff.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.name" href="#blaseball_mike.models.playoff.Playoff.name">name</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.number_of_rounds" href="#blaseball_mike.models.playoff.Playoff.number_of_rounds">number_of_rounds</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.playoff_day" href="#blaseball_mike.models.playoff.Playoff.playoff_day">playoff_day</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.Playoff.rounds" href="#blaseball_mike.models.playoff.Playoff.rounds">rounds</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.Playoff.season" href="#blaseball_mike.models.playoff.Playoff.season">season</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.tomorrow_round" href="#blaseball_mike.models.playoff.Playoff.tomorrow_round">tomorrow_round</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.Playoff.tournament" href="#blaseball_mike.models.playoff.Playoff.tournament">tournament</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.Playoff.winner" href="#blaseball_mike.models.playoff.Playoff.winner">winner</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.playoff.PlayoffMatchup" href="#blaseball_mike.models.playoff.PlayoffMatchup">PlayoffMatchup</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.away_seed" href="#blaseball_mike.models.playoff.PlayoffMatchup.away_seed">away_seed</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.away_team" href="#blaseball_mike.models.playoff.PlayoffMatchup.away_team">away_team</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.away_wins" href="#blaseball_mike.models.playoff.PlayoffMatchup.away_wins">away_wins</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.games_needed" href="#blaseball_mike.models.playoff.PlayoffMatchup.games_needed">games_needed</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.games_played" href="#blaseball_mike.models.playoff.PlayoffMatchup.games_played">games_played</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.home_seed" href="#blaseball_mike.models.playoff.PlayoffMatchup.home_seed">home_seed</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.home_team" href="#blaseball_mike.models.playoff.PlayoffMatchup.home_team">home_team</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.home_wins" href="#blaseball_mike.models.playoff.PlayoffMatchup.home_wins">home_wins</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.id" href="#blaseball_mike.models.playoff.PlayoffMatchup.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.load" href="#blaseball_mike.models.playoff.PlayoffMatchup.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.load_one" href="#blaseball_mike.models.playoff.PlayoffMatchup.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffMatchup.name" href="#blaseball_mike.models.playoff.PlayoffMatchup.name">name</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.playoff.PlayoffRound" href="#blaseball_mike.models.playoff.PlayoffRound">PlayoffRound</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.game_index" href="#blaseball_mike.models.playoff.PlayoffRound.game_index">game_index</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffRound.games" href="#blaseball_mike.models.playoff.PlayoffRound.games">games</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffRound.get_games_by_number" href="#blaseball_mike.models.playoff.PlayoffRound.get_games_by_number">get_games_by_number</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.id" href="#blaseball_mike.models.playoff.PlayoffRound.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffRound.load" href="#blaseball_mike.models.playoff.PlayoffRound.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffRound.matchups" href="#blaseball_mike.models.playoff.PlayoffRound.matchups">matchups</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.name" href="#blaseball_mike.models.playoff.PlayoffRound.name">name</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.round_number" href="#blaseball_mike.models.playoff.PlayoffRound.round_number">round_number</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.special" href="#blaseball_mike.models.playoff.PlayoffRound.special">special</a></code></li>
+<li><code><a title="blaseball_mike.models.playoff.PlayoffRound.winner_seeds" href="#blaseball_mike.models.playoff.PlayoffRound.winner_seeds">winner_seeds</a></code></li>
 <li><code><a title="blaseball_mike.models.playoff.PlayoffRound.winners" href="#blaseball_mike.models.playoff.PlayoffRound.winners">winners</a></code></li>
 </ul>
 </li>

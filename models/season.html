@@ -34,6 +34,10 @@ from .. import database
 
 class Season(Base):
     &#34;&#34;&#34;Represents an individual season&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, season_number):
@@ -60,6 +64,10 @@ class Season(Base):
 
 class Standings(Base):
     &#34;&#34;&#34;Represents the team standings&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;dbcb0a13-2d59-4f13-8681-fd969aefdcc6&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -93,6 +101,10 @@ class Standings(Base):
 </summary>
 <pre><code class="python">class Season(Base):
     &#34;&#34;&#34;Represents an individual season&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, season_number):
@@ -155,6 +167,25 @@ def load(cls, season_number):
 </details>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.season.Season.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Season.rules"><code class="name">var <span class="ident">rules</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Season.schedule"><code class="name">var <span class="ident">schedule</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Season.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="blaseball_mike.models.season.Season.season_number"><code class="name flex">
@@ -172,14 +203,6 @@ def season_number(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.season.Standings"><code class="flex name class">
 <span>class <span class="ident">Standings</span></span>
@@ -193,6 +216,10 @@ def season_number(self):
 </summary>
 <pre><code class="python">class Standings(Base):
     &#34;&#34;&#34;Represents the team standings&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;dbcb0a13-2d59-4f13-8681-fd969aefdcc6&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -228,6 +255,21 @@ def load(cls, id_):
 </details>
 </dd>
 </dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.season.Standings.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Standings.losses"><code class="name">var <span class="ident">losses</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Standings.wins"><code class="name">var <span class="ident">wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="blaseball_mike.models.season.Standings.get_standings_by_team"><code class="name flex">
@@ -245,14 +287,6 @@ def load(cls, id_):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -272,19 +306,26 @@ def load(cls, id_):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.season.Season" href="#blaseball_mike.models.season.Season">Season</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.season.Season.id" href="#blaseball_mike.models.season.Season.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Season.league" href="#blaseball_mike.models.season.Season.league">league</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Season.load" href="#blaseball_mike.models.season.Season.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Season.rules" href="#blaseball_mike.models.season.Season.rules">rules</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Season.schedule" href="#blaseball_mike.models.season.Season.schedule">schedule</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Season.season_number" href="#blaseball_mike.models.season.Season.season_number">season_number</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Season.standings" href="#blaseball_mike.models.season.Season.standings">standings</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Season.stats" href="#blaseball_mike.models.season.Season.stats">stats</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Season.terminology" href="#blaseball_mike.models.season.Season.terminology">terminology</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.season.Standings" href="#blaseball_mike.models.season.Standings">Standings</a></code></h4>
 <ul class="">
 <li><code><a title="blaseball_mike.models.season.Standings.get_standings_by_team" href="#blaseball_mike.models.season.Standings.get_standings_by_team">get_standings_by_team</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Standings.id" href="#blaseball_mike.models.season.Standings.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.season.Standings.load" href="#blaseball_mike.models.season.Standings.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Standings.losses" href="#blaseball_mike.models.season.Standings.losses">losses</a></code></li>
+<li><code><a title="blaseball_mike.models.season.Standings.wins" href="#blaseball_mike.models.season.Standings.wins">wins</a></code></li>
 </ul>
 </li>
 </ul>

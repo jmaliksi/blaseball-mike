@@ -42,6 +42,10 @@ class Player(Base):
     &#34;&#34;&#34;
     Represents a blaseball player.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;766dfd1e-11c3-42b6-a167-9b2d568b5dc0&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -474,6 +478,10 @@ class Player(Base):
     &#34;&#34;&#34;
     Represents a blaseball player.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;766dfd1e-11c3-42b6-a167-9b2d568b5dc0&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -1114,6 +1122,14 @@ def make_random(cls, name=&#34;Random Player&#34;, seed=None):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.player.Player.anticapitalism"><code class="name">var <span class="ident">anticapitalism</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.base_thirst"><code class="name">var <span class="ident">base_thirst</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.baserunning_stars"><code class="name">var <span class="ident">baserunning_stars</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1138,6 +1154,34 @@ def batting_stars(self):
     return self.hitting_stars</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.buoyancy"><code class="name">var <span class="ident">buoyancy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.chasiness"><code class="name">var <span class="ident">chasiness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.cinnamon"><code class="name">var <span class="ident">cinnamon</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.coldness"><code class="name">var <span class="ident">coldness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.consecutive_hits"><code class="name">var <span class="ident">consecutive_hits</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.continuation"><code class="name">var <span class="ident">continuation</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.deceased"><code class="name">var <span class="ident">deceased</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.defense_stars"><code class="name">var <span class="ident">defense_stars</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1149,6 +1193,22 @@ def batting_stars(self):
 def defense_stars(self):
     return self._rating_to_stars(self.defense_rating)</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.divinity"><code class="name">var <span class="ident">divinity</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.fate"><code class="name">var <span class="ident">fate</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.ground_friction"><code class="name">var <span class="ident">ground_friction</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.hit_streak"><code class="name">var <span class="ident">hit_streak</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.hitting_stars"><code class="name">var <span class="ident">hitting_stars</span></code></dt>
 <dd>
@@ -1162,6 +1222,18 @@ def hitting_stars(self):
     return self._rating_to_stars(self.hitting_rating)</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.indulgence"><code class="name">var <span class="ident">indulgence</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.laserlikeness"><code class="name">var <span class="ident">laserlikeness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.league_team"><code class="name">var <span class="ident">league_team</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1174,6 +1246,38 @@ def league_team(self):
     # alias to league_team_id
     return self.league_team_id</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.martyrdom"><code class="name">var <span class="ident">martyrdom</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.moxie"><code class="name">var <span class="ident">moxie</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.musclitude"><code class="name">var <span class="ident">musclitude</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.omniscience"><code class="name">var <span class="ident">omniscience</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.overpowerment"><code class="name">var <span class="ident">overpowerment</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.patheticism"><code class="name">var <span class="ident">patheticism</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.peanut_allergy"><code class="name">var <span class="ident">peanut_allergy</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.pitching_stars"><code class="name">var <span class="ident">pitching_stars</span></code></dt>
 <dd>
@@ -1211,6 +1315,26 @@ def player_name(self):
     return self.name</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.pressurization"><code class="name">var <span class="ident">pressurization</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.ritual"><code class="name">var <span class="ident">ritual</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.ruthlessness"><code class="name">var <span class="ident">ruthlessness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.shakespearianism"><code class="name">var <span class="ident">shakespearianism</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.soul"><code class="name">var <span class="ident">soul</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.soulscream"><code class="name">var <span class="ident">soulscream</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1238,6 +1362,22 @@ def soulscream(self):
     return &#39;&#39;.join(scream)</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.suppression"><code class="name">var <span class="ident">suppression</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.tenaciousness"><code class="name">var <span class="ident">tenaciousness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.thwackability"><code class="name">var <span class="ident">thwackability</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.total_fingers"><code class="name">var <span class="ident">total_fingers</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.tournament_team"><code class="name">var <span class="ident">tournament_team</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1250,6 +1390,18 @@ def tournament_team(self):
     # alias to tournament_team_id
     return self.tournament_team_id</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.tragicness"><code class="name">var <span class="ident">tragicness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.unthwackability"><code class="name">var <span class="ident">unthwackability</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.watchfulness"><code class="name">var <span class="ident">watchfulness</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -1576,14 +1728,6 @@ appropriate related stats.</p></div>
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 </dl>
 </section>
@@ -1604,21 +1748,37 @@ appropriate related stats.</p></div>
 <li>
 <h4><code><a title="blaseball_mike.models.player.Player" href="#blaseball_mike.models.player.Player">Player</a></code></h4>
 <ul class="two-column">
+<li><code><a title="blaseball_mike.models.player.Player.anticapitalism" href="#blaseball_mike.models.player.Player.anticapitalism">anticapitalism</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.armor" href="#blaseball_mike.models.player.Player.armor">armor</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.base_thirst" href="#blaseball_mike.models.player.Player.base_thirst">base_thirst</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.baserunning_rating" href="#blaseball_mike.models.player.Player.baserunning_rating">baserunning_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.baserunning_stars" href="#blaseball_mike.models.player.Player.baserunning_stars">baserunning_stars</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.bat" href="#blaseball_mike.models.player.Player.bat">bat</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.batting_rating" href="#blaseball_mike.models.player.Player.batting_rating">batting_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.batting_stars" href="#blaseball_mike.models.player.Player.batting_stars">batting_stars</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.blood" href="#blaseball_mike.models.player.Player.blood">blood</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.buoyancy" href="#blaseball_mike.models.player.Player.buoyancy">buoyancy</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.chasiness" href="#blaseball_mike.models.player.Player.chasiness">chasiness</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.cinnamon" href="#blaseball_mike.models.player.Player.cinnamon">cinnamon</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.coffee" href="#blaseball_mike.models.player.Player.coffee">coffee</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.coldness" href="#blaseball_mike.models.player.Player.coldness">coldness</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.consecutive_hits" href="#blaseball_mike.models.player.Player.consecutive_hits">consecutive_hits</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.continuation" href="#blaseball_mike.models.player.Player.continuation">continuation</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.deceased" href="#blaseball_mike.models.player.Player.deceased">deceased</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.defense_rating" href="#blaseball_mike.models.player.Player.defense_rating">defense_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.defense_stars" href="#blaseball_mike.models.player.Player.defense_stars">defense_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.divinity" href="#blaseball_mike.models.player.Player.divinity">divinity</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.fate" href="#blaseball_mike.models.player.Player.fate">fate</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.find_by_name" href="#blaseball_mike.models.player.Player.find_by_name">find_by_name</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.game_attr" href="#blaseball_mike.models.player.Player.game_attr">game_attr</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.get_vibe" href="#blaseball_mike.models.player.Player.get_vibe">get_vibe</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.ground_friction" href="#blaseball_mike.models.player.Player.ground_friction">ground_friction</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.hit_streak" href="#blaseball_mike.models.player.Player.hit_streak">hit_streak</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.hitting_rating" href="#blaseball_mike.models.player.Player.hitting_rating">hitting_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.hitting_stars" href="#blaseball_mike.models.player.Player.hitting_stars">hitting_stars</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.id" href="#blaseball_mike.models.player.Player.id">id</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.indulgence" href="#blaseball_mike.models.player.Player.indulgence">indulgence</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.laserlikeness" href="#blaseball_mike.models.player.Player.laserlikeness">laserlikeness</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.league_team" href="#blaseball_mike.models.player.Player.league_team">league_team</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.league_team_id" href="#blaseball_mike.models.player.Player.league_team_id">league_team_id</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.load" href="#blaseball_mike.models.player.Player.load">load</a></code></li>
@@ -1628,16 +1788,36 @@ appropriate related stats.</p></div>
 <li><code><a title="blaseball_mike.models.player.Player.load_one" href="#blaseball_mike.models.player.Player.load_one">load_one</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.load_one_at_time" href="#blaseball_mike.models.player.Player.load_one_at_time">load_one_at_time</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.make_random" href="#blaseball_mike.models.player.Player.make_random">make_random</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.martyrdom" href="#blaseball_mike.models.player.Player.martyrdom">martyrdom</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.moxie" href="#blaseball_mike.models.player.Player.moxie">moxie</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.musclitude" href="#blaseball_mike.models.player.Player.musclitude">musclitude</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.name" href="#blaseball_mike.models.player.Player.name">name</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.omniscience" href="#blaseball_mike.models.player.Player.omniscience">omniscience</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.overpowerment" href="#blaseball_mike.models.player.Player.overpowerment">overpowerment</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.patheticism" href="#blaseball_mike.models.player.Player.patheticism">patheticism</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.peanut_allergy" href="#blaseball_mike.models.player.Player.peanut_allergy">peanut_allergy</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.perm_attr" href="#blaseball_mike.models.player.Player.perm_attr">perm_attr</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.pitching_rating" href="#blaseball_mike.models.player.Player.pitching_rating">pitching_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.pitching_stars" href="#blaseball_mike.models.player.Player.pitching_stars">pitching_stars</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.player_id" href="#blaseball_mike.models.player.Player.player_id">player_id</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.player_name" href="#blaseball_mike.models.player.Player.player_name">player_name</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.pressurization" href="#blaseball_mike.models.player.Player.pressurization">pressurization</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.ritual" href="#blaseball_mike.models.player.Player.ritual">ritual</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.ruthlessness" href="#blaseball_mike.models.player.Player.ruthlessness">ruthlessness</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.seas_attr" href="#blaseball_mike.models.player.Player.seas_attr">seas_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.shakespearianism" href="#blaseball_mike.models.player.Player.shakespearianism">shakespearianism</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.simulated_copy" href="#blaseball_mike.models.player.Player.simulated_copy">simulated_copy</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.soul" href="#blaseball_mike.models.player.Player.soul">soul</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.soulscream" href="#blaseball_mike.models.player.Player.soulscream">soulscream</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.suppression" href="#blaseball_mike.models.player.Player.suppression">suppression</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.tenaciousness" href="#blaseball_mike.models.player.Player.tenaciousness">tenaciousness</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.thwackability" href="#blaseball_mike.models.player.Player.thwackability">thwackability</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.total_fingers" href="#blaseball_mike.models.player.Player.total_fingers">total_fingers</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.tournament_team" href="#blaseball_mike.models.player.Player.tournament_team">tournament_team</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.tournament_team_id" href="#blaseball_mike.models.player.Player.tournament_team_id">tournament_team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.tragicness" href="#blaseball_mike.models.player.Player.tragicness">tragicness</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.unthwackability" href="#blaseball_mike.models.player.Player.unthwackability">unthwackability</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.watchfulness" href="#blaseball_mike.models.player.Player.watchfulness">watchfulness</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.week_attr" href="#blaseball_mike.models.player.Player.week_attr">week_attr</a></code></li>
 </ul>
 </li>

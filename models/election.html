@@ -35,6 +35,11 @@ class Election(Base):
     &#34;&#34;&#34;Represents the current election&#34;&#34;&#34;
 
     @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+    @classmethod
     def load(cls):
         &#34;&#34;&#34;Load the current election&#34;&#34;&#34;
         offseason = database.get_offseason_election_details()
@@ -46,6 +51,10 @@ OffseasonSetup = Election
 
 class ElectionResult(Base):
     &#34;&#34;&#34;Represents the results of an election&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -89,6 +98,10 @@ OffseasonResult = ElectionResult
 
 class DecreeResult(Base):
     &#34;&#34;&#34;Represents the results of a single decree.&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;643280fc-b7c6-4b6d-a164-9b53e1a3e47a&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -110,6 +123,10 @@ class DecreeResult(Base):
 
 class BlessingResult(Base):
     &#34;&#34;&#34;Represents the results of a single blessing&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;cbb567c0-d770-4d22-92f6-ff16ebb94758&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -155,6 +172,10 @@ class BlessingResult(Base):
 
 class TidingResult(Base):
     &#34;&#34;&#34;Represents the results of a single election tiding&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;future_written&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -192,6 +213,10 @@ EventResult = TidingResult</code></pre>
 </summary>
 <pre><code class="python">class BlessingResult(Base):
     &#34;&#34;&#34;Represents the results of a single blessing&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;cbb567c0-d770-4d22-92f6-ff16ebb94758&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -316,6 +341,26 @@ def blessing_title(self):
     return self.bonus_title</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.election.BlessingResult.bonus_id"><code class="name">var <span class="ident">bonus_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.bonus_title"><code class="name">var <span class="ident">bonus_title</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.description"><code class="name">var <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.highest_team_votes"><code class="name">var <span class="ident">highest_team_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.BlessingResult.team"><code class="name">var <span class="ident">team</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -328,15 +373,15 @@ def team(self):
     return self.team_id</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.election.BlessingResult.team_votes"><code class="name">var <span class="ident">team_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.total_votes"><code class="name">var <span class="ident">total_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.election.DecreeResult"><code class="flex name class">
 <span>class <span class="ident">DecreeResult</span></span>
@@ -350,6 +395,10 @@ def team(self):
 </summary>
 <pre><code class="python">class DecreeResult(Base):
     &#34;&#34;&#34;Represents the results of a single decree.&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;643280fc-b7c6-4b6d-a164-9b53e1a3e47a&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -413,14 +462,29 @@ def load_one(cls, id_):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.election.DecreeResult.decree_id"><code class="name">var <span class="ident">decree_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.DecreeResult.decree_title"><code class="name">var <span class="ident">decree_title</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.DecreeResult.description"><code class="name">var <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.DecreeResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.DecreeResult.total_votes"><code class="name">var <span class="ident">total_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.election.Election"><code class="flex name class">
 <span>class <span class="ident">Election</span></span>
@@ -434,6 +498,11 @@ def load_one(cls, id_):
 </summary>
 <pre><code class="python">class Election(Base):
     &#34;&#34;&#34;Represents the current election&#34;&#34;&#34;
+
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls):
@@ -463,6 +532,21 @@ def load(cls):
     offseason = database.get_offseason_election_details()
     return cls(offseason)</code></pre>
 </details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.election.Election.blessings"><code class="name">var <span class="ident">blessings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.decrees"><code class="name">var <span class="ident">decrees</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.decrees_to_pass"><code class="name">var <span class="ident">decrees_to_pass</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -480,6 +564,11 @@ def load(cls):
     &#34;&#34;&#34;Represents the current election&#34;&#34;&#34;
 
     @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+    @classmethod
     def load(cls):
         &#34;&#34;&#34;Load the current election&#34;&#34;&#34;
         offseason = database.get_offseason_election_details()
@@ -509,14 +598,21 @@ def load(cls):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.election.Election.blessings"><code class="name">var <span class="ident">blessings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.decrees"><code class="name">var <span class="ident">decrees</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.decrees_to_pass"><code class="name">var <span class="ident">decrees_to_pass</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 <dt id="blaseball_mike.models.election.ElectionResult"><code class="flex name class">
 <span>class <span class="ident">ElectionResult</span></span>
@@ -530,6 +626,10 @@ def load(cls):
 </summary>
 <pre><code class="python">class ElectionResult(Base):
     &#34;&#34;&#34;Represents the results of an election&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -621,6 +721,14 @@ def blessing_results(self):
     return self.bonus_results</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.election.ElectionResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.ElectionResult.tiding_results"><code class="name">var <span class="ident">tiding_results</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -632,6 +740,18 @@ def blessing_results(self):
 def tiding_results(self):
     return self.event_results</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.total_bonus_votes"><code class="name">var <span class="ident">total_bonus_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.total_decree_votes"><code class="name">var <span class="ident">total_decree_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.vote_count"><code class="name">var <span class="ident">vote_count</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -664,6 +784,10 @@ def season(self):
 </summary>
 <pre><code class="python">class ElectionResult(Base):
     &#34;&#34;&#34;Represents the results of an election&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -755,6 +879,14 @@ def blessing_results(self):
     return self.bonus_results</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.election.ElectionResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.ElectionResult.tiding_results"><code class="name">var <span class="ident">tiding_results</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -766,6 +898,18 @@ def blessing_results(self):
 def tiding_results(self):
     return self.event_results</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.total_bonus_votes"><code class="name">var <span class="ident">total_bonus_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.total_decree_votes"><code class="name">var <span class="ident">total_decree_votes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.vote_count"><code class="name">var <span class="ident">vote_count</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -785,14 +929,6 @@ def season(self):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
 </dd>
 <dt id="blaseball_mike.models.election.TidingResult"><code class="flex name class">
 <span>class <span class="ident">TidingResult</span></span>
@@ -806,6 +942,10 @@ def season(self):
 </summary>
 <pre><code class="python">class TidingResult(Base):
     &#34;&#34;&#34;Represents the results of a single election tiding&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;future_written&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -855,6 +995,17 @@ def load(cls, *ids):
 def load_one(cls, id_):
     return cls.load(id_).get(id_)</code></pre>
 </details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.election.TidingResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.TidingResult.msg"><code class="name">var <span class="ident">msg</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -870,6 +1021,10 @@ def load_one(cls, id_):
 </summary>
 <pre><code class="python">class TidingResult(Base):
     &#34;&#34;&#34;Represents the results of a single election tiding&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;future_written&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -921,14 +1076,17 @@ def load_one(cls, id_):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.election.TidingResult.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.TidingResult.msg"><code class="name">var <span class="ident">msg</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -951,29 +1109,47 @@ def load_one(cls, id_):
 <ul class="two-column">
 <li><code><a title="blaseball_mike.models.election.BlessingResult.blessing_id" href="#blaseball_mike.models.election.BlessingResult.blessing_id">blessing_id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.blessing_title" href="#blaseball_mike.models.election.BlessingResult.blessing_title">blessing_title</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.bonus_id" href="#blaseball_mike.models.election.BlessingResult.bonus_id">bonus_id</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.bonus_title" href="#blaseball_mike.models.election.BlessingResult.bonus_title">bonus_title</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.description" href="#blaseball_mike.models.election.BlessingResult.description">description</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.highest_team" href="#blaseball_mike.models.election.BlessingResult.highest_team">highest_team</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.highest_team_votes" href="#blaseball_mike.models.election.BlessingResult.highest_team_votes">highest_team_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.id" href="#blaseball_mike.models.election.BlessingResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.load" href="#blaseball_mike.models.election.BlessingResult.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.load_one" href="#blaseball_mike.models.election.BlessingResult.load_one">load_one</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.team" href="#blaseball_mike.models.election.BlessingResult.team">team</a></code></li>
 <li><code><a title="blaseball_mike.models.election.BlessingResult.team_id" href="#blaseball_mike.models.election.BlessingResult.team_id">team_id</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.team_votes" href="#blaseball_mike.models.election.BlessingResult.team_votes">team_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.BlessingResult.total_votes" href="#blaseball_mike.models.election.BlessingResult.total_votes">total_votes</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.election.DecreeResult" href="#blaseball_mike.models.election.DecreeResult">DecreeResult</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.election.DecreeResult.decree_id" href="#blaseball_mike.models.election.DecreeResult.decree_id">decree_id</a></code></li>
+<li><code><a title="blaseball_mike.models.election.DecreeResult.decree_title" href="#blaseball_mike.models.election.DecreeResult.decree_title">decree_title</a></code></li>
+<li><code><a title="blaseball_mike.models.election.DecreeResult.description" href="#blaseball_mike.models.election.DecreeResult.description">description</a></code></li>
+<li><code><a title="blaseball_mike.models.election.DecreeResult.id" href="#blaseball_mike.models.election.DecreeResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.DecreeResult.load" href="#blaseball_mike.models.election.DecreeResult.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.election.DecreeResult.load_one" href="#blaseball_mike.models.election.DecreeResult.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.election.DecreeResult.total_votes" href="#blaseball_mike.models.election.DecreeResult.total_votes">total_votes</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.election.Election" href="#blaseball_mike.models.election.Election">Election</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.election.Election.blessings" href="#blaseball_mike.models.election.Election.blessings">blessings</a></code></li>
+<li><code><a title="blaseball_mike.models.election.Election.decrees" href="#blaseball_mike.models.election.Election.decrees">decrees</a></code></li>
+<li><code><a title="blaseball_mike.models.election.Election.decrees_to_pass" href="#blaseball_mike.models.election.Election.decrees_to_pass">decrees_to_pass</a></code></li>
 <li><code><a title="blaseball_mike.models.election.Election.load" href="#blaseball_mike.models.election.Election.load">load</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.election.Election" href="#blaseball_mike.models.election.Election">Election</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.election.Election.blessings" href="#blaseball_mike.models.election.Election.blessings">blessings</a></code></li>
+<li><code><a title="blaseball_mike.models.election.Election.decrees" href="#blaseball_mike.models.election.Election.decrees">decrees</a></code></li>
+<li><code><a title="blaseball_mike.models.election.Election.decrees_to_pass" href="#blaseball_mike.models.election.Election.decrees_to_pass">decrees_to_pass</a></code></li>
 <li><code><a title="blaseball_mike.models.election.Election.load" href="#blaseball_mike.models.election.Election.load">load</a></code></li>
 </ul>
 </li>
@@ -984,9 +1160,14 @@ def load_one(cls, id_):
 <li><code><a title="blaseball_mike.models.election.ElectionResult.bonus_results" href="#blaseball_mike.models.election.ElectionResult.bonus_results">bonus_results</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.decree_results" href="#blaseball_mike.models.election.ElectionResult.decree_results">decree_results</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.event_results" href="#blaseball_mike.models.election.ElectionResult.event_results">event_results</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.id" href="#blaseball_mike.models.election.ElectionResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.load_by_season" href="#blaseball_mike.models.election.ElectionResult.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.name" href="#blaseball_mike.models.election.ElectionResult.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.season" href="#blaseball_mike.models.election.ElectionResult.season">season</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.tiding_results" href="#blaseball_mike.models.election.ElectionResult.tiding_results">tiding_results</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.total_bonus_votes" href="#blaseball_mike.models.election.ElectionResult.total_bonus_votes">total_bonus_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.total_decree_votes" href="#blaseball_mike.models.election.ElectionResult.total_decree_votes">total_decree_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.vote_count" href="#blaseball_mike.models.election.ElectionResult.vote_count">vote_count</a></code></li>
 </ul>
 </li>
 <li>
@@ -996,23 +1177,32 @@ def load_one(cls, id_):
 <li><code><a title="blaseball_mike.models.election.ElectionResult.bonus_results" href="#blaseball_mike.models.election.ElectionResult.bonus_results">bonus_results</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.decree_results" href="#blaseball_mike.models.election.ElectionResult.decree_results">decree_results</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.event_results" href="#blaseball_mike.models.election.ElectionResult.event_results">event_results</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.id" href="#blaseball_mike.models.election.ElectionResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.load_by_season" href="#blaseball_mike.models.election.ElectionResult.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.name" href="#blaseball_mike.models.election.ElectionResult.name">name</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.season" href="#blaseball_mike.models.election.ElectionResult.season">season</a></code></li>
 <li><code><a title="blaseball_mike.models.election.ElectionResult.tiding_results" href="#blaseball_mike.models.election.ElectionResult.tiding_results">tiding_results</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.total_bonus_votes" href="#blaseball_mike.models.election.ElectionResult.total_bonus_votes">total_bonus_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.total_decree_votes" href="#blaseball_mike.models.election.ElectionResult.total_decree_votes">total_decree_votes</a></code></li>
+<li><code><a title="blaseball_mike.models.election.ElectionResult.vote_count" href="#blaseball_mike.models.election.ElectionResult.vote_count">vote_count</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.election.TidingResult" href="#blaseball_mike.models.election.TidingResult">TidingResult</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.election.TidingResult.id" href="#blaseball_mike.models.election.TidingResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.TidingResult.load" href="#blaseball_mike.models.election.TidingResult.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.election.TidingResult.load_one" href="#blaseball_mike.models.election.TidingResult.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.election.TidingResult.msg" href="#blaseball_mike.models.election.TidingResult.msg">msg</a></code></li>
 </ul>
 </li>
 <li>
 <h4><code><a title="blaseball_mike.models.election.TidingResult" href="#blaseball_mike.models.election.TidingResult">TidingResult</a></code></h4>
 <ul class="">
+<li><code><a title="blaseball_mike.models.election.TidingResult.id" href="#blaseball_mike.models.election.TidingResult.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.election.TidingResult.load" href="#blaseball_mike.models.election.TidingResult.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.election.TidingResult.load_one" href="#blaseball_mike.models.election.TidingResult.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.election.TidingResult.msg" href="#blaseball_mike.models.election.TidingResult.msg">msg</a></code></li>
 </ul>
 </li>
 </ul>

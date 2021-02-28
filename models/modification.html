@@ -32,6 +32,10 @@ from .. import database
 
 class Modification(Base):
     &#34;&#34;&#34;Represents a player or team modification&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;FIREPROOF&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -65,6 +69,10 @@ class Modification(Base):
 </summary>
 <pre><code class="python">class Modification(Base):
     &#34;&#34;&#34;Represents a player or team modification&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one(&#34;FIREPROOF&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -114,14 +122,33 @@ def load_one(cls, id_):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.modification.Modification.background"><code class="name">var <span class="ident">background</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.modification.Modification.color"><code class="name">var <span class="ident">color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.modification.Modification.description"><code class="name">var <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.modification.Modification.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.modification.Modification.text_color"><code class="name">var <span class="ident">text_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.modification.Modification.title"><code class="name">var <span class="ident">title</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -141,9 +168,15 @@ def load_one(cls, id_):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.modification.Modification" href="#blaseball_mike.models.modification.Modification">Modification</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.modification.Modification.background" href="#blaseball_mike.models.modification.Modification.background">background</a></code></li>
+<li><code><a title="blaseball_mike.models.modification.Modification.color" href="#blaseball_mike.models.modification.Modification.color">color</a></code></li>
+<li><code><a title="blaseball_mike.models.modification.Modification.description" href="#blaseball_mike.models.modification.Modification.description">description</a></code></li>
+<li><code><a title="blaseball_mike.models.modification.Modification.id" href="#blaseball_mike.models.modification.Modification.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.modification.Modification.load" href="#blaseball_mike.models.modification.Modification.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.modification.Modification.load_one" href="#blaseball_mike.models.modification.Modification.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.modification.Modification.text_color" href="#blaseball_mike.models.modification.Modification.text_color">text_color</a></code></li>
+<li><code><a title="blaseball_mike.models.modification.Modification.title" href="#blaseball_mike.models.modification.Modification.title">title</a></code></li>
 </ul>
 </li>
 </ul>

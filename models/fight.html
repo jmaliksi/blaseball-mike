@@ -37,6 +37,10 @@ from .. import tables, chronicler
 
 class Fight(Game):
     &#34;&#34;&#34;Represents a Blaseball boss fight.&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_id(&#34;6754f45d-52a6-4b2f-b63c-15dcd520f8cf&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     class DamageResults(Base):
         &#34;&#34;&#34;
@@ -109,6 +113,10 @@ class Fight(Game):
 </summary>
 <pre><code class="python">class Fight(Game):
     &#34;&#34;&#34;Represents a Blaseball boss fight.&#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_id(&#34;6754f45d-52a6-4b2f-b63c-15dcd520f8cf&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     class DamageResults(Base):
         &#34;&#34;&#34;
@@ -192,21 +200,298 @@ class Fight(Game):
 <div class="desc"></div>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.game.Game" href="game.html#blaseball_mike.models.game.Game">Game</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.game.Game.away_payout" href="game.html#blaseball_mike.models.game.Game.away_payout">away_payout</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.home_payout" href="game.html#blaseball_mike.models.game.Game.home_payout">home_payout</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.load_by_day" href="game.html#blaseball_mike.models.game.Game.load_by_day">load_by_day</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.load_by_id" href="game.html#blaseball_mike.models.game.Game.load_by_id">load_by_id</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.load_by_season" href="game.html#blaseball_mike.models.game.Game.load_by_season">load_by_season</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.load_by_tournament" href="game.html#blaseball_mike.models.game.Game.load_by_tournament">load_by_tournament</a></code></li>
-<li><code><a title="blaseball_mike.models.game.Game.load_tournament_by_day" href="game.html#blaseball_mike.models.game.Game.load_tournament_by_day">load_tournament_by_day</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="blaseball_mike.models.fight.Fight.load_by_id"><code class="name flex">
+<span>def <span class="ident">load_by_id</span></span>(<span>id_)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load by ID</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_by_id(cls, id_):
+    fights = chronicler.get_fights(id_=id_)
+    if len(fights) != 1:
+        return None
+    return cls(fights[0][&#34;data&#34;])</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.load_by_season"><code class="name flex">
+<span>def <span class="ident">load_by_season</span></span>(<span>season)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return dictionary of games for a given season keyed by game ID.
+Can optionally be filtered by in-game day or team ID. Season and Day are 1-indexed</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_by_season(cls, season):
+    return {
+        x[&#39;id&#39;]: cls(x[&#34;data&#34;]) for x in chronicler.get_fights(season=season)
+    }</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.fight.Fight.at_bat_balls"><code class="name">var <span class="ident">at_bat_balls</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.at_bat_strikes"><code class="name">var <span class="ident">at_bat_strikes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_balls"><code class="name">var <span class="ident">away_balls</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_bases"><code class="name">var <span class="ident">away_bases</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_batter"><code class="name">var <span class="ident">away_batter</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_batter_name"><code class="name">var <span class="ident">away_batter_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_odds"><code class="name">var <span class="ident">away_odds</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_outs"><code class="name">var <span class="ident">away_outs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_pitcher"><code class="name">var <span class="ident">away_pitcher</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_pitcher_name"><code class="name">var <span class="ident">away_pitcher_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_score"><code class="name">var <span class="ident">away_score</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_strikes"><code class="name">var <span class="ident">away_strikes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team"><code class="name">var <span class="ident">away_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_batter_count"><code class="name">var <span class="ident">away_team_batter_count</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_color"><code class="name">var <span class="ident">away_team_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_emoji"><code class="name">var <span class="ident">away_team_emoji</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_name"><code class="name">var <span class="ident">away_team_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_nickname"><code class="name">var <span class="ident">away_team_nickname</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.away_team_secondary_color"><code class="name">var <span class="ident">away_team_secondary_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.base_runner_names"><code class="name">var <span class="ident">base_runner_names</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.base_runners"><code class="name">var <span class="ident">base_runners</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.baserunner_count"><code class="name">var <span class="ident">baserunner_count</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.bases_occupied"><code class="name">var <span class="ident">bases_occupied</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.day"><code class="name">var <span class="ident">day</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.finalized"><code class="name">var <span class="ident">finalized</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.game_complete"><code class="name">var <span class="ident">game_complete</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.game_start"><code class="name">var <span class="ident">game_start</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.half_inning_outs"><code class="name">var <span class="ident">half_inning_outs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.half_inning_score"><code class="name">var <span class="ident">half_inning_score</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_balls"><code class="name">var <span class="ident">home_balls</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_bases"><code class="name">var <span class="ident">home_bases</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_batter"><code class="name">var <span class="ident">home_batter</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_batter_name"><code class="name">var <span class="ident">home_batter_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_odds"><code class="name">var <span class="ident">home_odds</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_outs"><code class="name">var <span class="ident">home_outs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_pitcher"><code class="name">var <span class="ident">home_pitcher</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_pitcher_name"><code class="name">var <span class="ident">home_pitcher_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_score"><code class="name">var <span class="ident">home_score</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_strikes"><code class="name">var <span class="ident">home_strikes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_batter_count"><code class="name">var <span class="ident">home_team_batter_count</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_color"><code class="name">var <span class="ident">home_team_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_emoji"><code class="name">var <span class="ident">home_team_emoji</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_name"><code class="name">var <span class="ident">home_team_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_nickname"><code class="name">var <span class="ident">home_team_nickname</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.home_team_secondary_color"><code class="name">var <span class="ident">home_team_secondary_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.inning"><code class="name">var <span class="ident">inning</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.is_postseason"><code class="name">var <span class="ident">is_postseason</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.last_update"><code class="name">var <span class="ident">last_update</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.outcomes"><code class="name">var <span class="ident">outcomes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.phase"><code class="name">var <span class="ident">phase</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.play_count"><code class="name">var <span class="ident">play_count</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.repeat_count"><code class="name">var <span class="ident">repeat_count</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.rules"><code class="name">var <span class="ident">rules</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.season"><code class="name">var <span class="ident">season</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.series_index"><code class="name">var <span class="ident">series_index</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.series_length"><code class="name">var <span class="ident">series_length</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.shame"><code class="name">var <span class="ident">shame</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.statsheet"><code class="name">var <span class="ident">statsheet</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.top_of_inning"><code class="name">var <span class="ident">top_of_inning</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.fight.Fight.weather"><code class="name">var <span class="ident">weather</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -226,13 +511,78 @@ class Fight(Game):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.fight.Fight" href="#blaseball_mike.models.fight.Fight">Fight</a></code></h4>
-<ul class="two-column">
+<ul class="">
 <li><code><a title="blaseball_mike.models.fight.Fight.DamageResults" href="#blaseball_mike.models.fight.Fight.DamageResults">DamageResults</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.at_bat_balls" href="#blaseball_mike.models.fight.Fight.at_bat_balls">at_bat_balls</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.at_bat_strikes" href="#blaseball_mike.models.fight.Fight.at_bat_strikes">at_bat_strikes</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_balls" href="#blaseball_mike.models.fight.Fight.away_balls">away_balls</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_bases" href="#blaseball_mike.models.fight.Fight.away_bases">away_bases</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_batter" href="#blaseball_mike.models.fight.Fight.away_batter">away_batter</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_batter_name" href="#blaseball_mike.models.fight.Fight.away_batter_name">away_batter_name</a></code></li>
 <li><code><a title="blaseball_mike.models.fight.Fight.away_hp" href="#blaseball_mike.models.fight.Fight.away_hp">away_hp</a></code></li>
 <li><code><a title="blaseball_mike.models.fight.Fight.away_max_hp" href="#blaseball_mike.models.fight.Fight.away_max_hp">away_max_hp</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_odds" href="#blaseball_mike.models.fight.Fight.away_odds">away_odds</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_outs" href="#blaseball_mike.models.fight.Fight.away_outs">away_outs</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_pitcher" href="#blaseball_mike.models.fight.Fight.away_pitcher">away_pitcher</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_pitcher_name" href="#blaseball_mike.models.fight.Fight.away_pitcher_name">away_pitcher_name</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_score" href="#blaseball_mike.models.fight.Fight.away_score">away_score</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_strikes" href="#blaseball_mike.models.fight.Fight.away_strikes">away_strikes</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team" href="#blaseball_mike.models.fight.Fight.away_team">away_team</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_batter_count" href="#blaseball_mike.models.fight.Fight.away_team_batter_count">away_team_batter_count</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_color" href="#blaseball_mike.models.fight.Fight.away_team_color">away_team_color</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_emoji" href="#blaseball_mike.models.fight.Fight.away_team_emoji">away_team_emoji</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_name" href="#blaseball_mike.models.fight.Fight.away_team_name">away_team_name</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_nickname" href="#blaseball_mike.models.fight.Fight.away_team_nickname">away_team_nickname</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.away_team_secondary_color" href="#blaseball_mike.models.fight.Fight.away_team_secondary_color">away_team_secondary_color</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.base_runner_names" href="#blaseball_mike.models.fight.Fight.base_runner_names">base_runner_names</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.base_runners" href="#blaseball_mike.models.fight.Fight.base_runners">base_runners</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.baserunner_count" href="#blaseball_mike.models.fight.Fight.baserunner_count">baserunner_count</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.bases_occupied" href="#blaseball_mike.models.fight.Fight.bases_occupied">bases_occupied</a></code></li>
 <li><code><a title="blaseball_mike.models.fight.Fight.damage_results" href="#blaseball_mike.models.fight.Fight.damage_results">damage_results</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.day" href="#blaseball_mike.models.fight.Fight.day">day</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.finalized" href="#blaseball_mike.models.fight.Fight.finalized">finalized</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.game_complete" href="#blaseball_mike.models.fight.Fight.game_complete">game_complete</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.game_start" href="#blaseball_mike.models.fight.Fight.game_start">game_start</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.half_inning_outs" href="#blaseball_mike.models.fight.Fight.half_inning_outs">half_inning_outs</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.half_inning_score" href="#blaseball_mike.models.fight.Fight.half_inning_score">half_inning_score</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_balls" href="#blaseball_mike.models.fight.Fight.home_balls">home_balls</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_bases" href="#blaseball_mike.models.fight.Fight.home_bases">home_bases</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_batter" href="#blaseball_mike.models.fight.Fight.home_batter">home_batter</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_batter_name" href="#blaseball_mike.models.fight.Fight.home_batter_name">home_batter_name</a></code></li>
 <li><code><a title="blaseball_mike.models.fight.Fight.home_hp" href="#blaseball_mike.models.fight.Fight.home_hp">home_hp</a></code></li>
 <li><code><a title="blaseball_mike.models.fight.Fight.home_max_hp" href="#blaseball_mike.models.fight.Fight.home_max_hp">home_max_hp</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_odds" href="#blaseball_mike.models.fight.Fight.home_odds">home_odds</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_outs" href="#blaseball_mike.models.fight.Fight.home_outs">home_outs</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_pitcher" href="#blaseball_mike.models.fight.Fight.home_pitcher">home_pitcher</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_pitcher_name" href="#blaseball_mike.models.fight.Fight.home_pitcher_name">home_pitcher_name</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_score" href="#blaseball_mike.models.fight.Fight.home_score">home_score</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_strikes" href="#blaseball_mike.models.fight.Fight.home_strikes">home_strikes</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team" href="#blaseball_mike.models.fight.Fight.home_team">home_team</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_batter_count" href="#blaseball_mike.models.fight.Fight.home_team_batter_count">home_team_batter_count</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_color" href="#blaseball_mike.models.fight.Fight.home_team_color">home_team_color</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_emoji" href="#blaseball_mike.models.fight.Fight.home_team_emoji">home_team_emoji</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_name" href="#blaseball_mike.models.fight.Fight.home_team_name">home_team_name</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_nickname" href="#blaseball_mike.models.fight.Fight.home_team_nickname">home_team_nickname</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.home_team_secondary_color" href="#blaseball_mike.models.fight.Fight.home_team_secondary_color">home_team_secondary_color</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.id" href="#blaseball_mike.models.fight.Fight.id">id</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.inning" href="#blaseball_mike.models.fight.Fight.inning">inning</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.is_postseason" href="#blaseball_mike.models.fight.Fight.is_postseason">is_postseason</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.last_update" href="#blaseball_mike.models.fight.Fight.last_update">last_update</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.load_by_id" href="#blaseball_mike.models.fight.Fight.load_by_id">load_by_id</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.load_by_season" href="#blaseball_mike.models.fight.Fight.load_by_season">load_by_season</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.outcomes" href="#blaseball_mike.models.fight.Fight.outcomes">outcomes</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.phase" href="#blaseball_mike.models.fight.Fight.phase">phase</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.play_count" href="#blaseball_mike.models.fight.Fight.play_count">play_count</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.repeat_count" href="#blaseball_mike.models.fight.Fight.repeat_count">repeat_count</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.rules" href="#blaseball_mike.models.fight.Fight.rules">rules</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.season" href="#blaseball_mike.models.fight.Fight.season">season</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.series_index" href="#blaseball_mike.models.fight.Fight.series_index">series_index</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.series_length" href="#blaseball_mike.models.fight.Fight.series_length">series_length</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.shame" href="#blaseball_mike.models.fight.Fight.shame">shame</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.statsheet" href="#blaseball_mike.models.fight.Fight.statsheet">statsheet</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.terminology" href="#blaseball_mike.models.fight.Fight.terminology">terminology</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.top_of_inning" href="#blaseball_mike.models.fight.Fight.top_of_inning">top_of_inning</a></code></li>
+<li><code><a title="blaseball_mike.models.fight.Fight.weather" href="#blaseball_mike.models.fight.Fight.weather">weather</a></code></li>
 </ul>
 </li>
 </ul>

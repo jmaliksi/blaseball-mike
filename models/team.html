@@ -38,6 +38,10 @@ class Team(Base):
     &#34;&#34;&#34;
     Represents a blaseball team.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;8d87c468-699a-47a8-b40d-cfb73a5660ad&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -158,6 +162,10 @@ class Team(Base):
     &#34;&#34;&#34;
     Represents a blaseball team.
     &#34;&#34;&#34;
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(&#34;8d87c468-699a-47a8-b40d-cfb73a5660ad&#34;)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -385,14 +393,81 @@ def load_by_name(cls, name):
 </details>
 </dd>
 </dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></b></code>:
-<ul class="hlist">
-<li><code><a title="blaseball_mike.models.base.Base.json" href="base.html#blaseball_mike.models.base.Base.json">json</a></code></li>
-</ul>
-</li>
-</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="blaseball_mike.models.team.Team.championships"><code class="name">var <span class="ident">championships</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.emoji"><code class="name">var <span class="ident">emoji</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.full_name"><code class="name">var <span class="ident">full_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.location"><code class="name">var <span class="ident">location</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.main_color"><code class="name">var <span class="ident">main_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.nickname"><code class="name">var <span class="ident">nickname</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.rotation_slot"><code class="name">var <span class="ident">rotation_slot</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.season_shames"><code class="name">var <span class="ident">season_shames</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.season_shamings"><code class="name">var <span class="ident">season_shamings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.secondary_color"><code class="name">var <span class="ident">secondary_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.shame_runs"><code class="name">var <span class="ident">shame_runs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.shorthand"><code class="name">var <span class="ident">shorthand</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.slogan"><code class="name">var <span class="ident">slogan</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.team_spirit"><code class="name">var <span class="ident">team_spirit</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.total_shames"><code class="name">var <span class="ident">total_shames</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.total_shamings"><code class="name">var <span class="ident">total_shamings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.tournament_wins"><code class="name">var <span class="ident">tournament_wins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -416,15 +491,33 @@ def load_by_name(cls, name):
 <li><code><a title="blaseball_mike.models.team.Team.bench" href="#blaseball_mike.models.team.Team.bench">bench</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.bullpen" href="#blaseball_mike.models.team.Team.bullpen">bullpen</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.card" href="#blaseball_mike.models.team.Team.card">card</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.championships" href="#blaseball_mike.models.team.Team.championships">championships</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.emoji" href="#blaseball_mike.models.team.Team.emoji">emoji</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.full_name" href="#blaseball_mike.models.team.Team.full_name">full_name</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.game_attr" href="#blaseball_mike.models.team.Team.game_attr">game_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.id" href="#blaseball_mike.models.team.Team.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.lineup" href="#blaseball_mike.models.team.Team.lineup">lineup</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load" href="#blaseball_mike.models.team.Team.load">load</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load_all" href="#blaseball_mike.models.team.Team.load_all">load_all</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load_at_time" href="#blaseball_mike.models.team.Team.load_at_time">load_at_time</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load_by_name" href="#blaseball_mike.models.team.Team.load_by_name">load_by_name</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.location" href="#blaseball_mike.models.team.Team.location">location</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.main_color" href="#blaseball_mike.models.team.Team.main_color">main_color</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.nickname" href="#blaseball_mike.models.team.Team.nickname">nickname</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.perm_attr" href="#blaseball_mike.models.team.Team.perm_attr">perm_attr</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.rotation" href="#blaseball_mike.models.team.Team.rotation">rotation</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.rotation_slot" href="#blaseball_mike.models.team.Team.rotation_slot">rotation_slot</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.seas_attr" href="#blaseball_mike.models.team.Team.seas_attr">seas_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.season_shames" href="#blaseball_mike.models.team.Team.season_shames">season_shames</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.season_shamings" href="#blaseball_mike.models.team.Team.season_shamings">season_shamings</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.secondary_color" href="#blaseball_mike.models.team.Team.secondary_color">secondary_color</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.shame_runs" href="#blaseball_mike.models.team.Team.shame_runs">shame_runs</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.shorthand" href="#blaseball_mike.models.team.Team.shorthand">shorthand</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.slogan" href="#blaseball_mike.models.team.Team.slogan">slogan</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.team_spirit" href="#blaseball_mike.models.team.Team.team_spirit">team_spirit</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.total_shames" href="#blaseball_mike.models.team.Team.total_shames">total_shames</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.total_shamings" href="#blaseball_mike.models.team.Team.total_shamings">total_shamings</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.tournament_wins" href="#blaseball_mike.models.team.Team.tournament_wins">tournament_wins</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.week_attr" href="#blaseball_mike.models.team.Team.week_attr">week_attr</a></code></li>
 </ul>
 </li>
