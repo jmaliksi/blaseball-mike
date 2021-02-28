@@ -6,6 +6,10 @@ from .. import database
 
 class Playoff(Base):
     """Represents a playoff bracket"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -37,6 +41,10 @@ class Playoff(Base):
 
 class PlayoffRound(Base):
     """Represents a round of playoff games"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load("34c99cbf-1d7d-4715-8957-8abcba3c5b89")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -87,6 +95,10 @@ class PlayoffRound(Base):
 
 class PlayoffMatchup(Base):
     """Represents a matchup information of teams in a playoff"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("bee2a1e6-50d6-4866-a7b4-f13705873052")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids_):

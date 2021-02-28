@@ -9,6 +9,10 @@ class League(Base):
     """
     Represents the entire league
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -44,6 +48,10 @@ class Subleague(Base):
     """
     Represents a subleague, ie Mild vs Wild
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load("4fe65afa-804f-4bb2-9b15-1281b2eab110")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
         super().__init__(data)
@@ -74,6 +82,10 @@ class Division(Base):
     """
     Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High.
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load("f711d960-dc28-4ae2-9249-e1f320fec7d7")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -114,6 +126,10 @@ class Division(Base):
 
 class Tiebreaker(Base):
     """Represents a league's tiebreaker order"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("370c436f-79fa-418b-bc98-5db48442ba3f")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):
@@ -121,6 +137,10 @@ class Tiebreaker(Base):
         return {
             id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
         }
+
+    @classmethod
+    def load_one(cls, id_):
+        return cls.load(id_).get(id_)
 
     @Base.lazy_load("_order_ids", cache_name="_order", default_value=OrderedDict())
     def order(self):

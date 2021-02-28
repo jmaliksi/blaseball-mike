@@ -5,6 +5,11 @@ from .. import database
 
 
 class PlayerStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = "e80b9497-c604-456d-9bee-c860d4759b14"
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -16,6 +21,11 @@ class PlayerStatsheet(Base):
 
 
 class TeamStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = "07b2b5bf-9eeb-4eff-9be9-d0f66c687f76"
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -31,6 +41,11 @@ class TeamStatsheet(Base):
 
 
 class GameStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = "f852abec-b80e-40e2-b213-f0368d4e7f57"
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):
@@ -77,6 +92,11 @@ class GameStatsheet(Base):
 
 
 class SeasonStatsheet(Base):
+    @classmethod
+    def _get_fields(cls):
+        id_ = "64392ad5-e14c-42c0-825c-c85da29addaa"
+        p = cls.load(id_).get(id_)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, ids):

@@ -6,6 +6,10 @@ from .. import database
 
 class Season(Base):
     """Represents an individual season"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, season_number):
@@ -32,6 +36,10 @@ class Season(Base):
 
 class Standings(Base):
     """Represents the team standings"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load("dbcb0a13-2d59-4f13-8681-fd969aefdcc6")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):

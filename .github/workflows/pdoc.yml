@@ -33,7 +33,7 @@ jobs:
           pip install -r requirements.txt
           pip install pdoc3
       - name: Generate Docs
-        run: pdoc --html blaseball_mike --force -o docs
+        run: python make_docs.py
       - name: Deploy docs
         uses: Cecilapp/GitHub-Pages-deploy@3.1.0
         env:

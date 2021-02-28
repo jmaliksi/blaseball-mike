@@ -10,6 +10,10 @@ class Team(Base):
     """
     Represents a blaseball team.
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load("8d87c468-699a-47a8-b40d-cfb73a5660ad")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, id_):

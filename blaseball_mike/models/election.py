@@ -7,6 +7,11 @@ class Election(Base):
     """Represents the current election"""
 
     @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+    @classmethod
     def load(cls):
         """Load the current election"""
         offseason = database.get_offseason_election_details()
@@ -18,6 +23,10 @@ OffseasonSetup = Election
 
 class ElectionResult(Base):
     """Represents the results of an election"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_season(11)
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load_by_season(cls, season):
@@ -61,6 +70,10 @@ OffseasonResult = ElectionResult
 
 class DecreeResult(Base):
     """Represents the results of a single decree."""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("643280fc-b7c6-4b6d-a164-9b53e1a3e47a")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -82,6 +95,10 @@ class DecreeResult(Base):
 
 class BlessingResult(Base):
     """Represents the results of a single blessing"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("cbb567c0-d770-4d22-92f6-ff16ebb94758")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
@@ -127,6 +144,10 @@ class BlessingResult(Base):
 
 class TidingResult(Base):
     """Represents the results of a single election tiding"""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("future_written")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):

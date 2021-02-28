@@ -14,6 +14,10 @@ class Player(Base):
     """
     Represents a blaseball player.
     """
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_one("766dfd1e-11c3-42b6-a167-9b2d568b5dc0")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):

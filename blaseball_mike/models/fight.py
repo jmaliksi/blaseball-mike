@@ -9,6 +9,10 @@ from .. import tables, chronicler
 
 class Fight(Game):
     """Represents a Blaseball boss fight."""
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load_by_id("6754f45d-52a6-4b2f-b63c-15dcd520f8cf")
+        return [cls._from_api_conversion(x) for x in p.fields]
 
     class DamageResults(Base):
         """
