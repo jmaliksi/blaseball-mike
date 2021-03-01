@@ -1,11 +1,11 @@
 """Misc utils"""
 
 
-def print_stlats(*players):
+def print_stlats(*players, headers=None):
     """
     Pretty print the stlats for the given list of players
     """
-    headers = [
+    headers = headers or [
         'base_thirst',
         'continuation',
         'ground_friction',
