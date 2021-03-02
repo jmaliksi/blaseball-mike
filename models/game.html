@@ -262,7 +262,7 @@ class Game(Base):
         return Modification.load_one(getattr(self, &#34;_away_batter_mod_id&#34;, None))
 
     @staticmethod
-    def _payout_calc(odds, amount):
+    def _payout_calc_discipline(odds, amount):
         if odds == 0.5:
             return round(2 * amount)
         elif odds &lt; 0.5:
@@ -270,17 +270,38 @@ class Game(Base):
         else:
             return round(amount * (2 - 0.000335 * (100 * (odds - 0.5)) ** 2.045))
 
-    def home_payout(self, bet):
+    @staticmethod
+    def _payout_calc(odds, amount):
+        if odds == 0.5:
+            return round(2 * amount)
+        elif odds &lt; 0.5:
+            return round(amount * (2 + 0.0015 * (100 * (0.5 - odds)) ** 2.2))
+        else:
+            return round(amount * (0.571 + 1.429 / (1 + (3 * (odds - 0.5)) ** 0.77)))
+
+    def home_payout(self, bet, season=None):
         &#34;&#34;&#34;
         Calculate the payout if the home team wins
         &#34;&#34;&#34;
-        return self._payout_calc(self.home_odds, bet)
+        if season is None:
+            season = self.season
 
-    def away_payout(self, bet):
+        if season &lt; 12:
+            return self._payout_calc_discipline(self.home_odds, bet)
+        else:
+            return self._payout_calc(self.home_odds, bet)
+
+    def away_payout(self, bet, season=None):
         &#34;&#34;&#34;
         Calculate the payout if the away team wins
         &#34;&#34;&#34;
-        return self._payout_calc(self.away_odds, bet)</code></pre>
+        if season is None:
+            season = self.season
+
+        if season &lt; 12:
+            return self._payout_calc_discipline(self.away_odds, bet)
+        else:
+            return self._payout_calc(self.away_odds, bet)</code></pre>
 </details>
 </section>
 <section>
@@ -530,7 +551,7 @@ class Game(Base):
         return Modification.load_one(getattr(self, &#34;_away_batter_mod_id&#34;, None))
 
     @staticmethod
-    def _payout_calc(odds, amount):
+    def _payout_calc_discipline(odds, amount):
         if odds == 0.5:
             return round(2 * amount)
         elif odds &lt; 0.5:
@@ -538,17 +559,38 @@ class Game(Base):
         else:
             return round(amount * (2 - 0.000335 * (100 * (odds - 0.5)) ** 2.045))
 
-    def home_payout(self, bet):
+    @staticmethod
+    def _payout_calc(odds, amount):
+        if odds == 0.5:
+            return round(2 * amount)
+        elif odds &lt; 0.5:
+            return round(amount * (2 + 0.0015 * (100 * (0.5 - odds)) ** 2.2))
+        else:
+            return round(amount * (0.571 + 1.429 / (1 + (3 * (odds - 0.5)) ** 0.77)))
+
+    def home_payout(self, bet, season=None):
         &#34;&#34;&#34;
         Calculate the payout if the home team wins
         &#34;&#34;&#34;
-        return self._payout_calc(self.home_odds, bet)
+        if season is None:
+            season = self.season
 
-    def away_payout(self, bet):
+        if season &lt; 12:
+            return self._payout_calc_discipline(self.home_odds, bet)
+        else:
+            return self._payout_calc(self.home_odds, bet)
+
+    def away_payout(self, bet, season=None):
         &#34;&#34;&#34;
         Calculate the payout if the away team wins
         &#34;&#34;&#34;
-        return self._payout_calc(self.away_odds, bet)</code></pre>
+        if season is None:
+            season = self.season
+
+        if season &lt; 12:
+            return self._payout_calc_discipline(self.away_odds, bet)
+        else:
+            return self._payout_calc(self.away_odds, bet)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -1211,7 +1253,7 @@ def away_batter_mod(self):
 </details>
 </dd>
 <dt id="blaseball_mike.models.game.Game.away_payout"><code class="name flex">
-<span>def <span class="ident">away_payout</span></span>(<span>self, bet)</span>
+<span>def <span class="ident">away_payout</span></span>(<span>self, bet, season=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Calculate the payout if the away team wins</p></div>
@@ -1219,11 +1261,17 @@ def away_batter_mod(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def away_payout(self, bet):
+<pre><code class="python">def away_payout(self, bet, season=None):
     &#34;&#34;&#34;
     Calculate the payout if the away team wins
     &#34;&#34;&#34;
-    return self._payout_calc(self.away_odds, bet)</code></pre>
+    if season is None:
+        season = self.season
+
+    if season &lt; 12:
+        return self._payout_calc_discipline(self.away_odds, bet)
+    else:
+        return self._payout_calc(self.away_odds, bet)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.game.Game.away_pitcher_mod"><code class="name flex">
@@ -1269,7 +1317,7 @@ def home_batter_mod(self):
 </details>
 </dd>
 <dt id="blaseball_mike.models.game.Game.home_payout"><code class="name flex">
-<span>def <span class="ident">home_payout</span></span>(<span>self, bet)</span>
+<span>def <span class="ident">home_payout</span></span>(<span>self, bet, season=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Calculate the payout if the home team wins</p></div>
@@ -1277,11 +1325,17 @@ def home_batter_mod(self):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def home_payout(self, bet):
+<pre><code class="python">def home_payout(self, bet, season=None):
     &#34;&#34;&#34;
     Calculate the payout if the home team wins
     &#34;&#34;&#34;
-    return self._payout_calc(self.home_odds, bet)</code></pre>
+    if season is None:
+        season = self.season
+
+    if season &lt; 12:
+        return self._payout_calc_discipline(self.home_odds, bet)
+    else:
+        return self._payout_calc(self.home_odds, bet)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.game.Game.home_pitcher_mod"><code class="name flex">
