@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/playerSeasonStats?ids=5fb13222-3864-4498-a43b-c42b9bc89203
+    uri: https://www.blaseball.com/database/playerStatsheets?ids=5fb13222-3864-4498-a43b-c42b9bc89203
   response:
     body:
       string: '[{"id":"5fb13222-3864-4498-a43b-c42b9bc89203","playerId":null,"teamId":null,"team":"5fb13222-3864-4498-a43b-c42b9bc89203","name":"5fb13222-3864-4498-a43b-c42b9bc89203","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":12,"groundIntoDp":0,"hits":0,"hitsAllowed":15,"homeRuns":0,"losses":1,"outsRecorded":27,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":3,"struckouts":0,"triples":0,"walks":0,"walksIssued":8,"wins":0,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0}]'
@@ -23,14 +23,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:15 GMT
+      - Tue, 02 Mar 2021 01:56:53 GMT
       Etag:
       - W/"1e6-I2uhrOtkctZ1Y8gaDk7po8sLUQM"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AWPE1EQkerloH_SbCBm7hL36_OzvIrzVE.m9tFWYzIjYQB0tw6SsTWCDfjjDRaa%2B5sAwkopeEe1pQ;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:15 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

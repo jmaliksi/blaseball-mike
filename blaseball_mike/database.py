@@ -201,7 +201,7 @@ def get_player_statsheets(ids):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(5)
-    res = s.get(f'{BASE_URL}/playerSeasonStats?ids={ids}')
+    res = s.get(f'{BASE_URL}/playerStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 
@@ -217,7 +217,7 @@ def get_team_statsheets(ids):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(5)
-    res = s.get(f'{BASE_URL}/teamSeasonStats?ids={ids}')
+    res = s.get(f'{BASE_URL}/teamStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 

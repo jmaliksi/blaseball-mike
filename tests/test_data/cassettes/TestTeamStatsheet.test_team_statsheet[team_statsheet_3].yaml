@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/playerSeasonStats?ids=c24bf126-b55d-4432-b4e4-aaf359f58d41,bc1082b5-94bc-4fdc-8db3-7871950affba,e2d3e9ec-5af7-468b-b43c-203f34cda548,edc9311f-c42a-4060-a036-0f7b1d48b808,48b8eb23-ddd0-49c4-a5f5-7013886930fd,fd1852f2-2cf3-4106-989f-92cdb8f53f38,bf1a1aa2-b402-4ca9-adac-33aecc9b361d,6e2d1e21-8651-4502-bc63-9f0020b33330,fcd13551-37ba-413e-9bb0-fac232b0ba12,6b8c9184-9b59-4d54-aa34-14e9f1abfc8b,1be09da5-bd99-4760-9cef-2d762110a639,f5252233-54af-43d1-b763-edc787897821,69b7847c-28a7-48ff-8710-6e71fae9d8ab,a4942b7e-6929-47ad-a00f-74a64bd8be5c
+    uri: https://www.blaseball.com/database/playerStatsheets?ids=c24bf126-b55d-4432-b4e4-aaf359f58d41,bc1082b5-94bc-4fdc-8db3-7871950affba,e2d3e9ec-5af7-468b-b43c-203f34cda548,edc9311f-c42a-4060-a036-0f7b1d48b808,48b8eb23-ddd0-49c4-a5f5-7013886930fd,fd1852f2-2cf3-4106-989f-92cdb8f53f38,bf1a1aa2-b402-4ca9-adac-33aecc9b361d,6e2d1e21-8651-4502-bc63-9f0020b33330,fcd13551-37ba-413e-9bb0-fac232b0ba12,6b8c9184-9b59-4d54-aa34-14e9f1abfc8b,1be09da5-bd99-4760-9cef-2d762110a639,f5252233-54af-43d1-b763-edc787897821,69b7847c-28a7-48ff-8710-6e71fae9d8ab,a4942b7e-6929-47ad-a00f-74a64bd8be5c
   response:
     body:
       string: '[{"id":"1be09da5-bd99-4760-9cef-2d762110a639","playerId":null,"teamId":null,"team":"Charleston
@@ -37,14 +37,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:15 GMT
+      - Tue, 02 Mar 2021 01:59:19 GMT
       Etag:
       - W/"1b2f-2XDB/UNTP0fiXJOrW8Z222rOTUQ"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AofCOlMqbAp0ZXT1zHxzkjnWPiXu2PeQN.J%2F%2FRiPHU6H1UzvM1B6U9lPBzCFOf%2Fp4nSzwlwzLrYo4;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:15 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

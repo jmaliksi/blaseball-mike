@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/teamSeasonStats?ids=9b1dd34d-67af-4866-b558-2403a39a9ab6,02d53eb0-ef4a-49f9-9762-c2a3c9096f56
+    uri: https://www.blaseball.com/database/teamStatsheets?ids=9b1dd34d-67af-4866-b558-2403a39a9ab6,02d53eb0-ef4a-49f9-9762-c2a3c9096f56
   response:
     body:
       string: '[{"id":"9b1dd34d-67af-4866-b558-2403a39a9ab6","playerStats":["22d6f30f-1846-4f92-9438-73fa50b5f772","35b18570-e34b-4bf1-a76e-cf15facaa9f9","dd92e5a9-ad45-4225-80f0-c96c3f8e8b50","a3039653-0922-4066-ba53-8261bc3df9eb","4dd4e528-c522-4e79-a14b-35e88a19a017","7227ff9a-0979-463f-aa8b-b9537a9d0d2f","d49e7d5e-8745-44cc-810e-5e9a35c6f078","265df2fa-7e5d-44d1-b30a-2a879c2a4de3","4e666ffa-c558-4d0e-8778-5018a5b10bc0","d39af1d0-d080-4b90-956c-838ff2f562a9","20bbf8bf-7bd2-4264-81b7-1e2d14414466","4a0dcc73-b700-4ae0-9151-70ab8eaa4f8d","e555c7b6-b403-4562-9427-840fd7045b42"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Canada
@@ -25,14 +25,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:06 GMT
+      - Tue, 02 Mar 2021 01:59:18 GMT
       Etag:
       - W/"580-5Klflu9ELMoetSsYMaCY4x+SX2c"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ATfT-ajzRkbAEYfdcm_idQHxdJEmLDbip.JKrJaxpnh%2FFcyFCjwPgJqj3WW4hGcb6v4PtdC8xMhNY;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:06 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
