@@ -234,7 +234,7 @@ class Game(Base):
         return Modification.load_one(getattr(self, "_away_batter_mod_id", None))
 
     @staticmethod
-    def _payout_calc(odds, amount):
+    def _payout_calc_discipline(odds, amount):
         if odds == 0.5:
             return round(2 * amount)
         elif odds < 0.5:
@@ -242,14 +242,35 @@ class Game(Base):
         else:
             return round(amount * (2 - 0.000335 * (100 * (odds - 0.5)) ** 2.045))
 
-    def home_payout(self, bet):
+    @staticmethod
+    def _payout_calc(odds, amount):
+        if odds == 0.5:
+            return round(2 * amount)
+        elif odds < 0.5:
+            return round(amount * (2 + 0.0015 * (100 * (0.5 - odds)) ** 2.2))
+        else:
+            return round(amount * (0.571 + 1.429 / (1 + (3 * (odds - 0.5)) ** 0.77)))
+
+    def home_payout(self, bet, season=None):
         """
         Calculate the payout if the home team wins
         """
-        return self._payout_calc(self.home_odds, bet)
+        if season is None:
+            season = self.season
 
-    def away_payout(self, bet):
+        if season < 12:
+            return self._payout_calc_discipline(self.home_odds, bet)
+        else:
+            return self._payout_calc(self.home_odds, bet)
+
+    def away_payout(self, bet, season=None):
         """
         Calculate the payout if the away team wins
         """
-        return self._payout_calc(self.away_odds, bet)
+        if season is None:
+            season = self.season
+
+        if season < 12:
+            return self._payout_calc_discipline(self.away_odds, bet)
+        else:
+            return self._payout_calc(self.away_odds, bet)

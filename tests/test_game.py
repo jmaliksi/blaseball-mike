@@ -211,21 +211,22 @@ class TestGame(TestBase):
         assert isinstance(game.away_payout(1000), int)
 
     @pytest.mark.parametrize(
-        ['home_odds', 'away_odds', 'bet', 'home_payout', 'away_payout'],
+        ['home_odds', 'away_odds', 'bet', 'home_payout', 'away_payout', 'season'],
         [
-            (0.6045396706428627, 0.39546032935713743, 696, 1364, None),
-            (0.557613217888845, 0.4423867821111551, 9, 18, None),
-            (0.4596203494692173, 0.5403796505307827, 1000, None, 1994),
-            (0.43861830524623113, 0.5613816947537688, 860, None, 1708)
-
+            (0.6045396706428627, 0.39546032935713743, 696, 1364, None, 6),
+            (0.557613217888845, 0.4423867821111551, 9, 18, None, 8),
+            (0.4596203494692173, 0.5403796505307827, 1000, None, 1994, 9),
+            (0.43861830524623113, 0.5613816947537688, 860, None, 1708, 9),
+            (0.516917277282007, 0.48308272271799296, 1080, 2019, 2165, 11),
         ]
     )
-    def test_bet_payouts_bounded(self, home_odds, away_odds, bet, home_payout, away_payout):
+    def test_bet_payouts_bounded(self, home_odds, away_odds, bet, home_payout, away_payout, season):
         """Verify bet payouts are correct"""
         game = Game(
             {
                 "homeOdds": home_odds,
                 "awayOdds": away_odds,
+                "season": season
             })
         if home_payout:
             assert game.home_payout(bet) == home_payout
