@@ -24,7 +24,8 @@ class TestSimulationData(TestBase):
         assert isinstance(simulation_data.sub_era_title, str)
         assert isinstance(simulation_data.era_color, str)
         assert isinstance(simulation_data.sub_era_color, str)
-        assert isinstance(simulation_data.twgo, str)
+        if getattr(simulation_data, "twgo", None) is not None:
+            assert isinstance(simulation_data.twgo, str)
 
         assert isinstance(simulation_data.season, int)
         assert simulation_data.season > 0
@@ -43,9 +44,12 @@ class TestSimulationData(TestBase):
         assert isinstance(simulation_data.playoffs, str)
         assert isinstance(simulation_data.season_id, str)
 
-        assert isinstance(simulation_data.next_season_start, datetime)
-        assert isinstance(simulation_data.next_election_end, datetime)
-        assert isinstance(simulation_data.next_phase_time, datetime)
+        if getattr(simulation_data, "next_season_start", None) is not None:
+            assert isinstance(simulation_data.next_season_start, datetime)
+        if getattr(simulation_data, "next_election_end", None) is not None:
+            assert isinstance(simulation_data.next_election_end, datetime)
+        if getattr(simulation_data, "next_phase_time", None) is not None:
+            assert isinstance(simulation_data.next_phase_time, datetime)
 
         assert isinstance(simulation_data.attr, list)
         for attr in simulation_data.attr:

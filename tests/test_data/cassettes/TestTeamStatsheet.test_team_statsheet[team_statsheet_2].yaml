@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/playerSeasonStats?ids=086d52ad-ef16-4cd9-b6d5-0e0d73b1150c,20e4445e-e44f-4899-bf74-160a5715e89f,bdebd89c-79f8-4bdc-ba20-07a0a851d9b7,fb452210-e573-4c71-b76c-b8e8f428d3c7,ba4c01df-1541-4d53-9fe3-8c19ff31000d,72d193f2-eec2-4ea6-bdca-5d4e577881db,410fd781-1ab8-4d85-a539-d3596ee1c604,ea55f080-a95c-4320-b3f3-bccf63685c85,a5e658bb-8001-4170-b033-33a9afe93261,aad1b0d3-e0b8-4457-98d2-e9b792e1f167,49de5278-4967-4219-9c64-ed5c6bcc5e75,042b58bc-3797-4cee-adb0-4ca69ce77a97,3f444d25-fce3-4a23-91f1-a17099ba1e29,8745b073-1eee-4511-83d6-2e284ebe81b0
+    uri: https://www.blaseball.com/database/playerStatsheets?ids=086d52ad-ef16-4cd9-b6d5-0e0d73b1150c,20e4445e-e44f-4899-bf74-160a5715e89f,bdebd89c-79f8-4bdc-ba20-07a0a851d9b7,fb452210-e573-4c71-b76c-b8e8f428d3c7,ba4c01df-1541-4d53-9fe3-8c19ff31000d,72d193f2-eec2-4ea6-bdca-5d4e577881db,410fd781-1ab8-4d85-a539-d3596ee1c604,ea55f080-a95c-4320-b3f3-bccf63685c85,a5e658bb-8001-4170-b033-33a9afe93261,aad1b0d3-e0b8-4457-98d2-e9b792e1f167,49de5278-4967-4219-9c64-ed5c6bcc5e75,042b58bc-3797-4cee-adb0-4ca69ce77a97,3f444d25-fce3-4a23-91f1-a17099ba1e29,8745b073-1eee-4511-83d6-2e284ebe81b0
   response:
     body:
       string: '[{"id":"042b58bc-3797-4cee-adb0-4ca69ce77a97","playerId":null,"teamId":null,"team":"Hawaii
@@ -37,14 +37,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:14 GMT
+      - Tue, 02 Mar 2021 01:59:19 GMT
       Etag:
       - W/"1ab8-oQiv7kNACSFdMzI1NP6fsa/VEyo"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AgWQZkIrZUwgbq-CXpdmYdh6VgBmIB29v.K9F1WdihgYxkwqtHmoOcQ33Mxo646oVMzL6OIT4bU40;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:14 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

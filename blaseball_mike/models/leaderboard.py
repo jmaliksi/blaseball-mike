@@ -19,8 +19,8 @@ class Idol(Base):
         """Load current idol board. Returns ordered dictionary of idols keyed by player ID."""
         idols = database.get_idols()
         idols_dict = OrderedDict()
-        for idol in idols:
-            idols_dict[idol['playerId']] = cls(idol)
+        for idol in idols['idols']:
+            idols_dict[idol] = cls({"playerId": idol})
         return idols_dict
 
     @Base.lazy_load("_player_id", cache_name="_player")

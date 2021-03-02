@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/teamSeasonStats?ids=80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1
+    uri: https://www.blaseball.com/database/teamStatsheets?ids=80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1
   response:
     body:
       string: '[{"id":"80a7ac3b-a97b-4208-9f6d-3c4b7acfdef1","playerStats":["5fb13222-3864-4498-a43b-c42b9bc89203","4b5bcf0d-3519-4e27-9bc3-00823f9a7983","014760a0-a685-4713-b944-67053725fde2","35423662-2e3f-4a8c-be6b-b6bf2cf46319","41f4c039-dc9f-4fda-8fa9-868d0b0349df","bf56014b-a21e-4cec-b598-d21dbfb8f31b","c630607f-792e-4d02-88c7-7ea104021268","b4b1fcec-590f-4d3b-aa8d-4f35dbca8db4","0ad65532-6a8f-427a-80bf-5f7535314c55","2e0d9611-316f-4974-af09-20a955b757a2"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Los
@@ -24,14 +24,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:13 GMT
+      - Tue, 02 Mar 2021 01:56:52 GMT
       Etag:
       - W/"212-LGYrVk0VayzLVl1g/ZP1XePU/6E"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AvkvvLqxkBxPGwpez1rbaMBc7j1aO3Rx7.uyG4JpcYiOQTcXpJjtkDAJH7e%2F%2Ft%2FMkCfHrv%2BKPy2mU;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:13 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
