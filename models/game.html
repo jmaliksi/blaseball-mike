@@ -824,6 +824,10 @@ def at_bat_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.bottom_inning_score"><code class="name">var <span class="ident">bottom_inning_score</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.current_batter"><code class="name">var <span class="ident">current_batter</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -893,6 +897,10 @@ def current_pitcher_name(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.game_start"><code class="name">var <span class="ident">game_start</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.game_start_phase"><code class="name">var <span class="ident">game_start_phase</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -968,6 +976,10 @@ def current_pitcher_name(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.is_title_match"><code class="name">var <span class="ident">is_title_match</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.last_update"><code class="name">var <span class="ident">last_update</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1019,6 +1031,10 @@ def losing_team_name(self):
 def losing_team_nickname(self):
     return self.home_team_nickname if self.home_score &lt; self.away_score else self.away_team_nickname</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.game.Game.new_inning_phase"><code class="name">var <span class="ident">new_inning_phase</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.outcomes"><code class="name">var <span class="ident">outcomes</span></code></dt>
 <dd>
@@ -1093,6 +1109,10 @@ def pitching_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.secret_baserunner"><code class="name">var <span class="ident">secret_baserunner</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.series_index"><code class="name">var <span class="ident">series_index</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1105,7 +1125,15 @@ def pitching_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.stadium_id"><code class="name">var <span class="ident">stadium_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.top_inning_score"><code class="name">var <span class="ident">top_inning_score</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1363,6 +1391,7 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.base_runners" href="#blaseball_mike.models.game.Game.base_runners">base_runners</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.baserunner_count" href="#blaseball_mike.models.game.Game.baserunner_count">baserunner_count</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.bases_occupied" href="#blaseball_mike.models.game.Game.bases_occupied">bases_occupied</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.bottom_inning_score" href="#blaseball_mike.models.game.Game.bottom_inning_score">bottom_inning_score</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.current_batter" href="#blaseball_mike.models.game.Game.current_batter">current_batter</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.current_batter_name" href="#blaseball_mike.models.game.Game.current_batter_name">current_batter_name</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.current_pitcher" href="#blaseball_mike.models.game.Game.current_pitcher">current_pitcher</a></code></li>
@@ -1371,6 +1400,7 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.finalized" href="#blaseball_mike.models.game.Game.finalized">finalized</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.game_complete" href="#blaseball_mike.models.game.Game.game_complete">game_complete</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.game_start" href="#blaseball_mike.models.game.Game.game_start">game_start</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.game_start_phase" href="#blaseball_mike.models.game.Game.game_start_phase">game_start_phase</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.half_inning_outs" href="#blaseball_mike.models.game.Game.half_inning_outs">half_inning_outs</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.half_inning_score" href="#blaseball_mike.models.game.Game.half_inning_score">half_inning_score</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.home_balls" href="#blaseball_mike.models.game.Game.home_balls">home_balls</a></code></li>
@@ -1396,6 +1426,7 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.id" href="#blaseball_mike.models.game.Game.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.inning" href="#blaseball_mike.models.game.Game.inning">inning</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.is_postseason" href="#blaseball_mike.models.game.Game.is_postseason">is_postseason</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.is_title_match" href="#blaseball_mike.models.game.Game.is_title_match">is_title_match</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.last_update" href="#blaseball_mike.models.game.Game.last_update">last_update</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.load_by_day" href="#blaseball_mike.models.game.Game.load_by_day">load_by_day</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.load_by_id" href="#blaseball_mike.models.game.Game.load_by_id">load_by_id</a></code></li>
@@ -1406,6 +1437,7 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.losing_team" href="#blaseball_mike.models.game.Game.losing_team">losing_team</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.losing_team_name" href="#blaseball_mike.models.game.Game.losing_team_name">losing_team_name</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.losing_team_nickname" href="#blaseball_mike.models.game.Game.losing_team_nickname">losing_team_nickname</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.new_inning_phase" href="#blaseball_mike.models.game.Game.new_inning_phase">new_inning_phase</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.outcomes" href="#blaseball_mike.models.game.Game.outcomes">outcomes</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.phase" href="#blaseball_mike.models.game.Game.phase">phase</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.pitching_team" href="#blaseball_mike.models.game.Game.pitching_team">pitching_team</a></code></li>
@@ -1417,11 +1449,14 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.score_ledger" href="#blaseball_mike.models.game.Game.score_ledger">score_ledger</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.score_update" href="#blaseball_mike.models.game.Game.score_update">score_update</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.season" href="#blaseball_mike.models.game.Game.season">season</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.secret_baserunner" href="#blaseball_mike.models.game.Game.secret_baserunner">secret_baserunner</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.series_index" href="#blaseball_mike.models.game.Game.series_index">series_index</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.series_length" href="#blaseball_mike.models.game.Game.series_length">series_length</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.shame" href="#blaseball_mike.models.game.Game.shame">shame</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.stadium_id" href="#blaseball_mike.models.game.Game.stadium_id">stadium_id</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.statsheet" href="#blaseball_mike.models.game.Game.statsheet">statsheet</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.terminology" href="#blaseball_mike.models.game.Game.terminology">terminology</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.top_inning_score" href="#blaseball_mike.models.game.Game.top_inning_score">top_inning_score</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.top_of_inning" href="#blaseball_mike.models.game.Game.top_of_inning">top_of_inning</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.tournament" href="#blaseball_mike.models.game.Game.tournament">tournament</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.weather" href="#blaseball_mike.models.game.Game.weather">weather</a></code></li>

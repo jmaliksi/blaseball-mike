@@ -47,8 +47,8 @@ class Idol(Base):
         &#34;&#34;&#34;Load current idol board. Returns ordered dictionary of idols keyed by player ID.&#34;&#34;&#34;
         idols = database.get_idols()
         idols_dict = OrderedDict()
-        for idol in idols:
-            idols_dict[idol[&#39;playerId&#39;]] = cls(idol)
+        for idol in idols[&#39;idols&#39;]:
+            idols_dict[idol] = cls({&#34;playerId&#34;: idol})
         return idols_dict
 
     @Base.lazy_load(&#34;_player_id&#34;, cache_name=&#34;_player&#34;)
@@ -149,8 +149,8 @@ class Tribute(Base):
         &#34;&#34;&#34;Load current idol board. Returns ordered dictionary of idols keyed by player ID.&#34;&#34;&#34;
         idols = database.get_idols()
         idols_dict = OrderedDict()
-        for idol in idols:
-            idols_dict[idol[&#39;playerId&#39;]] = cls(idol)
+        for idol in idols[&#39;idols&#39;]:
+            idols_dict[idol] = cls({&#34;playerId&#34;: idol})
         return idols_dict
 
     @Base.lazy_load(&#34;_player_id&#34;, cache_name=&#34;_player&#34;)
@@ -189,8 +189,8 @@ def load(cls):
     &#34;&#34;&#34;Load current idol board. Returns ordered dictionary of idols keyed by player ID.&#34;&#34;&#34;
     idols = database.get_idols()
     idols_dict = OrderedDict()
-    for idol in idols:
-        idols_dict[idol[&#39;playerId&#39;]] = cls(idol)
+    for idol in idols[&#39;idols&#39;]:
+        idols_dict[idol] = cls({&#34;playerId&#34;: idol})
     return idols_dict</code></pre>
 </details>
 </dd>

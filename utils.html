@@ -30,11 +30,11 @@
 <pre><code class="python">&#34;&#34;&#34;Misc utils&#34;&#34;&#34;
 
 
-def print_stlats(*players):
+def print_stlats(*players, headers=None):
     &#34;&#34;&#34;
     Pretty print the stlats for the given list of players
     &#34;&#34;&#34;
-    headers = [
+    headers = headers or [
         &#39;base_thirst&#39;,
         &#39;continuation&#39;,
         &#39;ground_friction&#39;,
@@ -133,7 +133,7 @@ the <code>headers</code> param as a list.</p></div>
 </details>
 </dd>
 <dt id="blaseball_mike.utils.print_stlats"><code class="name flex">
-<span>def <span class="ident">print_stlats</span></span>(<span>*players)</span>
+<span>def <span class="ident">print_stlats</span></span>(<span>*players, headers=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Pretty print the stlats for the given list of players</p></div>
@@ -141,11 +141,11 @@ the <code>headers</code> param as a list.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def print_stlats(*players):
+<pre><code class="python">def print_stlats(*players, headers=None):
     &#34;&#34;&#34;
     Pretty print the stlats for the given list of players
     &#34;&#34;&#34;
-    headers = [
+    headers = headers or [
         &#39;base_thirst&#39;,
         &#39;continuation&#39;,
         &#39;ground_friction&#39;,

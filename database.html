@@ -231,7 +231,7 @@ def get_player_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(5)
-    res = s.get(f&#39;{BASE_URL}/playerSeasonStats?ids={ids}&#39;)
+    res = s.get(f&#39;{BASE_URL}/playerStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
@@ -247,7 +247,7 @@ def get_team_statsheets(ids):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(5)
-    res = s.get(f&#39;{BASE_URL}/teamSeasonStats?ids={ids}&#39;)
+    res = s.get(f&#39;{BASE_URL}/teamStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
@@ -657,7 +657,7 @@ Returns a dictionary with ID as key</p></div>
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(5)
-    res = s.get(f&#39;{BASE_URL}/playerSeasonStats?ids={ids}&#39;)
+    res = s.get(f&#39;{BASE_URL}/playerStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
@@ -822,7 +822,7 @@ Returns a dictionary with ID as key</p></div>
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(5)
-    res = s.get(f&#39;{BASE_URL}/teamSeasonStats?ids={ids}&#39;)
+    res = s.get(f&#39;{BASE_URL}/teamStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
