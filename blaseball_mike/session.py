@@ -1,7 +1,9 @@
 import requests_cache
 from json.decoder import JSONDecodeError
 
+TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
 _SESSIONS_BY_EXPIRY = {}
+
 
 def session(expiry=0):
     """Get a caching HTTP session"""

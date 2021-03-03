@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/global?limit=3
+  response:
+    body:
+      string: '[{"id":"029f8a01-75c9-40b8-bb30-3cde2621881a","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b"],"gameTags":[],"metadata":{"totalShames":56,"totalShamings":44},"created":"2021-03-03T21:33:59.163Z","season":11,"tournament":-1,"type":154,"day":52,"phase":4,"category":3,"description":"The
+        Jazz Hands were shamed by the Spies."},{"id":"a6adb6c1-b1d4-4502-a2eb-5d138ae69608","playerTags":[],"teamTags":["9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":[],"metadata":{"totalShames":41,"totalShamings":53},"created":"2021-03-03T21:33:59.163Z","season":11,"tournament":-1,"type":155,"day":52,"phase":4,"category":3,"description":"The
+        Spies shamed the Jazz Hands."},{"id":"b3cfc265-6563-4846-b477-9222ffaf7322","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","a37f9158-7f82-46bc-908c-c9e2dda7c33b"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":400,"winner":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","subPlay":-1},"created":"2021-03-03T21:33:59.136Z","season":11,"tournament":-1,"type":11,"day":52,"phase":4,"category":3,"description":"Spies
+        4, Jazz Hands 3"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1190'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 03 Mar 2021 21:59:07 GMT
+      Etag:
+      - W/"4a6-HlM8de6x4EwQPHvpGGYFS3zQDCU"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
