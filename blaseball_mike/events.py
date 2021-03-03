@@ -6,7 +6,7 @@ from concurrent import futures
 import ujson
 
 from aiohttp_sse_client import client as sse_client
-from aiohttp.client_exceptions import ClientPayloadError
+from aiohttp.client_exceptions import ClientPayloadError, ClientConnectorError, ServerDisconnectedError
 
 
 async def stream_events(url='https://www.blaseball.com/events/streamData', retry_base=0.01, retry_max=300):
@@ -25,6 +25,12 @@ async def stream_events(url='https://www.blaseball.com/events/streamData', retry
                         continue
                     payload = ujson.loads(event.data)['value']
                     yield payload
-        except (ConnectionError, TimeoutError, ClientPayloadError, futures.TimeoutError, asyncio.exceptions.TimeoutError):
+        except (ConnectionError,
+                TimeoutError,
+                ClientPayloadError,
+                futures.TimeoutError,
+                asyncio.exceptions.TimeoutError,
+                ClientConnectorError,
+                ServerDisconnectedError):
             await asyncio.sleep(retry_delay)
             retry_delay = min(retry_delay * 2, retry_max)
