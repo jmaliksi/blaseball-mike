@@ -32,8 +32,8 @@
 
 Based off spec: https://github.com/Society-for-Internet-Blaseball-Research/blaseball-api-spec
 &#34;&#34;&#34;
-from blaseball_mike.session import session, check_network_response
-
+from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
+from datetime import datetime
 
 BASE_URL = &#39;https://www.blaseball.com/database&#39;
 BASE_GITHUB = &#39;https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data&#39;
@@ -304,6 +304,122 @@ def get_coffee(ids):
         ids = &#39;,&#39;.join(ids)
     s = session(5)
     res = s.get(f&#39;{BASE_URL}/coffee?ids={ids}&#39;)
+    return check_network_response(res)
+
+
+def get_feed_global(limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Global Feed
+
+    Args:
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
+    return check_network_response(res)
+
+
+def get_feed_game(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Game Feed
+
+    Args:
+        id_: Game ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/game&#39;, params=params)
+    return check_network_response(res)
+
+
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Team Feed
+
+    Args:
+        id_: Team ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
+    return check_network_response(res)
+
+
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Player Feed
+
+    Args:
+        id_: Player ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
+    return check_network_response(res)
+
+
+def get_feed_phase(season, phase):
+    &#34;&#34;&#34;
+    Get Feed by Phase
+    &#34;&#34;&#34;
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </section>
@@ -413,6 +529,217 @@ def get_coffee(ids):
 <pre><code class="python">def get_division(id_):
     s = session(5)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_feed_game"><code class="name flex">
+<span>def <span class="ident">get_feed_game</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Game Feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>Game ID</dd>
+<dt><strong><code>limit</code></strong></dt>
+<dd>Number of entries to return</dd>
+<dt><strong><code>sort</code></strong></dt>
+<dd>0 - Newest to Oldest, 1 - Oldest to Newest</dd>
+<dt><strong><code>category</code></strong></dt>
+<dd>0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative</dd>
+<dt><strong><code>start</code></strong></dt>
+<dd>timestamp</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_feed_game(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Game Feed
+
+    Args:
+        id_: Game ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/game&#39;, params=params)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_feed_global"><code class="name flex">
+<span>def <span class="ident">get_feed_global</span></span>(<span>limit=50, sort=None, category=None, start=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Global Feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>limit</code></strong></dt>
+<dd>Number of entries to return</dd>
+<dt><strong><code>sort</code></strong></dt>
+<dd>0 - Newest to Oldest, 1 - Oldest to Newest</dd>
+<dt><strong><code>category</code></strong></dt>
+<dd>0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative</dd>
+<dt><strong><code>start</code></strong></dt>
+<dd>timestamp</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_feed_global(limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Global Feed
+
+    Args:
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_feed_phase"><code class="name flex">
+<span>def <span class="ident">get_feed_phase</span></span>(<span>season, phase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Feed by Phase</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_feed_phase(season, phase):
+    &#34;&#34;&#34;
+    Get Feed by Phase
+    &#34;&#34;&#34;
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_feed_player"><code class="name flex">
+<span>def <span class="ident">get_feed_player</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Player Feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>Player ID</dd>
+<dt><strong><code>limit</code></strong></dt>
+<dd>Number of entries to return</dd>
+<dt><strong><code>sort</code></strong></dt>
+<dd>0 - Newest to Oldest, 1 - Oldest to Newest</dd>
+<dt><strong><code>category</code></strong></dt>
+<dd>0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative</dd>
+<dt><strong><code>start</code></strong></dt>
+<dd>timestamp</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_feed_player(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Player Feed
+
+    Args:
+        id_: Player ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_feed_team"><code class="name flex">
+<span>def <span class="ident">get_feed_team</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Team Feed</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>Team ID</dd>
+<dt><strong><code>limit</code></strong></dt>
+<dd>Number of entries to return</dd>
+<dt><strong><code>sort</code></strong></dt>
+<dd>0 - Newest to Oldest, 1 - Oldest to Newest</dd>
+<dt><strong><code>category</code></strong></dt>
+<dd>0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative</dd>
+<dt><strong><code>start</code></strong></dt>
+<dd>timestamp</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_feed_team(id_, limit=50, sort=None, category=None, start=None):
+    &#34;&#34;&#34;
+    Get Team Feed
+
+    Args:
+        id_: Team ID
+        limit: Number of entries to return
+        sort: 0 - Newest to Oldest, 1 - Oldest to Newest
+        category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
+        start: timestamp
+    &#34;&#34;&#34;
+    if isinstance(start, datetime):
+        start = start.strftime(TIMESTAMP_FORMAT)
+
+    params = {&#34;id&#34;: id_, &#34;limit&#34;: limit}
+    if sort is not None:
+        params[&#34;sort&#34;] = sort
+    if category is not None:
+        params[&#34;category&#34;] = category
+    if start is not None:
+        params[&#34;start&#34;] = start
+
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
@@ -915,6 +1242,11 @@ Returns as dictionary with game ID as key.</p></div>
 <li><code><a title="blaseball_mike.database.get_blood" href="#blaseball_mike.database.get_blood">get_blood</a></code></li>
 <li><code><a title="blaseball_mike.database.get_coffee" href="#blaseball_mike.database.get_coffee">get_coffee</a></code></li>
 <li><code><a title="blaseball_mike.database.get_division" href="#blaseball_mike.database.get_division">get_division</a></code></li>
+<li><code><a title="blaseball_mike.database.get_feed_game" href="#blaseball_mike.database.get_feed_game">get_feed_game</a></code></li>
+<li><code><a title="blaseball_mike.database.get_feed_global" href="#blaseball_mike.database.get_feed_global">get_feed_global</a></code></li>
+<li><code><a title="blaseball_mike.database.get_feed_phase" href="#blaseball_mike.database.get_feed_phase">get_feed_phase</a></code></li>
+<li><code><a title="blaseball_mike.database.get_feed_player" href="#blaseball_mike.database.get_feed_player">get_feed_player</a></code></li>
+<li><code><a title="blaseball_mike.database.get_feed_team" href="#blaseball_mike.database.get_feed_team">get_feed_team</a></code></li>
 <li><code><a title="blaseball_mike.database.get_game_by_id" href="#blaseball_mike.database.get_game_by_id">get_game_by_id</a></code></li>
 <li><code><a title="blaseball_mike.database.get_game_statsheets" href="#blaseball_mike.database.get_game_statsheets">get_game_statsheets</a></code></li>
 <li><code><a title="blaseball_mike.database.get_games" href="#blaseball_mike.database.get_games">get_games</a></code></li>
