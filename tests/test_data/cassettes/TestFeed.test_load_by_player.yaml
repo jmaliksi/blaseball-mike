@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/player?category=0&id=1f159bab-923a-4811-b6fa-02bfde50925a&limit=2
+  response:
+    body:
+      string: '[{"id":"a8da887f-8796-4fb9-bcad-afd875923c95","playerTags":["1f159bab-923a-4811-b6fa-02bfde50925a"],"teamTags":["36569151-a2fb-43c1-9df7-2df512424c82","979aee4a-6d80-4863-bf1c-ee1a78e06024"],"gameTags":["bc9788bd-7ef9-4ed1-ba33-b29e57380cb6"],"metadata":{"play":152,"subPlay":-1},"created":"2021-03-03T18:12:44.487Z","season":11,"tournament":-1,"type":10,"day":49,"phase":4,"category":0,"description":"NaN
+        hits a Double!"},{"id":"be4db83c-6249-4c29-9007-600f82285ca5","playerTags":["1f159bab-923a-4811-b6fa-02bfde50925a"],"teamTags":["979aee4a-6d80-4863-bf1c-ee1a78e06024","23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7"],"gameTags":["b9ada866-da43-4773-bc37-12746998d443"],"metadata":{"play":134,"subPlay":-1},"created":"2021-03-03T15:11:14.043Z","season":11,"tournament":-1,"type":5,"day":46,"phase":4,"category":0,"description":"NaN
+        draws a walk."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '843'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 03 Mar 2021 21:59:07 GMT
+      Etag:
+      - W/"34b-AyHU1ZxDbJAInQ1NOnWv/LzA5C8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

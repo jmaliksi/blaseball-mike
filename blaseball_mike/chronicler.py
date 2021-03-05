@@ -4,10 +4,9 @@ API Reference (out of date): https://astrid.stoplight.io/docs/sibr/reference/Chr
 """
 from datetime import datetime
 from dateutil.parser import parse
-from blaseball_mike.session import session, check_network_response
+from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
-TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
 
 
 def prepare_id(id_):

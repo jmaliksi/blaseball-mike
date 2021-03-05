@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/game?category=0&id=ebcf203e-6ce7-4d64-8f3e-a78b373c70ff&limit=2
+  response:
+    body:
+      string: '[{"id":"b467582b-5c91-4869-b6c9-2ef0bd0276fe","playerTags":[],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":["ebcf203e-6ce7-4d64-8f3e-a78b373c70ff"],"metadata":{"play":457,"subPlay":-1},"created":"2021-03-03T01:39:33.753Z","season":11,"tournament":-1,"type":6,"day":32,"phase":4,"category":0,"description":"Howell
+        Franklin strikes out swinging."},{"id":"1985bf31-59dc-4166-8de3-b74fc2d9834b","playerTags":["020ed630-8bae-4441-95cc-0e4ecc27253b"],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":["ebcf203e-6ce7-4d64-8f3e-a78b373c70ff"],"metadata":{"play":456,"subPlay":-1},"created":"2021-03-03T01:39:28.726Z","season":11,"tournament":-1,"type":4,"day":32,"phase":4,"category":0,"description":"Simon
+        Haley steals second base!"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '837'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 03 Mar 2021 21:59:07 GMT
+      Etag:
+      - W/"345-4oLCEJ5oKCXSMbV85m11UN08Qx8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

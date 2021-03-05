@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/team?category=0&id=a37f9158-7f82-46bc-908c-c9e2dda7c33b&limit=2
+  response:
+    body:
+      string: '[{"id":"b7e9e6b3-da49-47a6-8301-84015799b45b","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":399,"subPlay":-1},"created":"2021-03-03T21:33:54.107Z","season":11,"tournament":-1,"type":8,"day":52,"phase":4,"category":0,"description":"Son
+        Scotch hit a ground out to Elijah Valenzuela."},{"id":"4371e3ad-8226-4cbc-b9a9-6af375038e5e","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":398,"subPlay":-1},"created":"2021-03-03T21:33:49.045Z","season":11,"tournament":-1,"type":13,"day":52,"phase":4,"category":0,"description":"Strike,
+        looking. 1-1"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '801'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 03 Mar 2021 21:59:07 GMT
+      Etag:
+      - W/"321-YWkVswmlujXSA/Oe+iqDiAtMIjw"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
