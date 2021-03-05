@@ -13,7 +13,7 @@ class Feed(Base):
     """
     @classmethod
     def _get_fields(cls):
-        p = cls.load(limit=1)
+        p = cls.load(count=1)
         if len(p) < 1:
             return []
         return [cls._from_api_conversion(x) for x in p[0].fields]
