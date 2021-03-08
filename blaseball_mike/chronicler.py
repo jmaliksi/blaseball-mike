@@ -21,16 +21,19 @@ def prepare_id(id_):
         raise ValueError(f'Incorrect ID type: {type(id_)}')
 
 
-def paged_get(url, params, session):
+def paged_get(url, params, session,lazy=False):
     """
     Combine paged URL responses
     """
+    if lazy:
+        return paged_get_lazy(url,params,session)
+
     data = []
     while True:
         out = check_network_response(session.get(url, params=params))
         d = out.get("data", [])
         page = out.get("nextPage")
-        
+
         data.extend(d)
         if page is None or len(d) == 0 or params.get("count", 1000) >= len(d):
             break
@@ -38,9 +41,22 @@ def paged_get(url, params, session):
 
     return data
 
+def paged_get_lazy(url,params,session):
+    """
+    Combine paged URL responses; returns a generator
+    """
+    while True:
+        out = check_network_response(session.get(url, params=params))
+        d = out.get("data", [])
+        page = out.get("nextPage")
+
+        yield from d
+        if page is None or len(d) == 0 or params.get("count", 1000) >= len(d):
+            return
+        params["page"] = page
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None):
+              finished=None, outcomes=None, order=None, count=None,lazy=False):
     """
     Get Games
 
@@ -56,6 +72,7 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         outcomes: search string to filter game outcomes.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     """
     params = {}
     if season is not None and tournament is not None:
@@ -85,10 +102,10 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         params["weather"] = weather
 
     s = session(None)
-    return paged_get(f'{BASE_URL}/games', params=params, session=s)
+    return paged_get(f'{BASE_URL}/games', params=params, session=s,lazy=lazy)
 
 
-def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+def get_player_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     """
     Get player at time
 
@@ -98,6 +115,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -120,7 +138,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     return paged_get(f'{BASE_URL}/players/updates', params=params, session=s)
 
 
-def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+def get_team_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     """
     Get team at time
 
@@ -130,6 +148,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -149,10 +168,10 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
         params["team"] = prepare_id(ids)
 
     s = session(None)
-    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s)
+    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s,lazy=lazy)
 
 
-def get_tribute_updates(before=None, after=None, order=None, count=None):
+def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=False):
     """
     Get Hall of Flame at time
 
@@ -161,6 +180,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -178,7 +198,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
         params["count"] = count
 
     s = session(None)
-    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s)
+    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s,lazy=lazy)
 
 
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
