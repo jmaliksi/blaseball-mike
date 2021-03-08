@@ -51,16 +51,19 @@ def prepare_id(id_):
         raise ValueError(f&#39;Incorrect ID type: {type(id_)}&#39;)
 
 
-def paged_get(url, params, session):
+def paged_get(url, params, session,lazy=False):
     &#34;&#34;&#34;
     Combine paged URL responses
     &#34;&#34;&#34;
+    if lazy:
+        return paged_get_lazy(url,params,session)
+
     data = []
     while True:
         out = check_network_response(session.get(url, params=params))
         d = out.get(&#34;data&#34;, [])
         page = out.get(&#34;nextPage&#34;)
-        
+
         data.extend(d)
         if page is None or len(d) == 0 or params.get(&#34;count&#34;, 1000) &gt;= len(d):
             break
@@ -68,9 +71,22 @@ def paged_get(url, params, session):
 
     return data
 
+def paged_get_lazy(url,params,session):
+    &#34;&#34;&#34;
+    Combine paged URL responses; returns a generator
+    &#34;&#34;&#34;
+    while True:
+        out = check_network_response(session.get(url, params=params))
+        d = out.get(&#34;data&#34;, [])
+        page = out.get(&#34;nextPage&#34;)
+
+        yield from d
+        if page is None or len(d) == 0 or params.get(&#34;count&#34;, 1000) &gt;= len(d):
+            return
+        params[&#34;page&#34;] = page
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None):
+              finished=None, outcomes=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get Games
 
@@ -86,6 +102,7 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         outcomes: search string to filter game outcomes.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     params = {}
     if season is not None and tournament is not None:
@@ -115,10 +132,10 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         params[&#34;weather&#34;] = weather
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s)
+    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s,lazy=lazy)
 
 
-def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+def get_player_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get player at time
 
@@ -128,6 +145,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -150,7 +168,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s)
 
 
-def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+def get_team_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get team at time
 
@@ -160,6 +178,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -179,10 +198,10 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
         params[&#34;team&#34;] = prepare_id(ids)
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s)
+    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s,lazy=lazy)
 
 
-def get_tribute_updates(before=None, after=None, order=None, count=None):
+def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get Hall of Flame at time
 
@@ -191,6 +210,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -208,7 +228,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None):
         params[&#34;count&#34;] = count
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=s)
+    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=s,lazy=lazy)
 
 
 def time_map(season=0, tournament=-1, day=0, include_nongame=False):
@@ -324,7 +344,7 @@ def get_fights(id_=None, season=0):
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_games"><code class="name flex">
-<span>def <span class="ident">get_games</span></span>(<span>season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None)</span>
+<span>def <span class="ident">get_games</span></span>(<span>season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None, lazy=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Games</p>
@@ -352,13 +372,15 @@ def get_fights(id_=None, season=0):
 <dd>sort in ascending ('asc') or descending ('desc') order.</dd>
 <dt><strong><code>count</code></strong></dt>
 <dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None):
+              finished=None, outcomes=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get Games
 
@@ -374,6 +396,7 @@ def get_fights(id_=None, season=0):
         outcomes: search string to filter game outcomes.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     params = {}
     if season is not None and tournament is not None:
@@ -403,11 +426,11 @@ def get_fights(id_=None, season=0):
         params[&#34;weather&#34;] = weather
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s,lazy=lazy)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_player_updates"><code class="name flex">
-<span>def <span class="ident">get_player_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None)</span>
+<span>def <span class="ident">get_player_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get player at time</p>
@@ -423,12 +446,14 @@ def get_fights(id_=None, season=0):
 <dd>sort in ascending ('asc') or descending ('desc') order.</dd>
 <dt><strong><code>count</code></strong></dt>
 <dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_player_updates(ids=None, before=None, after=None, order=None, count=None):
+<pre><code class="python">def get_player_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get player at time
 
@@ -438,6 +463,7 @@ def get_fights(id_=None, season=0):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -461,7 +487,7 @@ def get_fights(id_=None, season=0):
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_team_updates"><code class="name flex">
-<span>def <span class="ident">get_team_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None)</span>
+<span>def <span class="ident">get_team_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get team at time</p>
@@ -477,12 +503,14 @@ def get_fights(id_=None, season=0):
 <dd>sort in ascending ('asc') or descending ('desc') order.</dd>
 <dt><strong><code>count</code></strong></dt>
 <dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_team_updates(ids=None, before=None, after=None, order=None, count=None):
+<pre><code class="python">def get_team_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get team at time
 
@@ -492,6 +520,7 @@ def get_fights(id_=None, season=0):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -511,11 +540,11 @@ def get_fights(id_=None, season=0):
         params[&#34;team&#34;] = prepare_id(ids)
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s,lazy=lazy)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_tribute_updates"><code class="name flex">
-<span>def <span class="ident">get_tribute_updates</span></span>(<span>before=None, after=None, order=None, count=None)</span>
+<span>def <span class="ident">get_tribute_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Hall of Flame at time</p>
@@ -529,12 +558,14 @@ def get_fights(id_=None, season=0):
 <dd>sort in ascending ('asc') or descending ('desc') order.</dd>
 <dt><strong><code>count</code></strong></dt>
 <dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_tribute_updates(before=None, after=None, order=None, count=None):
+<pre><code class="python">def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=False):
     &#34;&#34;&#34;
     Get Hall of Flame at time
 
@@ -543,6 +574,7 @@ def get_fights(id_=None, season=0):
         after: return elements after this string or datetime timestamp.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        lazy: whether to return a list or a generator
     &#34;&#34;&#34;
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -560,11 +592,11 @@ def get_fights(id_=None, season=0):
         params[&#34;count&#34;] = count
 
     s = session(None)
-    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=s)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=s,lazy=lazy)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.paged_get"><code class="name flex">
-<span>def <span class="ident">paged_get</span></span>(<span>url, params, session)</span>
+<span>def <span class="ident">paged_get</span></span>(<span>url, params, session, lazy=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Combine paged URL responses</p></div>
@@ -572,22 +604,49 @@ def get_fights(id_=None, season=0):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def paged_get(url, params, session):
+<pre><code class="python">def paged_get(url, params, session,lazy=False):
     &#34;&#34;&#34;
     Combine paged URL responses
     &#34;&#34;&#34;
+    if lazy:
+        return paged_get_lazy(url,params,session)
+
     data = []
     while True:
         out = check_network_response(session.get(url, params=params))
         d = out.get(&#34;data&#34;, [])
         page = out.get(&#34;nextPage&#34;)
-        
+
         data.extend(d)
         if page is None or len(d) == 0 or params.get(&#34;count&#34;, 1000) &gt;= len(d):
             break
         params[&#34;page&#34;] = page
 
     return data</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.paged_get_lazy"><code class="name flex">
+<span>def <span class="ident">paged_get_lazy</span></span>(<span>url, params, session)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Combine paged URL responses; returns a generator</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def paged_get_lazy(url,params,session):
+    &#34;&#34;&#34;
+    Combine paged URL responses; returns a generator
+    &#34;&#34;&#34;
+    while True:
+        out = check_network_response(session.get(url, params=params))
+        d = out.get(&#34;data&#34;, [])
+        page = out.get(&#34;nextPage&#34;)
+
+        yield from d
+        if page is None or len(d) == 0 or params.get(&#34;count&#34;, 1000) &gt;= len(d):
+            return
+        params[&#34;page&#34;] = page</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.prepare_id"><code class="name flex">
@@ -716,6 +775,7 @@ def get_fights(id_=None, season=0):
 <li><code><a title="blaseball_mike.chronicler.get_team_updates" href="#blaseball_mike.chronicler.get_team_updates">get_team_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_tribute_updates" href="#blaseball_mike.chronicler.get_tribute_updates">get_tribute_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.paged_get" href="#blaseball_mike.chronicler.paged_get">paged_get</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.paged_get_lazy" href="#blaseball_mike.chronicler.paged_get_lazy">paged_get_lazy</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.prepare_id" href="#blaseball_mike.chronicler.prepare_id">prepare_id</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.time_map" href="#blaseball_mike.chronicler.time_map">time_map</a></code></li>
 </ul>
