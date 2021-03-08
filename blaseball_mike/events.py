@@ -18,7 +18,7 @@ async def stream_events(url='https://www.blaseball.com/events/streamData', retry
     retry_delay = retry_base
     while True:
         try:
-            async with sse_client.EventSource(url) as src:
+            async with sse_client.EventSource(url, read_bufsize=2 ** 18) as src:
                 async for event in src:
                     retry_delay = retry_base  # reset backoff
                     if not event.data:
