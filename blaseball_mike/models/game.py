@@ -243,13 +243,22 @@ class Game(Base):
             return round(amount * (2 - 0.000335 * (100 * (odds - 0.5)) ** 2.045))
 
     @staticmethod
-    def _payout_calc(odds, amount):
+    def _payout_calc_s12(odds, amount):
         if odds == 0.5:
             return round(2 * amount)
         elif odds < 0.5:
             return round(amount * (2 + 0.0015 * (100 * (0.5 - odds)) ** 2.2))
         else:
             return round(amount * (0.571 + 1.429 / (1 + (3 * (odds - 0.5)) ** 0.77)))
+
+    @staticmethod
+    def _payout_calc(odds, amount):
+        if odds == 0.5:
+            return round(2 * amount)
+        elif odds < 0.5:
+            return round(amount * (2 + 0.0015 * (100 * (0.5 - odds)) ** 2.2))
+        else:
+            return round(amount * (3.206 / (1 + ((0.443 * (odds - 0.5)) ** 0.95)) - 1.206))
 
     def home_payout(self, bet, season=None):
         """
@@ -260,6 +269,8 @@ class Game(Base):
 
         if season < 12:
             return self._payout_calc_discipline(self.home_odds, bet)
+        elif season == 12:
+            return self._payout_calc_s12(self.home_odds, bet)
         else:
             return self._payout_calc(self.home_odds, bet)
 
@@ -272,5 +283,7 @@ class Game(Base):
 
         if season < 12:
             return self._payout_calc_discipline(self.away_odds, bet)
+        elif season == 12:
+            return self._payout_calc_s12(self.away_odds, bet)
         else:
             return self._payout_calc(self.away_odds, bet)
