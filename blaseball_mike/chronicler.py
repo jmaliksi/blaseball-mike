@@ -56,7 +56,7 @@ def paged_get_lazy(url,params,session):
         params["page"] = page
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None,lazy=False):
+              finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5):
     """
     Get Games
 
@@ -73,6 +73,7 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     params = {}
     if season is not None and tournament is not None:
@@ -101,11 +102,11 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if weather:
         params["weather"] = weather
 
-    s = session(None)
+    s = session(cache_time)
     return paged_get(f'{BASE_URL}/games', params=params, session=s,lazy=lazy)
 
 
-def get_player_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
+def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
     """
     Get player at time
 
@@ -116,6 +117,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -134,11 +136,11 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if ids:
         params["player"] = prepare_id(ids)
 
-    s = session(None)
+    s = session(cache_time)
     return paged_get(f'{BASE_URL}/players/updates', params=params, session=s)
 
 
-def get_team_updates(ids=None, before=None, after=None, order=None, count=None,lazy=False):
+def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
     """
     Get team at time
 
@@ -149,6 +151,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None,l
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -167,11 +170,11 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None,l
     if ids:
         params["team"] = prepare_id(ids)
 
-    s = session(None)
+    s = session(cache_time)
     return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s,lazy=lazy)
 
 
-def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=False):
+def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
     """
     Get Hall of Flame at time
 
@@ -181,6 +184,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=Fal
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
@@ -197,11 +201,11 @@ def get_tribute_updates(before=None, after=None, order=None, count=None,lazy=Fal
     if count:
         params["count"] = count
 
-    s = session(None)
+    s = session(cache_time)
     return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s,lazy=lazy)
 
 
-def time_map(season=0, tournament=-1, day=0, include_nongame=False):
+def time_map(season=0, tournament=-1, day=0, include_nongame=False, cache_time=3600):
     """
     Map a season/day to a real-life timestamp
 
@@ -210,7 +214,7 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
         tournament: tournament identifier.
         day: 1-indexed day. if 0 do not filter by season.
         include_nongame: if True, include timestamps for phase changes, such as pre & post elections.
-
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     Returns:
     ```
     [
@@ -227,15 +231,15 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     season = season - 1
     day = day - 1
 
-    s = session(3600)
-    map_ = s.get(f'{BASE_URL}/time/map').json()
+    s = session(cache_time)
+    map_ = check_network_response(s.get(f'{BASE_URL}/time/map'))['data']
 
     # Filter out desired events
     if tournament != -1:
         # Season is not always -1 if a tournament is active, so ignore it
-        results = list(filter(lambda x: x['tournament'] == tournament and x['day'] == day, map_['data']))
+        results = list(filter(lambda x: x['tournament'] == tournament and x['day'] == day, map_))
     else:
-        results = list(filter(lambda x: x['tournament'] == -1 and x['season'] == season and x['day'] == day, map_['data']))
+        results = list(filter(lambda x: x['tournament'] == -1 and x['season'] == season and x['day'] == day, map_))
 
     # Optionally filter out phase-change events
     if not include_nongame:
@@ -250,18 +254,19 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False):
     return results
 
 
-def get_fights(id_=None, season=0):
+def get_fights(id_=None, season=0, cache_time=None):
     """
     Return a list of boss fights
 
     Args:
         id_: fight ID.
         season: 1-indexed season. if 0 do not filter by season.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     season = season - 1
 
-    s = session(3600)
-    data = s.get(f'{BASE_URL}/fights').json()["data"]
+    s = session(cache_time)
+    data = check_network_response(s.get(f'{BASE_URL}/fights'))["data"]
     if id_:
         data = list(filter(lambda x: x['id'] == id_, data))
     if season > 1:
