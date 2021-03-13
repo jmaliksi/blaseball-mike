@@ -4,7 +4,7 @@ Unit Tests for Team Model
 
 import pytest
 import vcr
-from blaseball_mike.models import Team, Player, Modification
+from blaseball_mike.models import Team, Player, Modification, Stadium
 from blaseball_mike.tables import Tarot
 from .helpers import TestBase, CASSETTE_DIR
 
@@ -75,6 +75,10 @@ class TestTeam(TestBase):
 
     def test_tarot(self, team):
         assert isinstance(team.card, (Tarot, type(None)))
+
+    @pytest.mark.vcr
+    def test_stadium(self, team):
+        assert isinstance(team.stadium, (Stadium, type(None)))
 
     def test_misc(self, team):
         assert isinstance(team.id, str)

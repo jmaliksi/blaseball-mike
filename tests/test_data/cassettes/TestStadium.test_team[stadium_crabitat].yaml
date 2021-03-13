@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=8d87c468-699a-47a8-b40d-cfb73a5660ad
+  response:
+    body:
+      string: '{"id":"8d87c468-699a-47a8-b40d-cfb73a5660ad","lineup":["90c2cec7-0ed5-426a-9de8-754f34d59b39","425f3f84-bab0-4cf2-91c1-96e78cf5cd02","c6a19154-7438-4c4f-b786-2dfaf5951f0f","e4034192-4dc6-4901-bb30-07fe3cf77b5e","7dcf6902-632f-48c5-936a-7cf88802b93a","1a93a2d2-b5b6-479b-a595-703e4a2f3885","2c4b2a6d-9961-4e40-882c-a338f4e72117","d35ccee1-9559-49a1-aaa4-7809f7b5c46e","84a2b5f6-4955-4007-9299-3d35ae7135d3","61bbbf34-98c1-4bf6-bd0c-56c19199b35e"],"rotation":["97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","ce7d33b7-1bba-48d6-a1d1-cd0e29231be8","d0d7b8fe-bad8-481f-978e-cb659304ed49","f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71"],"bullpen":["dd8a43a4-a024-44e9-a522-785d998b29c3","d2f827a5-0133-4d96-b403-85a5e50d49e0","34e1b683-ecd5-477f-b9e3-dd4bca76db45","e1e33aab-df8c-4f53-b30a-ca1cea9f046e","ce3fb736-d20e-4e2a-88cb-e136783d3a47","093af82c-84aa-4bd6-ad1a-401fae1fce44","7e160e9f-2c79-4e08-8b76-b816de388a98","dd6ba7f1-a97a-4374-a3a7-b3596e286bb3"],"bench":["7afedcd8-870d-4655-9659-3bdfb2e17730","4e63cb5d-4fce-441b-b9e4-dc6a467cf2fd","5915b7bb-e532-4036-9009-79f1e80c0e28","e6114fd4-a11d-4f6c-b823-65691bb2d288","1cded4e7-8302-49b7-a646-40a0767b6969"],"seasAttr":["EXTRA_STRIKE"],"permAttr":["CARCINIZATION"],"fullName":"Baltimore
+        Crabs","location":"Baltimore","mainColor":"#593037","nickname":"Crabs","secondaryColor":"#b05c6b","shorthand":"BALC","emoji":"0x1F980","slogan":"Claws
+        Up!","shameRuns":0,"totalShames":54,"totalShamings":52,"seasonShames":5,"seasonShamings":10,"championships":3,"weekAttr":[],"gameAttr":[],"rotationSlot":102,"teamSpirit":0,"card":-1,"tournamentWins":0,"stadium":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","imPosition":-0.2592699467139904,"eDensity":1895.7424492474793,"eVelocity":-0.003915936045860314,"state":{},"evolution":1,"winStreak":1}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1760'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 13 Mar 2021 14:00:46 GMT
+      Etag:
+      - W/"6e0-Yj6/5xyOnZtiOaSrrW/4r+nzHsg"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
