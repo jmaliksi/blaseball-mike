@@ -85,6 +85,7 @@ def paged_get_lazy(url,params,session):
             return
         params[&#34;page&#34;] = page
 
+
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
               finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
@@ -116,6 +117,8 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if day:
         params[&#34;day&#34;] = day - 1
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
         params[&#34;count&#34;] = count
@@ -130,6 +133,8 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if outcomes:
         params[&#34;outcomes&#34;] = outcomes
     if weather:
+        if not isinstance(weather, int):
+            raise ValueError(&#34;Weather must be an integer&#34;)
         params[&#34;weather&#34;] = weather
 
     s = session(cache_time)
@@ -160,8 +165,12 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
         params[&#34;count&#34;] = count
     if ids:
         params[&#34;player&#34;] = prepare_id(ids)
@@ -194,8 +203,12 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 250:
+            raise ValueError(&#34;Count must be between 1 and 250&#34;)
         params[&#34;count&#34;] = count
     if ids:
         params[&#34;team&#34;] = prepare_id(ids)
@@ -227,8 +240,12 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=Fa
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
         params[&#34;count&#34;] = count
 
     s = session(cache_time)
@@ -420,6 +437,8 @@ def get_fights(id_=None, season=0, cache_time=None):
     if day:
         params[&#34;day&#34;] = day - 1
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
         params[&#34;count&#34;] = count
@@ -434,6 +453,8 @@ def get_fights(id_=None, season=0, cache_time=None):
     if outcomes:
         params[&#34;outcomes&#34;] = outcomes
     if weather:
+        if not isinstance(weather, int):
+            raise ValueError(&#34;Weather must be an integer&#34;)
         params[&#34;weather&#34;] = weather
 
     s = session(cache_time)
@@ -490,8 +511,12 @@ def get_fights(id_=None, season=0, cache_time=None):
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
         params[&#34;count&#34;] = count
     if ids:
         params[&#34;player&#34;] = prepare_id(ids)
@@ -550,8 +575,12 @@ def get_fights(id_=None, season=0, cache_time=None):
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 250:
+            raise ValueError(&#34;Count must be between 1 and 250&#34;)
         params[&#34;count&#34;] = count
     if ids:
         params[&#34;team&#34;] = prepare_id(ids)
@@ -607,8 +636,12 @@ def get_fights(id_=None, season=0, cache_time=None):
     if after:
         params[&#34;after&#34;] = after
     if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
         params[&#34;order&#34;] = order
     if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
         params[&#34;count&#34;] = count
 
     s = session(cache_time)
