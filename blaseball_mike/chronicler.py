@@ -55,6 +55,7 @@ def paged_get_lazy(url,params,session):
             return
         params["page"] = page
 
+
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
               finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5):
     """
@@ -86,6 +87,8 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if day:
         params["day"] = day - 1
     if order:
+        if order.lower() not in ('asc', 'desc'):
+            raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
     if count:
         params["count"] = count
@@ -100,6 +103,8 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if outcomes:
         params["outcomes"] = outcomes
     if weather:
+        if not isinstance(weather, int):
+            raise ValueError("Weather must be an integer")
         params["weather"] = weather
 
     s = session(cache_time)
@@ -130,8 +135,12 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
     if after:
         params["after"] = after
     if order:
+        if order.lower() not in ('asc', 'desc'):
+            raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
     if count:
+        if count < 1 or count >= 1000:
+            raise ValueError("Count must be between 1 and 1000")
         params["count"] = count
     if ids:
         params["player"] = prepare_id(ids)
@@ -164,8 +173,12 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
     if after:
         params["after"] = after
     if order:
+        if order.lower() not in ('asc', 'desc'):
+            raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
     if count:
+        if count < 1 or count >= 250:
+            raise ValueError("Count must be between 1 and 250")
         params["count"] = count
     if ids:
         params["team"] = prepare_id(ids)
@@ -197,8 +210,12 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=Fa
     if after:
         params["after"] = after
     if order:
+        if order.lower() not in ('asc', 'desc'):
+            raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
     if count:
+        if count < 1 or count >= 1000:
+            raise ValueError("Count must be between 1 and 1000")
         params["count"] = count
 
     s = session(cache_time)
