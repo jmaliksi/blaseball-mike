@@ -11,23 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION
+    uri: https://www.blaseball.com/database/mods?ids=PEANUT_MISTER
   response:
     body:
-      string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
-        the Crabs activate the Black Hole, they will steal the other team''s best
-        hitter for the remainder of the game."}]'
+      string: '[{"id":"PEANUT_MISTER","color":"#f3ff54","textColor":"#f3ff54","background":"#423519","title":"Peanut
+        Mister","description":"A Peanut Mister will occasionally cure a player of
+        their peanut allergy."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '243'
+      - '200'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 09 Mar 2021 20:16:54 GMT
+      - Sat, 13 Mar 2021 14:00:47 GMT
       Etag:
-      - W/"f3-iywjdU45YCtmRDzYhodEkHUhinc"
+      - W/"c8-eqFfKNW3EaLTiKLxUYkVf/5AUTg"
       Server:
       - Cowboy
       Vary:

@@ -11,23 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION
+    uri: https://www.blaseball.com/database/mods?ids=EXTRA_STRIKE
   response:
     body:
-      string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
-        the Crabs activate the Black Hole, they will steal the other team''s best
-        hitter for the remainder of the game."}]'
+      string: '[{"id":"EXTRA_STRIKE","color":"#f77c9f","textColor":"#f77c9f","background":"#8c1839","title":"The
+        Fourth Strike","description":"Those with the Fourth Strike will get an extra
+        strike in each at bat."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '243'
+      - '200'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 09 Mar 2021 20:16:54 GMT
+      - Tue, 09 Mar 2021 20:14:56 GMT
       Etag:
-      - W/"f3-iywjdU45YCtmRDzYhodEkHUhinc"
+      - W/"c8-sGZjYaA/tMaS9dNdLFp5u9quphs"
       Server:
       - Cowboy
       Vary:

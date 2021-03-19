@@ -290,3 +290,8 @@ def get_fights(id_=None, season=0, cache_time=None):
         data = list(filter(lambda x: x['data']['season'] == season, data))
 
     return data
+
+
+def get_stadiums(*, cache_time=3600):
+    s = session(cache_time)
+    return s.get(f'{BASE_URL}/stadiums').json()['data']

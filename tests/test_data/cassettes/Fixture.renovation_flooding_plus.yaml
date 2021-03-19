@@ -11,23 +11,22 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION
+    uri: https://www.blaseball.com/database/renovations?ids=flooding_plus
   response:
     body:
-      string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
-        the Crabs activate the Black Hole, they will steal the other team''s best
-        hitter for the remainder of the game."}]'
+      string: '[{"id":"flooding_plus","title":"Flooding +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Flooding weather more often."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '243'
+      - '149'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 09 Mar 2021 20:16:54 GMT
+      - Tue, 09 Mar 2021 21:43:19 GMT
       Etag:
-      - W/"f3-iywjdU45YCtmRDzYhodEkHUhinc"
+      - W/"95-c0ejAHjjMf00ZrURD55fCBumirk"
       Server:
       - Cowboy
       Vary:

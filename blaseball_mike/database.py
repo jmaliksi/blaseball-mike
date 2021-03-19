@@ -391,3 +391,17 @@ def get_feed_phase(season, phase):
     s = session(5)
     res = s.get(f'{BASE_URL}/feedbyphase?season={season-1}&phase={phase}')
     return check_network_response(res)
+
+
+def get_renovations(ids):
+    if isinstance(ids, list):
+        ids = ','.join(ids)
+    s = session(5)
+    res = s.get(f'{BASE_URL}/renovations?ids={ids}')
+    return check_network_response(res)
+
+
+def get_renovation_progress(id_):
+    s = session(5)
+    res = s.get(f'{BASE_URL}/renovationProgress?id={id_}')
+    return check_network_response(res)

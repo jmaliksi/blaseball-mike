@@ -1,0 +1,122 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=7966eb04-efcc-499b-8f03-d13916330531
+  response:
+    body:
+      string: '{"id":"7966eb04-efcc-499b-8f03-d13916330531","lineup":["17392be2-7344-48a0-b4db-8a040a7fb532","114100a4-1bf7-4433-b304-6aad75904055","44c92d97-bb39-469d-a13b-f2dd9ae644d1","ac69dba3-6225-4afd-ab4b-23fc78f730fb","2ffbaec8-a646-4435-a17a-3a0a2b5f3e16","a3947fbc-50ec-45a4-bca4-49ffebb77dbe","e16c3f28-eecd-4571-be1a-606bbac36b2b","aa6c2662-75f8-4506-aa06-9a0993313216","63512571-2eca-4bc4-8ad9-a5308a22ae22"],"rotation":["89ec77d8-c186-4027-bd45-f407b4800c2c","8adb084b-19fe-4295-bcd2-f92afdb62bd7","b6aa8ce8-2587-4627-83c1-2a48d44afaee","09f2787a-3352-41a6-8810-d80e97b253b5","24f6829e-7bb4-4e1e-8b59-a07514657e72"],"bullpen":["9a031b9a-16f8-4165-a468-5d0e28a81151","450e6483-d116-41d8-933b-1b541d5f0026","1af239ae-7e12-42be-9120-feff90453c85","94f30f21-f889-4a2e-9b94-818475bb1ca0","1ded0384-d290-4ea1-a72b-4f9d220cbe37","82733eb4-103d-4be1-843e-6eb6df35ecd7","db53211c-f841-4f33-accf-0c3e167889a0","b77dffaa-e0f5-408f-b9f2-1894ed26e744"],"bench":["945974c5-17d9-43e7-92f6-ba49064bbc59","c6146c45-3d9b-4749-9f03-d4faae61e2c3","ac57cf28-556f-47af-9154-6bcea2ace9fc","7b779947-46ef-4b77-be37-962d60875647"],"seasAttr":[],"permAttr":["O_NO"],"fullName":"Yellowstone
+        Magic","location":"Yellowstone","mainColor":"#bf0043","nickname":"Magic","secondaryColor":"#f60f63","shorthand":"YELL","emoji":"0x2728","slogan":"As
+        Above, So Below","shameRuns":0,"totalShames":54,"totalShamings":43,"seasonShames":2,"seasonShamings":4,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":28,"teamSpirit":0,"card":0,"tournamentWins":0,"stadium":"2a1a52b3-9759-44aa-ba49-b1437396d895","imPosition":0.19466331624822308,"eDensity":915.4696870867015,"eVelocity":-0.009832897401137002,"state":{},"evolution":0,"winStreak":3}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1706'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 09 Mar 2021 20:42:18 GMT
+      Etag:
+      - W/"6aa-dwmCWJqlDbJFsLiEb2RG3dN7Fe8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=ca3f1c8c-c025-4d8e-8eef-5be6accbeb16
+  response:
+    body:
+      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","5831a238-8efe-4d53-a483-1ad681e50ac3","28162da7-eafa-4eb1-8bc1-5a625f03ae57","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","667cb445-c288-4e62-b603-27291c1e475d"],"rotation":["f4a5d734-0ade-4410-abb6-c0cd5a7a1c26","316abea7-9890-4fb8-aaea-86b35e24d9be","1513aab6-142c-48c6-b43e-fbda65fd64e8","4bf352d2-6a57-420a-9d45-b23b2b947375","e4e4c17d-8128-4704-9e04-f244d4573c4d"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365","ee29020f-1964-4fce-80f4-35a5e7edfb95"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","bfd9ff52-9bf6-4aaf-a859-d308d8f29616"],"seasAttr":["LATE_TO_PARTY"],"permAttr":[],"fullName":"Chicago
+        Firefighters","location":"Chicago","mainColor":"#8c2a3e","nickname":"Firefighters","secondaryColor":"#d13757","shorthand":"CHIF","emoji":"0x1F525","slogan":"We
+        Are From Chicago","shameRuns":0,"totalShames":49,"totalShamings":50,"seasonShames":1,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":28,"teamSpirit":0,"card":13,"tournamentWins":0,"stadium":"06c991f6-4ef3-4a9a-8254-8a2bc7d3a1e1","imPosition":0.1237204542612386,"eDensity":1051.0366153930822,"eVelocity":-0.00725250573205086,"state":{},"evolution":0,"winStreak":5}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1840'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 09 Mar 2021 20:42:18 GMT
+      Etag:
+      - W/"730-TokykqANe4IetZmnK9QVlbLnz94"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=09f2787a-3352-41a6-8810-d80e97b253b5,316abea7-9890-4fb8-aaea-86b35e24d9be
+  response:
+    body:
+      string: '[{"id":"316abea7-9890-4fb8-aaea-86b35e24d9be","anticapitalism":0.8359329704481304,"baseThirst":0.8463118171784367,"buoyancy":0.0930830706900685,"chasiness":0.8110339578055679,"coldness":0.5583546606259776,"continuation":0.11473030023424437,"divinity":0.7432775255255708,"groundFriction":0.629124317532908,"indulgence":0.16834300633018473,"laserlikeness":0.13200519260877752,"martyrdom":0.5867421133786843,"moxie":0.27058439094744946,"musclitude":0.5348700247769871,"name":"Kennedy
+        Rodgers","bat":"","omniscience":0.03,"overpowerment":0.8744562540340829,"patheticism":0.922815527066779,"ruthlessness":0.7645552037305964,"shakespearianism":0.3084108642419964,"suppression":0.8238507101095759,"tenaciousness":0.7465797937383487,"thwackability":0.3942111778756332,"tragicness":0.1,"unthwackability":0.46995349201821257,"watchfulness":0.03869315579558942,"pressurization":0.266324437480846,"totalFingers":13,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.34145377768804286,"fate":86,"armor":"","ritual":"Updating","coffee":9,"blood":10,"permAttr":["UNDEROVER","OVERPERFORMING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.22988440805093371,"pitchingRating":0.5287342133030167,"hittingRating":0.48948250053457387,"defenseRating":0.3250303846226135,"leagueTeamId":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","tournamentTeamId":null,"eDensity":17.011920545577965,"state":{"permModSources":{"OVERPERFORMING":["UNDEROVER"]}},"evolution":0},{"id":"09f2787a-3352-41a6-8810-d80e97b253b5","anticapitalism":1.256132120879667,"baseThirst":0.5565308611162642,"buoyancy":0.7039109769332003,"chasiness":1.1707912812453831,"coldness":1.121361138636024,"continuation":0.4445964997086256,"divinity":1.2396374181526257,"groundFriction":0.8670639362364617,"indulgence":0.734776965569531,"laserlikeness":0.3445758050237605,"martyrdom":0.8027976041945023,"moxie":1.1706080776021686,"musclitude":1.1366952852343934,"name":"Curry
+        Aliciakeyes","bat":"","omniscience":0.7621885241956927,"overpowerment":1.185107316067059,"patheticism":0.5399990686666957,"ruthlessness":1.1317451130300074,"shakespearianism":0.8772622366844371,"suppression":0.8004705007934657,"tenaciousness":1.2211525256467928,"thwackability":0.3283180155891247,"tragicness":0.001,"unthwackability":1.029557519469591,"watchfulness":1.139446161977604,"pressurization":0.9383202630490881,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.7434475398848632,"fate":8,"armor":"","ritual":"Photography","coffee":2,"blood":6,"permAttr":["OVERUNDER","UNDERPERFORMING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.48798737299205563,"pitchingRating":1.082542589597335,"hittingRating":0.7143090734910258,"defenseRating":1.0379760303288212,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":39.259705464864666,"state":{"permModSources":{"UNDERPERFORMING":["OVERUNDER"]}},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3027'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 09 Mar 2021 20:42:18 GMT
+      Etag:
+      - W/"bd3-UZZyrHTh5MOOsIikgJ8TIMBIZvo"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

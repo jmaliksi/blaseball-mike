@@ -23,3 +23,4 @@ from .statsheet import *
 from .simulation_data import *
 from .global_event import *
 from .feed import *
+from .stadium import *

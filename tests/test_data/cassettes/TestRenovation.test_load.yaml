@@ -11,23 +11,24 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION
+    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,coffee_one_plus
   response:
     body:
-      string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
-        the Crabs activate the Black Hole, they will steal the other team''s best
-        hitter for the remainder of the game."}]'
+      string: '[{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
+        Big Buckets in Home Run territory to make your Home Runs just a little bit
+        bigger."},{"id":"coffee_one_plus","title":"Coffee +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Coffee weather more often."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '243'
+      - '334'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 09 Mar 2021 20:16:54 GMT
+      - Tue, 09 Mar 2021 21:46:21 GMT
       Etag:
-      - W/"f3-iywjdU45YCtmRDzYhodEkHUhinc"
+      - W/"14e-g4Fju/tg7XzrnfPbnzH/va3Sjek"
       Server:
       - Cowboy
       Vary:

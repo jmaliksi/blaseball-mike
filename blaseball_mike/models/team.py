@@ -3,6 +3,7 @@ from dateutil.parser import parse
 from .base import Base
 from .modification import Modification
 from .player import Player
+from .stadium import Stadium
 from .. import database, chronicler, tables
 
 
@@ -109,3 +110,9 @@ class Team(Base):
     @Base.lazy_load("_card")
     def card(self):
         return tables.Tarot(self._card)
+
+    @Base.lazy_load("_stadium_id", cache_name="_stadium")
+    def stadium(self):
+        if self._stadium_id is None:
+            return None
+        return Stadium.load_one(self._stadium_id)

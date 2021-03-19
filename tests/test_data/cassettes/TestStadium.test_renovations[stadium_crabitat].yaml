@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus
+  response:
+    body:
+      string: '[{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
+        Big Buckets in Home Run territory to make your Home Runs just a little bit
+        bigger."},{"id":"black_hole_plus","title":"Black Hole +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Black Holes more often."},{"id":"flooding_plus","title":"Flooding
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Flooding weather more often."},{"id":"event_horizon_mod","title":"Event Horizon","type":1,"effects":["Modification"],"description":"Add
+        an Event Horizon to prevent the first overflow in Black Hole weather, giving
+        Unruns to your opponent''s next game."},{"id":"coffee_one_plus","title":"Coffee
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Coffee weather more often."},{"id":"peanut_mister_mod","title":"Peanut Mister","type":1,"effects":["Modification"],"description":"Add
+        a Peanut Mister to your stadium, perfect for battling those pesky peanut allergies."},{"id":"inconvenience_minus","title":"Inconvenience
+        -","type":0,"effects":["Steal Attempt % +","Hit % +"],"description":"Lower
+        the Inconvenience of your Ballpark."},{"id":"fortifications_plus","title":"Fortification
+        +","type":0,"effects":["Weather Event % -","Home Run % -"],"description":"Raise
+        the Fortification of your Ballpark."},{"id":"inconvenience_plus","title":"Inconvenience
+        +","type":0,"effects":["Steal Attempt % -","Hit % -"],"description":"Raise
+        the Inconvenience of your Ballpark."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1537'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 13 Mar 2021 14:00:46 GMT
+      Etag:
+      - W/"601-DUNCYH5tkUtx56QjjeOPRheiRz8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
