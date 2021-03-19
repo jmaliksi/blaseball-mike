@@ -420,6 +420,20 @@ def get_feed_phase(season, phase):
     &#34;&#34;&#34;
     s = session(5)
     res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
+    return check_network_response(res)
+
+
+def get_renovations(ids):
+    if isinstance(ids, list):
+        ids = &#39;,&#39;.join(ids)
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/renovations?ids={ids}&#39;)
+    return check_network_response(res)
+
+
+def get_renovation_progress(id_):
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </section>
@@ -1041,6 +1055,38 @@ Returns a dictionary with ID as key</p></div>
     return check_network_response(res)</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.database.get_renovation_progress"><code class="name flex">
+<span>def <span class="ident">get_renovation_progress</span></span>(<span>id_)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_renovation_progress(id_):
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_renovations"><code class="name flex">
+<span>def <span class="ident">get_renovations</span></span>(<span>ids)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_renovations(ids):
+    if isinstance(ids, list):
+        ids = &#39;,&#39;.join(ids)
+    s = session(5)
+    res = s.get(f&#39;{BASE_URL}/renovations?ids={ids}&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.database.get_season"><code class="name flex">
 <span>def <span class="ident">get_season</span></span>(<span>season_number)</span>
 </code></dt>
@@ -1264,6 +1310,8 @@ Returns as dictionary with game ID as key.</p></div>
 <li><code><a title="blaseball_mike.database.get_playoff_details" href="#blaseball_mike.database.get_playoff_details">get_playoff_details</a></code></li>
 <li><code><a title="blaseball_mike.database.get_playoff_matchups" href="#blaseball_mike.database.get_playoff_matchups">get_playoff_matchups</a></code></li>
 <li><code><a title="blaseball_mike.database.get_playoff_round" href="#blaseball_mike.database.get_playoff_round">get_playoff_round</a></code></li>
+<li><code><a title="blaseball_mike.database.get_renovation_progress" href="#blaseball_mike.database.get_renovation_progress">get_renovation_progress</a></code></li>
+<li><code><a title="blaseball_mike.database.get_renovations" href="#blaseball_mike.database.get_renovations">get_renovations</a></code></li>
 <li><code><a title="blaseball_mike.database.get_season" href="#blaseball_mike.database.get_season">get_season</a></code></li>
 <li><code><a title="blaseball_mike.database.get_season_statsheets" href="#blaseball_mike.database.get_season_statsheets">get_season_statsheets</a></code></li>
 <li><code><a title="blaseball_mike.database.get_simulation_data" href="#blaseball_mike.database.get_simulation_data">get_simulation_data</a></code></li>

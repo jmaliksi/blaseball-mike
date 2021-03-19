@@ -319,7 +319,12 @@ def get_fights(id_=None, season=0, cache_time=None):
     if season &gt; 1:
         data = list(filter(lambda x: x[&#39;data&#39;][&#39;season&#39;] == season, data))
 
-    return data</code></pre>
+    return data
+
+
+def get_stadiums(*, cache_time=3600):
+    s = session(cache_time)
+    return s.get(f&#39;{BASE_URL}/stadiums&#39;).json()[&#39;data&#39;]</code></pre>
 </details>
 </section>
 <section>
@@ -523,6 +528,20 @@ def get_fights(id_=None, season=0, cache_time=None):
 
     s = session(cache_time)
     return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_stadiums"><code class="name flex">
+<span>def <span class="ident">get_stadiums</span></span>(<span>*, cache_time=3600)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_stadiums(*, cache_time=3600):
+    s = session(cache_time)
+    return s.get(f&#39;{BASE_URL}/stadiums&#39;).json()[&#39;data&#39;]</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_team_updates"><code class="name flex">
@@ -827,6 +846,7 @@ def get_fights(id_=None, season=0, cache_time=None):
 <li><code><a title="blaseball_mike.chronicler.get_fights" href="#blaseball_mike.chronicler.get_fights">get_fights</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_games" href="#blaseball_mike.chronicler.get_games">get_games</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_player_updates" href="#blaseball_mike.chronicler.get_player_updates">get_player_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_stadiums" href="#blaseball_mike.chronicler.get_stadiums">get_stadiums</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_team_updates" href="#blaseball_mike.chronicler.get_team_updates">get_team_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_tribute_updates" href="#blaseball_mike.chronicler.get_tribute_updates">get_tribute_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.paged_get" href="#blaseball_mike.chronicler.paged_get">paged_get</a></code></li>
