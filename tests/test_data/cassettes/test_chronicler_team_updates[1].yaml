@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/teams/updates?count=1
+  response:
+    body:
+      string: '{"nextPage":"HtsrANaZME-InTSfhUsjjGBMO2xFFgAA","data":[{"updateId":"002bdb1e-99d6-4f30-889d-349f854b238c","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-07-29T08:12:22.438Z","data":{"_id":"bfd38797-8404-4b38-8b82-341da28b1f83","bench":["d6e9a211-7b33-45d9-8f09-6d1a1a7a3c78","3531c282-cb48-43df-b549-c5276296aaa7","b056a825-b629-4856-856b-53a15ad34acb"],"emoji":"0x1F45F","lineup":["18798b8f-6391-4cb2-8a5f-6fb540d646d5","198fd9c8-cb75-482d-873e-e6b91d42a446","4ca52626-58cd-449d-88bb-f6d631588640","248ccf3d-d5f6-4b69-83d9-40230ca909cd","d47dd08e-833c-4302-a965-a391d345455c","b4505c48-fc75-4f9e-8419-42b28dcc5273","bd4c6837-eeaa-4675-ae48-061efa0fd11a","b8ab86c6-9054-4832-9b96-508dbd4eb624","7b0f91aa-4d66-4362-993d-6ff60f7ce0ef"],"slogan":"Your
+        Kicks are My Kicks.","bullpen":["5b5bcc6c-d011-490f-b084-6fdc2c52f958","99e7de75-d2b8-4330-b897-a7334708aff9","50154d56-c58a-461f-976d-b06a4ae467f9","5b3f0a43-45e7-44e7-9496-512c24c040f0","93502db3-85fa-4393-acae-2a5ff3980dde","eaaef47e-82cc-4c90-b77d-75c3fb279e83","2d22f026-2873-410b-a45f-3b1dac665ffd","d002946f-e7ed-4ce4-a405-63bdaf5eabb5"],"fullName":"Charleston
+        Shoe Thieves","location":"Charleston","nickname":"Shoe Thieves","rotation":["2ae8cbfc-2155-4647-9996-3f2591091baf","f9c0d3cb-d8be-4f53-94c9-fc53bcbce520","36786f44-9066-4028-98d9-4fa84465ab9e","03f920cc-411f-44ef-ae66-98a44e883291","5e4dfa16-f1b9-400f-b8ef-a1613c2b026a"],"mainColor":"#ffce0a","shameRuns":0,"shorthand":"CHST","totalShames":2,"seasonShames":2,"championships":0,"totalShamings":0,"seasonShamings":6,"secondaryColor":"#E2DBAC","seasonAttributes":[],"permanentAttributes":[]}}]}'
+    headers:
+      Content-Length:
+      - '1666'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:03:26 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

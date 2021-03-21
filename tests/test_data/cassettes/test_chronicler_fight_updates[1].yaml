@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/fights/updates?count=1
+  response:
+    body:
+      string: '{"nextPage":"Mhnhp6vrT0WiBu35pi2N75Cnarg7UAAA","data":[{"fightId":"3e2882a7-1553-49bd-b271-49cab930d9fc","timestamp":"2020-10-11T02:29:02.729Z","hash":"883c55dd-08dd-c694-97fd-b32197ee7370","data":{"id":"3e2882a7-1553-49bd-b271-49cab930d9fc","day":1,"phase":2,"rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","shame":false,"awayHp":"29918122","homeHp":"29140","inning":0,"season":8,"weather":11,"awayOdds":0.000000023,"awayTeam":"40b9ec2a-cb43-4dbb-b836-5accb62e7c20","homeOdds":99.999999987,"homeTeam":"bfd38797-8404-4b38-8b82-341da28b1f83","outcomes":[],"awayBases":4,"awayMaxHp":"29918122","awayScore":0,"finalized":false,"gameStart":true,"homeBases":4,"homeMaxHp":"29140","homeScore":0,"statsheet":"52dc302c-0ca4-47f2-b792-1c1cf6d5e9df","atBatBalls":0,"awayBatter":null,"homeBatter":null,"lastUpdate":"Play
+        ball!","awayPitcher":"3af96a6b-866c-4b03-bc14-090acf6ecee5","awayStrikes":4,"baseRunners":[],"homePitcher":"04e14d7b-5021-4250-a3cd-932ba8e0a889","homeStrikes":3,"repeatCount":0,"seriesIndex":1,"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","topOfInning":true,"atBatStrikes":0,"awayTeamName":"THE
+        SHELLED ONE''S PODS","gameComplete":false,"homeTeamName":"Charleston Shoe
+        Thieves","isPostseason":false,"seriesLength":1,"awayTeamColor":"#ff0000","awayTeamEmoji":"0x1F95C","basesOccupied":[],"damageResults":"[]","homeTeamColor":"#ffce0a","homeTeamEmoji":"0x1F45F","awayBatterName":"","halfInningOuts":0,"homeBatterName":"","awayPitcherName":"Axel
+        Trololol","baseRunnerNames":[],"baserunnerCount":0,"halfInningScore":0,"homePitcherName":"Jaylen
+        Hotdogfingers","awayTeamNickname":"PODS","homeTeamNickname":"Shoe Thieves","awayTeamBatterCount":-1,"homeTeamBatterCount":-1,"awayTeamSecondaryColor":"#ff0000","homeTeamSecondaryColor":"#ffce0a"}}]}'
+    headers:
+      Content-Length:
+      - '1754'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:03:48 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?count=1
+  response:
+    body:
+      string: '{"nextPage":"enjyCVIzpkGIENgOl7JTtWBMO2xFFgAA","data":[{"updateId":"0054517a-2101-4204-a6f9-685587617504","playerId":"09f2787a-3352-41a6-8810-d80e97b253b5","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-02T09:22:44.666Z","data":{"_id":"09f2787a-3352-41a6-8810-d80e97b253b5","name":"Curry
+        Aliciakeyes","soul":8,"moxie":0.8889447173393259,"buoyancy":0.4091256148654818,"coldness":0.5907833937420564,"deceased":false,"divinity":0.9165996385012969,"chasiness":0.8714860623556537,"martyrdom":0.5508321332851869,"baseThirst":0.26583361008027584,"indulgence":0.4119105123818023,"musclitude":0.8177383953605961,"tragicness":0,"omniscience":0.46439922713553083,"patheticism":0.8674003956783001,"suppression":0.33049793810879136,"continuation":0.20099374255469038,"ruthlessness":0.6503800096498373,"totalFingers":10,"watchfulness":0.8480151044105111,"laserlikeness":0.0616625712588581,"overpowerment":0.7615887951082312,"tenaciousness":0.8986753479447172,"thwackability":0.0245122543244205,"anticapitalism":0.9465373518328934,"groundFriction":0.5459215343090857,"pressurization":0.9383202630490881,"unthwackability":0.5554861697045805,"shakespearianism":0.3771775983124346}}]}'
+    headers:
+      Content-Length:
+      - '1178'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:03:19 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1
