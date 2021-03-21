@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/time/seasons
+  response:
+    body:
+      string: '{"data":[{"season":0,"tournament":-1,"startTime":"2020-07-20T16:00:00Z","seasonStartTime":"2020-07-20T16:00:00Z","postseasonStartTime":"2020-07-25T13:00:00Z","endTime":"2020-07-26T00:30:00Z","days":111},{"season":1,"tournament":-1,"startTime":"2020-07-27T16:00:00Z","seasonStartTime":"2020-07-27T16:00:00Z","postseasonStartTime":"2020-08-01T13:00:02.705Z","endTime":"2020-08-02T00:26:01.312Z","days":111},{"season":2,"tournament":-1,"startTime":"2020-08-03T08:00:03.438Z","seasonStartTime":"2020-08-03T16:00:02.156Z","postseasonStartTime":"2020-08-08T13:00:01.13Z","endTime":"2020-08-09T03:25:29.935Z","days":113},{"season":3,"tournament":-1,"startTime":"2020-08-24T08:00:01.591Z","seasonStartTime":"2020-08-24T16:00:01.517Z","postseasonStartTime":"2020-08-29T13:00:06.016Z","endTime":"2020-08-30T01:25:23.983Z","days":112},{"season":4,"tournament":-1,"startTime":"2020-08-31T08:00:11.034Z","seasonStartTime":"2020-08-31T16:00:05.535Z","postseasonStartTime":"2020-09-05T13:00:04.186Z","endTime":"2020-09-06T02:25:21.437Z","days":113},{"season":5,"tournament":-1,"startTime":"2020-09-07T08:00:06.041Z","seasonStartTime":"2020-09-07T16:00:05.036Z","postseasonStartTime":"2020-09-12T13:00:04.152Z","endTime":"2020-09-12T23:23:52.071Z","days":110},{"season":6,"tournament":-1,"startTime":"2020-09-14T08:00:04.819Z","seasonStartTime":"2020-09-14T16:00:06.898Z","postseasonStartTime":"2020-09-19T13:00:04.822Z","endTime":"2020-09-20T02:27:48.724Z","days":113},{"season":7,"tournament":-1,"startTime":"2020-09-21T08:00:02.74Z","seasonStartTime":"2020-09-21T16:00:02.016Z","postseasonStartTime":"2020-09-26T13:00:01.000943Z","endTime":"2020-09-27T01:24:14.675Z","days":112},{"season":8,"tournament":-1,"startTime":"2020-10-05T14:44:41.86Z","seasonStartTime":"2020-10-05T16:00:01.001698Z","postseasonStartTime":"2020-10-09T20:00:04.988Z","endTime":"2020-10-11T02:47:15.779Z","days":116},{"season":9,"tournament":-1,"startTime":"2020-10-12T08:00:01.000781Z","seasonStartTime":"2020-10-12T15:04:35.707Z","postseasonStartTime":"2020-10-16T21:00:01.001713Z","endTime":"2020-10-18T01:07:01.002631Z","days":113},{"season":10,"tournament":-1,"startTime":"2020-10-19T08:00:01.500601Z","seasonStartTime":"2020-10-19T16:00:01.002057Z","postseasonStartTime":"2020-10-23T20:36:14.880506Z","endTime":"2020-10-25T03:27:00.998138Z","days":120},{"season":10,"tournament":0,"startTime":"2020-11-17T22:00:01.003481Z","seasonStartTime":null,"postseasonStartTime":null,"endTime":null,"days":16},{"season":11,"tournament":-1,"startTime":"2021-03-01T08:00:02.404024Z","seasonStartTime":"2021-03-01T16:00:13.446802Z","postseasonStartTime":"2021-03-02T20:00:01.003754Z","endTime":"2021-03-04T16:30:10.601129Z","days":116},{"season":12,"tournament":-1,"startTime":"2021-03-08T08:00:01.005602Z","seasonStartTime":"2021-03-08T16:00:01.00324Z","postseasonStartTime":"2021-03-09T20:00:01.00346Z","endTime":"2021-03-11T16:36:48.255016Z","days":116},{"season":13,"tournament":-1,"startTime":"2021-03-15T08:00:01.000388Z","seasonStartTime":"2021-03-15T15:00:01.003898Z","postseasonStartTime":"2021-03-16T19:00:01.00034Z","endTime":"2021-03-18T15:30:44.44719Z","days":115}]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 20 Mar 2021 21:05:20 GMT
+      Server:
+      - Kestrel
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: OK
+version: 1

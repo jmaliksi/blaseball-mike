@@ -2,8 +2,6 @@
 
 Swagger docs: https://api.blaseball-reference.com/docs
 """
-import requests
-import requests_cache
 from blaseball_mike.session import session, check_network_response
 
 BASE_URL = 'https://api.blaseball-reference.com/v1'
@@ -62,7 +60,7 @@ def _apply_type_map(blob):
     return res
 
 
-def get_player_ids_by_name(name, current=True):
+def get_player_ids_by_name(name, current=True, cache_time=3600):
     """
     Returns the guid for a given player name.
 
@@ -70,12 +68,12 @@ def get_player_ids_by_name(name, current=True):
         name: Player name.
         current: If false, include previous names in search.
     """
-    s = session(3600)
+    s = session(cache_time)
     players = s.get(f'{BASE_URL}/playerIdsByName?name={name}&current={current}')
     return [r['player_id'] for r in check_network_response(players)]
 
 
-def get_all_players_for_gameday(season, day):
+def get_all_players_for_gameday(season, day, cache_time=600):
     """
     Returns fk stats for all players on the given gameday.
 
@@ -87,12 +85,12 @@ def get_all_players_for_gameday(season, day):
         raise ValueError("Season must be >= 1")
     if day < 1:
         raise ValueError("Day must be >= 1")
-    s = session(600)
+    s = session(cache_time)
     players = s.get(f'{BASE_URL}/allPlayersForGameday?season={season - 1}&day={day - 1}')
     return [_apply_type_map(p) for p in check_network_response(players)]
 
 
-def get_stat_leaders(season='current', group='hitting,pitching'):
+def get_stat_leaders(season='current', group='hitting,pitching', cache_time=600):
     """
     Get season stat leaders from datablase.
 
@@ -134,7 +132,7 @@ def get_stat_leaders(season='current', group='hitting,pitching'):
         'season': season,
         'group': group,
     }
-    s = session(600)
+    s = session(cache_time)
     stats = s.get(f'{BASE_URL_V2}/stats/leaders', params=params)
     return check_network_response(stats)
 
@@ -148,7 +146,8 @@ def get_stats(type_='season',
               order=None,
               player_id=None,
               team_id=None,
-              limit=None):
+              limit=None,
+              cache_time=600):
     """
     Get the stats filtered by team/player/season. Defaults to fetching all stats which is
     *extremely slow*, be warned.
@@ -260,6 +259,6 @@ def get_stats(type_='season',
     if limit:
         params['limit'] = limit
 
-    s = session(600)
+    s = session(cache_time)
     stats = s.get(f'{BASE_URL_V2}/stats', params=params)
     return check_network_response(stats)

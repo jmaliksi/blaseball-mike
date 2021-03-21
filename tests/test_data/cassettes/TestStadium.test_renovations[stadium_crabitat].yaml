@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus
+    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus,psychoacoustics_mod,big_bucket_mod,event_horizon_mod,solar_panels_mod,coffee_two_plus,fortifications_minus,mysticism_plus,viscosity_plus,sun_two_plus
   response:
     body:
       string: '[{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
@@ -20,8 +20,7 @@ interactions:
         % +"],"description":"Your Ballpark will have Black Holes more often."},{"id":"flooding_plus","title":"Flooding
         +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
         Flooding weather more often."},{"id":"event_horizon_mod","title":"Event Horizon","type":1,"effects":["Modification"],"description":"Add
-        an Event Horizon to prevent the first overflow in Black Hole weather, giving
-        Unruns to your opponent''s next game."},{"id":"coffee_one_plus","title":"Coffee
+        an Event Horizon to save each game''s first overflow of Black Hole for later."},{"id":"coffee_one_plus","title":"Coffee
         +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
         Coffee weather more often."},{"id":"peanut_mister_mod","title":"Peanut Mister","type":1,"effects":["Modification"],"description":"Add
         a Peanut Mister to your stadium, perfect for battling those pesky peanut allergies."},{"id":"inconvenience_minus","title":"Inconvenience
@@ -30,18 +29,34 @@ interactions:
         +","type":0,"effects":["Weather Event % -","Home Run % -"],"description":"Raise
         the Fortification of your Ballpark."},{"id":"inconvenience_plus","title":"Inconvenience
         +","type":0,"effects":["Steal Attempt % -","Hit % -"],"description":"Raise
-        the Inconvenience of your Ballpark."}]'
+        the Inconvenience of your Ballpark."},{"id":"psychoacoustics_mod","title":"PsychoAcoustics","type":1,"effects":["Modification","-----"],"description":"Tune
+        your Ballpark to a Localized Frequency to Echo your Opponents in Feedback
+        and Reverb weathers."},{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
+        Big Buckets in Home Run territory to make your Home Runs just a little bit
+        bigger."},{"id":"event_horizon_mod","title":"Event Horizon","type":1,"effects":["Modification"],"description":"Add
+        an Event Horizon to save each game''s first overflow of Black Hole for later."},{"id":"solar_panels_mod","title":"Solar
+        Panels","type":1,"effects":["Modification"],"description":"Add Solar Panels
+        to your Ballpark to save each game''s first overflow of Sun 2 for later."},{"id":"coffee_two_plus","title":"Coffee
+        Two +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will
+        have Coffee Two weather more often."},{"id":"fortifications_minus","title":"Fortification
+        -","type":0,"effects":["Weather Event % +","Home Run % +"],"description":"Lower
+        the Fortification of your Ballpark."},{"id":"mysticism_plus","title":"Mysticism
+        +","type":0,"effects":["Special Ability % +"],"description":"Raise the Mysticism
+        of your Ballpark."},{"id":"viscosity_plus","title":"Viscosity +","type":0,"effects":["Hard
+        Hit % -","Contact % +"],"description":"Raise the Viscosity of your Ballpark."},{"id":"sun_two_plus","title":"Sun
+        2 +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will
+        have Sun 2 weather more often."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1537'
+      - '3034'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 13 Mar 2021 14:00:46 GMT
+      - Sat, 20 Mar 2021 20:36:14 GMT
       Etag:
-      - W/"601-DUNCYH5tkUtx56QjjeOPRheiRz8"
+      - W/"bda-vYcagek8aGEBzZdUX1zVvGcDYSQ"
       Server:
       - Cowboy
       Vary:
