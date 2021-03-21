@@ -87,7 +87,7 @@ def paged_get_lazy(url,params,session):
 
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5):
+              finished=None, outcomes=None, order=None, count=None, before=None, after=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get Games
 
@@ -103,13 +103,24 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         outcomes: search string to filter game outcomes.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
     params = {}
     if season is not None and tournament is not None:
         raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
 
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
     if tournament is not None:
         params[&#34;tournament&#34;] = tournament
     if season:
@@ -138,10 +149,97 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         params[&#34;weather&#34;] = weather
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s,lazy=lazy)
+    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s, lazy=lazy)
 
 
-def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+def get_game_updates(season=None, tournament=None, day=None, game_ids=None, started=None, search=None, order=None,
+                      count=None, before=None, after=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Get Game Updates
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        day: 1-indexed season.
+        game_ids: list or comma-separated string of game IDs.
+        started: boolean for if game has started.
+        search: search string to filter game events.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if tournament is not None:
+        params[&#34;tournament&#34;] = tournament
+    if season:
+        params[&#34;season&#34;] = season - 1
+    if day:
+        params[&#34;day&#34;] = day - 1
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+    if game_ids:
+        params[&#34;game&#34;] = prepare_id(game_ids)
+    if started:
+        params[&#34;started&#34;] = started
+    if search:
+        params[&#34;search&#34;] = search
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/games/updates&#39;, params=params, session=s, lazy=lazy)
+
+
+def get_players(forbidden=None, incinerated=None, cache_time=5):
+    &#34;&#34;&#34;
+    Get all players
+
+    Args:
+        forbidden: filter by Shadows and non-Shadows, default returns all
+        incinerated: filter by deceased and non-deceased, default returns all
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    params = {}
+    if forbidden:
+        params[&#34;forbidden&#34;] = forbidden
+    if incinerated:
+        params[&#34;incinerated&#34;] = incinerated
+
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/players&#39;, params=params)).get(&#34;data&#34;, [])
+
+
+def get_player_names(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get all player names
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/players/names&#39;))
+
+
+def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get player at time
 
@@ -176,10 +274,21 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         params[&#34;player&#34;] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s)
+    return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s, lazy=lazy)
 
 
-def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+def get_teams(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get all Teams
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/teams&#39;)).get(&#34;data&#34;, [])
+
+
+def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get team at time
 
@@ -214,10 +323,52 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
         params[&#34;team&#34;] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s,lazy=lazy)
+    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s, lazy=lazy)
 
 
-def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, order=None, count=None, lazy=False,
+                       cache_time=5):
+    &#34;&#34;&#34;
+    Get roster changes
+
+    Args:
+        team_ids: list or comma-separated string of team IDs.
+        player_ids: list or comma-separated string of player IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 250&#34;)
+        params[&#34;count&#34;] = count
+    if player_ids:
+        params[&#34;team&#34;] = prepare_id(player_ids)
+    if team_ids:
+        params[&#34;team&#34;] = prepare_id(team_ids)
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/roster/updates&#39;, params=params, session=s, lazy=lazy)
+
+
+def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get Hall of Flame at time
 
@@ -252,12 +403,12 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=Fa
     return paged_get(f&#39;{BASE_URL}/tributes/updates&#39;, params=params, session=s,lazy=lazy)
 
 
-def time_map(season=0, tournament=-1, day=0, include_nongame=False, cache_time=3600):
+def time_map(season=None, tournament=None, day=None, include_nongame=True, cache_time=3600):
     &#34;&#34;&#34;
     Map a season/day to a real-life timestamp
 
     Args:
-        season: 1-indexed season. if 0 do not filter by season.
+        season: 1-indexed season.
         tournament: tournament identifier.
         day: 1-indexed day. if 0 do not filter by season.
         include_nongame: if True, include timestamps for phase changes, such as pre &amp; post elections.
@@ -275,18 +426,26 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False, cache_time=3
       }
     ]
     &#34;&#34;&#34;
-    season = season - 1
-    day = day - 1
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+    if season is not None:
+        season = season - 1
+    if day is not None:
+        day = day - 1
 
     s = session(cache_time)
-    map_ = check_network_response(s.get(f&#39;{BASE_URL}/time/map&#39;))[&#39;data&#39;]
+    results = check_network_response(s.get(f&#39;{BASE_URL}/time/map&#39;))[&#39;data&#39;]
 
     # Filter out desired events
-    if tournament != -1:
+    if tournament is not None:
         # Season is not always -1 if a tournament is active, so ignore it
-        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament and x[&#39;day&#39;] == day, map_))
-    else:
-        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season and x[&#39;day&#39;] == day, map_))
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament, results))
+
+    if season is not None:
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season, results))
+
+    if day is not None:
+        results = list(filter(lambda x: x[&#39;day&#39;] == day, results))
 
     # Optionally filter out phase-change events
     if not include_nongame:
@@ -301,7 +460,57 @@ def time_map(season=0, tournament=-1, day=0, include_nongame=False, cache_time=3
     return results
 
 
-def get_fights(id_=None, season=0, cache_time=None):
+def time_season(season=None, tournament=None, cache_time=3600):
+    &#34;&#34;&#34;
+    Return start/end times and number of days in a season
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    Returns:
+    ```
+    [
+      {
+        &#39;season&#39;: 1,
+        &#39;tournament&#39;: -1,
+        &#39;startTime&#39;: datetime.datetime(2020, 7, 27, 16, 13, 21, 108000),
+        &#39;seasonStartTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;postseasonStartTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;endTime&#39;: datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+        days=111
+      }
+    ]
+    &#34;&#34;&#34;
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+    if season is not None:
+        season = season - 1
+
+    s = session(cache_time)
+    results = check_network_response(s.get(f&#39;{BASE_URL}/time/seasons&#39;)).get(&#39;data&#39;, [])
+
+    # Filter out desired events
+    if tournament is not None:
+        # Season is not always -1 if a tournament is active, so ignore it
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament, results))
+    if season is not None:
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season, results))
+
+    # Convert time strings into datetime objects
+    for result in results:
+        result[&#34;startTime&#34;] = parse(result[&#34;startTime&#34;])
+        if result[&#34;seasonStartTime&#34;] is not None:
+            result[&#34;seasonStartTime&#34;] = parse(result[&#34;seasonStartTime&#34;])
+        if result[&#34;postseasonStartTime&#34;] is not None:
+            result[&#34;postseasonStartTime&#34;] = parse(result[&#34;postseasonStartTime&#34;])
+        if result[&#34;endTime&#34;] is not None:
+            result[&#34;endTime&#34;] = parse(result[&#34;endTime&#34;])
+
+    return results
+
+
+def get_fights(id_=None, season=0, cache_time=3600):
     &#34;&#34;&#34;
     Return a list of boss fights
 
@@ -322,9 +531,156 @@ def get_fights(id_=None, season=0, cache_time=None):
     return data
 
 
-def get_stadiums(*, cache_time=3600):
+def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of boss fight event updates
+
+    Args:
+        game_ids: list or comma-separated string of fight IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+    if game_ids:
+        params[&#34;fight&#34;] = prepare_id(game_ids)
+
     s = session(cache_time)
-    return s.get(f&#39;{BASE_URL}/stadiums&#39;).json()[&#39;data&#39;]</code></pre>
+    return paged_get(f&#39;{BASE_URL}/fights/updates&#39;, params=params, session=s, lazy=lazy)
+
+
+def get_stadiums(*, cache_time=3600):
+    &#34;&#34;&#34;
+    Return a list of stadiums
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    return s.get(f&#39;{BASE_URL}/stadiums&#39;).json()[&#39;data&#39;]
+
+
+def get_temporal_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of temporal object updates
+    This is generally used for God Speak (Coin, Monitor, etc)
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/temporal/updates&#39;, params=params, session=s, lazy=lazy)
+
+
+def get_sim_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of simulation object updates
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/sim/updates&#39;, params=params, session=s, lazy=lazy)
+
+
+def get_globalevent_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=600):
+    &#34;&#34;&#34;
+    Return a list of global event object updates
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/globalevents/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
 </details>
 </section>
 <section>
@@ -334,8 +690,72 @@ def get_stadiums(*, cache_time=3600):
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
+<dt id="blaseball_mike.chronicler.get_fight_updates"><code class="name flex">
+<span>def <span class="ident">get_fight_updates</span></span>(<span>game_ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of boss fight event updates</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>game_ids</code></strong></dt>
+<dd>list or comma-separated string of fight IDs.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of boss fight event updates
+
+    Args:
+        game_ids: list or comma-separated string of fight IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+    if game_ids:
+        params[&#34;fight&#34;] = prepare_id(game_ids)
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/fights/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.chronicler.get_fights"><code class="name flex">
-<span>def <span class="ident">get_fights</span></span>(<span>id_=None, season=0, cache_time=None)</span>
+<span>def <span class="ident">get_fights</span></span>(<span>id_=None, season=0, cache_time=3600)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a list of boss fights</p>
@@ -352,7 +772,7 @@ def get_stadiums(*, cache_time=3600):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_fights(id_=None, season=0, cache_time=None):
+<pre><code class="python">def get_fights(id_=None, season=0, cache_time=3600):
     &#34;&#34;&#34;
     Return a list of boss fights
 
@@ -373,8 +793,101 @@ def get_stadiums(*, cache_time=3600):
     return data</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.chronicler.get_game_updates"><code class="name flex">
+<span>def <span class="ident">get_game_updates</span></span>(<span>season=None, tournament=None, day=None, game_ids=None, started=None, search=None, order=None, count=None, before=None, after=None, lazy=False, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get Game Updates</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed season.</dd>
+<dt><strong><code>tournament</code></strong></dt>
+<dd>tournament identifier.</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>1-indexed season.</dd>
+<dt><strong><code>game_ids</code></strong></dt>
+<dd>list or comma-separated string of game IDs.</dd>
+<dt><strong><code>started</code></strong></dt>
+<dd>boolean for if game has started.</dd>
+<dt><strong><code>search</code></strong></dt>
+<dd>search string to filter game events.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_game_updates(season=None, tournament=None, day=None, game_ids=None, started=None, search=None, order=None,
+                      count=None, before=None, after=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Get Game Updates
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        day: 1-indexed season.
+        game_ids: list or comma-separated string of game IDs.
+        started: boolean for if game has started.
+        search: search string to filter game events.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if tournament is not None:
+        params[&#34;tournament&#34;] = tournament
+    if season:
+        params[&#34;season&#34;] = season - 1
+    if day:
+        params[&#34;day&#34;] = day - 1
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+    if game_ids:
+        params[&#34;game&#34;] = prepare_id(game_ids)
+    if started:
+        params[&#34;started&#34;] = started
+    if search:
+        params[&#34;search&#34;] = search
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/games/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.chronicler.get_games"><code class="name flex">
-<span>def <span class="ident">get_games</span></span>(<span>season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5)</span>
+<span>def <span class="ident">get_games</span></span>(<span>season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None, finished=None, outcomes=None, order=None, count=None, before=None, after=None, lazy=False, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Games</p>
@@ -402,6 +915,10 @@ def get_stadiums(*, cache_time=3600):
 <dd>sort in ascending ('asc') or descending ('desc') order.</dd>
 <dt><strong><code>count</code></strong></dt>
 <dd>number of entries to return.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
 <dt><strong><code>lazy</code></strong></dt>
 <dd>whether to return a list or a generator</dd>
 <dt><strong><code>cache_time</code></strong></dt>
@@ -412,7 +929,7 @@ def get_stadiums(*, cache_time=3600):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None, lazy=False, cache_time=5):
+              finished=None, outcomes=None, order=None, count=None, before=None, after=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get Games
 
@@ -428,13 +945,24 @@ def get_stadiums(*, cache_time=3600):
         outcomes: search string to filter game outcomes.
         order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
         count: number of entries to return.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
     params = {}
     if season is not None and tournament is not None:
         raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
 
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
     if tournament is not None:
         params[&#34;tournament&#34;] = tournament
     if season:
@@ -463,11 +991,95 @@ def get_stadiums(*, cache_time=3600):
         params[&#34;weather&#34;] = weather
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s,lazy=lazy)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/games&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_globalevent_updates"><code class="name flex">
+<span>def <span class="ident">get_globalevent_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False, cache_time=600)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of global event object updates</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_globalevent_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=600):
+    &#34;&#34;&#34;
+    Return a list of global event object updates
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/globalevents/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_player_names"><code class="name flex">
+<span>def <span class="ident">get_player_names</span></span>(<span>*, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all player names</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_player_names(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get all player names
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/players/names&#39;))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_player_updates"><code class="name flex">
-<span>def <span class="ident">get_player_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None)</span>
+<span>def <span class="ident">get_player_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get player at time</p>
@@ -492,7 +1104,7 @@ def get_stadiums(*, cache_time=3600):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+<pre><code class="python">def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get player at time
 
@@ -527,25 +1139,194 @@ def get_stadiums(*, cache_time=3600):
         params[&#34;player&#34;] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/players/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_players"><code class="name flex">
+<span>def <span class="ident">get_players</span></span>(<span>forbidden=None, incinerated=None, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all players</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>forbidden</code></strong></dt>
+<dd>filter by Shadows and non-Shadows, default returns all</dd>
+<dt><strong><code>incinerated</code></strong></dt>
+<dd>filter by deceased and non-deceased, default returns all</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_players(forbidden=None, incinerated=None, cache_time=5):
+    &#34;&#34;&#34;
+    Get all players
+
+    Args:
+        forbidden: filter by Shadows and non-Shadows, default returns all
+        incinerated: filter by deceased and non-deceased, default returns all
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    params = {}
+    if forbidden:
+        params[&#34;forbidden&#34;] = forbidden
+    if incinerated:
+        params[&#34;incinerated&#34;] = incinerated
+
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/players&#39;, params=params)).get(&#34;data&#34;, [])</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_roster_updates"><code class="name flex">
+<span>def <span class="ident">get_roster_updates</span></span>(<span>team_ids=None, player_ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get roster changes</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>team_ids</code></strong></dt>
+<dd>list or comma-separated string of team IDs.</dd>
+<dt><strong><code>player_ids</code></strong></dt>
+<dd>list or comma-separated string of player IDs.</dd>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, order=None, count=None, lazy=False,
+                       cache_time=5):
+    &#34;&#34;&#34;
+    Get roster changes
+
+    Args:
+        team_ids: list or comma-separated string of team IDs.
+        player_ids: list or comma-separated string of player IDs.
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 250&#34;)
+        params[&#34;count&#34;] = count
+    if player_ids:
+        params[&#34;team&#34;] = prepare_id(player_ids)
+    if team_ids:
+        params[&#34;team&#34;] = prepare_id(team_ids)
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/roster/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_sim_updates"><code class="name flex">
+<span>def <span class="ident">get_sim_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of simulation object updates</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sim_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of simulation object updates
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/sim/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_stadiums"><code class="name flex">
 <span>def <span class="ident">get_stadiums</span></span>(<span>*, cache_time=3600)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Return a list of stadiums</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_stadiums(*, cache_time=3600):
+    &#34;&#34;&#34;
+    Return a list of stadiums
+    &#34;&#34;&#34;
     s = session(cache_time)
     return s.get(f&#39;{BASE_URL}/stadiums&#39;).json()[&#39;data&#39;]</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_team_updates"><code class="name flex">
-<span>def <span class="ident">get_team_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None)</span>
+<span>def <span class="ident">get_team_updates</span></span>(<span>ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get team at time</p>
@@ -570,7 +1351,7 @@ def get_stadiums(*, cache_time=3600):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+<pre><code class="python">def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get team at time
 
@@ -605,11 +1386,97 @@ def get_stadiums(*, cache_time=3600):
         params[&#34;team&#34;] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s,lazy=lazy)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/teams/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_teams"><code class="name flex">
+<span>def <span class="ident">get_teams</span></span>(<span>*, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all Teams</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_teams(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get all Teams
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    return check_network_response(s.get(f&#39;{BASE_URL}/teams&#39;)).get(&#34;data&#34;, [])</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_temporal_updates"><code class="name flex">
+<span>def <span class="ident">get_temporal_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of temporal object updates
+This is generally used for God Speak (Coin, Monitor, etc)</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>before</code></strong></dt>
+<dd>return elements before this string or datetime timestamp.</dd>
+<dt><strong><code>after</code></strong></dt>
+<dd>return elements after this string or datetime timestamp.</dd>
+<dt><strong><code>order</code></strong></dt>
+<dd>sort in ascending ('asc') or descending ('desc') order.</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>number of entries to return.</dd>
+<dt><strong><code>lazy</code></strong></dt>
+<dd>whether to return a list or a generator</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_temporal_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+    &#34;&#34;&#34;
+    Return a list of temporal object updates
+    This is generally used for God Speak (Coin, Monitor, etc)
+
+    Args:
+        before: return elements before this string or datetime timestamp.
+        after: return elements after this string or datetime timestamp.
+        order: sort in ascending (&#39;asc&#39;) or descending (&#39;desc&#39;) order.
+        count: number of entries to return.
+        lazy: whether to return a list or a generator
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    if isinstance(before, datetime):
+        before = before.strftime(TIMESTAMP_FORMAT)
+    if isinstance(after, datetime):
+        after = after.strftime(TIMESTAMP_FORMAT)
+
+    params = {}
+    if before:
+        params[&#34;before&#34;] = before
+    if after:
+        params[&#34;after&#34;] = after
+    if order:
+        if order.lower() not in (&#39;asc&#39;, &#39;desc&#39;):
+            raise ValueError(&#34;Order must be &#39;asc&#39; or &#39;desc&#39;&#34;)
+        params[&#34;order&#34;] = order
+    if count:
+        if count &lt; 1 or count &gt;= 1000:
+            raise ValueError(&#34;Count must be between 1 and 1000&#34;)
+        params[&#34;count&#34;] = count
+
+    s = session(cache_time)
+    return paged_get(f&#39;{BASE_URL}/temporal/updates&#39;, params=params, session=s, lazy=lazy)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_tribute_updates"><code class="name flex">
-<span>def <span class="ident">get_tribute_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False, cache_time=None)</span>
+<span>def <span class="ident">get_tribute_updates</span></span>(<span>before=None, after=None, order=None, count=None, lazy=False, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Hall of Flame at time</p>
@@ -632,7 +1499,7 @@ def get_stadiums(*, cache_time=3600):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=None):
+<pre><code class="python">def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
     &#34;&#34;&#34;
     Get Hall of Flame at time
 
@@ -743,14 +1610,14 @@ def get_stadiums(*, cache_time=3600):
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.time_map"><code class="name flex">
-<span>def <span class="ident">time_map</span></span>(<span>season=0, tournament=-1, day=0, include_nongame=False, cache_time=3600)</span>
+<span>def <span class="ident">time_map</span></span>(<span>season=None, tournament=None, day=None, include_nongame=True, cache_time=3600)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Map a season/day to a real-life timestamp</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>season</code></strong></dt>
-<dd>1-indexed season. if 0 do not filter by season.</dd>
+<dd>1-indexed season.</dd>
 <dt><strong><code>tournament</code></strong></dt>
 <dd>tournament identifier.</dd>
 <dt><strong><code>day</code></strong></dt>
@@ -776,12 +1643,12 @@ def get_stadiums(*, cache_time=3600):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def time_map(season=0, tournament=-1, day=0, include_nongame=False, cache_time=3600):
+<pre><code class="python">def time_map(season=None, tournament=None, day=None, include_nongame=True, cache_time=3600):
     &#34;&#34;&#34;
     Map a season/day to a real-life timestamp
 
     Args:
-        season: 1-indexed season. if 0 do not filter by season.
+        season: 1-indexed season.
         tournament: tournament identifier.
         day: 1-indexed day. if 0 do not filter by season.
         include_nongame: if True, include timestamps for phase changes, such as pre &amp; post elections.
@@ -799,18 +1666,26 @@ def get_stadiums(*, cache_time=3600):
       }
     ]
     &#34;&#34;&#34;
-    season = season - 1
-    day = day - 1
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+    if season is not None:
+        season = season - 1
+    if day is not None:
+        day = day - 1
 
     s = session(cache_time)
-    map_ = check_network_response(s.get(f&#39;{BASE_URL}/time/map&#39;))[&#39;data&#39;]
+    results = check_network_response(s.get(f&#39;{BASE_URL}/time/map&#39;))[&#39;data&#39;]
 
     # Filter out desired events
-    if tournament != -1:
+    if tournament is not None:
         # Season is not always -1 if a tournament is active, so ignore it
-        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament and x[&#39;day&#39;] == day, map_))
-    else:
-        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season and x[&#39;day&#39;] == day, map_))
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament, results))
+
+    if season is not None:
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season, results))
+
+    if day is not None:
+        results = list(filter(lambda x: x[&#39;day&#39;] == day, results))
 
     # Optionally filter out phase-change events
     if not include_nongame:
@@ -819,6 +1694,87 @@ def get_stadiums(*, cache_time=3600):
     # Convert time strings into datetime objects
     for result in results:
         result[&#34;startTime&#34;] = parse(result[&#34;startTime&#34;])
+        if result[&#34;endTime&#34;] is not None:
+            result[&#34;endTime&#34;] = parse(result[&#34;endTime&#34;])
+
+    return results</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.time_season"><code class="name flex">
+<span>def <span class="ident">time_season</span></span>(<span>season=None, tournament=None, cache_time=3600)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return start/end times and number of days in a season</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed season.</dd>
+<dt><strong><code>tournament</code></strong></dt>
+<dd>tournament identifier.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl>
+<p>Returns:
+```
+[
+{
+'season': 1,
+'tournament': -1,
+'startTime': datetime.datetime(2020, 7, 27, 16, 13, 21, 108000),
+'seasonStartTime': datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+'postseasonStartTime': datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+'endTime': datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+days=111
+}
+]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def time_season(season=None, tournament=None, cache_time=3600):
+    &#34;&#34;&#34;
+    Return start/end times and number of days in a season
+
+    Args:
+        season: 1-indexed season.
+        tournament: tournament identifier.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    Returns:
+    ```
+    [
+      {
+        &#39;season&#39;: 1,
+        &#39;tournament&#39;: -1,
+        &#39;startTime&#39;: datetime.datetime(2020, 7, 27, 16, 13, 21, 108000),
+        &#39;seasonStartTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;postseasonStartTime&#39;: datetime.datetime(2020, 8, 1, 7, 13, 21, 108000),
+        &#39;endTime&#39;: datetime.datetime(2020, 8, 1, 13, 0, 2, 705000)
+        days=111
+      }
+    ]
+    &#34;&#34;&#34;
+    if season is not None and tournament is not None:
+        raise ValueError(&#34;Cannot set both Season and Tournament&#34;)
+    if season is not None:
+        season = season - 1
+
+    s = session(cache_time)
+    results = check_network_response(s.get(f&#39;{BASE_URL}/time/seasons&#39;)).get(&#39;data&#39;, [])
+
+    # Filter out desired events
+    if tournament is not None:
+        # Season is not always -1 if a tournament is active, so ignore it
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == tournament, results))
+    if season is not None:
+        results = list(filter(lambda x: x[&#39;tournament&#39;] == -1 and x[&#39;season&#39;] == season, results))
+
+    # Convert time strings into datetime objects
+    for result in results:
+        result[&#34;startTime&#34;] = parse(result[&#34;startTime&#34;])
+        if result[&#34;seasonStartTime&#34;] is not None:
+            result[&#34;seasonStartTime&#34;] = parse(result[&#34;seasonStartTime&#34;])
+        if result[&#34;postseasonStartTime&#34;] is not None:
+            result[&#34;postseasonStartTime&#34;] = parse(result[&#34;postseasonStartTime&#34;])
         if result[&#34;endTime&#34;] is not None:
             result[&#34;endTime&#34;] = parse(result[&#34;endTime&#34;])
 
@@ -842,17 +1798,27 @@ def get_stadiums(*, cache_time=3600):
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="two-column">
+<ul class="">
+<li><code><a title="blaseball_mike.chronicler.get_fight_updates" href="#blaseball_mike.chronicler.get_fight_updates">get_fight_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_fights" href="#blaseball_mike.chronicler.get_fights">get_fights</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_game_updates" href="#blaseball_mike.chronicler.get_game_updates">get_game_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_games" href="#blaseball_mike.chronicler.get_games">get_games</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_globalevent_updates" href="#blaseball_mike.chronicler.get_globalevent_updates">get_globalevent_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_player_names" href="#blaseball_mike.chronicler.get_player_names">get_player_names</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_player_updates" href="#blaseball_mike.chronicler.get_player_updates">get_player_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_players" href="#blaseball_mike.chronicler.get_players">get_players</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_roster_updates" href="#blaseball_mike.chronicler.get_roster_updates">get_roster_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_sim_updates" href="#blaseball_mike.chronicler.get_sim_updates">get_sim_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_stadiums" href="#blaseball_mike.chronicler.get_stadiums">get_stadiums</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_team_updates" href="#blaseball_mike.chronicler.get_team_updates">get_team_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_teams" href="#blaseball_mike.chronicler.get_teams">get_teams</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_temporal_updates" href="#blaseball_mike.chronicler.get_temporal_updates">get_temporal_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_tribute_updates" href="#blaseball_mike.chronicler.get_tribute_updates">get_tribute_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.paged_get" href="#blaseball_mike.chronicler.paged_get">paged_get</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.paged_get_lazy" href="#blaseball_mike.chronicler.paged_get_lazy">paged_get_lazy</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.prepare_id" href="#blaseball_mike.chronicler.prepare_id">prepare_id</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.time_map" href="#blaseball_mike.chronicler.time_map">time_map</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.time_season" href="#blaseball_mike.chronicler.time_season">time_season</a></code></li>
 </ul>
 </li>
 </ul>

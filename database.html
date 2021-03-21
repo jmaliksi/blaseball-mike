@@ -39,55 +39,55 @@ BASE_URL = &#39;https://www.blaseball.com/database&#39;
 BASE_GITHUB = &#39;https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data&#39;
 
 
-def get_global_events():
-    s = session(5)
+def get_global_events(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)
 
 
-def get_all_teams():
+def get_all_teams(*, cache_time=5):
     &#34;&#34;&#34;
     Returns dictionary keyed by team ID
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
     return {t[&#39;id&#39;]: t for t in check_network_response(res)}
 
 
-def get_all_divisions():
+def get_all_divisions(*, cache_time=5):
     &#34;&#34;&#34;
     Returns dictionary keyed by division ID
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
     return {d[&#39;id&#39;]: d for d in check_network_response(res)}
 
 
-def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;):
-    s = session(5)
+def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_subleague(id_):
-    s = session(5)
+def get_subleague(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_division(id_):
-    s = session(5)
+def get_division(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_team(id_):
-    s = session(5)
+def get_team(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_player(id_):
+def get_player(id_, cache_time=5):
     &#34;&#34;&#34;
     Accepts single string id_, comma separated string, or list.
     Returns a dictionary with ID as key
@@ -96,218 +96,218 @@ def get_player(id_):
         return {}
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/players?ids={id_}&#39;)
     return {p[&#39;id&#39;]: p for p in check_network_response(res)}
 
 
-def get_games(season, day):
+def get_games(season, day, cache_time=5):
     &#34;&#34;&#34;
     Season and day will be 1 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_tournament(tournament, day):
+def get_tournament(tournament, day, cache_time=5):
     &#34;&#34;&#34;
     Day will be 1 indexed. Tournament is 0 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_game_by_id(id_):
-    s = session(5)
+def get_game_by_id(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)
 
 
-def get_offseason_election_details():
-    s = session(5)
+def get_offseason_election_details(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)
 
 
-def get_offseason_recap(season):
+def get_offseason_recap(season, cache_time=5):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
     return check_network_response(res)
 
 
-def get_offseason_bonus_results(id_):
+def get_offseason_bonus_results(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/bonusResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_offseason_decree_results(id_):
+def get_offseason_decree_results(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/decreeResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_offseason_event_results(id_):
+def get_offseason_event_results(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/eventResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_playoff_details(season):
+def get_playoff_details(season, cache_time=5):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
     return check_network_response(res)
 
 
-def get_playoff_round(id_):
-    s = session(5)
+def get_playoff_round(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_playoff_matchups(id_):
+def get_playoff_matchups(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffMatchups?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_standings(id_):
-    s = session(5)
+def get_standings(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)
 
 
-def get_season(season_number):
+def get_season(season_number, cache_time=5):
     &#34;&#34;&#34;
     Season number is 1 indexed
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
     return check_network_response(res)
 
 
-def get_tiebreakers(id):
-    s = session(5)
+def get_tiebreakers(id, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
-def get_game_statsheets(ids):
+def get_game_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
-def get_player_statsheets(ids):
+def get_player_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playerStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
-def get_season_statsheets(ids):
+def get_season_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/seasonStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
-def get_team_statsheets(ids):
+def get_team_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/teamStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}
 
 
-def get_idols():
-    s = session(5)
+def get_idols(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)
 
 
-def get_tributes():
-    s = session(5)
+def get_tributes(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)
 
 
-def get_simulation_data():
-    s = session(5)
+def get_simulation_data(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)
 
 
-def get_attributes(ids):
+def get_attributes(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/mods?ids={ids}&#39;)
     return check_network_response(res)
 
 
-def get_items(ids):
+def get_items(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/items?ids={ids}&#39;)
     return check_network_response(res)
 
 
-def get_weather():
-    s = session(5)
+def get_weather(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)
 
 
-def get_blood(ids):
+def get_blood(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/blood?ids={ids}&#39;)
     return check_network_response(res)
 
 
-def get_coffee(ids):
+def get_coffee(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/coffee?ids={ids}&#39;)
     return check_network_response(res)
 
 
-def get_feed_global(limit=50, sort=None, category=None, start=None):
+def get_feed_global(limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Global Feed
 
@@ -328,12 +328,12 @@ def get_feed_global(limit=50, sort=None, category=None, start=None):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
     return check_network_response(res)
 
 
-def get_feed_game(id_, limit=50, sort=None, category=None, start=None):
+def get_feed_game(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Game Feed
 
@@ -355,12 +355,12 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/game&#39;, params=params)
     return check_network_response(res)
 
 
-def get_feed_team(id_, limit=50, sort=None, category=None, start=None):
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Team Feed
 
@@ -382,12 +382,12 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
     return check_network_response(res)
 
 
-def get_feed_player(id_, limit=50, sort=None, category=None, start=None):
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Player Feed
 
@@ -409,31 +409,37 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
     return check_network_response(res)
 
 
-def get_feed_phase(season, phase):
+def get_feed_phase(season, phase, cache_time=5):
     &#34;&#34;&#34;
     Get Feed by Phase
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
     return check_network_response(res)
 
 
-def get_renovations(ids):
+def get_renovations(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovations?ids={ids}&#39;)
     return check_network_response(res)
 
 
-def get_renovation_progress(id_):
-    s = session(5)
+def get_renovation_progress(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
+    return check_network_response(res)
+
+
+def get_season_day_count(season, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/seasondaycount?season={season - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </section>
@@ -445,7 +451,7 @@ def get_renovation_progress(id_):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="blaseball_mike.database.get_all_divisions"><code class="name flex">
-<span>def <span class="ident">get_all_divisions</span></span>(<span>)</span>
+<span>def <span class="ident">get_all_divisions</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns dictionary keyed by division ID</p></div>
@@ -453,17 +459,17 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_all_divisions():
+<pre><code class="python">def get_all_divisions(*, cache_time=5):
     &#34;&#34;&#34;
     Returns dictionary keyed by division ID
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
     return {d[&#39;id&#39;]: d for d in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_all_teams"><code class="name flex">
-<span>def <span class="ident">get_all_teams</span></span>(<span>)</span>
+<span>def <span class="ident">get_all_teams</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns dictionary keyed by team ID</p></div>
@@ -471,17 +477,17 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_all_teams():
+<pre><code class="python">def get_all_teams(*, cache_time=5):
     &#34;&#34;&#34;
     Returns dictionary keyed by team ID
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
     return {t[&#39;id&#39;]: t for t in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_attributes"><code class="name flex">
-<span>def <span class="ident">get_attributes</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_attributes</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -489,16 +495,16 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_attributes(ids):
+<pre><code class="python">def get_attributes(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/mods?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_blood"><code class="name flex">
-<span>def <span class="ident">get_blood</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_blood</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -506,16 +512,16 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_blood(ids):
+<pre><code class="python">def get_blood(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/blood?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_coffee"><code class="name flex">
-<span>def <span class="ident">get_coffee</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_coffee</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -523,16 +529,16 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_coffee(ids):
+<pre><code class="python">def get_coffee(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/coffee?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_division"><code class="name flex">
-<span>def <span class="ident">get_division</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_division</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -540,14 +546,14 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_division(id_):
-    s = session(5)
+<pre><code class="python">def get_division(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_game"><code class="name flex">
-<span>def <span class="ident">get_feed_game</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+<span>def <span class="ident">get_feed_game</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Game Feed</p>
@@ -568,7 +574,7 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_game(id_, limit=50, sort=None, category=None, start=None):
+<pre><code class="python">def get_feed_game(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Game Feed
 
@@ -590,13 +596,13 @@ def get_renovation_progress(id_):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/game&#39;, params=params)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_global"><code class="name flex">
-<span>def <span class="ident">get_feed_global</span></span>(<span>limit=50, sort=None, category=None, start=None)</span>
+<span>def <span class="ident">get_feed_global</span></span>(<span>limit=50, sort=None, category=None, start=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Global Feed</p>
@@ -615,7 +621,7 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_global(limit=50, sort=None, category=None, start=None):
+<pre><code class="python">def get_feed_global(limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Global Feed
 
@@ -636,13 +642,13 @@ def get_renovation_progress(id_):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_phase"><code class="name flex">
-<span>def <span class="ident">get_feed_phase</span></span>(<span>season, phase)</span>
+<span>def <span class="ident">get_feed_phase</span></span>(<span>season, phase, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Feed by Phase</p></div>
@@ -650,17 +656,17 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_phase(season, phase):
+<pre><code class="python">def get_feed_phase(season, phase, cache_time=5):
     &#34;&#34;&#34;
     Get Feed by Phase
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_player"><code class="name flex">
-<span>def <span class="ident">get_feed_player</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+<span>def <span class="ident">get_feed_player</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Player Feed</p>
@@ -681,7 +687,7 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_player(id_, limit=50, sort=None, category=None, start=None):
+<pre><code class="python">def get_feed_player(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Player Feed
 
@@ -703,13 +709,13 @@ def get_renovation_progress(id_):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_team"><code class="name flex">
-<span>def <span class="ident">get_feed_team</span></span>(<span>id_, limit=50, sort=None, category=None, start=None)</span>
+<span>def <span class="ident">get_feed_team</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Team Feed</p>
@@ -730,7 +736,7 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_team(id_, limit=50, sort=None, category=None, start=None):
+<pre><code class="python">def get_feed_team(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
     &#34;&#34;&#34;
     Get Team Feed
 
@@ -752,13 +758,13 @@ def get_renovation_progress(id_):
     if start is not None:
         params[&#34;start&#34;] = start
 
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_game_by_id"><code class="name flex">
-<span>def <span class="ident">get_game_by_id</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_game_by_id</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -766,14 +772,14 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_game_by_id(id_):
-    s = session(5)
+<pre><code class="python">def get_game_by_id(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_game_statsheets"><code class="name flex">
-<span>def <span class="ident">get_game_statsheets</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_game_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -781,16 +787,16 @@ def get_renovation_progress(id_):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_game_statsheets(ids):
+<pre><code class="python">def get_game_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_games"><code class="name flex">
-<span>def <span class="ident">get_games</span></span>(<span>season, day)</span>
+<span>def <span class="ident">get_games</span></span>(<span>season, day, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Season and day will be 1 indexed.
@@ -799,18 +805,18 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_games(season, day):
+<pre><code class="python">def get_games(season, day, cache_time=5):
     &#34;&#34;&#34;
     Season and day will be 1 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_global_events"><code class="name flex">
-<span>def <span class="ident">get_global_events</span></span>(<span>)</span>
+<span>def <span class="ident">get_global_events</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -818,14 +824,14 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_global_events():
-    s = session(5)
+<pre><code class="python">def get_global_events(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_idols"><code class="name flex">
-<span>def <span class="ident">get_idols</span></span>(<span>)</span>
+<span>def <span class="ident">get_idols</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -833,14 +839,14 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_idols():
-    s = session(5)
+<pre><code class="python">def get_idols(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_items"><code class="name flex">
-<span>def <span class="ident">get_items</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_items</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -848,16 +854,16 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_items(ids):
+<pre><code class="python">def get_items(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/items?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_league"><code class="name flex">
-<span>def <span class="ident">get_league</span></span>(<span>id_='d8545021-e9fc-48a3-af74-48685950a183')</span>
+<span>def <span class="ident">get_league</span></span>(<span>id_='d8545021-e9fc-48a3-af74-48685950a183', cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -865,14 +871,14 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;):
-    s = session(5)
+<pre><code class="python">def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_offseason_bonus_results"><code class="name flex">
-<span>def <span class="ident">get_offseason_bonus_results</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_offseason_bonus_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
@@ -880,19 +886,19 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_offseason_bonus_results(id_):
+<pre><code class="python">def get_offseason_bonus_results(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/bonusResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_offseason_decree_results"><code class="name flex">
-<span>def <span class="ident">get_offseason_decree_results</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_offseason_decree_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
@@ -900,19 +906,19 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_offseason_decree_results(id_):
+<pre><code class="python">def get_offseason_decree_results(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/decreeResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_offseason_election_details"><code class="name flex">
-<span>def <span class="ident">get_offseason_election_details</span></span>(<span>)</span>
+<span>def <span class="ident">get_offseason_election_details</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -920,14 +926,14 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_offseason_election_details():
-    s = session(5)
+<pre><code class="python">def get_offseason_election_details(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_offseason_event_results"><code class="name flex">
-<span>def <span class="ident">get_offseason_event_results</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_offseason_event_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -935,16 +941,16 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_offseason_event_results(id_):
+<pre><code class="python">def get_offseason_event_results(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/eventResults?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_offseason_recap"><code class="name flex">
-<span>def <span class="ident">get_offseason_recap</span></span>(<span>season)</span>
+<span>def <span class="ident">get_offseason_recap</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Season will be 1 indexed.</p></div>
@@ -952,17 +958,17 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_offseason_recap(season):
+<pre><code class="python">def get_offseason_recap(season, cache_time=5):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_player"><code class="name flex">
-<span>def <span class="ident">get_player</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_player</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Accepts single string id_, comma separated string, or list.
@@ -971,7 +977,7 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_player(id_):
+<pre><code class="python">def get_player(id_, cache_time=5):
     &#34;&#34;&#34;
     Accepts single string id_, comma separated string, or list.
     Returns a dictionary with ID as key
@@ -980,13 +986,13 @@ Returns a dictionary with ID as key</p></div>
         return {}
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/players?ids={id_}&#39;)
     return {p[&#39;id&#39;]: p for p in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_player_statsheets"><code class="name flex">
-<span>def <span class="ident">get_player_statsheets</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_player_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -994,16 +1000,16 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_player_statsheets(ids):
+<pre><code class="python">def get_player_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playerStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_playoff_details"><code class="name flex">
-<span>def <span class="ident">get_playoff_details</span></span>(<span>season)</span>
+<span>def <span class="ident">get_playoff_details</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Season will be 1 indexed.</p></div>
@@ -1011,17 +1017,17 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_playoff_details(season):
+<pre><code class="python">def get_playoff_details(season, cache_time=5):
     &#34;&#34;&#34;
     Season will be 1 indexed.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_playoff_matchups"><code class="name flex">
-<span>def <span class="ident">get_playoff_matchups</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_playoff_matchups</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
@@ -1029,19 +1035,19 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_playoff_matchups(id_):
+<pre><code class="python">def get_playoff_matchups(id_, cache_time=5):
     &#34;&#34;&#34;
     id_ can be a single string ID, comma separated string, or list.
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffMatchups?ids={id_}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_playoff_round"><code class="name flex">
-<span>def <span class="ident">get_playoff_round</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_playoff_round</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1049,14 +1055,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_playoff_round(id_):
-    s = session(5)
+<pre><code class="python">def get_playoff_round(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_renovation_progress"><code class="name flex">
-<span>def <span class="ident">get_renovation_progress</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_renovation_progress</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1064,14 +1070,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_renovation_progress(id_):
-    s = session(5)
+<pre><code class="python">def get_renovation_progress(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_renovations"><code class="name flex">
-<span>def <span class="ident">get_renovations</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_renovations</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1079,16 +1085,16 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_renovations(ids):
+<pre><code class="python">def get_renovations(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovations?ids={ids}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_season"><code class="name flex">
-<span>def <span class="ident">get_season</span></span>(<span>season_number)</span>
+<span>def <span class="ident">get_season</span></span>(<span>season_number, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Season number is 1 indexed</p></div>
@@ -1096,17 +1102,17 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_season(season_number):
+<pre><code class="python">def get_season(season_number, cache_time=5):
     &#34;&#34;&#34;
     Season number is 1 indexed
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
-<dt id="blaseball_mike.database.get_season_statsheets"><code class="name flex">
-<span>def <span class="ident">get_season_statsheets</span></span>(<span>ids)</span>
+<dt id="blaseball_mike.database.get_season_day_count"><code class="name flex">
+<span>def <span class="ident">get_season_day_count</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1114,16 +1120,31 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_season_statsheets(ids):
+<pre><code class="python">def get_season_day_count(season, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/seasondaycount?season={season - 1}&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.database.get_season_statsheets"><code class="name flex">
+<span>def <span class="ident">get_season_statsheets</span></span>(<span>ids, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_season_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/seasonStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_simulation_data"><code class="name flex">
-<span>def <span class="ident">get_simulation_data</span></span>(<span>)</span>
+<span>def <span class="ident">get_simulation_data</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1131,14 +1152,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_simulation_data():
-    s = session(5)
+<pre><code class="python">def get_simulation_data(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_standings"><code class="name flex">
-<span>def <span class="ident">get_standings</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_standings</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1146,14 +1167,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_standings(id_):
-    s = session(5)
+<pre><code class="python">def get_standings(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_subleague"><code class="name flex">
-<span>def <span class="ident">get_subleague</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_subleague</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1161,14 +1182,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_subleague(id_):
-    s = session(5)
+<pre><code class="python">def get_subleague(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_team"><code class="name flex">
-<span>def <span class="ident">get_team</span></span>(<span>id_)</span>
+<span>def <span class="ident">get_team</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1176,14 +1197,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_team(id_):
-    s = session(5)
+<pre><code class="python">def get_team(id_, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_team_statsheets"><code class="name flex">
-<span>def <span class="ident">get_team_statsheets</span></span>(<span>ids)</span>
+<span>def <span class="ident">get_team_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1191,16 +1212,16 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_team_statsheets(ids):
+<pre><code class="python">def get_team_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/teamStatsheets?ids={ids}&#39;)
     return {s[&#39;id&#39;]: s for s in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_tiebreakers"><code class="name flex">
-<span>def <span class="ident">get_tiebreakers</span></span>(<span>id)</span>
+<span>def <span class="ident">get_tiebreakers</span></span>(<span>id, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1208,14 +1229,14 @@ Returns a dictionary with ID as key</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_tiebreakers(id):
-    s = session(5)
+<pre><code class="python">def get_tiebreakers(id, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_tournament"><code class="name flex">
-<span>def <span class="ident">get_tournament</span></span>(<span>tournament, day)</span>
+<span>def <span class="ident">get_tournament</span></span>(<span>tournament, day, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Day will be 1 indexed. Tournament is 0 indexed.
@@ -1224,18 +1245,18 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_tournament(tournament, day):
+<pre><code class="python">def get_tournament(tournament, day, cache_time=5):
     &#34;&#34;&#34;
     Day will be 1 indexed. Tournament is 0 indexed.
     Returns as dictionary with game ID as key.
     &#34;&#34;&#34;
-    s = session(5)
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_tributes"><code class="name flex">
-<span>def <span class="ident">get_tributes</span></span>(<span>)</span>
+<span>def <span class="ident">get_tributes</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1243,14 +1264,14 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_tributes():
-    s = session(5)
+<pre><code class="python">def get_tributes(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_weather"><code class="name flex">
-<span>def <span class="ident">get_weather</span></span>(<span>)</span>
+<span>def <span class="ident">get_weather</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -1258,8 +1279,8 @@ Returns as dictionary with game ID as key.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_weather():
-    s = session(5)
+<pre><code class="python">def get_weather(*, cache_time=5):
+    s = session(cache_time)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)</code></pre>
 </details>
@@ -1313,6 +1334,7 @@ Returns as dictionary with game ID as key.</p></div>
 <li><code><a title="blaseball_mike.database.get_renovation_progress" href="#blaseball_mike.database.get_renovation_progress">get_renovation_progress</a></code></li>
 <li><code><a title="blaseball_mike.database.get_renovations" href="#blaseball_mike.database.get_renovations">get_renovations</a></code></li>
 <li><code><a title="blaseball_mike.database.get_season" href="#blaseball_mike.database.get_season">get_season</a></code></li>
+<li><code><a title="blaseball_mike.database.get_season_day_count" href="#blaseball_mike.database.get_season_day_count">get_season_day_count</a></code></li>
 <li><code><a title="blaseball_mike.database.get_season_statsheets" href="#blaseball_mike.database.get_season_statsheets">get_season_statsheets</a></code></li>
 <li><code><a title="blaseball_mike.database.get_simulation_data" href="#blaseball_mike.database.get_simulation_data">get_simulation_data</a></code></li>
 <li><code><a title="blaseball_mike.database.get_standings" href="#blaseball_mike.database.get_standings">get_standings</a></code></li>
