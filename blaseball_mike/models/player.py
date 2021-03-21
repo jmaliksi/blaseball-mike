@@ -52,11 +52,11 @@ class Player(Base):
         return cls(dict(players[0]["data"], timestamp=time))
 
     @classmethod
-    def load_history(cls, id_, order='desc'):
+    def load_history(cls, id_, order='desc', count=None):
         """
         Returns array of Player stat changes with most recent first.
         """
-        players = chronicler.get_player_updates(ids=id_, order=order)
+        players = chronicler.get_player_updates(ids=id_, order=order, count=count)
         return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
 
     @classmethod
