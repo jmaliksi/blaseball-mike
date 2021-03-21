@@ -11,10 +11,12 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.sibr.dev/chronicler/v1/players/updates?order=desc&player=0bd5a3ec-e14c-45bf-8283-7bc191ae53e4
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?count=200&order=desc&player=0bd5a3ec-e14c-45bf-8283-7bc191ae53e4
   response:
     body:
-      string: '{"nextPage":"7KPVC0zhv0WCg3vBka5T5GBMO2xFFgAA","data":[{"updateId":"492fc0fc-a8bb-4b6c-a0d6-3c8f17986002","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2020-11-16T17:15:00.861234Z","lastSeen":"2021-02-14T01:00:01.142161Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
+      string: '{"nextPage":"7KPVC0zhv0WCg3vBka5T5GBMO2xFFgAA","data":[{"updateId":"2fecc7b0-7507-4be8-a8b3-e73130adba35","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2021-03-01T17:00:00.995005Z","lastSeen":"2021-03-21T15:12:01.105706Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
+        Donaldson","soul":5,"armor":"","blood":1,"moxie":0.960860114837361,"state":{},"coffee":2,"ritual":"Gossip","buoyancy":0.9362595549644177,"cinnamon":0.8759026449394538,"coldness":0.5321971449274412,"deceased":false,"divinity":0.04776122611344499,"eDensity":18.27910002765667,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.48061258448008193,"evolution":0,"hitStreak":0,"martyrdom":0.17566830455231172,"baseThirst":0.0664812949947142,"indulgence":0.23882877181149118,"musclitude":0.428470705734316,"tragicness":0.1,"omniscience":0.17697074241304486,"patheticism":0.63070315785001,"suppression":0.19261447089170788,"continuation":0.3979453738589771,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","ruthlessness":0.758358070834009,"totalFingers":10,"watchfulness":0.38647215222473585,"defenseRating":0.4624676859696008,"hittingRating":0.14916882672718948,"laserlikeness":0.03194917673385708,"overpowerment":0.45961272252346874,"peanutAllergy":true,"tenaciousness":0.385477663183885,"thwackability":0.14088530121215845,"anticapitalism":0.5177250774786364,"groundFriction":0.9048523997478259,"pitchingRating":0.4644450812069083,"pressurization":0.6552940518672206,"consecutiveHits":0,"unthwackability":0.3654955561561175,"shakespearianism":0.8134478624879604,"tournamentTeamId":null,"baserunningRating":0.10664698147582569}},{"updateId":"570f0bc6-845f-4b9f-be03-299fc3a19828","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2021-03-01T04:15:01.288508Z","lastSeen":"2021-03-01T16:58:00.773391Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
+        Donaldson","soul":5,"armor":"","blood":1,"moxie":0.960860114837361,"state":{},"coffee":2,"ritual":"Gossip","buoyancy":0.9362595549644177,"cinnamon":0.8759026449394538,"coldness":0.5321971449274412,"deceased":false,"divinity":0.04776122611344499,"eDensity":0,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.48061258448008193,"evolution":0,"hitStreak":0,"martyrdom":0.17566830455231172,"baseThirst":0.0664812949947142,"indulgence":0.23882877181149118,"musclitude":0.428470705734316,"tragicness":0.1,"omniscience":0.17697074241304486,"patheticism":0.63070315785001,"suppression":0.19261447089170788,"continuation":0.3979453738589771,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","ruthlessness":0.758358070834009,"totalFingers":10,"watchfulness":0.38647215222473585,"defenseRating":0.4624676859696008,"hittingRating":0.14916882672718948,"laserlikeness":0.03194917673385708,"overpowerment":0.45961272252346874,"peanutAllergy":true,"tenaciousness":0.385477663183885,"thwackability":0.14088530121215845,"anticapitalism":0.5177250774786364,"groundFriction":0.9048523997478259,"pitchingRating":0.4644450812069083,"pressurization":0.6552940518672206,"consecutiveHits":0,"unthwackability":0.3654955561561175,"shakespearianism":0.8134478624879604,"tournamentTeamId":null,"baserunningRating":0.10664698147582569}},{"updateId":"492fc0fc-a8bb-4b6c-a0d6-3c8f17986002","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2020-11-16T17:15:00.861234Z","lastSeen":"2021-03-01T03:00:01.067276Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
         Donaldson","soul":5,"armor":"","blood":1,"moxie":0.960860114837361,"coffee":2,"ritual":"Gossip","buoyancy":0.9362595549644177,"cinnamon":0.8759026449394538,"coldness":0.5321971449274412,"deceased":false,"divinity":0.04776122611344499,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.48061258448008193,"hitStreak":0,"martyrdom":0.17566830455231172,"baseThirst":0.0664812949947142,"indulgence":0.23882877181149118,"musclitude":0.428470705734316,"tragicness":0.1,"omniscience":0.17697074241304486,"patheticism":0.63070315785001,"suppression":0.19261447089170788,"continuation":0.3979453738589771,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","ruthlessness":0.758358070834009,"totalFingers":10,"watchfulness":0.38647215222473585,"defenseRating":0.4624676859696008,"hittingRating":0.14916882672718948,"laserlikeness":0.03194917673385708,"overpowerment":0.45961272252346874,"peanutAllergy":true,"tenaciousness":0.385477663183885,"thwackability":0.14088530121215845,"anticapitalism":0.5177250774786364,"groundFriction":0.9048523997478259,"pitchingRating":0.4644450812069083,"pressurization":0.6552940518672206,"consecutiveHits":0,"unthwackability":0.3654955561561175,"shakespearianism":0.8134478624879604,"tournamentTeamId":null,"baserunningRating":0.10664698147582569}},{"updateId":"378db74f-b281-4f76-b38d-c7f7e291cf20","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2020-10-18T21:50:00.947176Z","lastSeen":"2020-11-16T17:00:00.908841Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
         Donaldson","soul":5,"armor":"","blood":1,"moxie":0.960860114837361,"coffee":2,"ritual":"Gossip","buoyancy":0.9362595549644177,"cinnamon":0.8759026449394538,"coldness":0.5321971449274412,"deceased":false,"divinity":0.04776122611344499,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.48061258448008193,"hitStreak":0,"martyrdom":0.17566830455231172,"baseThirst":0.0664812949947142,"indulgence":0.23882877181149118,"musclitude":0.428470705734316,"tragicness":0.1,"omniscience":0.17697074241304486,"patheticism":0.63070315785001,"suppression":0.19261447089170788,"continuation":0.3979453738589771,"ruthlessness":0.758358070834009,"totalFingers":10,"watchfulness":0.38647215222473585,"defenseRating":0.4624676859696008,"hittingRating":0.14916882672718948,"laserlikeness":0.03194917673385708,"overpowerment":0.45961272252346874,"peanutAllergy":true,"tenaciousness":0.385477663183885,"thwackability":0.14088530121215845,"anticapitalism":0.5177250774786364,"groundFriction":0.9048523997478259,"pitchingRating":0.4644450812069083,"pressurization":0.6552940518672206,"consecutiveHits":0,"unthwackability":0.3654955561561175,"shakespearianism":0.8134478624879604,"baserunningRating":0.10664698147582569}},{"updateId":"d6afa639-718f-4d5b-a22f-a3992a8042d2","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2020-10-14T01:34:00.115548Z","lastSeen":"2020-10-18T19:19:06.506131Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
         Donaldson","soul":5,"armor":"","blood":1,"moxie":0.930860114837361,"coffee":2,"ritual":"Gossip","buoyancy":0.9062595549644177,"cinnamon":0.8459026449394538,"coldness":0.5021971449274412,"deceased":false,"divinity":0.017761226113444994,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.4506125844800819,"hitStreak":0,"martyrdom":0.14566830455231172,"baseThirst":0.0364812949947142,"indulgence":0.20882877181149118,"musclitude":0.398470705734316,"tragicness":0.1,"omniscience":0.14697074241304486,"patheticism":0.66070315785001,"suppression":0.16261447089170789,"continuation":0.3679453738589771,"ruthlessness":0.7283580708340089,"totalFingers":10,"watchfulness":0.3564721522247358,"defenseRating":0.429545369799784,"hittingRating":0.09551161799100928,"laserlikeness":0.0019491767338570831,"overpowerment":0.4296127225234687,"peanutAllergy":true,"tenaciousness":0.35547766318388496,"thwackability":0.11088530121215845,"anticapitalism":0.48772507747863636,"groundFriction":0.8748523997478259,"pitchingRating":0.4311871372155684,"pressurization":0.6252940518672205,"consecutiveHits":0,"unthwackability":0.3354955561561175,"shakespearianism":0.7834478624879604,"baserunningRating":0.024203795835905036}},{"updateId":"042e6d62-ec7d-4dc7-a184-b9b854b1899c","playerId":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","firstSeen":"2020-10-14T01:32:00.117082Z","lastSeen":"2020-10-14T01:32:00.633066Z","data":{"id":"0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","bat":"","fate":72,"name":"Stephanie
@@ -30,39 +32,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:26 GMT
+      - Sun, 21 Mar 2021 15:15:29 GMT
       Server:
       - Kestrel
       Transfer-Encoding:
       - chunked
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v1/players/updates?order=desc&player=00000000-0000-0000-0000-000000000000
-  response:
-    body:
-      string: '{"nextPage":null,"data":[]}'
-    headers:
-      Content-Length:
-      - '27'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:10:26 GMT
-      Server:
-      - Kestrel
     status:
       code: 200
       message: OK

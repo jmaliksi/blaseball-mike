@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.sibr.dev/chronicler/v1/players/updates?order=desc&player=00000000-0000-0000-0000-000000000000
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?count=200&order=desc&player=00000000-0000-0000-0000-000000000000
   response:
     body:
       string: '{"nextPage":null,"data":[]}'
@@ -21,7 +21,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 20:43:07 GMT
+      - Sun, 21 Mar 2021 15:15:29 GMT
       Server:
       - Kestrel
     status:

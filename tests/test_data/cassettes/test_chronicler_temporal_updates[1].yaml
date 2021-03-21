@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/temporal/updates?count=1
+  response:
+    body:
+      string: '{"nextPage":"lR11p_71uEWAfi_gRSmv0aBl3kwAMwAA","data":[{"updateId":"a7751d95-f5fe-45b8-807e-2fe04529afd1","firstSeen":"2020-09-03T21:40:38.266Z","lastSeen":"2020-09-06T18:43:05.834Z","data":{"doc":{"id":"whatistime","beta":1,"zeta":"WHERE
+        IS YOUR FAITH","alpha":1000,"delta":true,"gamma":500000000,"epsilon":false}}}]}'
+    headers:
+      Content-Length:
+      - '318'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:03:52 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

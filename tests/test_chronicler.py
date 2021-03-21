@@ -3,6 +3,7 @@ Unit Tests for Chronicler Endpoints
 """
 
 import pytest
+import types
 import blaseball_mike.chronicler as chron
 
 
@@ -14,10 +15,11 @@ def test_chronicler_players():
 
 
 @pytest.mark.vcr
-def test_chronicler_player_updates():
-    data = chron.get_player_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_player_updates(count):
+    data = chron.get_player_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 100
+    assert len(data) == count
 
 
 @pytest.mark.vcr
@@ -35,31 +37,35 @@ def test_chronicler_teams():
 
 
 @pytest.mark.vcr
-def test_chronicler_team_updates():
-    data = chron.get_team_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_team_updates(count):
+    data = chron.get_team_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 100
+    assert len(data) == count
 
 
 @pytest.mark.vcr
-def test_chronicler_roster_updates():
-    data = chron.get_roster_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_roster_updates(count):
+    data = chron.get_roster_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 100
+    assert len(data) == count
 
 
 @pytest.mark.vcr
-def test_chronicler_games():
-    data = chron.get_games()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_games(count):
+    data = chron.get_games(count=count)
     assert isinstance(data, list)
-    assert len(data) > 0
+    assert len(data) == count
 
 
 @pytest.mark.vcr
-def test_chronicler_game_updates():
-    data = chron.get_game_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_game_updates(count):
+    data = chron.get_game_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 100
+    assert len(data) == count
 
 
 @pytest.mark.vcr
@@ -70,10 +76,11 @@ def test_chronicler_fights():
 
 
 @pytest.mark.vcr
-def test_chronicler_fight_updates():
-    data = chron.get_fight_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 1100))
+def test_chronicler_fight_updates(count):
+    data = chron.get_fight_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 1000
+    assert len(data) == count
 
 
 @pytest.mark.vcr
@@ -84,24 +91,27 @@ def test_chronicler_stadiums():
 
 
 @pytest.mark.vcr
-def test_chronicler_temporal_updates():
-    data = chron.get_temporal_updates()
+@pytest.mark.parametrize("count", (1, 100, 600))
+def test_chronicler_temporal_updates(count):
+    data = chron.get_temporal_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 500
+    assert len(data) == count
 
 
 @pytest.mark.vcr
-def test_chronicler_sim_updates():
-    data = chron.get_sim_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 3000))
+def test_chronicler_sim_updates(count):
+    data = chron.get_sim_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 500
+    assert len(data) == count
 
 
 @pytest.mark.vcr
-def test_chronicler_globalevent_updates():
-    data = chron.get_globalevent_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 1500))
+def test_chronicler_globalevent_updates(count):
+    data = chron.get_globalevent_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) == 500
+    assert len(data) == count
 
 
 @pytest.mark.vcr
@@ -119,7 +129,27 @@ def test_chronicler_time_season():
 
 
 @pytest.mark.vcr
-def test_chronicler_tribute_updates():
-    data = chron.get_tribute_updates()
+@pytest.mark.parametrize("count", (1, 100, 1000, 5000))
+def test_chronicler_tribute_updates(count):
+    data = chron.get_tribute_updates(count=count)
     assert isinstance(data, list)
-    assert len(data) > 0
+    assert len(data) == count
+
+
+@pytest.mark.vcr
+def test_chronicler_none_length():
+    data = chron.get_player_updates(before="2021-03-02T00:00:00Z", after="2021-03-01T00:00:00Z")
+    assert isinstance(data, list)
+    assert len(data) == 3367
+
+
+@pytest.mark.vcr
+@pytest.mark.parametrize("count", (None, 1, 100, 1000, 3000))
+def test_chronicler_lazy(count):
+    data = chron.get_player_updates(before="2021-03-02T00:00:00Z", after="2021-03-01T00:00:00Z", count=count, lazy=True)
+    assert isinstance(data, types.GeneratorType)
+    data = list(data)
+    if count is None:
+        assert len(data) == 3367
+    else:
+        assert len(data) == count

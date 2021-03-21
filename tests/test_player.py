@@ -379,7 +379,7 @@ class TestPlayer(TestBase):
 
     @pytest.mark.vcr
     def test_load_history(self):
-        player = Player.load_history("0bd5a3ec-e14c-45bf-8283-7bc191ae53e4")
+        player = Player.load_history("0bd5a3ec-e14c-45bf-8283-7bc191ae53e4", count=200)
         assert isinstance(player, list)
         assert len(player) > 0
         for player in player:
@@ -387,7 +387,7 @@ class TestPlayer(TestBase):
 
     @pytest.mark.vcr
     def test_load_history_bad_id(self):
-        bad_player = Player.load_history("00000000-0000-0000-0000-000000000000")
+        bad_player = Player.load_history("00000000-0000-0000-0000-000000000000", count=200)
         assert isinstance(bad_player, list)
         assert len(bad_player) == 0
 

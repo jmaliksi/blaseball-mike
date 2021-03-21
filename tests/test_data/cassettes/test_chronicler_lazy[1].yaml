@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/players/updates?after=2021-03-01T00%3A00%3A00Z&before=2021-03-02T00%3A00%3A00Z&count=1
+  response:
+    body:
+      string: '{"nextPage":"NRCjY20uIkmj-fpuZZtUrepBPuIWvwAA","data":[{"updateId":"009b7167-e55b-41da-89e1-38829770b109","playerId":"63a31035-2e6d-4922-a3f9-fa6e659b54ad","firstSeen":"2021-03-01T04:15:00.591665Z","lastSeen":"2021-03-01T16:58:00.773391Z","data":{"id":"63a31035-2e6d-4922-a3f9-fa6e659b54ad","bat":"","fate":37,"name":"Moody
+        Rodriguez","soul":6,"armor":"","blood":2,"moxie":0.9876722570199821,"state":{},"coffee":12,"ritual":"Me-time","buoyancy":0.2769190142197766,"cinnamon":0.38712596055628445,"coldness":0.2992844396724865,"deceased":false,"divinity":0.4915705030144868,"eDensity":0,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.7176242223933693,"evolution":0,"hitStreak":0,"martyrdom":0.9770709254149041,"baseThirst":0.6686815441154408,"indulgence":0.458873317316967,"musclitude":0.9853600847114319,"tragicness":0.1,"omniscience":0.6691182972015433,"patheticism":0.7050774348475306,"suppression":0.6389233426029775,"continuation":0.45352436490307935,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","ruthlessness":0.024940966642985396,"totalFingers":10,"watchfulness":0.28522024074712005,"defenseRating":0.5468421150092975,"hittingRating":0.6612503131582388,"laserlikeness":0.037365066051589624,"overpowerment":0.7069232236332226,"peanutAllergy":false,"tenaciousness":0.1615355631581854,"thwackability":0.7504811300971777,"anticapitalism":1,"groundFriction":0.37529835229665043,"pitchingRating":0.09429289956816045,"pressurization":0.8242949028484594,"consecutiveHits":0,"unthwackability":0.21585072886428325,"shakespearianism":0.6970914821753438,"tournamentTeamId":null,"baserunningRating":0.14388708670210704}}]}'
+    headers:
+      Content-Length:
+      - '1646'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:04:13 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

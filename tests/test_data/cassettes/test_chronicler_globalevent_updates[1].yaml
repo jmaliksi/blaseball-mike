@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/globalevents/updates?count=1
+  response:
+    body:
+      string: '{"nextPage":"0oCkjR-7EUa8n8PheTdHnmBMO2xFFgAA","data":[{"updateId":"8da480d2-bb1f-4611-bc9f-c3e17937479e","firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-07-29T08:12:22.438Z","data":[{"__v":0,"_id":"the_discipline_era","msg":"The
+        Discipline Era has begun"},{"__v":0,"_id":"mourning_best_player","msg":"In
+        Memoriam: Jaylen Hotdogfingers, Fitzgerald Massey, Tyreek Olive, Jenna Maldonado,
+        Nora Perez","expire":"2020-07-29T19:00:02.379Z"},{"_id":"darkness_forecast","msg":"THE
+        COMMISSIONER IS DOING A GREAT JOB"},{"_id":"commissioner_parker","msg":"THE
+        COMMISSIONER IS DOING A GREAT JOB"},{"__v":0,"_id":"hitting_stat_leaders_update","msg":"On
+        Base Percentage Leaders: ... Jacob Haynes, Boston Flowers - 0.525 ..... Oliver
+        Mueller, Seattle Garages - 0.474 ..... Zi Delacruz, Dallas Steaks - 0.466
+        ..... Landry Violence, Hades Tigers - 0.453 ..... Jessica Telephone, Philly
+        Pies - 0.452 ..... "},{"__v":0,"_id":"pitching_stat_leaders_update","msg":"Pitcher
+        Win Leaders: ... Cornelius Games, Charleston Shoe Thieves - 8 ..... Jenkins
+        Good, Canada Moist Talkers - 8 ..... Nagomi Meng, Hades Tigers - 7 ..... Hiroto
+        Wilcox, Hades Tigers - 7 ..... Justice Spoon, Chicago Firefighters - 7 .....
+        "}]}]}'
+    headers:
+      Content-Length:
+      - '1200'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 21 Mar 2021 15:03:58 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

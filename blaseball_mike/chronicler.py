@@ -21,13 +21,17 @@ def prepare_id(id_):
         raise ValueError(f'Incorrect ID type: {type(id_)}')
 
 
-def paged_get(url, params, session,lazy=False):
+def paged_get(url, params, session, total_count=None, page_size=250, lazy=False):
     """
     Combine paged URL responses
     """
     if lazy:
-        return paged_get_lazy(url,params,session)
+        return paged_get_lazy(url, params, session, total_count, page_size)
 
+    if total_count is not None and total_count < page_size:
+        page_size = total_count
+
+    params["count"] = page_size
     data = []
     while True:
         out = check_network_response(session.get(url, params=params))
@@ -35,29 +39,51 @@ def paged_get(url, params, session,lazy=False):
         page = out.get("nextPage")
 
         data.extend(d)
-        if page is None or len(d) == 0 or params.get("count", 1000) >= len(d):
+        if page is None or len(d) == 0 or len(d) < page_size:
             break
+
+        if total_count is not None:
+            total_count -= len(d)
+            if total_count <= 0:
+                break
+            if total_count < page_size:
+                page_size = total_count
+                params["count"] = page_size
+
         params["page"] = page
 
     return data
 
-def paged_get_lazy(url,params,session):
+def paged_get_lazy(url, params, session, total_count=None, page_size=250):
     """
     Combine paged URL responses; returns a generator
     """
+    if total_count is not None and total_count < page_size:
+        page_size = total_count
+
+    params["count"] = page_size
     while True:
         out = check_network_response(session.get(url, params=params))
         d = out.get("data", [])
         page = out.get("nextPage")
 
         yield from d
-        if page is None or len(d) == 0 or params.get("count", 1000) >= len(d):
-            return
+        if page is None or len(d) == 0 or len(d) < page_size:
+            break
+
+        if total_count is not None:
+            total_count -= len(d)
+            if total_count <= 0:
+                break
+            if total_count < page_size:
+                page_size = total_count
+                params["count"] = page_size
+
         params["page"] = page
 
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None, before=None, after=None, lazy=False, cache_time=5):
+              finished=None, outcomes=None, order=None, count=None, before=None, after=None, cache_time=5):
     """
     Get Games
 
@@ -119,11 +145,11 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         params["weather"] = weather
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/games', params=params, session=s, lazy=lazy)
+    return check_network_response(s.get(f'{BASE_URL}/games', params=params)).get("data", [])
 
 
 def get_game_updates(season=None, tournament=None, day=None, game_ids=None, started=None, search=None, order=None,
-                      count=None, before=None, after=None, lazy=False, cache_time=5):
+                     count=None, before=None, after=None, page_size=1000, lazy=False, cache_time=5):
     """
     Get Game Updates
 
@@ -138,6 +164,7 @@ def get_game_updates(season=None, tournament=None, day=None, game_ids=None, star
         count: number of entries to return.
         before: return elements before this string or datetime timestamp.
         after: return elements after this string or datetime timestamp.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -164,10 +191,10 @@ def get_game_updates(season=None, tournament=None, day=None, game_ids=None, star
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
     if game_ids:
         params["game"] = prepare_id(game_ids)
     if started:
@@ -176,7 +203,7 @@ def get_game_updates(season=None, tournament=None, day=None, game_ids=None, star
         params["search"] = search
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/games/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/games/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
 def get_players(forbidden=None, incinerated=None, cache_time=5):
@@ -209,7 +236,7 @@ def get_player_names(*, cache_time=5):
     return check_network_response(s.get(f'{BASE_URL}/players/names'))
 
 
-def get_player_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_player_updates(ids=None, before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=5):
     """
     Get player at time
 
@@ -219,6 +246,7 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -236,15 +264,15 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
     if ids:
         params["player"] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/players/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/players/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
 def get_teams(*, cache_time=5):
@@ -258,7 +286,7 @@ def get_teams(*, cache_time=5):
     return check_network_response(s.get(f'{BASE_URL}/teams')).get("data", [])
 
 
-def get_team_updates(ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_team_updates(ids=None, before=None, after=None, order=None, count=None, page_size=250, lazy=False, cache_time=5):
     """
     Get team at time
 
@@ -268,6 +296,7 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -285,19 +314,19 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 250:
-            raise ValueError("Count must be between 1 and 250")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 250:
+            raise ValueError("page_size must be between 1 and 250")
+        params["count"] = page_size
     if ids:
         params["team"] = prepare_id(ids)
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/teams/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
-def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, order=None, count=None, lazy=False,
-                       cache_time=5):
+def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, order=None, count=None, page_size=1000,
+                       lazy=False, cache_time=5):
     """
     Get roster changes
 
@@ -308,6 +337,7 @@ def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, 
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -325,20 +355,20 @@ def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, 
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 250")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 250")
+        params["count"] = page_size
     if player_ids:
         params["team"] = prepare_id(player_ids)
     if team_ids:
         params["team"] = prepare_id(team_ids)
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/roster/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/roster/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
-def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_tribute_updates(before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=5):
     """
     Get Hall of Flame at time
 
@@ -347,6 +377,7 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=Fa
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -364,13 +395,13 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, lazy=Fa
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s,lazy=lazy)
+    return paged_get(f'{BASE_URL}/tributes/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
 def time_map(season=None, tournament=None, day=None, include_nongame=True, cache_time=3600):
@@ -501,7 +532,7 @@ def get_fights(id_=None, season=0, cache_time=3600):
     return data
 
 
-def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=5):
     """
     Return a list of boss fight event updates
 
@@ -511,6 +542,7 @@ def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -528,15 +560,15 @@ def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
     if game_ids:
         params["fight"] = prepare_id(game_ids)
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/fights/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/fights/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
 def get_stadiums(*, cache_time=3600):
@@ -547,7 +579,7 @@ def get_stadiums(*, cache_time=3600):
     return s.get(f'{BASE_URL}/stadiums').json()['data']
 
 
-def get_temporal_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_temporal_updates(before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=5):
     """
     Return a list of temporal object updates
     This is generally used for God Speak (Coin, Monitor, etc)
@@ -557,6 +589,7 @@ def get_temporal_updates(before=None, after=None, order=None, count=None, lazy=F
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -574,16 +607,16 @@ def get_temporal_updates(before=None, after=None, order=None, count=None, lazy=F
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/temporal/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/temporal/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
-def get_sim_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=5):
+def get_sim_updates(before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=5):
     """
     Return a list of simulation object updates
 
@@ -592,6 +625,7 @@ def get_sim_updates(before=None, after=None, order=None, count=None, lazy=False,
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -609,16 +643,16 @@ def get_sim_updates(before=None, after=None, order=None, count=None, lazy=False,
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/sim/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/sim/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
 
 
-def get_globalevent_updates(before=None, after=None, order=None, count=None, lazy=False, cache_time=600):
+def get_globalevent_updates(before=None, after=None, order=None, count=None, page_size=1000, lazy=False, cache_time=600):
     """
     Return a list of global event object updates
 
@@ -627,6 +661,7 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, laz
         after: return elements after this string or datetime timestamp.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
+        page_size: number of elements to get per-page
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
@@ -644,10 +679,10 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, laz
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
-        if count < 1 or count >= 1000:
-            raise ValueError("Count must be between 1 and 1000")
-        params["count"] = count
+    if page_size:
+        if page_size < 1 or page_size > 1000:
+            raise ValueError("page_size must be between 1 and 1000")
+        params["count"] = page_size
 
     s = session(cache_time)
-    return paged_get(f'{BASE_URL}/globalevents/updates', params=params, session=s, lazy=lazy)
+    return paged_get(f'{BASE_URL}/globalevents/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
