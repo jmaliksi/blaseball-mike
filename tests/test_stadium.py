@@ -56,6 +56,11 @@ class TestStadium(TestBase):
             assert isinstance(reno, Renovation)
 
     @pytest.mark.vcr
+    def test_renovation_progress(self, stadium):
+        progress = stadium.renovation_progress
+        assert isinstance(progress, (int, float))
+
+    @pytest.mark.vcr
     def test_mods(self, stadium):
         assert isinstance(stadium.mods, list)
         for mod in stadium.mods:
