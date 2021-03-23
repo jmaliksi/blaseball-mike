@@ -201,11 +201,18 @@ class Player(Base):
 
     @property
     def soulscream(self):
+        return self.get_soulscream()
+
+    def get_soulscream(self, collapse=True):
         letters = ["A", "E", "I", "O", "U", "X", "H", "A", "E", "I"]
         stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
 
         scream = []
-        for r in range(self.soul):
+        if collapse:
+            soul_max = min(self.soul, 300)
+        else:
+            soul_max = self.soul
+        for r in range(soul_max):
             sub_scream = []
             i = 10 ** -r
             for s in stats:
@@ -216,7 +223,10 @@ class Player(Base):
                     sub_scream.append("undefined")
             scream.extend(sub_scream + sub_scream + [sub_scream[0]])
 
-        return ''.join(scream)
+        scream = ''.join(scream)
+        if collapse and self.soul > 300:
+            scream += f"... (CONT. FOR {self.soul - 300} SOUL)"
+        return scream
 
     @Base.lazy_load("_blood_id", cache_name="_blood", use_default=False)
     def blood(self):
