@@ -316,6 +316,14 @@ class TestPlayer(TestBase):
         assert test_player.soul == 1777
         assert test_value[-25:] == "... (CONT. FOR 1477 SOUL)"
 
+    @pytest.mark.vcr
+    def test_long_soulscream_extralong(self):
+        """Test very long soulscreams"""
+        test_player = Player.find_by_name("Chorby Soul")
+        test_value = test_player.get_soulscream(collapse=False)
+        assert isinstance(test_value, str)
+        assert test_value[-9:] == "undefined"
+
     # TODO: Set up random override to properly test this
     def test_player_make_random_noseed(self):
         """Verify players can be generated with no seed defined"""
