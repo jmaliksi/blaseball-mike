@@ -14,6 +14,7 @@ class TestFeed(TestBase):
         for feed_event in feed:
             self.base_test(feed_event)
 
+    @pytest.mark.vcr
     def test_global_event(self, feed):
         for feed_event in feed:
             assert isinstance(feed_event, Feed)

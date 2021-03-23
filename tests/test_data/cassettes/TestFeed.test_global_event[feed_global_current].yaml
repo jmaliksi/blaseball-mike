@@ -1,0 +1,160 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=7966eb04-efcc-499b-8f03-d13916330531
+  response:
+    body:
+      string: '{"id":"7966eb04-efcc-499b-8f03-d13916330531","lineup":["e16c3f28-eecd-4571-be1a-606bbac36b2b","114100a4-1bf7-4433-b304-6aad75904055","44c92d97-bb39-469d-a13b-f2dd9ae644d1","ac69dba3-6225-4afd-ab4b-23fc78f730fb","2ffbaec8-a646-4435-a17a-3a0a2b5f3e16","a3947fbc-50ec-45a4-bca4-49ffebb77dbe","9a031b9a-16f8-4165-a468-5d0e28a81151","aa6c2662-75f8-4506-aa06-9a0993313216","63512571-2eca-4bc4-8ad9-a5308a22ae22"],"rotation":["89ec77d8-c186-4027-bd45-f407b4800c2c","8adb084b-19fe-4295-bcd2-f92afdb62bd7","b6aa8ce8-2587-4627-83c1-2a48d44afaee","09f2787a-3352-41a6-8810-d80e97b253b5","24f6829e-7bb4-4e1e-8b59-a07514657e72"],"bullpen":["17392be2-7344-48a0-b4db-8a040a7fb532","450e6483-d116-41d8-933b-1b541d5f0026","1af239ae-7e12-42be-9120-feff90453c85","94f30f21-f889-4a2e-9b94-818475bb1ca0","1ded0384-d290-4ea1-a72b-4f9d220cbe37","82733eb4-103d-4be1-843e-6eb6df35ecd7","db53211c-f841-4f33-accf-0c3e167889a0","b77dffaa-e0f5-408f-b9f2-1894ed26e744","3205f4ff-7050-470b-8970-8d7ea56564bc"],"bench":["945974c5-17d9-43e7-92f6-ba49064bbc59","c6146c45-3d9b-4749-9f03-d4faae61e2c3","ac57cf28-556f-47af-9154-6bcea2ace9fc","7b779947-46ef-4b77-be37-962d60875647"],"seasAttr":[],"permAttr":["O_NO"],"fullName":"Yellowstone
+        Magic","location":"Yellowstone","mainColor":"#bf0043","nickname":"Magic","secondaryColor":"#f60f63","shorthand":"YELL","emoji":"0x2728","slogan":"As
+        Above, So Below","shameRuns":0,"totalShames":65,"totalShamings":58,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":0,"tournamentWins":0,"stadium":"2a1a52b3-9759-44aa-ba49-b1437396d895","eDensity":2133.7201148076415,"state":{},"evolution":0,"winStreak":-2,"level":5}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1689'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:30:21 GMT
+      Etag:
+      - W/"699-vZWDKFyUuXFtoJ2l7n3Wp0Zgv9E"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=89ec77d8-c186-4027-bd45-f407b4800c2c
+  response:
+    body:
+      string: '[{"id":"89ec77d8-c186-4027-bd45-f407b4800c2c","anticapitalism":0.9025985785509185,"baseThirst":1.190029612403846,"buoyancy":1.2556745260032869,"chasiness":0.9848209971398874,"coldness":1.1777782999054442,"continuation":0.8039387587645803,"divinity":0.7309074298893101,"groundFriction":0.8224578496178949,"indulgence":1.130113150322562,"laserlikeness":0.5410764252182185,"martyrdom":1.2697684338477329,"moxie":0.8932900218682891,"musclitude":1.2002244267178848,"name":"James
+        Mora","bat":"","omniscience":1.0967065070653637,"overpowerment":0.9667930946461867,"patheticism":0.001,"ruthlessness":0.7111722401429681,"shakespearianism":1.2242466377856291,"suppression":1.4034149548715666,"tenaciousness":0.836203302205804,"thwackability":1.4068953085080174,"tragicness":0.001,"unthwackability":0.9018322966897173,"watchfulness":1.5042862238723613,"pressurization":0.5408376821510407,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.6142448000190904,"fate":72,"armor":"","ritual":"Pre-visualizing","coffee":3,"blood":2,"permAttr":["SUPERYUMMY"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.726994185551288,"pitchingRating":0.8447268959631368,"hittingRating":1.0199079943970664,"defenseRating":1.0118093818269216,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":31.224069204168888,"state":{},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1456'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:30:21 GMT
+      Etag:
+      - W/"5b0-vTUYTNWIVtzGRPYlZKPHUgIINAE"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=b6aa8ce8-2587-4627-83c1-2a48d44afaee
+  response:
+    body:
+      string: '[{"id":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","anticapitalism":0.6203953247643341,"baseThirst":0.8443793874839141,"buoyancy":0.27591677111698526,"chasiness":0.6350559273838529,"coldness":0.5662005689542737,"continuation":0.18787445893786564,"divinity":0.24501908172911846,"groundFriction":1.135592439636556,"indulgence":0.3584439361602173,"laserlikeness":0.5562343106871288,"martyrdom":0.513413389416473,"moxie":0.426630331765121,"musclitude":0.3345286106142956,"name":"Inky
+        Rutledge","bat":"INKY_BLAGONBALL","omniscience":0.32431281514024984,"overpowerment":0.27022138121134437,"patheticism":0.7172406280488961,"ruthlessness":0.48994391202655946,"shakespearianism":0.8797101463452612,"suppression":0.750921028818443,"tenaciousness":0.32491354700213826,"thwackability":0.4437022207395701,"tragicness":0.1,"unthwackability":1.1595661899888028,"watchfulness":0.8343292362849792,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":false,"cinnamon":0.6431148428775638,"fate":33,"armor":"","ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5670662455092618,"pitchingRating":0.6474742366111432,"hittingRating":0.3677994052237692,"defenseRating":0.5704639189732517,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16","eDensity":33.069626644221984,"state":{},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1472'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:30:21 GMT
+      Etag:
+      - W/"5c0-EDq5G0Vf5e1Fnr6f9HrjAPU2as8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=8adb084b-19fe-4295-bcd2-f92afdb62bd7
+  response:
+    body:
+      string: '[{"id":"8adb084b-19fe-4295-bcd2-f92afdb62bd7","anticapitalism":0.9604832366671635,"baseThirst":1.1060597927528484,"buoyancy":0.6376821083626597,"chasiness":0.3452345196626939,"coldness":0.7250803092571447,"continuation":0.2118860253509109,"divinity":0.28102233652373243,"groundFriction":0.8549046687216506,"indulgence":0.6207647536517344,"laserlikeness":0.5129812517493181,"martyrdom":1.106461501910646,"moxie":0.37401755467142744,"musclitude":0.4218210296477622,"name":"Logan
+        Rodriguez","bat":"","omniscience":0.9365341165911456,"overpowerment":0.9623185334142681,"patheticism":0.001,"ruthlessness":0.39175001681977123,"shakespearianism":1.1357655174557513,"suppression":0.6668852989660476,"tenaciousness":1.0963219884888857,"thwackability":0.31027524377989335,"tragicness":0.03819730566410828,"unthwackability":0.5936651510109021,"watchfulness":0.9746253425654001,"pressurization":0.4283501541053425,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.826153300894639,"fate":71,"armor":"","ritual":"Biting
+        fingernails","coffee":5,"blood":6,"permAttr":["SIPHON"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5814646437092733,"pitchingRating":0.5290670755055911,"hittingRating":0.37128736006014995,"defenseRating":0.8979176653276654,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":null,"eDensity":22.658157212218757,"state":{},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1447'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:30:21 GMT
+      Etag:
+      - W/"5a7-LdMgh6LMom5pH0N8xCDkOjbYZu4"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
