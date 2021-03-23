@@ -122,7 +122,38 @@ class TestFeed(TestBase):
             "description": "OVER UNDER\nUNDER OVER"
           })]
 
-    @pytest.fixture(scope="module", params=['feed_global_current', 'feed_s12_reading'])
+    @pytest.fixture(scope="module")
+    def feed_s14_consumer(self):
+        return [Feed({
+            "id": "9f2a583f-f3bd-4237-926b-5e80ad3d0ba5",
+            "playerTags": [
+              "b082ca6e-eb11-4eab-8d6a-30f8be522ec4"
+            ],
+            "teamTags": [
+              "747b8e4a-7e50-4638-a973-ea7950a3e739"
+            ],
+            "gameTags": [
+              "ea7e391a-8c5b-4547-b520-a7ee44a9946c"
+            ],
+            "metadata": {
+              "play": 218,
+              "type": 4,
+              "after": 2.7851969158648604,
+              "before": 3.311603618012235,
+              "parent": "3929a748-1d0d-4e79-ac37-22749a2351d7",
+              "subPlay": 0
+            },
+            "created": "2021-03-19T06:18:25.709Z",
+            "season": 13,
+            "tournament": -1,
+            "type": 118,
+            "day": 85,
+            "phase": 6,
+            "category": 1,
+            "description": "CONSUMERS ATTACK\nNICHOLAS MORA"
+          })]
+
+    @pytest.fixture(scope="module", params=['feed_global_current', 'feed_s12_reading', 'feed_s14_consumer'])
     def feed(self, request):
         """Parameterized fixture of various feeds"""
         return request.getfixturevalue(request.param)
