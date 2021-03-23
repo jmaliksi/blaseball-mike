@@ -19,23 +19,20 @@ interactions:
         Rutledge","awayBatter":null,"awayBatterName":"","awayTeam":"7966eb04-efcc-499b-8f03-d13916330531","awayTeamName":"Yellowstone
         Magic","awayTeamNickname":"Magic","awayTeamColor":"#bf0043","awayTeamEmoji":"0x2728","awayOdds":0.587348277764993,"awayStrikes":3,"awayScore":7,"awayTeamBatterCount":39,"homePitcher":"7d388846-8f4c-407f-aacb-b844d2561c5e","homePitcherName":"Kit
         Adamses","homeBatter":null,"homeBatterName":"","homeTeam":"b024e975-1c4a-4575-8936-a3754a08806a","homeTeamName":"Dallas
-        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.41265172223500696,"homeStrikes":3,"homeScore":6,"homeTeamBatterCount":35,"season":10,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f60f63","homeTeamSecondaryColor":"#b2b3b5","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":352,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.41265172223500696,"homeStrikes":3,"homeScore":6,"homeTeamBatterCount":35,"season":10,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f60f63","homeTeamSecondaryColor":"#b2b3b5","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":352,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1655'
+      - '1798'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:57 GMT
+      - Tue, 23 Mar 2021 19:25:43 GMT
       Etag:
-      - W/"677-g2moKoO6m8AEwwg32Al3I/QJLTY"
+      - W/"706-IltztmJIOVnoPpoYY7QLFwPcn70"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Aas82YCaXIMdI01agL4DJfu-duxJs-9A6.fW03pm0b8NfZNuZyWNx2d1gtz4aUjskQG4DRK7ExrJ8;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:57 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -65,23 +62,20 @@ interactions:
         Keyes","awayBatter":null,"awayBatterName":"","awayTeam":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","awayTeamName":"Boston
         Flowers","awayTeamNickname":"Flowers","awayTeamColor":"#f7d1ff","awayTeamEmoji":"0x1F339","awayOdds":0.4486476690184674,"awayStrikes":3,"awayScore":4,"awayTeamBatterCount":34,"homePitcher":"e111a46d-5ada-4311-ac4f-175cca3357da","homePitcherName":"Alexandria
         Rosales","homeBatter":null,"homeBatterName":"","homeTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","homeTeamName":"Houston
-        Spies","homeTeamNickname":"Spies","homeTeamColor":"#67556b","homeTeamEmoji":"0x1F575","homeOdds":0.5513523309815326,"homeStrikes":3,"homeScore":6,"homeTeamBatterCount":44,"season":10,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f7d1ff","homeTeamSecondaryColor":"#9e82a4","homeBalls":3,"awayBalls":3,"homeOuts":3,"awayOuts":3,"playCount":297,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Spies","homeTeamNickname":"Spies","homeTeamColor":"#67556b","homeTeamEmoji":"0x1F575","homeOdds":0.5513523309815326,"homeStrikes":3,"homeScore":6,"homeTeamBatterCount":44,"season":10,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f7d1ff","homeTeamSecondaryColor":"#9e82a4","homeBalls":3,"awayBalls":3,"homeOuts":3,"awayOuts":3,"playCount":297,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1656'
+      - '1799'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:58 GMT
+      - Tue, 23 Mar 2021 19:25:43 GMT
       Etag:
-      - W/"678-nb/kKMfuBjB3WKwFSdP1A4kkK4k"
+      - W/"707-1JElW+/AQcCMbiYGZYniKPI53EA"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AhcPiB1I8OGeIiQGKmspmxqLLuR_VkV24.AaEBCBezyRsPDMXz5w7OAWDzauD%2F6kRgw%2FnJQDJjjC8;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:58 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -111,23 +105,20 @@ interactions:
         Garcia","awayBatter":null,"awayBatterName":"","awayTeam":"7966eb04-efcc-499b-8f03-d13916330531","awayTeamName":"Yellowstone
         Magic","awayTeamNickname":"Magic","awayTeamColor":"#bf0043","awayTeamEmoji":"0x2728","awayOdds":0.44780078564497994,"awayStrikes":3,"awayScore":7,"awayTeamBatterCount":38,"homePitcher":"b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","homePitcherName":"Leach
         Herman","homeBatter":null,"homeBatterName":"","homeTeam":"b024e975-1c4a-4575-8936-a3754a08806a","homeTeamName":"Dallas
-        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.5521992143550201,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":35,"season":10,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":2,"shame":false,"weather":1,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f60f63","homeTeamSecondaryColor":"#b2b3b5","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":316,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.5521992143550201,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":35,"season":10,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":2,"shame":false,"weather":1,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#f60f63","homeTeamSecondaryColor":"#b2b3b5","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":316,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1657'
+      - '1800'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:58 GMT
+      - Tue, 23 Mar 2021 19:25:43 GMT
       Etag:
-      - W/"679-2Ae8vyc+glqKfnOozEf/o+6J3Pc"
+      - W/"708-+IlpDFBBLC8ZIyexJ1GHZGKi03E"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A8vACtgkqVkXFSv0T6axgmlikig5FAB1C.3Os93pOR2Z5gop6L6%2FwExwiK%2Fe8RdI2pVxAeBrAzbhM;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:58 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -157,23 +148,20 @@ interactions:
         Hayes","awayBatter":null,"awayBatterName":"","awayTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","awayTeamName":"Houston
         Spies","awayTeamNickname":"Spies","awayTeamColor":"#67556b","awayTeamEmoji":"0x1F575","awayOdds":0.4685980480105698,"awayStrikes":3,"awayScore":9,"awayTeamBatterCount":41,"homePitcher":"3e008f60-6842-42e7-b125-b88c7e5c1a95","homePitcherName":"Zeboriah
         Wilson","homeBatter":null,"homeBatterName":"","homeTeam":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","homeTeamName":"Boston
-        Flowers","homeTeamNickname":"Flowers","homeTeamColor":"#f7d1ff","homeTeamEmoji":"0x1F339","homeOdds":0.5314019519894301,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":41,"season":10,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":2,"shame":false,"weather":1,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#9e82a4","homeTeamSecondaryColor":"#f7d1ff","homeBalls":3,"awayBalls":3,"homeOuts":3,"awayOuts":3,"playCount":323,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Flowers","homeTeamNickname":"Flowers","homeTeamColor":"#f7d1ff","homeTeamEmoji":"0x1F339","homeOdds":0.5314019519894301,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":41,"season":10,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":2,"shame":false,"weather":1,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#9e82a4","homeTeamSecondaryColor":"#f7d1ff","homeBalls":3,"awayBalls":3,"homeOuts":3,"awayOuts":3,"playCount":323,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1654'
+      - '1797'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:59 GMT
+      - Tue, 23 Mar 2021 19:25:43 GMT
       Etag:
-      - W/"676-+zoPdwUeXWdwU+0d/GZAIklaeXE"
+      - W/"705-81OFgBqlvpYEe6nuxZyO+UICwIE"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Ae226-l1iLH4CtPav2JGifL8zL7WrsBOU.XkZmYd42mXB8ZUfsDQ6EYxb8dyK0kmAXypaQwLS9eF4;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:59 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -203,23 +191,20 @@ interactions:
         Manco","awayBatter":null,"awayBatterName":"","awayTeam":"b024e975-1c4a-4575-8936-a3754a08806a","awayTeamName":"Dallas
         Steaks","awayTeamNickname":"Steaks","awayTeamColor":"#8c8d8f","awayTeamEmoji":"0x1F969","awayOdds":0.5758549950290215,"awayStrikes":3,"awayScore":9,"awayTeamBatterCount":41,"homePitcher":"8adb084b-19fe-4295-bcd2-f92afdb62bd7","homePitcherName":"Logan
         Rodriguez","homeBatter":null,"homeBatterName":"","homeTeam":"7966eb04-efcc-499b-8f03-d13916330531","homeTeamName":"Yellowstone
-        Magic","homeTeamNickname":"Magic","homeTeamColor":"#bf0043","homeTeamEmoji":"0x2728","homeOdds":0.4241450049709785,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":33,"season":10,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#b2b3b5","homeTeamSecondaryColor":"#f60f63","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":313,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Magic","homeTeamNickname":"Magic","homeTeamColor":"#bf0043","homeTeamEmoji":"0x2728","homeOdds":0.4241450049709785,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":33,"season":10,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":2,"shame":false,"weather":14,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#b2b3b5","homeTeamSecondaryColor":"#f60f63","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":313,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1659'
+      - '1802'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:59 GMT
+      - Tue, 23 Mar 2021 19:25:43 GMT
       Etag:
-      - W/"67b-F+F141Mzy4jxevceexCTHDZEK3o"
+      - W/"70a-D5IzRmotQXz3W3oluHUuuNQVjZg"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ArW3CD6EBaDFkcUBXK8oo-rtYwNNxfKB-.jcHZwMvEaZnYnYHkxfgqncg1vk%2BiRpCnKTdYU9cF7D4;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:59 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

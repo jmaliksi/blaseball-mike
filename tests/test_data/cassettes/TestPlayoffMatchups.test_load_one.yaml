@@ -23,55 +23,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 02:26:43 GMT
+      - Tue, 23 Mar 2021 19:25:46 GMT
       Etag:
       - W/"f5-E07lliTunQwgkC2q455F5bAlCkY"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A615NiAoc-V_HtVQOasy1PN2ZxQrrbOAz.t4QxLCiwa0ds5NcszlHU21fLvJ7scFc6vNMIeMCC7uI;
-        Path=/; Expires=Sun, 21 Feb 2021 02:26:43 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/playoffMatchups?ids=00000000-0000-0000-0000-000000000000
-  response:
-    body:
-      string: '[]'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 02:26:43 GMT
-      Etag:
-      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AaGgyHtSlxQSU9ubMiFcY7u69Uol8UNRg.sKO9F3wrMtplXfLjSKmkHOWOwe%2Bo9xVt1sjSGYXqwu8;
-        Path=/; Expires=Sun, 21 Feb 2021 02:26:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

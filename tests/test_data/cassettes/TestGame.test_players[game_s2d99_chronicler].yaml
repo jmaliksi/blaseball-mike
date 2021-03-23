@@ -14,24 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=09f2787a-3352-41a6-8810-d80e97b253b5
   response:
     body:
-      string: '[{"id":"09f2787a-3352-41a6-8810-d80e97b253b5","anticapitalism":1.184864614510016,"baseThirst":0.4859758771710539,"buoyancy":0.6507448302212091,"chasiness":1.1088361856885303,"coldness":1.0470984659191176,"continuation":0.3859774926880108,"divinity":1.1872840511358957,"groundFriction":0.7968520467280916,"indulgence":0.6627498236232694,"laserlikeness":0.2868352939582448,"martyrdom":0.7483560090391264,"moxie":1.1169194236167344,"musclitude":1.0588412960273759,"name":"Curry
-        Aliciakeyes","bat":"","omniscience":0.7074849861385403,"overpowerment":1.1370370003590402,"patheticism":0.6065620745480723,"ruthlessness":1.0765074595995778,"shakespearianism":0.8356472211406627,"suppression":0.7332614994430247,"tenaciousness":1.1574194048686557,"thwackability":0.2562553034533145,"tragicness":0.02545267482164304,"unthwackability":0.9808783031894917,"watchfulness":1.0985227868611587,"pressurization":0.9383202630490881,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.6714552034723824,"fate":8,"armor":"","ritual":"Photography","coffee":2,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.42501738499609065,"pitchingRating":1.0225452991498565,"hittingRating":0.6334430604469738,"defenseRating":0.996726755716446,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e"}]'
+      string: '[{"id":"09f2787a-3352-41a6-8810-d80e97b253b5","anticapitalism":1.256132120879667,"baseThirst":0.5565308611162642,"buoyancy":0.7039109769332003,"chasiness":1.1707912812453831,"coldness":1.121361138636024,"continuation":0.4445964997086256,"divinity":1.2396374181526257,"groundFriction":0.8670639362364617,"indulgence":0.734776965569531,"laserlikeness":0.3445758050237605,"martyrdom":0.8027976041945023,"moxie":1.1706080776021686,"musclitude":1.1366952852343934,"name":"Curry
+        Aliciakeyes","bat":"","omniscience":0.7621885241956927,"overpowerment":1.185107316067059,"patheticism":0.5399990686666957,"ruthlessness":1.1317451130300074,"shakespearianism":0.8772622366844371,"suppression":0.8004705007934657,"tenaciousness":1.2211525256467928,"thwackability":0.3283180155891247,"tragicness":0.001,"unthwackability":1.029557519469591,"watchfulness":1.139446161977604,"pressurization":0.9383202630490881,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.7434475398848632,"fate":8,"armor":"","ritual":"Photography","coffee":2,"blood":6,"permAttr":["OVERUNDER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.48798737299205563,"pitchingRating":1.082542589597335,"hittingRating":0.7143090734910258,"defenseRating":1.0379760303288212,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":39.259705464864666,"state":{"permModSources":{}},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1421'
+      - '1487'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:52 GMT
+      - Tue, 23 Mar 2021 19:24:41 GMT
       Etag:
-      - W/"58d-b00cZwYHNchtD3nIKdsSxfGSTgc"
+      - W/"5cf-ZLjsQ7lrXGy/5NA67oIcPYiXhnw"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AYsXlVa9NfC01vEUCHsTMlSy6PNegi4R3.P1w%2B6ifcZQn2%2FdlJZhKJ3t0o8MvILn0Ifs9%2B29lxU0E;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:52 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -57,23 +54,20 @@ interactions:
   response:
     body:
       string: '[{"id":"f741dc01-2bae-4459-bfc0-f97536193eea","anticapitalism":1.1245120237322284,"baseThirst":0.246197750591003,"buoyancy":0.9353030023878447,"chasiness":0.21426977674214212,"coldness":0.609466777761458,"continuation":0.864908113365923,"divinity":0.3136754033048849,"groundFriction":0.5905069966686584,"indulgence":0.8219204109569679,"laserlikeness":1.0775871076258894,"martyrdom":1.053435749841884,"moxie":0.6593750788885828,"musclitude":0.5221871597007706,"name":"Alejandro
-        Leaf","bat":"","omniscience":0.7954462350746851,"overpowerment":1.1328597473027633,"patheticism":0.01,"ruthlessness":0.5995701978079284,"shakespearianism":0.2614571723788096,"suppression":0.9438188265305831,"tenaciousness":0.43516083619920254,"thwackability":0.2791395999787293,"tragicness":0.03513002235949303,"unthwackability":0.48444498576466793,"watchfulness":0.44866839109535595,"pressurization":0.9826198699348789,"totalFingers":12,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":1.0354813987784384,"fate":91,"armor":"","ritual":"Knitting","coffee":13,"blood":5,"permAttr":["HONEY_ROASTED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.827288676364024,"pitchingRating":0.4991699999625215,"hittingRating":0.39369163160139165,"defenseRating":0.6474961286558943,"leagueTeamId":"36569151-a2fb-43c1-9df7-2df512424c82","tournamentTeamId":null}]'
+        Leaf","bat":"","omniscience":0.7954462350746851,"overpowerment":1.1328597473027633,"patheticism":0.01,"ruthlessness":0.5995701978079284,"shakespearianism":0.2614571723788096,"suppression":0.9438188265305831,"tenaciousness":0.43516083619920254,"thwackability":0.2791395999787293,"tragicness":0.03513002235949303,"unthwackability":0.48444498576466793,"watchfulness":0.44866839109535595,"pressurization":0.9826198699348789,"totalFingers":12,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":1.0354813987784384,"fate":91,"armor":"","ritual":"Knitting","coffee":13,"blood":5,"permAttr":["HONEY_ROASTED","WANDERER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.827288676364024,"pitchingRating":0.4991699999625215,"hittingRating":0.39369163160139165,"defenseRating":0.6474961286558943,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":null,"eDensity":20.57352505608682,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1385'
+      - '1450'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:52 GMT
+      - Tue, 23 Mar 2021 19:24:41 GMT
       Etag:
-      - W/"569-ko4JM57OIYvA4EWn6O0GHMjRZ5c"
+      - W/"5aa-yNAsp3ZHv1xXYm2ScDF1puAIfI8"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ArELCtgMO4OtMu47kS65qY_ir2Nr0S-Ac.q9hO06T3w%2By5lpOnBNh76%2BCCeDowuKKG6mVsJy4PiXo;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:52 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

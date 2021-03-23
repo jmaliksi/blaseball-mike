@@ -14,21 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/feed/global?limit=3
   response:
     body:
-      string: '[{"id":"029f8a01-75c9-40b8-bb30-3cde2621881a","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b"],"gameTags":[],"metadata":{"totalShames":56,"totalShamings":44},"created":"2021-03-03T21:33:59.163Z","season":11,"tournament":-1,"type":154,"day":52,"phase":4,"category":3,"description":"The
-        Jazz Hands were shamed by the Spies."},{"id":"a6adb6c1-b1d4-4502-a2eb-5d138ae69608","playerTags":[],"teamTags":["9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":[],"metadata":{"totalShames":41,"totalShamings":53},"created":"2021-03-03T21:33:59.163Z","season":11,"tournament":-1,"type":155,"day":52,"phase":4,"category":3,"description":"The
-        Spies shamed the Jazz Hands."},{"id":"b3cfc265-6563-4846-b477-9222ffaf7322","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","a37f9158-7f82-46bc-908c-c9e2dda7c33b"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":400,"winner":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","subPlay":-1},"created":"2021-03-03T21:33:59.136Z","season":11,"tournament":-1,"type":11,"day":52,"phase":4,"category":3,"description":"Spies
-        4, Jazz Hands 3"}]'
+      string: '[{"id":"324075e5-095c-494e-b13f-2d0ae0b70080","playerTags":["89ec77d8-c186-4027-bd45-f407b4800c2c"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"mod":"SUPERYUMMY","type":0,"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:51:45.795Z","season":13,"tournament":-1,"type":106,"day":116,"phase":13,"category":1,"description":"James
+        Mora is Superyummy..."},{"id":"95d69c10-be2a-405c-846e-eaba8a080dd5","playerTags":["b6aa8ce8-2587-4627-83c1-2a48d44afaee"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:51:26.124Z","season":13,"tournament":-1,"type":168,"day":116,"phase":13,"category":1,"description":"Inky
+        Rutledge is no longer allergic to Peanuts."},{"id":"9afd8382-4614-4f0d-b06f-5f7aebf6933e","playerTags":["8adb084b-19fe-4295-bcd2-f92afdb62bd7"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:50:50.980Z","season":13,"tournament":-1,"type":168,"day":116,"phase":13,"category":1,"description":"Logan
+        Rodriguez is no longer allergic to Peanuts."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1190'
+      - '1214'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 03 Mar 2021 21:59:07 GMT
+      - Tue, 23 Mar 2021 19:24:34 GMT
       Etag:
-      - W/"4a6-HlM8de6x4EwQPHvpGGYFS3zQDCU"
+      - W/"4be-nw/+9F7G5525ZoX++Ym4upscx+8"
       Server:
       - Cowboy
       Vary:

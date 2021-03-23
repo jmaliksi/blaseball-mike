@@ -15,23 +15,20 @@ interactions:
   response:
     body:
       string: '{"id":"b9b7d77a-fe35-4df0-a68c-efd665ad42e0","bonusResults":["f0f15969-aecb-4f9e-8eb9-00f05ece732c","ec18f915-7b78-478c-93c6-305eddaeeaed","511260ad-b831-4ebc-a6b4-2582b661846e","068792c3-51a0-47ae-a359-9ee234acb74a","e59fbc74-c6ea-4064-8309-e397aa4b3679","8a2f2499-244d-4788-abd8-22b8e71a7ca9","fa34d625-5cb8-4f96-9bf9-4e6b916e93c2","c8b1de0c-1916-4181-a03a-0a831b0b8612","6fbb2192-bc11-4fbc-9d78-54b34c170534","1687cebf-9012-46f5-aeb3-1a4258a39b40","be2e2092-7572-4ece-ae7e-ce35721d0b4b","e6c853dc-75c8-4cd9-b637-5d894a346ed8","61237abf-8bc7-4fb3-9ef4-8c77253e9a27","b02c57d4-9aca-4fcd-86c7-3a834dcbdd5c","07b56f96-1e42-4eab-b852-9ca52e847c34","46e9edc7-2d93-40ca-9926-9802925be2f2","9cc4daf2-8f15-4cb5-a7cf-a5ce34562004","b7a5b9d0-55c9-45a7-8aba-be06f373872f","41e610a8-3f8d-4be7-a9a5-018f82e03baf","174f7f51-4d3a-44d4-ad15-27bbe1b37212"],"decreeResults":["94ca62b2-fbba-4d32-a682-18b524ddd4a8"],"name":"The
-        Season 7 Election","season":6,"totalBonusVotes":2692321,"totalDecreeVotes":398218,"voteCount":3090539,"eventResults":[]}'
+        Season 7 Election","season":6,"totalBonusVotes":2692321,"totalDecreeVotes":398218,"voteCount":3090539,"eventResults":[],"willResults":null,"totalWillVotes":null}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1031'
+      - '1072'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:45 GMT
+      - Tue, 23 Mar 2021 19:24:27 GMT
       Etag:
-      - W/"407-qfAOhM18llHCfUNbOoh7u4ZkGe4"
+      - W/"430-2mLhO1lh5o6Ca0XCXpQWpSz8Lco"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AqgCGd9p2KBTJifFpRC7GfdkmWNC_N_Ew.%2F6SF1CNu38Oo5%2FZxVbPvCcSQEgWKYfG0KEHnZfBq8mw;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:45 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

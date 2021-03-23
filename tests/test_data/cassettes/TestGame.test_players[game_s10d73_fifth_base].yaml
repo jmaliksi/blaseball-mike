@@ -16,23 +16,20 @@ interactions:
     body:
       string: '[{"id":"a691f2ba-9b69-41f8-892c-1acd42c336e4","anticapitalism":0.35319692402606884,"baseThirst":0.01,"buoyancy":0.2115320650687611,"chasiness":0.05518798026433758,"coldness":0.2568681864878104,"continuation":0.01,"divinity":0.6530734037531807,"groundFriction":0.5314611379802637,"indulgence":0.250641898318651,"laserlikeness":0.1324029455811809,"martyrdom":0.3843815676825175,"moxie":0.49912923514194585,"musclitude":0.026948103087579334,"name":"Jenkins
         Good","bat":"","omniscience":0.883147780293642,"overpowerment":0.5360770345052601,"patheticism":0.18627995926653051,"ruthlessness":0.8900624714533705,"shakespearianism":0.11160057455880534,"suppression":0.0888044270184154,"tenaciousness":0.8195986524804952,"thwackability":0.2161383648357671,"tragicness":0.1,"unthwackability":0.8177046605836391,"watchfulness":0.005446576804651215,"pressurization":0.7071860243831654,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.4081373245219726,"fate":78,"armor":"","ritual":"Collective
-        bargaining","coffee":12,"blood":8,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.11841353380687494,"pitchingRating":0.6101827331465499,"hittingRating":0.35384239677662,"defenseRating":0.37542693512662567,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"9a5ab308-41f2-4889-a3c3-733b9aab806e"}]'
+        bargaining","coffee":12,"blood":8,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.11841353380687494,"pitchingRating":0.6101827331465499,"hittingRating":0.35384239677662,"defenseRating":0.37542693512662567,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"9a5ab308-41f2-4889-a3c3-733b9aab806e","eDensity":22.205059191996696,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1420'
+      - '1475'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 19:43:09 GMT
+      - Tue, 23 Mar 2021 19:24:48 GMT
       Etag:
-      - W/"58c-uNEBC5p9EczBWfZuBxGSGvFB06w"
+      - W/"5c3-2/5vyRQ5h+tV6CEjW6HpIq1kmpY"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A8tQx6Hvt5q__Wmdd--5gi11IddAFY3-A.4KnZ3w7D23XpjuRWuKGOpVLaTUDJxEEqu1sUGRje%2Bz8;
-        Path=/; Expires=Tue, 23 Feb 2021 19:43:09 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -58,23 +55,20 @@ interactions:
   response:
     body:
       string: '[{"id":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","anticapitalism":0.6203953247643341,"baseThirst":0.8443793874839141,"buoyancy":0.27591677111698526,"chasiness":0.6350559273838529,"coldness":0.5662005689542737,"continuation":0.18787445893786564,"divinity":0.24501908172911846,"groundFriction":1.135592439636556,"indulgence":0.3584439361602173,"laserlikeness":0.5562343106871288,"martyrdom":0.513413389416473,"moxie":0.426630331765121,"musclitude":0.3345286106142956,"name":"Inky
-        Rutledge","bat":"INKY_BLAGONBALL","omniscience":0.32431281514024984,"overpowerment":0.27022138121134437,"patheticism":0.7172406280488961,"ruthlessness":0.48994391202655946,"shakespearianism":0.8797101463452612,"suppression":0.750921028818443,"tenaciousness":0.32491354700213826,"thwackability":0.4437022207395701,"tragicness":0.1,"unthwackability":1.1595661899888028,"watchfulness":0.8343292362849792,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.6431148428775638,"fate":33,"armor":"","ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5670662455092618,"pitchingRating":0.6474742366111432,"hittingRating":0.3677994052237692,"defenseRating":0.5704639189732517,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16"}]'
+        Rutledge","bat":"INKY_BLAGONBALL","omniscience":0.32431281514024984,"overpowerment":0.27022138121134437,"patheticism":0.7172406280488961,"ruthlessness":0.48994391202655946,"shakespearianism":0.8797101463452612,"suppression":0.750921028818443,"tenaciousness":0.32491354700213826,"thwackability":0.4437022207395701,"tragicness":0.1,"unthwackability":1.1595661899888028,"watchfulness":0.8343292362849792,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":false,"cinnamon":0.6431148428775638,"fate":33,"armor":"","ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5670662455092618,"pitchingRating":0.6474742366111432,"hittingRating":0.3677994052237692,"defenseRating":0.5704639189732517,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16","eDensity":33.069626644221984,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1416'
+      - '1472'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 19:43:09 GMT
+      - Tue, 23 Mar 2021 19:24:48 GMT
       Etag:
-      - W/"588-D4WjZn5HyONK/38J+HcYeipWlEs"
+      - W/"5c0-EDq5G0Vf5e1Fnr6f9HrjAPU2as8"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ASBlkJ8DLfYktQ-dpL2_Pz2tcxyXWsD0J.FQJwZoigEL2Al7SuidoAhZR%2FUU8L6vAwzeVR0m%2Bb7SE;
-        Path=/; Expires=Tue, 23 Feb 2021 19:43:09 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

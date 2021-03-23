@@ -14,47 +14,65 @@ interactions:
     uri: https://www.blaseball.com/database/offseasonSetup
   response:
     body:
-      string: '{"decrees":[{"id":"book_bury","type":43,"title":"Bury","description":"...Bury!
-        The Forbidden Book..."},{"id":"book_burn","type":44,"title":"Burn","description":"...Burn!
-        The Forbidden Book..."},{"id":"book_close","type":45,"title":"Close","description":"...Close!
-        The Forbidden Book..."},{"id":"book_deface","type":46,"title":"Deface","description":"...Deface!
-        The Forbidden Book..."},{"id":"book_eat","type":47,"title":"Eat","description":"...Eat!
-        The Forbidden Book..."},{"id":"book_freeze","type":48,"title":"Freeze","description":"...Freeze!
-        The Forbidden Book..."},{"id":"book_shred","type":49,"title":"Shred","description":"...Shred!
-        The Forbidden Book..."},{"id":"book_sink","type":50,"title":"Sink","description":"...Sink!
-        The Forbidden Book..."},{"id":"book_trash","type":51,"title":"Trash","description":"...Trash!
-        The Forbidden Book..."}],"blessings":[{"id":"tarot_magician","type":136,"value":0,"title":"I","description":"The
-        Magician"},{"id":"tarot_high_priestess","type":136,"value":1,"title":"II","description":"The
-        High Priestess"},{"id":"tarot_empress","type":136,"value":2,"title":"III","description":"The
-        Empress"},{"id":"tarot_emperor","type":136,"value":3,"title":"IIII","description":"The
-        Emperor"},{"id":"tarot_pope","type":136,"value":4,"title":"V","description":"The
-        Pope"},{"id":"tarot_lover","type":136,"value":5,"title":"VI","description":"The
-        Lover"},{"id":"tarot_chariot","type":136,"value":6,"title":"VII","description":"The
-        Chariot"},{"id":"tarot_justice","type":136,"value":7,"title":"VIII","description":"Justice"},{"id":"tarot_hermit","type":136,"value":8,"title":"VIIII","description":"The
-        Hermit"},{"id":"tarot_wheel","type":136,"value":9,"title":"X","description":"The
-        Wheel of Fortune"},{"id":"tarot_strength","type":136,"value":10,"title":"XI","description":"Strength"},{"id":"tarot_hanged_man","type":136,"value":11,"title":"XII","description":"The
-        Hanged Man"},{"id":"tarot_xiii","type":136,"value":12,"title":"XIII","description":""},{"id":"tarot_temperance","type":136,"value":13,"title":"XIIII","description":"Temperance"},{"id":"tarot_devil","type":136,"value":14,"title":"XV","description":"The
-        Devil"},{"id":"tarot_tower","type":136,"value":15,"title":"XVI","description":"The
-        Tower"},{"id":"tarot_star","type":136,"value":16,"title":"XVII","description":"The
-        Star"},{"id":"tarot_moon","type":136,"value":17,"title":"XVIII","description":"The
-        Moon"},{"id":"tarot_sun","type":136,"value":18,"title":"XVIIII","description":"The
-        Sun"},{"id":"tarot_judgment","type":136,"value":19,"title":"XX","description":"Judgment"}],"decreesToPass":3}'
+      string: '{"decrees":[{"id":"meal_plan","type":58,"title":"Meal Plan","description":"All
+        Fans will gain 2 new temporary Snack Slots each Earlsiesta and 2 new temporary
+        Snack slots each Latesiesta. The 4 extra Slots and the Snacks in them will
+        be washed away after each Election."},{"id":"pot_luck","type":60,"title":"Pot
+        Luck","description":"All Fans gain 3 Snack Slots permanently. Every Season,
+        3 Snacks in Concessions will be randomly selected to be Spoiled, earning extremely
+        low payouts, with a small chance of a Gourmet Jackpot."},{"id":"all_you_can_eat","type":59,"title":"All
+        You Can Eat","description":"Fans will be able to freely buy and sell Snack
+        Slots at any time. The less Snack Slots a Fan owns, the higher the payout
+        for the Snacks in them."}],"blessings":[{"id":"mod_team_black_hole_payouts","type":155,"value":1,"title":"Jam-Packed","subheader":"Brought
+        to you by @the Multitude Podcast Collective@https://multitude.productions/shows","description":"Your
+        Team will pay out double to all Fans when they trigger the Black Hole."},{"id":"mod_team_sun_two_payouts","type":156,"value":1,"title":"Glazed","description":"Your
+        Team will pay out double to all Fans when they trigger Sun 2."},{"id":"mod_team_popcorn_payouts","type":153,"value":1,"title":"Buttered
+        Up","description":"Your Team will pay out double for Popcorn."},{"id":"mod_team_stale_popcorn_payouts","type":154,"value":1,"title":"Over
+        Salted","description":"Your Team will pay out double for Stale Popcorn."},{"id":"worst_player_walk_in_park","type":152,"value":1,"title":"Solo
+        Stroll","description":"The worst Player on your Team will draw a walk on 3
+        Balls instead of 4."},{"id":"division_min_max_mods","type":151,"value":1,"title":"Min-Maxing","description":"Every
+        Team in your division gets one Minimalist and one Maximalist."},{"id":"players_targeted_evolution","type":159,"value":2,"title":"Targeted
+        Evolution","description":"A random pitcher and a random hitter on your Team
+        will Advance."},{"id":"team_removes_allergies","type":130,"value":1,"title":"The
+        Nut Button","description":"Your Team is no longer allergic to Peanuts."},{"id":"variable_team_pitching","type":38,"value":0.2,"title":"Non-Dominant
+        Arms","description":"Maybe try throwing with the other one? Your Team''s pitching
+        changes anywhere from -5% to +15%"},{"id":"random_hitter_star_boost","type":52,"value":3,"title":"Precognition","description":"Vision
+        of things to come. Improve 3 random hitters on your Team by 20%."},{"id":"popular_lineup_order","type":81,"value":1,"title":"Headliners","description":"Arrange
+        your lineup in order of their Idolatry."},{"id":"reroll_worst_players_5","type":10,"value":5,"title":"Soul
+        Swap","description":"They won''t stop screaming. Randomizes your Team''s 5
+        worst players."}],"wills":[{"id":"idols_steal","title":"Plunder","description":"Steal
+        a Player from the Idols board. Send a random Player from your Team back.","info":[{"type":1,"description":"Which
+        Idol do you want to steal?","filters":{"leagueLocation":"idolsBoard"}}]},{"id":"opposite_subleague_swap","title":"Exchange","description":"Swap
+        a Player from a Team in the opposite Subleague with a Player from your Team.","info":[{"type":0,"description":"Which
+        team do you want to swap with?","filters":{"leagueLocation":"oppSubleague"}},{"type":1,"description":"What
+        player do you want to swap for?","filters":{"leagueLocation":"inputTeam","position":"all"}},{"type":1,"description":"What
+        player do you want to send back?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"shadows_call_up","title":"Foreshadow","description":"Swap
+        a Player from your Shadows to your active roster.","info":[{"type":1,"description":"What
+        player from the Shadows do you want to call up to the active roster?","filters":{"leagueLocation":"myTeam","position":"shadows"}},{"type":1,"description":"What
+        player from your active roster do you want to send to the Shadows?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"player_boost","title":"Infuse","description":"Boost
+        a Player on your Team by 15% to 30%.","info":[{"type":1,"description":"Which
+        player do you want to Boost?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"mystery_mod","title":"Trust","description":"Receive
+        a mystery Benefit for one of your Teams'' Players.","info":[{"type":1,"description":"Which
+        player do you want to receive the Benefit?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"alternate_call","title":"Alternate","description":"Call
+        in an Alternate for a Player on your Team.","info":[{"type":1,"description":"Which
+        player do you want to call an Alternate for?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"player_cut","title":"Revoke","description":"Revoke
+        a Player from your roster.","info":[{"type":1,"description":"Which player
+        do you want to revoke?","filters":{"leagueLocation":"myTeam","position":"all"}}]},{"id":"season_team_mod","title":"Enrich","description":"Pick
+        a modification for your Team next season.","info":[{"type":2,"description":"Which
+        mod do you want?","filters":{"mods":["EXTRA_STRIKE","SHAME_GIVER","EARLBIRDS","LATE_TO_PARTY"]}}]}],"decreesToPass":1,"willsToPass":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '2583'
+      - '5169'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 00:59:26 GMT
+      - Tue, 23 Mar 2021 19:24:27 GMT
       Etag:
-      - W/"a17-4V1boZ8pC/Bhy+ZTiLT4m3S7goo"
+      - W/"1431-ymo1mt+pGRndh/g/S1wXUztHT+4"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A8o5Aa1scNsRRnbLX0QVSa3PE6DonurMA.rJ48JYwG8IpMaGiEd1JL2z7ih42ZNjQ8lnqa1XQxmck;
-        Path=/; Expires=Tue, 23 Feb 2021 00:59:26 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

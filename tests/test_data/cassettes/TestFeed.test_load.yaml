@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/feed/global?category=0&limit=2
   response:
     body:
-      string: '[{"id":"b7e9e6b3-da49-47a6-8301-84015799b45b","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":399,"subPlay":-1},"created":"2021-03-03T21:33:54.107Z","season":11,"tournament":-1,"type":8,"day":52,"phase":4,"category":0,"description":"Son
-        Scotch hit a ground out to Elijah Valenzuela."},{"id":"4371e3ad-8226-4cbc-b9a9-6af375038e5e","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":398,"subPlay":-1},"created":"2021-03-03T21:33:49.045Z","season":11,"tournament":-1,"type":13,"day":52,"phase":4,"category":0,"description":"Strike,
-        looking. 1-1"}]'
+      string: '[{"id":"bf631ad8-b8e2-47ac-a902-0637d7f76f90","playerTags":[],"teamTags":["878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["b2cafd20-a799-48f6-abd7-c99bd79a6bd1"],"metadata":{"play":291,"subPlay":-1},"created":"2021-03-20T23:24:43.186Z","season":13,"tournament":-1,"type":8,"day":116,"phase":11,"category":0,"description":"Halexandrey
+        Walton hit a ground out to Lachlan Shelton."},{"id":"ed5e97c9-02ff-4827-bb16-043b9e5a5f3e","playerTags":[],"teamTags":["878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["b2cafd20-a799-48f6-abd7-c99bd79a6bd1"],"metadata":{"play":290,"subPlay":-1},"created":"2021-03-20T23:24:38.148Z","season":13,"tournament":-1,"type":13,"day":116,"phase":11,"category":0,"description":"Strike,
+        looking. 0-2"}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '801'
+      - '811'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 03 Mar 2021 21:59:07 GMT
+      - Tue, 23 Mar 2021 19:24:35 GMT
       Etag:
-      - W/"321-YWkVswmlujXSA/Oe+iqDiAtMIjw"
+      - W/"32b-KQCL1IPQmuiGwsQXx76La+c+/Ss"
       Server:
       - Cowboy
       Vary:

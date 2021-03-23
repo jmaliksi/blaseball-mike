@@ -14,25 +14,22 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=ff5a37d9-a6dd-49aa-b6fb-b935fd670820
   response:
     body:
-      string: '[{"id":"ff5a37d9-a6dd-49aa-b6fb-b935fd670820","anticapitalism":0.8702096469503214,"baseThirst":0.9543267569922499,"buoyancy":1.0273349651265833,"chasiness":0.8599458741651298,"coldness":1.004922832671289,"continuation":1.1413001050213134,"divinity":0.5013573770412718,"groundFriction":0.3281437734485111,"indulgence":0.6324896860749399,"laserlikeness":1.013934769024473,"martyrdom":0.39661535126648906,"moxie":0.5029153913567603,"musclitude":0.6132712474952127,"name":"Dunn
-        Keyes","bat":"","omniscience":0.47941388374008753,"overpowerment":0.2235488089710304,"patheticism":0.650679808746039,"ruthlessness":0.3737783625842831,"shakespearianism":0.5704660247565767,"suppression":0.3676060929720581,"tenaciousness":0.3729322950515312,"thwackability":0.4075426802879937,"tragicness":0.1,"unthwackability":1.0880693117159579,"watchfulness":0.5634161520732002,"pressurization":0.6718389101890525,"totalFingers":13,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.7498799875684145,"fate":15,"armor":"","ritual":"Fixating
-        on their impending death","coffee":12,"blood":12,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8678136266362878,"pitchingRating":0.5314422693345392,"hittingRating":0.4886177530110161,"defenseRating":0.6500706380369825,"leagueTeamId":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","tournamentTeamId":null}]'
+      string: '[{"id":"ff5a37d9-a6dd-49aa-b6fb-b935fd670820","anticapitalism":0.9797711007700018,"baseThirst":1.0174446430578281,"buoyancy":1.0850578905934625,"chasiness":0.971969502320316,"coldness":1.0983742103706278,"continuation":1.2088502855390797,"divinity":0.5623599751608019,"groundFriction":0.4007491293833701,"indulgence":0.7049709734784234,"laserlikeness":1.0937724807402145,"martyrdom":0.45781942847378615,"moxie":0.5700646342582579,"musclitude":0.6699427459335859,"name":"Dunn
+        Keyes","bat":"","omniscience":0.5679443244452609,"overpowerment":0.3150226021491341,"patheticism":0.5844583545599619,"ruthlessness":0.4842614408784393,"shakespearianism":0.6817038640340927,"suppression":0.47774463227124003,"tenaciousness":0.46958858860375385,"thwackability":0.45676489300554596,"tragicness":0.04416794726855082,"unthwackability":1.1999022680283833,"watchfulness":0.6791292464076667,"pressurization":0.6718389101890525,"totalFingers":14,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.8153000692366617,"fate":15,"armor":"","ritual":"Fixating
+        on their impending death","coffee":12,"blood":12,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.940927603070143,"pitchingRating":0.6648665503440648,"hittingRating":0.5444939442991331,"defenseRating":0.7349835675694982,"leagueTeamId":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","tournamentTeamId":null,"eDensity":32.196901656979875,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1400'
+      - '1474'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:51 GMT
+      - Tue, 23 Mar 2021 19:24:39 GMT
       Etag:
-      - W/"578-B15aAUBGXaWH9BEPaVsgg0fQTUg"
+      - W/"5c2-Chj2N5CRFVi8iSVhVofq/9VhFY0"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AGHDOec3PYYcsv1xcokLFZlu2NRYV_3m6.bQtz9iNDwpmSEFX1uNGmEw2M3L9RoVkIHM%2FOfvKraEA;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:51 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -57,24 +54,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=3c331c87-1634-46c4-87ce-e4b9c59e2969
   response:
     body:
-      string: '[{"id":"3c331c87-1634-46c4-87ce-e4b9c59e2969","anticapitalism":0.8144719112482496,"baseThirst":0.8276194573836204,"buoyancy":0.22427866581588335,"chasiness":0.5110078199478887,"coldness":0.6829548756152195,"continuation":0.1081732397193205,"divinity":0.5539652063757337,"groundFriction":0.5101751601727961,"indulgence":0.07622634396669577,"laserlikeness":0.4898355256474115,"martyrdom":0.7117023713181533,"moxie":0.11090341533254505,"musclitude":0.44205036927867336,"name":"Yosh
-        Carpenter","bat":"","omniscience":0.3256784036660068,"overpowerment":0.5420523736544021,"patheticism":0.20548864480649118,"ruthlessness":0.9808146019956697,"shakespearianism":0.8025876112274433,"suppression":0.7697881609898709,"tenaciousness":0.9618890241620097,"thwackability":0.5508329782413124,"tragicness":0.1,"unthwackability":0.7592244015378945,"watchfulness":0.41767045501816136,"pressurization":0.3186511553901601,"totalFingers":12,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":1.0139784537583232,"fate":30,"armor":"","ritual":"Cartoons","coffee":4,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3973769138724253,"pitchingRating":0.7642493553704165,"hittingRating":0.5163575092966772,"defenseRating":0.6655742742265919,"leagueTeamId":"b72f3061-f573-40d7-832a-5ad475bd7909","tournamentTeamId":"4d921519-410b-41e2-882e-9726a4e54a6a"}]'
+      string: '[{"id":"3c331c87-1634-46c4-87ce-e4b9c59e2969","anticapitalism":0.9456904360614458,"baseThirst":0.9349237625326786,"buoyancy":0.3469296505791843,"chasiness":0.607142292665965,"coldness":0.7844234825210165,"continuation":0.23744999476699946,"divinity":0.6955728507456062,"groundFriction":0.6259183543152388,"indulgence":0.18595162656160272,"laserlikeness":0.6301153680425388,"martyrdom":0.8451153120709534,"moxie":0.2556889181714722,"musclitude":0.582818848275538,"name":"Yosh
+        Carpenter","bat":"","omniscience":0.41965827675555595,"overpowerment":0.6549126997722445,"patheticism":0.1103922936979182,"ruthlessness":1.0977896125007565,"shakespearianism":0.9534735116776321,"suppression":0.9104169235457042,"tenaciousness":1.0570929041822013,"thwackability":0.6813305876566483,"tragicness":0.001,"unthwackability":0.9053272218733397,"watchfulness":0.5437356668711264,"pressurization":0.3186511553901601,"totalFingers":12,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":1.117452916505527,"fate":30,"armor":"","ritual":"Cartoons","coffee":4,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5507273427203662,"pitchingRating":0.9169223866327687,"hittingRating":0.6614278713643177,"defenseRating":0.7565619939378077,"leagueTeamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","tournamentTeamId":"4d921519-410b-41e2-882e-9726a4e54a6a","eDensity":36.199477162586824,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1407'
+      - '1458'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:51 GMT
+      - Tue, 23 Mar 2021 19:24:40 GMT
       Etag:
-      - W/"57f-Y4rYe5cjV6HxSJjqadRc4xPwKjU"
+      - W/"5b2-Ids1MJYM7qWn/qP1deRpLfNvH98"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3An7idleBEYJ7dIRqGSq1SmVspraXSbR43.8%2FkqSGfTAH6C5cMnu73MqDru1R9WHrn84pGSjI%2FTmxE;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:51 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

@@ -14,60 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/standings?id=34f02581-a284-4e2d-8123-28b38334d053
   response:
     body:
-      string: '{"id":"34f02581-a284-4e2d-8123-28b38334d053","losses":{"b72f3061-f573-40d7-832a-5ad475bd7909":52,"8d87c468-699a-47a8-b40d-cfb73a5660ad":28,"57ec08cc-0411-4643-b304-0e80dbc15ac7":62,"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16":55,"a37f9158-7f82-46bc-908c-c9e2dda7c33b":53,"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5":35,"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e":42,"b63be8c2-576a-4d6e-8daf-814f8bcea96f":54,"f02aeae2-5e6a-4098-9842-02d2273f25c7":48,"878c1bf6-0d21-4659-bfee-916c8314d69c":66,"747b8e4a-7e50-4638-a973-ea7950a3e739":40,"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff":49,"105bc3ff-1320-4e37-8ef0-8d595cb95dd0":39,"b024e975-1c4a-4575-8936-a3754a08806a":47,"36569151-a2fb-43c1-9df7-2df512424c82":55,"adc5b394-8f76-416d-9ce9-813706877b84":48,"979aee4a-6d80-4863-bf1c-ee1a78e06024":78,"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7":38,"bfd38797-8404-4b38-8b82-341da28b1f83":37,"7966eb04-efcc-499b-8f03-d13916330531":64},"wins":{"b72f3061-f573-40d7-832a-5ad475bd7909":47,"8d87c468-699a-47a8-b40d-cfb73a5660ad":71,"57ec08cc-0411-4643-b304-0e80dbc15ac7":37,"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16":44,"a37f9158-7f82-46bc-908c-c9e2dda7c33b":46,"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5":64,"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e":57,"b63be8c2-576a-4d6e-8daf-814f8bcea96f":45,"f02aeae2-5e6a-4098-9842-02d2273f25c7":51,"878c1bf6-0d21-4659-bfee-916c8314d69c":33,"747b8e4a-7e50-4638-a973-ea7950a3e739":59,"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff":50,"105bc3ff-1320-4e37-8ef0-8d595cb95dd0":60,"b024e975-1c4a-4575-8936-a3754a08806a":52,"36569151-a2fb-43c1-9df7-2df512424c82":44,"adc5b394-8f76-416d-9ce9-813706877b84":51,"979aee4a-6d80-4863-bf1c-ee1a78e06024":21,"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7":61,"bfd38797-8404-4b38-8b82-341da28b1f83":62,"7966eb04-efcc-499b-8f03-d13916330531":35}}'
+      string: '{"id":"34f02581-a284-4e2d-8123-28b38334d053","losses":{"b72f3061-f573-40d7-832a-5ad475bd7909":52,"8d87c468-699a-47a8-b40d-cfb73a5660ad":28,"57ec08cc-0411-4643-b304-0e80dbc15ac7":62,"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16":55,"a37f9158-7f82-46bc-908c-c9e2dda7c33b":53,"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5":35,"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e":42,"b63be8c2-576a-4d6e-8daf-814f8bcea96f":54,"f02aeae2-5e6a-4098-9842-02d2273f25c7":48,"878c1bf6-0d21-4659-bfee-916c8314d69c":66,"747b8e4a-7e50-4638-a973-ea7950a3e739":40,"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff":49,"105bc3ff-1320-4e37-8ef0-8d595cb95dd0":39,"b024e975-1c4a-4575-8936-a3754a08806a":47,"36569151-a2fb-43c1-9df7-2df512424c82":55,"adc5b394-8f76-416d-9ce9-813706877b84":48,"979aee4a-6d80-4863-bf1c-ee1a78e06024":78,"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7":38,"bfd38797-8404-4b38-8b82-341da28b1f83":37,"7966eb04-efcc-499b-8f03-d13916330531":64},"wins":{"b72f3061-f573-40d7-832a-5ad475bd7909":47,"8d87c468-699a-47a8-b40d-cfb73a5660ad":71,"57ec08cc-0411-4643-b304-0e80dbc15ac7":37,"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16":44,"a37f9158-7f82-46bc-908c-c9e2dda7c33b":46,"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5":64,"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e":57,"b63be8c2-576a-4d6e-8daf-814f8bcea96f":45,"f02aeae2-5e6a-4098-9842-02d2273f25c7":51,"878c1bf6-0d21-4659-bfee-916c8314d69c":33,"747b8e4a-7e50-4638-a973-ea7950a3e739":59,"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff":50,"105bc3ff-1320-4e37-8ef0-8d595cb95dd0":60,"b024e975-1c4a-4575-8936-a3754a08806a":52,"36569151-a2fb-43c1-9df7-2df512424c82":44,"adc5b394-8f76-416d-9ce9-813706877b84":51,"979aee4a-6d80-4863-bf1c-ee1a78e06024":21,"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7":61,"bfd38797-8404-4b38-8b82-341da28b1f83":62,"7966eb04-efcc-499b-8f03-d13916330531":35},"runs":{},"gamesPlayed":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1745'
+      - '1772'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:21 GMT
+      - Tue, 23 Mar 2021 19:25:25 GMT
       Etag:
-      - W/"6d1-oey3b8Jb4lQKGui54GGkh9WgJt4"
+      - W/"6ec-HODiPXkOktz2J3gm1n9MBDgLy/M"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AzT7WYOZaUclXldbT5PSv0ACkP4M4Jsfw.RKckaUlg1JeAZyOlfhxX%2F78ELx%2Fq0%2Fz3ug20%2F0D6co8;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:21 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/standings?id=00000000-0000-0000-0000-000000000000
-  response:
-    body:
-      string: ''
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Sun, 14 Feb 2021 01:10:21 GMT
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AuTxqAzhgYg7s5SDNRi1Xq-WDPe9cIqJ7.nYJEkmsBVLvz3UUv7pXSZjf0vdHGhNSCrialkaSyWOs;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:21 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

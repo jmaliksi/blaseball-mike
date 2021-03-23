@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/feed/team?category=0&id=a37f9158-7f82-46bc-908c-c9e2dda7c33b&limit=2
   response:
     body:
-      string: '[{"id":"b7e9e6b3-da49-47a6-8301-84015799b45b","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":399,"subPlay":-1},"created":"2021-03-03T21:33:54.107Z","season":11,"tournament":-1,"type":8,"day":52,"phase":4,"category":0,"description":"Son
-        Scotch hit a ground out to Elijah Valenzuela."},{"id":"4371e3ad-8226-4cbc-b9a9-6af375038e5e","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","9debc64f-74b7-4ae1-a4d6-fce0144b6ea5"],"gameTags":["a3331aed-4ed9-4d72-84ce-5a1df319f33f"],"metadata":{"play":398,"subPlay":-1},"created":"2021-03-03T21:33:49.045Z","season":11,"tournament":-1,"type":13,"day":52,"phase":4,"category":0,"description":"Strike,
-        looking. 1-1"}]'
+      string: '[{"id":"34d9a192-daa8-45a8-a6c9-8e5e760746fa","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","b63be8c2-576a-4d6e-8daf-814f8bcea96f"],"gameTags":["e5b4308b-9df9-4c59-8873-37bbb55b7f2b"],"metadata":{"play":302,"subPlay":-1},"created":"2021-03-19T19:26:29.943Z","season":13,"tournament":-1,"type":8,"day":98,"phase":6,"category":0,"description":"Stephens
+        Lightner hit a ground out to Randy Dennis."},{"id":"13711e59-0821-4b29-8330-b34fcc5fb753","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","b63be8c2-576a-4d6e-8daf-814f8bcea96f"],"gameTags":["e5b4308b-9df9-4c59-8873-37bbb55b7f2b"],"metadata":{"play":301,"subPlay":-1},"created":"2021-03-19T19:26:24.899Z","season":13,"tournament":-1,"type":12,"day":98,"phase":6,"category":0,"description":"Stephens
+        Lightner batting for the Jazz Hands."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '801'
+      - '828'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 03 Mar 2021 21:59:07 GMT
+      - Tue, 23 Mar 2021 19:24:36 GMT
       Etag:
-      - W/"321-YWkVswmlujXSA/Oe+iqDiAtMIjw"
+      - W/"33c-+y1kco1o1D/Hnq9hndYB6bj52j4"
       Server:
       - Cowboy
       Vary:

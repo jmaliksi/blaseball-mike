@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: '[{"player_id":"a1628d97-16ca-4a75-b8df-569bae02bef9","player_name":"Chorby
-        Soul","valid_from":"2020-09-23T11:45:00.944Z","valid_until":null}]'
+        Soul","valid_from":"2021-03-21T18:02:01.015Z","valid_until":null}]'
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -24,9 +24,9 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 02:15:21 GMT
+      - Tue, 23 Mar 2021 19:25:30 GMT
       Etag:
-      - W/"8d-1doWO77aMlvcAw4MAfSCzzrNyII"
+      - W/"8d-SIP1xrIpcpy50yhw5Mr2jUbENZk"
       X-Powered-By:
       - Express
     status:
@@ -48,23 +48,20 @@ interactions:
   response:
     body:
       string: '[{"id":"a1628d97-16ca-4a75-b8df-569bae02bef9","anticapitalism":0.8970355629627309,"baseThirst":0.058243218552248344,"buoyancy":0.5896518857978867,"chasiness":0.20439497456683964,"coldness":0.8893230012496356,"continuation":0.4373024995235495,"divinity":0.5898759131741964,"groundFriction":0.3276746719765562,"indulgence":0.4291972302866216,"laserlikeness":0.0113149411039275,"martyrdom":0.8975257761356807,"moxie":0.1928403921305042,"musclitude":0.05994458916975387,"name":"Chorby
-        Soul","bat":null,"omniscience":0.8057216322587384,"overpowerment":0.6031513392090022,"patheticism":0.1226889524593553,"ruthlessness":0.7273926455324549,"shakespearianism":0.45992426674459375,"suppression":0.7135199537920991,"tenaciousness":0.8395643991391997,"thwackability":0.42083430153259993,"tragicness":0.1,"unthwackability":0.3749185339228107,"watchfulness":0.5016257282203738,"pressurization":0.7113755233221608,"totalFingers":10,"soul":1777,"deceased":true,"peanutAllergy":false,"cinnamon":0.62584041346657,"fate":79,"armor":null,"ritual":null,"coffee":null,"blood":null,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.06056739008830469,"pitchingRating":0.4610362587951204,"hittingRating":0.4351983809721829,"defenseRating":0.7284735294968893,"leagueTeamId":null,"tournamentTeamId":null}]'
+        Soul","bat":null,"omniscience":0.8057216322587384,"overpowerment":0.6031513392090022,"patheticism":0.1226889524593553,"ruthlessness":0.7273926455324549,"shakespearianism":0.45992426674459375,"suppression":0.7135199537920991,"tenaciousness":0.8395643991391997,"thwackability":0.42083430153259993,"tragicness":0.1,"unthwackability":0.3749185339228107,"watchfulness":0.5016257282203738,"pressurization":0.7113755233221608,"totalFingers":10,"soul":1777,"deceased":false,"peanutAllergy":false,"cinnamon":0.62584041346657,"fate":79,"armor":null,"ritual":null,"coffee":null,"blood":null,"permAttr":["RETURNED","DEBT_THREE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.060567390088304675,"pitchingRating":0.4610362587951204,"hittingRating":0.43519838097218294,"defenseRating":0.7284735294968893,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1341'
+      - '1439'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 02:15:22 GMT
+      - Tue, 23 Mar 2021 19:25:31 GMT
       Etag:
-      - W/"53d-JhZzPCEPQ7+wMm/apP6Tw5UP7/Y"
+      - W/"59f-626ciZ+f4/zzsL0612RHcWKv8II"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AD26wEuz_vcDGEbZyWrF4wl1idw_rqMaX.VWolmF89FvKpTx6eTbXI6pB3helG1W4OQFq3OCVfRt4;
-        Path=/; Expires=Sun, 21 Feb 2021 02:15:22 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
