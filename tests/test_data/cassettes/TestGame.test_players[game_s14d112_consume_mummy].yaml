@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=1db2f602-64b1-4a5c-8697-1932cc2c6df1
+  response:
+    body:
+      string: '[{"id":"1db2f602-64b1-4a5c-8697-1932cc2c6df1","anticapitalism":0.36288611594808295,"baseThirst":0.8046304802263591,"buoyancy":1.1552823240864345,"chasiness":0.4290489872007347,"coldness":1.0369509947228985,"continuation":1.096310904599184,"divinity":1.0108591485643532,"groundFriction":1.2833181958492814,"indulgence":1.047046611983204,"laserlikeness":0.511678539607179,"martyrdom":1.2697993820805185,"moxie":0.5916338116888625,"musclitude":0.6238719374527941,"name":"Mummy
+        Melcon","bat":"","omniscience":0.4480957171596029,"overpowerment":0.9094413053561573,"patheticism":0.5265680259463004,"ruthlessness":1.1312704641092826,"shakespearianism":1.3067158185789418,"suppression":0.9375770645568416,"tenaciousness":0.800663807761201,"thwackability":0.7850486172708355,"tragicness":0.001,"unthwackability":0.5564936587517776,"watchfulness":0.6551219300933132,"pressurization":0.4704999159830534,"totalFingers":13,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.4220673574654016,"fate":76,"armor":"","ritual":"Having
+        an epiphany","coffee":2,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7275815194380674,"pitchingRating":0.7943007292800931,"hittingRating":0.8283710043175533,"defenseRating":0.6483718263722565,"leagueTeamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":17.43655804320111,"state":{},"evolution":1}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1462'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:22:16 GMT
+      Etag:
+      - W/"5b6-lB681N0s1oVptuLIHDcHDvoCmEg"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=d81ce662-07b6-4a73-baa4-acbbb41f9dc5
+  response:
+    body:
+      string: '[{"id":"d81ce662-07b6-4a73-baa4-acbbb41f9dc5","anticapitalism":1.2310588317102,"baseThirst":0.2546486656430874,"buoyancy":0.7119715059312145,"chasiness":0.5451760862499861,"coldness":0.9486968583688555,"continuation":0.6851495322499079,"divinity":0.9729585294869325,"groundFriction":0.3462736206830285,"indulgence":1.1248143388332734,"laserlikeness":1.1840115944252034,"martyrdom":0.646726515582688,"moxie":0.5648952038044083,"musclitude":0.26142873447962744,"name":"Yummy
+        Elliott","bat":"","omniscience":0.5098795241060187,"overpowerment":1.1082927894244243,"patheticism":0.718449964292014,"ruthlessness":1.1472762164580335,"shakespearianism":0.617897894894232,"suppression":0.9322311853842284,"tenaciousness":0.8276004015722199,"thwackability":0.815748797658458,"tragicness":0.001,"unthwackability":0.7983419578485282,"watchfulness":1.0177013664258525,"pressurization":0.3557395475255112,"totalFingers":11,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.6184959929542189,"fate":74,"armor":"","ritual":"Comics","coffee":2,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8315735742292507,"pitchingRating":0.9123883008646817,"hittingRating":0.7434721561833036,"defenseRating":0.8100302717100933,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","tournamentTeamId":null,"eDensity":32.11464575773543,"state":{},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1415'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:22:16 GMT
+      Etag:
+      - W/"587-fbXqMi9e+kHQiA7RS4BOJQyq+rQ"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

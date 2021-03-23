@@ -155,16 +155,16 @@ class TestGame(TestBase):
             assert isinstance(game.score_update, str)
         if getattr(game, "score_ledger", None) is not None:
             assert isinstance(game.score_ledger, str)
-        if getattr(game, "topInningScore", None) is not None:
-            assert isinstance(game.score_ledger, (int, float))
-        if getattr(game, "bottomInningScore", None) is not None:
-            assert isinstance(game.score_ledger, (int, float))
-        if getattr(game, "newInningPhase", None) is not None:
-            assert isinstance(game.score_ledger, int)
-        if getattr(game, "gameStartPhase", None) is not None:
-            assert isinstance(game.score_ledger, int)
-        if getattr(game, "isTitleMatch", None) is not None:
-            assert isinstance(game.score_ledger, bool)
+        if getattr(game, "top_inning_score", None) is not None:
+            assert isinstance(game.top_inning_score, (int, float))
+        if getattr(game, "bottom_inning_score", None) is not None:
+            assert isinstance(game.bottom_inning_score, (int, float))
+        if getattr(game, "new_inning_phase", None) is not None:
+            assert isinstance(game.new_inning_phase, int)
+        if getattr(game, "game_start_phase", None) is not None:
+            assert isinstance(game.game_start_phase, int)
+        if getattr(game, "is_title_match", None) is not None:
+            assert isinstance(game.is_title_match, bool)
 
         if getattr(game, "base_runner_names", None) is not None:
             assert isinstance(game.base_runner_names, list)
@@ -1251,11 +1251,98 @@ class TestGame(TestBase):
             "homeTeamSecondaryColor": "#178f55"
           })
 
+    @pytest.fixture(scope="module")
+    def game_s14d112_consume_mummy(self):
+        """S14 changes and consumers"""
+        return Game({
+            "id": "5d02a9f5-6b0f-464b-8dfe-71361f7af95e",
+            "basesOccupied": [],
+            "baseRunners": [],
+            "baseRunnerNames": [],
+            "outcomes": [
+                "CONSUMERS ATTACK\nHIROTO WILCOX"
+            ],
+            "terminology": "b67e9bbb-1495-4e1b-b517-f1444b0a6c8b",
+            "lastUpdate": "Tacos 11, Tigers 1",
+            "rules": "4ae9d46a-5408-460a-84fb-cbd8d03fff6c",
+            "statsheet": "e6227e9d-7447-478e-b134-78fe49280e63",
+            "awayPitcher": "1db2f602-64b1-4a5c-8697-1932cc2c6df1",
+            "awayPitcherName": "Mummy Melcon",
+            "awayBatter": None,
+            "awayBatterName": "",
+            "awayTeam": "747b8e4a-7e50-4638-a973-ea7950a3e739",
+            "awayTeamName": "Hades Tigers",
+            "awayTeamNickname": "Tigers",
+            "awayTeamColor": "#5c1c1c",
+            "awayTeamEmoji": "0x1F405",
+            "awayOdds": 0.4363791114405691,
+            "awayStrikes": 3,
+            "awayScore": 1,
+            "awayTeamBatterCount": 32,
+            "homePitcher": "d81ce662-07b6-4a73-baa4-acbbb41f9dc5",
+            "homePitcherName": "Yummy Elliott",
+            "homeBatter": None,
+            "homeBatterName": "",
+            "homeTeam": "878c1bf6-0d21-4659-bfee-916c8314d69c",
+            "homeTeamName": "LA Unlimited Tacos",
+            "homeTeamNickname": "Tacos",
+            "homeTeamColor": "#64376e",
+            "homeTeamEmoji": "0x1F32E",
+            "homeOdds": 0.5636208885594308,
+            "homeStrikes": 3,
+            "homeScore": 11,
+            "homeTeamBatterCount": 42,
+            "season": 13,
+            "isPostseason": True,
+            "day": 111,
+            "phase": 7,
+            "gameComplete": True,
+            "finalized": True,
+            "gameStart": True,
+            "halfInningOuts": 0,
+            "halfInningScore": 0,
+            "inning": 8,
+            "topOfInning": True,
+            "atBatBalls": 0,
+            "atBatStrikes": 0,
+            "seriesIndex": 4,
+            "seriesLength": 3,
+            "shame": False,
+            "weather": 10,
+            "baserunnerCount": 0,
+            "homeBases": 4,
+            "awayBases": 4,
+            "repeatCount": 0,
+            "awayTeamSecondaryColor": "#e83622",
+            "homeTeamSecondaryColor": "#b063c1",
+            "homeBalls": 4,
+            "awayBalls": 4,
+            "homeOuts": 3,
+            "awayOuts": 3,
+            "playCount": 280,
+            "tournament": -1,
+            "baseRunnerMods": [],
+            "homePitcherMod": "",
+            "homeBatterMod": "",
+            "awayPitcherMod": "",
+            "awayBatterMod": "",
+            "scoreUpdate": "",
+            "scoreLedger": "",
+            "stadiumId": "36b94380-39a6-4e32-b525-3e888215798a",
+            "secretBaserunner": None,
+            "topInningScore": 0,
+            "bottomInningScore": 0,
+            "newInningPhase": -1,
+            "gameStartPhase": 19,
+            "isTitleMatch": False
+        })
+
     @pytest.fixture(scope="module", params=['game_s7d95', 'game_s4d87_dogwalker', 'game_s2d99_chronicler',
                                             'game_s9d1_crowvertime', 'game_coffee_cup_d9', 'game_coffee_cup_d11',
                                             'game_s2d5_none_home_pitcher', 'game_s2d10_none_away_pitcher',
                                             'game_s9d84_repeating', 'game_s10d73_fifth_base',
-                                            'game_s11d78_4strike_3ball_home', 'game_s11d27_4strike_3ball_away'])
+                                            'game_s11d78_4strike_3ball_home', 'game_s11d27_4strike_3ball_away',
+                                            'game_s10d3_twos_on_first', 'game_s14d112_consume_mummy'])
     def game(self, request):
         """Parameterized fixture of various games"""
         return request.getfixturevalue(request.param)
