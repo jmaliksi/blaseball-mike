@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:26 GMT
+      - Tue, 23 Mar 2021 20:03:22 GMT
       Etag:
       - W/"41-Aap0vdg+HCV5l0uVp6qjco2t1/k"
       Server:
@@ -49,22 +49,21 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=FIREPROOF
+    uri: https://www.blaseball.com/database/items?ids=GUNBLADE_A
   response:
     body:
-      string: '[{"id":"FIREPROOF","color":"#a5c5f0","textColor":"#a5c5f0","background":"#4c77b0","title":"Fireproof","description":"A
-        Fireproof player can not be incinerated."}]'
+      string: '[{"id":"GUNBLADE_A","name":"The Dial Tone","attr":"NONE"}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '162'
+      - '58'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:26 GMT
+      - Tue, 23 Mar 2021 20:03:22 GMT
       Etag:
-      - W/"a2-l6aRyP64TBgfQJ+EpYFMNSfKeic"
+      - W/"3a-4m12FvCBM6e+d4dufeQ2efC7bvA"
       Server:
       - Cowboy
       Vary:

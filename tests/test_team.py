@@ -104,6 +104,16 @@ class TestTeam(TestBase):
             assert isinstance(team.rotation_slot, int)
         if getattr(team, "tournament_wins", None) is not None:
             assert isinstance(team.tournament_wins, int)
+        if getattr(team, "e_density", None) is not None:
+            assert isinstance(team.e_density, (int, float))
+        if getattr(team, "state", None) is not None:
+            assert isinstance(team.state, dict)
+        if getattr(team, "evolution", None) is not None:
+            assert isinstance(team.evolution, int)
+        if getattr(team, "win_streak", None) is not None:
+            assert isinstance(team.win_streak, int)
+        if getattr(team, "level", None) is not None:
+            assert isinstance(team.level, int)
 
     @pytest.mark.vcr
     def test_load(self):

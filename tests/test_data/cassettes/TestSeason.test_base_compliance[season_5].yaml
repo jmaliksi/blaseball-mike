@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/season?number=10
+  response:
+    body:
+      string: '{"id":"1d184823-a466-44da-ac72-cbd91d13f7dc","league":"d8545021-e9fc-48a3-af74-48685950a183","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","schedule":"6adce7b3-ffae-4955-be15-66205002d7c5","seasonNumber":10,"standings":"c04c457d-3653-4ae5-823c-21366f37f318","stats":"fe1d4070-efbf-4c7e-973d-06e9226fd4de","terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:06:21 GMT
+      Etag:
+      - W/"167-3IJtY3O8ytkmElQ3kCM0YG1i78M"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -9,6 +9,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestPlayoffs(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, playoff):
         self.base_test(playoff)
 

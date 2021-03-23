@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/global?limit=1
+  response:
+    body:
+      string: '[{"id":"324075e5-095c-494e-b13f-2d0ae0b70080","playerTags":["89ec77d8-c186-4027-bd45-f407b4800c2c"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"mod":"SUPERYUMMY","type":0,"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:51:45.795Z","season":13,"tournament":-1,"type":106,"day":116,"phase":13,"category":1,"description":"James
+        Mora is Superyummy..."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '410'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:06:12 GMT
+      Etag:
+      - W/"19a-1x6P7yoMa8IluuPIlMhQAQsZ3fA"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

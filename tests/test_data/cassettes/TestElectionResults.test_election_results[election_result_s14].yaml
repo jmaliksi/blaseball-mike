@@ -1,0 +1,147 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/eventResults?ids=65040c73-2337-4698-aa89-87e396f1cb09,e42abd51-8254-4a6d-af1f-14387d928724,d00f417d-d140-46e4-b93c-512393fca47b
+  response:
+    body:
+      string: '[{"id":"65040c73-2337-4698-aa89-87e396f1cb09","msg":"The Investigation
+        is Underway."},{"id":"e42abd51-8254-4a6d-af1f-14387d928724","msg":"The Meadow
+        is now a Crime Scene."},{"id":"d00f417d-d140-46e4-b93c-512393fca47b","msg":"The
+        Choux is now a Crime Scene."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '259'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:53:40 GMT
+      Etag:
+      - W/"103-0Pb2SIn/JFd+QheTWr5UneAMMb4"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/bonusResults?ids=61eef574-f208-4e71-92ce-33dc7a823f7a,74f05c78-081b-4dff-8a9e-c677f6525c28,fd114ac2-a814-4ae8-a8cf-4a07bc67988e,c67e39b5-a046-4a92-8d5c-48388fee066f,d8bcd3ad-30a1-478b-9f0e-4a871fd49c70,a67d2193-00a7-422e-9b80-c050144875fa,8b14e616-6979-4a84-921c-fe57f1c73c90,7d97a93e-a7cc-4d70-a516-ee0d9cc25134,60563003-1e0a-4efa-8093-3fee11408d27,abca4227-71f7-4cd5-b757-d379401df7ef,b61e3875-d114-4c51-a5f1-aa5c9ecf2aea
+  response:
+    body:
+      string: '[{"id":"61eef574-f208-4e71-92ce-33dc7a823f7a","bonusId":"popular_lineup_order","bonusTitle":"Headliners","teamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","totalVotes":121210,"description":"The
+        Moist Talkers sorted their lineup by Idolatry.","highestTeam":"36569151-a2fb-43c1-9df7-2df512424c82","highestTeamVotes":54597,"teamVotes":8819},{"id":"74f05c78-081b-4dff-8a9e-c677f6525c28","bonusId":"random_hitter_star_boost","bonusTitle":"Precognition","teamId":"7966eb04-efcc-499b-8f03-d13916330531","totalVotes":2599213,"description":"Chorby
+        Short''s hitting was boosted.\nKurt Crueller''s hitting was boosted.\nTiana
+        Wheeler''s hitting was boosted.","highestTeam":"7966eb04-efcc-499b-8f03-d13916330531","highestTeamVotes":452381,"teamVotes":452381},{"id":"fd114ac2-a814-4ae8-a8cf-4a07bc67988e","bonusId":"variable_team_pitching","bonusTitle":"Non-Dominant
+        Arms","teamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","totalVotes":1132203,"description":"The
+        Tigers'' pitching was boosted.\nMummy Melcon''s pitching was boosted.\nHiroto
+        Wilcox''s pitching was boosted.\nDunlap Figueroa''s pitching was boosted.\nFamous
+        Owens'' pitching was boosted.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":332154,"teamVotes":332154},{"id":"c67e39b5-a046-4a92-8d5c-48388fee066f","bonusId":"mod_team_sun_two_payouts","bonusTitle":"Glazed","teamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","totalVotes":21027,"description":"The
+        Tacos will now pay everyone double when they trigger Sun 2.","highestTeam":"f02aeae2-5e6a-4098-9842-02d2273f25c7","highestTeamVotes":12224,"teamVotes":2480},{"id":"d8bcd3ad-30a1-478b-9f0e-4a871fd49c70","bonusId":"players_targeted_evolution","bonusTitle":"Targeted
+        Evolution","teamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","totalVotes":412596,"description":"Halexandrey
+        Walton Evolved to Base 1\nWyatt Mason IV Evolved to Base 1\nWyatt Mason IV
+        Evolved to Base 1","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":79771,"teamVotes":13404},{"id":"a67d2193-00a7-422e-9b80-c050144875fa","bonusId":"mod_team_popcorn_payouts","bonusTitle":"Buttered
+        Up","teamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","totalVotes":69767,"description":"The
+        Lift will now pay out double for the Popcorn Snack.","highestTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","highestTeamVotes":7316,"teamVotes":2449},{"id":"8b14e616-6979-4a84-921c-fe57f1c73c90","bonusId":"reroll_worst_players_5","bonusTitle":"Soul
+        Swap","teamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","totalVotes":251147,"description":"Freemium
+        Seraph''s hitting was re-rolled.\nFreemium Seraph''s hitting was re-rolled.\nStijn
+        Strongbody''s hitting was re-rolled.\nFreemium Seraph''s hitting was re-rolled.\nElwin
+        McGhee''s hitting was re-rolled.","highestTeam":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","highestTeamVotes":80881,"teamVotes":7563},{"id":"7d97a93e-a7cc-4d70-a516-ee0d9cc25134","bonusId":"mod_team_black_hole_payouts","bonusTitle":"Jam-Packed","teamId":"bb4a9de5-c924-4923-a0cb-9d1445f1ee5d","totalVotes":49661,"description":"The
+        Worms will now pay everyone double when they trigger the Black Hole.","highestTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","highestTeamVotes":33763,"teamVotes":4060},{"id":"60563003-1e0a-4efa-8093-3fee11408d27","bonusId":"worst_player_walk_in_park","bonusTitle":"Solo
+        Stroll","teamId":"979aee4a-6d80-4863-bf1c-ee1a78e06024","totalVotes":659409,"description":"Spears
+        Taylor will henceforth be Walking in the Park.","highestTeam":"57ec08cc-0411-4643-b304-0e80dbc15ac7","highestTeamVotes":109081,"teamVotes":3880},{"id":"abca4227-71f7-4cd5-b757-d379401df7ef","bonusId":"mod_team_stale_popcorn_payouts","bonusTitle":"Over
+        Salted","teamId":"46358869-dce9-4a01-bfba-ac24fc56f57e","totalVotes":203669,"description":"The
+        Mechanics will now pay out double for the Stale Popcorn Snack.","highestTeam":"bb4a9de5-c924-4923-a0cb-9d1445f1ee5d","highestTeamVotes":45201,"teamVotes":35357},{"id":"b61e3875-d114-4c51-a5f1-aa5c9ecf2aea","bonusId":"division_min_max_mods","bonusTitle":"Min-Maxing","teamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","totalVotes":186749,"description":"Thomas
+        Drac-ena is a Maximalist.\nNandy Fantastic is a Minimalist.\nKline Greenlemon
+        is a Maximalist.\nSam Scandal is a Minimalist.\nKichiro Guerra is a Maximalist.\nParker
+        Meng is a Minimalist.\nHenry Marshallow is a Maximalist.\nBeasley Day is a
+        Minimalist.\nWyatt Mason X is a Maximalist.\nOliver Loofah is a Minimalist.\nGia
+        Holbrook is a Maximalist.\nJasper Ji-Eun is a Minimalist.","highestTeam":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","highestTeamVotes":24370,"teamVotes":19837}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4558'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:53:40 GMT
+      Etag:
+      - W/"11ce-ONRd0+W1yFroBgxE4X8H10LESvI"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/decreeResults?ids=8cbfa4ef-c684-40df-a806-4f9e85357f94
+  response:
+    body:
+      string: '[{"id":"8cbfa4ef-c684-40df-a806-4f9e85357f94","decreeId":"all_you_can_eat","decreeTitle":"All
+        You Can Eat","description":"THE FEAST BECKONS\nMOUTHS CIRCLE\nA FEEDING FRENZY","totalVotes":560766}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '195'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:53:40 GMT
+      Etag:
+      - W/"c3-v47WzXxVLBQpXP23bYISzgJGnB0"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

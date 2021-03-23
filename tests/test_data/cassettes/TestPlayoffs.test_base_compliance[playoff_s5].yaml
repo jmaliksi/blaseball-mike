@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playoffs?number=10
+  response:
+    body:
+      string: '{"id":"ec9a7986-6817-4ba2-b258-244dd60b5424","name":"Season 11 Postseason","numberOfRounds":4,"playoffDay":20,"rounds":["6f7d7507-2768-4237-a2f3-f7c4ee1d6aa6","2fc8cd07-48b2-460d-8b8d-10aee5c9f1c9","c378bb0c-2baa-4452-8d83-4546510c2a26","653fe888-0a34-4663-bd2c-4a32f519d763"],"season":10,"tomorrowRound":3,"winner":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournament":-1}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '371'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:06:23 GMT
+      Etag:
+      - W/"173-Ga9p+jyLeAb67rntPTyAe5PYA8c"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

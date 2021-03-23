@@ -11,6 +11,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestGameStatsheet(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, game_statsheet):
         self.base_test(game_statsheet)
 
@@ -107,6 +108,7 @@ class TestGameStatsheet(TestBase):
 
 
 class TestSeasonStatsheet(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, season_statsheet):
         self.base_test(season_statsheet)
 
@@ -168,6 +170,7 @@ class TestSeasonStatsheet(TestBase):
 
 
 class TestTeamStatsheet(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, team_statsheet):
         self.base_test(team_statsheet)
 
@@ -226,6 +229,7 @@ class TestTeamStatsheet(TestBase):
 
 
 class TestPlayerStatsheet(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, player_statsheet):
         self.base_test(player_statsheet)
 

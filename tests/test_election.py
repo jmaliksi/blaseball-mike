@@ -9,6 +9,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestElection(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, election):
         self.base_test(election)
 
@@ -17,6 +18,8 @@ class TestElection(TestBase):
         assert isinstance(election, Election)
         assert isinstance(election.decrees, list)
         assert isinstance(election.blessings, list)
+        if getattr(election, "wills", None) is not None:
+            assert isinstance(election.wills, list)
 
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_current.yaml')
@@ -31,6 +34,7 @@ class TestElection(TestBase):
 
 
 class TestElectionResults(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, election_result):
         self.base_test(election_result)
 
@@ -43,6 +47,7 @@ class TestElectionResults(TestBase):
         assert isinstance(election_result.name, str)
         assert isinstance(election_result.total_bonus_votes, int)
         assert isinstance(election_result.total_decree_votes, int)
+        assert isinstance(election_result.total_will_votes, (int, type(None)))
         assert isinstance(election_result.vote_count, int)
 
         assert isinstance(election_result.event_results, list)
@@ -57,6 +62,10 @@ class TestElectionResults(TestBase):
 
         for tiding in election_result.tiding_results:
             assert isinstance(tiding, TidingResult)
+
+        if getattr(election_result, "will_results", None) is not None:
+            for will in election_result.will_results:
+                assert isinstance(will, str)
 
     @pytest.mark.vcr
     def test_load_by_season(self):
@@ -86,13 +95,20 @@ class TestElectionResults(TestBase):
         """S11 adds tidings"""
         return ElectionResult.load_by_season(11)
 
-    @pytest.fixture(scope="module", params=['election_result_s7', 'election_result_s11'])
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_result_s14.yaml')
+    def election_result_s14(self):
+        """S14 includes wills"""
+        return ElectionResult.load_by_season(14)
+
+    @pytest.fixture(scope="module", params=['election_result_s7', 'election_result_s11', 'election_result_s14'])
     def election_result(self, request):
         """Parameterized fixture of various election results"""
         return request.getfixturevalue(request.param)
 
 
 class TestDecreeResults(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, decree_result):
         self.base_test(decree_result)
 
@@ -150,6 +166,7 @@ class TestDecreeResults(TestBase):
 
 
 class TestBlessingResults(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, blessing_result):
         self.base_test(blessing_result)
 

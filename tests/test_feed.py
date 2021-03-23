@@ -10,6 +10,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestFeed(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, feed):
         for feed_event in feed:
             self.base_test(feed_event)
@@ -27,6 +28,7 @@ class TestFeed(TestBase):
             assert isinstance(feed_event.type, int)
             assert isinstance(feed_event.category, int)
             assert isinstance(feed_event.created, datetime)
+            assert isinstance(feed_event.metadata, dict)
 
             for team in feed_event.team_tags:
                 assert isinstance(team, Team)

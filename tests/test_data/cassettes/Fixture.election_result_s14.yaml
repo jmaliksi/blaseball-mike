@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/offseasonRecap?season=13
+  response:
+    body:
+      string: '{"id":"2fe42057-49c6-4dd7-b9e4-988b85a23dce","bonusResults":["61eef574-f208-4e71-92ce-33dc7a823f7a","74f05c78-081b-4dff-8a9e-c677f6525c28","fd114ac2-a814-4ae8-a8cf-4a07bc67988e","c67e39b5-a046-4a92-8d5c-48388fee066f","d8bcd3ad-30a1-478b-9f0e-4a871fd49c70","a67d2193-00a7-422e-9b80-c050144875fa","8b14e616-6979-4a84-921c-fe57f1c73c90","7d97a93e-a7cc-4d70-a516-ee0d9cc25134","60563003-1e0a-4efa-8093-3fee11408d27","abca4227-71f7-4cd5-b757-d379401df7ef","b61e3875-d114-4c51-a5f1-aa5c9ecf2aea"],"decreeResults":["8cbfa4ef-c684-40df-a806-4f9e85357f94"],"name":"The
+        Season 14 Election","season":13,"totalBonusVotes":6120395,"totalDecreeVotes":1163696,"voteCount":10927301,"eventResults":["65040c73-2337-4698-aa89-87e396f1cb09","e42abd51-8254-4a6d-af1f-14387d928724","d00f417d-d140-46e4-b93c-512393fca47b"],"willResults":["44a39124-6024-4dad-b218-6b58e2f28c57","167ceb3f-cece-442f-ac44-f1e51206eba7","81f57a20-e5b5-42d1-acbf-568e19bfa5d3","e4b661f2-a771-417b-995d-4859ebfcdfe7","2056ff1b-2b6b-482c-8a61-1cc9374cb866","54cde28e-924f-4070-b83a-9fdaeee2487f","53e8a6c0-515d-45e3-b7b2-5b06e30b0518","0be6b9e3-e500-4f12-99e0-f4d38332011f","45474528-db44-4ad9-b995-d7543754076c","61f02872-ac67-4c36-a42e-1dfabde4db62","815f2973-5f04-47c1-ae11-3d7ae84aec33","bcdf3f86-8b32-4901-a285-db7226cd4fc2","99abbb11-8cac-4086-881b-7d425bd28e8f","b5bbdbcd-ce54-4aa7-ad73-0a73605602e5","1a1fd57b-9fa2-43fc-8728-bbb36336fc6f","59106cc4-b9bd-4205-b33a-63bc996a1bdc","11f0afff-ffca-4dc3-8ee9-4065108ef4d9","a7f3f696-805d-4521-824f-72f8e2344a07","738808fd-2735-4bf7-989d-ae08721a03ec","1094fd93-0182-406f-b535-0f775386e25f","84ce5fba-e185-4ffb-83dd-9d39fb0da9bb","3a439974-0331-44b1-b498-f634257e7380","2c2e5ae0-b63d-44e8-8193-fac4db889f49","e380481a-73bf-446e-a8d9-379e1fdf173d","786b9ec8-0a99-4f47-8bb9-1e27d36d9df9","474eab60-9369-4434-95f6-3db408e01b3c","31b7fc53-4479-4209-8997-59948bd30096","111e00b8-54b6-4df4-b02f-08c5b3c23736","66aceb0b-328a-4f37-87a6-e0ffa2774329","f9364c14-c443-4812-9815-71350537d7ca","d7ae78d5-2787-4a95-a1d1-b505faaeabc1","fcc5fd84-029b-4a4f-ae51-925bdffaea48","7407d11c-1489-4c35-b518-f64da2eea4aa","1217e927-0b9f-4bab-acbd-b7caf122afe9","fac11da3-6398-4f16-bcfb-c0a745da71c7","d2b62b5c-1cc8-41ce-905b-d401c408bdb8","9ee01496-9f27-4a34-9e31-95103640ff43","87be8287-06e9-46a8-9f9d-720d25386376","70a7b783-ce9d-4351-96cd-b26af58b57c5","5ad3615c-2120-4762-85ed-5442164beba9","ad3d6b32-f3cf-4d3d-921a-df4e72cfc00f","17ac3895-0ad2-48fd-abf3-10465ca332a4","6af3f9f7-4711-4d31-aba1-ed31aacdda8d","52745679-8221-4585-a274-9920cade70a9","ef1deb76-73a3-44fa-a890-056523cfc7ab","49f49310-8ee4-405e-9fef-4b8c41c74fd4","02fc4e22-b1c6-4b63-8ef8-b9cb3adfd3b1","b2017433-8bf4-47bd-af90-b0fcea8158d3","54c125ff-05a1-4db8-8300-8163e8a3706f","d1582251-10f2-4f69-97de-5a7a646a06b4","c528c239-f504-4a2a-9865-a8795bae6f0b","c6d42306-4f2c-4754-bdb1-53e56e0b33c7"],"totalWillVotes":3603155}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2869'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 19:53:40 GMT
+      Etag:
+      - W/"b35-uPFlzzlsFF1xm8bctg3ipZ2Wcu8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

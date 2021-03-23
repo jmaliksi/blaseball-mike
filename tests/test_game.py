@@ -10,6 +10,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestGame(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, game):
         self.base_test(game)
 
@@ -154,6 +155,16 @@ class TestGame(TestBase):
             assert isinstance(game.score_update, str)
         if getattr(game, "score_ledger", None) is not None:
             assert isinstance(game.score_ledger, str)
+        if getattr(game, "topInningScore", None) is not None:
+            assert isinstance(game.score_ledger, (int, float))
+        if getattr(game, "bottomInningScore", None) is not None:
+            assert isinstance(game.score_ledger, (int, float))
+        if getattr(game, "newInningPhase", None) is not None:
+            assert isinstance(game.score_ledger, int)
+        if getattr(game, "gameStartPhase", None) is not None:
+            assert isinstance(game.score_ledger, int)
+        if getattr(game, "isTitleMatch", None) is not None:
+            assert isinstance(game.score_ledger, bool)
 
         if getattr(game, "base_runner_names", None) is not None:
             assert isinstance(game.base_runner_names, list)

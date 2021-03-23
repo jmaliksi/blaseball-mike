@@ -60,6 +60,7 @@ class TestStadium(TestBase):
         assert isinstance(stadium.mods, list)
         for mod in stadium.mods:
             assert isinstance(mod, Modification)
+            assert mod.id != "????"
 
     @pytest.mark.vcr
     def test_load_all(self):
