@@ -313,7 +313,8 @@ class TestPlayer(TestBase):
         test_player = Player.find_by_name("Chorby Soul")
         test_value = test_player.soulscream
         assert isinstance(test_value, str)
-        assert test_value[-9:] == "undefined"
+        assert test_player.soul == 1777
+        assert test_value[-25:] == "... (CONT. FOR 1477 SOUL)"
 
     # TODO: Set up random override to properly test this
     def test_player_make_random_noseed(self):

@@ -205,7 +205,7 @@ class Player(Base):
         stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
 
         scream = []
-        for r in range(self.soul):
+        for r in range(min(self.soul, 300)):
             sub_scream = []
             i = 10 ** -r
             for s in stats:
@@ -216,7 +216,10 @@ class Player(Base):
                     sub_scream.append("undefined")
             scream.extend(sub_scream + sub_scream + [sub_scream[0]])
 
-        return ''.join(scream)
+        scream = ''.join(scream)
+        if self.soul > 300:
+            scream += f"... (CONT. FOR {self.soul - 300} SOUL)"
+        return scream
 
     @Base.lazy_load("_blood_id", cache_name="_blood", use_default=False)
     def blood(self):
