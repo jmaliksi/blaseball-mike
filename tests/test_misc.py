@@ -44,16 +44,17 @@ class TestSimulationData(TestBase):
         assert isinstance(simulation_data.playoffs, str)
         assert isinstance(simulation_data.season_id, str)
 
+        assert isinstance(simulation_data.attr, list)
+        for attr in simulation_data.attr:
+            assert isinstance(attr, str)
+
+    def test_datetimes(self, simulation_data):
         if getattr(simulation_data, "next_season_start", None) is not None:
             assert isinstance(simulation_data.next_season_start, datetime)
         if getattr(simulation_data, "next_election_end", None) is not None:
             assert isinstance(simulation_data.next_election_end, datetime)
         if getattr(simulation_data, "next_phase_time", None) is not None:
             assert isinstance(simulation_data.next_phase_time, datetime)
-
-        assert isinstance(simulation_data.attr, list)
-        for attr in simulation_data.attr:
-            assert isinstance(attr, str)
 
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data.yaml')
@@ -91,6 +92,7 @@ class TestGlobalEvents(TestBase):
 
 
 class TestSeason(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, season):
         self.base_test(season)
 

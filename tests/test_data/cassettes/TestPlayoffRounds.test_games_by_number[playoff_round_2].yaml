@@ -19,23 +19,20 @@ interactions:
         Trombone","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
         Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.4662638491705753,"awayStrikes":null,"awayScore":3,"awayTeamBatterCount":33,"homePitcher":"1513aab6-142c-48c6-b43e-fbda65fd64e8","homePitcherName":"Caleb
         Alvarado","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
-        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5337361508294247,"homeStrikes":null,"homeScore":2,"homeTeamBatterCount":32,"season":0,"isPostseason":true,"day":110,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5337361508294247,"homeStrikes":null,"homeScore":2,"homeTeamBatterCount":32,"season":0,"isPostseason":true,"day":110,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1661'
+      - '1804'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:00 GMT
+      - Tue, 23 Mar 2021 19:25:44 GMT
       Etag:
-      - W/"67d-lAD+0RXJETdyc1d/e6XA9MPGQTM"
+      - W/"70c-HJLsQrLo4vUORe2jQ1PxRhAYYus"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AsMXH4S2R-tAOUYWJ7spUwNpiBjggukUI.HZvVjhc7Jhk2a6zXJqvvcUt0mdj%2BCFlAx0QZv3nJkKc;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -65,23 +62,20 @@ interactions:
         Zimmerman","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
         Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.5731573223580191,"awayStrikes":null,"awayScore":8,"awayTeamBatterCount":44,"homePitcher":"c182f33c-aea5-48a2-97ed-dc74fa29b3c0","homePitcherName":"Swamuel
         Mora","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
-        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.42684267764198086,"homeStrikes":null,"homeScore":3,"homeTeamBatterCount":39,"season":0,"isPostseason":true,"day":108,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.42684267764198086,"homeStrikes":null,"homeScore":3,"homeTeamBatterCount":39,"season":0,"isPostseason":true,"day":108,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1662'
+      - '1805'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:00 GMT
+      - Tue, 23 Mar 2021 19:25:44 GMT
       Etag:
-      - W/"67e-uHRzFO90xpZKQ9XWnl13Y1m3woI"
+      - W/"70d-KwrJKQzSTaDto99MPV612LoV6ms"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Arb2unzuZgY1Vt2bAOi0I1mR1RL0WLuV9.oAj0OF4j35s785mU7SEIie8mQs1KyQ%2FacWzSq3KWqcU;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -111,23 +105,20 @@ interactions:
         Greatness","awayBatter":null,"awayBatterName":null,"awayTeam":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","awayTeamName":"Philly
         Pies","awayTeamNickname":"Pies","awayTeamColor":"#399d8f","awayTeamEmoji":"0x1F967","awayOdds":0.43656531220224226,"awayStrikes":null,"awayScore":10,"awayTeamBatterCount":38,"homePitcher":"16aff709-e855-47c8-8818-b9ba66e90fe8","homePitcherName":"Mullen
         Peterson","homeBatter":null,"homeBatterName":null,"homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
-        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5634346877977578,"homeStrikes":null,"homeScore":7,"homeTeamBatterCount":36,"season":0,"isPostseason":true,"day":109,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":""}'
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5634346877977578,"homeStrikes":null,"homeScore":7,"homeTeamBatterCount":36,"season":0,"isPostseason":true,"day":109,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":null,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1666'
+      - '1809'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:25:00 GMT
+      - Tue, 23 Mar 2021 19:25:44 GMT
       Etag:
-      - W/"682-ezgcnBy6l5wTjvcYOJDVI+D8bcY"
+      - W/"711-uJT3Zsr8v/vjzhWA5Av83qTh+B8"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ALBBC1Pc3abl-Szzsmn9x_tbjOsGUvplf.NBEzHO7tgazDxrdR7g2BiDG8fD0q4nd2FEIaO6uf624;
-        Path=/; Expires=Mon, 22 Feb 2021 23:25:00 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

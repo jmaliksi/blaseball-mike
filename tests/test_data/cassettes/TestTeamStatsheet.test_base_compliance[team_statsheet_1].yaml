@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/teamStatsheets?ids=07b2b5bf-9eeb-4eff-9be9-d0f66c687f76
+  response:
+    body:
+      string: '[{"id":"07b2b5bf-9eeb-4eff-9be9-d0f66c687f76","playerStats":["ed001966-cecd-4372-9771-4f1ca8e330e1","ca4494d5-746e-4f58-b96b-99b0de37ad55","5a5fd679-9d34-4c72-9a6f-82ffe2f33869","d0149edd-bec4-46db-9b1e-aba1e2302534","86badddf-9d59-4f64-b52c-8e3e754e4d14","783c34fa-0830-41f6-9cc8-7a87d5016529","fcd1d48b-7293-4b73-b55a-e119f15e6482","df5ad765-f0a1-4166-9be0-a1645f5ce0ed","13f68620-c854-455e-a249-410984203518","89688667-4690-4299-9fa2-d95185d9fb72","cf815b04-d8d5-474a-9d02-5271bea0bdd7","8820c8d3-7628-46f7-aa20-300cde2fbfe0","f095e0c9-26d8-4e51-8d4b-5c6415a653d7","42cef671-3a35-4d97-b892-a5ee7d5a362f","a659b16c-e0c3-465b-845a-20fe98c83639","e977dfcd-cc88-4622-8f2a-e94c8b8aaab2"],"gamesPlayed":0,"wins":0,"losses":0,"name":"Pandemonium
+        Artists","teamId":"3b0a289b-aebd-493c-bc11-96793e7216d5"}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '800'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:06:25 GMT
+      Etag:
+      - W/"320-JXBfVYZ4+o/EiG1diEPQQIAxFmc"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

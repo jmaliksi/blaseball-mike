@@ -14,25 +14,22 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=ca3f1c8c-c025-4d8e-8eef-5be6accbeb16
   response:
     body:
-      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","69196296-f652-42ff-b2ca-0d9b50bd9b7b","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","667cb445-c288-4e62-b603-27291c1e475d"],"rotation":["e4e4c17d-8128-4704-9e04-f244d4573c4d","1513aab6-142c-48c6-b43e-fbda65fd64e8","4bf352d2-6a57-420a-9d45-b23b2b947375","316abea7-9890-4fb8-aaea-86b35e24d9be","d23a1f7e-0071-444e-8361-6ae01f13036f"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","28162da7-eafa-4eb1-8bc1-5a625f03ae57"],"seasAttr":[],"permAttr":[],"fullName":"Chicago
+      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","5831a238-8efe-4d53-a483-1ad681e50ac3","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","2268f452-01b9-4e16-98bb-c07e3ce767e3"],"rotation":["316abea7-9890-4fb8-aaea-86b35e24d9be","e4e4c17d-8128-4704-9e04-f244d4573c4d","1513aab6-142c-48c6-b43e-fbda65fd64e8","94baa9ac-ff96-4f56-a987-10358e917d91","f4a5d734-0ade-4410-abb6-c0cd5a7a1c26"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365","ee29020f-1964-4fce-80f4-35a5e7edfb95"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","97387580-1f7c-49ea-a9e7-44be89329130"],"seasAttr":[],"permAttr":[],"fullName":"Chicago
         Firefighters","location":"Chicago","mainColor":"#8c2a3e","nickname":"Firefighters","secondaryColor":"#d13757","shorthand":"CHIF","emoji":"0x1F525","slogan":"We
-        Are From Chicago","shameRuns":0,"totalShames":45,"totalShamings":42,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":13,"tournamentWins":0}'
+        Are From Chicago","shameRuns":0,"totalShames":55,"totalShamings":60,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":13,"tournamentWins":0,"stadium":"06c991f6-4ef3-4a9a-8254-8a2bc7d3a1e1","eDensity":1841.3189409984911,"state":{},"evolution":0,"winStreak":-1,"level":4}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1602'
+      - '1770'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 01:01:46 GMT
+      - Tue, 23 Mar 2021 19:25:41 GMT
       Etag:
-      - W/"642-jKlEKFCtjTBIaCyJ6ApsEJ4R4y0"
+      - W/"6ea-TX723tkuhNIRKJjdNpxpFRLP6qM"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A4z-AaySh1TRzXPQEmkY5rUV4kVBRs-eK.Jt0KTuQDthdTfvHeOMpJLWTVaQLUkLAOXTUwbbbPZaU;
-        Path=/; Expires=Tue, 23 Feb 2021 01:01:46 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -67,14 +64,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 01:01:46 GMT
+      - Tue, 23 Mar 2021 19:25:41 GMT
       Etag:
       - W/"453-WV8phylRZVnR82nTx22q31ouaWQ"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A_JVRexab4_8-wvchmG8BR3tStBvtjK8F.KmjIWQndt7n%2BY5EK0t0U3Sz4eDEqmUuW%2B%2FdNil3rx94;
-        Path=/; Expires=Tue, 23 Feb 2021 01:01:46 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -109,14 +103,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 01:01:46 GMT
+      - Tue, 23 Mar 2021 19:25:41 GMT
       Etag:
       - W/"2dd-VK/+KkloxkjoVQYj6KM1RxuWwJE"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AybvJIAjlOjfypKKhj3LHPQI6KjO_Edy-.xGi9CWoKcEX44oGx6B%2BQymYUS6Mot0fxlUGqguSs%2BvU;
-        Path=/; Expires=Tue, 23 Feb 2021 01:01:46 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -151,14 +142,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 01:01:46 GMT
+      - Tue, 23 Mar 2021 19:25:42 GMT
       Etag:
       - W/"1ce-nCe1PIyhFMQdMkMe1MJBKI5rVTY"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ApFOSy2KdVXROFlD_l66nW3lwOQzOS5WI.xJbFE8%2F3RtwF3m5Xd5O%2BZzHLaqvFcjSD9cqoBvrLBtQ;
-        Path=/; Expires=Tue, 23 Feb 2021 01:01:46 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

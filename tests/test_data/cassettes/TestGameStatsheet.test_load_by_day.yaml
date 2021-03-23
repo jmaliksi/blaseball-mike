@@ -19,68 +19,65 @@ interactions:
         Garner\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"b72f3061-f573-40d7-832a-5ad475bd7909\",\"awayTeamName\":\"San
         Francisco Lovers\",\"awayTeamNickname\":\"Lovers\",\"awayTeamColor\":\"#780018\",\"awayTeamEmoji\":\"0x1F48B\",\"awayOdds\":0.6342800818444304,\"awayStrikes\":3,\"awayScore\":7,\"awayTeamBatterCount\":37,\"homePitcher\":\"e16c3f28-eecd-4571-be1a-606bbac36b2b\",\"homePitcherName\":\"Comfort
         Glover\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"homeTeamName\":\"Los
-        Angeles Tacos\",\"homeTeamNickname\":\"Tacos\",\"homeTeamColor\":\"#64376e\",\"homeTeamEmoji\":\"0x1F32E\",\"homeOdds\":0.36571991815556965,\"homeStrikes\":3,\"homeScore\":8,\"homeTeamBatterCount\":40,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":7,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"55b8c63c-45ce-48e3-85a6-e0a71036db0b\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Angeles Tacos\",\"homeTeamNickname\":\"Tacos\",\"homeTeamColor\":\"#64376e\",\"homeTeamEmoji\":\"0x1F32E\",\"homeOdds\":0.36571991815556965,\"homeStrikes\":3,\"homeScore\":8,\"homeTeamBatterCount\":40,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":7,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"55b8c63c-45ce-48e3-85a6-e0a71036db0b\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"9cc9ee42-1b61-4fd1-97be-036642e4d999\",\"awayPitcher\":\"94baa9ac-ff96-4f56-a987-10358e917d91\",\"awayPitcherName\":\"Gabriel
         Griffith\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"b024e975-1c4a-4575-8936-a3754a08806a\",\"awayTeamName\":\"Dallas
         Steaks\",\"awayTeamNickname\":\"Steaks\",\"awayTeamColor\":\"#8c8d8f\",\"awayTeamEmoji\":\"0x1F969\",\"awayOdds\":0.6087559246543196,\"awayStrikes\":3,\"awayScore\":10,\"awayTeamBatterCount\":42,\"homePitcher\":\"16aff709-e855-47c8-8818-b9ba66e90fe8\",\"homePitcherName\":\"Mullen
         Peterson\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16\",\"homeTeamName\":\"Chicago
-        Firefighters\",\"homeTeamNickname\":\"Firefighters\",\"homeTeamColor\":\"#8c2a3e\",\"homeTeamEmoji\":\"0x1F525\",\"homeOdds\":0.39124407534568045,\"homeStrikes\":3,\"homeScore\":3,\"homeTeamBatterCount\":27,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"5894ecc9-1ce0-4463-adf4-2d962ffb585a\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Firefighters\",\"homeTeamNickname\":\"Firefighters\",\"homeTeamColor\":\"#8c2a3e\",\"homeTeamEmoji\":\"0x1F525\",\"homeOdds\":0.39124407534568045,\"homeStrikes\":3,\"homeScore\":3,\"homeTeamBatterCount\":27,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"5894ecc9-1ce0-4463-adf4-2d962ffb585a\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"615fd87f-020f-4429-b619-10ec01d6fabe\",\"awayPitcher\":\"5e4dfa16-f1b9-400f-b8ef-a1613c2b026a\",\"awayPitcherName\":\"Snyder
         Briggs\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"bfd38797-8404-4b38-8b82-341da28b1f83\",\"awayTeamName\":\"Charleston
         Shoe Thieves\",\"awayTeamNickname\":\"Shoe Thieves\",\"awayTeamColor\":\"#ffce0a\",\"awayTeamEmoji\":\"0x1F45F\",\"awayOdds\":0.6269097861589529,\"awayStrikes\":3,\"awayScore\":6,\"awayTeamBatterCount\":38,\"homePitcher\":\"7663c3ca-40a1-4f13-a430-14637dce797a\",\"homePitcherName\":\"PolkaDot
         Zavala\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"adc5b394-8f76-416d-9ce9-813706877b84\",\"homeTeamName\":\"Kansas
-        City Breath Mints\",\"homeTeamNickname\":\"Breath Mints\",\"homeTeamColor\":\"#178f55\",\"homeTeamEmoji\":\"0x1F36C\",\"homeOdds\":0.373090213841047,\"homeStrikes\":3,\"homeScore\":4,\"homeTeamBatterCount\":39,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"ddd83798-128b-427e-8625-8ceeb462c0f7\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        City Breath Mints\",\"homeTeamNickname\":\"Breath Mints\",\"homeTeamColor\":\"#178f55\",\"homeTeamEmoji\":\"0x1F36C\",\"homeOdds\":0.373090213841047,\"homeStrikes\":3,\"homeScore\":4,\"homeTeamBatterCount\":39,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"ddd83798-128b-427e-8625-8ceeb462c0f7\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"9df3f5dc-dfdc-498f-9a76-30b6c7c0cd78\",\"awayPitcher\":\"a647388d-fc59-4c1b-90d3-8c1826e07775\",\"awayPitcherName\":\"Chambers
         Simmons\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e\",\"awayTeamName\":\"Boston
         Flowers\",\"awayTeamNickname\":\"Flowers\",\"awayTeamColor\":\"#f7d1ff\",\"awayTeamEmoji\":\"0x1F339\",\"awayOdds\":0.4259838717530682,\"awayStrikes\":3,\"awayScore\":3,\"awayTeamBatterCount\":35,\"homePitcher\":\"2da49de2-34e5-49d0-b752-af2a2ee061be\",\"homePitcherName\":\"Cory
         Twelve\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"7966eb04-efcc-499b-8f03-d13916330531\",\"homeTeamName\":\"Yellowstone
-        Magic\",\"homeTeamNickname\":\"Magic\",\"homeTeamColor\":\"#bf0043\",\"homeTeamEmoji\":\"0x2728\",\"homeOdds\":0.5740161282469319,\"homeStrikes\":3,\"homeScore\":7,\"homeTeamBatterCount\":34,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"3a1e7da7-c336-408b-98f6-3ae9b9a8d09d\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Magic\",\"homeTeamNickname\":\"Magic\",\"homeTeamColor\":\"#bf0043\",\"homeTeamEmoji\":\"0x2728\",\"homeOdds\":0.5740161282469319,\"homeStrikes\":3,\"homeScore\":7,\"homeTeamBatterCount\":34,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"3a1e7da7-c336-408b-98f6-3ae9b9a8d09d\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"fb46d19d-bbf0-4ee1-8e15-58f72fafb7a5\",\"awayPitcher\":\"89ec77d8-c186-4027-bd45-f407b4800c2c\",\"awayPitcherName\":\"James
         Mora\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"979aee4a-6d80-4863-bf1c-ee1a78e06024\",\"awayTeamName\":\"Hawaii
         Fridays\",\"awayTeamNickname\":\"Fridays\",\"awayTeamColor\":\"#3ee652\",\"awayTeamEmoji\":\"0x1F3DD\",\"awayOdds\":0.43845952414814476,\"awayStrikes\":3,\"awayScore\":17,\"awayTeamBatterCount\":50,\"homePitcher\":\"18af933a-4afa-4cba-bda5-45160f3af99b\",\"homePitcherName\":\"Felix
         Garbage\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"36569151-a2fb-43c1-9df7-2df512424c82\",\"homeTeamName\":\"New
-        York Millennials\",\"homeTeamNickname\":\"Millennials\",\"homeTeamColor\":\"#ffd4d8\",\"homeTeamEmoji\":\"0x1F4F1\",\"homeOdds\":0.5615404758518551,\"homeStrikes\":3,\"homeScore\":2,\"homeTeamBatterCount\":34,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"06ce21d6-d147-4ddd-9c57-442e48dc7d82\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        York Millennials\",\"homeTeamNickname\":\"Millennials\",\"homeTeamColor\":\"#ffd4d8\",\"homeTeamEmoji\":\"0x1F4F1\",\"homeOdds\":0.5615404758518551,\"homeStrikes\":3,\"homeScore\":2,\"homeTeamBatterCount\":34,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"06ce21d6-d147-4ddd-9c57-442e48dc7d82\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"4c66e623-b136-48c8-9938-6d0669d0e9da\",\"awayPitcher\":\"f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1\",\"awayPitcherName\":\"Tillman
         Henderson\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"8d87c468-699a-47a8-b40d-cfb73a5660ad\",\"awayTeamName\":\"Baltimore
         Crabs\",\"awayTeamNickname\":\"Crabs\",\"awayTeamColor\":\"#593037\",\"awayTeamEmoji\":\"0x1F980\",\"awayOdds\":0.43052307476683527,\"awayStrikes\":3,\"awayScore\":4,\"awayTeamBatterCount\":37,\"homePitcher\":\"9ba361a1-16d5-4f30-b590-fc4fc2fb53d2\",\"homePitcherName\":\"Mooney
         Doctor\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff\",\"homeTeamName\":\"Canada
-        Moist Talkers\",\"homeTeamNickname\":\"Moist Talkers\",\"homeTeamColor\":\"#f5feff\",\"homeTeamEmoji\":\"0x1F5E3\",\"homeOdds\":0.5694769252331647,\"homeStrikes\":3,\"homeScore\":7,\"homeTeamBatterCount\":37,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"3a94e38c-b167-412e-a178-ddfafab2eff7\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Moist Talkers\",\"homeTeamNickname\":\"Moist Talkers\",\"homeTeamColor\":\"#f5feff\",\"homeTeamEmoji\":\"0x1F5E3\",\"homeOdds\":0.5694769252331647,\"homeStrikes\":3,\"homeScore\":7,\"homeTeamBatterCount\":37,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":true,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"3a94e38c-b167-412e-a178-ddfafab2eff7\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"b0918bdf-26cb-463e-b46e-e5ec72a8d117\",\"awayPitcher\":\"814bae61-071a-449b-981e-e7afc839d6d6\",\"awayPitcherName\":\"Ruslan
         Greatness\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7\",\"awayTeamName\":\"Philly
         Pies\",\"awayTeamNickname\":\"Pies\",\"awayTeamColor\":\"#399d8f\",\"awayTeamEmoji\":\"0x1F967\",\"awayOdds\":0.48831965932474175,\"awayStrikes\":3,\"awayScore\":8,\"awayTeamBatterCount\":38,\"homePitcher\":\"0cc5bd39-e90d-42f9-9dd8-7e703f316436\",\"homePitcherName\":\"Don
         Elliott\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"b63be8c2-576a-4d6e-8daf-814f8bcea96f\",\"homeTeamName\":\"Miami
-        Dal\xE9\",\"homeTeamNickname\":\"Dal\xE9\",\"homeTeamColor\":\"#9141ba\",\"homeTeamEmoji\":\"0x1F6A4\",\"homeOdds\":0.5116803406752582,\"homeStrikes\":3,\"homeScore\":1,\"homeTeamBatterCount\":35,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":10,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"173f9ca7-377d-4951-a0a2-dcbc7d3deb00\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Dal\xE9\",\"homeTeamNickname\":\"Dal\xE9\",\"homeTeamColor\":\"#9141ba\",\"homeTeamEmoji\":\"0x1F6A4\",\"homeOdds\":0.5116803406752582,\"homeStrikes\":3,\"homeScore\":1,\"homeTeamBatterCount\":35,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":10,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"173f9ca7-377d-4951-a0a2-dcbc7d3deb00\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"44c08d11-c3bc-40f2-8f66-43142cd346f8\",\"awayPitcher\":\"b3e512df-c411-4100-9544-0ceadddb28cf\",\"awayPitcherName\":\"Famous
         Owens\",\"awayBatter\":\"7932c7c7-babb-4245-b9f5-cdadb97c99fb\",\"awayBatterName\":\"Randy
         Castillo\",\"awayTeam\":\"747b8e4a-7e50-4638-a973-ea7950a3e739\",\"awayTeamName\":\"Hades
         Tigers\",\"awayTeamNickname\":\"Tigers\",\"awayTeamColor\":\"#5c1c1c\",\"awayTeamEmoji\":\"0x1F405\",\"awayOdds\":0.5735869999126938,\"awayStrikes\":3,\"awayScore\":7,\"awayTeamBatterCount\":35,\"homePitcher\":\"333067fd-c2b4-4045-a9a4-e87a8d0332d0\",\"homePitcherName\":\"Miguel
         James\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"f02aeae2-5e6a-4098-9842-02d2273f25c7\",\"homeTeamName\":\"Hellmouth
-        Sunbeams\",\"homeTeamNickname\":\"Sunbeams\",\"homeTeamColor\":\"#fffbab\",\"homeTeamEmoji\":\"0x1F31E\",\"homeOdds\":0.42641300008730626,\"homeStrikes\":3,\"homeScore\":1,\"homeTeamBatterCount\":30,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"5fbd1e85-e081-4fbd-beca-2bfb980123e1\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Sunbeams\",\"homeTeamNickname\":\"Sunbeams\",\"homeTeamColor\":\"#fffbab\",\"homeTeamEmoji\":\"0x1F31E\",\"homeOdds\":0.42641300008730626,\"homeStrikes\":3,\"homeScore\":1,\"homeTeamBatterCount\":30,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"5fbd1e85-e081-4fbd-beca-2bfb980123e1\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"84717d92-4b52-44e8-975c-c378cdca9233\",\"awayPitcher\":\"089af518-e27c-4256-adc8-62e3f4b30f43\",\"awayPitcherName\":\"Silvia
         Rugrat\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"57ec08cc-0411-4643-b304-0e80dbc15ac7\",\"awayTeamName\":\"Mexico
         City Wild Wings\",\"awayTeamNickname\":\"Wild Wings\",\"awayTeamColor\":\"#d15700\",\"awayTeamEmoji\":\"0x1F357\",\"awayOdds\":0.5913492703877227,\"awayStrikes\":3,\"awayScore\":4,\"awayTeamBatterCount\":37,\"homePitcher\":\"ceb8f8cd-80b2-47f0-b43e-4d885fa48aa4\",\"homePitcherName\":\"Donia
         Bailey\",\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5\",\"homeTeamName\":\"Houston
-        Spies\",\"homeTeamNickname\":\"Spies\",\"homeTeamColor\":\"#67556b\",\"homeTeamEmoji\":\"0x1F575\",\"homeOdds\":0.40865072961227744,\"homeStrikes\":3,\"homeScore\":3,\"homeTeamBatterCount\":35,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"},{\"id\":\"a376d502-3b48-4bee-a2c6-8dbfddbd30d6\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
+        Spies\",\"homeTeamNickname\":\"Spies\",\"homeTeamColor\":\"#67556b\",\"homeTeamEmoji\":\"0x1F575\",\"homeOdds\":0.40865072961227744,\"homeStrikes\":3,\"homeScore\":3,\"homeTeamBatterCount\":35,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":11,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false},{\"id\":\"a376d502-3b48-4bee-a2c6-8dbfddbd30d6\",\"basesOccupied\":[],\"baseRunners\":[],\"baseRunnerNames\":[],\"outcomes\":[],\"terminology\":\"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b\",\"lastUpdate\":\"Game
         over.\",\"rules\":\"4ae9d46a-5408-460a-84fb-cbd8d03fff6c\",\"statsheet\":\"a7f685e6-6890-4aa4-a6ef-18aee6894b31\",\"awayPitcher\":\"f4a5d734-0ade-4410-abb6-c0cd5a7a1c26\",\"awayPitcherName\":\"Agan
         Harrison\",\"awayBatter\":null,\"awayBatterName\":null,\"awayTeam\":\"a37f9158-7f82-46bc-908c-c9e2dda7c33b\",\"awayTeamName\":\"Breckenridge
         Jazz Hands\",\"awayTeamNickname\":\"Jazz Hands\",\"awayTeamColor\":\"#6388ad\",\"awayTeamEmoji\":\"0x1F450\",\"awayOdds\":0.4543492198055519,\"awayStrikes\":3,\"awayScore\":9,\"awayTeamBatterCount\":42,\"homePitcher\":null,\"homePitcherName\":null,\"homeBatter\":null,\"homeBatterName\":null,\"homeTeam\":\"105bc3ff-1320-4e37-8ef0-8d595cb95dd0\",\"homeTeamName\":\"Seattle
-        Garages\",\"homeTeamNickname\":\"Garages\",\"homeTeamColor\":\"#2b4075\",\"homeTeamEmoji\":\"0x1F3B8\",\"homeOdds\":0.545650780194448,\"homeStrikes\":3,\"homeScore\":5,\"homeTeamBatterCount\":37,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":7,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\"}]"
+        Garages\",\"homeTeamNickname\":\"Garages\",\"homeTeamColor\":\"#2b4075\",\"homeTeamEmoji\":\"0x1F3B8\",\"homeOdds\":0.545650780194448,\"homeStrikes\":3,\"homeScore\":5,\"homeTeamBatterCount\":37,\"season\":2,\"isPostseason\":false,\"day\":54,\"phase\":4,\"gameComplete\":true,\"finalized\":true,\"gameStart\":true,\"halfInningOuts\":0,\"halfInningScore\":0,\"inning\":8,\"topOfInning\":false,\"atBatBalls\":0,\"atBatStrikes\":0,\"seriesIndex\":1,\"seriesLength\":3,\"shame\":false,\"weather\":7,\"baserunnerCount\":0,\"homeBases\":4,\"awayBases\":4,\"repeatCount\":0,\"awayTeamSecondaryColor\":\"\",\"homeTeamSecondaryColor\":\"\",\"homeBalls\":4,\"awayBalls\":4,\"homeOuts\":3,\"awayOuts\":3,\"playCount\":0,\"tournament\":-1,\"baseRunnerMods\":[],\"homePitcherMod\":\"\",\"homeBatterMod\":\"\",\"awayPitcherMod\":\"\",\"awayBatterMod\":\"\",\"scoreUpdate\":\"\",\"scoreLedger\":\"\",\"stadiumId\":null,\"secretBaserunner\":null,\"topInningScore\":0,\"bottomInningScore\":0,\"newInningPhase\":-1,\"gameStartPhase\":-1,\"isTitleMatch\":false}]"
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '16561'
+      - '17991'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:42 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
-      - W/"40b1-4WgmpT7zJL0CEuvQ/h/3EvgY1cY"
+      - W/"4647-ZW94lDjq6Zl7nIQmtJTH2atfWd0"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AgnApHNpUje0IcJa-dZKCk1ZCPEif3XcY.3sALJhudfRiKPv4P6cw8amQY%2Fa1raWDunqFEHpccs%2FU;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -114,14 +111,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:42 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"123-vT+nYu3eA+3DebqJDUbB/ityQvE"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AMTVqtilrxLy1i6vyASBt6Am1QepLeA57.DFyi6ZoElIoNDbq3GNdrenyvbqXa0bMgy2ct3MSUVgs;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -155,14 +149,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:42 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-MDB86QDFUwp6rWdnGC9Jce3wGHg"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AzgUIPruuFnQ-wwI-LLeblEgy8ceBI3ws.X8BzxwhwllGjKwPymwlUSbJPHRhjUR76S9SaaXEaaLQ;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -196,14 +187,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:42 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-X8gR4ibGWZHWXXYWHsiUNXIr/ok"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AAUVJW2cPtcPf2NoyKw7AiyCUfwCSI0e5.Wol98xe%2FTTBhZ8pXz6UNuiX4SDbUojiclrLY%2BQ4%2BQsA;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -237,14 +225,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:42 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"123-9CVItIcIohwhFJ2sYkwtY+0z96k"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Aktp4vuPRzeGmeFYfF73kQGBb-R4enzZo.%2B1TSYE%2BAMOGRS5lZRLUkl%2FScIyZ4d16wRnBv7gqcBCI;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -278,14 +263,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"126-dcDn1me1XC1KuuLMXyUgaOqEDMI"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ACpVOwQYrQ8nBxZ4dIxDdizDW-jDLcrMY.f7oodNuk2VdT2L%2F0jHfZBF9yAQb02vy%2FpNxRWBrqJn0;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -319,14 +301,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"123-HYRNHEt7U1UC4SwkYADoOp/GTyE"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A-AZhJ0C4zpDOuFBapSwoazUzBL3cTHgP.xeV5fe%2FEggtdGjz1s2VcK0wvjz%2Bj3uqvDfOUoJwXlzw;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -360,14 +339,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-WXWDZjMsw1XWhzeWpyQZ/lZcy7A"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AMP5xbvCTIhS2hKqVfxvO6hivyLEuVIAD.X3DdCikmE6qyaZ7g3Vh4s8Hmv3S6cEYaqDy8iZozj4M;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -401,14 +377,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-Xk3y9mhx80bJ40p0Gu45KXS+1V0"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Amv_MoT-3s0ZoxlmS3q35f4SANh5FpF-s.Zvo8hujqgGno0ZpRUpIJef%2Bt4qUd2ypcOjg9Ek1Hk6o;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -442,14 +415,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-ngpWXn0lFC0L0gaKn4K+Mj1vLoU"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A7Fm91guuVcMv9EN_fmdDhz1TCnJYDhJH.eJfGFXxCSDn%2BysvnULBszwOnJI6pmkJ80JusLYLkxHw;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -483,178 +453,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
+      - Tue, 23 Mar 2021 19:25:49 GMT
       Etag:
       - W/"125-VgvNT2AMFccxYTA/ufshdGSaycI"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Ar3XkINwCQ86Uy0SUTUdrVdP5JM6vPtvf.S6CcHrSZiiIztn0ydOtfJziEEJZvierKUQW3aofqlxc;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/games?season=-2&day=2
-  response:
-    body:
-      string: '[]'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
-      Etag:
-      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3Ab4TZDuXXRl6MsVISs-2DAQHGZMl431ON.BrmICtgteqKP8kmjCS8wNYuWJYGK80g1p55KiMpWr4I;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/games?season=998&day=0
-  response:
-    body:
-      string: '[]'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:10:43 GMT
-      Etag:
-      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AkqqdN0ATjugBSZXzr-F6a3fJ4Myq7Xak.fnFHDfFG402z8s3fl0RgK5%2B6qMwgRXF028yZVdS8hBA;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:43 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/games?season=3&day=-1
-  response:
-    body:
-      string: '[]'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:10:44 GMT
-      Etag:
-      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AwkjUInUfmL6PdURcHPZ9A3yQ_LcOSRRy.Q2vRttO3Sa%2BPXoH4IqtfBf6oGSc19wKi%2FAPDsU0dnzo;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:44 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/games?season=0&day=998
-  response:
-    body:
-      string: '[]'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:10:44 GMT
-      Etag:
-      - W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ALO1p1J9lOJSBCwAnn7TCOmzI45fO2BKx.4rEXxFTyzKYeKQWAm1DiiSPTzP1LBSN2vh3WywpjRao;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:44 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

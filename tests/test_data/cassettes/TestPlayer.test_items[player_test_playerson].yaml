@@ -23,14 +23,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:42 GMT
+      - Tue, 23 Mar 2021 19:25:28 GMT
       Etag:
       - W/"33-cJTuJTWEC4099ZmCOUPv3tmms8o"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ACPZDGlvi7Z4pHmKIjde1J4J9ANrf6iTv.2U7CLzf3Iw%2FMdXPNol7uX6Xy3%2FJVPVpezESVkalYvA4;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -64,14 +61,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:24:42 GMT
+      - Tue, 23 Mar 2021 19:25:28 GMT
       Etag:
       - W/"3f-tqydsqCQSkRShvl8mLBMXLhoWoY"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A6bZBt3lL-Dygdv9b7y_3QeYYsAoI05Ln.WZJ3JwTo%2BINNGiRnrR%2FPOM1ap%2F2K5NRSeqv3lUWL50E;
-        Path=/; Expires=Mon, 22 Feb 2021 23:24:42 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

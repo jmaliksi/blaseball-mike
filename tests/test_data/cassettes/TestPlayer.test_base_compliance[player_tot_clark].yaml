@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=766dfd1e-11c3-42b6-a167-9b2d568b5dc0
+  response:
+    body:
+      string: '[{"id":"766dfd1e-11c3-42b6-a167-9b2d568b5dc0","anticapitalism":0.8535712976145217,"baseThirst":0.7394331674815497,"buoyancy":1.0502129522769517,"chasiness":0.271305519849221,"coldness":0.3693400232911438,"continuation":0.9451924622173953,"divinity":0.8776917333403125,"groundFriction":0.45521262343704283,"indulgence":1.0634544048305539,"laserlikeness":1.0502120712662746,"martyrdom":0.9873703565390292,"moxie":0.4081808355013459,"musclitude":0.8710098487993057,"name":"Sand-e
+        T--ner","bat":"","omniscience":0.46177395674893784,"overpowerment":0.46947430901281434,"patheticism":0.5618251712353066,"ruthlessness":0.7164516110907182,"shakespearianism":1.2948011743087555,"suppression":0.3107407623512066,"tenaciousness":0.6944981253192113,"thwackability":1.1086503513780874,"tragicness":0.001,"unthwackability":1.212485180629863,"watchfulness":1.1765901923904654,"pressurization":0.5287515061488359,"totalFingers":10,"soul":7,"deceased":false,"peanutAllergy":true,"cinnamon":1.1002620449472948,"fate":64,"armor":"","ritual":"Pining
+        for glory","coffee":7,"blood":6,"permAttr":["SPICY","PERK","SCATTERED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.9195465889161639,"pitchingRating":0.8611141139789357,"hittingRating":0.8792879387794915,"defenseRating":0.6994432258938303,"leagueTeamId":"36569151-a2fb-43c1-9df7-2df512424c82","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":63.51574307297895,"state":{"unscatteredName":"Sandie
+        Turner"},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1523'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:06:22 GMT
+      Etag:
+      - W/"5f3-eodLmt5N+IUCrDOVWJ6Krhzq0hI"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

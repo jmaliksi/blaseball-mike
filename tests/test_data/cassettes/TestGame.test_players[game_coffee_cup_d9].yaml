@@ -14,24 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=bf122660-df52-4fc4-9e70-ee185423ff93
   response:
     body:
-      string: '[{"id":"bf122660-df52-4fc4-9e70-ee185423ff93","anticapitalism":0.7895425089062604,"baseThirst":0.9283877306209459,"buoyancy":0.06878327071525062,"chasiness":0.9471455938964107,"coldness":0.39337405579174917,"continuation":0.5330842153867078,"divinity":0.41486641411338465,"groundFriction":0.09077105358893421,"indulgence":0.2705655403827165,"laserlikeness":0.7602650868630528,"martyrdom":0.5743099566166333,"moxie":0.10435791804236708,"musclitude":0.12293202139247444,"name":"Walton
-        Sports","bat":"","omniscience":0.7629588753884712,"overpowerment":0.393205262192887,"patheticism":0.22787630448775884,"ruthlessness":0.4816371664817245,"shakespearianism":0.8119576470218195,"suppression":0.9377354379250402,"tenaciousness":0.9377872201069819,"thwackability":0.04775843388456824,"tragicness":0.1,"unthwackability":0.9406146592213176,"watchfulness":0.5705939012809509,"pressurization":0.4286682141063424,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.576459201104455,"fate":48,"armor":"","ritual":"Tarot","coffee":9,"blood":8,"permAttr":["FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5609924689448913,"pitchingRating":0.602296372017929,"hittingRating":0.17830330868551425,"defenseRating":0.8588810613738266,"leagueTeamId":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","tournamentTeamId":"49181b72-7f1c-4f1c-929f-928d763ad7fb"}]'
+      string: '[{"id":"bf122660-df52-4fc4-9e70-ee185423ff93","anticapitalism":0.8886697478583736,"baseThirst":1.030930455971265,"buoyancy":0.19315434105360477,"chasiness":1.097940445693794,"coldness":0.5238692754556791,"continuation":0.6686203381716658,"divinity":0.5106922472307364,"groundFriction":0.2177821134744142,"indulgence":0.41946528491389934,"laserlikeness":0.877523374042722,"martyrdom":0.6880348802642454,"moxie":0.19633187398234583,"musclitude":0.2749574954114772,"name":"Walton
+        Sports","bat":"","omniscience":0.9027258384320214,"overpowerment":0.5107740325814711,"patheticism":0.09952065676797921,"ruthlessness":0.6154952417263115,"shakespearianism":0.9289335115532616,"suppression":1.0734098343144296,"tenaciousness":1.0600766248342441,"thwackability":0.16405224431311738,"tragicness":0.001,"unthwackability":1.0709006016347011,"watchfulness":0.6806427872899565,"pressurization":0.4286682141063424,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.6882245246681683,"fate":48,"armor":"","ritual":"Tarot","coffee":9,"blood":8,"permAttr":["FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7104639812478639,"pitchingRating":0.752623576757097,"hittingRating":0.3330353117583767,"defenseRating":0.9514861455564816,"leagueTeamId":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","tournamentTeamId":"49181b72-7f1c-4f1c-929f-928d763ad7fb","eDensity":23.233263107238734,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1420'
+      - '1472'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 17:39:33 GMT
+      - Tue, 23 Mar 2021 19:24:43 GMT
       Etag:
-      - W/"58c-YtlgZuxLgITMPSBxXqve78Hl3G4"
+      - W/"5c0-P+ZJhdPyrIzjEIs4kc6ZqHoWMw8"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ACzvFwXUoFhyT76ACJ3uTSwZp9KUMJpza.cEYomdtPLX4TT2F3XHTqGjMusJhSDMYtW1JH0WCSP0U;
-        Path=/; Expires=Tue, 23 Feb 2021 17:39:33 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -58,23 +55,20 @@ interactions:
     body:
       string: '[{"id":"2d5ac274-96fd-471b-8028-f4d7b42d8313","anticapitalism":0.39917167014705957,"baseThirst":0.6072774383907111,"buoyancy":0.9388341697547726,"chasiness":1.0376476203846816,"coldness":0.269387682396539,"continuation":0.7062883518675289,"divinity":0.4800832032858011,"groundFriction":0.8665064689699375,"indulgence":0.4032418227155383,"laserlikeness":0.8634438694060209,"martyrdom":0.3634097684515303,"moxie":0.4004174007146786,"musclitude":1.1581948051393531,"name":"Jason
         Datablase","bat":"","omniscience":0.7011764684908963,"overpowerment":0.2627769103527057,"patheticism":0.21795763634458276,"ruthlessness":0.8755730795249641,"shakespearianism":0.5345293856884019,"suppression":0.45483440299651967,"tenaciousness":0.5722390680913698,"thwackability":0.6288984150171584,"tragicness":0.5140979296109862,"unthwackability":1.011999882312484,"watchfulness":0.7748254983215774,"pressurization":0.746350569937237,"totalFingers":31,"soul":5,"deceased":false,"peanutAllergy":true,"cinnamon":0.07691377366571528,"fate":54,"armor":"","ritual":"Doing
-        a good deed and telling everyone about it","coffee":0,"blood":0,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7685775807481355,"pitchingRating":0.7095808286771484,"hittingRating":0.5965831448114544,"defenseRating":0.7435707859240713,"leagueTeamId":null,"tournamentTeamId":"d2634113-b650-47b9-ad95-673f8e28e687"}]'
+        a good deed and telling everyone about it","coffee":0,"blood":0,"permAttr":["NON_IDOLIZED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7685775807481355,"pitchingRating":0.7095808286771484,"hittingRating":0.5965831448114544,"defenseRating":0.7435707859240713,"leagueTeamId":null,"tournamentTeamId":"d2634113-b650-47b9-ad95-673f8e28e687","eDensity":0,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1422'
+      - '1474'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 17:39:34 GMT
+      - Tue, 23 Mar 2021 19:24:43 GMT
       Etag:
-      - W/"58e-bpCZ8AIuwVwj1RHsVoiMUmZIRW0"
+      - W/"5c2-YIB9Ujh73f2vukbDWDEtNllgPE0"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AkYEVHIE3KKYTwPzJDP4MKwVHWJWyLOEU.Nt8hFWvaDnaA9Ejf%2FupYUmTn2w7kIQbQLcEd3F%2FuXgQ;
-        Path=/; Expires=Tue, 23 Feb 2021 17:39:34 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

@@ -113,67 +113,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:09:52 GMT
+      - Tue, 23 Mar 2021 19:24:56 GMT
       Server:
       - Kestrel
       Transfer-Encoding:
       - chunked
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v1/games?tournament=-2
-  response:
-    body:
-      string: '{"data":[]}'
-    headers:
-      Content-Length:
-      - '11'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:09:52 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v1/games?tournament=999
-  response:
-    body:
-      string: '{"data":[]}'
-    headers:
-      Content-Length:
-      - '11'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 14 Feb 2021 01:09:52 GMT
-      Server:
-      - Kestrel
     status:
       code: 200
       message: OK

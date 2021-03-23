@@ -104,6 +104,16 @@ class TestTeam(TestBase):
             assert isinstance(team.rotation_slot, int)
         if getattr(team, "tournament_wins", None) is not None:
             assert isinstance(team.tournament_wins, int)
+        if getattr(team, "e_density", None) is not None:
+            assert isinstance(team.e_density, (int, float))
+        if getattr(team, "state", None) is not None:
+            assert isinstance(team.state, dict)
+        if getattr(team, "evolution", None) is not None:
+            assert isinstance(team.evolution, int)
+        if getattr(team, "win_streak", None) is not None:
+            assert isinstance(team.win_streak, int)
+        if getattr(team, "level", None) is not None:
+            assert isinstance(team.level, int)
 
     @pytest.mark.vcr
     def test_load(self):
@@ -112,7 +122,8 @@ class TestTeam(TestBase):
 
     @pytest.mark.vcr
     def test_load_bad_team(self):
-        with pytest.raises(ValueError):
+        from requests.exceptions import HTTPError
+        with pytest.raises(HTTPError):
             bad_team = Team.load("00000000-0000-0000-0000-000000000000")
 
     @pytest.mark.vcr
@@ -246,68 +257,7 @@ class TestTeam(TestBase):
             "permanentAttributes": []
         })
 
-    @pytest.fixture(scope="module")
-    def team_xpresso(self):
-        """Tournament team test"""
-        return Team({
-            "id": "d8f82163-2e74-496b-8e4b-2ab35b2d3ff1",
-            "lineup": [
-                "678170e4-0688-436d-a02d-c0467f9af8c0",
-                "cbd19e6f-3d08-4734-b23f-585330028665",
-                "a7d8196a-ca6b-4dab-a9d7-c27f3e86cc21",
-                "03b80a57-77ea-4913-9be4-7a85c3594745",
-                "766dfd1e-11c3-42b6-a167-9b2d568b5dc0",
-                "32c9bce6-6e52-40fa-9f64-3629b3d026a8",
-                "04931546-1b4a-469f-b391-7ed67afe824c",
-                "817dee99-9ccf-4f41-84e3-dc9773237bc8",
-                "2f3d7bc7-6ffb-40c3-a94f-5e626be413c9"
-            ],
-            "rotation": [
-                "ae4acebd-edb5-4d20-bf69-f2d5151312ff",
-                "dddb6485-0527-4523-9bec-324a5b66bf37",
-                "5eac7fd9-0d19-4bf4-a013-994acc0c40c0",
-                "03f920cc-411f-44ef-ae66-98a44e883291",
-                "73265ee3-bb35-40d1-b696-1f241a6f5966"
-            ],
-            "bullpen": [
-                "57290370-6723-4d33-929e-b4fc190e6a9a",
-                "c9e4a49e-e35a-4034-a4c7-293896b40c58",
-                "6b8d128f-ed51-496d-a965-6614476f8256",
-                "8b53ce82-4b1a-48f0-999d-1774b3719202",
-                "138fccc3-e66f-4b07-8327-d4b6f372f654"
-            ],
-            "bench": [
-                "9ba361a1-16d5-4f30-b590-fc4fc2fb53d2",
-                "60026a9d-fc9a-4f5a-94fd-2225398fa3da",
-                "cd417f8a-ce01-4ab2-921d-42e2e445bbe2",
-                "a647388d-fc59-4c1b-90d3-8c1826e07775"
-            ],
-            "seasAttr": [],
-            "permAttr": [],
-            "fullName": "Inter Xpresso",
-            "location": "Xpresso",
-            "mainColor": "#8a2444",
-            "nickname": "Xpresso",
-            "secondaryColor": "#e6608b",
-            "shorthand": "IE",
-            "emoji": "0x274C",
-            "slogan": "We've got a Shot!",
-            "shameRuns": 0,
-            "totalShames": 0,
-            "totalShamings": 1,
-            "seasonShames": 0,
-            "seasonShamings": 1,
-            "championships": 0,
-            "weekAttr": [],
-            "gameAttr": [],
-            "rotationSlot": 15,
-            "teamSpirit": 0,
-            "card": -1,
-            "tournamentWins": 1
-        })
-
-    @pytest.fixture(scope="module", params=['team_crabs', 'team_pies_chronicler', 'team_ohio_astronauts',
-                                            'team_xpresso'])
+    @pytest.fixture(scope="module", params=['team_crabs', 'team_pies_chronicler', 'team_ohio_astronauts'])
     def team(self, request):
         """Parameterized fixture of various teams"""
         return request.getfixturevalue(request.param)

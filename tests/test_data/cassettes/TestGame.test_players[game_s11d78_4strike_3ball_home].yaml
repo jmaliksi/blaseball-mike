@@ -15,23 +15,20 @@ interactions:
   response:
     body:
       string: '[{"id":"65273615-22d5-4df1-9a73-707b23e828d5","anticapitalism":0.7987283700911394,"baseThirst":0.8213935837891735,"buoyancy":1.0846875103318623,"chasiness":0.33931942060879705,"coldness":0.9736383108914901,"continuation":1.2192452498995814,"divinity":0.5470946884404175,"groundFriction":0.6878522370906888,"indulgence":1.0523723263824503,"laserlikeness":0.6601995335393881,"martyrdom":0.34566920073479834,"moxie":1.1261174941604795,"musclitude":0.8768466969092947,"name":"Burke
-        Gonzales","bat":"","omniscience":0.6360929090940246,"overpowerment":0.8799564409454538,"patheticism":0.01,"ruthlessness":1.3414118493677978,"shakespearianism":0.8703914432369291,"suppression":0.7896460027842918,"tenaciousness":0.9536218618437295,"thwackability":0.8415867461989165,"tragicness":0.01,"unthwackability":1.1716386402227115,"watchfulness":1.3056949924180612,"pressurization":0.7309676123161581,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.8959608390325469,"fate":31,"armor":"","ritual":"Powerlifting","coffee":2,"blood":12,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7868071570284316,"pitchingRating":1.1769886564303838,"hittingRating":0.7450850742111098,"defenseRating":0.8155757556570412,"leagueTeamId":"57ec08cc-0411-4643-b304-0e80dbc15ac7","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e"}]'
+        Gonzales","bat":"","omniscience":0.6360929090940246,"overpowerment":0.8799564409454538,"patheticism":0.01,"ruthlessness":1.3414118493677978,"shakespearianism":0.8703914432369291,"suppression":0.7896460027842918,"tenaciousness":0.9536218618437295,"thwackability":0.8415867461989165,"tragicness":0.01,"unthwackability":1.1716386402227115,"watchfulness":1.3056949924180612,"pressurization":0.7309676123161581,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.8959608390325469,"fate":31,"armor":"","ritual":"Powerlifting","coffee":2,"blood":12,"permAttr":["ALTERNATE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7868071570284316,"pitchingRating":1.1769886564303838,"hittingRating":0.7450850742111098,"defenseRating":0.8155757556570412,"leagueTeamId":"57ec08cc-0411-4643-b304-0e80dbc15ac7","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":40.67119650328876,"state":{},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1405'
+      - '1459'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 20:08:10 GMT
+      - Tue, 23 Mar 2021 19:24:48 GMT
       Etag:
-      - W/"57d-lZipPGDM4FpkJ96F3RZmUxRg5zM"
+      - W/"5b3-Mey3ENO3qPQbhFBh1bnr00eYB8A"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AwrfDFSximDEdZuMjS-Nx-yLe_2fV874K.wWfx3RwM%2BFBMkKVEqGiXWIc2rNZZn%2F4hyhobD0IFI4c;
-        Path=/; Expires=Tue, 23 Feb 2021 20:08:10 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
@@ -56,24 +53,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=5703141c-25d9-46d0-b680-0cf9cfbf4777
   response:
     body:
-      string: '[{"id":"5703141c-25d9-46d0-b680-0cf9cfbf4777","anticapitalism":0.9809201309568386,"baseThirst":0.5648752386657543,"buoyancy":0.8918381054944499,"chasiness":0.4422480274403287,"coldness":0.5284374439415164,"continuation":0.07931334716334781,"divinity":0.4032605013918318,"groundFriction":0.6652117186443087,"indulgence":0.47864096336348944,"laserlikeness":0.7929277207871431,"martyrdom":0.8337026983339686,"moxie":0.5602549661961768,"musclitude":0.32263677970288285,"name":"Sandoval
-        Crossing","bat":"","omniscience":0.5820388150389789,"overpowerment":0.5111337885409796,"patheticism":0.14875322786144438,"ruthlessness":1.157617603737102,"shakespearianism":0.7316310989842041,"suppression":0.9214437529703452,"tenaciousness":0.99004842808463,"thwackability":0.7345401544850578,"tragicness":0.1,"unthwackability":0.44947111106372106,"watchfulness":0.5748756195762755,"pressurization":0.7267315163595882,"totalFingers":13,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.6235262918653164,"fate":19,"armor":"","ritual":"Journaling","coffee":3,"blood":4,"permAttr":["FRIEND_OF_CROWS","SUPERYUMMY"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5821617369308884,"pitchingRating":0.6131421673352283,"hittingRating":0.5672941721326302,"defenseRating":0.7794872601935736,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934"}]'
+      string: '[{"id":"5703141c-25d9-46d0-b680-0cf9cfbf4777","anticapitalism":1.0209201309568385,"baseThirst":0.5648752386657543,"buoyancy":0.8918381054944499,"chasiness":0.4822480274403287,"coldness":0.5684374439415164,"continuation":0.07931334716334781,"divinity":0.4032605013918318,"groundFriction":0.6652117186443087,"indulgence":0.47864096336348944,"laserlikeness":0.7929277207871431,"martyrdom":0.8337026983339686,"moxie":0.5602549661961768,"musclitude":0.32263677970288285,"name":"Sandoval
+        Crossing","bat":"","omniscience":0.622038815038979,"overpowerment":0.5511337885409796,"patheticism":0.14875322786144438,"ruthlessness":1.197617603737102,"shakespearianism":0.7716310989842041,"suppression":0.9614437529703452,"tenaciousness":1.03004842808463,"thwackability":0.7345401544850578,"tragicness":0.1,"unthwackability":0.48947111106372104,"watchfulness":0.6148756195762756,"pressurization":0.7267315163595882,"totalFingers":14,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.6235262918653164,"fate":19,"armor":"","ritual":"Journaling","coffee":3,"blood":4,"permAttr":["FRIEND_OF_CROWS","SUPERYUMMY","UNDERPERFORMING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5821617369308884,"pitchingRating":0.660674273010324,"hittingRating":0.5672941721326302,"defenseRating":0.8117830441154189,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":32.35339258332483,"state":{"permModSources":{"UNDERPERFORMING":["SUPERYUMMY"]}},"evolution":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1438'
+      - '1559'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 20:08:11 GMT
+      - Tue, 23 Mar 2021 19:24:48 GMT
       Etag:
-      - W/"59e-M8BVhChuq7+O6kO1X5TxodatBXw"
+      - W/"617-Af4ECEd5ttCh+7cuY+GoAvvoUWA"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AO4JtryobyKQajIm-UaKTFScXZ9WgHXAd.ctXhOeiPzVOIoZYvDCaA5Wf07cxknIxE7pXnuYDLzKs;
-        Path=/; Expires=Tue, 23 Feb 2021 20:08:11 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

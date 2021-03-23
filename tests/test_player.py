@@ -10,6 +10,7 @@ from .helpers import TestBase, CASSETTE_DIR
 
 
 class TestPlayer(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, player):
         self.base_test(player)
 
@@ -86,6 +87,12 @@ class TestPlayer(TestBase):
             assert isinstance(player.peanut_allergy, bool)
         if getattr(player, "fate", None) is not None:
             assert isinstance(player.fate, int)
+        if getattr(player, "e_density", None) is not None:
+            assert isinstance(player.e_density, float)
+        if getattr(player, "state", None) is not None:
+            assert isinstance(player.state, dict)
+        if getattr(player, "evolution", None) is not None:
+            assert isinstance(player.evolution, int)
 
     # TODO: Use One fixture for these so we can actually do a bounded check
     def test_simulated_copy_mult(self, player):

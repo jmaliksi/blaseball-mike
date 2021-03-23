@@ -14,69 +14,23 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=bfd38797-8404-4b38-8b82-341da28b1f83
   response:
     body:
-      string: '{"id":"bfd38797-8404-4b38-8b82-341da28b1f83","lineup":["2175cda0-a427-40fd-b497-347edcc1cd61","b1b141fc-e867-40d1-842a-cea30a97ca4f","4ca52626-58cd-449d-88bb-f6d631588640","020ed630-8bae-4441-95cc-0e4ecc27253b","d47dd08e-833c-4302-a965-a391d345455c","15d3a844-df6b-4193-a8f5-9ab129312d8d","fa477c92-39b6-4a52-b065-40af2f29840a","b8ab86c6-9054-4832-9b96-508dbd4eb624","f7847de2-df43-4236-8dbe-ae403f5f3ab3"],"rotation":["f0594932-8ef7-4d70-9894-df4be64875d8","34267632-8c32-4a8b-b5e6-ce1568bb0639","f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1","03f920cc-411f-44ef-ae66-98a44e883291","5e4dfa16-f1b9-400f-b8ef-a1613c2b026a"],"bullpen":["5b5bcc6c-d011-490f-b084-6fdc2c52f958","99e7de75-d2b8-4330-b897-a7334708aff9","50154d56-c58a-461f-976d-b06a4ae467f9","5b3f0a43-45e7-44e7-9496-512c24c040f0","93502db3-85fa-4393-acae-2a5ff3980dde","eaaef47e-82cc-4c90-b77d-75c3fb279e83","2d22f026-2873-410b-a45f-3b1dac665ffd","d002946f-e7ed-4ce4-a405-63bdaf5eabb5"],"bench":["d6e9a211-7b33-45d9-8f09-6d1a1a7a3c78","3531c282-cb48-43df-b549-c5276296aaa7","b056a825-b629-4856-856b-53a15ad34acb","94844fad-9519-4c14-8ab3-d38606a7bb44","fe3e8ba5-6687-400d-9828-2b70d63ea8be","3e0f7f48-675b-4f72-bb40-8a8c676f0054"],"seasAttr":[],"permAttr":["TRAVELING"],"fullName":"Charleston
+      string: '{"id":"bfd38797-8404-4b38-8b82-341da28b1f83","lineup":["070758a0-092a-4a2c-8a16-253c835887cb","b1b141fc-e867-40d1-842a-cea30a97ca4f","4ca52626-58cd-449d-88bb-f6d631588640","020ed630-8bae-4441-95cc-0e4ecc27253b","d47dd08e-833c-4302-a965-a391d345455c","30218684-7fa1-41a5-a3b3-5d9cd97dd36b","fa477c92-39b6-4a52-b065-40af2f29840a","b8ab86c6-9054-4832-9b96-508dbd4eb624","eaaef47e-82cc-4c90-b77d-75c3fb279e83","cc11963b-a05b-477b-b154-911dc31960df"],"rotation":["f0594932-8ef7-4d70-9894-df4be64875d8","34267632-8c32-4a8b-b5e6-ce1568bb0639","f7847de2-df43-4236-8dbe-ae403f5f3ab3","03f920cc-411f-44ef-ae66-98a44e883291","5e4dfa16-f1b9-400f-b8ef-a1613c2b026a","60026a9d-fc9a-4f5a-94fd-2225398fa3da"],"bullpen":["99e7de75-d2b8-4330-b897-a7334708aff9","50154d56-c58a-461f-976d-b06a4ae467f9","5b3f0a43-45e7-44e7-9496-512c24c040f0","93502db3-85fa-4393-acae-2a5ff3980dde","5b5bcc6c-d011-490f-b084-6fdc2c52f958","2d22f026-2873-410b-a45f-3b1dac665ffd","d002946f-e7ed-4ce4-a405-63bdaf5eabb5"],"bench":["d6e9a211-7b33-45d9-8f09-6d1a1a7a3c78","3531c282-cb48-43df-b549-c5276296aaa7","b056a825-b629-4856-856b-53a15ad34acb","94844fad-9519-4c14-8ab3-d38606a7bb44","fe3e8ba5-6687-400d-9828-2b70d63ea8be","3e0f7f48-675b-4f72-bb40-8a8c676f0054"],"seasAttr":[],"permAttr":["TRAVELING"],"fullName":"Charleston
         Shoe Thieves","location":"Charleston","mainColor":"#ffce0a","nickname":"Shoe
         Thieves","secondaryColor":"#ffce0a","shorthand":"CHST","emoji":"0x1F45F","slogan":"Your
-        Kicks are My Kicks.","shameRuns":0,"totalShames":57,"totalShamings":36,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":9,"tournamentWins":0}'
+        Kicks are Our Kicks","shameRuns":0,"totalShames":73,"totalShamings":50,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":9,"tournamentWins":0,"stadium":"36ae955c-6264-4437-8669-3053f62992e5","eDensity":1575.7208325320894,"state":{},"evolution":0,"winStreak":-6,"level":4}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1623'
+      - '1791'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 16 Feb 2021 19:11:07 GMT
+      - Tue, 23 Mar 2021 19:24:46 GMT
       Etag:
-      - W/"657-PFAvAhEZ42MQgs1M6gv45aef3pw"
+      - W/"6ff-65cLekHMgC/j8gAw5pjnGLjxD5M"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A8opW30WQvLr7TlHPhhn228dqdfgoU8nm.RrpSe8vkQziuR6GsvMn1VdrQ2FxjzEplgehC%2Bx0XVqs;
-        Path=/; Expires=Tue, 23 Feb 2021 19:11:07 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/team?id=b024e975-1c4a-4575-8936-a3754a08806a
-  response:
-    body:
-      string: '{"id":"b024e975-1c4a-4575-8936-a3754a08806a","lineup":["740d5fef-d59f-4dac-9a75-739ec07f91cf","e7ecf646-e5e4-49ef-a0e3-10a78e87f5f4","82d1b7b4-ce00-4536-8631-a025f05150ce","ae81e172-801a-4236-929a-b990fc7190ce","1068f44b-34a0-42d8-a92e-2be748681a6f","17397256-c28c-4cad-85f2-a21768c66e67","733d80f1-2485-40f7-828b-fd7cd8243a01","97f5a9cd-72f0-413e-9e68-a6ee6a663489","b39b5aae-8571-4c90-887a-6a00f2a2f6fd","a1ed3396-114a-40bc-9ff0-54d7e1ad1718"],"rotation":["b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","6b8d128f-ed51-496d-a965-6614476f8256","7d388846-8f4c-407f-aacb-b844d2561c5e","042962c8-4d8b-44a6-b854-6ccef3d82716","3a96d76a-c508-45a0-94a0-8f64cd6beeb4"],"bullpen":["fdfd36c7-e0c1-4fce-98f7-921c3d17eafe","dd7e710f-da4e-475b-b870-2c29fe9d8c00","3f08f8cd-6418-447a-84d3-22a981c68f16","721fb947-7548-49ea-8cbe-7721b0ed49e0","c6bd21a8-7880-4c00-8abe-33560fe84ac5","4fe28bc1-f690-4ad6-ad09-1b2e984bf30b","ebf2da50-7711-46ba-9e49-341ce3487e00","d796d287-77ef-49f0-89ef-87bcdeb280ee"],"bench":["de52d5c0-cba4-4ace-8308-e2ed3f8799d0","13cfbadf-b048-4c4f-903d-f9b52616b15c","732899a3-2082-4d9f-b1c2-74c8b75e15fb","41bdb527-1fb2-487d-8237-093958e737e4"],"seasAttr":[],"permAttr":[],"fullName":"Dallas
-        Steaks","location":"Dallas","mainColor":"#8c8d8f","nickname":"Steaks","secondaryColor":"#b2b3b5","shorthand":"DAL","emoji":"0x1F969","slogan":"Well
-        Done.","shameRuns":0,"totalShames":44,"totalShamings":54,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":3,"tournamentWins":0}'
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1538'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 16 Feb 2021 19:11:07 GMT
-      Etag:
-      - W/"602-cWQ/EJI9hU/oz/YQ8yaFMbLwqws"
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AhYAwiVm_B4xLBDdPd8JPE5Dj8axVFccQ.vn3gxSAFXIWMoKDufBB0G3g0g%2FhDiU2Kcavbj7j8QX4;
-        Path=/; Expires=Tue, 23 Feb 2021 19:11:07 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

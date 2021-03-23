@@ -1,0 +1,125 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=747b8e4a-7e50-4638-a973-ea7950a3e739
+  response:
+    body:
+      string: '{"id":"747b8e4a-7e50-4638-a973-ea7950a3e739","lineup":["efafe75e-2f00-4418-914c-9b6675d39264","c0177f76-67fc-4316-b650-894159dede45","b082ca6e-eb11-4eab-8d6a-30f8be522ec4","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e","5bcfb3ff-5786-4c6c-964c-5c325fcc48d7","7cf83bdc-f95f-49d3-b716-06f2cf60a78d","2e86de11-a2dd-4b28-b5fe-f4d0c38cd20b","7932c7c7-babb-4245-b9f5-cdadb97c99fb"],"rotation":["1db2f602-64b1-4a5c-8697-1932cc2c6df1","2720559e-9173-4042-aaa0-d3852b72ab2e","7aeb8e0b-f6fb-4a9e-bba2-335dada5f0a3","b3e512df-c411-4100-9544-0ceadddb28cf"],"bullpen":["5fc4713c-45e1-4593-a968-7defeb00a0d4","77a41c29-8abd-4456-b6e0-a034252700d2","a73427b3-e96a-4156-a9ab-844edc696fed","04f955fe-9cc9-4482-a4d2-07fe033b59ee","6e744b21-c4fa-4fa8-b4ea-e0e97f68ded5","37efef78-2df4-4c76-800c-43d4faf07737","58fca5fa-e559-4f5e-ac87-dc99dd19e410","2727215d-3714-438d-b1ba-2ed15ec481c0"],"bench":["9abe02fb-2b5a-432f-b0af-176be6bd62cf","32c9bce6-6e52-40fa-9f64-3629b3d026a8","695daf02-113d-4e76-b802-0862df16afbd","db3ff6f0-1045-4223-b3a8-a016ca987af9","6f71667b-59f2-46df-adac-a8885a4f6ac5","df34d168-4d6a-403c-aca5-2b1ebe90444d","2a8b371f-d2eb-4be7-b89f-aff10edb4412","128a33b9-c82f-408e-9fa3-5161f5a3e297"],"seasAttr":[],"permAttr":["FIREPROOF","SEALANT","AMBUSH"],"fullName":"Hades
+        Tigers","location":"Hades","mainColor":"#5c1c1c","nickname":"Tigers","secondaryColor":"#e83622","shorthand":"HAT","emoji":"0x1F405","slogan":"Never
+        Look Back.","shameRuns":0,"totalShames":49,"totalShamings":73,"seasonShames":0,"seasonShamings":0,"championships":3,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":14,"tournamentWins":0,"stadium":"929fc650-948a-4736-b7a2-bb7b75902e6e","eDensity":2233.6599281397603,"state":{},"evolution":1,"winStreak":-3,"level":5}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1741'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:16:01 GMT
+      Etag:
+      - W/"6cd-y+GGi71ft3R3tXPBjdO/mXWfwkc"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=b082ca6e-eb11-4eab-8d6a-30f8be522ec4
+  response:
+    body:
+      string: '[{"id":"b082ca6e-eb11-4eab-8d6a-30f8be522ec4","anticapitalism":1.0611463668758867,"baseThirst":0.4370519704588788,"buoyancy":0.45671567645654476,"chasiness":0.6683891947430681,"coldness":0.4278997858071638,"continuation":0.593924493036328,"divinity":0.7759829607797213,"groundFriction":1.0198710097225816,"indulgence":0.873579888213093,"laserlikeness":0.8340930917235734,"martyrdom":0.8231165830551391,"moxie":0.7093150728687667,"musclitude":0.16498761938222264,"name":"Nicholas
+        Mora","bat":"","omniscience":1.0983518953193847,"overpowerment":0.4443452017627897,"patheticism":0.08538753459854374,"ruthlessness":0.18851477846144857,"shakespearianism":0.28626419244571744,"suppression":0.24995776278767445,"tenaciousness":0.5011924454437675,"thwackability":1.045834764778188,"tragicness":0.15478803484222683,"unthwackability":0.9943745345632965,"watchfulness":0.6513984988872633,"pressurization":0.9056106219154152,"totalFingers":13,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.3999571287578373,"fate":83,"armor":"","ritual":"Astronomy","coffee":1,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7888936881496955,"pitchingRating":0.3913194967710453,"hittingRating":0.7834709007642011,"defenseRating":0.8215128301799182,"leagueTeamId":"747b8e4a-7e50-4638-a973-ea7950a3e739","tournamentTeamId":null,"eDensity":35.496378411054025,"state":{},"evolution":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1440'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:16:01 GMT
+      Etag:
+      - W/"5a0-WSp6c7l5P9kXYe7Jmlt2bXxbOp4"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/gameById/ea7e391a-8c5b-4547-b520-a7ee44a9946c
+  response:
+    body:
+      string: '{"id":"ea7e391a-8c5b-4547-b520-a7ee44a9946c","basesOccupied":[],"baseRunners":[],"baseRunnerNames":[],"outcomes":["CONSUMERS
+        ATTACK\nNICHOLAS MORA"],"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","lastUpdate":"Tigers
+        3, Spies 2","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","statsheet":"51d887d4-adf6-45d2-af88-de247da7ee88","awayPitcher":"2720559e-9173-4042-aaa0-d3852b72ab2e","awayPitcherName":"Hiroto
+        Wilcox","awayBatter":null,"awayBatterName":"","awayTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","awayTeamName":"Hades
+        Tigers","awayTeamNickname":"Tigers","awayTeamColor":"#5c1c1c","awayTeamEmoji":"0x1F405","awayOdds":0.5620388926345852,"awayStrikes":3,"awayScore":3,"awayTeamBatterCount":33,"homePitcher":"e111a46d-5ada-4311-ac4f-175cca3357da","homePitcherName":"Alexandria
+        Rosales","homeBatter":null,"homeBatterName":"","homeTeam":"9debc64f-74b7-4ae1-a4d6-fce0144b6ea5","homeTeamName":"Houston
+        Spies","homeTeamNickname":"Spies","homeTeamColor":"#67556b","homeTeamEmoji":"0x1F575","homeOdds":0.43796110736541477,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":30,"season":13,"isPostseason":false,"day":85,"phase":7,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":3,"shame":false,"weather":18,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"#e83622","homeTeamSecondaryColor":"#9e82a4","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":287,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":"43fbdf41-336f-46a8-9445-eb8a6e05d811","secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":19,"isTitleMatch":false}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1876'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 23 Mar 2021 20:16:01 GMT
+      Etag:
+      - W/"754-s+eD3chbNpnzuQjg6N0D8rw6U3Y"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

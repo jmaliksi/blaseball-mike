@@ -14,62 +14,22 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e
   response:
     body:
-      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["28964497-0efe-420c-9c1d-8574f224a4e9","718dea1a-d9a8-4c2b-933a-f0667b5250e6","855775c1-266f-40f6-b07b-3a67ccdf8551","defbc540-a36d-460b-afd8-07da2375ee63","51c5473a-7545-4a9a-920d-d9b718d0e8d1","f2468055-e880-40bf-8ac6-a0763d846eb2","d51f1fe8-4ab8-411e-b836-5bba92984d32","8cd06abf-be10-4a35-a3ab-1a408a329147","75f9d874-5e69-438d-900d-a3fcb1d429b3","04931546-1b4a-469f-b391-7ed67afe824c","be18d363-752d-4e4a-b06b-1a7e4641400b"],"rotation":["ff5a37d9-a6dd-49aa-b6fb-b935fd670820","3e008f60-6842-42e7-b125-b88c7e5c1a95","dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","24f6829e-7bb4-4e1e-8b59-a07514657e72","a647388d-fc59-4c1b-90d3-8c1826e07775"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f"],"bench":["d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","8acc97fa-4bf1-49f6-bb93-fb52513a015b"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
-        Flowers","location":"Boston","mainColor":"#f7d1ff","nickname":"Flowers","secondaryColor":"#f7d1ff","shorthand":"BOF","emoji":"0x1F339","slogan":"Bloom
-        Goes The Dynamite!","shameRuns":0,"totalShames":40,"totalShamings":42,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":2,"tournamentWins":0}'
+      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["28964497-0efe-420c-9c1d-8574f224a4e9","718dea1a-d9a8-4c2b-933a-f0667b5250e6","855775c1-266f-40f6-b07b-3a67ccdf8551","c09e64b6-8248-407e-b3af-1931b880dbee","51c5473a-7545-4a9a-920d-d9b718d0e8d1","8acc97fa-4bf1-49f6-bb93-fb52513a015b","d51f1fe8-4ab8-411e-b836-5bba92984d32","8cd06abf-be10-4a35-a3ab-1a408a329147","75f9d874-5e69-438d-900d-a3fcb1d429b3","4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d","be18d363-752d-4e4a-b06b-1a7e4641400b"],"rotation":["ff5a37d9-a6dd-49aa-b6fb-b935fd670820","7dcf6902-632f-48c5-936a-7cf88802b93a","defbc540-a36d-460b-afd8-07da2375ee63","2da49de2-34e5-49d0-b752-af2a2ee061be","a647388d-fc59-4c1b-90d3-8c1826e07775"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f"],"bench":["dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","3e008f60-6842-42e7-b125-b88c7e5c1a95","6caa8180-e178-4f8b-865c-f1af47119bc2"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
+        Flowers","location":"Boston","mainColor":"#f7d1ff","nickname":"Flowers","secondaryColor":"#f7d1ff","shorthand":"BOF","emoji":"0x1F339","slogan":"Let''s
+        Grow!","shameRuns":0,"totalShames":54,"totalShamings":56,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":2,"tournamentWins":0,"stadium":"d37abba6-9fba-463a-8f4f-7cf49de3c7b6","eDensity":2004.5472981391508,"state":{},"evolution":0,"winStreak":-1,"level":5}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1640'
+      - '1834'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 14 Feb 2021 01:10:51 GMT
+      - Tue, 23 Mar 2021 19:25:59 GMT
       Etag:
-      - W/"668-pgL7UZvfa4PT7VJuSPa/0Prinx0"
+      - W/"72a-OWJTbBNiuZYumcDnL4bfDjn+fLc"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3A4oSxU0BTNu1oHK00Wd4sJ0HWgCXu4xBF.Gz6hH%2BL9WZgOgWJK9l3gB7HQZ0h10MlZk5Z7gB%2FQKSM;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:51 GMT; HttpOnly
-      Vary:
-      - Host, X-Forwarded-Proto
-      Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://www.blaseball.com/database/team?id=00000000-0000-0000-0000-000000000000
-  response:
-    body:
-      string: ''
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Sun, 14 Feb 2021 01:10:51 GMT
-      Server:
-      - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AUiF1tVKL9ayQqvUE0eh2nqbM0QpMb6Uo.THtCJOwQNy6%2B%2F8bJ13sgiMK23elPt9EZYyaMyl0CP4s;
-        Path=/; Expires=Sun, 21 Feb 2021 01:10:51 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

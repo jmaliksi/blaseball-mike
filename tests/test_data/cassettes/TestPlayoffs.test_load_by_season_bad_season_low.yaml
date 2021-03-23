@@ -21,12 +21,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Mon, 15 Feb 2021 20:43:16 GMT
+      - Tue, 23 Mar 2021 19:25:42 GMT
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3AYxB6D0ggfj8xt0LNe7Fuj_NSB8Q4Olya.pQa%2FPs8iSvC3ugCEQXfN709Ovm5ooUceFdA2ydUfKNA;
-        Path=/; Expires=Mon, 22 Feb 2021 20:43:16 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:

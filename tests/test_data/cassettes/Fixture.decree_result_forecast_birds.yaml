@@ -24,14 +24,11 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 15 Feb 2021 23:23:46 GMT
+      - Tue, 23 Mar 2021 19:24:30 GMT
       Etag:
       - W/"ba-OwEG5u7uomB/p+VxqB6WMZjEkPU"
       Server:
       - Cowboy
-      Set-Cookie:
-      - connect.sid=s%3ADYTD7VNV7lbRfcK2h1rHBm3CfpUF4ywh.LgNU%2FizBleGr7jcK0%2Fviu8zkoy64SJnxZXJF%2FwjInuY;
-        Path=/; Expires=Mon, 22 Feb 2021 23:23:46 GMT; HttpOnly
       Vary:
       - Host, X-Forwarded-Proto
       Via:
