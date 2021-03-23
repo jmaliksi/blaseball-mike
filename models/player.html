@@ -229,11 +229,18 @@ class Player(Base):
 
     @property
     def soulscream(self):
+        return self.get_soulscream()
+
+    def get_soulscream(self, collapse=True):
         letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
         stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
 
         scream = []
-        for r in range(self.soul):
+        if collapse:
+            soul_max = min(self.soul, 300)
+        else:
+            soul_max = self.soul
+        for r in range(soul_max):
             sub_scream = []
             i = 10 ** -r
             for s in stats:
@@ -244,7 +251,10 @@ class Player(Base):
                     sub_scream.append(&#34;undefined&#34;)
             scream.extend(sub_scream + sub_scream + [sub_scream[0]])
 
-        return &#39;&#39;.join(scream)
+        scream = &#39;&#39;.join(scream)
+        if collapse and self.soul &gt; 300:
+            scream += f&#34;... (CONT. FOR {self.soul - 300} SOUL)&#34;
+        return scream
 
     @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
     def blood(self):
@@ -665,11 +675,18 @@ class Player(Base):
 
     @property
     def soulscream(self):
+        return self.get_soulscream()
+
+    def get_soulscream(self, collapse=True):
         letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
         stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
 
         scream = []
-        for r in range(self.soul):
+        if collapse:
+            soul_max = min(self.soul, 300)
+        else:
+            soul_max = self.soul
+        for r in range(soul_max):
             sub_scream = []
             i = 10 ** -r
             for s in stats:
@@ -680,7 +697,10 @@ class Player(Base):
                     sub_scream.append(&#34;undefined&#34;)
             scream.extend(sub_scream + sub_scream + [sub_scream[0]])
 
-        return &#39;&#39;.join(scream)
+        scream = &#39;&#39;.join(scream)
+        if collapse and self.soul &gt; 300:
+            scream += f&#34;... (CONT. FOR {self.soul - 300} SOUL)&#34;
+        return scream
 
     @Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
     def blood(self):
@@ -1352,22 +1372,7 @@ def player_name(self):
 </summary>
 <pre><code class="python">@property
 def soulscream(self):
-    letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
-    stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
-
-    scream = []
-    for r in range(self.soul):
-        sub_scream = []
-        i = 10 ** -r
-        for s in stats:
-            try:
-                c = math.floor((s % i) / i * 10)
-                sub_scream.append(letters[c])
-            except ZeroDivisionError:
-                sub_scream.append(&#34;undefined&#34;)
-        scream.extend(sub_scream + sub_scream + [sub_scream[0]])
-
-    return &#39;&#39;.join(scream)</code></pre>
+    return self.get_soulscream()</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.state"><code class="name">var <span class="ident">state</span></code></dt>
@@ -1528,6 +1533,41 @@ def defense_rating(self):
         return self._defense_rating
     return (((self.omniscience * self.tenaciousness) ** 0.2) *
             ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.get_soulscream"><code class="name flex">
+<span>def <span class="ident">get_soulscream</span></span>(<span>self, collapse=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_soulscream(self, collapse=True):
+    letters = [&#34;A&#34;, &#34;E&#34;, &#34;I&#34;, &#34;O&#34;, &#34;U&#34;, &#34;X&#34;, &#34;H&#34;, &#34;A&#34;, &#34;E&#34;, &#34;I&#34;]
+    stats = [self.pressurization, self.divinity, self.tragicness, self.shakespearianism, self.ruthlessness]
+
+    scream = []
+    if collapse:
+        soul_max = min(self.soul, 300)
+    else:
+        soul_max = self.soul
+    for r in range(soul_max):
+        sub_scream = []
+        i = 10 ** -r
+        for s in stats:
+            try:
+                c = math.floor((s % i) / i * 10)
+                sub_scream.append(letters[c])
+            except ZeroDivisionError:
+                sub_scream.append(&#34;undefined&#34;)
+        scream.extend(sub_scream + sub_scream + [sub_scream[0]])
+
+    scream = &#39;&#39;.join(scream)
+    if collapse and self.soul &gt; 300:
+        scream += f&#34;... (CONT. FOR {self.soul - 300} SOUL)&#34;
+    return scream</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.get_vibe"><code class="name flex">
@@ -1785,6 +1825,7 @@ appropriate related stats.</p></div>
 <li><code><a title="blaseball_mike.models.player.Player.fate" href="#blaseball_mike.models.player.Player.fate">fate</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.find_by_name" href="#blaseball_mike.models.player.Player.find_by_name">find_by_name</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.game_attr" href="#blaseball_mike.models.player.Player.game_attr">game_attr</a></code></li>
+<li><code><a title="blaseball_mike.models.player.Player.get_soulscream" href="#blaseball_mike.models.player.Player.get_soulscream">get_soulscream</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.get_vibe" href="#blaseball_mike.models.player.Player.get_vibe">get_vibe</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.ground_friction" href="#blaseball_mike.models.player.Player.ground_friction">ground_friction</a></code></li>
 <li><code><a title="blaseball_mike.models.player.Player.hit_streak" href="#blaseball_mike.models.player.Player.hit_streak">hit_streak</a></code></li>
