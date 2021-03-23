@@ -8,6 +8,7 @@ class TestBase:
     def base_test(self, base):
         self.json_test(base)
         self.json_feedback_test(base)
+        self.docgen_test(base)
 
     @staticmethod
     def json_test(base):
@@ -31,8 +32,19 @@ class TestBase:
         ret = type(base)(json_out)
         assert ret == base
 
+    @staticmethod
+    def docgen_test(base):
+        """
+        Verify that the _get_fields function does not error
+        """
+        fields = base._get_fields()
+        assert isinstance(fields, list)
+        assert len(fields) > 0
+        for f in fields:
+            assert isinstance(f, str)
 
 # Non-class version for simpler function tests
 def base_test(base_obj):
     TestBase.json_test(base_obj)
     TestBase.json_feedback_test(base_obj)
+    TestBase.docgen_test(base_obj)
