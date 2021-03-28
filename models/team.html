@@ -63,6 +63,14 @@ class Team(Base):
         }
 
     @classmethod
+    def load_history(cls, id_, order=&#39;desc&#39;, count=None):
+        &#34;&#34;&#34;
+        Returns array of Team changes with most recent first.
+        &#34;&#34;&#34;
+        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]
+
+    @classmethod
     def load_by_name(cls, name):
         &#34;&#34;&#34;
         Name can be full name or nickname, case insensitive.
@@ -191,6 +199,14 @@ class Team(Base):
         return {
             id_: cls(team) for id_, team in database.get_all_teams().items()
         }
+
+    @classmethod
+    def load_history(cls, id_, order=&#39;desc&#39;, count=None):
+        &#34;&#34;&#34;
+        Returns array of Team changes with most recent first.
+        &#34;&#34;&#34;
+        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]
 
     @classmethod
     def load_by_name(cls, name):
@@ -409,6 +425,24 @@ def load_by_name(cls, name):
     return None</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.team.Team.load_history"><code class="name flex">
+<span>def <span class="ident">load_history</span></span>(<span>id_, order='desc', count=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns array of Team changes with most recent first.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_history(cls, id_, order=&#39;desc&#39;, count=None):
+    &#34;&#34;&#34;
+    Returns array of Team changes with most recent first.
+    &#34;&#34;&#34;
+    teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
+    return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]</code></pre>
+</details>
+</dd>
 </dl>
 <h3>Instance variables</h3>
 <dl>
@@ -541,6 +575,7 @@ def load_by_name(cls, name):
 <li><code><a title="blaseball_mike.models.team.Team.load_all" href="#blaseball_mike.models.team.Team.load_all">load_all</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load_at_time" href="#blaseball_mike.models.team.Team.load_at_time">load_at_time</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load_by_name" href="#blaseball_mike.models.team.Team.load_by_name">load_by_name</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.load_history" href="#blaseball_mike.models.team.Team.load_history">load_history</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.location" href="#blaseball_mike.models.team.Team.location">location</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.main_color" href="#blaseball_mike.models.team.Team.main_color">main_color</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.nickname" href="#blaseball_mike.models.team.Team.nickname">nickname</a></code></li>
