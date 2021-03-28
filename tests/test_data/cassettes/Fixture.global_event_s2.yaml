@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v1/globalevents/updates?before=2020-07-29T12%3A00%3A00.000000Z&count=1&order=desc
+  response:
+    body:
+      string: '{"nextPage":"myxuMf1rMUmlxuuLXjzn21C6EJheFgAA","data":[{"updateId":"316e2c9b-6bfd-4931-a5c6-eb8b5e3ce7db","firstSeen":"2020-07-29T11:12:33.397Z","lastSeen":"2020-07-29T11:12:33.397Z","data":[{"__v":0,"_id":"the_discipline_era","msg":"The
+        Discipline Era has begun"},{"__v":0,"_id":"mourning_best_player","msg":"In
+        Memoriam: Jaylen Hotdogfingers, Fitzgerald Massey, Tyreek Olive, Jenna Maldonado,
+        Nora Perez, Scrap Murphy","expire":"2020-07-29T19:00:02.379Z"},{"_id":"darkness_forecast","msg":"THE
+        COMMISSIONER IS DOING A GREAT JOB"},{"_id":"commissioner_parker","msg":"THE
+        COMMISSIONER IS DOING A GREAT JOB"},{"__v":0,"_id":"hitting_stat_leaders_update","msg":"Home
+        Run Leaders: ... Jessica Telephone, Philly Pies - 19 ..... Landry Violence,
+        Hades Tigers - 19 ..... Dominic Marijuana, New York Millennials - 18 .....
+        Antonio Wallace, Charleston Shoe Thieves - 16 ..... Beck Whitney, Boston Flowers
+        - 15 ..... "},{"__v":0,"_id":"pitching_stat_leaders_update","msg":"Earned
+        Run Average Leaders: ... Orville Manco, Dallas Steaks - 1.556 ..... Dunlap
+        Figueroa, Hades Tigers - 2.186 ..... PolkaDot Patterson, Baltimore Crabs -
+        2.198 ..... Kevin Dudley, Philly Pies - 2.277 ..... Greer Lott, Canada Moist
+        Talkers - 2.444 ..... "}]}]}'
+    headers:
+      Content-Length:
+      - '1226'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 28 Mar 2021 20:14:46 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

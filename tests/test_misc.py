@@ -21,32 +21,40 @@ class TestSimulationData(TestBase):
         assert isinstance(simulation_data.id, str)
         assert simulation_data.id == "thisidisstaticyo"
         assert isinstance(simulation_data.era_title, str)
-        assert isinstance(simulation_data.sub_era_title, str)
         assert isinstance(simulation_data.era_color, str)
-        assert isinstance(simulation_data.sub_era_color, str)
-        if getattr(simulation_data, "twgo", None) is not None:
-            assert isinstance(simulation_data.twgo, str)
 
         assert isinstance(simulation_data.season, int)
         assert simulation_data.season > 0
         assert isinstance(simulation_data.day, int)
         assert simulation_data.day > 0
-        assert isinstance(simulation_data.tournament, int)
-        assert isinstance(simulation_data.tournament_round, int)
         assert isinstance(simulation_data.phase, int)
         assert isinstance(simulation_data.play_off_round, int)
-        assert isinstance(simulation_data.agitations, int)
-        assert isinstance(simulation_data.salutations, int)
-
         assert isinstance(simulation_data.rules, str)
         assert isinstance(simulation_data.terminology, str)
         assert isinstance(simulation_data.league, League)
         assert isinstance(simulation_data.playoffs, str)
         assert isinstance(simulation_data.season_id, str)
 
-        assert isinstance(simulation_data.attr, list)
-        for attr in simulation_data.attr:
-            assert isinstance(attr, str)
+    def test_added_fields(self, simulation_data):
+        if getattr(simulation_data, "sub_era_title", None) is not None:
+            assert isinstance(simulation_data.sub_era_title, str)
+        if getattr(simulation_data, "sub_era_color", None) is not None:
+            assert isinstance(simulation_data.sub_era_color, str)
+        if getattr(simulation_data, "twgo", None) is not None:
+            assert isinstance(simulation_data.twgo, str)
+        if getattr(simulation_data, "tournament", None) is not None:
+            assert isinstance(simulation_data.tournament, int)
+        if getattr(simulation_data, "tournament_round", None) is not None:
+            assert isinstance(simulation_data.tournament_round, int)
+        if getattr(simulation_data, "agitations", None) is not None:
+            assert isinstance(simulation_data.agitations, int)
+        if getattr(simulation_data, "salutations", None) is not None:
+            assert isinstance(simulation_data.salutations, int)
+
+        if getattr(simulation_data, "attr", None) is not None:
+            assert isinstance(simulation_data.attr, list)
+            for attr in simulation_data.attr:
+                assert isinstance(attr, str)
 
     def test_datetimes(self, simulation_data):
         if getattr(simulation_data, "next_season_start", None) is not None:
@@ -57,9 +65,19 @@ class TestSimulationData(TestBase):
             assert isinstance(simulation_data.next_phase_time, datetime)
 
     @pytest.fixture(scope="module")
-    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data.yaml')
-    def simulation_data(self):
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data_current.yaml')
+    def simulation_data_current(self):
         return SimulationData.load()
+
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data_s2.yaml')
+    def simulation_data_s2(self):
+        return SimulationData.load_at_time("2020-08-01T12:00:00.000Z")
+
+    @pytest.fixture(scope="module", params=["simulation_data_current", "simulation_data_s2"])
+    def simulation_data(self, request):
+        """Parameterized fixture of various teams"""
+        return request.getfixturevalue(request.param)
 
 
 class TestGlobalEvents(TestBase):
@@ -85,7 +103,12 @@ class TestGlobalEvents(TestBase):
     def global_event_current(self):
         return GlobalEvent.load()
 
-    @pytest.fixture(scope="module", params=['global_event_current'])
+    @pytest.fixture(scope="module")
+    @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.global_event_s2.yaml')
+    def global_event_s2(self):
+        return GlobalEvent.load_at_time("2020-07-29T12:00:00.000Z")
+
+    @pytest.fixture(scope="module", params=['global_event_current', 'global_event_s2'])
     def global_event(self, request):
         """Parameterized fixture of various global event tickers"""
         return request.getfixturevalue(request.param)

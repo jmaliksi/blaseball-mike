@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/simulationData
+  response:
+    body:
+      string: '{"id":"thisidisstaticyo","day":116,"league":"d8545021-e9fc-48a3-af74-48685950a183","nextPhaseTime":"2021-03-21T09:00:00.838Z","phase":0,"playOffRound":3,"playoffs":"49ccd82a-8b27-45be-b7ce-ce1a19ede9ee","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","season":13,"seasonId":"0db52b0a-d235-49d4-a8b4-f426ced20e79","terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","eraColor":"#ffbe00","eraTitle":"THE
+        EXPANSION ERA","subEraColor":"#715f00","subEraTitle":"OFF SEASON","attr":["OPENED_BOOK","UNLOCKED_PEANUTS","EAT_THE_RICH","UNLOCKED_INTERVIEWS","UNLOCKED_IDOLS","PARTY_TIME","UNLOCKED_HALL","WILD_CARDS","BLACK_HOLE","SIM_BOOK_EAT","SIM_TAROT","SIM_BOOK_DEFACE","SIM_BOOK_CLOSE","SIM_GROUNDBROKEN","SIM_BASED_EVOLUTION","SIM_EVOLUTION_CONCEPTUALIZED","SIM_FREE_WILL","SIM_SHOW_LEVELS","SIM_ALL_YOU_CAN_EAT"],"agitations":325,"salutations":56,"tournament":-1,"tournamentRound":3,"godsDayDate":"2021-03-21T18:00:00.594Z","preseasonDate":"2021-03-22T08:00:00.594Z","earlseasonDate":"2021-03-22T15:00:00.594Z","earlsiestaDate":"2021-03-23T18:00:00.594Z","midseasonDate":"2021-03-23T19:00:00.594Z","latesiestaDate":"2021-03-25T16:00:00.594Z","lateseasonDate":"2021-03-25T17:00:00.594Z","endseasonDate":"2021-03-26T20:00:00.594Z","earlpostseasonDate":"2021-03-26T21:00:00.594Z","latepostseasonDate":"2021-03-27T15:00:00.594Z","electionDate":"2021-03-28T18:00:00.594Z"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1363'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 28 Mar 2021 20:07:00 GMT
+      Etag:
+      - W/"553-FVVIuZVsAfH9aYE6GwOHkf4Xv7w"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
