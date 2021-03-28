@@ -49,12 +49,37 @@ class TestSimulationData(TestBase):
             assert isinstance(attr, str)
 
     def test_datetimes(self, simulation_data):
+        # Discipline Era Dates
         if getattr(simulation_data, "next_season_start", None) is not None:
             assert isinstance(simulation_data.next_season_start, datetime)
         if getattr(simulation_data, "next_election_end", None) is not None:
             assert isinstance(simulation_data.next_election_end, datetime)
         if getattr(simulation_data, "next_phase_time", None) is not None:
             assert isinstance(simulation_data.next_phase_time, datetime)
+
+        # Expansion Era Dates
+        if getattr(simulation_data, "gods_day_date", None) is not None:
+            assert isinstance(simulation_data.gods_day_date, datetime)
+        if getattr(simulation_data, "preseason_date", None) is not None:
+            assert isinstance(simulation_data.preseason_date, datetime)
+        if getattr(simulation_data, "earlseason_date", None) is not None:
+            assert isinstance(simulation_data.earlseason_date, datetime)
+        if getattr(simulation_data, "earlsiesta_date", None) is not None:
+            assert isinstance(simulation_data.earlsiesta_date, datetime)
+        if getattr(simulation_data, "midseason_date", None) is not None:
+            assert isinstance(simulation_data.midseason_date, datetime)
+        if getattr(simulation_data, "latesiesta_date", None) is not None:
+            assert isinstance(simulation_data.latesiesta_date, datetime)
+        if getattr(simulation_data, "lateseason_date", None) is not None:
+            assert isinstance(simulation_data.lateseason_date, datetime)
+        if getattr(simulation_data, "endseason_date", None) is not None:
+            assert isinstance(simulation_data.endseason_date, datetime)
+        if getattr(simulation_data, "earlpostseason_date", None) is not None:
+            assert isinstance(simulation_data.earlpostseason_date, datetime)
+        if getattr(simulation_data, "latepostseason_date", None) is not None:
+            assert isinstance(simulation_data.latepostseason_date, datetime)
+        if getattr(simulation_data, "election_date", None) is not None:
+            assert isinstance(simulation_data.election_date, datetime)
 
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.simulation_data.yaml')
