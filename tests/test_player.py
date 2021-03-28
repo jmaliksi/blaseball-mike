@@ -469,6 +469,16 @@ class TestPlayer(TestBase):
         bad_day = Player.load_by_gameday("f70dd57b-55c4-4a62-a5ea-7cc4bf9d8ac1", season=6, day=999)
         assert bad_day is None
 
+    @pytest.mark.vcr
+    def test_load_all(self):
+        all_players = Player.load_all()
+        assert isinstance(all_players, dict)
+        assert len(all_players) > 0
+        for id_, p in all_players.items():
+            assert isinstance(p, Player)
+            assert isinstance(id_, str)
+            assert id_ == p.id
+
     # FIXTURES
 
     @pytest.fixture(scope="module")
