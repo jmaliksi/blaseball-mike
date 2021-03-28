@@ -161,6 +161,20 @@ class TestTeam(TestBase):
         bad_time = Team.load_at_time("3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e", time="1980-01-01T00:00:00Z")
         assert bad_time is None
 
+    @pytest.mark.vcr
+    def test_load_history(self):
+        team = Team.load_history("d9f89a8a-c563-493e-9d64-78e4f9a55d4a", count=200)
+        assert isinstance(team, list)
+        assert len(team) > 0
+        for t in team:
+            assert isinstance(t, Team)
+
+    @pytest.mark.vcr
+    def test_load_history_bad_id(self):
+        bad_team = Team.load_history("00000000-0000-0000-0000-000000000000", count=200)
+        assert isinstance(bad_team, list)
+        assert len(bad_team) == 0
+
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.team_crabs.yaml')
     def team_crabs(self):

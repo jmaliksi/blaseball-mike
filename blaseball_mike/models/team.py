@@ -35,6 +35,14 @@ class Team(Base):
         }
 
     @classmethod
+    def load_history(cls, id_, order='desc', count=None):
+        """
+        Returns array of Team changes with most recent first.
+        """
+        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
+        return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in teams]
+
+    @classmethod
     def load_by_name(cls, name):
         """
         Name can be full name or nickname, case insensitive.

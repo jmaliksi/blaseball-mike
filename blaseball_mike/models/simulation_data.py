@@ -2,7 +2,7 @@ from dateutil.parser import parse
 
 from .base import Base
 from .league import League
-from .. import database
+from .. import database, chronicler
 
 
 class SimulationData(Base):
@@ -18,6 +18,17 @@ class SimulationData(Base):
     def load(cls):
         """Returns the current simulation state"""
         return cls(database.get_simulation_data())
+
+    @classmethod
+    def load_at_time(cls, time):
+        """Returns the simulation state at a given time"""
+        if isinstance(time, str):
+            time = parse(time)
+
+        updates = chronicler.get_sim_updates(before=time, order="desc", count=1)
+        if len(updates) == 0:
+            return None
+        return cls(dict(updates[0]["data"], timestamp=time))
 
     @Base.lazy_load("_league_id", cache_name="_league")
     def league(self):

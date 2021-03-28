@@ -1,7 +1,7 @@
 from dateutil.parser import parse
 
 from .base import Base
-from .. import database
+from .. import database, chronicler
 
 
 class GlobalEvent(Base):
@@ -21,8 +21,17 @@ class GlobalEvent(Base):
         events = database.get_global_events()
         return [cls(event) for event in events]
 
-    @Base.lazy_load("_expire", use_default=False)
-    def expire(self):
-        if self._expire is None:
+    @classmethod
+    def load_at_time(cls, time):
+        """Returns a list of global events at a timestamp"""
+        if isinstance(time, str):
+            time = parse(time)
+
+        updates = chronicler.get_globalevent_updates(before=time, order="desc", count=1)
+        if len(updates) == 0:
             return None
+        return [cls(dict(event, timestamp=time)) for event in updates[0]["data"]]
+
+    @Base.lazy_load("_expire")
+    def expire(self):
         return parse(self._expire)
