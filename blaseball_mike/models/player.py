@@ -57,7 +57,7 @@ class Player(Base):
         Load all players
         """
         players = chronicler.get_players()
-        return {x["id"]: cls(x) for x in players}
+        return {x["id"]: cls(x["data"]) for x in players}
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
