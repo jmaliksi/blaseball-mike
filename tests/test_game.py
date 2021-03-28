@@ -4,7 +4,7 @@ Unit Tests for Game Model
 
 import pytest
 import vcr
-from blaseball_mike.models import Game, Player, Team, GameStatsheet, Modification
+from blaseball_mike.models import Game, Player, Team, GameStatsheet, Modification, Stadium
 from blaseball_mike.tables import Weather
 from .helpers import TestBase, CASSETTE_DIR
 
@@ -139,6 +139,12 @@ class TestGame(TestBase):
     def test_statsheet(game):
         """Test game statsheet"""
         assert isinstance(game.statsheet, GameStatsheet)
+
+    @staticmethod
+    @pytest.mark.vcr
+    def test_stadium(game):
+        """Test game stadium"""
+        assert isinstance(game.stadium, (Stadium, type(None)))
 
     @staticmethod
     def test_added_fields(game):
@@ -1359,6 +1365,7 @@ def game_test_generic(game):
     TestGame.test_added_fields(game)
     TestGame.test_misc(game)
     TestGame.test_bet_payouts(game)
+    TestGame.test_stadium(game)
     # TODO: PODs are broken
     # TestGame.test_teams(game)
     # TestGame.test_statsheet(game)  # Fight statsheets are broken

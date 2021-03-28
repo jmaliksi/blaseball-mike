@@ -3,6 +3,7 @@ from .modification import Modification
 from .player import Player
 from .statsheet import GameStatsheet
 from .team import Team
+from .stadium import Stadium
 from .. import database, chronicler, tables
 
 
@@ -212,6 +213,15 @@ class Game(Base):
     @Base.lazy_load("_statsheet_id", cache_name="_statsheet")
     def statsheet(self):
         return GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
+
+    @Base.lazy_load("_stadium_id", cache_name="_stadium")
+    def stadium_id(self):
+        return Stadium.load_one(self._stadium_id)
+
+    @property
+    def stadium(self):
+        # stadium is an alias for stadium_id
+        return self.stadium_id
 
     @Base.lazy_load("_base_runner_mod_ids", cache_name="_base_runner_mods", default_value=list())
     def base_runner_mods(self):
