@@ -31,6 +31,7 @@ from .modification import Modification
 from .player import Player
 from .statsheet import GameStatsheet
 from .team import Team
+from .stadium import Stadium
 from .. import database, chronicler, tables
 
 
@@ -240,6 +241,15 @@ class Game(Base):
     @Base.lazy_load(&#34;_statsheet_id&#34;, cache_name=&#34;_statsheet&#34;)
     def statsheet(self):
         return GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
+
+    @Base.lazy_load(&#34;_stadium_id&#34;, cache_name=&#34;_stadium&#34;)
+    def stadium_id(self):
+        return Stadium.load_one(self._stadium_id)
+
+    @property
+    def stadium(self):
+        # stadium is an alias for stadium_id
+        return self.stadium_id
 
     @Base.lazy_load(&#34;_base_runner_mod_ids&#34;, cache_name=&#34;_base_runner_mods&#34;, default_value=list())
     def base_runner_mods(self):
@@ -543,6 +553,15 @@ class Game(Base):
     def statsheet(self):
         return GameStatsheet.load(self._statsheet_id)[self._statsheet_id]
 
+    @Base.lazy_load(&#34;_stadium_id&#34;, cache_name=&#34;_stadium&#34;)
+    def stadium_id(self):
+        return Stadium.load_one(self._stadium_id)
+
+    @property
+    def stadium(self):
+        # stadium is an alias for stadium_id
+        return self.stadium_id
+
     @Base.lazy_load(&#34;_base_runner_mod_ids&#34;, cache_name=&#34;_base_runner_mods&#34;, default_value=list())
     def base_runner_mods(self):
         return Modification.load(*self._base_runner_mod_ids)
@@ -658,6 +677,10 @@ class Game(Base):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.stadium_id"><code class="name">var <span class="ident">stadium_id</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1193,9 +1216,18 @@ def pitching_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="blaseball_mike.models.game.Game.stadium_id"><code class="name">var <span class="ident">stadium_id</span></code></dt>
+<dt id="blaseball_mike.models.game.Game.stadium"><code class="name">var <span class="ident">stadium</span></code></dt>
 <dd>
 <div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def stadium(self):
+    # stadium is an alias for stadium_id
+    return self.stadium_id</code></pre>
+</details>
 </dd>
 <dt id="blaseball_mike.models.game.Game.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
 <dd>
@@ -1537,6 +1569,7 @@ def weather(self):
 <li><code><a title="blaseball_mike.models.game.Game.series_index" href="#blaseball_mike.models.game.Game.series_index">series_index</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.series_length" href="#blaseball_mike.models.game.Game.series_length">series_length</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.shame" href="#blaseball_mike.models.game.Game.shame">shame</a></code></li>
+<li><code><a title="blaseball_mike.models.game.Game.stadium" href="#blaseball_mike.models.game.Game.stadium">stadium</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.stadium_id" href="#blaseball_mike.models.game.Game.stadium_id">stadium_id</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.statsheet" href="#blaseball_mike.models.game.Game.statsheet">statsheet</a></code></li>
 <li><code><a title="blaseball_mike.models.game.Game.terminology" href="#blaseball_mike.models.game.Game.terminology">terminology</a></code></li>

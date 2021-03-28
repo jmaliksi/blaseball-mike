@@ -65,7 +65,51 @@ class SimulationData(Base):
 
     @Base.lazy_load(&#34;_season&#34;, use_default=False)
     def season(self):
-        return self._season + 1</code></pre>
+        return self._season + 1
+
+    @Base.lazy_load(&#34;_gods_day_date&#34;)
+    def gods_day_date(self):
+        return parse(self._gods_day_date)
+
+    @Base.lazy_load(&#34;_preseason_date&#34;)
+    def preseason_date(self):
+        return parse(self._preseason_date)
+
+    @Base.lazy_load(&#34;_earlseason_date&#34;)
+    def earlseason_date(self):
+        return parse(self._earlseason_date)
+
+    @Base.lazy_load(&#34;_earlsiesta_date&#34;)
+    def earlsiesta_date(self):
+        return parse(self._earlsiesta_date)
+
+    @Base.lazy_load(&#34;_midseason_date&#34;)
+    def midseason_date(self):
+        return parse(self._midseason_date)
+
+    @Base.lazy_load(&#34;_latesiesta_date&#34;)
+    def latesiesta_date(self):
+        return parse(self._latesiesta_date)
+
+    @Base.lazy_load(&#34;_lateseason_date&#34;)
+    def lateseason_date(self):
+        return parse(self._lateseason_date)
+
+    @Base.lazy_load(&#34;_endseason_date&#34;)
+    def endseason_date(self):
+        return parse(self._endseason_date)
+
+    @Base.lazy_load(&#34;_earlpostseason_date&#34;)
+    def earlpostseason_date(self):
+        return parse(self._earlpostseason_date)
+
+    @Base.lazy_load(&#34;_latepostseason_date&#34;)
+    def latepostseason_date(self):
+        return parse(self._latepostseason_date)
+
+    @Base.lazy_load(&#34;_election_date&#34;)
+    def election_date(self):
+        return parse(self._election_date)</code></pre>
 </details>
 </section>
 <section>
@@ -119,7 +163,51 @@ class SimulationData(Base):
 
     @Base.lazy_load(&#34;_season&#34;, use_default=False)
     def season(self):
-        return self._season + 1</code></pre>
+        return self._season + 1
+
+    @Base.lazy_load(&#34;_gods_day_date&#34;)
+    def gods_day_date(self):
+        return parse(self._gods_day_date)
+
+    @Base.lazy_load(&#34;_preseason_date&#34;)
+    def preseason_date(self):
+        return parse(self._preseason_date)
+
+    @Base.lazy_load(&#34;_earlseason_date&#34;)
+    def earlseason_date(self):
+        return parse(self._earlseason_date)
+
+    @Base.lazy_load(&#34;_earlsiesta_date&#34;)
+    def earlsiesta_date(self):
+        return parse(self._earlsiesta_date)
+
+    @Base.lazy_load(&#34;_midseason_date&#34;)
+    def midseason_date(self):
+        return parse(self._midseason_date)
+
+    @Base.lazy_load(&#34;_latesiesta_date&#34;)
+    def latesiesta_date(self):
+        return parse(self._latesiesta_date)
+
+    @Base.lazy_load(&#34;_lateseason_date&#34;)
+    def lateseason_date(self):
+        return parse(self._lateseason_date)
+
+    @Base.lazy_load(&#34;_endseason_date&#34;)
+    def endseason_date(self):
+        return parse(self._endseason_date)
+
+    @Base.lazy_load(&#34;_earlpostseason_date&#34;)
+    def earlpostseason_date(self):
+        return parse(self._earlpostseason_date)
+
+    @Base.lazy_load(&#34;_latepostseason_date&#34;)
+    def latepostseason_date(self):
+        return parse(self._latepostseason_date)
+
+    @Base.lazy_load(&#34;_election_date&#34;)
+    def election_date(self):
+        return parse(self._election_date)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -128,7 +216,47 @@ class SimulationData(Base):
 </ul>
 <h3>Class variables</h3>
 <dl>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.earlpostseason_date"><code class="name">var <span class="ident">earlpostseason_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.earlseason_date"><code class="name">var <span class="ident">earlseason_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.earlsiesta_date"><code class="name">var <span class="ident">earlsiesta_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.election_date"><code class="name">var <span class="ident">election_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.endseason_date"><code class="name">var <span class="ident">endseason_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.gods_day_date"><code class="name">var <span class="ident">gods_day_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.latepostseason_date"><code class="name">var <span class="ident">latepostseason_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.lateseason_date"><code class="name">var <span class="ident">lateseason_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.latesiesta_date"><code class="name">var <span class="ident">latesiesta_date</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.league"><code class="name">var <span class="ident">league</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.midseason_date"><code class="name">var <span class="ident">midseason_date</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -141,6 +269,10 @@ class SimulationData(Base):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.next_season_start"><code class="name">var <span class="ident">next_season_start</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.simulation_data.SimulationData.preseason_date"><code class="name">var <span class="ident">preseason_date</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -177,26 +309,6 @@ def load(cls):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.earlpostseason_date"><code class="name">var <span class="ident">earlpostseason_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.earlseason_date"><code class="name">var <span class="ident">earlseason_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.earlsiesta_date"><code class="name">var <span class="ident">earlsiesta_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.election_date"><code class="name">var <span class="ident">election_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.endseason_date"><code class="name">var <span class="ident">endseason_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.era_color"><code class="name">var <span class="ident">era_color</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -205,27 +317,7 @@ def load(cls):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.gods_day_date"><code class="name">var <span class="ident">gods_day_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.id"><code class="name">var <span class="ident">id</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.latepostseason_date"><code class="name">var <span class="ident">latepostseason_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.lateseason_date"><code class="name">var <span class="ident">lateseason_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.latesiesta_date"><code class="name">var <span class="ident">latesiesta_date</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.midseason_date"><code class="name">var <span class="ident">midseason_date</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -238,10 +330,6 @@ def load(cls):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.simulation_data.SimulationData.playoffs"><code class="name">var <span class="ident">playoffs</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.simulation_data.SimulationData.preseason_date"><code class="name">var <span class="ident">preseason_date</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
