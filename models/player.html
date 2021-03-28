@@ -85,7 +85,7 @@ class Player(Base):
         Load all players
         &#34;&#34;&#34;
         players = chronicler.get_players()
-        return {x[&#34;id&#34;]: cls(x) for x in players}
+        return {x[&#34;id&#34;]: cls(x[&#34;data&#34;]) for x in players}
 
     @classmethod
     def load_history(cls, id_, order=&#39;desc&#39;, count=None):
@@ -539,7 +539,7 @@ class Player(Base):
         Load all players
         &#34;&#34;&#34;
         players = chronicler.get_players()
-        return {x[&#34;id&#34;]: cls(x) for x in players}
+        return {x[&#34;id&#34;]: cls(x[&#34;data&#34;]) for x in players}
 
     @classmethod
     def load_history(cls, id_, order=&#39;desc&#39;, count=None):
@@ -1018,7 +1018,7 @@ def load_all(cls):
     Load all players
     &#34;&#34;&#34;
     players = chronicler.get_players()
-    return {x[&#34;id&#34;]: cls(x) for x in players}</code></pre>
+    return {x[&#34;id&#34;]: cls(x[&#34;data&#34;]) for x in players}</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.load_all_by_gameday"><code class="name flex">
