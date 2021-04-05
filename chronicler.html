@@ -715,7 +715,18 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, pag
         params[&#34;count&#34;] = page_size
 
     s = session(cache_time)
-    return paged_get(f&#39;{BASE_URL}/globalevents/updates&#39;, params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)</code></pre>
+    return paged_get(f&#39;{BASE_URL}/globalevents/updates&#39;, params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
+
+
+def get_old_items(ids=None):
+    s = session(None)
+    res = s.get(&#34;https://raw.githubusercontent.com/xSke/blaseball-site-files/d111b4a5742b9e7c15a8592fca3f09d9134ff8d5/data/items.json&#34;)
+    data = check_network_response(res)
+    if isinstance(ids, list):
+        data = list(filter(lambda x: x[&#39;id&#39;] in ids, data))
+        if len(data) == 0:
+            data = [{&#34;id&#34;: &#34;????&#34;, &#34;name&#34;: &#34;????&#34;, &#34;attr&#34;: &#34;NONE&#34;}] * len(ids)
+    return data</code></pre>
 </details>
 </section>
 <section>
@@ -1095,6 +1106,26 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, pag
 
     s = session(cache_time)
     return paged_get(f&#39;{BASE_URL}/globalevents/updates&#39;, params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.chronicler.get_old_items"><code class="name flex">
+<span>def <span class="ident">get_old_items</span></span>(<span>ids=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_old_items(ids=None):
+    s = session(None)
+    res = s.get(&#34;https://raw.githubusercontent.com/xSke/blaseball-site-files/d111b4a5742b9e7c15a8592fca3f09d9134ff8d5/data/items.json&#34;)
+    data = check_network_response(res)
+    if isinstance(ids, list):
+        data = list(filter(lambda x: x[&#39;id&#39;] in ids, data))
+        if len(data) == 0:
+            data = [{&#34;id&#34;: &#34;????&#34;, &#34;name&#34;: &#34;????&#34;, &#34;attr&#34;: &#34;NONE&#34;}] * len(ids)
+    return data</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.chronicler.get_player_names"><code class="name flex">
@@ -1892,6 +1923,7 @@ days=111
 <li><code><a title="blaseball_mike.chronicler.get_game_updates" href="#blaseball_mike.chronicler.get_game_updates">get_game_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_games" href="#blaseball_mike.chronicler.get_games">get_games</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_globalevent_updates" href="#blaseball_mike.chronicler.get_globalevent_updates">get_globalevent_updates</a></code></li>
+<li><code><a title="blaseball_mike.chronicler.get_old_items" href="#blaseball_mike.chronicler.get_old_items">get_old_items</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_player_names" href="#blaseball_mike.chronicler.get_player_names">get_player_names</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_player_updates" href="#blaseball_mike.chronicler.get_player_updates">get_player_updates</a></code></li>
 <li><code><a title="blaseball_mike.chronicler.get_players" href="#blaseball_mike.chronicler.get_players">get_players</a></code></li>

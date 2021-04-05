@@ -63,7 +63,7 @@ class Stadium(Base):
     @property
     def renovation_progress(self):
         ret = database.get_renovation_progress(self.id)
-        return ret[&#34;toNext&#34;]
+        return ret[&#34;progress&#34;][&#34;toNext&#34;]
 
     @Base.lazy_load(&#34;_mods_ids&#34;, cache_name=&#34;_mods&#34;, default_value=[])
     def mods(self):
@@ -215,7 +215,7 @@ def load(cls, *ids):
     @property
     def renovation_progress(self):
         ret = database.get_renovation_progress(self.id)
-        return ret[&#34;toNext&#34;]
+        return ret[&#34;progress&#34;][&#34;toNext&#34;]
 
     @Base.lazy_load(&#34;_mods_ids&#34;, cache_name=&#34;_mods&#34;, default_value=[])
     def mods(self):
@@ -379,7 +379,7 @@ def load_one(cls, id_):
 <pre><code class="python">@property
 def renovation_progress(self):
     ret = database.get_renovation_progress(self.id)
-    return ret[&#34;toNext&#34;]</code></pre>
+    return ret[&#34;progress&#34;][&#34;toNext&#34;]</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.stadium.Stadium.secondary_color"><code class="name">var <span class="ident">secondary_color</span></code></dt>

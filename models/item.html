@@ -28,7 +28,7 @@
 </summary>
 <pre><code class="python">from .base import Base
 from .modification import Modification
-from .. import database
+from .. import chronicler
 
 
 class Item(Base):
@@ -40,7 +40,7 @@ class Item(Base):
 
     @classmethod
     def load(cls, *ids):
-        return [cls(item) for item in database.get_items(list(ids))]
+        return [cls(item) for item in chronicler.get_old_items(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
@@ -83,7 +83,7 @@ class Item(Base):
 
     @classmethod
     def load(cls, *ids):
-        return [cls(item) for item in database.get_items(list(ids))]
+        return [cls(item) for item in chronicler.get_old_items(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
@@ -115,7 +115,7 @@ class Item(Base):
 </summary>
 <pre><code class="python">@classmethod
 def load(cls, *ids):
-    return [cls(item) for item in database.get_items(list(ids))]</code></pre>
+    return [cls(item) for item in chronicler.get_old_items(list(ids))]</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.item.Item.load_one"><code class="name flex">
