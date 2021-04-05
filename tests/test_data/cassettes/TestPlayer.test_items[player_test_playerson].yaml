@@ -11,29 +11,68 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/items?ids=MUSHROOM
+    uri: https://raw.githubusercontent.com/xSke/blaseball-site-files/d111b4a5742b9e7c15a8592fca3f09d9134ff8d5/data/items.json
   response:
     body:
-      string: '[{"id":"MUSHROOM","name":"Mushroom","attr":"NONE"}]'
+      string: !!binary |
+        H4sIAAAAAAAAA6WUQY/bIBCF7/srUA7tZbeHHnsDm2ASDBF2Uq2qCrEOsVEcsLC3UlT1v5fNrtRW
+        Im3kcvBlRvPx/B7z5Q7E8/3yfTkLu198AosllXgjhVgu7n+VnD6ZS9EGMwTvD2Clm6OZfu/R0xT+
+        HHCp/bhPc8iWIwZzrGAKVHcG5Fb3oPbOpChccHwjAKUAO/tkQNaZ5jhvermtiiiyTM0un8cu/qTT
+        zHtLuNkwyokqhFin5pOgh6G3rgWF9zPvX2CYb4rYVqUI3NvRPGTaNaZ/BRm9H7roxZjCVWLL8xs8
+        x5wwyHNV4lJIiCijSfORdq0JI3gHqpMeu3kCoSxVBnlsTCGYnUyI8YLhBKJM5908SgwB5Wsl4WOK
+        UnXBuiOQ+jw7CjtaPyokRJ30KSbhm53OAHk/JZ15m/B3DKIyrwQnSS9s2I/etfMEcEqKWu1oRQVX
+        RBDCruTNtt0Edna03gHi27ZPB+0GQ+BnnCuxXCoE62ubhR4O5gxW4cO1/aVimGuc1UL+g5YJuWFY
+        VmoFszVOAqvGh6E34f34/0szZi2mgUEiOIKMXdP38QH13u8B6nXr3ZPu+5lviCuY1VvIFKRRJ4z9
+        CSJ0ADbT88trslGpTi/seOsKyy3ncbO9Ue++/gT0P/1IhAYAAA==
     headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - max-age=300
       Connection:
       - keep-alive
+      Content-Encoding:
+      - gzip
       Content-Length:
-      - '51'
+      - '493'
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
       Content-Type:
-      - application/json; charset=utf-8
+      - text/plain; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:28 GMT
-      Etag:
-      - W/"33-cJTuJTWEC4099ZmCOUPv3tmms8o"
-      Server:
-      - Cowboy
+      - Mon, 05 Apr 2021 02:37:29 GMT
+      ETag:
+      - W/"5782dce0c2430103dbaa6d72b9a38ba6e68ab0b41125bdb3a7115dae8a76e649"
+      Expires:
+      - Mon, 05 Apr 2021 02:42:29 GMT
+      Source-Age:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
-      - Host, X-Forwarded-Proto
+      - Authorization,Accept-Encoding
       Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
+      - 1.1 varnish
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Fastly-Request-ID:
+      - ec6d5dcfa5ffdb51ecba9cdc1dff0d3912c25015
+      X-Frame-Options:
+      - deny
+      X-GitHub-Request-Id:
+      - 7466:7C05:786E46:9EBEF9:606A732C
+      X-Served-By:
+      - cache-dca17767-DCA
+      X-Timer:
+      - S1617590249.120879,VS0,VE92
+      X-XSS-Protection:
+      - 1; mode=block
     status:
       code: 200
       message: OK
@@ -49,29 +88,68 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/items?ids=ARM_CANNON
+    uri: https://raw.githubusercontent.com/xSke/blaseball-site-files/d111b4a5742b9e7c15a8592fca3f09d9134ff8d5/data/items.json
   response:
     body:
-      string: '[{"id":"ARM_CANNON","name":"Literal Arm Cannon","attr":"NONE"}]'
+      string: !!binary |
+        H4sIAAAAAAAAA6WUQY/bIBCF7/srUA7tZbeHHnsDm2ASDBF2Uq2qCrEOsVEcsLC3UlT1v5fNrtRW
+        Im3kcvBlRvPx/B7z5Q7E8/3yfTkLu198AosllXgjhVgu7n+VnD6ZS9EGMwTvD2Clm6OZfu/R0xT+
+        HHCp/bhPc8iWIwZzrGAKVHcG5Fb3oPbOpChccHwjAKUAO/tkQNaZ5jhvermtiiiyTM0un8cu/qTT
+        zHtLuNkwyokqhFin5pOgh6G3rgWF9zPvX2CYb4rYVqUI3NvRPGTaNaZ/BRm9H7roxZjCVWLL8xs8
+        x5wwyHNV4lJIiCijSfORdq0JI3gHqpMeu3kCoSxVBnlsTCGYnUyI8YLhBKJM5908SgwB5Wsl4WOK
+        UnXBuiOQ+jw7CjtaPyokRJ30KSbhm53OAHk/JZ15m/B3DKIyrwQnSS9s2I/etfMEcEqKWu1oRQVX
+        RBDCruTNtt0Edna03gHi27ZPB+0GQ+BnnCuxXCoE62ubhR4O5gxW4cO1/aVimGuc1UL+g5YJuWFY
+        VmoFszVOAqvGh6E34f34/0szZi2mgUEiOIKMXdP38QH13u8B6nXr3ZPu+5lviCuY1VvIFKRRJ4z9
+        CSJ0ADbT88trslGpTi/seOsKyy3ncbO9Ue++/gT0P/1IhAYAAA==
     headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - max-age=300
       Connection:
       - keep-alive
+      Content-Encoding:
+      - gzip
       Content-Length:
-      - '63'
+      - '493'
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
       Content-Type:
-      - application/json; charset=utf-8
+      - text/plain; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:28 GMT
-      Etag:
-      - W/"3f-tqydsqCQSkRShvl8mLBMXLhoWoY"
-      Server:
-      - Cowboy
+      - Mon, 05 Apr 2021 02:37:29 GMT
+      ETag:
+      - W/"5782dce0c2430103dbaa6d72b9a38ba6e68ab0b41125bdb3a7115dae8a76e649"
+      Expires:
+      - Mon, 05 Apr 2021 02:42:29 GMT
+      Source-Age:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000
       Vary:
-      - Host, X-Forwarded-Proto
+      - Authorization,Accept-Encoding
       Via:
-      - 1.1 vegur
-      X-Powered-By:
-      - Express
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Content-Type-Options:
+      - nosniff
+      X-Fastly-Request-ID:
+      - 14f71f0c319eccb296a68b83a1603ad1f6d25832
+      X-Frame-Options:
+      - deny
+      X-GitHub-Request-Id:
+      - 7466:7C05:786E46:9EBEF9:606A732C
+      X-Served-By:
+      - cache-dca17767-DCA
+      X-Timer:
+      - S1617590249.236463,VS0,VE0
+      X-XSS-Protection:
+      - 1; mode=block
     status:
       code: 200
       message: OK

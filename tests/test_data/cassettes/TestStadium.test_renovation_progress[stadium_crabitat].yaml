@@ -14,18 +14,18 @@ interactions:
     uri: https://www.blaseball.com/database/renovationProgress?id=cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6
   response:
     body:
-      string: '{"total":0,"toNext":0}'
+      string: '{"progress":{"total":0,"toNext":0},"stats":[]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '22'
+      - '46'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 20:12:30 GMT
+      - Mon, 05 Apr 2021 02:39:53 GMT
       Etag:
-      - W/"16-bvWVFb/JmJ7tf7ectMV8tYJoPSg"
+      - W/"2e-NZcubP00N/BbbVeaVnUQI+CP1Ss"
       Server:
       - Cowboy
       Vary:
