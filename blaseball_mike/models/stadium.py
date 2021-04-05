@@ -35,7 +35,7 @@ class Stadium(Base):
     @property
     def renovation_progress(self):
         ret = database.get_renovation_progress(self.id)
-        return ret["toNext"]
+        return ret["progress"]["toNext"]
 
     @Base.lazy_load("_mods_ids", cache_name="_mods", default_value=[])
     def mods(self):
