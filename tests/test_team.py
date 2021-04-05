@@ -122,8 +122,7 @@ class TestTeam(TestBase):
 
     @pytest.mark.vcr
     def test_load_bad_team(self):
-        from requests.exceptions import HTTPError
-        with pytest.raises(HTTPError):
+        with pytest.raises(ValueError):
             bad_team = Team.load("00000000-0000-0000-0000-000000000000")
 
     @pytest.mark.vcr
