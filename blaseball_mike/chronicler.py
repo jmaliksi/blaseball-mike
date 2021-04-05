@@ -686,3 +686,14 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, pag
 
     s = session(cache_time)
     return paged_get(f'{BASE_URL}/globalevents/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
+
+
+def get_old_items(ids=None):
+    s = session(None)
+    res = s.get("https://raw.githubusercontent.com/xSke/blaseball-site-files/d111b4a5742b9e7c15a8592fca3f09d9134ff8d5/data/items.json")
+    data = check_network_response(res)
+    if isinstance(ids, list):
+        data = list(filter(lambda x: x['id'] in ids, data))
+        if len(data) == 0:
+            data = [{"id": "????", "name": "????", "attr": "NONE"}] * len(ids)
+    return data

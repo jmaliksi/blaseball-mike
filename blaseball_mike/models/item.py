@@ -1,6 +1,6 @@
 from .base import Base
 from .modification import Modification
-from .. import database
+from .. import chronicler
 
 
 class Item(Base):
@@ -12,7 +12,7 @@ class Item(Base):
 
     @classmethod
     def load(cls, *ids):
-        return [cls(item) for item in database.get_items(list(ids))]
+        return [cls(item) for item in chronicler.get_old_items(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
