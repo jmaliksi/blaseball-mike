@@ -153,3 +153,37 @@ def test_chronicler_lazy(count):
         assert len(data) == 3367
     else:
         assert len(data) == count
+
+
+@pytest.mark.vcr
+@pytest.mark.parametrize(
+    ["type", "id", "count"],
+    [
+        ("player", "abbd5ec5-a15b-421c-b0c5-cd80d8907373", None),
+        ("team", None, 10),
+        ("stream", None, 2000)
+    ]
+)
+def test_chronicler_v2_entities(type, id, count):
+    data = chron.get_entities(type_=type, id_=id, count=count)
+    assert isinstance(data, types.GeneratorType)
+    data = list(data)
+    assert len(data) > 0
+
+
+@pytest.mark.vcr
+@pytest.mark.parametrize(
+    ["type", "id", "count"],
+    [
+        ("player", "abbd5ec5-a15b-421c-b0c5-cd80d8907373", None),
+        ("team", None, 10),
+        ("stream", None, 2000)
+    ]
+)
+def test_chronicler_v2_versions(type, id, count):
+    data = chron.get_versions(type_=type, id_=id, count=count)
+    assert isinstance(data, types.GeneratorType)
+    data = list(data)
+    assert len(data) > 0
+    if count is not None:
+        assert len(data) == count
