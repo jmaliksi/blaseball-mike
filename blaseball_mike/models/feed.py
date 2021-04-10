@@ -19,27 +19,30 @@ class Feed(Base):
         return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
-    def load(cls, count=50, order=None, category=None, start_time=None):
+    def load(cls, count=50, order=None, category=None, start_time=None, type_id=None):
         """Returns a list of feed items"""
-        entries = database.get_feed_global(limit=count, sort=order, category=category, start=start_time)
+        entries = database.get_feed_global(limit=count, sort=order, category=category, start=start_time, type_=type_id)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None):
+    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None):
         """Returns a list of feed items filtered by player"""
-        entries = database.get_feed_player(player_id, limit=count, sort=order, category=category, start=start_time)
+        entries = database.get_feed_player(player_id, limit=count, sort=order, category=category,
+                                           start=start_time, type_=type_id)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None):
+    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None):
         """Returns a list of feed items filtered by team"""
-        entries = database.get_feed_team(team_id, limit=count, sort=order, category=category, start=start_time)
+        entries = database.get_feed_team(team_id, limit=count, sort=order, category=category,
+                                         start=start_time, type_=type_id)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_game(cls, game_id, count=50, order=None, category=None, start_time=None):
+    def load_by_game(cls, game_id, count=50, order=None, category=None, start_time=None, type_id=None):
         """Returns a list of feed items filtered by game"""
-        entries = database.get_feed_game(game_id, limit=count, sort=order, category=category, start=start_time)
+        entries = database.get_feed_game(game_id, limit=count, sort=order, category=category,
+                                         start=start_time, type_=type_id)
         return [cls(entry) for entry in entries]
 
     @classmethod
