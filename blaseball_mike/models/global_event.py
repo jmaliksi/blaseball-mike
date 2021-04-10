@@ -27,7 +27,7 @@ class GlobalEvent(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        updates = chronicler.get_globalevent_updates(before=time, order="desc", count=1)
+        updates = list(chronicler.get_entities("globalevents", at=time))
         if len(updates) == 0:
             return None
         return [cls(dict(event, timestamp=time)) for event in updates[0]["data"]]

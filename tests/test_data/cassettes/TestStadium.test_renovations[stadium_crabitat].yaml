@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus,psychoacoustics_mod,big_bucket_mod,event_horizon_mod,solar_panels_mod,coffee_two_plus,fortifications_minus,mysticism_plus,viscosity_plus,sun_two_plus
+    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus,psychoacoustics_mod,big_bucket_mod,event_horizon_mod,solar_panels_mod,coffee_two_plus,fortifications_minus,mysticism_plus,viscosity_plus,sun_two_plus,secret_base_mod,echo_chamber_mod,soundsystem_mod,flood_pumps_mod,grind_rail_mod,fortifications_plus,mysticism_minus,peanuts_plus,inconvenience_plus
   response:
     body:
       string: '[{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
@@ -45,18 +45,35 @@ interactions:
         of your Ballpark."},{"id":"viscosity_plus","title":"Viscosity +","type":0,"effects":["Hard
         Hit % -","Contact % +"],"description":"Raise the Viscosity of your Ballpark."},{"id":"sun_two_plus","title":"Sun
         2 +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will
-        have Sun 2 weather more often."}]'
+        have Sun 2 weather more often."},{"id":"secret_base_mod","title":"Secret Base","type":1,"effects":["Modification"],"description":"Shhh.
+        Unlock the Secret Base, a hidden base beyond 2nd. Destroy this message after
+        reading."},{"id":"echo_chamber_mod","title":"Echo Chamber","type":1,"effects":["Modification"],"description":"Add
+        an Echo Chamber to your Ballpark, to get minor, pleasant Reverberations during
+        Reverb Weather."},{"id":"soundsystem_mod","title":"LCD Soundsystem","type":1,"effects":["Modification"],"description":"Build
+        a luminous, towering LCD Soundsystem to make Feedback more exciting for both
+        players involved."},{"id":"flood_pumps_mod","title":"Flood Pumps","type":1,"effects":["Modification"],"description":"Build
+        Flood Pumps to keep your Ballpark clean during Flooding weather."},{"id":"grind_rail_mod","title":"Grind
+        Rail","type":1,"effects":["Modification"],"description":"Build the Grind Rail
+        to pull off an extreme transfer from first to third base, skipping second
+        entirely."},{"id":"fortifications_plus","title":"Fortification +","type":0,"effects":["Weather
+        Event % -","Home Run % -"],"description":"Raise the Fortification of your
+        Ballpark."},{"id":"mysticism_minus","title":"Mysticism -","type":0,"effects":["Special
+        Ability % -"],"description":"Lower the Mysticism of your Ballpark."},{"id":"peanuts_plus","title":"Peanuts
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Peanuts weather more often."},{"id":"inconvenience_plus","title":"Inconvenience
+        +","type":0,"effects":["Steal Attempt % -","Hit % -"],"description":"Raise
+        the Inconvenience of your Ballpark."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '3034'
+      - '4622'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:46 GMT
+      - Fri, 09 Apr 2021 23:43:52 GMT
       Etag:
-      - W/"bda-vYcagek8aGEBzZdUX1zVvGcDYSQ"
+      - W/"120e-20FXtZZJDLH7y7WgUV4ViFOqxLQ"
       Server:
       - Cowboy
       Vary:

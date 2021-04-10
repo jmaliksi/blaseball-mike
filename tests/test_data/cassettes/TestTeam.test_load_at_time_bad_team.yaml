@@ -11,17 +11,17 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.sibr.dev/chronicler/v1/teams/updates?before=2020-08-01T18%3A00%3A00.000000Z&count=1&order=desc&team=00000000-0000-0000-0000-000000000000
+    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-08-01T18%3A00%3A00.000000Z&count=1000&id=00000000-0000-0000-0000-000000000000&type=team
   response:
     body:
-      string: '{"nextPage":null,"data":[]}'
+      string: '{"nextPage":null,"items":[]}'
     headers:
       Content-Length:
-      - '27'
+      - '28'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:26:00 GMT
+      - Fri, 09 Apr 2021 23:47:28 GMT
       Server:
       - Kestrel
     status:

@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=36b94380-39a6-4e32-b525-3e888215798a&type=stadium
+  response:
+    body:
+      string: "{\"nextPage\":\"gEO5NqY5Mk61JT6IghV5itrMTGhR3gAA\",\"items\":[{\"entityId\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hash\":\"46982c08-c844-b489-13be-8d0b58a453fc\",\"validFrom\":\"2021-04-09T22:02:02.358089Z\",\"validTo\":null,\"data\":{\"id\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hype\":0,\"mods\":[\"BIG_BUCKET\",\"PSYCHOACOUSTICS\",\"SECRET_BASE\"],\"name\":\"Al
+        Pastor Memorial Park\",\"birds\":0,\"model\":8,\"state\":{},\"teamId\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"renoLog\":{\"big_bucket_mod\":1,\"secret_base_mod\":1,\"psychoacoustics_mod\":1},\"weather\":{},\"nickname\":\"LA
+        Taquer\xEDa\",\"renoCost\":-1,\"renoHand\":[],\"mainColor\":\"#64376e\",\"mysticism\":0.4382990376095283,\"viscosity\":0.4962028180294879,\"elongation\":0.5039366548531963,\"filthiness\":0.21288929801347561,\"obtuseness\":0.7566629545867662,\"forwardness\":0.5101363245618917,\"grandiosity\":0.5103603930943879,\"ominousness\":0.4253079342393487,\"renoDiscard\":[\"psychoacoustics_mod\",\"elongation_minus\",\"peanut_mister_mod\",\"event_horizon_mod\",\"solar_panels_mod\",\"big_bucket_mod\",\"obtuseness_minus\",\"obtuseness_plus\",\"coffee_one_plus\",\"secret_base_mod\",\"obtuseness_minus\",\"grandiosity_minus\",\"elongation_minus\",\"elongation_plus\",\"grind_rail_mod\",\"echo_chamber_mod\",\"flood_pumps_mod\",\"peanut_mister_mod\"],\"fortification\":0.4519595330300567,\"inconvenience\":0.4712119725231586,\"luxuriousness\":0,\"tertiaryColor\":\"#eadcef\",\"secondaryColor\":\"#bb8fc4\"}}]}"
+    headers:
+      Content-Length:
+      - '1359'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 09 Apr 2021 23:27:25 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

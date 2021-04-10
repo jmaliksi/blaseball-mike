@@ -11,17 +11,17 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.sibr.dev/chronicler/v1/teams/updates?before=1980-01-01T00%3A00%3A00.000000Z&count=1&order=desc&team=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e
+    uri: https://api.sibr.dev/chronicler/v2/entities?at=1980-01-01T00%3A00%3A00.000000Z&count=1000&id=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e&type=team
   response:
     body:
-      string: '{"nextPage":null,"data":[]}'
+      string: '{"nextPage":null,"items":[]}'
     headers:
       Content-Length:
-      - '27'
+      - '28'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:26:01 GMT
+      - Fri, 09 Apr 2021 23:47:28 GMT
       Server:
       - Kestrel
     status:

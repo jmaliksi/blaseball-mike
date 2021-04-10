@@ -11,6 +11,7 @@ from .test_game import game_test_generic
 
 
 class TestFight(TestBase):
+    @pytest.mark.vcr
     def test_base_compliance(self, fight):
         self.base_test(fight)
 

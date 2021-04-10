@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=abbd5ec5-a15b-421c-b0c5-cd80d8907373&type=player
+  response:
+    body:
+      string: '{"nextPage":"xV69q1uhHEKwxc2A2JBzczw834rG3QAA","items":[{"entityId":"abbd5ec5-a15b-421c-b0c5-cd80d8907373","hash":"0554ca60-ffa5-ca5a-a2dc-d0882780ce9d","validFrom":"2021-04-09T05:28:00.314886Z","validTo":null,"data":{"id":"abbd5ec5-a15b-421c-b0c5-cd80d8907373","fate":37,"name":"Rat
+        Batson","soul":9,"blood":4,"items":[],"moxie":0.9031229869944979,"state":{},"coffee":4,"ritual":"Posing
+        for pictures","buoyancy":0.18643413899234274,"cinnamon":0.6733503091818318,"coldness":0.8368736114101085,"deceased":false,"divinity":0.0499380046186948,"eDensity":29.14869456694341,"gameAttr":[],"permAttr":[],"seasAttr":[],"weekAttr":[],"chasiness":0.808459728819958,"evolution":0,"hitStreak":0,"martyrdom":0.026368570110961942,"baseThirst":0.8431930568499086,"indulgence":0.08998764015980432,"musclitude":0.22852418640712457,"tragicness":0.9775391721804003,"omniscience":0.04352748269551365,"patheticism":0.99,"suppression":0.9657070339455738,"continuation":0.5348413569821127,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","ruthlessness":0.6888061912217383,"totalFingers":10,"watchfulness":0.693399313365535,"defenseRating":0.46093579826462894,"hittingRating":0.1955151218979742,"laserlikeness":0.385472965804204,"overpowerment":0.27396727861216386,"peanutAllergy":false,"tenaciousness":0.735763433934409,"thwackability":0.7018823797352436,"anticapitalism":0.7529377700282207,"groundFriction":0.586453692675305,"pitchingRating":0.5089975226847395,"pressurization":0.6591847720408346,"consecutiveHits":0,"unthwackability":0.5428440201208782,"shakespearianism":0.8020107978099771,"tournamentTeamId":null,"baserunningRating":0.42722220957314416}}]}'
+    headers:
+      Content-Length:
+      - '1642'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 09 Apr 2021 22:14:21 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

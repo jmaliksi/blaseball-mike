@@ -54,17 +54,12 @@ class Tribute(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        tributes = chronicler.get_tribute_updates(before=time, order="desc", count=1)
-        if len(tributes) == 0:
-            return {}
-
-        # Sort output by number of peanuts
-        tributes = tributes[0]["players"]
-        data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
-
+        tributes = list(chronicler.get_entities("tributes", at=time))
         tributes_dict = OrderedDict()
-        for key, value in data.items():
-            tributes_dict[key] = cls({"player_id": key, "peanuts": value, "timestamp": time})
+        if len(tributes) == 0:
+            return tributes_dict
+        for tribute in tributes[0]["data"]:
+            tributes_dict[tribute['playerId']] = cls(tribute)
         return tributes_dict
 
     @Base.lazy_load("_player_id", cache_name="_player")
@@ -77,7 +72,7 @@ class Tribute(Base):
             # Due to early archiving issues we do not have accurate data for players incinerated before S2D38. If we
             # cannot find a player at the timestamp passed by the user, instead return the closest data we have and
             # update the player's timestamp accordingly.
-            players = chronicler.get_player_updates(self._player_id, after=self.timestamp, order="asc", count=1)
+            players = chronicler.get_versions("player", id_=self._player_id, after=self.timestamp, order="asc", count=1)
             if len(players) == 0:
                 return None
             player = Player(dict(players[0]["data"], timestamp=players[0]["firstSeen"]))
