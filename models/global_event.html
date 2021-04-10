@@ -55,7 +55,7 @@ class GlobalEvent(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        updates = chronicler.get_globalevent_updates(before=time, order=&#34;desc&#34;, count=1)
+        updates = list(chronicler.get_entities(&#34;globalevents&#34;, at=time))
         if len(updates) == 0:
             return None
         return [cls(dict(event, timestamp=time)) for event in updates[0][&#34;data&#34;]]
@@ -107,7 +107,7 @@ class GlobalEvent(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        updates = chronicler.get_globalevent_updates(before=time, order=&#34;desc&#34;, count=1)
+        updates = list(chronicler.get_entities(&#34;globalevents&#34;, at=time))
         if len(updates) == 0:
             return None
         return [cls(dict(event, timestamp=time)) for event in updates[0][&#34;data&#34;]]
@@ -161,7 +161,7 @@ def load_at_time(cls, time):
     if isinstance(time, str):
         time = parse(time)
 
-    updates = chronicler.get_globalevent_updates(before=time, order=&#34;desc&#34;, count=1)
+    updates = list(chronicler.get_entities(&#34;globalevents&#34;, at=time))
     if len(updates) == 0:
         return None
     return [cls(dict(event, timestamp=time)) for event in updates[0][&#34;data&#34;]]</code></pre>

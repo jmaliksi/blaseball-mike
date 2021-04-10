@@ -42,18 +42,17 @@ class Stadium(Base):
 
     @classmethod
     def load_all(cls):
-        stadiums = chronicler.get_stadiums()
+        stadiums = chronicler.get_entities(&#34;stadium&#34;)
         return {
-            x[&#39;id&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
+            x[&#39;entityId&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
         }
 
     @classmethod
     def load_one(cls, id_):
-        stadiums = chronicler.get_stadiums()
-        filtered = [x[&#39;data&#39;] for x in stadiums if x[&#39;id&#39;] == id_]
-        if len(filtered) &lt; 1:
+        stadiums = list(chronicler.get_entities(&#34;stadium&#34;, id_=id_))
+        if len(stadiums) &lt; 1:
             return None
-        return cls(filtered[0])
+        return cls(stadiums[0][&#34;data&#34;])
 
     @Base.lazy_load(&#34;_team_id&#34;, cache_name=&#34;_team&#34;)
     def team_id(self):
@@ -194,18 +193,17 @@ def load(cls, *ids):
 
     @classmethod
     def load_all(cls):
-        stadiums = chronicler.get_stadiums()
+        stadiums = chronicler.get_entities(&#34;stadium&#34;)
         return {
-            x[&#39;id&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
+            x[&#39;entityId&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
         }
 
     @classmethod
     def load_one(cls, id_):
-        stadiums = chronicler.get_stadiums()
-        filtered = [x[&#39;data&#39;] for x in stadiums if x[&#39;id&#39;] == id_]
-        if len(filtered) &lt; 1:
+        stadiums = list(chronicler.get_entities(&#34;stadium&#34;, id_=id_))
+        if len(stadiums) &lt; 1:
             return None
-        return cls(filtered[0])
+        return cls(stadiums[0][&#34;data&#34;])
 
     @Base.lazy_load(&#34;_team_id&#34;, cache_name=&#34;_team&#34;)
     def team_id(self):
@@ -266,9 +264,9 @@ def load(cls, *ids):
 </summary>
 <pre><code class="python">@classmethod
 def load_all(cls):
-    stadiums = chronicler.get_stadiums()
+    stadiums = chronicler.get_entities(&#34;stadium&#34;)
     return {
-        x[&#39;id&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
+        x[&#39;entityId&#39;]: cls(x[&#39;data&#39;]) for x in stadiums
     }</code></pre>
 </details>
 </dd>
@@ -283,11 +281,10 @@ def load_all(cls):
 </summary>
 <pre><code class="python">@classmethod
 def load_one(cls, id_):
-    stadiums = chronicler.get_stadiums()
-    filtered = [x[&#39;data&#39;] for x in stadiums if x[&#39;id&#39;] == id_]
-    if len(filtered) &lt; 1:
+    stadiums = list(chronicler.get_entities(&#34;stadium&#34;, id_=id_))
+    if len(stadiums) &lt; 1:
         return None
-    return cls(filtered[0])</code></pre>
+    return cls(stadiums[0][&#34;data&#34;])</code></pre>
 </details>
 </dd>
 </dl>

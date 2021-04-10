@@ -82,17 +82,12 @@ class Tribute(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
-        if len(tributes) == 0:
-            return {}
-
-        # Sort output by number of peanuts
-        tributes = tributes[0][&#34;players&#34;]
-        data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
-
+        tributes = list(chronicler.get_entities(&#34;tributes&#34;, at=time))
         tributes_dict = OrderedDict()
-        for key, value in data.items():
-            tributes_dict[key] = cls({&#34;player_id&#34;: key, &#34;peanuts&#34;: value, &#34;timestamp&#34;: time})
+        if len(tributes) == 0:
+            return tributes_dict
+        for tribute in tributes[0][&#34;data&#34;]:
+            tributes_dict[tribute[&#39;playerId&#39;]] = cls(tribute)
         return tributes_dict
 
     @Base.lazy_load(&#34;_player_id&#34;, cache_name=&#34;_player&#34;)
@@ -105,7 +100,7 @@ class Tribute(Base):
             # Due to early archiving issues we do not have accurate data for players incinerated before S2D38. If we
             # cannot find a player at the timestamp passed by the user, instead return the closest data we have and
             # update the player&#39;s timestamp accordingly.
-            players = chronicler.get_player_updates(self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
+            players = chronicler.get_versions(&#34;player&#34;, id_=self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
             if len(players) == 0:
                 return None
             player = Player(dict(players[0][&#34;data&#34;], timestamp=players[0][&#34;firstSeen&#34;]))
@@ -243,17 +238,12 @@ def player(self):
         if isinstance(time, str):
             time = parse(time)
 
-        tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
-        if len(tributes) == 0:
-            return {}
-
-        # Sort output by number of peanuts
-        tributes = tributes[0][&#34;players&#34;]
-        data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
-
+        tributes = list(chronicler.get_entities(&#34;tributes&#34;, at=time))
         tributes_dict = OrderedDict()
-        for key, value in data.items():
-            tributes_dict[key] = cls({&#34;player_id&#34;: key, &#34;peanuts&#34;: value, &#34;timestamp&#34;: time})
+        if len(tributes) == 0:
+            return tributes_dict
+        for tribute in tributes[0][&#34;data&#34;]:
+            tributes_dict[tribute[&#39;playerId&#39;]] = cls(tribute)
         return tributes_dict
 
     @Base.lazy_load(&#34;_player_id&#34;, cache_name=&#34;_player&#34;)
@@ -266,7 +256,7 @@ def player(self):
             # Due to early archiving issues we do not have accurate data for players incinerated before S2D38. If we
             # cannot find a player at the timestamp passed by the user, instead return the closest data we have and
             # update the player&#39;s timestamp accordingly.
-            players = chronicler.get_player_updates(self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
+            players = chronicler.get_versions(&#34;player&#34;, id_=self._player_id, after=self.timestamp, order=&#34;asc&#34;, count=1)
             if len(players) == 0:
                 return None
             player = Player(dict(players[0][&#34;data&#34;], timestamp=players[0][&#34;firstSeen&#34;]))
@@ -326,17 +316,12 @@ def load_at_time(cls, time):
     if isinstance(time, str):
         time = parse(time)
 
-    tributes = chronicler.get_tribute_updates(before=time, order=&#34;desc&#34;, count=1)
-    if len(tributes) == 0:
-        return {}
-
-    # Sort output by number of peanuts
-    tributes = tributes[0][&#34;players&#34;]
-    data = OrderedDict(sorted(tributes.items(), key=lambda t: t[1], reverse=True))
-
+    tributes = list(chronicler.get_entities(&#34;tributes&#34;, at=time))
     tributes_dict = OrderedDict()
-    for key, value in data.items():
-        tributes_dict[key] = cls({&#34;player_id&#34;: key, &#34;peanuts&#34;: value, &#34;timestamp&#34;: time})
+    if len(tributes) == 0:
+        return tributes_dict
+    for tribute in tributes[0][&#34;data&#34;]:
+        tributes_dict[tribute[&#39;playerId&#39;]] = cls(tribute)
     return tributes_dict</code></pre>
 </details>
 </dd>

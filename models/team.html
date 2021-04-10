@@ -67,8 +67,8 @@ class Team(Base):
         &#34;&#34;&#34;
         Returns array of Team changes with most recent first.
         &#34;&#34;&#34;
-        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
-        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]
+        teams = chronicler.get_versions(&#34;team&#34;, id_=id_, order=order, count=count)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;validFrom&#39;])) for p in teams]
 
     @classmethod
     def load_by_name(cls, name):
@@ -90,7 +90,7 @@ class Team(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        team = list(chronicler.get_entities(&#34;team&#34;, id_, at=time))
         if len(team) == 0:
             return None
         return cls(dict(team[0][&#34;data&#34;], timestamp=time))
@@ -205,8 +205,8 @@ class Team(Base):
         &#34;&#34;&#34;
         Returns array of Team changes with most recent first.
         &#34;&#34;&#34;
-        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
-        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]
+        teams = chronicler.get_versions(&#34;team&#34;, id_=id_, order=order, count=count)
+        return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;validFrom&#39;])) for p in teams]
 
     @classmethod
     def load_by_name(cls, name):
@@ -228,7 +228,7 @@ class Team(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+        team = list(chronicler.get_entities(&#34;team&#34;, id_, at=time))
         if len(team) == 0:
             return None
         return cls(dict(team[0][&#34;data&#34;], timestamp=time))
@@ -397,7 +397,7 @@ def load_at_time(cls, id_, time):
     if isinstance(time, str):
         time = parse(time)
 
-    team = chronicler.get_team_updates(id_, before=time, order=&#34;desc&#34;, count=1)
+    team = list(chronicler.get_entities(&#34;team&#34;, id_, at=time))
     if len(team) == 0:
         return None
     return cls(dict(team[0][&#34;data&#34;], timestamp=time))</code></pre>
@@ -439,8 +439,8 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
     &#34;&#34;&#34;
     Returns array of Team changes with most recent first.
     &#34;&#34;&#34;
-    teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
-    return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;firstSeen&#39;])) for p in teams]</code></pre>
+    teams = chronicler.get_versions(&#34;team&#34;, id_=id_, order=order, count=count)
+    return [cls(dict(p[&#39;data&#39;], timestamp=p[&#39;validFrom&#39;])) for p in teams]</code></pre>
 </details>
 </dd>
 </dl>
