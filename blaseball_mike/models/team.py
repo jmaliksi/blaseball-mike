@@ -39,8 +39,8 @@ class Team(Base):
         """
         Returns array of Team changes with most recent first.
         """
-        teams = chronicler.get_team_updates(ids=id_, order=order, count=count)
-        return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in teams]
+        teams = chronicler.get_versions("team", id_=id_, order=order, count=count)
+        return [cls(dict(p['data'], timestamp=p['validFrom'])) for p in teams]
 
     @classmethod
     def load_by_name(cls, name):
@@ -62,7 +62,7 @@ class Team(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        team = chronicler.get_team_updates(id_, before=time, order="desc", count=1)
+        team = list(chronicler.get_entities("team", id_, at=time))
         if len(team) == 0:
             return None
         return cls(dict(team[0]["data"], timestamp=time))

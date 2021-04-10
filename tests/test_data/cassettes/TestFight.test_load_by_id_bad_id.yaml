@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=00000000-0000-0000-0000-000000000000&type=bossfight
+  response:
+    body:
+      string: '{"nextPage":null,"items":[]}'
+    headers:
+      Content-Length:
+      - '28'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 09 Apr 2021 23:35:16 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

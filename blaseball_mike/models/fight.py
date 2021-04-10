@@ -32,7 +32,7 @@ class Fight(Game):
 
     @classmethod
     def load_by_id(cls, id_):
-        fights = chronicler.get_fights(id_=id_)
+        fights = list(chronicler.get_entities("bossfight", id_=id_))
         if len(fights) != 1:
             return None
         return cls(fights[0]["data"])

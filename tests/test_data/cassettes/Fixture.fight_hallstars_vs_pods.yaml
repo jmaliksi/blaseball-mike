@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=9bb560d9-4925-4845-ad03-26012742ee23&type=bossfight
+  response:
+    body:
+      string: '{"nextPage":"2WC1myVJRUitAyYBJ0LuI9pYhmiwVQAA","items":[{"entityId":"9bb560d9-4925-4845-ad03-26012742ee23","hash":"bddd9a75-9259-451a-066f-a52b01924d6f","validFrom":"2020-10-18T01:06:55.624009Z","validTo":null,"data":{"id":"9bb560d9-4925-4845-ad03-26012742ee23","day":1,"phase":6,"rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","shame":true,"awayHp":"0","homeHp":"31588068","inning":8,"season":9,"weather":11,"awayOdds":0.000000023,"awayOuts":3,"awayTeam":"40b9ec2a-cb43-4dbb-b836-5accb62e7c20","homeOdds":99.999999987,"homeOuts":3,"homeTeam":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","outcomes":["Jaylen
+        Hotdogfingers flickers! Jaylen Hotdogfingers and Axel Trololol switched teams
+        in the feedback!","The Blooddrain gurgled! Workman Gloom siphoned some of
+        Jessica Telephone''s defensive ability!","Jaylen Hotdogfingers flickers! Jaylen
+        Hotdogfingers and Axel Trololol switched teams in the feedback!","Jaylen Hotdogfingers
+        flickers! Jaylen Hotdogfingers and Axel Trololol switched teams in the feedback!","A
+        Debt was collected. Rogue Umpire incinerated Hall Stars hitter Sebastian Telephone!
+        Replaced by Hall of Flame player Scrap Murphy","The Instability chains to
+        the Hall Stars''s Randall Marijuana!","Jaylen Hotdogfingers flickers! Jaylen
+        Hotdogfingers and Axel Trololol switched teams in the feedback!","Jaylen Hotdogfingers
+        flickers! Jaylen Hotdogfingers and Axel Trololol switched teams in the feedback!","Jaylen
+        Hotdogfingers flickers! Jaylen Hotdogfingers and Axel Trololol switched teams
+        in the feedback!","Jaylen Hotdogfingers flickers! Jaylen Hotdogfingers and
+        Axel Trololol switched teams in the feedback!","Jaylen Hotdogfingers flickers!
+        Jaylen Hotdogfingers and Axel Trololol switched teams in the feedback!","Jaylen
+        Hotdogfingers flickers! Jaylen Hotdogfingers and Axel Trololol switched teams
+        in the feedback!"],"awayBalls":4,"awayBases":4,"awayMaxHp":"29918000","awayScore":15,"finalized":false,"gameStart":true,"homeBalls":4,"homeBases":4,"homeMaxHp":"148609129","homeScore":17,"playCount":0,"statsheet":"e0e22871-14e5-4611-a0a9-2af2bbb398b2","atBatBalls":0,"awayBatter":"9820f2c5-f9da-4a07-b610-c2dd7bee2ef6","homeBatter":null,"lastUpdate":"Dominic
+        Marijuana hits a solo home run!","awayPitcher":"04e14d7b-5021-4250-a3cd-932ba8e0a889","awayStrikes":4,"baseRunners":[],"homePitcher":"3af96a6b-866c-4b03-bc14-090acf6ecee5","homeStrikes":3,"repeatCount":0,"seriesIndex":1,"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","topOfInning":false,"atBatStrikes":0,"awayTeamName":"THE
+        SHELLED ONE''S PODS","gameComplete":false,"homeTeamName":"The Hall Stars","isPostseason":false,"seriesLength":1,"awayTeamColor":"#ff0000","awayTeamEmoji":"0x1F95C","basesOccupied":[],"damageResults":"[{\"dmgType\":3,\"teamTarget\":\"40b9ec2a-cb43-4dbb-b836-5accb62e7c20\",\"playerSource\":\"7310c32f-8f32-40f2-b086-54555a2c0e86\",\"dmg\":2039516}]","homeTeamColor":"#5988ff","homeTeamEmoji":"0x1F991","awayBatterName":"Peanut
+        Bong","halfInningOuts":0,"homeBatterName":"","awayPitcherName":"Jaylen Hotdogfingers","baseRunnerNames":[],"baserunnerCount":0,"halfInningScore":0,"homePitcherName":"Axel
+        Trololol","awayTeamNickname":"PODS","homeTeamNickname":"Hall Stars","awayTeamBatterCount":44,"homeTeamBatterCount":44,"awayTeamSecondaryColor":"#ff0000","homeTeamSecondaryColor":"#5988ff"}}]}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 09 Apr 2021 23:33:56 GMT
+      Server:
+      - Kestrel
+      Transfer-Encoding:
+      - chunked
+    status:
+      code: 200
+      message: OK
+version: 1

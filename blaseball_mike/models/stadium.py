@@ -14,18 +14,17 @@ class Stadium(Base):
 
     @classmethod
     def load_all(cls):
-        stadiums = chronicler.get_stadiums()
+        stadiums = chronicler.get_entities("stadium")
         return {
-            x['id']: cls(x['data']) for x in stadiums
+            x['entityId']: cls(x['data']) for x in stadiums
         }
 
     @classmethod
     def load_one(cls, id_):
-        stadiums = chronicler.get_stadiums()
-        filtered = [x['data'] for x in stadiums if x['id'] == id_]
-        if len(filtered) < 1:
+        stadiums = list(chronicler.get_entities("stadium", id_=id_))
+        if len(stadiums) < 1:
             return None
-        return cls(filtered[0])
+        return cls(stadiums[0]["data"])
 
     @Base.lazy_load("_team_id", cache_name="_team")
     def team_id(self):

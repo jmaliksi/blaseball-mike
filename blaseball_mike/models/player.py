@@ -46,7 +46,7 @@ class Player(Base):
         if isinstance(time, str):
             time = parse(time)
 
-        players = chronicler.get_player_updates(id_, before=time, order="desc", count=1)
+        players = list(chronicler.get_entities("player", id_=id_, at=time))
         if len(players) == 0:
             return None
         return cls(dict(players[0]["data"], timestamp=time))
@@ -56,16 +56,16 @@ class Player(Base):
         """
         Load all players
         """
-        players = chronicler.get_players()
-        return {x["id"]: cls(x["data"]) for x in players}
+        players = chronicler.get_entities("player")
+        return {x["entityId"]: cls(x["data"]) for x in players}
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
         """
         Returns array of Player stat changes with most recent first.
         """
-        players = chronicler.get_player_updates(ids=id_, order=order, count=count)
-        return [cls(dict(p['data'], timestamp=p['firstSeen'])) for p in players]
+        players = chronicler.get_versions("player", id_=id_, order=order, count=count)
+        return [cls(dict(p['data'], timestamp=p['validFrom'])) for p in players]
 
     @classmethod
     def load_all_by_gameday(cls, season, day):
