@@ -8,7 +8,7 @@ Set to limit -1 to get everything.
 Returns a generator that only gets the following page when needed.
 Possible parameters for query: https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get
 """
-def lazy_search(cache_time=5, limit=100, query={}):
+def search(cache_time=5, limit=100, query={}):
     s = session(cache_time)
 
     res_len = 0
