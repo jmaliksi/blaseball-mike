@@ -277,7 +277,7 @@ def get_coffee(ids, cache_time=5):
     return check_network_response(res)
 
 
-def get_feed_global(limit=50, sort=None, category=None, start=None, cache_time=5):
+def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
     """
     Get Global Feed
 
@@ -286,6 +286,8 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, cache_time=5
         sort: 0 - Newest to Oldest, 1 - Oldest to Newest
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
+        type_: event type ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
         start = start.strftime(TIMESTAMP_FORMAT)
@@ -297,13 +299,15 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, cache_time=5
         params["category"] = category
     if start is not None:
         params["start"] = start
+    if type_ is not None:
+        params["type"] = type_
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/global', params=params)
     return check_network_response(res)
 
 
-def get_feed_game(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
+def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
     """
     Get Game Feed
 
@@ -313,6 +317,8 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, cache_tim
         sort: 0 - Newest to Oldest, 1 - Oldest to Newest
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
+        type_: event type ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
         start = start.strftime(TIMESTAMP_FORMAT)
@@ -324,13 +330,15 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, cache_tim
         params["category"] = category
     if start is not None:
         params["start"] = start
+    if type_ is not None:
+        params["type"] = type_
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/game', params=params)
     return check_network_response(res)
 
 
-def get_feed_team(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
     """
     Get Team Feed
 
@@ -340,6 +348,8 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, cache_tim
         sort: 0 - Newest to Oldest, 1 - Oldest to Newest
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
+        type_: event type ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
         start = start.strftime(TIMESTAMP_FORMAT)
@@ -351,13 +361,15 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, cache_tim
         params["category"] = category
     if start is not None:
         params["start"] = start
+    if type_ is not None:
+        params["type"] = type_
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/team', params=params)
     return check_network_response(res)
 
 
-def get_feed_player(id_, limit=50, sort=None, category=None, start=None, cache_time=5):
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
     """
     Get Player Feed
 
@@ -367,6 +379,8 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, cache_t
         sort: 0 - Newest to Oldest, 1 - Oldest to Newest
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
+        type_: event type ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
         start = start.strftime(TIMESTAMP_FORMAT)
@@ -378,6 +392,8 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, cache_t
         params["category"] = category
     if start is not None:
         params["start"] = start
+    if type_ is not None:
+        params["type"] = type_
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/player', params=params)
