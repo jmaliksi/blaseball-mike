@@ -49,4 +49,49 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=90c2cec7-0ed5-426a-9de8-754f34d59b39,86d4e22b-f107-4bcf-9625-32d387fcb521,c6a19154-7438-4c4f-b786-2dfaf5951f0f,1a93a2d2-b5b6-479b-a595-703e4a2f3885,84a2b5f6-4955-4007-9299-3d35ae7135d3,61bbbf34-98c1-4bf6-bd0c-56c19199b35e
+  response:
+    body:
+      string: '[{"id":"90c2cec7-0ed5-426a-9de8-754f34d59b39","anticapitalism":0.6070606296393118,"baseThirst":1.551000636624711,"buoyancy":0.3313421787031362,"chasiness":1.2160805313138856,"coldness":0.9192853984947874,"continuation":1.0220881980408967,"divinity":0.9785643082395017,"groundFriction":1.0429847079073848,"indulgence":1.414625547413696,"laserlikeness":0.9097744063273207,"martyrdom":0.4249837686866689,"moxie":1.1207754225425914,"musclitude":1.1075657920720885,"name":"Tot
+        Fox","omniscience":0.6842156070388938,"overpowerment":0.3898549168928418,"patheticism":0.07297530128818258,"ruthlessness":0.5919525880517638,"shakespearianism":1.1262703878953348,"suppression":0.4796881707942455,"tenaciousness":1.2399315538408378,"thwackability":0.45198282321606054,"tragicness":0.001,"unthwackability":1.3281981025213203,"watchfulness":1.2911666169713034,"pressurization":0.1967169760847065,"totalFingers":11,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.5151285367283283,"fate":82,"ritual":"Smoke
+        Cleansing","coffee":8,"blood":8,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":1.0384099391275827,"pitchingRating":0.8192796643653674,"hittingRating":0.7480975503525489,"defenseRating":0.963021109359207,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":28.98165784243294,"state":{},"evolution":1,"items":[]},{"id":"86d4e22b-f107-4bcf-9625-32d387fcb521","anticapitalism":0.5158166519485402,"baseThirst":0.12516017821152325,"buoyancy":0.9266629814979651,"chasiness":0.08701689131824701,"coldness":0.001,"continuation":0.5992873578052228,"divinity":0.7743069339505374,"groundFriction":0.001,"indulgence":0.6769676659607783,"laserlikeness":0.3708045739134063,"martyrdom":0.2869257061140895,"moxie":0.784551929066298,"musclitude":0.9490954601069386,"name":"York
+        Silk","omniscience":0.10845677930814387,"overpowerment":0.35217778128382105,"patheticism":0.596531878529154,"ruthlessness":0.12186702160812954,"shakespearianism":0.2832304038291618,"suppression":0.5498107476260636,"tenaciousness":0.8530951472230703,"thwackability":1.0867859737168881,"tragicness":0.2270317367846159,"unthwackability":0.6471106474911362,"watchfulness":0.8323393005583041,"pressurization":0.32762547788474816,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.792633281651104,"fate":76,"ritual":"LARPing","coffee":12,"blood":12,"permAttr":["DOUBLE_PAYOUTS","HONEY_ROASTED","RETURNED","DEBT_THREE","EGO3"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2265371658120663,"pitchingRating":0.21982244389957217,"hittingRating":0.8560366267822145,"defenseRating":0.4471886449488287,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":"9a5ab308-41f2-4889-a3c3-733b9aab806e","eDensity":52.24709417009877,"state":{},"evolution":0,"items":[]},{"id":"1a93a2d2-b5b6-479b-a595-703e4a2f3885","anticapitalism":1.0053096930684504,"baseThirst":1.245016280202968,"buoyancy":0.5279537351294559,"chasiness":0.7595131101812829,"coldness":1.245271886887346,"continuation":0.9299768916629159,"divinity":1.2195668549265366,"groundFriction":1.6113284795916756,"indulgence":1.227175589556216,"laserlikeness":0.7277484616626622,"martyrdom":1.3233879931867212,"moxie":1.1176250937021335,"musclitude":0.47059212255716837,"name":"Pedro
+        Davids","omniscience":1.3225571436421102,"overpowerment":0.5467568586519576,"patheticism":0.5230510194263163,"ruthlessness":1.024012750977496,"shakespearianism":1.0773691030419255,"suppression":1.3027175991386564,"tenaciousness":0.6167045524056267,"thwackability":0.5045044393182619,"tragicness":0.034342242807345894,"unthwackability":0.39282903169483946,"watchfulness":1.114250666325122,"pressurization":0.905892757793139,"totalFingers":12,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.49145962757222506,"fate":82,"ritual":"Bragging","coffee":9,"blood":12,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.9267539503440639,"pitchingRating":0.585478735561376,"hittingRating":0.7788446551150358,"defenseRating":0.9446700023537472,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":34.650231403619564,"state":{},"evolution":1,"items":[]},{"id":"84a2b5f6-4955-4007-9299-3d35ae7135d3","anticapitalism":0.6191861477576346,"baseThirst":0.9680423751176087,"buoyancy":0.43519026727114407,"chasiness":0.47908900515809605,"coldness":0.9749560286964692,"continuation":0.7439528426538684,"divinity":1.1612057118931405,"groundFriction":1.285573679393107,"indulgence":0.5728969373009543,"laserlikeness":0.6007203153459381,"martyrdom":0.8009997047504371,"moxie":0.5325554684954863,"musclitude":0.4540337160743685,"name":"Kennedy
+        Loser","omniscience":0.871356402916503,"overpowerment":0.36463771275150797,"patheticism":0.001,"ruthlessness":0.8416459390849164,"shakespearianism":1.2918809072799124,"suppression":1.0980229863837334,"tenaciousness":1.1354764292981536,"thwackability":0.6948246149999778,"tragicness":0.028655721063166606,"unthwackability":0.9808255037360719,"watchfulness":0.4777034675322505,"pressurization":0.45612744390847126,"totalFingers":12,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.7473225051705356,"fate":83,"ritual":"Tarot","coffee":10,"blood":9,"permAttr":["FLINCH","REVERBERATING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7274405133044347,"pitchingRating":0.8146550596655349,"hittingRating":0.8299618889918943,"defenseRating":0.8207565797485309,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":32.34969829197276,"state":{},"evolution":1,"items":[]},{"id":"61bbbf34-98c1-4bf6-bd0c-56c19199b35e","anticapitalism":0.6583800108986846,"baseThirst":0.7987815597619394,"buoyancy":0.041450526393126186,"chasiness":1.0281333544380884,"coldness":0.6070065214601509,"continuation":0.037341110794408605,"divinity":0.3426448157207167,"groundFriction":0.14621093364242577,"indulgence":0.7755756277714607,"laserlikeness":0.860183966733685,"martyrdom":0.7656748346054454,"moxie":0.6331533925057771,"musclitude":0.6023604197361379,"name":"Squid
+        Galvanic","omniscience":0.31263803966036097,"overpowerment":0.7034378433534377,"patheticism":0.6524888773169335,"ruthlessness":0.16146800987217377,"shakespearianism":0.6753749798183545,"suppression":0.7636853398659728,"tenaciousness":0.9149274586905433,"thwackability":0.9978771405404441,"tragicness":0.1,"unthwackability":0.6501736131308321,"watchfulness":1.0405896283151796,"pressurization":0.9587714168488901,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.24122967716081067,"fate":39,"ritual":"Counting","coffee":6,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5250704749698167,"pitchingRating":0.35024138126491666,"hittingRating":0.6022080881406044,"defenseRating":0.7517375668934428,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":27.604802578881465,"state":{},"evolution":1,"items":[]},{"id":"c6a19154-7438-4c4f-b786-2dfaf5951f0f","anticapitalism":0.5213194315256015,"baseThirst":0.5394020681480318,"buoyancy":0.12919689538414728,"chasiness":0.429890585635741,"coldness":0.6287676460249405,"continuation":0.8099183326018289,"divinity":1.0950436284059455,"groundFriction":0.1411101977474547,"indulgence":0.2720137456995406,"laserlikeness":0.5476533180853311,"martyrdom":0.6096626321564692,"moxie":0.42437096351387826,"musclitude":0.3674120561125577,"name":"Silvaire
+        Roadhouse","omniscience":0.6800853353132367,"overpowerment":0.9659426524569463,"patheticism":0.001,"ruthlessness":0.885071004353041,"shakespearianism":0.9630311229273227,"suppression":0.9784594685866723,"tenaciousness":0.6818911418256554,"thwackability":0.4622848106557965,"tragicness":0.001,"unthwackability":0.0808132999905844,"watchfulness":0.8635819563442292,"pressurization":0.39393407677432024,"totalFingers":10,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.23839952192257563,"fate":89,"ritual":"Astrology","coffee":9,"blood":7,"permAttr":["FLINCH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.49170335370172397,"pitchingRating":0.2652171808711711,"hittingRating":0.6786760396724256,"defenseRating":0.7276662503220103,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":19.142839771971317,"state":{},"evolution":1,"items":[]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8626'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:06:04 GMT
+      Etag:
+      - W/"21b2-c1S2FzjlQEDgm6HKLBlfER3rShA"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

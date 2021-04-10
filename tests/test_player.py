@@ -320,8 +320,7 @@ class TestPlayer(TestBase):
         test_player = Player.find_by_name("Chorby Soul")
         test_value = test_player.soulscream
         assert isinstance(test_value, str)
-        assert test_player.soul == 1777
-        assert test_value[-25:] == "... (CONT. FOR 1477 SOUL)"
+        assert test_value[-22:] in f"... (CONT. FOR {test_player.soul-300} SOUL)"
 
     @pytest.mark.vcr
     def test_long_soulscream_extralong(self):

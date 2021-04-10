@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6&type=stadium
+  response:
+    body:
+      string: '{"nextPage":"fH21zxhBCkuFzE46UaZstiDp0Fv03gAA","items":[{"entityId":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hash":"96b8c872-354f-7934-a9ac-6c41fe3c9c68","validFrom":"2021-04-10T17:28:29.380432Z","validTo":null,"data":{"id":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hype":0,"mods":["PEANUT_MISTER","PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS"],"name":"Chesapeake
+        Racetrack and Ballpark","birds":0,"model":1,"state":{},"teamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","renoLog":{"big_bucket_mod":1,"flood_pumps_mod":1,"secret_base_mod":1,"peanut_mister_mod":1},"weather":{},"nickname":"The
+        Crabitat","renoCost":-1,"renoHand":[],"mainColor":"#593037","mysticism":0.5041285467234323,"viscosity":0.342355352110473,"elongation":0.4429810834155287,"filthiness":0.1758188219936323,"obtuseness":0.6692067275419404,"forwardness":0.5367446740414406,"grandiosity":0.5864887351526414,"ominousness":0.4703351350387238,"renoDiscard":["big_bucket_mod","black_hole_plus","flooding_plus","event_horizon_mod","coffee_one_plus","peanut_mister_mod","inconvenience_minus","fortifications_plus","inconvenience_plus","psychoacoustics_mod","big_bucket_mod","event_horizon_mod","solar_panels_mod","coffee_two_plus","fortifications_minus","mysticism_plus","viscosity_plus","sun_two_plus","secret_base_mod","echo_chamber_mod","soundsystem_mod","flood_pumps_mod","grind_rail_mod","fortifications_plus","mysticism_minus","peanuts_plus","inconvenience_plus"],"fortification":0.6530129161231448,"inconvenience":0.4262386576176254,"luxuriousness":0,"tertiaryColor":"#d9c1c3","secondaryColor":"#ab8287"}}]}'
+    headers:
+      Content-Length:
+      - '1570'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:03:02 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

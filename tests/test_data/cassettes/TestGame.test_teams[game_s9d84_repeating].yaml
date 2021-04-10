@@ -40,4 +40,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=b024e975-1c4a-4575-8936-a3754a08806a
+  response:
+    body:
+      string: '{"id":"b024e975-1c4a-4575-8936-a3754a08806a","lineup":["740d5fef-d59f-4dac-9a75-739ec07f91cf","e7ecf646-e5e4-49ef-a0e3-10a78e87f5f4","41bdb527-1fb2-487d-8237-093958e737e4","817dee99-9ccf-4f41-84e3-dc9773237bc8","1068f44b-34a0-42d8-a92e-2be748681a6f","17397256-c28c-4cad-85f2-a21768c66e67","733d80f1-2485-40f7-828b-fd7cd8243a01","97f5a9cd-72f0-413e-9e68-a6ee6a663489","b39b5aae-8571-4c90-887a-6a00f2a2f6fd","a1ed3396-114a-40bc-9ff0-54d7e1ad1718"],"rotation":["b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","6b8d128f-ed51-496d-a965-6614476f8256","82d1b7b4-ce00-4536-8631-a025f05150ce","042962c8-4d8b-44a6-b854-6ccef3d82716","3a96d76a-c508-45a0-94a0-8f64cd6beeb4"],"bullpen":["fdfd36c7-e0c1-4fce-98f7-921c3d17eafe","dd7e710f-da4e-475b-b870-2c29fe9d8c00","3f08f8cd-6418-447a-84d3-22a981c68f16","721fb947-7548-49ea-8cbe-7721b0ed49e0","c6bd21a8-7880-4c00-8abe-33560fe84ac5","4fe28bc1-f690-4ad6-ad09-1b2e984bf30b","ebf2da50-7711-46ba-9e49-341ce3487e00","d796d287-77ef-49f0-89ef-87bcdeb280ee"],"bench":["de52d5c0-cba4-4ace-8308-e2ed3f8799d0","13cfbadf-b048-4c4f-903d-f9b52616b15c","732899a3-2082-4d9f-b1c2-74c8b75e15fb","7d388846-8f4c-407f-aacb-b844d2561c5e"],"seasAttr":["PARTY_TIME"],"permAttr":[],"fullName":"Dallas
+        Steaks","location":"Dallas","mainColor":"#8c8d8f","nickname":"Steaks","secondaryColor":"#b2b3b5","shorthand":"DAL","emoji":"0x1F969","slogan":"Well
+        Done.","shameRuns":0,"totalShames":51,"totalShamings":70,"seasonShames":0,"seasonShamings":1,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":99,"teamSpirit":0,"card":3,"tournamentWins":0,"stadium":"6bfd22e7-831d-4ba9-a9f9-2cf7ab00c39d","eDensity":2014.0436157582335,"state":{},"evolution":0,"winStreak":3,"level":4}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1679'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:52 GMT
+      Etag:
+      - W/"68f-KL1vxrbKxUIRa88gEOFLOx3djyQ"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1
