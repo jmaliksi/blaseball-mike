@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/playerStatsheets?ids=e80b9497-c604-456d-9bee-c860d4759b14
+  response:
+    body:
+      string: '[{"id":"e80b9497-c604-456d-9bee-c860d4759b14","playerId":null,"teamId":null,"team":"e80b9497-c604-456d-9bee-c860d4759b14","name":"e80b9497-c604-456d-9bee-c860d4759b14","atBats":0,"caughtStealing":0,"doubles":0,"earnedRuns":0,"groundIntoDp":0,"hits":0,"hitsAllowed":0,"homeRuns":0,"losses":0,"outsRecorded":27,"rbis":0,"runs":0,"stolenBases":0,"strikeouts":5,"struckouts":0,"triples":0,"walks":0,"walksIssued":0,"wins":1,"hitByPitch":0,"hitBatters":0,"quadruples":0,"pitchesThrown":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '484'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:31 GMT
+      Etag:
+      - W/"1e4-v8PvnlaGftzs0tGUGSs7eO252vc"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

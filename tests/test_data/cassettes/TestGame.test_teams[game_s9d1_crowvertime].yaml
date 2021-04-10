@@ -40,4 +40,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=b72f3061-f573-40d7-832a-5ad475bd7909
+  response:
+    body:
+      string: '{"id":"b72f3061-f573-40d7-832a-5ad475bd7909","lineup":["0268b35f-b19b-4b2f-90c4-89fb36403686","ee55248b-318a-4bfb-8894-1cc70e4e0720","c9e4a49e-e35a-4034-a4c7-293896b40c58","58c9e294-bd49-457c-883f-fb3162fc668e","2b157c5c-9a6a-45a6-858f-bf4cf4cbc0bd","db33a54c-3934-478f-bad4-fc313ac2580e","7c5ae357-e079-4427-a90f-97d164c7262e","0eea4a48-c84b-4538-97e7-3303671934d2","11de4da3-8208-43ff-a1ff-0b3480a0fbf1"],"rotation":["1f159bab-923a-4811-b6fa-02bfde50925a","f2c477fb-28ea-4fcb-943a-9fab22df3da0","c3ae0552-59e8-44bf-ba66-48a96aff35e6","73265ee3-bb35-40d1-b696-1f241a6f5966","d97835fd-2e92-4698-8900-1f5abea0a3b6","7158d158-e7bf-4e9b-9259-62e5b25e3de8"],"bullpen":["1e8b09bd-fbdd-444e-bd7e-10326bd57156","b390b28c-df96-443e-b81f-f0104bd37860","0f62c20c-72d0-4c12-a9d7-312ea3d3bcd1","23e78d92-ee2d-498a-a99c-f40bc4c5fe99","f1185b20-7b4a-4ccc-a977-dc1afdfd4cb9","9313e41c-3bf7-436d-8bdc-013d3a1ecdeb","3be2c730-b351-43f7-a832-a5294fe8468f","e749dc27-ca3b-456e-889c-d2ec02ac7f5f","bd24e18b-800d-4f15-878d-e334fb4803c4"],"bench":["26f01324-9d1c-470b-8eaa-1b9bfbcd8b65","9f6d06d6-c616-4599-996b-ec4eefcff8b8","0e27df51-ad0c-4546-acf5-96b3cb4d7501","8997123f-b24d-4326-80c8-3c862f80f623","331d9910-0991-40c8-9345-a7cddb7465c6"],"seasAttr":["PARTY_TIME"],"permAttr":["LOVE","FREE_WILL"],"fullName":"San
+        Francisco Lovers","location":"San Francisco","mainColor":"#780018","nickname":"Lovers","secondaryColor":"#da0000","shorthand":"SFL","emoji":"0x1F48B","slogan":"Let''s
+        Go All The Way!","shameRuns":0,"totalShames":74,"totalShamings":64,"seasonShames":1,"seasonShamings":3,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":99,"teamSpirit":0,"card":19,"tournamentWins":0,"stadium":"1c1614b3-abdb-4008-98eb-12aeb8f7bb54","eDensity":1661.6334721808307,"state":{},"evolution":0,"winStreak":-1,"level":4}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1802'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:57 GMT
+      Etag:
+      - W/"70a-WMGLcyxCIyoIeGXcWZQkMfBB9jk"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

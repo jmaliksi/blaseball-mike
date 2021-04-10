@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/subleague?id=4fe65afa-804f-4bb2-9b15-1281b2eab110
+  response:
+    body:
+      string: '{"id":"4fe65afa-804f-4bb2-9b15-1281b2eab110","divisions":["456089f0-f338-4620-a014-9540868789c9","fadc9684-45b3-47a6-b647-3be3f0735a84"],"name":"The
+        Mild League"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:18:22 GMT
+      Etag:
+      - W/"a2-5kddbcLANsZNv5GYOh2jKJnLKLE"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

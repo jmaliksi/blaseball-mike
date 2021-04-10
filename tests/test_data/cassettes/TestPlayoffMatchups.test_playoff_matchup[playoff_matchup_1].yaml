@@ -39,4 +39,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=747b8e4a-7e50-4638-a973-ea7950a3e739
+  response:
+    body:
+      string: '{"id":"747b8e4a-7e50-4638-a973-ea7950a3e739","lineup":["efafe75e-2f00-4418-914c-9b6675d39264","c0177f76-67fc-4316-b650-894159dede45","b082ca6e-eb11-4eab-8d6a-30f8be522ec4","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e","5bcfb3ff-5786-4c6c-964c-5c325fcc48d7","7cf83bdc-f95f-49d3-b716-06f2cf60a78d","2e86de11-a2dd-4b28-b5fe-f4d0c38cd20b","7932c7c7-babb-4245-b9f5-cdadb97c99fb"],"rotation":["1db2f602-64b1-4a5c-8697-1932cc2c6df1","2720559e-9173-4042-aaa0-d3852b72ab2e","7aeb8e0b-f6fb-4a9e-bba2-335dada5f0a3","b3e512df-c411-4100-9544-0ceadddb28cf"],"bullpen":["5fc4713c-45e1-4593-a968-7defeb00a0d4","77a41c29-8abd-4456-b6e0-a034252700d2","a73427b3-e96a-4156-a9ab-844edc696fed","04f955fe-9cc9-4482-a4d2-07fe033b59ee","6e744b21-c4fa-4fa8-b4ea-e0e97f68ded5","37efef78-2df4-4c76-800c-43d4faf07737","58fca5fa-e559-4f5e-ac87-dc99dd19e410","2727215d-3714-438d-b1ba-2ed15ec481c0"],"bench":["9abe02fb-2b5a-432f-b0af-176be6bd62cf","32c9bce6-6e52-40fa-9f64-3629b3d026a8","695daf02-113d-4e76-b802-0862df16afbd","db3ff6f0-1045-4223-b3a8-a016ca987af9","6f71667b-59f2-46df-adac-a8885a4f6ac5","df34d168-4d6a-403c-aca5-2b1ebe90444d","2a8b371f-d2eb-4be7-b89f-aff10edb4412","128a33b9-c82f-408e-9fa3-5161f5a3e297","852107b8-8cf3-4fbb-97f9-76f73bc47708"],"seasAttr":["PARTY_TIME"],"permAttr":["FIREPROOF","SEALANT","AMBUSH"],"fullName":"Hades
+        Tigers","location":"Hades","mainColor":"#5c1c1c","nickname":"Tigers","secondaryColor":"#e83622","shorthand":"HAT","emoji":"0x1F405","slogan":"Never
+        Look Back.","shameRuns":0,"totalShames":54,"totalShamings":74,"seasonShames":5,"seasonShamings":1,"championships":3,"weekAttr":[],"gameAttr":[],"rotationSlot":107,"teamSpirit":0,"card":14,"tournamentWins":0,"stadium":"929fc650-948a-4736-b7a2-bb7b75902e6e","eDensity":2325.4988247841266,"state":{},"evolution":1,"winStreak":-2,"level":5}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1794'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:33 GMT
+      Etag:
+      - W/"702-IN2Tt2Z08WyorYsUK5fpWJTlifw"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

@@ -3099,4 +3099,43 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=10ea5d50-ec88-40a0-ab53-c6e11cc1e479
+  response:
+    body:
+      string: '[{"id":"10ea5d50-ec88-40a0-ab53-c6e11cc1e479","anticapitalism":1.04,"baseThirst":0.6408820103959718,"buoyancy":0.3802750404023096,"chasiness":0.8417433275547634,"coldness":0.03392668777477503,"continuation":0.5750919020908078,"divinity":0.9923312424747088,"groundFriction":0.5697203235139652,"indulgence":0.34940595284702386,"laserlikeness":0.2686773865450455,"martyrdom":0.2538869692859868,"moxie":0.4435907552966469,"musclitude":0.8816580278079611,"name":"Nicholas
+        Vincent","omniscience":0.4393672455466044,"overpowerment":0.33112441662850634,"patheticism":0.38768648721143545,"ruthlessness":0.4673423970963664,"shakespearianism":0.7734230442462457,"suppression":0.0853186396836294,"tenaciousness":0.7544891803471101,"thwackability":0.970353190812548,"tragicness":0.060000000000000005,"unthwackability":0.6963260632082364,"watchfulness":0.6987251985737584,"pressurization":0.9371227298768618,"totalFingers":10,"soul":7,"deceased":true,"peanutAllergy":true,"cinnamon":0.4728653634253499,"fate":57,"ritual":"Divining","coffee":7,"blood":5,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3991777189812619,"pitchingRating":0.4670510216965663,"hittingRating":0.8726684078509674,"defenseRating":0.7633928385785276,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","tournamentTeamId":null,"eDensity":31.51602990975126,"state":{},"evolution":0,"items":[]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1418'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:05:49 GMT
+      Etag:
+      - W/"58a-gkYOaMI4dNcVC54+GlwgznZY8HI"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

@@ -39,4 +39,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=f02aeae2-5e6a-4098-9842-02d2273f25c7
+  response:
+    body:
+      string: '{"id":"f02aeae2-5e6a-4098-9842-02d2273f25c7","lineup":["f0bcf4bb-74b3-412e-a54c-04c12ad28ecb","cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","2b5f5dd7-e31f-4829-bec5-546652103bc0","72ca8ed5-a8c7-4571-9745-80de5a49b2d1","df4da81a-917b-434f-b309-f00423ee4967","4f69e8c2-b2a1-4e98-996a-ccf35ac844c5","d4a10c2a-0c28-466a-9213-38ba3339b65e","89f74891-2e25-4b5a-bd99-c95ba3f36aa0"],"rotation":["5703141c-25d9-46d0-b680-0cf9cfbf4777","3d3be7b8-1cbf-450d-8503-fce0daf46cbf","f883269f-117e-45ec-bb1e-fa8dbcf40d3e","20fd71e7-4fa0-4132-9f47-06a314ed539a","333067fd-c2b4-4045-a9a4-e87a8d0332d0"],"bullpen":["3dd85c20-a251-4903-8a3b-1b96941c07b7","206bd649-4f5f-4707-ad85-92784be4eb95","126fb128-7c53-45b5-ac2b-5dbf9943d71b","088884af-f38d-4914-9d67-b319287481b4","6644d767-ab15-4528-a4ce-ae1f8aadb65f","14bfad43-2638-41ec-8964-8351f22e9c4f","459f7700-521e-40da-9483-4d111119d659","b69aa26f-71f7-4e17-bc36-49c875872cc1","4c53fcd8-df02-4a80-99c9-51710863bc7f","e0d64270-6f5a-4c10-9b22-f91f9d4f241c"],"bench":["1f145436-b25d-49b9-a1e3-2d3c91626211","4562ac1f-026c-472c-b4e9-ee6ff800d701","e3c06405-0564-47ce-bbbd-552bee4dd66f","8b0d717f-ae42-4492-b2ed-106912e2b530","5a6b0c6d-1cc8-4acb-991c-0ffe62f3d990","5f5b3b18-ebc5-4611-b8bf-61b8c6a3ba12","24ca976f-ddf2-4966-ba14-4fd2b9b20341","aca90625-5bde-4489-bc9f-a7996a7b9a30"],"seasAttr":["PARTY_TIME"],"permAttr":["BASE_INSTINCTS"],"fullName":"Hellmouth
+        Sunbeams","location":"Hellmouth","mainColor":"#fffbab","nickname":"Sunbeams","secondaryColor":"#fffbab","shorthand":"SUN","emoji":"0x1F31E","slogan":"Stare
+        into the Sun...","shameRuns":0,"totalShames":75,"totalShamings":59,"seasonShames":3,"seasonShamings":8,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":102,"teamSpirit":0,"card":11,"tournamentWins":0,"stadium":"8e900d85-7d4c-47d0-a67f-6432144f0210","eDensity":2196.4270198574764,"state":{},"evolution":0,"winStreak":-4,"level":5}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1875'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:53 GMT
+      Etag:
+      - W/"753-rtmsY5UX1tJOzaL1DMjZ1wiWwlM"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

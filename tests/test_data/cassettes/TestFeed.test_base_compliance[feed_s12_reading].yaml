@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/feed/global?limit=1
+  response:
+    body:
+      string: '[{"id":"e6f17fcf-d9ed-4430-8b2c-30593564fec4","playerTags":[],"teamTags":["57ec08cc-0411-4643-b304-0e80dbc15ac7","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["606166b9-2aef-47e8-aa4a-52f863880408"],"metadata":{"play":22,"subPlay":-1},"created":"2021-04-10T21:01:46.448Z","season":14,"tournament":-1,"type":8,"day":112,"phase":11,"category":0,"description":"Alston
+        Cerveza hit a ground out to Summers Preston.","nuts":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '427'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:01:47 GMT
+      Etag:
+      - W/"1ab-KzGl/Dfnnqr5Ww35F1Z4Gi4/2OI"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -29,4 +29,36 @@ interactions:
     status:
       code: 400
       message: Bad Request
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=6754f45d-52a6-4b2f-b63c-15dcd520f8cf&type=bossfight
+  response:
+    body:
+      string: '{"nextPage":"XfRUZ6ZSL0u2PBXc1SD4zy62gEOsVQAA","items":[{"entityId":"6754f45d-52a6-4b2f-b63c-15dcd520f8cf","hash":"4ffa7a57-9f3a-6559-8d9a-1ade07c93b06","validFrom":"2020-10-18T00:37:15.524459Z","validTo":null,"data":{"id":"6754f45d-52a6-4b2f-b63c-15dcd520f8cf","day":1,"phase":6,"rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","shame":false,"awayHp":"29915332","homeHp":"0","inning":0,"season":9,"weather":7,"awayOdds":0.000000023,"awayOuts":3,"awayTeam":"40b9ec2a-cb43-4dbb-b836-5accb62e7c20","homeOdds":99.999999987,"homeOuts":3,"homeTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","outcomes":[],"awayBalls":4,"awayBases":4,"awayMaxHp":"29918000","awayScore":0,"finalized":false,"gameStart":true,"homeBalls":4,"homeBases":4,"homeMaxHp":"31993","homeScore":0,"playCount":0,"statsheet":"f11f62ad-2673-4d74-8871-0bdfc3cebfd9","atBatBalls":0,"awayBatter":null,"homeBatter":null,"lastUpdate":"Wyatt
+        Quitter hits a Single!","awayPitcher":"3af96a6b-866c-4b03-bc14-090acf6ecee5","awayStrikes":4,"baseRunners":[],"homePitcher":"97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","homeStrikes":3,"repeatCount":0,"seriesIndex":1,"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","topOfInning":true,"atBatStrikes":0,"awayTeamName":"THE
+        SHELLED ONE''S PODS","gameComplete":false,"homeTeamName":"Baltimore Crabs","isPostseason":false,"seriesLength":1,"awayTeamColor":"#ff0000","awayTeamEmoji":"0x1F95C","basesOccupied":[],"damageResults":"[{\"dmgType\":9,\"teamTarget\":\"8d87c468-699a-47a8-b40d-cfb73a5660ad\",\"playerSource\":\"5ca7e854-dc00-4955-9235-d7fcd732ddcf\",\"dmg\":1504119}]","homeTeamColor":"#593037","homeTeamEmoji":"0x1F980","awayBatterName":"","halfInningOuts":0,"homeBatterName":"","awayPitcherName":"Axel
+        Trololol","baseRunnerNames":[],"baserunnerCount":0,"halfInningScore":0,"homePitcherName":"Brock
+        Forbes","awayTeamNickname":"PODS","homeTeamNickname":"Crabs","awayTeamBatterCount":1,"homeTeamBatterCount":-1,"awayTeamSecondaryColor":"#ff0000","homeTeamSecondaryColor":"#b05c6b"}}]}'
+    headers:
+      Content-Length:
+      - '1976'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:04:39 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
 version: 1

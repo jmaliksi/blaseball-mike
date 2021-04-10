@@ -39,4 +39,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=878c1bf6-0d21-4659-bfee-916c8314d69c
+  response:
+    body:
+      string: "{\"id\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"lineup\":[\"03b80a57-77ea-4913-9be4-7a85c3594745\",\"63df8701-1871-4987-87d7-b55d4f1df2e9\",\"6c346d8b-d186-4228-9adb-ae919d7131dd\",\"bf6a24d1-4e89-4790-a4ba-eeb2870cbf6f\",\"27c68d7f-5e40-4afa-8b6f-9df47b79e7dd\",\"c755efce-d04d-4e00-b5c1-d801070d3808\",\"abbd5ec5-a15b-421c-b0c5-cd80d8907373\"],\"rotation\":[\"2e13249e-38ff-46a2-a55e-d15fa692468a\",\"d81ce662-07b6-4a73-baa4-acbbb41f9dc5\",\"691f9ab2-9dd4-42e8-bf95-9fd01253c801\"],\"bullpen\":[\"0ecf6190-f869-421a-b339-29195d30d37c\",\"9820f2c5-f9da-4a07-b610-c2dd7bee2ef6\",\"0bb35615-63f2-4492-80ec-b6b322dc5450\",\"d8758c1b-afbb-43a5-b00b-6004d419e2c5\",\"9786b2c9-1205-4718-b0f7-fc000ce91106\",\"dfe3bc1b-fca8-47eb-965f-6cf947c35447\",\"3db02423-92af-485f-b30f-78256721dcc6\",\"6192daab-3318-44b5-953f-14d68cdb2722\",\"3f1ac16f-03c4-4a0f-8daf-6e54bbe12c30\",\"a5e4e86f-d3a8-424a-9768-2ada17a4e741\"],\"bench\":[\"0d5300f6-0966-430f-903f-a4c2338abf00\",\"5149c919-48fe-45c6-b7ee-bb8e5828a095\",\"63a31035-2e6d-4922-a3f9-fa6e659b54ad\",\"937c1a37-4b05-4dc5-a86d-d75226f8490a\",\"cc725a58-38cc-42af-9ff8-ace76541ac26\",\"0cb44026-ebf0-4870-b98e-e620b0814808\",\"0a6b75ea-fe69-4406-be24-a149c94daa3b\"],\"seasAttr\":[\"PARTY_TIME\"],\"permAttr\":[\"SUN_KISSED\",\"SUN2_PAYOUTS\"],\"fullName\":\"LA
+        Unlimited Tacos\",\"location\":\"LA Unlimited\",\"mainColor\":\"#64376e\",\"nickname\":\"Tacos\",\"secondaryColor\":\"#b063c1\",\"shorthand\":\"LATA\",\"emoji\":\"0x1F32E\",\"slogan\":\"72\xB0
+        and Infinite\",\"shameRuns\":3,\"totalShames\":91,\"totalShamings\":51,\"seasonShames\":5,\"seasonShamings\":4,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":101,\"teamSpirit\":0,\"card\":6,\"tournamentWins\":0,\"stadium\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"eDensity\":1815.7837289413017,\"state\":{},\"evolution\":0,\"winStreak\":-2,\"level\":4}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:51 GMT
+      Etag:
+      - W/"6be-Bs1RDFqMRYk39IX/Fy4b58D3M88"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

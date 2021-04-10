@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=a37f9158-7f82-46bc-908c-c9e2dda7c33b
+  response:
+    body:
+      string: "{\"id\":\"a37f9158-7f82-46bc-908c-c9e2dda7c33b\",\"lineup\":[\"2f3d7bc7-6ffb-40c3-a94f-5e626be413c9\",\"0f61d948-4f0c-4550-8410-ae1c7f9f5613\",\"f3c07eaf-3d6c-4cc3-9e54-cbecc9c08286\",\"18f45a1b-76eb-4b59-a275-c64cf62afce0\",\"e69db30d-74ac-4265-8da6-467b0d25694b\",\"b9293beb-d199-4b46-add9-c02f9362d802\",\"678170e4-0688-436d-a02d-c0467f9af8c0\",\"ef9f8b95-9e73-49cd-be54-60f84858a285\",\"b348c037-eefc-4b81-8edd-dfa96188a97e\"],\"rotation\":[\"5dbf11c0-994a-4482-bd1e-99379148ee45\",\"ea44bd36-65b4-4f3b-ac71-78d87a540b48\",\"9c3273a0-2711-4958-b716-bfcf60857013\",\"d23a1f7e-0071-444e-8361-6ae01f13036f\",\"bf122660-df52-4fc4-9e70-ee185423ff93\",\"ae81e172-801a-4236-929a-b990fc7190ce\"],\"bullpen\":[\"e376a90b-7ffe-47a2-a934-f36d6806f17d\",\"f6342729-a38a-4204-af8d-64b7accb5620\",\"4f328502-d347-4d2c-8fad-6ae59431d781\",\"dac2fd55-5686-465f-a1b6-6fbed0b417c5\",\"5fbf04bb-f5ec-4589-ab19-1d89cda056bd\",\"ecf19925-dc57-4b89-b114-923d5a714dbe\",\"52cfebfb-8008-4b9f-a566-72a30e0b64bf\",\"b5c95dba-2624-41b0-aacd-ac3e1e1fe828\"],\"bench\":[\"16a59f5f-ef0f-4ada-8682-891ad571a0b6\",\"3de17e21-17db-4a6b-b7ab-0b2f3c154f42\",\"f10ba06e-d509-414b-90cd-4d70d43c75f9\",\"ac5e4ce2-de6f-408b-9910-a52bb1d1a978\"],\"seasAttr\":[\"PARTY_TIME\"],\"permAttr\":[],\"fullName\":\"Breckenridge
+        Jazz Hands\",\"location\":\"Breckenridge\",\"mainColor\":\"#6388ad\",\"nickname\":\"Jazz
+        Hands\",\"secondaryColor\":\"#7ba9d7\",\"shorthand\":\"BJAZ\",\"emoji\":\"0x1F450\",\"slogan\":\"We\u2019ve
+        Got Winning to Do. Just for You.\",\"shameRuns\":0,\"totalShames\":73,\"totalShamings\":60,\"seasonShames\":4,\"seasonShamings\":4,\"championships\":0,\"weekAttr\":[],\"gameAttr\":[],\"rotationSlot\":99,\"teamSpirit\":0,\"card\":15,\"tournamentWins\":0,\"stadium\":\"60e78a6c-fe49-4283-8293-735e9fa7e3e9\",\"eDensity\":1914.55877056197,\"state\":{\"permModSources\":{}},\"evolution\":0,\"winStreak\":-1,\"level\":4}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1749'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:33 GMT
+      Etag:
+      - W/"6d5-7CUaBthhJUr6pd1y+k4ftbc+mkU"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=ca3f1c8c-c025-4d8e-8eef-5be6accbeb16
+  response:
+    body:
+      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","5831a238-8efe-4d53-a483-1ad681e50ac3","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","2268f452-01b9-4e16-98bb-c07e3ce767e3"],"rotation":["316abea7-9890-4fb8-aaea-86b35e24d9be","e4e4c17d-8128-4704-9e04-f244d4573c4d","1513aab6-142c-48c6-b43e-fbda65fd64e8","94baa9ac-ff96-4f56-a987-10358e917d91","f4a5d734-0ade-4410-abb6-c0cd5a7a1c26"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365","ee29020f-1964-4fce-80f4-35a5e7edfb95"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","97387580-1f7c-49ea-a9e7-44be89329130"],"seasAttr":["PARTY_TIME"],"permAttr":[],"fullName":"Chicago
+        Firefighters","location":"Chicago","mainColor":"#8c2a3e","nickname":"Firefighters","secondaryColor":"#d13757","shorthand":"CHIF","emoji":"0x1F525","slogan":"We
+        Are From Chicago","shameRuns":0,"totalShames":63,"totalShamings":64,"seasonShames":8,"seasonShamings":4,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":99,"teamSpirit":0,"card":13,"tournamentWins":0,"stadium":"06c991f6-4ef3-4a9a-8254-8a2bc7d3a1e1","eDensity":1969.483383670296,"state":{},"evolution":0,"winStreak":1,"level":4}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1781'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:08:01 GMT
+      Etag:
+      - W/"6f5-qOwOe/r+tLdIpdjS4eEu7xoUM9A"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

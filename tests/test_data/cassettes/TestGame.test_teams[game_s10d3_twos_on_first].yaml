@@ -39,4 +39,45 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=adc5b394-8f76-416d-9ce9-813706877b84
+  response:
+    body:
+      string: '{"id":"adc5b394-8f76-416d-9ce9-813706877b84","lineup":["88cd6efa-dbf2-4309-aabe-ec1d6f21f98a","4b6f0a4e-de18-44ad-b497-03b1f470c43c","fcbe1d14-04c4-4331-97ad-46e170610633","87e6ae4b-67de-4973-aa56-0fc9835a1e1e","a8a5cf36-d1a9-47d1-8d22-4a665933a7cc","fa5b54d2-b488-47cd-a529-592831e4813d","53e701c7-e3c8-4e18-ba05-9b41b4b64cda","cd417f8a-ce01-4ab2-921d-42e2e445bbe2"],"rotation":["a199a681-decf-4433-b6ab-5454450bbe5e","138fccc3-e66f-4b07-8327-d4b6f372f654","57290370-6723-4d33-929e-b4fc190e6a9a","7663c3ca-40a1-4f13-a430-14637dce797a","f2a27a7e-bf04-4d31-86f5-16bfa3addbe7"],"bullpen":["d46abb00-c546-4952-9218-4f16084e3238","6e373fca-b8ab-4848-9dcc-50e92cd732b7","9fd1f392-d492-4c48-8d46-27fb4283b2db","aae38811-122c-43dd-b59c-d0e203154dbe","113f47b2-3111-4abb-b25e-18f7889e2d44","64f4cd75-0c1e-42cf-9ff0-e41c4756f22a","a8e757c6-e299-4a2e-a370-4f7c3da98bd1","6598e40a-d76d-413f-ad06-ac4872875bde","90c8be89-896d-404c-945e-c135d063a74e"],"bench":["35d5b43f-8322-4666-aab1-d466b4a5a388","849e13dc-6eb1-40a8-b55c-d4b4cd160aab","e9a46e0c-0437-443a-be81-956665ec588e","6305e2dd-2d5d-49ed-ab47-b1b56f0e7e85"],"seasAttr":["MIDDLING","PARTY_TIME"],"permAttr":[],"fullName":"Kansas
+        City Breath Mints","location":"Kansas City","mainColor":"#178f55","nickname":"Breath
+        Mints","secondaryColor":"#178f55","shorthand":"KCBM","emoji":"0x1F36C","slogan":"Fresh
+        Breath, Here We Come.","shameRuns":0,"totalShames":73,"totalShamings":53,"seasonShames":3,"seasonShamings":6,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":105,"teamSpirit":0,"card":12,"tournamentWins":0,"stadium":"21ce1233-b2d6-4bd2-8d03-68a8915afdc5","eDensity":1838.4433452092683,"state":{"permModSources":{}},"evolution":0,"winStreak":-1,"level":4}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1713'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:55 GMT
+      Etag:
+      - W/"6b1-9bTAvWdaxymud8tfmYh9u9t7kQc"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

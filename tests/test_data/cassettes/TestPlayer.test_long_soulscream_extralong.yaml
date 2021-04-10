@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.blaseball-reference.com/v1/playerIdsByName?name=Chorby%20Soul&current=True
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAz3LwQoCIRRA0V8J1xnPh+Oo2/mEWhUxPFNJcJyQDIbo33NT63Pv5c0embZQ5+SZ
+        ZSQUam9GLtSNuKRx4E77yAdlHAVAF6Jh+99SaAl9mu5rddvuuLbc7UU5+TnWdemEgIKD5GBOCBbR
+        Ahyk0ed/18ozZWZLy/lz/QK/uSM2jQAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '139'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:47 GMT
+      Etag:
+      - W/"8d-OZxg5QgUxTCBONS67nKw+M7pzrc"
+      Server:
+      - nginx/1.19.9
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - HIT
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/players?ids=a1628d97-16ca-4a75-b8df-569bae02bef9
+  response:
+    body:
+      string: '[{"id":"a1628d97-16ca-4a75-b8df-569bae02bef9","anticapitalism":0.001,"baseThirst":0.001,"buoyancy":0.001,"chasiness":0.001,"coldness":0.001,"continuation":0.001,"divinity":0.001,"groundFriction":0.001,"indulgence":0.001,"laserlikeness":0.001,"martyrdom":0.001,"moxie":0.001,"musclitude":0.001,"name":"Chorby
+        Soul","omniscience":0.001,"overpowerment":0.001,"patheticism":0.99,"ruthlessness":0.001,"shakespearianism":0.001,"suppression":0.001,"tenaciousness":0.001,"thwackability":0.001,"tragicness":0.999,"unthwackability":0.001,"watchfulness":0.001,"pressurization":0.7113755233221608,"totalFingers":10,"soul":1640,"deceased":false,"peanutAllergy":false,"cinnamon":0.001,"fate":79,"ritual":null,"coffee":null,"blood":null,"permAttr":["RETURNED","DEBT_THREE","EGO1"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.0019952623149688785,"pitchingRating":0.00029853826189179584,"hittingRating":0.0018197008586099837,"defenseRating":0.007943282347242812,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":null,"eDensity":3286.584397486479,"state":{},"evolution":0,"items":[]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1143'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:02:47 GMT
+      Etag:
+      - W/"477-qWsppwgTrgnFvGVFKV9PWPMHbmg"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

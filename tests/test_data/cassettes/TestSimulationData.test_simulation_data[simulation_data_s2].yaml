@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/league?id=d8545021-e9fc-48a3-af74-48685950a183
+  response:
+    body:
+      string: '{"id":"d8545021-e9fc-48a3-af74-48685950a183","subleagues":["aabc11a1-81af-4036-9f18-229c759ca8a9","4fe65afa-804f-4bb2-9b15-1281b2eab110"],"name":"Internet
+        League Blaseball","tiebreakers":"de6896bf-02de-442a-87df-4b77b1d3f4b2"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '226'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Apr 2021 21:05:21 GMT
+      Etag:
+      - W/"e2-Ri9UyZsbPGu0wLUdMGSSM2hrAVc"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
