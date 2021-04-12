@@ -46,6 +46,9 @@ class TestPlayer(TestBase):
         """Test that item referencing does not error"""
         assert isinstance(player.bat, Item)
         assert isinstance(player.armor, Item)
+        for item in player.items:
+            assert isinstance(item, Item)
+            assert item.name is not None
 
     @pytest.mark.vcr
     def test_modifications(self, player):
