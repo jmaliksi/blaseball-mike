@@ -278,11 +278,15 @@ class Player(Base):
 
     @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
     def bat(self):
-        return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))
+        return Item.load_one_discipline(getattr(self, &#34;_bat_id&#34;, None))
 
     @Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
     def armor(self):
-        return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))
+        return Item.load_one_discipline(getattr(self, &#34;_armor_id&#34;, None))
+
+    @Base.lazy_load(&#34;_items&#34;, default_value=list())
+    def items(self):
+        return [Item(x) for x in self._items]
 
     @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
     def perm_attr(self):
@@ -732,11 +736,15 @@ class Player(Base):
 
     @Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
     def bat(self):
-        return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))
+        return Item.load_one_discipline(getattr(self, &#34;_bat_id&#34;, None))
 
     @Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
     def armor(self):
-        return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))
+        return Item.load_one_discipline(getattr(self, &#34;_armor_id&#34;, None))
+
+    @Base.lazy_load(&#34;_items&#34;, default_value=list())
+    def items(self):
+        return [Item(x) for x in self._items]
 
     @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
     def perm_attr(self):
@@ -934,6 +942,10 @@ class Player(Base):
 <h3>Class variables</h3>
 <dl>
 <dt id="blaseball_mike.models.player.Player.game_attr"><code class="name">var <span class="ident">game_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.items"><code class="name">var <span class="ident">items</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1296,10 +1308,6 @@ def hitting_stars(self):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="blaseball_mike.models.player.Player.items"><code class="name">var <span class="ident">items</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="blaseball_mike.models.player.Player.laserlikeness"><code class="name">var <span class="ident">laserlikeness</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1476,7 +1484,7 @@ def tournament_team(self):
 </summary>
 <pre><code class="python">@Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
 def armor(self):
-    return Item.load_one(getattr(self, &#34;_armor_id&#34;, None))</code></pre>
+    return Item.load_one_discipline(getattr(self, &#34;_armor_id&#34;, None))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.baserunning_rating"><code class="name flex">
@@ -1507,7 +1515,7 @@ def baserunning_rating(self):
 </summary>
 <pre><code class="python">@Base.lazy_load(&#34;_bat_id&#34;, cache_name=&#34;_bat&#34;, use_default=False)
 def bat(self):
-    return Item.load_one(getattr(self, &#34;_bat_id&#34;, None))</code></pre>
+    return Item.load_one_discipline(getattr(self, &#34;_bat_id&#34;, None))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.batting_rating"><code class="name flex">

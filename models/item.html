@@ -28,31 +28,47 @@
 </summary>
 <pre><code class="python">from .base import Base
 from .modification import Modification
-from .. import chronicler
+from .. import chronicler, database
 
 
 class Item(Base):
     &#34;&#34;&#34;Represents an single item, such as a bat or armor&#34;&#34;&#34;
     @classmethod
     def _get_fields(cls):
-        p = cls.load_one(&#34;GUNBLADE_A&#34;)
+        p = cls.load_one(&#34;aab9ce81-6fd4-439b-867c-a9da07b3e011&#34;)
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
-        return [cls(item) for item in chronicler.get_old_items(list(ids))]
+        return [cls(item) for item in database.get_items(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
+        return cls.load(id_)[0]
+
+    @classmethod
+    def load_discipline(cls, *ids):
+        &#34;&#34;&#34;Load Pre-S15 Era Items (Bat &amp; Armor slots)&#34;&#34;&#34;
+        return [cls(item) for item in chronicler.get_old_items(list(ids))]
+
+    @classmethod
+    def load_one_discipline(cls, id_):
         if id_ is None:
             return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None?&#34;, &#34;attr&#34;: &#34;NONE&#34;})
         if id_ == &#34;&#34;:
             return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None&#34;, &#34;attr&#34;: &#34;NONE&#34;})
-        return cls.load(id_)[0]
+        return cls.load_discipline(id_)[0]
 
     @Base.lazy_load(&#34;_attr_id&#34;, cache_name=&#34;_attr&#34;, use_default=False)
     def attr(self):
-        return Modification.load_one(self._attr_id)</code></pre>
+        &#34;&#34;&#34;Pre-S15 Era Item Modifications (depreciated)&#34;&#34;&#34;
+        return Modification.load_one(self._attr_id)
+
+    @property
+    def adjustments(self):
+        if getattr(self, &#34;root&#34;, None) is None:
+            return []
+        return self.root[&#34;adjustments&#34;]</code></pre>
 </details>
 </section>
 <section>
@@ -78,24 +94,40 @@ class Item(Base):
     &#34;&#34;&#34;Represents an single item, such as a bat or armor&#34;&#34;&#34;
     @classmethod
     def _get_fields(cls):
-        p = cls.load_one(&#34;GUNBLADE_A&#34;)
+        p = cls.load_one(&#34;aab9ce81-6fd4-439b-867c-a9da07b3e011&#34;)
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
     def load(cls, *ids):
-        return [cls(item) for item in chronicler.get_old_items(list(ids))]
+        return [cls(item) for item in database.get_items(list(ids))]
 
     @classmethod
     def load_one(cls, id_):
+        return cls.load(id_)[0]
+
+    @classmethod
+    def load_discipline(cls, *ids):
+        &#34;&#34;&#34;Load Pre-S15 Era Items (Bat &amp; Armor slots)&#34;&#34;&#34;
+        return [cls(item) for item in chronicler.get_old_items(list(ids))]
+
+    @classmethod
+    def load_one_discipline(cls, id_):
         if id_ is None:
             return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None?&#34;, &#34;attr&#34;: &#34;NONE&#34;})
         if id_ == &#34;&#34;:
             return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None&#34;, &#34;attr&#34;: &#34;NONE&#34;})
-        return cls.load(id_)[0]
+        return cls.load_discipline(id_)[0]
 
     @Base.lazy_load(&#34;_attr_id&#34;, cache_name=&#34;_attr&#34;, use_default=False)
     def attr(self):
-        return Modification.load_one(self._attr_id)</code></pre>
+        &#34;&#34;&#34;Pre-S15 Era Item Modifications (depreciated)&#34;&#34;&#34;
+        return Modification.load_one(self._attr_id)
+
+    @property
+    def adjustments(self):
+        if getattr(self, &#34;root&#34;, None) is None:
+            return []
+        return self.root[&#34;adjustments&#34;]</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -115,6 +147,21 @@ class Item(Base):
 </summary>
 <pre><code class="python">@classmethod
 def load(cls, *ids):
+    return [cls(item) for item in database.get_items(list(ids))]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.item.Item.load_discipline"><code class="name flex">
+<span>def <span class="ident">load_discipline</span></span>(<span>*ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load Pre-S15 Era Items (Bat &amp; Armor slots)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_discipline(cls, *ids):
+    &#34;&#34;&#34;Load Pre-S15 Era Items (Bat &amp; Armor slots)&#34;&#34;&#34;
     return [cls(item) for item in chronicler.get_old_items(list(ids))]</code></pre>
 </details>
 </dd>
@@ -129,21 +176,101 @@ def load(cls, *ids):
 </summary>
 <pre><code class="python">@classmethod
 def load_one(cls, id_):
+    return cls.load(id_)[0]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.item.Item.load_one_discipline"><code class="name flex">
+<span>def <span class="ident">load_one_discipline</span></span>(<span>id_)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_one_discipline(cls, id_):
     if id_ is None:
         return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None?&#34;, &#34;attr&#34;: &#34;NONE&#34;})
     if id_ == &#34;&#34;:
         return cls({&#34;id&#34;: id_, &#34;name&#34;: &#34;None&#34;, &#34;attr&#34;: &#34;NONE&#34;})
-    return cls.load(id_)[0]</code></pre>
+    return cls.load_discipline(id_)[0]</code></pre>
 </details>
 </dd>
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.item.Item.adjustments"><code class="name">var <span class="ident">adjustments</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def adjustments(self):
+    if getattr(self, &#34;root&#34;, None) is None:
+        return []
+    return self.root[&#34;adjustments&#34;]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.item.Item.baserunning_rating"><code class="name">var <span class="ident">baserunning_rating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.defense_rating"><code class="name">var <span class="ident">defense_rating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.durability"><code class="name">var <span class="ident">durability</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.forger"><code class="name">var <span class="ident">forger</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.forger_name"><code class="name">var <span class="ident">forger_name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.health"><code class="name">var <span class="ident">health</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.hitting_rating"><code class="name">var <span class="ident">hitting_rating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.item.Item.id"><code class="name">var <span class="ident">id</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.item.Item.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.pitching_rating"><code class="name">var <span class="ident">pitching_rating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.post_prefix"><code class="name">var <span class="ident">post_prefix</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.pre_prefix"><code class="name">var <span class="ident">pre_prefix</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.prefixes"><code class="name">var <span class="ident">prefixes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.root"><code class="name">var <span class="ident">root</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.suffix"><code class="name">var <span class="ident">suffix</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -154,13 +281,14 @@ def load_one(cls, id_):
 <span>def <span class="ident">attr</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Pre-S15 Era Item Modifications (depreciated)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@Base.lazy_load(&#34;_attr_id&#34;, cache_name=&#34;_attr&#34;, use_default=False)
 def attr(self):
+    &#34;&#34;&#34;Pre-S15 Era Item Modifications (depreciated)&#34;&#34;&#34;
     return Modification.load_one(self._attr_id)</code></pre>
 </details>
 </dd>
@@ -184,12 +312,28 @@ def attr(self):
 <ul>
 <li>
 <h4><code><a title="blaseball_mike.models.item.Item" href="#blaseball_mike.models.item.Item">Item</a></code></h4>
-<ul class="">
+<ul class="two-column">
+<li><code><a title="blaseball_mike.models.item.Item.adjustments" href="#blaseball_mike.models.item.Item.adjustments">adjustments</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.attr" href="#blaseball_mike.models.item.Item.attr">attr</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.baserunning_rating" href="#blaseball_mike.models.item.Item.baserunning_rating">baserunning_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.defense_rating" href="#blaseball_mike.models.item.Item.defense_rating">defense_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.durability" href="#blaseball_mike.models.item.Item.durability">durability</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.forger" href="#blaseball_mike.models.item.Item.forger">forger</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.forger_name" href="#blaseball_mike.models.item.Item.forger_name">forger_name</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.health" href="#blaseball_mike.models.item.Item.health">health</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.hitting_rating" href="#blaseball_mike.models.item.Item.hitting_rating">hitting_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.id" href="#blaseball_mike.models.item.Item.id">id</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load" href="#blaseball_mike.models.item.Item.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.load_discipline" href="#blaseball_mike.models.item.Item.load_discipline">load_discipline</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load_one" href="#blaseball_mike.models.item.Item.load_one">load_one</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.load_one_discipline" href="#blaseball_mike.models.item.Item.load_one_discipline">load_one_discipline</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.name" href="#blaseball_mike.models.item.Item.name">name</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.pitching_rating" href="#blaseball_mike.models.item.Item.pitching_rating">pitching_rating</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.post_prefix" href="#blaseball_mike.models.item.Item.post_prefix">post_prefix</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.pre_prefix" href="#blaseball_mike.models.item.Item.pre_prefix">pre_prefix</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.prefixes" href="#blaseball_mike.models.item.Item.prefixes">prefixes</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.root" href="#blaseball_mike.models.item.Item.root">root</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.suffix" href="#blaseball_mike.models.item.Item.suffix">suffix</a></code></li>
 </ul>
 </li>
 </ul>
