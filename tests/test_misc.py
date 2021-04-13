@@ -5,7 +5,7 @@ Unit Tests for Misc Models
 import pytest
 import vcr
 from blaseball_mike.models import SimulationData, League, Season, GlobalEvent, \
-    SeasonStatsheet, Standings, Item, Modification
+    SeasonStatsheet, Standings, Modification
 from blaseball_mike.tables import Weather, Tarot
 from .helpers import TestBase, base_test, CASSETTE_DIR
 from datetime import datetime
@@ -238,29 +238,6 @@ def test_modification_bad_id():
     assert modification.id == "????"
     assert modification.title == "????"
     assert modification.description == "This Modification is unknown."
-
-
-@pytest.mark.vcr
-def test_items():
-    item = Item.load_one("FIREPROOF")
-    assert isinstance(item, Item)
-    base_test(item)
-    assert item.id == "FIREPROOF"
-    assert item.name == "Fireproof Jacket"
-    assert item._attr_id == "FIREPROOF"
-    assert isinstance(item.attr, Modification)
-
-
-@pytest.mark.vcr
-def test_items_bad_id():
-    item = Item.load_one("RICHMONDS_HAT")
-    assert isinstance(item, Item)
-    base_test(item)
-    assert item.id == "????"
-    assert item.name == "????"
-    assert item._attr_id == "NONE"
-    assert item.attr is None
-
 
 def test_weather_by_enum():
     weather = Weather.FEEDBACK

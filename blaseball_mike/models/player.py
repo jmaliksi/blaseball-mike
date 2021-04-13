@@ -250,11 +250,15 @@ class Player(Base):
 
     @Base.lazy_load("_bat_id", cache_name="_bat", use_default=False)
     def bat(self):
-        return Item.load_one(getattr(self, "_bat_id", None))
+        return Item.load_one_discipline(getattr(self, "_bat_id", None))
 
     @Base.lazy_load("_armor_id", cache_name="_armor", use_default=False)
     def armor(self):
-        return Item.load_one(getattr(self, "_armor_id", None))
+        return Item.load_one_discipline(getattr(self, "_armor_id", None))
+
+    @Base.lazy_load("_items", default_value=list())
+    def items(self):
+        return [Item(x) for x in self._items]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
