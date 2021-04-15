@@ -109,3 +109,44 @@ class DamageType(Enum):
     SUPER_PEANUT_YUMMY = 30
     SUPER_PEANUT_ALLERGIC = 31
     REBIRTH = 32
+
+
+class AdjustmentType(Enum):
+    MOD = 0
+    STAT_CHANGE = 1
+    DURABILITY = 3
+
+
+class StatType(Enum):
+    TRAGICNESS = 0, "tragicness"
+    BUOYANCY = 1, "buoyancy"
+    THWACKABILITY = 2, "thwackability"
+    MOXIE = 3, "moxie"
+    DIVINITY = 4, "divinity"
+    MUSCLITUDE = 5, "musclitude"
+    PATHETICISM = 6, "patheticism"
+    MARTYRDOM = 7, "martyrdom"
+    CINNAMON = 8, "cinnamon"
+    BASE_THIRST = 9, "base_thirst"
+    LASERLIKENESS = 10, "laserlikeness"
+    CONTINUATION = 11, "continuation"
+    INDULGENCE = 12, "indulgence"
+    GROUND_FRICTION = 13, "ground_friction"
+    SHAKESPEARIANISM = 14, "shakesperianism"
+    SUPPRESSION = 15, "suppression"
+    UNTHWACKABILITY = 16, "unthwackability"
+    COLDNESS = 17, "coldness"
+    OVERPOWERMENT = 18, "overpowerment"
+    RUTHLESSNESS = 19, "ruthlessness"
+    PRESSURIZATION = 20, "pressurization"
+    OMNISCIENCE = 21, "omniscience"
+    TENACIOUSNESS = 22, "tenaciousness"
+    WATCHFULNESS = 23, "watchfulness"
+    ANTICAPITALISM = 24, "anticapitalism"
+    CHASINESS = 25, "chasiness"
+
+    def __new__(cls, keycode, stat_name):
+        obj = object.__new__(cls)
+        obj._value_ = keycode
+        obj.stat_name = stat_name
+        return obj
