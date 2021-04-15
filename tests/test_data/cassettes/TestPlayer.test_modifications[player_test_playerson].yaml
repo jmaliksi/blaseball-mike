@@ -156,4 +156,44 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=PERK
+  response:
+    body:
+      string: '[{"id":"PERK","color":"#be4fff","textColor":"#be4fff","background":"#96afd4","title":"Perk","description":"This
+        player has been rewarded Percolated energy. They will Overperform in all Coffee
+        weathers."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '204'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Apr 2021 01:49:35 GMT
+      Etag:
+      - W/"cc-Xp5LISGHuFzw3V09l008ZwbRGqw"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
 version: 1

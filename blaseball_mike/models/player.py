@@ -143,38 +143,54 @@ class Player(Base):
 
     @Base.lazy_load("_hitting_rating", use_default=False)
     def hitting_rating(self):
-        if getattr(self, "_hitting_rating", None):
-            return self._hitting_rating
+        item_rating = 0
+        if getattr(self, "items", None) is not None:
+            item_rating = sum([x.hitting_rating for x in self.items])
+        if getattr(self, "_hitting_rating", None) is not None:
+            return self._hitting_rating + item_rating
         return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
                 ((self.thwackability * self.divinity) ** 0.35) *
-                ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
+                ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02)) + item_rating
 
     batting_rating = hitting_rating
 
     @Base.lazy_load("_pitching_rating", use_default=False)
     def pitching_rating(self):
-        if getattr(self, "_pitching_rating", None):
-            return self._pitching_rating
+        item_rating = 0
+        if getattr(self, "items", None) is not None:
+            item_rating = sum([x.pitching_rating for x in self.items])
+        if getattr(self, "_pitching_rating", None) is not None:
+            return self._pitching_rating + item_rating
         return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
-                (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
+                (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025)) + item_rating
 
     @Base.lazy_load("_baserunning_rating", use_default=False)
     def baserunning_rating(self):
-        if getattr(self, "_baserunning_rating", None):
-            return self._baserunning_rating
+        item_rating = 0
+        if getattr(self, "items", None) is not None:
+            item_rating = sum([x.baserunning_rating for x in self.items])
+        if getattr(self, "_baserunning_rating", None) is not None:
+            return self._baserunning_rating + item_rating
         return ((self.laserlikeness**0.5) *
-                ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
+                ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1)) + item_rating
 
     @Base.lazy_load("_defense_rating", use_default=False)
     def defense_rating(self):
-        if getattr(self, "_defense_rating", None):
-            return self._defense_rating
+        item_rating = 0
+        if getattr(self, "items", None) is not None:
+            item_rating = sum([x.defense_rating for x in self.items])
+        if getattr(self, "_defense_rating", None) is not None:
+            return self._defense_rating + item_rating
         return (((self.omniscience * self.tenaciousness) ** 0.2) *
-                ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
+                ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1)) + item_rating
+
+    @staticmethod
+    def _rating_to_stars_discipline(val):
+        return 0.5 * (round(val * 10))
 
     @staticmethod
     def _rating_to_stars(val):
-        return 0.5 * (round(val * 10))
+        return round(val * 5, 1)
 
     @property
     def hitting_stars(self):
@@ -275,6 +291,10 @@ class Player(Base):
     @Base.lazy_load("_game_attr_ids", cache_name="_game_attr", default_value=list())
     def game_attr(self):
         return Modification.load(*self._game_attr_ids)
+
+    @Base.lazy_load("_item_attr_ids", cache_name="_item_attr", default_value=list())
+    def item_attr(self):
+        return Modification.load(*self._item_attr_ids)
 
     @Base.lazy_load("_league_team_id", cache_name="_league_team")
     def league_team_id(self):

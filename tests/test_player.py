@@ -69,6 +69,10 @@ class TestPlayer(TestBase):
         for attr in player.game_attr:
             assert isinstance(attr, Modification)
 
+        assert isinstance(player.item_attr, list)
+        for attr in player.item_attr:
+            assert isinstance(attr, Modification)
+
     @pytest.mark.vcr
     def test_team(self, player):
         """Test that player team referencing does not error"""
@@ -144,7 +148,7 @@ class TestPlayer(TestBase):
                 "thwackability": 0.8205426223930614,
                 "tragicness": 0.6430174449715937,
                 "hittingRating": 0.8207859225196863,
-              }, 4.0),
+              }, 4.1),
             ({
                 "buoyancy": 0.7459549926271881,
                 "divinity": 0.8717479947208457,
@@ -154,8 +158,8 @@ class TestPlayer(TestBase):
                 "patheticism": 0.7536496111496631,
                 "thwackability": 0.16297075705096228,
                 "tragicness": 0.1
-              }, 2.0),
-            ({"hittingRating": 0.4418857228793549}, 2.0)
+              }, 2.2),
+            ({"hittingRating": 0.4418857228793549}, 2.2)
         ]
     )
     def test_batting_stars_bounded(self, player_data, batting_stars):
@@ -183,8 +187,8 @@ class TestPlayer(TestBase):
                 "shakespearianism": 0.46639012854296286,
                 "suppression": 0.7788206533699096,
                 "unthwackability": 0.5005800759342117,
-             }, 1.5),
-            ({"pitchingRating": 0.347389093695266}, 1.5)
+             }, 1.3),
+            ({"pitchingRating": 0.347389093695266}, 1.7)
         ]
     )
     def test_pitching_stars_bounded(self, player_data, pitching_stars):
@@ -209,8 +213,8 @@ class TestPlayer(TestBase):
                 "groundFriction": 0.7716682592684323,
                 "indulgence": 0.7430401523141731,
                 "laserlikeness": 0.6832443598880596,
-             }, 4.0),
-            ({"baserunningRating": 0.7571044674040147}, 4.0)
+             }, 3.9),
+            ({"baserunningRating": 0.7571044674040147}, 3.8)
         ]
     )
     def test_baserunning_stars_bounded(self, player_data, baserunning_stars):
@@ -235,7 +239,7 @@ class TestPlayer(TestBase):
                 "omniscience": 1.127326814384091,
                 "tenaciousness": 1.2246609654563683,
                 "watchfulness": 1.307743660074927,
-             }, 5.5),
+             }, 5.6),
             ({"defenseRating": 0.7029012701343438}, 3.5)
         ]
     )
@@ -538,7 +542,39 @@ class TestPlayer(TestBase):
             "hitStreak": 0,
             "consecutiveHits": 0,
             "leagueTeamId": None,
-            "tournamentTeamId": None
+            "tournamentTeamId": None,
+            "eDensity": 69.420,
+            "state": {},
+            "evolution": 0,
+            "items": [
+                {
+                    "id": "217ef5c6-9616-41fc-9f76-f34aa097e001",
+                    "name": "Bat",
+                    "forger": None,
+                    "forgerName": None,
+                    "prePrefix": None,
+                    "prefixes": None,
+                    "postPrefix": None,
+                    "root": {
+                        "name": "Bat",
+                        "adjustments": [
+                            {
+                                "stat": 2,
+                                "type": 1,
+                                "value": 0.14652311755001893
+                            }
+                        ]
+                    },
+                    "suffix": None,
+                    "durability": 1,
+                    "health": 1,
+                    "baserunningRating": 0,
+                    "pitchingRating": 0,
+                    "hittingRating": 0.07809707777020458,
+                    "defenseRating": 0
+                }
+            ],
+            "itemAttr": ["PERK"]
         })
 
     @pytest.fixture(scope="module")
