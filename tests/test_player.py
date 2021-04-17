@@ -22,6 +22,21 @@ class TestPlayer(TestBase):
         assert isinstance(player.defense_stars, float)
         assert isinstance(player.batting_rating, float)
 
+    def _test_get_stars_helper(self, func):
+        # Test Unrounded
+        h = func(round_stars=False)
+        assert isinstance(h, float)
+        # Test Rounded
+        h = func(round_stars=True)
+        assert isinstance(h, float)
+        assert h % 1 == 0 or h % 1 == pytest.approx(0.5)
+
+    def test_get_stars(self, player):
+        self._test_get_stars_helper(player.get_hitting_stars)
+        self._test_get_stars_helper(player.get_pitching_stars)
+        self._test_get_stars_helper(player.get_baserunning_stars)
+        self._test_get_stars_helper(player.get_defense_stars)
+
     def test_soulscream(self, player):
         """Test that soulscream does not error"""
         assert isinstance(player.soulscream, str)
@@ -148,7 +163,7 @@ class TestPlayer(TestBase):
                 "thwackability": 0.8205426223930614,
                 "tragicness": 0.6430174449715937,
                 "hittingRating": 0.8207859225196863,
-              }, 4.1),
+              }, 4.0),
             ({
                 "buoyancy": 0.7459549926271881,
                 "divinity": 0.8717479947208457,
@@ -158,8 +173,8 @@ class TestPlayer(TestBase):
                 "patheticism": 0.7536496111496631,
                 "thwackability": 0.16297075705096228,
                 "tragicness": 0.1
-              }, 2.2),
-            ({"hittingRating": 0.4418857228793549}, 2.2)
+              }, 2.0),
+            ({"hittingRating": 0.4418857228793549}, 2.0)
         ]
     )
     def test_batting_stars_bounded(self, player_data, batting_stars):
@@ -187,8 +202,8 @@ class TestPlayer(TestBase):
                 "shakespearianism": 0.46639012854296286,
                 "suppression": 0.7788206533699096,
                 "unthwackability": 0.5005800759342117,
-             }, 1.3),
-            ({"pitchingRating": 0.347389093695266}, 1.7)
+             }, 1.5),
+            ({"pitchingRating": 0.347389093695266}, 1.5)
         ]
     )
     def test_pitching_stars_bounded(self, player_data, pitching_stars):
@@ -213,8 +228,8 @@ class TestPlayer(TestBase):
                 "groundFriction": 0.7716682592684323,
                 "indulgence": 0.7430401523141731,
                 "laserlikeness": 0.6832443598880596,
-             }, 3.9),
-            ({"baserunningRating": 0.7571044674040147}, 3.8)
+             }, 4.0),
+            ({"baserunningRating": 0.7571044674040147}, 4.0)
         ]
     )
     def test_baserunning_stars_bounded(self, player_data, baserunning_stars):
@@ -239,7 +254,7 @@ class TestPlayer(TestBase):
                 "omniscience": 1.127326814384091,
                 "tenaciousness": 1.2246609654563683,
                 "watchfulness": 1.307743660074927,
-             }, 5.6),
+             }, 5.5),
             ({"defenseRating": 0.7029012701343438}, 3.5)
         ]
     )
