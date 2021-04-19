@@ -47,6 +47,12 @@ class Item(Base):
         return cls.load(id_)[0]
 
     @classmethod
+    def load_all(cls, count=None):
+        return {
+            x[&#34;entityId&#34;]: cls(x[&#34;data&#34;]) for x in chronicler.get_entities(&#34;item&#34;, count=count)
+        }
+
+    @classmethod
     def load_discipline(cls, *ids):
         &#34;&#34;&#34;Load Pre-S15 Era Items (Bat &amp; Armor slots)&#34;&#34;&#34;
         return [cls(item) for item in chronicler.get_old_items(list(ids))]
@@ -66,9 +72,24 @@ class Item(Base):
 
     @property
     def adjustments(self):
-        if getattr(self, &#34;root&#34;, None) is None:
-            return []
-        return self.root[&#34;adjustments&#34;]</code></pre>
+        &#34;&#34;&#34;Get list of all adjustments for this item&#34;&#34;&#34;
+        adjust_keys = (&#34;root&#34;, &#34;pre_prefix&#34;, &#34;post_prefix&#34;, &#34;suffix&#34;)
+        vals = []
+        for key in adjust_keys:
+            if getattr(self, key, None) is not None:
+                vals.extend(getattr(self, key, dict()).get(&#34;adjustments&#34;, []))
+
+        prefixes = getattr(self, &#34;prefixes&#34;, None)
+        if prefixes is not None:
+            for entry in prefixes:
+                vals.extend(entry.get(&#34;adjustments&#34;, []))
+        return vals
+
+    @property
+    def is_broken(self):
+        if getattr(self, &#34;health&#34;, None) is None:
+            return False
+        return self.health &lt;= 0</code></pre>
 </details>
 </section>
 <section>
@@ -106,6 +127,12 @@ class Item(Base):
         return cls.load(id_)[0]
 
     @classmethod
+    def load_all(cls, count=None):
+        return {
+            x[&#34;entityId&#34;]: cls(x[&#34;data&#34;]) for x in chronicler.get_entities(&#34;item&#34;, count=count)
+        }
+
+    @classmethod
     def load_discipline(cls, *ids):
         &#34;&#34;&#34;Load Pre-S15 Era Items (Bat &amp; Armor slots)&#34;&#34;&#34;
         return [cls(item) for item in chronicler.get_old_items(list(ids))]
@@ -125,9 +152,24 @@ class Item(Base):
 
     @property
     def adjustments(self):
-        if getattr(self, &#34;root&#34;, None) is None:
-            return []
-        return self.root[&#34;adjustments&#34;]</code></pre>
+        &#34;&#34;&#34;Get list of all adjustments for this item&#34;&#34;&#34;
+        adjust_keys = (&#34;root&#34;, &#34;pre_prefix&#34;, &#34;post_prefix&#34;, &#34;suffix&#34;)
+        vals = []
+        for key in adjust_keys:
+            if getattr(self, key, None) is not None:
+                vals.extend(getattr(self, key, dict()).get(&#34;adjustments&#34;, []))
+
+        prefixes = getattr(self, &#34;prefixes&#34;, None)
+        if prefixes is not None:
+            for entry in prefixes:
+                vals.extend(entry.get(&#34;adjustments&#34;, []))
+        return vals
+
+    @property
+    def is_broken(self):
+        if getattr(self, &#34;health&#34;, None) is None:
+            return False
+        return self.health &lt;= 0</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -148,6 +190,22 @@ class Item(Base):
 <pre><code class="python">@classmethod
 def load(cls, *ids):
     return [cls(item) for item in database.get_items(list(ids))]</code></pre>
+</details>
+</dd>
+<dt id="blaseball_mike.models.item.Item.load_all"><code class="name flex">
+<span>def <span class="ident">load_all</span></span>(<span>count=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def load_all(cls, count=None):
+    return {
+        x[&#34;entityId&#34;]: cls(x[&#34;data&#34;]) for x in chronicler.get_entities(&#34;item&#34;, count=count)
+    }</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.item.Item.load_discipline"><code class="name flex">
@@ -202,16 +260,25 @@ def load_one_discipline(cls, id_):
 <dl>
 <dt id="blaseball_mike.models.item.Item.adjustments"><code class="name">var <span class="ident">adjustments</span></code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get list of all adjustments for this item</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@property
 def adjustments(self):
-    if getattr(self, &#34;root&#34;, None) is None:
-        return []
-    return self.root[&#34;adjustments&#34;]</code></pre>
+    &#34;&#34;&#34;Get list of all adjustments for this item&#34;&#34;&#34;
+    adjust_keys = (&#34;root&#34;, &#34;pre_prefix&#34;, &#34;post_prefix&#34;, &#34;suffix&#34;)
+    vals = []
+    for key in adjust_keys:
+        if getattr(self, key, None) is not None:
+            vals.extend(getattr(self, key, dict()).get(&#34;adjustments&#34;, []))
+
+    prefixes = getattr(self, &#34;prefixes&#34;, None)
+    if prefixes is not None:
+        for entry in prefixes:
+            vals.extend(entry.get(&#34;adjustments&#34;, []))
+    return vals</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.item.Item.baserunning_rating"><code class="name">var <span class="ident">baserunning_rating</span></code></dt>
@@ -245,6 +312,20 @@ def adjustments(self):
 <dt id="blaseball_mike.models.item.Item.id"><code class="name">var <span class="ident">id</span></code></dt>
 <dd>
 <div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.item.Item.is_broken"><code class="name">var <span class="ident">is_broken</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_broken(self):
+    if getattr(self, &#34;health&#34;, None) is None:
+        return False
+    return self.health &lt;= 0</code></pre>
+</details>
 </dd>
 <dt id="blaseball_mike.models.item.Item.name"><code class="name">var <span class="ident">name</span></code></dt>
 <dd>
@@ -323,7 +404,9 @@ def attr(self):
 <li><code><a title="blaseball_mike.models.item.Item.health" href="#blaseball_mike.models.item.Item.health">health</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.hitting_rating" href="#blaseball_mike.models.item.Item.hitting_rating">hitting_rating</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.id" href="#blaseball_mike.models.item.Item.id">id</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.is_broken" href="#blaseball_mike.models.item.Item.is_broken">is_broken</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load" href="#blaseball_mike.models.item.Item.load">load</a></code></li>
+<li><code><a title="blaseball_mike.models.item.Item.load_all" href="#blaseball_mike.models.item.Item.load_all">load_all</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load_discipline" href="#blaseball_mike.models.item.Item.load_discipline">load_discipline</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load_one" href="#blaseball_mike.models.item.Item.load_one">load_one</a></code></li>
 <li><code><a title="blaseball_mike.models.item.Item.load_one_discipline" href="#blaseball_mike.models.item.Item.load_one_discipline">load_one_discipline</a></code></li>

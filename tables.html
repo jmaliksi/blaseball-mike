@@ -137,7 +137,48 @@ class DamageType(Enum):
     PEANUT_YUMMY = 29
     SUPER_PEANUT_YUMMY = 30
     SUPER_PEANUT_ALLERGIC = 31
-    REBIRTH = 32</code></pre>
+    REBIRTH = 32
+
+
+class AdjustmentType(Enum):
+    MOD = 0
+    STAT_CHANGE = 1
+    DURABILITY = 3
+
+
+class StatType(Enum):
+    TRAGICNESS = 0, &#34;tragicness&#34;
+    BUOYANCY = 1, &#34;buoyancy&#34;
+    THWACKABILITY = 2, &#34;thwackability&#34;
+    MOXIE = 3, &#34;moxie&#34;
+    DIVINITY = 4, &#34;divinity&#34;
+    MUSCLITUDE = 5, &#34;musclitude&#34;
+    PATHETICISM = 6, &#34;patheticism&#34;
+    MARTYRDOM = 7, &#34;martyrdom&#34;
+    CINNAMON = 8, &#34;cinnamon&#34;
+    BASE_THIRST = 9, &#34;base_thirst&#34;
+    LASERLIKENESS = 10, &#34;laserlikeness&#34;
+    CONTINUATION = 11, &#34;continuation&#34;
+    INDULGENCE = 12, &#34;indulgence&#34;
+    GROUND_FRICTION = 13, &#34;ground_friction&#34;
+    SHAKESPEARIANISM = 14, &#34;shakesperianism&#34;
+    SUPPRESSION = 15, &#34;suppression&#34;
+    UNTHWACKABILITY = 16, &#34;unthwackability&#34;
+    COLDNESS = 17, &#34;coldness&#34;
+    OVERPOWERMENT = 18, &#34;overpowerment&#34;
+    RUTHLESSNESS = 19, &#34;ruthlessness&#34;
+    PRESSURIZATION = 20, &#34;pressurization&#34;
+    OMNISCIENCE = 21, &#34;omniscience&#34;
+    TENACIOUSNESS = 22, &#34;tenaciousness&#34;
+    WATCHFULNESS = 23, &#34;watchfulness&#34;
+    ANTICAPITALISM = 24, &#34;anticapitalism&#34;
+    CHASINESS = 25, &#34;chasiness&#34;
+
+    def __new__(cls, keycode, stat_name):
+        obj = object.__new__(cls)
+        obj._value_ = keycode
+        obj.stat_name = stat_name
+        return obj</code></pre>
 </details>
 </section>
 <section>
@@ -149,6 +190,41 @@ class DamageType(Enum):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
+<dt id="blaseball_mike.tables.AdjustmentType"><code class="flex name class">
+<span>class <span class="ident">AdjustmentType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AdjustmentType(Enum):
+    MOD = 0
+    STAT_CHANGE = 1
+    DURABILITY = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.tables.AdjustmentType.DURABILITY"><code class="name">var <span class="ident">DURABILITY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.AdjustmentType.MOD"><code class="name">var <span class="ident">MOD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.AdjustmentType.STAT_CHANGE"><code class="name">var <span class="ident">STAT_CHANGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
 <dt id="blaseball_mike.tables.DamageType"><code class="flex name class">
 <span>class <span class="ident">DamageType</span></span>
 <span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
@@ -334,6 +410,162 @@ class DamageType(Enum):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.tables.DamageType.WALK"><code class="name">var <span class="ident">WALK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="blaseball_mike.tables.StatType"><code class="flex name class">
+<span>class <span class="ident">StatType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StatType(Enum):
+    TRAGICNESS = 0, &#34;tragicness&#34;
+    BUOYANCY = 1, &#34;buoyancy&#34;
+    THWACKABILITY = 2, &#34;thwackability&#34;
+    MOXIE = 3, &#34;moxie&#34;
+    DIVINITY = 4, &#34;divinity&#34;
+    MUSCLITUDE = 5, &#34;musclitude&#34;
+    PATHETICISM = 6, &#34;patheticism&#34;
+    MARTYRDOM = 7, &#34;martyrdom&#34;
+    CINNAMON = 8, &#34;cinnamon&#34;
+    BASE_THIRST = 9, &#34;base_thirst&#34;
+    LASERLIKENESS = 10, &#34;laserlikeness&#34;
+    CONTINUATION = 11, &#34;continuation&#34;
+    INDULGENCE = 12, &#34;indulgence&#34;
+    GROUND_FRICTION = 13, &#34;ground_friction&#34;
+    SHAKESPEARIANISM = 14, &#34;shakesperianism&#34;
+    SUPPRESSION = 15, &#34;suppression&#34;
+    UNTHWACKABILITY = 16, &#34;unthwackability&#34;
+    COLDNESS = 17, &#34;coldness&#34;
+    OVERPOWERMENT = 18, &#34;overpowerment&#34;
+    RUTHLESSNESS = 19, &#34;ruthlessness&#34;
+    PRESSURIZATION = 20, &#34;pressurization&#34;
+    OMNISCIENCE = 21, &#34;omniscience&#34;
+    TENACIOUSNESS = 22, &#34;tenaciousness&#34;
+    WATCHFULNESS = 23, &#34;watchfulness&#34;
+    ANTICAPITALISM = 24, &#34;anticapitalism&#34;
+    CHASINESS = 25, &#34;chasiness&#34;
+
+    def __new__(cls, keycode, stat_name):
+        obj = object.__new__(cls)
+        obj._value_ = keycode
+        obj.stat_name = stat_name
+        return obj</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.tables.StatType.ANTICAPITALISM"><code class="name">var <span class="ident">ANTICAPITALISM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.BASE_THIRST"><code class="name">var <span class="ident">BASE_THIRST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.BUOYANCY"><code class="name">var <span class="ident">BUOYANCY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.CHASINESS"><code class="name">var <span class="ident">CHASINESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.CINNAMON"><code class="name">var <span class="ident">CINNAMON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.COLDNESS"><code class="name">var <span class="ident">COLDNESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.CONTINUATION"><code class="name">var <span class="ident">CONTINUATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.DIVINITY"><code class="name">var <span class="ident">DIVINITY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.GROUND_FRICTION"><code class="name">var <span class="ident">GROUND_FRICTION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.INDULGENCE"><code class="name">var <span class="ident">INDULGENCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.LASERLIKENESS"><code class="name">var <span class="ident">LASERLIKENESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.MARTYRDOM"><code class="name">var <span class="ident">MARTYRDOM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.MOXIE"><code class="name">var <span class="ident">MOXIE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.MUSCLITUDE"><code class="name">var <span class="ident">MUSCLITUDE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.OMNISCIENCE"><code class="name">var <span class="ident">OMNISCIENCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.OVERPOWERMENT"><code class="name">var <span class="ident">OVERPOWERMENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.PATHETICISM"><code class="name">var <span class="ident">PATHETICISM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.PRESSURIZATION"><code class="name">var <span class="ident">PRESSURIZATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.RUTHLESSNESS"><code class="name">var <span class="ident">RUTHLESSNESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.SHAKESPEARIANISM"><code class="name">var <span class="ident">SHAKESPEARIANISM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.SUPPRESSION"><code class="name">var <span class="ident">SUPPRESSION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.TENACIOUSNESS"><code class="name">var <span class="ident">TENACIOUSNESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.THWACKABILITY"><code class="name">var <span class="ident">THWACKABILITY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.TRAGICNESS"><code class="name">var <span class="ident">TRAGICNESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.UNTHWACKABILITY"><code class="name">var <span class="ident">UNTHWACKABILITY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.StatType.WATCHFULNESS"><code class="name">var <span class="ident">WATCHFULNESS</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -630,6 +862,14 @@ class DamageType(Enum):
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
+<h4><code><a title="blaseball_mike.tables.AdjustmentType" href="#blaseball_mike.tables.AdjustmentType">AdjustmentType</a></code></h4>
+<ul class="">
+<li><code><a title="blaseball_mike.tables.AdjustmentType.DURABILITY" href="#blaseball_mike.tables.AdjustmentType.DURABILITY">DURABILITY</a></code></li>
+<li><code><a title="blaseball_mike.tables.AdjustmentType.MOD" href="#blaseball_mike.tables.AdjustmentType.MOD">MOD</a></code></li>
+<li><code><a title="blaseball_mike.tables.AdjustmentType.STAT_CHANGE" href="#blaseball_mike.tables.AdjustmentType.STAT_CHANGE">STAT_CHANGE</a></code></li>
+</ul>
+</li>
+<li>
 <h4><code><a title="blaseball_mike.tables.DamageType" href="#blaseball_mike.tables.DamageType">DamageType</a></code></h4>
 <ul class="">
 <li><code><a title="blaseball_mike.tables.DamageType.BALL" href="#blaseball_mike.tables.DamageType.BALL">BALL</a></code></li>
@@ -666,6 +906,37 @@ class DamageType(Enum):
 <li><code><a title="blaseball_mike.tables.DamageType.TRIPLE" href="#blaseball_mike.tables.DamageType.TRIPLE">TRIPLE</a></code></li>
 <li><code><a title="blaseball_mike.tables.DamageType.UNSHELLED" href="#blaseball_mike.tables.DamageType.UNSHELLED">UNSHELLED</a></code></li>
 <li><code><a title="blaseball_mike.tables.DamageType.WALK" href="#blaseball_mike.tables.DamageType.WALK">WALK</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="blaseball_mike.tables.StatType" href="#blaseball_mike.tables.StatType">StatType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="blaseball_mike.tables.StatType.ANTICAPITALISM" href="#blaseball_mike.tables.StatType.ANTICAPITALISM">ANTICAPITALISM</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.BASE_THIRST" href="#blaseball_mike.tables.StatType.BASE_THIRST">BASE_THIRST</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.BUOYANCY" href="#blaseball_mike.tables.StatType.BUOYANCY">BUOYANCY</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.CHASINESS" href="#blaseball_mike.tables.StatType.CHASINESS">CHASINESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.CINNAMON" href="#blaseball_mike.tables.StatType.CINNAMON">CINNAMON</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.COLDNESS" href="#blaseball_mike.tables.StatType.COLDNESS">COLDNESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.CONTINUATION" href="#blaseball_mike.tables.StatType.CONTINUATION">CONTINUATION</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.DIVINITY" href="#blaseball_mike.tables.StatType.DIVINITY">DIVINITY</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.GROUND_FRICTION" href="#blaseball_mike.tables.StatType.GROUND_FRICTION">GROUND_FRICTION</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.INDULGENCE" href="#blaseball_mike.tables.StatType.INDULGENCE">INDULGENCE</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.LASERLIKENESS" href="#blaseball_mike.tables.StatType.LASERLIKENESS">LASERLIKENESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.MARTYRDOM" href="#blaseball_mike.tables.StatType.MARTYRDOM">MARTYRDOM</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.MOXIE" href="#blaseball_mike.tables.StatType.MOXIE">MOXIE</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.MUSCLITUDE" href="#blaseball_mike.tables.StatType.MUSCLITUDE">MUSCLITUDE</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.OMNISCIENCE" href="#blaseball_mike.tables.StatType.OMNISCIENCE">OMNISCIENCE</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.OVERPOWERMENT" href="#blaseball_mike.tables.StatType.OVERPOWERMENT">OVERPOWERMENT</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.PATHETICISM" href="#blaseball_mike.tables.StatType.PATHETICISM">PATHETICISM</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.PRESSURIZATION" href="#blaseball_mike.tables.StatType.PRESSURIZATION">PRESSURIZATION</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.RUTHLESSNESS" href="#blaseball_mike.tables.StatType.RUTHLESSNESS">RUTHLESSNESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.SHAKESPEARIANISM" href="#blaseball_mike.tables.StatType.SHAKESPEARIANISM">SHAKESPEARIANISM</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.SUPPRESSION" href="#blaseball_mike.tables.StatType.SUPPRESSION">SUPPRESSION</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.TENACIOUSNESS" href="#blaseball_mike.tables.StatType.TENACIOUSNESS">TENACIOUSNESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.THWACKABILITY" href="#blaseball_mike.tables.StatType.THWACKABILITY">THWACKABILITY</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.TRAGICNESS" href="#blaseball_mike.tables.StatType.TRAGICNESS">TRAGICNESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.UNTHWACKABILITY" href="#blaseball_mike.tables.StatType.UNTHWACKABILITY">UNTHWACKABILITY</a></code></li>
+<li><code><a title="blaseball_mike.tables.StatType.WATCHFULNESS" href="#blaseball_mike.tables.StatType.WATCHFULNESS">WATCHFULNESS</a></code></li>
 </ul>
 </li>
 <li>
