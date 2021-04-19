@@ -1,6 +1,7 @@
 import math
 import random
 import uuid
+import warnings
 
 from dateutil.parser import parse
 
@@ -143,58 +144,120 @@ class Player(Base):
 
     @Base.lazy_load("_hitting_rating", use_default=False)
     def hitting_rating(self):
-        if getattr(self, "_hitting_rating", None):
+        if getattr(self, "_hitting_rating", None) is not None:
             return self._hitting_rating
         return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
                 ((self.thwackability * self.divinity) ** 0.35) *
                 ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))
 
+    def get_hitting_rating(self, include_items=True):
+        item_rating = 0
+        if include_items and getattr(self, "items", None) is not None:
+            item_rating = sum([x.hitting_rating for x in self.items])
+        return item_rating + self.hitting_rating
+
     batting_rating = hitting_rating
 
     @Base.lazy_load("_pitching_rating", use_default=False)
     def pitching_rating(self):
-        if getattr(self, "_pitching_rating", None):
+        if getattr(self, "_pitching_rating", None) is not None:
             return self._pitching_rating
         return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
                 (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))
 
+    def get_pitching_rating(self, include_items=True):
+        item_rating = 0
+        if include_items and getattr(self, "items", None) is not None:
+            item_rating = sum([x.pitching_rating for x in self.items])
+        return item_rating + self.pitching_rating
+
     @Base.lazy_load("_baserunning_rating", use_default=False)
     def baserunning_rating(self):
-        if getattr(self, "_baserunning_rating", None):
+        if getattr(self, "_baserunning_rating", None) is not None:
             return self._baserunning_rating
         return ((self.laserlikeness**0.5) *
                 ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))
 
+    def get_baserunning_rating(self, include_items=True):
+        item_rating = 0
+        if include_items and getattr(self, "items", None) is not None:
+            item_rating = sum([x.baserunning_rating for x in self.items])
+        return item_rating + self.baserunning_rating
+
     @Base.lazy_load("_defense_rating", use_default=False)
     def defense_rating(self):
-        if getattr(self, "_defense_rating", None):
+        if getattr(self, "_defense_rating", None) is not None:
             return self._defense_rating
         return (((self.omniscience * self.tenaciousness) ** 0.2) *
                 ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))
 
+    def get_defense_rating(self, include_items=True):
+        item_rating = 0
+        if include_items and getattr(self, "items", None) is not None:
+            item_rating = sum([x.defense_rating for x in self.items])
+        return item_rating + self.defense_rating
+
+    @staticmethod
+    def _rating_to_stars_discipline(val):
+        return 0.5 * (round(val * 10))
+
     @staticmethod
     def _rating_to_stars(val):
-        return 0.5 * (round(val * 10))
+        return round(val * 5, 1)
 
     @property
     def hitting_stars(self):
-        return self._rating_to_stars(self.hitting_rating)
+        warnings.warn("instead of .hitting_stars, use .get_hitting_stars()",
+                      DeprecationWarning, stacklevel=2)
+        return self._rating_to_stars_discipline(self.hitting_rating)
 
     @property
     def batting_stars(self):
+        warnings.warn("instead of .batting_stars, use .get_hitting_stars()",
+                      DeprecationWarning, stacklevel=2)
         return self.hitting_stars
 
     @property
     def pitching_stars(self):
-        return self._rating_to_stars(self.pitching_rating)
+        warnings.warn("instead of .pitching_stars, use .get_pitching_stars()",
+                      DeprecationWarning, stacklevel=2)
+        return self._rating_to_stars_discipline(self.pitching_rating)
 
     @property
     def baserunning_stars(self):
-        return self._rating_to_stars(self.baserunning_rating)
+        warnings.warn("instead of .baserunning_stars, use .get_baserunning_stars()",
+                      DeprecationWarning, stacklevel=2)
+        return self._rating_to_stars_discipline(self.baserunning_rating)
 
     @property
     def defense_stars(self):
-        return self._rating_to_stars(self.defense_rating)
+        warnings.warn("instead of .defense_stars, use .get_defense_stars()",
+                      DeprecationWarning, stacklevel=2)
+        return self._rating_to_stars_discipline(self.defense_rating)
+
+    def get_hitting_stars(self, include_items=True, round_stars=False):
+        rate = self.get_hitting_rating(include_items=include_items)
+        if round_stars:
+            return self._rating_to_stars_discipline(rate)
+        return self._rating_to_stars(rate)
+
+    def get_pitching_stars(self, include_items=True, round_stars=False):
+        rate = self.get_pitching_rating(include_items=include_items)
+        if round_stars:
+            return self._rating_to_stars_discipline(rate)
+        return self._rating_to_stars(rate)
+
+    def get_baserunning_stars(self, include_items=True, round_stars=False):
+        rate = self.get_baserunning_rating(include_items=include_items)
+        if round_stars:
+            return self._rating_to_stars_discipline(rate)
+        return self._rating_to_stars(rate)
+
+    def get_defense_stars(self, include_items=True, round_stars=False):
+        rate = self.get_defense_rating(include_items=include_items)
+        if round_stars:
+            return self._rating_to_stars_discipline(rate)
+        return self._rating_to_stars(rate)
 
     def get_vibe(self, day):
         """
@@ -275,6 +338,10 @@ class Player(Base):
     @Base.lazy_load("_game_attr_ids", cache_name="_game_attr", default_value=list())
     def game_attr(self):
         return Modification.load(*self._game_attr_ids)
+
+    @Base.lazy_load("_item_attr_ids", cache_name="_item_attr", default_value=list())
+    def item_attr(self):
+        return Modification.load(*self._item_attr_ids)
 
     @Base.lazy_load("_league_team_id", cache_name="_league_team")
     def league_team_id(self):

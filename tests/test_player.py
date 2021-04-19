@@ -22,6 +22,21 @@ class TestPlayer(TestBase):
         assert isinstance(player.defense_stars, float)
         assert isinstance(player.batting_rating, float)
 
+    def _test_get_stars_helper(self, func):
+        # Test Unrounded
+        h = func(round_stars=False)
+        assert isinstance(h, float)
+        # Test Rounded
+        h = func(round_stars=True)
+        assert isinstance(h, float)
+        assert h % 1 == 0 or h % 1 == pytest.approx(0.5)
+
+    def test_get_stars(self, player):
+        self._test_get_stars_helper(player.get_hitting_stars)
+        self._test_get_stars_helper(player.get_pitching_stars)
+        self._test_get_stars_helper(player.get_baserunning_stars)
+        self._test_get_stars_helper(player.get_defense_stars)
+
     def test_soulscream(self, player):
         """Test that soulscream does not error"""
         assert isinstance(player.soulscream, str)
@@ -67,6 +82,10 @@ class TestPlayer(TestBase):
 
         assert isinstance(player.game_attr, list)
         for attr in player.game_attr:
+            assert isinstance(attr, Modification)
+
+        assert isinstance(player.item_attr, list)
+        for attr in player.item_attr:
             assert isinstance(attr, Modification)
 
     @pytest.mark.vcr
@@ -538,7 +557,39 @@ class TestPlayer(TestBase):
             "hitStreak": 0,
             "consecutiveHits": 0,
             "leagueTeamId": None,
-            "tournamentTeamId": None
+            "tournamentTeamId": None,
+            "eDensity": 69.420,
+            "state": {},
+            "evolution": 0,
+            "items": [
+                {
+                    "id": "217ef5c6-9616-41fc-9f76-f34aa097e001",
+                    "name": "Bat",
+                    "forger": None,
+                    "forgerName": None,
+                    "prePrefix": None,
+                    "prefixes": None,
+                    "postPrefix": None,
+                    "root": {
+                        "name": "Bat",
+                        "adjustments": [
+                            {
+                                "stat": 2,
+                                "type": 1,
+                                "value": 0.14652311755001893
+                            }
+                        ]
+                    },
+                    "suffix": None,
+                    "durability": 1,
+                    "health": 1,
+                    "baserunningRating": 0,
+                    "pitchingRating": 0,
+                    "hittingRating": 0.07809707777020458,
+                    "defenseRating": 0
+                }
+            ],
+            "itemAttr": ["PERK"]
         })
 
     @pytest.fixture(scope="module")

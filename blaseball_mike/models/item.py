@@ -19,6 +19,12 @@ class Item(Base):
         return cls.load(id_)[0]
 
     @classmethod
+    def load_all(cls, count=None):
+        return {
+            x["entityId"]: cls(x["data"]) for x in chronicler.get_entities("item", count=count)
+        }
+
+    @classmethod
     def load_discipline(cls, *ids):
         """Load Pre-S15 Era Items (Bat & Armor slots)"""
         return [cls(item) for item in chronicler.get_old_items(list(ids))]
@@ -38,6 +44,21 @@ class Item(Base):
 
     @property
     def adjustments(self):
-        if getattr(self, "root", None) is None:
-            return []
-        return self.root["adjustments"]
+        """Get list of all adjustments for this item"""
+        adjust_keys = ("root", "pre_prefix", "post_prefix", "suffix")
+        vals = []
+        for key in adjust_keys:
+            if getattr(self, key, None) is not None:
+                vals.extend(getattr(self, key, dict()).get("adjustments", []))
+
+        prefixes = getattr(self, "prefixes", None)
+        if prefixes is not None:
+            for entry in prefixes:
+                vals.extend(entry.get("adjustments", []))
+        return vals
+
+    @property
+    def is_broken(self):
+        if getattr(self, "health", None) is None:
+            return False
+        return self.health <= 0
