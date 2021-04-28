@@ -428,3 +428,20 @@ def get_season_day_count(season, cache_time=5):
     res = s.get(f'{BASE_URL}/seasondaycount?season={season - 1}')
     return check_network_response(res)
 
+
+def get_team_election_stats(team_id, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/teamElectionStats?id={team_id}')
+    return check_network_response(res)
+
+
+def get_previous_champ(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/getPreviousChamp')
+    return check_network_response(res)
+
+
+def get_community_chest_progress(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/communityChestProgress')
+    return check_network_response(res)
