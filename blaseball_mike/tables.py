@@ -25,7 +25,7 @@ class Weather(Enum):
     FLOODING = 18, "Flooding"
     SALMON = 19, "Salmon"
     POLARITY_PLUS = 20, "Polarity +"
-    POLARITY_MINUS = 20, "Polarity -"
+    POLARITY_MINUS = 21, "Polarity -"
 
     @classmethod
     def _missing_(cls, value):
