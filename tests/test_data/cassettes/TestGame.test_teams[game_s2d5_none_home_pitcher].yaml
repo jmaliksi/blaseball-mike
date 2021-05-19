@@ -14,20 +14,60 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=b024e975-1c4a-4575-8936-a3754a08806a
   response:
     body:
-      string: '{"id":"b024e975-1c4a-4575-8936-a3754a08806a","lineup":["740d5fef-d59f-4dac-9a75-739ec07f91cf","e7ecf646-e5e4-49ef-a0e3-10a78e87f5f4","41bdb527-1fb2-487d-8237-093958e737e4","817dee99-9ccf-4f41-84e3-dc9773237bc8","1068f44b-34a0-42d8-a92e-2be748681a6f","17397256-c28c-4cad-85f2-a21768c66e67","733d80f1-2485-40f7-828b-fd7cd8243a01","97f5a9cd-72f0-413e-9e68-a6ee6a663489","b39b5aae-8571-4c90-887a-6a00f2a2f6fd","a1ed3396-114a-40bc-9ff0-54d7e1ad1718"],"rotation":["b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","6b8d128f-ed51-496d-a965-6614476f8256","82d1b7b4-ce00-4536-8631-a025f05150ce","042962c8-4d8b-44a6-b854-6ccef3d82716","3a96d76a-c508-45a0-94a0-8f64cd6beeb4"],"bullpen":["fdfd36c7-e0c1-4fce-98f7-921c3d17eafe","dd7e710f-da4e-475b-b870-2c29fe9d8c00","3f08f8cd-6418-447a-84d3-22a981c68f16","721fb947-7548-49ea-8cbe-7721b0ed49e0","c6bd21a8-7880-4c00-8abe-33560fe84ac5","4fe28bc1-f690-4ad6-ad09-1b2e984bf30b","ebf2da50-7711-46ba-9e49-341ce3487e00","d796d287-77ef-49f0-89ef-87bcdeb280ee"],"bench":["de52d5c0-cba4-4ace-8308-e2ed3f8799d0","13cfbadf-b048-4c4f-903d-f9b52616b15c","732899a3-2082-4d9f-b1c2-74c8b75e15fb","7d388846-8f4c-407f-aacb-b844d2561c5e"],"seasAttr":[],"permAttr":[],"fullName":"Dallas
+      string: '{"id":"b024e975-1c4a-4575-8936-a3754a08806a","lineup":["97f5a9cd-72f0-413e-9e68-a6ee6a663489","817dee99-9ccf-4f41-84e3-dc9773237bc8","2d07ccd0-cac7-4ccd-bab6-a078bb983174","cbd19e6f-3d08-4734-b23f-585330028665","c3dc7aa2-e27b-4859-bbf0-47ba66c03186","733d80f1-2485-40f7-828b-fd7cd8243a01","042962c8-4d8b-44a6-b854-6ccef3d82716","d35ccee1-9559-49a1-aaa4-7809f7b5c46e","b39b5aae-8571-4c90-887a-6a00f2a2f6fd"],"rotation":["b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","6b8d128f-ed51-496d-a965-6614476f8256","82d1b7b4-ce00-4536-8631-a025f05150ce","41bdb527-1fb2-487d-8237-093958e737e4","e4034192-4dc6-4901-bb30-07fe3cf77b5e"],"bullpen":["fdfd36c7-e0c1-4fce-98f7-921c3d17eafe","dd7e710f-da4e-475b-b870-2c29fe9d8c00","3f08f8cd-6418-447a-84d3-22a981c68f16","721fb947-7548-49ea-8cbe-7721b0ed49e0","c6bd21a8-7880-4c00-8abe-33560fe84ac5","4fe28bc1-f690-4ad6-ad09-1b2e984bf30b","ebf2da50-7711-46ba-9e49-341ce3487e00","d796d287-77ef-49f0-89ef-87bcdeb280ee"],"bench":["a1ed3396-114a-40bc-9ff0-54d7e1ad1718","de52d5c0-cba4-4ace-8308-e2ed3f8799d0","13cfbadf-b048-4c4f-903d-f9b52616b15c","e7ecf646-e5e4-49ef-a0e3-10a78e87f5f4","732899a3-2082-4d9f-b1c2-74c8b75e15fb","7d388846-8f4c-407f-aacb-b844d2561c5e","266abcc0-8abc-4570-b32e-e5668e5d38f3","35a99ff3-cf9e-4682-ba6e-0a6044aa3a4b","6fa08e08-6a95-4fbc-9d00-5c39c5302b60"],"seasAttr":[],"permAttr":["AAA"],"fullName":"Dallas
         Steaks","location":"Dallas","mainColor":"#8c8d8f","nickname":"Steaks","secondaryColor":"#b2b3b5","shorthand":"DAL","emoji":"0x1F969","slogan":"Well
-        Done.","shameRuns":0,"totalShames":51,"totalShamings":69,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":3,"tournamentWins":0,"stadium":"6bfd22e7-831d-4ba9-a9f9-2cf7ab00c39d","eDensity":1880.7770120289617,"state":{},"evolution":0,"winStreak":1,"level":5}'
+        Done.","shameRuns":0,"totalShames":63,"totalShamings":82,"seasonShames":5,"seasonShamings":1,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":3,"tournamentWins":0,"stadium":"6bfd22e7-831d-4ba9-a9f9-2cf7ab00c39d","eDensity":1440.4442823180086,"state":{"permModSources":{}},"evolution":0,"winStreak":-1,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1666'
+      - '1848'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:45 GMT
+      - Wed, 19 May 2021 20:49:11 GMT
       Etag:
-      - W/"682-14RExZdY0mn7DBeJ/pea2PTOeUs"
+      - W/"738-q0jOd2S3d9ATBtDWB80s/SmGA4w"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=7966eb04-efcc-499b-8f03-d13916330531
+  response:
+    body:
+      string: '{"id":"7966eb04-efcc-499b-8f03-d13916330531","lineup":["9a031b9a-16f8-4165-a468-5d0e28a81151","89ec77d8-c186-4027-bd45-f407b4800c2c","44c92d97-bb39-469d-a13b-f2dd9ae644d1","ea44bd36-65b4-4f3b-ac71-78d87a540b48","2ffbaec8-a646-4435-a17a-3a0a2b5f3e16","ac69dba3-6225-4afd-ab4b-23fc78f730fb","2c4b2a6d-9961-4e40-882c-a338f4e72117"],"rotation":["24f6829e-7bb4-4e1e-8b59-a07514657e72","51dab868-820b-4969-8bba-bde0be8090d7","09f2787a-3352-41a6-8810-d80e97b253b5","aa6c2662-75f8-4506-aa06-9a0993313216"],"bullpen":["17392be2-7344-48a0-b4db-8a040a7fb532","450e6483-d116-41d8-933b-1b541d5f0026","94f30f21-f889-4a2e-9b94-818475bb1ca0","1ded0384-d290-4ea1-a72b-4f9d220cbe37","82733eb4-103d-4be1-843e-6eb6df35ecd7","db53211c-f841-4f33-accf-0c3e167889a0","b77dffaa-e0f5-408f-b9f2-1894ed26e744","3205f4ff-7050-470b-8970-8d7ea56564bc"],"bench":["945974c5-17d9-43e7-92f6-ba49064bbc59","c6146c45-3d9b-4749-9f03-d4faae61e2c3","ac57cf28-556f-47af-9154-6bcea2ace9fc","1af239ae-7e12-42be-9120-feff90453c85","7b779947-46ef-4b77-be37-962d60875647","f617c1ef-d676-4119-8359-a5c3ac3bef51"],"seasAttr":[],"permAttr":["O_NO"],"fullName":"Yellowstone
+        Magic","location":"Yellowstone","mainColor":"#bf0043","nickname":"Magic","secondaryColor":"#f60f63","shorthand":"YELL","emoji":"0x2728","slogan":"As
+        Above, So Below","shameRuns":0,"totalShames":81,"totalShamings":84,"seasonShames":2,"seasonShamings":2,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":0,"tournamentWins":0,"stadium":"2a1a52b3-9759-44aa-ba49-b1437396d895","eDensity":1323.1600678514394,"state":{},"evolution":0,"winStreak":1,"level":3}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1611'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:49:12 GMT
+      Etag:
+      - W/"64b-/1mokVUV9vQqEuHWCtkASEML6fo"
       Server:
       - Cowboy
       Vary:

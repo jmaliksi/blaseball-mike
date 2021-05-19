@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=979aee4a-6d80-4863-bf1c-ee1a78e06024
   response:
     body:
-      string: '{"id":"979aee4a-6d80-4863-bf1c-ee1a78e06024","lineup":["9965eed5-086c-4977-9470-fe410f92d353","167751d5-210c-4a6e-9568-e92d61bab185","21cbbfaa-100e-48c5-9cea-7118b0d08a34","c675fcdf-6117-49a6-ac32-99a89a3a88aa","13a05157-6172-4431-947b-a058217b4aa5","4ecee7be-93e4-4f04-b114-6b333e0e6408","e4034192-4dc6-4901-bb30-07fe3cf77b5e","9ac2e7c5-5a34-4738-98d8-9f917bc6d119","7a75d626-d4fd-474f-a862-473138d8c376"],"rotation":["1ffb1153-909d-44c7-9df1-6ed3a9a45bbd","7b55d484-6ea9-4670-8145-986cb9e32412","973334aa-46d8-4415-912b-a5e267f7529b","3c331c87-1634-46c4-87ce-e4b9c59e2969","a5f8ce83-02b2-498c-9e48-533a1d81aebf"],"bullpen":["a2483925-697f-468f-931c-bcd0071394e5","527c1f6e-a7e4-4447-a824-703b662bae4e","62823073-84b8-46c2-8451-28fd10dff250","805ba480-df4d-4f56-a4cf-0b99959111b5","cd6b102e-1881-4079-9a37-455038bbf10e","3954bdfa-931f-4787-b9ac-f44b72fe09d7","ccc99f2f-2feb-4f32-a9b9-c289f619d84c","fbb5291c-2438-400e-ab32-30ce1259c600"],"bench":["03d06163-6f06-4817-abe5-0d14c3154236","960f041a-f795-4001-bd88-5ddcf58ee520","0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","4cd0ac8f-6c2e-4bf1-a232-a5ac6fd4a677","fc1d65f5-8916-41f1-b878-4d42a965b011","979e5105-cbe9-4f95-ad13-ce30c07f1fd5"],"seasAttr":[],"permAttr":["SINKING_SHIP"],"fullName":"Hawai''i
+      string: '{"id":"979aee4a-6d80-4863-bf1c-ee1a78e06024","lineup":["11de4da3-8208-43ff-a1ff-0b3480a0fbf1","80de2b05-e0d4-4d33-9297-9951b2b5c950","13a05157-6172-4431-947b-a058217b4aa5","167751d5-210c-4a6e-9568-e92d61bab185","c675fcdf-6117-49a6-ac32-99a89a3a88aa","7a75d626-d4fd-474f-a862-473138d8c376","12c4368d-478b-42be-b6d3-fa2e9b230f82"],"rotation":["5116921f-7642-441a-9a85-40c93a1e61bd","7b55d484-6ea9-4670-8145-986cb9e32412","21cbbfaa-100e-48c5-9cea-7118b0d08a34","973334aa-46d8-4415-912b-a5e267f7529b","3c331c87-1634-46c4-87ce-e4b9c59e2969","a5f8ce83-02b2-498c-9e48-533a1d81aebf"],"bullpen":["a2483925-697f-468f-931c-bcd0071394e5","527c1f6e-a7e4-4447-a824-703b662bae4e","62823073-84b8-46c2-8451-28fd10dff250","805ba480-df4d-4f56-a4cf-0b99959111b5","cd6b102e-1881-4079-9a37-455038bbf10e","3954bdfa-931f-4787-b9ac-f44b72fe09d7","ccc99f2f-2feb-4f32-a9b9-c289f619d84c","fbb5291c-2438-400e-ab32-30ce1259c600","36a9863c-bf69-4ddd-bbe0-6d64b0d00e8c","13cf5521-140f-4ad9-a998-ac8af22b9bc8"],"bench":["03d06163-6f06-4817-abe5-0d14c3154236","960f041a-f795-4001-bd88-5ddcf58ee520","0bd5a3ec-e14c-45bf-8283-7bc191ae53e4","4cd0ac8f-6c2e-4bf1-a232-a5ac6fd4a677","fc1d65f5-8916-41f1-b878-4d42a965b011","979e5105-cbe9-4f95-ad13-ce30c07f1fd5","4ecee7be-93e4-4f04-b114-6b333e0e6408"],"seasAttr":[],"permAttr":["SINKING_SHIP"],"fullName":"Hawai''i
         Fridays","location":"Hawai''i","mainColor":"#3ee652","nickname":"Fridays","secondaryColor":"#3ee652","shorthand":"HF","emoji":"0x1F3DD","slogan":"It''s
-        Island Time!","shameRuns":0,"totalShames":60,"totalShamings":58,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":1,"tournamentWins":0,"stadium":"e7431679-a45e-408f-92a8-a4db422c4925","eDensity":1711.7260561194598,"state":{},"evolution":0,"winStreak":3,"level":4}'
+        Island Time!","shameRuns":0,"totalShames":78,"totalShamings":80,"seasonShames":3,"seasonShamings":3,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":1,"tournamentWins":0,"stadium":"e7431679-a45e-408f-92a8-a4db422c4925","eDensity":1077.1696788054417,"state":{},"evolution":0,"winStreak":-3,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1729'
+      - '1809'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:31 GMT
+      - Wed, 19 May 2021 20:48:47 GMT
       Etag:
-      - W/"6c1-ZVgS+7WQIv1HkdYG27GimA8mo7A"
+      - W/"711-oRTM6hezwFsfI8dbWAJCBXr+aY4"
       Server:
       - Cowboy
       Vary:

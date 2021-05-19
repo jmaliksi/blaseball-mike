@@ -11,36 +11,6 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=6754f45d-52a6-4b2f-b63c-15dcd520f8cf&type=type
-  response:
-    body:
-      string: '{"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One
-        or more validation errors occurred.","status":400,"traceId":"|da91958b-45ccbf488f99117e.","errors":{"type":["The
-        value ''type'' is not valid."]}}'
-    headers:
-      Content-Length:
-      - '216'
-      Content-Type:
-      - application/problem+json; charset=utf-8
-      Date:
-      - Fri, 09 Apr 2021 23:27:22 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 400
-      message: Bad Request
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
     uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=6754f45d-52a6-4b2f-b63c-15dcd520f8cf&type=bossfight
   response:
     body:
@@ -55,7 +25,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:04:39 GMT
+      - Wed, 19 May 2021 20:49:01 GMT
       Server:
       - Kestrel
     status:

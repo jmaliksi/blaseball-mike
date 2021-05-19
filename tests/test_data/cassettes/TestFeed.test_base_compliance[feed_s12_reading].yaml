@@ -14,19 +14,19 @@ interactions:
     uri: https://www.blaseball.com/database/feed/global?limit=1
   response:
     body:
-      string: '[{"id":"e6f17fcf-d9ed-4430-8b2c-30593564fec4","playerTags":[],"teamTags":["57ec08cc-0411-4643-b304-0e80dbc15ac7","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["606166b9-2aef-47e8-aa4a-52f863880408"],"metadata":{"play":22,"subPlay":-1},"created":"2021-04-10T21:01:46.448Z","season":14,"tournament":-1,"type":8,"day":112,"phase":11,"category":0,"description":"Alston
-        Cerveza hit a ground out to Summers Preston.","nuts":0}]'
+      string: '[{"id":"fee7385a-cfcf-4927-a2e5-932871992873","playerTags":["f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e"],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7"],"gameTags":[],"metadata":{"mods":["OVERPERFORMING"],"type":3},"created":"2021-05-19T20:32:04.522Z","season":18,"tournament":-1,"type":108,"day":52,"phase":4,"category":1,"description":"Usurper
+        Violet''s game mods wore off.","nuts":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '427'
+      - '385'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:01:47 GMT
+      - Wed, 19 May 2021 20:48:52 GMT
       Etag:
-      - W/"1ab-KzGl/Dfnnqr5Ww35F1Z4Gi4/2OI"
+      - W/"181-Y/nNmY7p9o+vkmNM9GfRC5jZ27M"
       Server:
       - Cowboy
       Vary:

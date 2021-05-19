@@ -14,19 +14,19 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=94baa9ac-ff96-4f56-a987-10358e917d91
   response:
     body:
-      string: '[{"id":"94baa9ac-ff96-4f56-a987-10358e917d91","anticapitalism":1.3125260662257294,"baseThirst":0.8691635430775371,"buoyancy":0.5504108871773876,"chasiness":1.22782022095559,"coldness":0.7468400990190296,"continuation":1.2012411014326558,"divinity":1.2037599262692873,"groundFriction":1.2782068349542217,"indulgence":0.8411258034525376,"laserlikeness":0.9974747488480192,"martyrdom":1.456485908776825,"moxie":0.9453617649317319,"musclitude":1.1061130409986801,"name":"Gabriel
-        Griffith","bat":"","omniscience":1.4516319789482062,"overpowerment":0.6561265201618525,"patheticism":0.001,"ruthlessness":1.3277212200066852,"shakespearianism":0.6698546881977215,"suppression":0.6639616607877885,"tenaciousness":0.5708570291378802,"thwackability":0.9262970383060252,"tragicness":0.05495698097081463,"unthwackability":1.2171631235911462,"watchfulness":0.6253599012116235,"pressurization":0.3911165382493247,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.7185612810615092,"fate":87,"armor":"","ritual":"Counting","coffee":3,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":1.0103464802084638,"pitchingRating":1.1063538237278263,"hittingRating":1.0495552050787302,"defenseRating":0.9638602072541893,"leagueTeamId":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":36.910810013884465,"state":{},"evolution":0}]'
+      string: '[{"id":"94baa9ac-ff96-4f56-a987-10358e917d91","anticapitalism":1.4619121756891713,"baseThirst":0.9910480237205646,"buoyancy":0.6922095817760999,"chasiness":1.3742453860215043,"coldness":0.9194890432198906,"continuation":1.3710735320088796,"divinity":1.3472349300675743,"groundFriction":1.3955852453841346,"indulgence":0.9855768077137618,"laserlikeness":1.1126123550377198,"martyrdom":1.6090137189560736,"moxie":1.0462658559950004,"musclitude":1.2457689498132831,"name":"Gabriel
+        Griffith","omniscience":1.6141833314073986,"overpowerment":0.7884171692818239,"patheticism":0.001,"ruthlessness":1.4549338299610364,"shakespearianism":0.8066360929160863,"suppression":0.8143226457681721,"tenaciousness":0.6714574151327185,"thwackability":1.0366190573015852,"tragicness":0.001,"unthwackability":1.3195711939016639,"watchfulness":0.7640928399447102,"pressurization":0.3911165382493247,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.8427482793439653,"fate":87,"ritual":"Counting","coffee":3,"blood":11,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":1.1228769535830443,"pitchingRating":1.2578346379925192,"hittingRating":1.1574652836602848,"defenseRating":1.0607363128787826,"leagueTeamId":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":40.19239231680242,"state":{},"evolution":0,"items":[{"id":"428bfc00-946f-4c5c-bf26-0046cec45697","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.1412892627534375}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.053612483398630895,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1459'
+      - '1814'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:45 GMT
+      - Wed, 19 May 2021 20:49:12 GMT
       Etag:
-      - W/"5b3-0ITiK7QUoFjicjKEv2Lh8CIyv7g"
+      - W/"716-cvSYTIsdX4E7AjqZHoW3QaaUZiw"
       Server:
       - Cowboy
       Vary:

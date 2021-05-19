@@ -30,6 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-recording pytest-cov junit2html
+          echo "BLASEBALL_MIKE_NOCACHE=1" >> $GITHUB_ENV
       - name: Test with pytest
         run: |
           pytest tests --junitxml=results-${{ matrix.python-version }}.xml --cov=blaseball_mike --cov-report=html:cov-${{ matrix.python-version }}

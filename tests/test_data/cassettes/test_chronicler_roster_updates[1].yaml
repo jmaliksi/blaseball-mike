@@ -14,14 +14,14 @@ interactions:
     uri: https://api.sibr.dev/chronicler/v1/roster/updates?count=1
   response:
     body:
-      string: '{"nextPage":"HtsrANaZME-InTSfhUsjjGBMO2xFFgAA","data":[{"playerId":"bd4c6837-eeaa-4675-ae48-061efa0fd11a","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","position":"lineup","rosterIndex":6,"firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-08-25T19:00:28.211Z"}]}'
+      string: '{"nextPage":"HtsrANaZME-InTSfhUsjjGBMO2xFFgAA","data":[{"playerId":"03f920cc-411f-44ef-ae66-98a44e883291","teamId":"bfd38797-8404-4b38-8b82-341da28b1f83","position":"rotation","rosterIndex":3,"firstSeen":"2020-07-29T08:12:22.438Z","lastSeen":"2020-12-08T17:28:45.019353Z"}]}'
     headers:
       Content-Length:
-      - '269'
+      - '274'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:23:36 GMT
+      - Wed, 19 May 2021 20:47:11 GMT
       Server:
       - Kestrel
     status:

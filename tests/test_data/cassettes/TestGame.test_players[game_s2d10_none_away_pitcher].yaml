@@ -14,19 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=89ec77d8-c186-4027-bd45-f407b4800c2c
   response:
     body:
-      string: '[{"id":"89ec77d8-c186-4027-bd45-f407b4800c2c","anticapitalism":0.9025985785509185,"baseThirst":1.190029612403846,"buoyancy":1.2556745260032869,"chasiness":0.9848209971398874,"coldness":1.1777782999054442,"continuation":0.8039387587645803,"divinity":0.7309074298893101,"groundFriction":0.8224578496178949,"indulgence":1.130113150322562,"laserlikeness":0.5410764252182185,"martyrdom":1.2697684338477329,"moxie":0.8932900218682891,"musclitude":1.2002244267178848,"name":"James
-        Mora","bat":"","omniscience":1.0967065070653637,"overpowerment":0.9667930946461867,"patheticism":0.001,"ruthlessness":0.7111722401429681,"shakespearianism":1.2242466377856291,"suppression":1.4034149548715666,"tenaciousness":0.836203302205804,"thwackability":1.4068953085080174,"tragicness":0.001,"unthwackability":0.9018322966897173,"watchfulness":1.5042862238723613,"pressurization":0.5408376821510407,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.6142448000190904,"fate":72,"armor":"","ritual":"Pre-visualizing","coffee":3,"blood":2,"permAttr":["SUPERYUMMY"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.726994185551288,"pitchingRating":0.8447268959631368,"hittingRating":1.0199079943970664,"defenseRating":1.0118093818269216,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":31.224069204168888,"state":{},"evolution":0}]'
+      string: '[{"id":"89ec77d8-c186-4027-bd45-f407b4800c2c","anticapitalism":0.9381683048947919,"baseThirst":1.327560355632732,"buoyancy":1.1807221839562398,"chasiness":1.0204271182457616,"coldness":1.217541747971943,"continuation":0.8295247831250177,"divinity":0.6511250567585851,"groundFriction":0.8514531675227128,"indulgence":1.1673258271098004,"laserlikeness":0.5681229372328557,"martyrdom":1.2072688393178794,"moxie":0.8233172875798789,"musclitude":1.1268218737302946,"name":"James
+        Mora","omniscience":1.127505364444333,"overpowerment":0.9899617971348622,"patheticism":0.06807361947924716,"ruthlessness":0.740556878627597,"shakespearianism":1.26223638022364,"suppression":1.4412253597471603,"tenaciousness":0.8705996929547543,"thwackability":1.3432797255511832,"tragicness":0.08027972233240355,"unthwackability":0.9407807848433931,"watchfulness":1.5259262341110684,"pressurization":0.5408376821510407,"totalFingers":12,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.6523211457152746,"fate":72,"ritual":"Pre-visualizing","coffee":3,"blood":2,"permAttr":["EGO2"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":2,"baserunningRating":0.7605798436925018,"pitchingRating":0.8834083878401474,"hittingRating":0.9482857171106296,"defenseRating":1.0347776838284413,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":48.38936142730204,"state":{"permModSources":{}},"evolution":0,"items":[{"id":"43f6e65b-ff62-4fc7-8093-39a457521e88","name":"Metaphorical
+        Shoes of Dexterity","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Metaphorical","adjustments":[{"stat":14,"type":1,"value":0.22884423343966645},{"stat":23,"type":1,"value":0.39385630024641705},{"stat":25,"type":1,"value":0.273851460052581},{"stat":11,"type":1,"value":-0.15552899372399448}]}],"postPrefix":null,"root":{"name":"Shoes","adjustments":[{"stat":10,"type":1,"value":0.19604395411914333}]},"suffix":{"name":"Dexterity","adjustments":[{"stat":2,"type":1,"value":0.12962039378887014},{"stat":21,"type":1,"value":0.19636008086101886},{"stat":11,"type":1,"value":0.10894499624207601}]},"durability":3,"health":3,"baserunningRating":0.11643655470516845,"pitchingRating":0.014842306444140752,"hittingRating":0.031072569749336476,"defenseRating":0.08488840983928037}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1456'
+      - '2358'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:46 GMT
+      - Wed, 19 May 2021 20:49:13 GMT
       Etag:
-      - W/"5b0-vTUYTNWIVtzGRPYlZKPHUgIINAE"
+      - W/"936-p1adaLFwcMPpnalvIN4LlDCmGMM"
       Server:
       - Cowboy
       Vary:

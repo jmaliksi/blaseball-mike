@@ -15,19 +15,19 @@ interactions:
   response:
     body:
       string: '[{"id":"b467582b-5c91-4869-b6c9-2ef0bd0276fe","playerTags":[],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":["ebcf203e-6ce7-4d64-8f3e-a78b373c70ff"],"metadata":{"play":457,"subPlay":-1},"created":"2021-03-03T01:39:33.753Z","season":11,"tournament":-1,"type":6,"day":32,"phase":4,"category":0,"description":"Howell
-        Franklin strikes out swinging."},{"id":"1985bf31-59dc-4166-8de3-b74fc2d9834b","playerTags":["020ed630-8bae-4441-95cc-0e4ecc27253b"],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":["ebcf203e-6ce7-4d64-8f3e-a78b373c70ff"],"metadata":{"play":456,"subPlay":-1},"created":"2021-03-03T01:39:28.726Z","season":11,"tournament":-1,"type":4,"day":32,"phase":4,"category":0,"description":"Simon
-        Haley steals second base!"}]'
+        Franklin strikes out swinging.","nuts":0},{"id":"1985bf31-59dc-4166-8de3-b74fc2d9834b","playerTags":["020ed630-8bae-4441-95cc-0e4ecc27253b"],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":["ebcf203e-6ce7-4d64-8f3e-a78b373c70ff"],"metadata":{"play":456,"subPlay":-1},"created":"2021-03-03T01:39:28.726Z","season":11,"tournament":-1,"type":4,"day":32,"phase":4,"category":0,"description":"Simon
+        Haley steals second base!","nuts":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '837'
+      - '855'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:36 GMT
+      - Wed, 19 May 2021 20:48:55 GMT
       Etag:
-      - W/"345-4oLCEJ5oKCXSMbV85m11UN08Qx8"
+      - W/"357-Rp1EPkufLS8Y+8oTO+wij9vOXjE"
       Server:
       - Cowboy
       Vary:

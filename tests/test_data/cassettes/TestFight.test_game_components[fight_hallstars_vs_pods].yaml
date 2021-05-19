@@ -11,22 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=9820f2c5-f9da-4a07-b610-c2dd7bee2ef6
+    uri: https://www.blaseball.com/database/players?ids=04e14d7b-5021-4250-a3cd-932ba8e0a889
   response:
     body:
-      string: '[{"id":"9820f2c5-f9da-4a07-b610-c2dd7bee2ef6","anticapitalism":0.5747027789465087,"baseThirst":0.5879518268467725,"buoyancy":0.43737207119273214,"chasiness":0.882258026211806,"coldness":0.859937777547209,"continuation":0.16626119856554214,"divinity":0.19285780267249167,"groundFriction":0.6243508373758799,"indulgence":0.6561796361421,"laserlikeness":0.9020022288570054,"martyrdom":0.4625331921712331,"moxie":0.4353004466461374,"musclitude":1.0249638419569076,"name":"Peanut
-        Bong","bat":"","omniscience":0.4035296577205742,"overpowerment":0.29218115098094427,"patheticism":0.27425074697285423,"ruthlessness":0.4800578898360422,"shakespearianism":0.39214808453596806,"suppression":0.45136000151476763,"tenaciousness":0.24337932563649212,"thwackability":0.14727286740376866,"tragicness":0.060119020684301715,"unthwackability":0.1376800436411834,"watchfulness":0.41890323595884876,"pressurization":0.36431831294345723,"totalFingers":11,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.9784207878787687,"fate":96,"armor":"","ritual":"Philosophy","coffee":2,"blood":8,"permAttr":["HONEY_ROASTED","EGO1"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6884338482387268,"pitchingRating":0.20869279571691118,"hittingRating":0.2620965026158201,"defenseRating":0.5384521203906321,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":22.38372686873463,"state":{},"evolution":0}]'
+      string: '[{"id":"04e14d7b-5021-4250-a3cd-932ba8e0a889","anticapitalism":0.7579125076813477,"baseThirst":0.9138717471111988,"buoyancy":0.8139739152565941,"chasiness":0.6425685639642748,"coldness":1.0207417287032843,"continuation":0.25947637542848023,"divinity":0.22428748352137096,"groundFriction":0.770728959584441,"indulgence":0.2019189888420712,"laserlikeness":0.34549915191875336,"martyrdom":0.7890125368271776,"moxie":0.2995642708831702,"musclitude":0.3323669701905568,"name":"Jaylen
+        Hotdogfingers","omniscience":0.2344238745342441,"overpowerment":0.8822102943572936,"patheticism":0.6723231257582852,"ruthlessness":1.068898261988882,"shakespearianism":0.6864284406054754,"suppression":1.0090975948365617,"tenaciousness":0.28824831431030795,"thwackability":0.8907584198420715,"tragicness":0.0058871665776719095,"unthwackability":0.931925742445267,"watchfulness":0.11993931232922381,"pressurization":0.3628148179494586,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.42054605886376656,"fate":11,"ritual":"Checking
+        their pulse","coffee":8,"blood":2,"permAttr":["WILD","FRIEND_OF_CROWS","SQUIDDISH","DOUBLE_PAYOUTS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.42260018637278063,"pitchingRating":0.9375262670559341,"hittingRating":0.4505512053887136,"defenseRating":0.4391407442058166,"leagueTeamId":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","tournamentTeamId":"e8f7ffee-ec53-4fe0-8e87-ea8ff1d0b4a9","eDensity":21.748728821162715,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1500'
+      - '1554'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:39 GMT
+      - Wed, 19 May 2021 20:49:01 GMT
       Etag:
-      - W/"5dc-WtIVuQ9UKJIOzkQXpyF+fPQaCVc"
+      - W/"612-U0uf8uXiBse+fuGIm7rO/Ol8xBc"
       Server:
       - Cowboy
       Vary:
@@ -50,23 +51,22 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=04e14d7b-5021-4250-a3cd-932ba8e0a889
+    uri: https://www.blaseball.com/database/players?ids=9820f2c5-f9da-4a07-b610-c2dd7bee2ef6
   response:
     body:
-      string: '[{"id":"04e14d7b-5021-4250-a3cd-932ba8e0a889","anticapitalism":0.8579125076813476,"baseThirst":0.9138717471111988,"buoyancy":0.8139739152565941,"chasiness":0.7425685639642747,"coldness":1.0207417287032843,"continuation":0.25947637542848023,"divinity":0.22428748352137096,"groundFriction":0.770728959584441,"indulgence":0.2019189888420712,"laserlikeness":0.34549915191875336,"martyrdom":0.7890125368271776,"moxie":0.2995642708831702,"musclitude":0.3323669701905568,"name":"Jaylen
-        Hotdogfingers","omniscience":0.3344238745342441,"overpowerment":0.8822102943572936,"patheticism":0.6723231257582852,"ruthlessness":1.068898261988882,"shakespearianism":0.6864284406054754,"suppression":1.0090975948365617,"tenaciousness":0.388248314310308,"thwackability":0.8907584198420715,"tragicness":0.0058871665776719095,"unthwackability":0.931925742445267,"watchfulness":0.2199393123292238,"pressurization":0.3628148179494586,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.42054605886376656,"fate":39,"ritual":"Checking
-        their pulse","coffee":8,"blood":2,"permAttr":["WILD","FRIEND_OF_CROWS","FLIICKERRRIIING","SQUIDDISH"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.42260018637278063,"pitchingRating":0.9375262670559341,"hittingRating":0.4505512053887136,"defenseRating":0.5461722275423495,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":"e8f7ffee-ec53-4fe0-8e87-ea8ff1d0b4a9","eDensity":22.497949204518445,"state":{},"evolution":0,"items":[]}]'
+      string: '[{"id":"9820f2c5-f9da-4a07-b610-c2dd7bee2ef6","anticapitalism":0.5747027789465087,"baseThirst":0.5879518268467725,"buoyancy":0.43737207119273214,"chasiness":0.882258026211806,"coldness":0.859937777547209,"continuation":0.16626119856554214,"divinity":0.19285780267249167,"groundFriction":0.6243508373758799,"indulgence":0.6561796361421,"laserlikeness":0.9020022288570054,"martyrdom":0.4625331921712331,"moxie":0.4353004466461374,"musclitude":1.0249638419569076,"name":"Peanut
+        Bong","omniscience":0.4035296577205742,"overpowerment":0.29218115098094427,"patheticism":0.27425074697285423,"ruthlessness":0.4800578898360422,"shakespearianism":0.39214808453596806,"suppression":0.45136000151476763,"tenaciousness":0.24337932563649212,"thwackability":0.14727286740376866,"tragicness":0.060119020684301715,"unthwackability":0.1376800436411834,"watchfulness":0.41890323595884876,"pressurization":0.36431831294345723,"totalFingers":11,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":0.9784207878787687,"fate":96,"ritual":"Philosophy","coffee":2,"blood":8,"permAttr":["HONEY_ROASTED","EGO1"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6884338482387268,"pitchingRating":0.20869279571691118,"hittingRating":0.2620965026158201,"defenseRating":0.5384521203906321,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":22.38372686873463,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1538'
+      - '1505'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:01:49 GMT
+      - Wed, 19 May 2021 20:49:01 GMT
       Etag:
-      - W/"602-Sg/R2A2rCj2v0XZqw5HxZRKBlfA"
+      - W/"5e1-UZ74d/zOR6rQ2/c/w5QB5J+OXpw"
       Server:
       - Cowboy
       Vary:
@@ -95,18 +95,18 @@ interactions:
     body:
       string: '[{"id":"3af96a6b-866c-4b03-bc14-090acf6ecee5","anticapitalism":0.3469603430006694,"baseThirst":0.8690630598490787,"buoyancy":0.7238111435577803,"chasiness":1.1960269313923606,"coldness":1.6193007577226046,"continuation":0.4662266760068119,"divinity":0.35225361197729477,"groundFriction":0.8818945269381331,"indulgence":0.5716817401125811,"laserlikeness":0.2671708033089475,"martyrdom":0.439620087639228,"moxie":0.7096743624281436,"musclitude":0.48202652712292604,"name":"Axel
         Trololol","omniscience":0.8047442441120651,"overpowerment":1.229625071185445,"patheticism":0.19205201434874186,"ruthlessness":0.9518058456763223,"shakespearianism":1.160939803685265,"suppression":1.6862234401221348,"tenaciousness":0.9251061606086934,"thwackability":0.5944207199679405,"tragicness":0.1,"unthwackability":1.3087018521578744,"watchfulness":1.05833337358486,"pressurization":0.3729562413771852,"totalFingers":66,"soul":2,"deceased":false,"peanutAllergy":true,"cinnamon":0.09111023582618527,"fate":12,"ritual":"Remembering
-        past lives","coffee":8,"blood":8,"permAttr":["HONEY_ROASTED","SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["LIBERATED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.44097750491701937,"pitchingRating":1.188556332333526,"hittingRating":0.5189974069440935,"defenseRating":0.8682288631869919,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[]}]'
+        past lives","coffee":8,"blood":8,"permAttr":["HONEY_ROASTED","SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["LIBERATED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.44097750491701937,"pitchingRating":1.188556332333526,"hittingRating":0.5189974069440935,"defenseRating":0.8682288631869919,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1455'
+      - '1469'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:06:00 GMT
+      - Wed, 19 May 2021 20:49:01 GMT
       Etag:
-      - W/"5af-HyF8o6OlFL+lin0g5sfBiIqffsw"
+      - W/"5bd-LFq0TKqmhE/q60TPLGL/H2tMdBE"
       Server:
       - Cowboy
       Vary:

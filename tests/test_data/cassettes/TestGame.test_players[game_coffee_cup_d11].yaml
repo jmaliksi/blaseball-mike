@@ -14,19 +14,19 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=73265ee3-bb35-40d1-b696-1f241a6f5966
   response:
     body:
-      string: '[{"id":"73265ee3-bb35-40d1-b696-1f241a6f5966","anticapitalism":0.6970424063026017,"baseThirst":0.5813538396820958,"buoyancy":0.9371854495279643,"chasiness":0.595290940921901,"coldness":1.0426907687901772,"continuation":0.34240198528379795,"divinity":0.15331239510323016,"groundFriction":1.0599164987772507,"indulgence":0.5220780793107824,"laserlikeness":0.33138080606431924,"martyrdom":0.4169920255343835,"moxie":0.42600458004596475,"musclitude":0.14556018002450738,"name":"Parker
-        Meng","bat":"","omniscience":0.35970985618596,"overpowerment":0.6672730992548463,"patheticism":0.6238825986795812,"ruthlessness":0.9510617373377305,"shakespearianism":0.8084109923932342,"suppression":0.735721114019327,"tenaciousness":0.5107959658367092,"thwackability":1.077086583818663,"tragicness":0.04011225247384004,"unthwackability":0.8716956931662337,"watchfulness":0.9639019919335599,"pressurization":0.6735110277965328,"totalFingers":11,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.42843706358284445,"fate":38,"armor":"","ritual":"Showtunes","coffee":7,"blood":9,"permAttr":["ALTERNATE","PERK","MINIMALIST"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.4617023319241731,"pitchingRating":0.8439730634955874,"hittingRating":0.40426389349942154,"defenseRating":0.650192707900268,"leagueTeamId":"b72f3061-f573-40d7-832a-5ad475bd7909","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":58.520923977736146,"state":{},"evolution":0}]'
+      string: '[{"id":"73265ee3-bb35-40d1-b696-1f241a6f5966","anticapitalism":0.8186629072314737,"baseThirst":0.6712488720527097,"buoyancy":0.9132840631674503,"chasiness":0.6869739211548501,"coldness":1.1212093556955107,"continuation":0.41680858511809055,"divinity":0.1402538177383512,"groundFriction":1.153312501046977,"indulgence":0.6300727399479434,"laserlikeness":0.3996086586271152,"martyrdom":0.38548904791124644,"moxie":0.43758476174467986,"musclitude":0.15307656321819235,"name":"Parker
+        Meng","omniscience":0.4351356490782061,"overpowerment":0.7548883040923156,"patheticism":0.6476330133118593,"ruthlessness":1.009855284010923,"shakespearianism":0.9160617229032002,"suppression":0.8208706568470774,"tenaciousness":0.596871483828493,"thwackability":1.0559209552508084,"tragicness":0.03290057565727623,"unthwackability":0.9577337234665514,"watchfulness":1.0504131062605175,"pressurization":0.6735110277965328,"totalFingers":11,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.5173776534720199,"fate":38,"ritual":"Showtunes","coffee":7,"blood":9,"permAttr":["ALTERNATE","PERK","MINIMALIST"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5390551957059843,"pitchingRating":0.9363605172570346,"hittingRating":0.38955040919291406,"defenseRating":0.7245054365597038,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":60.12630091100945,"state":{},"evolution":0,"items":[{"id":"0dfcdd1d-9155-477e-bde2-52dd4ce68adf","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.12172791374285906}]},"suffix":null,"durability":1,"health":0,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.015437521971387091,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1501'
+      - '1870'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:11 GMT
       Etag:
-      - W/"5dd-p1isOgUOFxcrZTIGAa/h3XVCy7Y"
+      - W/"74e-xmBvLAJCaxsQnmE8Jru5W0QYVvU"
       Server:
       - Cowboy
       Vary:
@@ -53,20 +53,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=03b80a57-77ea-4913-9be4-7a85c3594745
   response:
     body:
-      string: '[{"id":"03b80a57-77ea-4913-9be4-7a85c3594745","anticapitalism":0.9788040639619886,"baseThirst":0.9379915727391607,"buoyancy":0.9668963500797747,"chasiness":1.0478614042118213,"coldness":0.09333126846448253,"continuation":0.6005855381917817,"divinity":0.676493565404793,"groundFriction":0.42418181476605227,"indulgence":0.4981829377708143,"laserlikeness":0.1398149056751775,"martyrdom":0.8065515642003706,"moxie":1.0645920142334602,"musclitude":0.5634548606495073,"name":"Halexandrey
-        Walton","bat":"","omniscience":0.7399105624901392,"overpowerment":0.24304377748932957,"patheticism":0.2651072017604062,"ruthlessness":0.6679208686152567,"shakespearianism":0.4321630091742787,"suppression":0.5610815281922478,"tenaciousness":0.8630884664850962,"thwackability":0.3752322307204814,"tragicness":0.4583244509680453,"unthwackability":0.1306555713463299,"watchfulness":0.15449406095350154,"pressurization":0.9530000539694095,"totalFingers":14,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.40254352740656274,"fate":43,"armor":"","ritual":"Essential
-        oils","coffee":7,"blood":9,"permAttr":["SIPHON","PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.30223740184670495,"pitchingRating":0.21558676022761591,"hittingRating":0.5804057971094241,"defenseRating":0.7603928906758971,"leagueTeamId":"878c1bf6-0d21-4659-bfee-916c8314d69c","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":57.020196263427486,"state":{},"evolution":1}]'
+      string: '[{"id":"03b80a57-77ea-4913-9be4-7a85c3594745","anticapitalism":1.298994701133188,"baseThirst":1.017426164350774,"buoyancy":1.185278502130232,"chasiness":1.3273272477673035,"coldness":0.2597018110461265,"continuation":0.6942872627767784,"divinity":0.8759147135915886,"groundFriction":0.5487155779749634,"indulgence":0.5761414007754112,"laserlikeness":0.223878653446181,"martyrdom":1.001329997154793,"moxie":1.2264062040703483,"musclitude":0.7653971547249563,"name":"H-lex----ey
+        W-lto-","omniscience":1.003231590752587,"overpowerment":0.42598866674757563,"patheticism":0.10308660619243709,"ruthlessness":0.8451565127306644,"shakespearianism":0.650416882227206,"suppression":0.7234375358732559,"tenaciousness":1.1564234073975743,"thwackability":0.5482806439983052,"tragicness":0.24647766686596062,"unthwackability":0.3338188465451724,"watchfulness":0.4828302024630048,"pressurization":0.9530000539694095,"totalFingers":14,"soul":6,"deceased":false,"peanutAllergy":false,"cinnamon":0.5889800762283259,"fate":43,"ritual":"Essential
+        oils","coffee":7,"blood":9,"permAttr":["SIPHON","PERK","SCATTERED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":2,"baserunningRating":0.40728478880375246,"pitchingRating":0.4401706133243607,"hittingRating":0.7636102995756183,"defenseRating":1.0114434269163641,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":56.357563900340665,"state":{"unscatteredName":"Halexandrey
+        Walton"},"evolution":1,"items":[{"id":"f75164ba-8467-4705-82d0-a304b8713682","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.17879948457159522}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.07928678931474409,"defenseRating":0},{"id":"d1e34162-bd5f-436e-9e5b-acbc30bedbab","name":"Shoes","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Shoes","adjustments":[{"stat":10,"type":1,"value":0.1582446233712125}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0.12269831690492505,"pitchingRating":0,"hittingRating":0,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1501'
+      - '2277'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:11 GMT
       Etag:
-      - W/"5dd-8zX3IvnfZ19s0vQHEnGfrjLRS7w"
+      - W/"8e5-3CaWm3UWVhsi7yoCgewku8eyEOI"
       Server:
       - Cowboy
       Vary:
@@ -93,19 +94,19 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=6a567da6-7c96-44d3-85de-e5a08a919250
   response:
     body:
-      string: '[{"id":"6a567da6-7c96-44d3-85de-e5a08a919250","anticapitalism":0.4430187048515899,"baseThirst":0.04333947064370454,"buoyancy":0.03177342986835714,"chasiness":0.4279756871978326,"coldness":0.8596213172359595,"continuation":0.03982278363037649,"divinity":0.2565998875167822,"groundFriction":0.04816055698526844,"indulgence":0.02438008623223758,"laserlikeness":0.38431743943182894,"martyrdom":0.020145517894756763,"moxie":0.7102306482058462,"musclitude":0.49271116107844254,"name":"Cudi
-        Di Batterino","bat":"","omniscience":0.6382659416027248,"overpowerment":0.8506444001244045,"patheticism":0.2777734538084016,"ruthlessness":0.5990000221432318,"shakespearianism":0.2696928263596721,"suppression":0.25982317745951056,"tenaciousness":0.618341391591808,"thwackability":0.42686944580410346,"tragicness":0.205850075058968,"unthwackability":0.6412631251023512,"watchfulness":0.23625177040716008,"pressurization":0.5666869411772861,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":true,"cinnamon":0.4712066218331955,"fate":90,"armor":"","ritual":"Powerlifting","coffee":10,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.16711646542759487,"pitchingRating":0.5564109842858096,"hittingRating":0.3869534187017801,"defenseRating":0.6086499928130533,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"a3ea6358-ce03-4f23-85f9-deb38cb81b20","eDensity":20.033916028597666,"state":{},"evolution":0}]'
+      string: '[{"id":"6a567da6-7c96-44d3-85de-e5a08a919250","anticapitalism":0.5046396122513825,"baseThirst":0.09404813562004519,"buoyancy":0.04913858662834678,"chasiness":0.4760997374532745,"coldness":1.245920791550027,"continuation":0.08065359407232411,"divinity":0.28043789241574296,"groundFriction":0.09679858523041066,"indulgence":0.08962849252995125,"laserlikeness":0.4496192938288901,"martyrdom":0.020444804750182205,"moxie":0.7035815651977222,"musclitude":0.48725541540263406,"name":"Cudi
+        Di Batterino","omniscience":0.7168379875046842,"overpowerment":1.3083381729213897,"patheticism":0.30591887246262367,"ruthlessness":0.9544926172088498,"shakespearianism":0.5813261435422021,"suppression":0.5834957731800635,"tenaciousness":0.6599639318936384,"thwackability":0.40114891035780664,"tragicness":0.20671243841495882,"unthwackability":0.9649827193706764,"watchfulness":0.29302644193001764,"pressurization":0.5666869411772861,"totalFingers":11,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.5327308756258482,"fate":90,"ritual":"Powerlifting","coffee":10,"blood":12,"permAttr":["INTUITIVE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2560067235174989,"pitchingRating":0.9561060047203164,"hittingRating":0.3893199160690805,"defenseRating":0.6603084451413267,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"a3ea6358-ce03-4f23-85f9-deb38cb81b20","eDensity":23.832187626137557,"state":{},"evolution":0,"items":[{"id":"b2fb6d7a-c9e0-455f-b8ff-8e011d03339e","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.1224763776684748}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.03789330753838027,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1490'
+      - '1869'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:11 GMT
       Etag:
-      - W/"5d2-jsRbKKvmAlDlJBMZTOppUomy7m0"
+      - W/"74d-8G/LaRbby8MIlKPDJkwSYpCpDsU"
       Server:
       - Cowboy
       Vary:
@@ -132,20 +133,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=a7d8196a-ca6b-4dab-a9d7-c27f3e86cc21
   response:
     body:
-      string: '[{"id":"a7d8196a-ca6b-4dab-a9d7-c27f3e86cc21","anticapitalism":0.3493684176238053,"baseThirst":0.780688835734565,"buoyancy":0.7676879619008992,"chasiness":0.9854494509627565,"coldness":1.0194794657357429,"continuation":0.8819366648900164,"divinity":0.88923123303327,"groundFriction":0.36373150104575175,"indulgence":0.5865034973221178,"laserlikeness":0.9069461860648763,"martyrdom":1.1012843597334974,"moxie":1.126339819079937,"musclitude":0.5504386167931167,"name":"Commissioner
-        Vapor","bat":"","omniscience":0.39536473379763115,"overpowerment":1.0259753023679132,"patheticism":0.001,"ruthlessness":0.3682818141888992,"shakespearianism":1.0346692664772996,"suppression":0.5499507198672546,"tenaciousness":0.5285900530749541,"thwackability":1.0479187768288007,"tragicness":0.001,"unthwackability":0.5248036911625428,"watchfulness":0.3234223410173554,"pressurization":0.10996281464053581,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":1.0228799275917995,"fate":80,"armor":"","ritual":"Bracing
-        for the inevitable","coffee":7,"blood":9,"permAttr":["PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7861174707546215,"pitchingRating":0.48958793058627775,"hittingRating":0.9429965619368775,"defenseRating":0.5870731037214324,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":51.640425468994465,"state":{},"evolution":0}]'
+      string: '[{"id":"a7d8196a-ca6b-4dab-a9d7-c27f3e86cc21","anticapitalism":0.37535189666211777,"baseThirst":0.9074216027660444,"buoyancy":0.8933262373960774,"chasiness":0.9839245671402609,"coldness":1.152634192320061,"continuation":0.9931236429808736,"divinity":1.0087282497346088,"groundFriction":0.4735358014464794,"indulgence":0.7253474371476671,"laserlikeness":0.9916567438661825,"martyrdom":1.2010274819426945,"moxie":1.2652424324791645,"musclitude":0.6874926151517602,"name":"Commissioner
+        Vapor","omniscience":0.4019789932829634,"overpowerment":1.1635150632297506,"patheticism":0.001,"ruthlessness":0.4695429230960189,"shakespearianism":1.1463592157571554,"suppression":0.6514097153045205,"tenaciousness":0.5338401295297168,"thwackability":1.1823645238831322,"tragicness":0.001,"unthwackability":0.6547149422382464,"watchfulness":0.3268933630754418,"pressurization":0.10996281464053581,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":1.120012248104799,"fate":80,"ritual":"Bracing
+        for the inevitable","coffee":7,"blood":9,"permAttr":["PERK","SLOW_BUILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8856289781284019,"pitchingRating":0.6223524559786501,"hittingRating":1.0563481426865642,"defenseRating":0.5949816439442559,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":58.11517854516511,"state":{"itemModSources":{}},"evolution":0,"items":[{"id":"28b80062-39e2-4b7e-afb3-dbfd80e90ccd","name":"Head
+        Necklace","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":{"name":"Head","adjustments":[{"stat":3,"type":1,"value":0.1591802490185862},{"stat":21,"type":1,"value":0.13469347291797829}]},"root":{"name":"Necklace","adjustments":[{"stat":3,"type":1,"value":0.15105269950151326}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.01751741530028772,"defenseRating":0.03328006715095988}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1473'
+      - '2027'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:11 GMT
       Etag:
-      - W/"5c1-cDLA0v0ITkEinFP2KIjauerz+sE"
+      - W/"7eb-wQcVou9DdgO+VxkiKxegBKQijR4"
       Server:
       - Cowboy
       Vary:

@@ -14,7 +14,7 @@ interactions:
     uri: https://api.sibr.dev/chronicler/v1/sim/updates?count=1
   response:
     body:
-      string: '{"nextPage":"KnhDsZUsTEuiBk4fD5yocUB5rKyYGAAA","data":[{"updateId":"b143782a-2c95-4b4c-a206-4e1f0f9ca871","firstSeen":"2020-08-01T07:13:21.108Z","lastSeen":"2020-08-01T13:00:00.693Z","data":{"__v":0,"_id":"thisidisstaticyo","day":98,"phase":3,"rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","league":"d8545021-e9fc-48a3-af74-48685950a183","season":1,"eraColor":"","eraTitle":"The
+      string: '{"nextPage":"KnhDsZUsTEuiBk4fD5yocUB5rKyYGAAA","data":[{"updateId":"b143782a-2c95-4b4c-a206-4e1f0f9ca871","firstSeen":"2020-08-01T07:13:21.108Z","lastSeen":"2020-08-01T13:00:02.705Z","data":{"__v":0,"_id":"thisidisstaticyo","day":98,"phase":3,"rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","league":"d8545021-e9fc-48a3-af74-48685950a183","season":1,"eraColor":"","eraTitle":"The
         Discipline Era","playoffs":"1c6e809b-5d8f-4d8c-b5f8-10261130a85e","seasonId":"9b1b80e0-9771-4f37-a480-bfa397cdbb12","openedBook":true,"terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","playOffRound":0,"nextPhaseTime":"2020-08-01T13:00:00.159Z","nextElectionEnd":"2020-08-02T19:00:00.525Z","nextSeasonStart":"2020-08-01T13:00:00.159Z","unlockedPeanuts":false}}]}'
     headers:
       Content-Length:
@@ -22,7 +22,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:23:59 GMT
+      - Wed, 19 May 2021 20:47:41 GMT
       Server:
       - Kestrel
     status:

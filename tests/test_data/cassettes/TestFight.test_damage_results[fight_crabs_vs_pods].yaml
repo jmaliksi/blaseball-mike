@@ -15,18 +15,18 @@ interactions:
   response:
     body:
       string: '[{"id":"5ca7e854-dc00-4955-9235-d7fcd732ddcf","anticapitalism":1.0299765253750683,"baseThirst":0.2623251402073494,"buoyancy":0.6300252053672732,"chasiness":0.2682654116500259,"coldness":0.7232292656791601,"continuation":0.7789829479209949,"divinity":0.843942232162039,"groundFriction":0.25886904580164044,"indulgence":0.26186731153050835,"laserlikeness":0.24043188811021843,"martyrdom":0.2319078138869298,"moxie":0.9128249156092112,"musclitude":0.22107701514024855,"name":"Wyatt
-        Quitter","bat":"","omniscience":0.29741014979246555,"overpowerment":0.12859630747716289,"patheticism":0.5368561674616814,"ruthlessness":0.35929473835021714,"shakespearianism":0.4677414557469457,"suppression":0.16019306720508159,"tenaciousness":0.7798634870175304,"thwackability":0.26633000516175215,"tragicness":0.001,"unthwackability":0.1118273265031364,"watchfulness":0.5211887522688767,"pressurization":0.46357032322903113,"totalFingers":14,"soul":5,"deceased":false,"peanutAllergy":true,"cinnamon":1.0803563412701616,"fate":92,"armor":"","ritual":"Gambling","coffee":1,"blood":2,"permAttr":["HONEY_ROASTED","SWIM_BLADDER","STATIC"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.31963104979107765,"pitchingRating":0.15007939656965505,"hittingRating":0.491545895283042,"defenseRating":0.6150544695863684,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"70eab4ab-6cb1-41e7-ac8b-1050ee12eecc","eDensity":21.034175678611,"state":{"permModSources":{},"seasModSources":{}},"evolution":0}]'
+        Quitter","omniscience":0.29741014979246555,"overpowerment":0.12859630747716289,"patheticism":0.5368561674616814,"ruthlessness":0.35929473835021714,"shakespearianism":0.4677414557469457,"suppression":0.16019306720508159,"tenaciousness":0.7798634870175304,"thwackability":0.26633000516175215,"tragicness":0.001,"unthwackability":0.1118273265031364,"watchfulness":0.5211887522688767,"pressurization":0.46357032322903113,"totalFingers":14,"soul":5,"deceased":false,"peanutAllergy":true,"cinnamon":1.0803563412701616,"fate":92,"ritual":"Gambling","coffee":1,"blood":2,"permAttr":["HONEY_ROASTED","SWIM_BLADDER","STATIC"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.31963104979107765,"pitchingRating":0.15007939656965505,"hittingRating":0.491545895283042,"defenseRating":0.6150544695863684,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"70eab4ab-6cb1-41e7-ac8b-1050ee12eecc","eDensity":21.034175678611,"state":{"permModSources":{},"seasModSources":{}},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1541'
+      - '1546'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:38 GMT
+      - Wed, 19 May 2021 20:48:59 GMT
       Etag:
-      - W/"605-gtA/Ti7GMCdgWmVUYD5yCOkvhc8"
+      - W/"60a-5IpIRVXwa0MYaaldEpJTrWaPjYk"
       Server:
       - Cowboy
       Vary:

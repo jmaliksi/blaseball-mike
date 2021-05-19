@@ -15,18 +15,18 @@ interactions:
   response:
     body:
       string: '[{"id":"7310c32f-8f32-40f2-b086-54555a2c0e86","anticapitalism":0.8872990130003819,"baseThirst":0.24206126696308616,"buoyancy":0.4078306463032667,"chasiness":0.5852097162243755,"coldness":0.9288944027200594,"continuation":0.8792987632485005,"divinity":0.8837798687796137,"groundFriction":0.32659648617255627,"indulgence":0.16579050461555367,"laserlikeness":0.01609772031318646,"martyrdom":0.23346170320147755,"moxie":0.19806564282542163,"musclitude":0.9114841938990381,"name":"Dominic
-        Marijuana","bat":"","omniscience":0.0010196037976704098,"overpowerment":0.15202566915030458,"patheticism":0.30485185317030516,"ruthlessness":0.15945933943492574,"shakespearianism":0.6562898730223858,"suppression":0.6131567677744476,"tenaciousness":0.8930719849609547,"thwackability":1.0418902649709119,"tragicness":0.1,"unthwackability":0.4597927635798813,"watchfulness":0.6202457520022422,"pressurization":0.16454724823726252,"totalFingers":10,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.42150596119666167,"fate":31,"armor":"","ritual":"Begging","coffee":4,"blood":10,"permAttr":["SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["MARKED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":0.08119802788484609,"pitchingRating":0.23471309363233267,"hittingRating":0.8141615868934774,"defenseRating":0.22011929571846975,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0}]'
+        Marijuana","omniscience":0.0010196037976704098,"overpowerment":0.15202566915030458,"patheticism":0.30485185317030516,"ruthlessness":0.15945933943492574,"shakespearianism":0.6562898730223858,"suppression":0.6131567677744476,"tenaciousness":0.8930719849609547,"thwackability":1.0418902649709119,"tragicness":0.1,"unthwackability":0.4597927635798813,"watchfulness":0.6202457520022422,"pressurization":0.16454724823726252,"totalFingers":10,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.42150596119666167,"fate":31,"ritual":"Begging","coffee":4,"blood":10,"permAttr":["SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["MARKED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":0.08119802788484609,"pitchingRating":0.23471309363233267,"hittingRating":0.8141615868934774,"defenseRating":0.22011929571846975,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1454'
+      - '1459'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:38 GMT
+      - Wed, 19 May 2021 20:49:01 GMT
       Etag:
-      - W/"5ae-X4dC36Qs17l6jWtV0KKbmThyskc"
+      - W/"5b3-N8eMbx1yNlN0MdgddKTtUO4fbxI"
       Server:
       - Cowboy
       Vary:

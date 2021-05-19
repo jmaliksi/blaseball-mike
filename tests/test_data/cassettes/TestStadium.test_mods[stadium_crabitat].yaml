@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=PEANUT_MISTER,PSYCHOACOUSTICS,SECRET_BASE,FLOOD_PUMPS
+    uri: https://www.blaseball.com/database/mods?ids=PEANUT_MISTER,PSYCHOACOUSTICS,SECRET_BASE,FLOOD_PUMPS,SALMON_CANNONS,FAX_MACHINE,SMITHY
   response:
     body:
       string: '[{"id":"PEANUT_MISTER","color":"#f3ff54","textColor":"#f3ff54","background":"#423519","title":"Peanut
@@ -22,18 +22,23 @@ interactions:
         Base","description":"The Secret Base is a hidden base beyond 2nd that allows
         a baserunner to hide between innings."},{"id":"FLOOD_PUMPS","color":"#41feff","textColor":"#41feff","background":"#465f63","title":"Flood
         Pumps","description":"Flood Pumps will prevent Flooding weather from making
-        your Ballpark filthier."}]'
+        your Ballpark filthier."},{"id":"SALMON_CANNONS","color":"#ffb0c6","textColor":"#ffb0c6","background":"#2a292e","title":"Salmon
+        Cannons","description":"Salmon Cannons have a chance of expelling pests from
+        your Ballpark."},{"id":"FAX_MACHINE","color":"#19002b","textColor":"#ffffff","background":"#8b5cad","title":"Fax
+        Machine","description":"The Fax Machine will swap the Home Team''s pitcher
+        for their best Shadows Pitcher whenever they''ve allowed 10+ Runs in a game."},{"id":"SMITHY","color":"#ff6c3b","textColor":"#ff6c3b","background":"#414445","title":"Smithy","description":"The
+        Smithy will occasionally repair Items for Players playing in this Ballpark."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '873'
+      - '1509'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 23:44:37 GMT
+      - Wed, 19 May 2021 20:50:49 GMT
       Etag:
-      - W/"369-FPBQXegA0pNWJt2yzxP6fQvY3Yo"
+      - W/"5e5-WvrDZExy+uytfvdyKjv3jhIu8sk"
       Server:
       - Cowboy
       Vary:

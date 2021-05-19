@@ -14,21 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=57ec08cc-0411-4643-b304-0e80dbc15ac7
   response:
     body:
-      string: '{"id":"57ec08cc-0411-4643-b304-0e80dbc15ac7","lineup":["80e474a3-7d2b-431d-8192-2f1e27162607","4542f0b0-3409-4a4a-a9e1-e8e8e5d73fcf","f236bd5b-4ff1-4154-a3cd-7cb3c0ddaa5b","f4ca437c-c31c-4508-afe7-6dae4330d717","ce0e57a7-89f5-41ea-80f9-6e649dd54089","d6c69d2d-9344-4b19-85a4-6cfcbaead5d2","e4f1f358-ee1f-4466-863e-f329766279d0","ad1e670a-f346-4bf7-a02f-a91649c41ccb","c07ab5a8-ece3-4c4d-b2d2-98e3a7cf864f","c9a22fa4-1721-4eef-a1a6-620cdf7d377f","99766c1b-c590-4261-b1b7-3e9c7fc35608"],"rotation":["65273615-22d5-4df1-9a73-707b23e828d5","28162da7-eafa-4eb1-8bc1-5a625f03ae57","7007cbd3-7c7b-44fd-9d6b-393e82b1c06e","bd8778e5-02e8-4d1f-9c31-7b63942cc570","089af518-e27c-4256-adc8-62e3f4b30f43"],"bullpen":["aa7ac9cb-e9db-4313-9941-9f3431728dce","1750de38-8f5f-426a-9e23-2899a15a2031","e919dfae-91c3-475c-b5d5-8b0c14940c41","ceac785e-55fd-4a4e-9bc8-17a662a58a38","ca709205-226d-4d92-8be6-5f7871f48e26","6bd4cf6e-fefe-499a-aa7a-890bcc7b53fa","094ad9a1-e2c7-49a0-af18-da0e3eb656ba","19af0d67-c73b-4ef2-bc84-e923c1336db5"],"bench":["23110c0f-2cf9-4d9c-ab2d-634f2f18867e","7951836f-581a-49d5-ae2f-049c6bcc575e","75e80e46-276d-4388-bb6a-da9125a0e8ad","4204c2d1-ca48-4af7-b827-e99907f12d61"],"seasAttr":[],"permAttr":[],"fullName":"Mexico
+      string: '{"id":"57ec08cc-0411-4643-b304-0e80dbc15ac7","lineup":["1448f1f3-d76f-45c1-a5c1-54f22544000b","4542f0b0-3409-4a4a-a9e1-e8e8e5d73fcf","f236bd5b-4ff1-4154-a3cd-7cb3c0ddaa5b","65273615-22d5-4df1-9a73-707b23e828d5","ce0e57a7-89f5-41ea-80f9-6e649dd54089","66e8f8fb-22f9-4591-9435-37dc93493202","ad1e670a-f346-4bf7-a02f-a91649c41ccb","f4ca437c-c31c-4508-afe7-6dae4330d717"],"rotation":["d6c69d2d-9344-4b19-85a4-6cfcbaead5d2","4204c2d1-ca48-4af7-b827-e99907f12d61","089af518-e27c-4256-adc8-62e3f4b30f43"],"bullpen":["bd8778e5-02e8-4d1f-9c31-7b63942cc570","1750de38-8f5f-426a-9e23-2899a15a2031","e919dfae-91c3-475c-b5d5-8b0c14940c41","ceac785e-55fd-4a4e-9bc8-17a662a58a38","ca709205-226d-4d92-8be6-5f7871f48e26","6bd4cf6e-fefe-499a-aa7a-890bcc7b53fa","094ad9a1-e2c7-49a0-af18-da0e3eb656ba","19af0d67-c73b-4ef2-bc84-e923c1336db5"],"bench":["23110c0f-2cf9-4d9c-ab2d-634f2f18867e","7951836f-581a-49d5-ae2f-049c6bcc575e","75e80e46-276d-4388-bb6a-da9125a0e8ad","7007cbd3-7c7b-44fd-9d6b-393e82b1c06e","df94a335-1677-4200-a23f-d794689a5732","e4f1f358-ee1f-4466-863e-f329766279d0","c9a22fa4-1721-4eef-a1a6-620cdf7d377f","e16c3f28-eecd-4571-be1a-606bbac36b2b"],"seasAttr":[],"permAttr":[],"fullName":"Mexico
         City Wild Wings","location":"Mexico City","mainColor":"#d15700","nickname":"Wild
         Wings","secondaryColor":"#ee6300","shorthand":"MCWW","emoji":"0x1F357","slogan":"Pase
-        lo que Pase","shameRuns":0,"totalShames":65,"totalShamings":49,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":18,"tournamentWins":0,"stadium":"2841dc8c-b5a2-4b3a-a717-9e646e8e29fc","eDensity":1701.4507800811887,"state":{},"evolution":0,"winStreak":-2,"level":4}'
+        Lo Que Pase","shameRuns":0,"totalShames":90,"totalShamings":69,"seasonShames":2,"seasonShamings":1,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":18,"tournamentWins":0,"stadium":"2841dc8c-b5a2-4b3a-a717-9e646e8e29fc","eDensity":1186.1483410704195,"state":{},"evolution":0,"winStreak":-8,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1732'
+      - '1694'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:48 GMT
+      - Wed, 19 May 2021 20:49:16 GMT
       Etag:
-      - W/"6c4-kBU00x4zx9fA3YvA3eZo3VS0WFY"
+      - W/"69e-j88gJ5MEAjSesqwqbcBGJS6b+0M"
       Server:
       - Cowboy
       Vary:
@@ -55,20 +55,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=f02aeae2-5e6a-4098-9842-02d2273f25c7
   response:
     body:
-      string: '{"id":"f02aeae2-5e6a-4098-9842-02d2273f25c7","lineup":["f0bcf4bb-74b3-412e-a54c-04c12ad28ecb","cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","2b5f5dd7-e31f-4829-bec5-546652103bc0","72ca8ed5-a8c7-4571-9745-80de5a49b2d1","df4da81a-917b-434f-b309-f00423ee4967","4f69e8c2-b2a1-4e98-996a-ccf35ac844c5","d4a10c2a-0c28-466a-9213-38ba3339b65e","89f74891-2e25-4b5a-bd99-c95ba3f36aa0"],"rotation":["5703141c-25d9-46d0-b680-0cf9cfbf4777","3d3be7b8-1cbf-450d-8503-fce0daf46cbf","f883269f-117e-45ec-bb1e-fa8dbcf40d3e","20fd71e7-4fa0-4132-9f47-06a314ed539a","333067fd-c2b4-4045-a9a4-e87a8d0332d0"],"bullpen":["3dd85c20-a251-4903-8a3b-1b96941c07b7","206bd649-4f5f-4707-ad85-92784be4eb95","126fb128-7c53-45b5-ac2b-5dbf9943d71b","088884af-f38d-4914-9d67-b319287481b4","6644d767-ab15-4528-a4ce-ae1f8aadb65f","14bfad43-2638-41ec-8964-8351f22e9c4f","459f7700-521e-40da-9483-4d111119d659","b69aa26f-71f7-4e17-bc36-49c875872cc1","4c53fcd8-df02-4a80-99c9-51710863bc7f"],"bench":["1f145436-b25d-49b9-a1e3-2d3c91626211","4562ac1f-026c-472c-b4e9-ee6ff800d701","e3c06405-0564-47ce-bbbd-552bee4dd66f","8b0d717f-ae42-4492-b2ed-106912e2b530","5a6b0c6d-1cc8-4acb-991c-0ffe62f3d990","5f5b3b18-ebc5-4611-b8bf-61b8c6a3ba12","24ca976f-ddf2-4966-ba14-4fd2b9b20341","aca90625-5bde-4489-bc9f-a7996a7b9a30"],"seasAttr":[],"permAttr":["BASE_INSTINCTS"],"fullName":"Hellmouth
+      string: '{"id":"f02aeae2-5e6a-4098-9842-02d2273f25c7","lineup":["f0bcf4bb-74b3-412e-a54c-04c12ad28ecb","cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","fa477c92-39b6-4a52-b065-40af2f29840a","89f74891-2e25-4b5a-bd99-c95ba3f36aa0","5576a2cb-3deb-4a35-a1ef-9e3cc2039563","df4da81a-917b-434f-b309-f00423ee4967","d0ffc9c2-e677-4230-a639-b0ae11650501","4b01cc3f-c59f-486d-9c00-b8a82624e620","6644d767-ab15-4528-a4ce-ae1f8aadb65f"],"rotation":["5703141c-25d9-46d0-b680-0cf9cfbf4777","3d3be7b8-1cbf-450d-8503-fce0daf46cbf","f883269f-117e-45ec-bb1e-fa8dbcf40d3e","20fd71e7-4fa0-4132-9f47-06a314ed539a","333067fd-c2b4-4045-a9a4-e87a8d0332d0"],"bullpen":["3dd85c20-a251-4903-8a3b-1b96941c07b7","206bd649-4f5f-4707-ad85-92784be4eb95","126fb128-7c53-45b5-ac2b-5dbf9943d71b","088884af-f38d-4914-9d67-b319287481b4","1f145436-b25d-49b9-a1e3-2d3c91626211","14bfad43-2638-41ec-8964-8351f22e9c4f","459f7700-521e-40da-9483-4d111119d659","b69aa26f-71f7-4e17-bc36-49c875872cc1","4c53fcd8-df02-4a80-99c9-51710863bc7f","e0d64270-6f5a-4c10-9b22-f91f9d4f241c"],"bench":["4562ac1f-026c-472c-b4e9-ee6ff800d701","e3c06405-0564-47ce-bbbd-552bee4dd66f","8b0d717f-ae42-4492-b2ed-106912e2b530","5a6b0c6d-1cc8-4acb-991c-0ffe62f3d990","5f5b3b18-ebc5-4611-b8bf-61b8c6a3ba12","24ca976f-ddf2-4966-ba14-4fd2b9b20341","aca90625-5bde-4489-bc9f-a7996a7b9a30","5ddee49d-79f2-4eba-a3c9-174784322059","72ca8ed5-a8c7-4571-9745-80de5a49b2d1"],"seasAttr":[],"permAttr":["BASE_INSTINCTS"],"fullName":"Hellmouth
         Sunbeams","location":"Hellmouth","mainColor":"#fffbab","nickname":"Sunbeams","secondaryColor":"#fffbab","shorthand":"SUN","emoji":"0x1F31E","slogan":"Stare
-        into the Sun...","shameRuns":1,"totalShames":72,"totalShamings":51,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":11,"tournamentWins":0,"stadium":"8e900d85-7d4c-47d0-a67f-6432144f0210","eDensity":1909.6422523463775,"state":{},"evolution":0,"winStreak":-4,"level":5}'
+        into the Sun...","shameRuns":0,"totalShames":92,"totalShamings":76,"seasonShames":1,"seasonShamings":2,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":11,"tournamentWins":0,"stadium":"8e900d85-7d4c-47d0-a67f-6432144f0210","eDensity":1307.1185692352715,"state":{},"evolution":0,"winStreak":-1,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1822'
+      - '1940'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:48 GMT
+      - Wed, 19 May 2021 20:49:16 GMT
       Etag:
-      - W/"71e-ltRkfjridxOgjkg6kSDIK4jRyVk"
+      - W/"794-vOHlHuhkbjROWK7YF8TzzlWPX04"
       Server:
       - Cowboy
       Vary:

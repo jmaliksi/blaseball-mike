@@ -1,8 +1,5 @@
 import pytest
-import json
-import random
-from blaseball_mike.models import Player
-from .helpers import TEST_DATA_DIR, CASSETTE_DIR
+from .helpers import CASSETTE_DIR
 
 
 @pytest.fixture(scope="module")

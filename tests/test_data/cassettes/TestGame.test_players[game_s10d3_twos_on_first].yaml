@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=60026a9d-fc9a-4f5a-94fd-2225398fa3da
   response:
     body:
-      string: '[{"id":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","anticapitalism":0.5267600614593912,"baseThirst":0.49769924816381356,"buoyancy":0.27758363385331936,"chasiness":0.3763033992894125,"coldness":0.3039502744832021,"continuation":0.10988142657887244,"divinity":0.838959752721736,"groundFriction":0.6301963924534808,"indulgence":0.43833054983167,"laserlikeness":0.07813118358477697,"martyrdom":0.513075325106314,"moxie":0.794902260449326,"musclitude":0.3534221131648787,"name":"Bright
-        Zimmerman","bat":"","omniscience":0.5914153882197646,"overpowerment":0.8526661930089606,"patheticism":0.7791569671777605,"ruthlessness":0.5111568108272864,"shakespearianism":0.6792240619141371,"suppression":0.8709614247805043,"tenaciousness":0.540320490145738,"thwackability":0.7648622316871648,"tragicness":0.034557492859063066,"unthwackability":0.20788185472252121,"watchfulness":0.48836063137711616,"pressurization":0.4668944850477603,"totalFingers":12,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6243757900146742,"fate":49,"armor":"","ritual":"Antagonizing
-        umpires","coffee":7,"blood":11,"permAttr":["WANDERER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.18379305403242166,"pitchingRating":0.31784704530816366,"hittingRating":0.711974027212367,"defenseRating":0.6302284063746955,"leagueTeamId":"bfd38797-8404-4b38-8b82-341da28b1f83","tournamentTeamId":null,"eDensity":20.906897730493533,"state":{},"evolution":0}]'
+      string: '[{"id":"60026a9d-fc9a-4f5a-94fd-2225398fa3da","anticapitalism":0.567869721958242,"baseThirst":0.5321752525138442,"buoyancy":0.3236018833578109,"chasiness":0.41869621543800084,"coldness":0.3361738773808536,"continuation":0.14614862646546273,"divinity":0.8722337296030688,"groundFriction":0.6552750331704766,"indulgence":0.4739337126875598,"laserlikeness":0.12242679105253707,"martyrdom":0.5396728460492346,"moxie":0.8404065814042896,"musclitude":0.39684693231667056,"name":"Bright
+        Zimmerman","omniscience":0.6279900744234326,"overpowerment":0.8762319550686113,"patheticism":0.7361319524371172,"ruthlessness":0.5355457274128543,"shakespearianism":0.7250672567496692,"suppression":0.9018561797384052,"tenaciousness":0.5718806560316249,"thwackability":0.804962605810155,"tragicness":0.001,"unthwackability":0.23164021473619506,"watchfulness":0.5337519656990832,"pressurization":0.4668944850477603,"totalFingers":12,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6684317040319925,"fate":49,"ritual":"Antagonizing
+        umpires","coffee":7,"blood":11,"permAttr":["WANDERER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.24112225515348093,"pitchingRating":0.34635414902702594,"hittingRating":0.7519414851508361,"defenseRating":0.6628272593879936,"leagueTeamId":"bfd38797-8404-4b38-8b82-341da28b1f83","tournamentTeamId":null,"eDensity":22.015716041035358,"state":{},"evolution":0,"items":[{"id":"4a7adb52-8732-452f-af75-822e700a2128","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.13932529281978212}]},"suffix":null,"durability":1,"health":0,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.04294522991379923,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1465'
+      - '1821'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 20:22:16 GMT
+      - Wed, 19 May 2021 20:49:19 GMT
       Etag:
-      - W/"5b9-3pIsEHJ2Z+TehEJlUQRDZ2oCsxg"
+      - W/"71d-F6kwrcRQK0uzrYaqvEwXHa3vyY8"
       Server:
       - Cowboy
       Vary:
@@ -55,18 +55,19 @@ interactions:
   response:
     body:
       string: '[{"id":"57290370-6723-4d33-929e-b4fc190e6a9a","anticapitalism":0.4947420712856288,"baseThirst":0.917040335233321,"buoyancy":0.9571878062833725,"chasiness":0.9210727755019255,"coldness":0.47317246167159255,"continuation":0.49227744270602575,"divinity":0.5560960950896914,"groundFriction":0.635001597057574,"indulgence":1.0724093381404114,"laserlikeness":1.060165175036673,"martyrdom":0.48668666605491123,"moxie":0.619439243626007,"musclitude":0.9282698187671363,"name":"Mooney
-        Doctor II","bat":"","omniscience":0.34161088121643335,"overpowerment":1.2537893066506096,"patheticism":0.001,"ruthlessness":0.6705088907630283,"shakespearianism":1.0955363767312258,"suppression":1.2560388057311287,"tenaciousness":0.4867574664816339,"thwackability":0.8988893007115027,"tragicness":0.03851684686694329,"unthwackability":0.8107407508063427,"watchfulness":0.8163427316683092,"pressurization":0.2389176666127779,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.4377843616938708,"fate":22,"armor":"","ritual":"Stretching","coffee":7,"blood":9,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.915082278616099,"pitchingRating":0.7862753647697102,"hittingRating":0.741528369427558,"defenseRating":0.6327372395125999,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":35.529362766281764,"state":{},"evolution":0}]'
+        Doctor II","omniscience":0.34161088121643335,"overpowerment":1.2537893066506096,"patheticism":0.001,"ruthlessness":0.6705088907630283,"shakespearianism":1.0955363767312258,"suppression":1.2560388057311287,"tenaciousness":0.4867574664816339,"thwackability":0.8988893007115027,"tragicness":0.03851684686694329,"unthwackability":0.8107407508063427,"watchfulness":0.8163427316683092,"pressurization":0.2389176666127779,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.4377843616938708,"fate":22,"ritual":"Stretching","coffee":7,"blood":9,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.915082278616099,"pitchingRating":0.7862753647697102,"hittingRating":0.741528369427558,"defenseRating":0.6327372395125999,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":35.529362766281764,"state":{"itemModSources":{"FIREPROOF":["bbf664d1-9370-4a36-9b03-ab9e4f7d7fa8"]}},"evolution":0,"items":[{"id":"bbf664d1-9370-4a36-9b03-ab9e4f7d7fa8","name":"Frosty
+        Fireproof Glove","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Frosty","adjustments":[{"stat":17,"type":1,"value":0.11500753349815612},{"stat":25,"type":1,"value":0.313605052810484},{"stat":23,"type":1,"value":0.3139400469311267}]},{"name":"Fireproof","adjustments":[{"mod":"FIREPROOF","type":0}]}],"postPrefix":null,"root":{"name":"Glove","adjustments":[{"stat":21,"type":1,"value":0.1810780820152146}]},"suffix":null,"durability":3,"health":3,"baserunningRating":0,"pitchingRating":0.004288461436307234,"hittingRating":0,"defenseRating":0.10012635889626853}],"itemAttr":["FIREPROOF"]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1456'
+      - '2186'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 20:22:16 GMT
+      - Wed, 19 May 2021 20:49:19 GMT
       Etag:
-      - W/"5b0-rv6yXIvf7Oxzcm1/hOwc4ZLTgEI"
+      - W/"88a-EyQZvUpxDAX7T2Irke/PEyOpT08"
       Server:
       - Cowboy
       Vary:
@@ -93,22 +94,23 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=53e701c7-e3c8-4e18-ba05-9b41b4b64cda,64f4cd75-0c1e-42cf-9ff0-e41c4756f22a
   response:
     body:
-      string: '[{"id":"53e701c7-e3c8-4e18-ba05-9b41b4b64cda","anticapitalism":1.019924330419976,"baseThirst":0.30698100083476487,"buoyancy":0.8222094643474975,"chasiness":0.6486166204589938,"coldness":0.46743043617621205,"continuation":0.8331793198347479,"divinity":0.08378197595019157,"groundFriction":0.7185575600519902,"indulgence":0.6050311111603557,"laserlikeness":0.7506794374403076,"martyrdom":0.7665361113899223,"moxie":0.7688574067847853,"musclitude":0.7090887201441274,"name":"Marquez
-        Clark","bat":"","omniscience":0.4923361877884359,"overpowerment":0.888015583507487,"patheticism":0.18000000000000002,"ruthlessness":0.31873399587719564,"shakespearianism":0.6973127744379308,"suppression":0.11845262985731794,"tenaciousness":1.0889812364775253,"thwackability":0.18540878140741426,"tragicness":0.1,"unthwackability":0.2864450902478667,"watchfulness":1.1038821519133044,"pressurization":0.04,"totalFingers":11,"soul":9,"deceased":false,"peanutAllergy":true,"cinnamon":0.5677397554739616,"fate":58,"armor":"","ritual":"Glimpsing
-        the infinite","coffee":13,"blood":8,"permAttr":["REPEATING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6955625402486348,"pitchingRating":0.3149494260239817,"hittingRating":0.218833125349553,"defenseRating":0.8554690557072104,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":32.59369903130566,"state":{},"evolution":0},{"id":"64f4cd75-0c1e-42cf-9ff0-e41c4756f22a","anticapitalism":0.29123428536246276,"baseThirst":0.4602210453541204,"buoyancy":0.23550523123218053,"chasiness":0.3248292652207265,"coldness":0.28414766821464454,"continuation":0.2912685098673881,"divinity":0.5616726928488275,"groundFriction":0.45707194257333844,"indulgence":0.35291529498898516,"laserlikeness":0.4010229949638902,"martyrdom":0.3336421385588982,"moxie":0.8293386994455765,"musclitude":0.7220929532351419,"name":"--e-
-        --varado","bat":"","omniscience":0.35530009702276505,"overpowerment":0.13209611591927983,"patheticism":0.811693571337829,"ruthlessness":0.3761494370604623,"shakespearianism":0.6855104415087291,"suppression":0.6095104935376175,"tenaciousness":0.4157928728496866,"thwackability":0.2857014909091247,"tragicness":0.19997463093644033,"unthwackability":0.3024413023309403,"watchfulness":0.1356848250793981,"pressurization":0.8064601195290763,"totalFingers":11,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.9940920599222328,"fate":91,"armor":"","ritual":"Rage","coffee":1,"blood":1,"permAttr":["REPEATING","SCATTERED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.43159474011756094,"pitchingRating":0.2561758779497082,"hittingRating":0.45543649296875005,"defenseRating":0.44130349436076993,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":16.258869959630164,"state":{"unscatteredName":"Grey
-        Alvarado"},"evolution":0}]'
+      string: '[{"id":"53e701c7-e3c8-4e18-ba05-9b41b4b64cda","anticapitalism":0.8616085599846877,"baseThirst":0.19174097087788616,"buoyancy":0.6018469875409906,"chasiness":0.5083160718350991,"coldness":0.3571432857288698,"continuation":0.7551352893063182,"divinity":0.11225454252409023,"groundFriction":0.5886081707626549,"indulgence":0.3758033743143507,"laserlikeness":0.5334163124364372,"martyrdom":0.5368480739936293,"moxie":0.49814238559188007,"musclitude":0.502497135440969,"name":"Marquez
+        Clark","omniscience":0.29012492372184967,"overpowerment":0.7007977125661088,"patheticism":0.4070700547560405,"ruthlessness":0.18276092066928573,"shakespearianism":0.5179006729785027,"suppression":0.13738695308453458,"tenaciousness":1.016434892738123,"thwackability":0.1779584700502991,"tragicness":0.24203810829877176,"unthwackability":0.14668005672463183,"watchfulness":0.982612766565187,"pressurization":0.04,"totalFingers":11,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.6109293845919991,"fate":58,"ritual":"Glimpsing
+        the infinite","coffee":13,"blood":8,"permAttr":["REPEATING"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5177091149709935,"pitchingRating":0.16788947869749213,"hittingRating":0.2198432360213657,"defenseRating":0.7199718987466329,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":27.37789609905539,"state":{"itemModSources":{"BLASERUNNING":["7ee005eb-a7d2-4bc1-a88e-bdbf7bfb15c2"]}},"evolution":0,"items":[{"id":"7ee005eb-a7d2-4bc1-a88e-bdbf7bfb15c2","name":"Shoes
+        of Blaserunning","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Shoes","adjustments":[{"stat":10,"type":1,"value":0.13675304033824998}]},"suffix":{"name":"Blaserunning","adjustments":[{"mod":"BLASERUNNING","type":0}]},"durability":2,"health":1,"baserunningRating":0.06100931412104316,"pitchingRating":0,"hittingRating":0,"defenseRating":0}],"itemAttr":["BLASERUNNING"]},{"id":"64f4cd75-0c1e-42cf-9ff0-e41c4756f22a","anticapitalism":0.29123428536246276,"baseThirst":0.4602210453541204,"buoyancy":0.23550523123218053,"chasiness":0.3248292652207265,"coldness":0.28414766821464454,"continuation":0.2912685098673881,"divinity":0.5616726928488275,"groundFriction":0.45707194257333844,"indulgence":0.35291529498898516,"laserlikeness":0.4010229949638902,"martyrdom":0.3336421385588982,"moxie":0.8293386994455765,"musclitude":0.7220929532351419,"name":"--e-
+        --varado","omniscience":0.35530009702276505,"overpowerment":0.13209611591927983,"patheticism":0.811693571337829,"ruthlessness":0.3761494370604623,"shakespearianism":0.6855104415087291,"suppression":0.6095104935376175,"tenaciousness":0.4157928728496866,"thwackability":0.2857014909091247,"tragicness":0.19997463093644033,"unthwackability":0.3024413023309403,"watchfulness":0.1356848250793981,"pressurization":0.8064601195290763,"totalFingers":11,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.9940920599222328,"fate":91,"ritual":"Rage","coffee":1,"blood":1,"permAttr":["REPEATING","SCATTERED"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.43159474011756094,"pitchingRating":0.2561758779497082,"hittingRating":0.45543649296875005,"defenseRating":0.44130349436076993,"leagueTeamId":"adc5b394-8f76-416d-9ce9-813706877b84","tournamentTeamId":null,"eDensity":17.09157423777752,"state":{"unscatteredName":"Grey
+        Alvarado"},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '2932'
+      - '3496'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 20:22:16 GMT
+      - Wed, 19 May 2021 20:49:19 GMT
       Etag:
-      - W/"b74-AjTi9MOD7zyRJHn/aC9ErwVFXes"
+      - W/"da8-4nvWNZNZroJRAacj3Zo+aVj/j1Y"
       Server:
       - Cowboy
       Vary:

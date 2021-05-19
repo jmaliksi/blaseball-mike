@@ -14,18 +14,18 @@ interactions:
     uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=8a84154e-80d7-47d5-8f56-295e9a9653d9&type=stadium
   response:
     body:
-      string: '{"nextPage":"ThWEiteA1UePVilempZT2SLh9Yc73gAA","items":[{"entityId":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hash":"2a1ac9b9-6239-a31a-3145-7cd3b406d097","validFrom":"2021-04-09T19:25:26.547485Z","validTo":null,"data":{"id":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hype":0,"mods":["PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS"],"name":"Wapakoneta
-        Air, Space, and Worm Museum and Ballpark","birds":0,"model":3,"state":{},"teamId":"bb4a9de5-c924-4923-a0cb-9d1445f1ee5d","renoLog":{"flood_pumps_mod":1,"secret_base_mod":1,"psychoacoustics_mod":1},"weather":{"14":1},"nickname":"The
-        Wormhole","renoCost":-1,"renoHand":[],"mainColor":"#5c4822","mysticism":0.4617130261512937,"viscosity":0.263229502203971,"elongation":0.4040771749168108,"filthiness":0.17748545292821094,"obtuseness":0.5981744694032705,"forwardness":0.5902250518696203,"grandiosity":0.5053671963554746,"ominousness":0.5474000831124898,"renoDiscard":["psychoacoustics_mod","coffee_one_plus","black_hole_plus","mysticism_minus","event_horizon_mod","solar_panels_mod","feedback_plus","forwardness_plus","grandiosity_plus","secret_base_mod","sun_two_plus","flood_pumps_mod","elongation_plus","flooding_plus","soundsystem_mod","elongation_minus","echo_chamber_mod","blooddrain_plus"],"fortification":0.5247785781278169,"inconvenience":0.6819910875419015,"luxuriousness":0,"tertiaryColor":"#ffe0a8","secondaryColor":"#ba9c65"}}]}'
+      string: '{"nextPage":"ThWEiteA1UePVilempZT2VZQnlmz_QAA","items":[{"entityId":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hash":"2947fbf3-e5f6-aaae-8763-4fc1dc0a29ce","validFrom":"2021-05-19T20:31:14.452079Z","validTo":null,"data":{"id":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hype":0.4199999999999998,"mods":["PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS","SALMON_CANNONS","BIRDHOUSES","SMITHY"],"name":"Wapakoneta
+        Air, Space, and Worm Museum and Ballpark","birds":96,"model":3,"state":{},"teamId":"bb4a9de5-c924-4923-a0cb-9d1445f1ee5d","renoLog":{"birdhouses_mod":1,"turntables_mod":0,"flood_pumps_mod":1,"secret_base_mod":1,"salmon_cannons_mod":1,"psychoacoustics_mod":1},"weather":{"14":1},"nickname":"The
+        Wormhole","renoCost":-1,"renoHand":["hoops_mod","mysticism_plus","event_horizon_mod","mysticism_minus","grandiosity_minus","fortifications_minus","inconvenience_plus","sweetener_mod","ominousness_minus"],"mainColor":"#5c4822","mysticism":0.4617130261512937,"viscosity":0.263229502203971,"elongation":0.4040771749168108,"filthiness":0.4845128762127127,"obtuseness":0.5981744694032705,"forwardness":0.8167610881154783,"grandiosity":0.6324015333752339,"ominousness":0.45250498301977776,"renoDiscard":["psychoacoustics_mod","coffee_one_plus","black_hole_plus","mysticism_minus","event_horizon_mod","solar_panels_mod","feedback_plus","forwardness_plus","grandiosity_plus","secret_base_mod","sun_two_plus","flood_pumps_mod","elongation_plus","flooding_plus","soundsystem_mod","elongation_minus","echo_chamber_mod","blooddrain_plus","sweetener_mod","salmon_cannons_mod","peanut_mister_mod","forwardness_plus","flooding_plus","fortifications_minus","soundsystem_mod","reverb_plus","mysticism_plus","fax_machine_mod","fortifications_minus","viscosity_minus","grandiosity_plus","grind_rail_mod","forwardness_plus","solar_eclipse_plus","coffee_one_plus","birdhouses_mod","feedback_plus","ominousness_minus","ominousness_plus","obtuseness_plus","obtuseness_minus","grandiosity_minus","sweetener_mod","inconvenience_minus","solar_panels_mod"],"fortification":0.5247785781278169,"inconvenience":0.6012840714419946,"luxuriousness":0,"tertiaryColor":"#ffe0a8","secondaryColor":"#ba9c65"}}]}'
     headers:
-      Content-Length:
-      - '1382'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 23:44:38 GMT
+      - Wed, 19 May 2021 20:50:50 GMT
       Server:
       - Kestrel
+      Transfer-Encoding:
+      - chunked
     status:
       code: 200
       message: OK

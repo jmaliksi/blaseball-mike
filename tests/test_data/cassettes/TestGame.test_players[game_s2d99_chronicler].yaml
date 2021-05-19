@@ -14,19 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=09f2787a-3352-41a6-8810-d80e97b253b5
   response:
     body:
-      string: '[{"id":"09f2787a-3352-41a6-8810-d80e97b253b5","anticapitalism":1.256132120879667,"baseThirst":0.5565308611162642,"buoyancy":0.7039109769332003,"chasiness":1.1707912812453831,"coldness":1.121361138636024,"continuation":0.4445964997086256,"divinity":1.2396374181526257,"groundFriction":0.8670639362364617,"indulgence":0.734776965569531,"laserlikeness":0.3445758050237605,"martyrdom":0.8027976041945023,"moxie":1.1706080776021686,"musclitude":1.1366952852343934,"name":"Curry
-        Aliciakeyes","bat":"","omniscience":0.7621885241956927,"overpowerment":1.185107316067059,"patheticism":0.5399990686666957,"ruthlessness":1.1317451130300074,"shakespearianism":0.8772622366844371,"suppression":0.8004705007934657,"tenaciousness":1.2211525256467928,"thwackability":0.3283180155891247,"tragicness":0.001,"unthwackability":1.029557519469591,"watchfulness":1.139446161977604,"pressurization":0.9383202630490881,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.7434475398848632,"fate":8,"armor":"","ritual":"Photography","coffee":2,"blood":6,"permAttr":["OVERUNDER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.48798737299205563,"pitchingRating":1.082542589597335,"hittingRating":0.7143090734910258,"defenseRating":1.0379760303288212,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":39.259705464864666,"state":{"permModSources":{}},"evolution":0}]'
+      string: '[{"id":"09f2787a-3352-41a6-8810-d80e97b253b5","anticapitalism":1.3574614512773893,"baseThirst":0.6788273626948397,"buoyancy":0.8188880904102992,"chasiness":1.2972788562618809,"coldness":1.2349921870698688,"continuation":0.5936705954320132,"divinity":1.3522335862241328,"groundFriction":0.9912965289505121,"indulgence":0.8229795131619753,"laserlikeness":0.48432739539758835,"martyrdom":0.9046537494873624,"moxie":1.2652999548725368,"musclitude":1.2604699265688892,"name":"Curry
+        Aliciakeyes","omniscience":0.8683748765488348,"overpowerment":1.3141904186061752,"patheticism":0.42767052687882817,"ruthlessness":1.2327320731026228,"shakespearianism":0.9922261489535771,"suppression":0.9140916956318438,"tenaciousness":1.3579671197692833,"thwackability":0.42716134535106776,"tragicness":0.001,"unthwackability":1.1203545201613316,"watchfulness":1.2485399207239356,"pressurization":0.9383202630490881,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.8852546988128279,"fate":8,"ritual":"Photography","coffee":2,"blood":6,"permAttr":["OVERUNDER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6226718987177859,"pitchingRating":1.2044163158272425,"hittingRating":0.8294445143804291,"defenseRating":1.1182415594325086,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":42.423420018505766,"state":{"permModSources":{}},"evolution":0,"items":[{"id":"835da73c-5eed-4ba1-b7ab-b762ce6da8f0","name":"Wooden
+        Jersey","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Wooden","adjustments":[{"stat":2,"type":1,"value":0.25649771947003236},{"stat":10,"type":1,"value":-0.05559588242017271},{"stat":22,"type":1,"value":-0.12249988315668044}]}],"postPrefix":null,"root":{"name":"Jersey","adjustments":[{"stat":5,"type":1,"value":0.10389267110452563}]},"suffix":null,"durability":2,"health":1,"baserunningRating":-0.03682727047834289,"pitchingRating":0,"hittingRating":0.15423541167717636,"defenseRating":-0.02094498244565357}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1487'
+      - '2093'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:41 GMT
+      - Wed, 19 May 2021 20:49:07 GMT
       Etag:
-      - W/"5cf-ZLjsQ7lrXGy/5NA67oIcPYiXhnw"
+      - W/"82d-P8jTK2JWbNSMhJkJuisRg4zsN2k"
       Server:
       - Cowboy
       Vary:
@@ -53,19 +54,19 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=f741dc01-2bae-4459-bfc0-f97536193eea
   response:
     body:
-      string: '[{"id":"f741dc01-2bae-4459-bfc0-f97536193eea","anticapitalism":1.1245120237322284,"baseThirst":0.246197750591003,"buoyancy":0.9353030023878447,"chasiness":0.21426977674214212,"coldness":0.609466777761458,"continuation":0.864908113365923,"divinity":0.3136754033048849,"groundFriction":0.5905069966686584,"indulgence":0.8219204109569679,"laserlikeness":1.0775871076258894,"martyrdom":1.053435749841884,"moxie":0.6593750788885828,"musclitude":0.5221871597007706,"name":"Alejandro
-        Leaf","bat":"","omniscience":0.7954462350746851,"overpowerment":1.1328597473027633,"patheticism":0.01,"ruthlessness":0.5995701978079284,"shakespearianism":0.2614571723788096,"suppression":0.9438188265305831,"tenaciousness":0.43516083619920254,"thwackability":0.2791395999787293,"tragicness":0.03513002235949303,"unthwackability":0.48444498576466793,"watchfulness":0.44866839109535595,"pressurization":0.9826198699348789,"totalFingers":12,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":1.0354813987784384,"fate":91,"armor":"","ritual":"Knitting","coffee":13,"blood":5,"permAttr":["HONEY_ROASTED","WANDERER"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.827288676364024,"pitchingRating":0.4991699999625215,"hittingRating":0.39369163160139165,"defenseRating":0.6474961286558943,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":null,"eDensity":20.57352505608682,"state":{},"evolution":0}]'
+      string: '[{"id":"f741dc01-2bae-4459-bfc0-f97536193eea","anticapitalism":1.142935996171087,"baseThirst":0.27571593736509314,"buoyancy":0.980174699651217,"chasiness":0.2580012586919075,"coldness":0.6372219347869676,"continuation":0.8961946230318698,"divinity":0.33278812289061027,"groundFriction":0.6090479623798407,"indulgence":0.8712221605195477,"laserlikeness":1.092480711416188,"martyrdom":1.0826982630541027,"moxie":0.6977275001382904,"musclitude":0.5625168944340917,"name":"Alejandro
+        Leaf","omniscience":0.8091867574201859,"overpowerment":1.1538104073610338,"patheticism":0.001,"ruthlessness":0.6288368761444355,"shakespearianism":0.29264355057777075,"suppression":0.9871524364475209,"tenaciousness":0.47465865188166745,"thwackability":0.3233625620724441,"tragicness":0.012139078299978727,"unthwackability":0.5310907592702779,"watchfulness":0.48268672261109824,"pressurization":0.9826198699348789,"totalFingers":12,"soul":2,"deceased":false,"peanutAllergy":false,"cinnamon":1.0501388961802856,"fate":91,"ritual":"Knitting","coffee":13,"blood":0,"permAttr":["HONEY_ROASTED","WANDERER","TRIPLE_THREAT"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8530438381071498,"pitchingRating":0.5408301625526074,"hittingRating":0.4278604380110678,"defenseRating":0.6795429989437403,"leagueTeamId":"bfd38797-8404-4b38-8b82-341da28b1f83","tournamentTeamId":null,"eDensity":21.50894206330196,"state":{},"evolution":0,"items":[{"id":"239a6c75-98e9-4193-8008-29e7285c41da","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.10413128528426685}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.04620001580031896,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1450'
+      - '1837'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:41 GMT
+      - Wed, 19 May 2021 20:49:07 GMT
       Etag:
-      - W/"5aa-yNAsp3ZHv1xXYm2ScDF1puAIfI8"
+      - W/"72d-BDKd5LEngtlyUgBlu6PXEH4mSzQ"
       Server:
       - Cowboy
       Vary:

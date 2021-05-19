@@ -11,23 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/team?id=36569151-a2fb-43c1-9df7-2df512424c82
+    uri: https://www.blaseball.com/database/team?id=747b8e4a-7e50-4638-a973-ea7950a3e739
   response:
     body:
-      string: '{"id":"36569151-a2fb-43c1-9df7-2df512424c82","lineup":["4b3e8e9b-6de1-4840-8751-b1fb45dc5605","766dfd1e-11c3-42b6-a167-9b2d568b5dc0","9e724d9a-92a0-436e-bde1-da0b2af85d8f","413b3ddb-d933-4567-a60e-6d157480239d","198fd9c8-cb75-482d-873e-e6b91d42a446","f38c5d80-093f-46eb-99d6-942aa45cd921","ec68845f-3b26-412f-8446-4fef34e09c77","04931546-1b4a-469f-b391-7ed67afe824c","667cb445-c288-4e62-b603-27291c1e475d","16aff709-e855-47c8-8818-b9ba66e90fe8"],"rotation":["ae4acebd-edb5-4d20-bf69-f2d5151312ff","81d7d022-19d6-427d-aafc-031fcb79b29e","378c07b0-5645-44b5-869f-497d144c7b35","0c83e3b6-360e-4b7d-85e3-d906633c9ca0","18af933a-4afa-4cba-bda5-45160f3af99b","fedbceb8-e2aa-4868-ac35-74cd0445893f"],"bullpen":["ab9b2592-a64a-4913-bf6c-3ae5bd5d26a5","29bf512a-cd8c-4ceb-b25a-d96300c184bb","94d772c7-0254-4f08-814c-f6fc58fcfb9b","1e229fe5-a191-48ef-a7dd-6f6e13d6d73f","c4dec95e-78a1-4840-b209-b3b597181534","5c60f834-a133-4dc6-9c07-392fb37b3e6a","b7cdb93b-6f9d-468a-ae00-54cbc324ee84","c4951cae-0b47-468b-a3ac-390cc8e9fd05","cc113432-5f9b-46f8-9745-09f999d51801"],"bench":["1e7b02b7-6981-427a-b249-8e9bd35f3882","6a869b40-be99-4520-89e5-d382b07e4a3c","8d81b190-d3b8-4cd9-bcec-0e59fdd7f2bc","662f34f0-bd74-49a7-8506-50d4dd333c4c","c54fba12-2fb5-4091-b1d7-1449693b35d6"],"seasAttr":[],"permAttr":["BIRD_SEED"],"fullName":"New
-        York Millennials","location":"New York","mainColor":"#ffd4d8","nickname":"Millennials","secondaryColor":"#ffd4d8","shorthand":"NYMI","emoji":"0x1F4F1","slogan":"Youth
-        Will Save Us","shameRuns":0,"totalShames":62,"totalShamings":54,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":5,"tournamentWins":0,"stadium":"ba794e99-4d6b-4e12-9450-6522745190f8","eDensity":1850.340398956422,"state":{},"evolution":0,"winStreak":1,"level":4}'
+      string: '{"id":"747b8e4a-7e50-4638-a973-ea7950a3e739","lineup":["194a78fd-3aa7-4356-8ba0-b9fdcbc0ea85","c0177f76-67fc-4316-b650-894159dede45","b082ca6e-eb11-4eab-8d6a-30f8be522ec4","19241aa4-38e3-45ed-9750-68f4401f80e1","5bcfb3ff-5786-4c6c-964c-5c325fcc48d7","7cf83bdc-f95f-49d3-b716-06f2cf60a78d","2e86de11-a2dd-4b28-b5fe-f4d0c38cd20b","7932c7c7-babb-4245-b9f5-cdadb97c99fb"],"rotation":["2720559e-9173-4042-aaa0-d3852b72ab2e","7aeb8e0b-f6fb-4a9e-bba2-335dada5f0a3","b3e512df-c411-4100-9544-0ceadddb28cf"],"bullpen":["5fc4713c-45e1-4593-a968-7defeb00a0d4","77a41c29-8abd-4456-b6e0-a034252700d2","a73427b3-e96a-4156-a9ab-844edc696fed","1db2f602-64b1-4a5c-8697-1932cc2c6df1","04f955fe-9cc9-4482-a4d2-07fe033b59ee","6e744b21-c4fa-4fa8-b4ea-e0e97f68ded5","37efef78-2df4-4c76-800c-43d4faf07737","58fca5fa-e559-4f5e-ac87-dc99dd19e410","2727215d-3714-438d-b1ba-2ed15ec481c0","63580bd7-6138-471c-82a5-bc9d29ffd06d"],"bench":["9abe02fb-2b5a-432f-b0af-176be6bd62cf","32c9bce6-6e52-40fa-9f64-3629b3d026a8","695daf02-113d-4e76-b802-0862df16afbd","db3ff6f0-1045-4223-b3a8-a016ca987af9","6f71667b-59f2-46df-adac-a8885a4f6ac5","df34d168-4d6a-403c-aca5-2b1ebe90444d","2a8b371f-d2eb-4be7-b89f-aff10edb4412","128a33b9-c82f-408e-9fa3-5161f5a3e297","852107b8-8cf3-4fbb-97f9-76f73bc47708","243e9c5c-5a8a-4b48-9ce6-b10ddd677ae6","d744f534-2352-472b-9e42-cd91fa540f1b","f73009c5-2ede-4dc4-b96d-84ba93c8a429","6fc3689f-bb7d-4382-98a2-cf6ddc76909d"],"seasAttr":[],"permAttr":["FIREPROOF","SEALANT","AMBUSH","FIERY"],"fullName":"Hades
+        Tigers","location":"Hades","mainColor":"#5c1c1c","nickname":"Tigers","secondaryColor":"#e83622","shorthand":"HAT","emoji":"0x1F405","slogan":"Never
+        Look Back.","shameRuns":0,"totalShames":62,"totalShamings":91,"seasonShames":0,"seasonShamings":3,"championships":3,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":14,"tournamentWins":0,"stadium":"929fc650-948a-4736-b7a2-bb7b75902e6e","eDensity":1661.0695194219463,"state":{},"evolution":1,"winStreak":-2,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1816'
+      - '1984'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:45 GMT
+      - Wed, 19 May 2021 20:50:46 GMT
       Etag:
-      - W/"718-ybwQQd6YiZ7d1gmO4u6HxB0LUGg"
+      - W/"7c0-aztD9tRowdKQTm4pPhscUPIJLaE"
       Server:
       - Cowboy
       Vary:
@@ -51,23 +51,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/team?id=747b8e4a-7e50-4638-a973-ea7950a3e739
+    uri: https://www.blaseball.com/database/team?id=36569151-a2fb-43c1-9df7-2df512424c82
   response:
     body:
-      string: '{"id":"747b8e4a-7e50-4638-a973-ea7950a3e739","lineup":["efafe75e-2f00-4418-914c-9b6675d39264","c0177f76-67fc-4316-b650-894159dede45","b082ca6e-eb11-4eab-8d6a-30f8be522ec4","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e","5bcfb3ff-5786-4c6c-964c-5c325fcc48d7","7cf83bdc-f95f-49d3-b716-06f2cf60a78d","2e86de11-a2dd-4b28-b5fe-f4d0c38cd20b","7932c7c7-babb-4245-b9f5-cdadb97c99fb"],"rotation":["1db2f602-64b1-4a5c-8697-1932cc2c6df1","2720559e-9173-4042-aaa0-d3852b72ab2e","7aeb8e0b-f6fb-4a9e-bba2-335dada5f0a3","b3e512df-c411-4100-9544-0ceadddb28cf"],"bullpen":["5fc4713c-45e1-4593-a968-7defeb00a0d4","77a41c29-8abd-4456-b6e0-a034252700d2","a73427b3-e96a-4156-a9ab-844edc696fed","04f955fe-9cc9-4482-a4d2-07fe033b59ee","6e744b21-c4fa-4fa8-b4ea-e0e97f68ded5","37efef78-2df4-4c76-800c-43d4faf07737","58fca5fa-e559-4f5e-ac87-dc99dd19e410","2727215d-3714-438d-b1ba-2ed15ec481c0"],"bench":["9abe02fb-2b5a-432f-b0af-176be6bd62cf","32c9bce6-6e52-40fa-9f64-3629b3d026a8","695daf02-113d-4e76-b802-0862df16afbd","db3ff6f0-1045-4223-b3a8-a016ca987af9","6f71667b-59f2-46df-adac-a8885a4f6ac5","df34d168-4d6a-403c-aca5-2b1ebe90444d","2a8b371f-d2eb-4be7-b89f-aff10edb4412","128a33b9-c82f-408e-9fa3-5161f5a3e297","852107b8-8cf3-4fbb-97f9-76f73bc47708"],"seasAttr":["PARTY_TIME"],"permAttr":["FIREPROOF","SEALANT","AMBUSH"],"fullName":"Hades
-        Tigers","location":"Hades","mainColor":"#5c1c1c","nickname":"Tigers","secondaryColor":"#e83622","shorthand":"HAT","emoji":"0x1F405","slogan":"Never
-        Look Back.","shameRuns":0,"totalShames":54,"totalShamings":74,"seasonShames":5,"seasonShamings":1,"championships":3,"weekAttr":[],"gameAttr":[],"rotationSlot":107,"teamSpirit":0,"card":14,"tournamentWins":0,"stadium":"929fc650-948a-4736-b7a2-bb7b75902e6e","eDensity":2325.4988247841266,"state":{},"evolution":1,"winStreak":-2,"level":5}'
+      string: '{"id":"36569151-a2fb-43c1-9df7-2df512424c82","lineup":["4b3e8e9b-6de1-4840-8751-b1fb45dc5605","766dfd1e-11c3-42b6-a167-9b2d568b5dc0","9e724d9a-92a0-436e-bde1-da0b2af85d8f","c0c85be4-ff26-470f-8135-af771fd21e51","58c9e294-bd49-457c-883f-fb3162fc668e","ec68845f-3b26-412f-8446-4fef34e09c77","4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d","16aff709-e855-47c8-8818-b9ba66e90fe8"],"rotation":["5dbf11c0-994a-4482-bd1e-99379148ee45","81d7d022-19d6-427d-aafc-031fcb79b29e","defbc540-a36d-460b-afd8-07da2375ee63","6c346d8b-d186-4228-9adb-ae919d7131dd","aae38811-122c-43dd-b59c-d0e203154dbe"],"bullpen":["ab9b2592-a64a-4913-bf6c-3ae5bd5d26a5","29bf512a-cd8c-4ceb-b25a-d96300c184bb","8d81b190-d3b8-4cd9-bcec-0e59fdd7f2bc","94d772c7-0254-4f08-814c-f6fc58fcfb9b","1e229fe5-a191-48ef-a7dd-6f6e13d6d73f","c4dec95e-78a1-4840-b209-b3b597181534","5c60f834-a133-4dc6-9c07-392fb37b3e6a","b7cdb93b-6f9d-468a-ae00-54cbc324ee84","c4951cae-0b47-468b-a3ac-390cc8e9fd05","cc113432-5f9b-46f8-9745-09f999d51801","5c6cce63-99b3-441d-90e0-0664e68057a6"],"bench":["1e7b02b7-6981-427a-b249-8e9bd35f3882","6a869b40-be99-4520-89e5-d382b07e4a3c","ae4acebd-edb5-4d20-bf69-f2d5151312ff","662f34f0-bd74-49a7-8506-50d4dd333c4c","c54fba12-2fb5-4091-b1d7-1449693b35d6","98220753-0a70-4a4e-8058-0a7bcb6f7d5d","138fccc3-e66f-4b07-8327-d4b6f372f654","8b5ddd3d-cca6-4e01-ac7f-65dc56831933"],"seasAttr":[],"permAttr":["BIRD_SEED"],"fullName":"New
+        York Millennials","location":"New York","mainColor":"#ffd4d8","nickname":"Millennials","secondaryColor":"#ffd4d8","shorthand":"NYMI","emoji":"0x1F4F1","slogan":"Youth
+        Will Save Us","shameRuns":0,"totalShames":81,"totalShamings":77,"seasonShames":2,"seasonShamings":4,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":5,"tournamentWins":0,"stadium":"ba794e99-4d6b-4e12-9450-6522745190f8","eDensity":1198.8705486163012,"state":{},"evolution":0,"winStreak":2,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1794'
+      - '1896'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:02:33 GMT
+      - Wed, 19 May 2021 20:50:46 GMT
       Etag:
-      - W/"702-IN2Tt2Z08WyorYsUK5fpWJTlifw"
+      - W/"768-F4BZuXlZdEeCLYDM6wHR9fmhrPE"
       Server:
       - Cowboy
       Vary:

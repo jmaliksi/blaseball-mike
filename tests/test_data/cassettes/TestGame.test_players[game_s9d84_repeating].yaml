@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=03f920cc-411f-44ef-ae66-98a44e883291
   response:
     body:
-      string: '[{"id":"03f920cc-411f-44ef-ae66-98a44e883291","anticapitalism":0.9757811122087696,"baseThirst":0.8209137462465141,"buoyancy":0.6357750873176015,"chasiness":0.42042686486883674,"coldness":0.32609188048885135,"continuation":0.3426433245987108,"divinity":0.8721604763688224,"groundFriction":0.6944455058267247,"indulgence":0.7943764470270354,"laserlikeness":0.3766111523735709,"martyrdom":0.6408824061722884,"moxie":0.3567597453655872,"musclitude":0.2130415606169705,"name":"Cornelius
-        Games","bat":"","omniscience":0.7592105677658072,"overpowerment":0.9189080233158786,"patheticism":0.7227333026673363,"ruthlessness":0.8933703539806085,"shakespearianism":0.1196370950119294,"suppression":0.3476530124216177,"tenaciousness":0.9596695271650697,"thwackability":0.32456890337128164,"tragicness":0.027657963908973016,"unthwackability":0.7708869926959914,"watchfulness":0.440239049220248,"pressurization":0.9408542236529036,"totalFingers":12,"soul":8,"deceased":false,"peanutAllergy":false,"cinnamon":0.19682468966198197,"fate":31,"armor":"HEADPHONES","ritual":"Swearing
-        an oath","coffee":7,"blood":1,"permAttr":["WILD","PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5093625623623066,"pitchingRating":0.6516567011720154,"hittingRating":0.49247911202941935,"defenseRating":0.7909880688298303,"leagueTeamId":"bfd38797-8404-4b38-8b82-341da28b1f83","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":59.111405110755,"state":{},"evolution":0}]'
+      string: '[{"id":"03f920cc-411f-44ef-ae66-98a44e883291","anticapitalism":0.8159556698122307,"baseThirst":0.5556113251139317,"buoyancy":0.560885464246524,"chasiness":0.35931216241550434,"coldness":0.3269359111894803,"continuation":0.20746429359618085,"divinity":0.6918535481652274,"groundFriction":0.5816080828881661,"indulgence":0.6937518949210977,"laserlikeness":0.1295357670116387,"martyrdom":0.578166247832905,"moxie":0.17681463234374956,"musclitude":0.029427534815350403,"name":"Cornelius
+        Games","omniscience":0.5844040700803568,"overpowerment":0.926127139076325,"patheticism":0.9111741769455438,"ruthlessness":0.9696345761705276,"shakespearianism":0.1775499573405838,"suppression":0.5671730917899347,"tenaciousness":0.7963676640553033,"thwackability":0.18439091516623185,"tragicness":0.10384161696457388,"unthwackability":0.9985079140914006,"watchfulness":0.29652913961058763,"pressurization":0.9408542236529036,"totalFingers":12,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.10480112752132023,"fate":31,"ritual":"Swearing
+        an oath","coffee":7,"blood":0,"permAttr":["WILD","PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2648193755795837,"pitchingRating":0.7982027278919672,"hittingRating":0.2870291884674065,"defenseRating":0.6721805719286889,"leagueTeamId":"bfd38797-8404-4b38-8b82-341da28b1f83","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":54.155623047073526,"state":{},"evolution":0,"items":[{"id":"21cef61d-0729-43dc-a1ef-0e42c52b6c0b","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.14521969254389072}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.06470747867944404,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1506'
+      - '1866'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:47 GMT
+      - Wed, 19 May 2021 20:49:14 GMT
       Etag:
-      - W/"5e2-9sNCSOprD2YQru9DcH3HyFiuvTk"
+      - W/"74a-WrRlDo2IgOgPqJ+xe7dAy3MTu7o"
       Server:
       - Cowboy
       Vary:
@@ -54,20 +54,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=042962c8-4d8b-44a6-b854-6ccef3d82716
   response:
     body:
-      string: '[{"id":"042962c8-4d8b-44a6-b854-6ccef3d82716","anticapitalism":1.5481447910442014,"baseThirst":1.2081844911318234,"buoyancy":1.3379145609010132,"chasiness":1.34251683420415,"coldness":0.4867615334393273,"continuation":0.977061574382849,"divinity":1.3885662566223884,"groundFriction":0.5396781998763025,"indulgence":0.7839699129629905,"laserlikeness":1.2224439783440146,"martyrdom":0.9065151245256038,"moxie":0.869099577073495,"musclitude":0.9148658858336753,"name":"Ronan
-        Jaylee","bat":"","omniscience":1.544051051388856,"overpowerment":0.5166746546553769,"patheticism":0.001,"ruthlessness":0.8518613157773515,"shakespearianism":1.4654687342778896,"suppression":0.6698706166740125,"tenaciousness":1.1733589947422423,"thwackability":1.0299209406765242,"tragicness":0.001,"unthwackability":0.6726061751308157,"watchfulness":0.8029459799424892,"pressurization":0.8019224362991275,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.8477431145599374,"fate":95,"armor":"","ritual":"Model
-        trains","coffee":4,"blood":12,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":1.0314862163914804,"pitchingRating":0.7108715269697595,"hittingRating":1.1118165304136518,"defenseRating":1.185387318813994,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":28.172692041944416,"state":{},"evolution":0}]'
+      string: '[{"id":"042962c8-4d8b-44a6-b854-6ccef3d82716","anticapitalism":1.6060765117378843,"baseThirst":1.2755292564114087,"buoyancy":1.4122185391263085,"chasiness":1.3962637926895232,"coldness":0.5618250991054736,"continuation":1.0477108000964708,"divinity":1.4298720788544608,"groundFriction":0.595798547466399,"indulgence":0.8347933578041671,"laserlikeness":1.2679253798682177,"martyrdom":0.9758301401712859,"moxie":0.9194153772071246,"musclitude":0.9589420773238666,"name":"Ronan
+        Jaylee","omniscience":1.5918324410553326,"overpowerment":0.5737271349020678,"patheticism":0.001,"ruthlessness":0.9271687299502822,"shakespearianism":1.542525721721414,"suppression":0.7318466131818546,"tenaciousness":1.2168497497577142,"thwackability":1.0922829191444492,"tragicness":0.001,"unthwackability":0.7431495674865123,"watchfulness":0.8430760904616902,"pressurization":0.8019224362991275,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.9015481009881109,"fate":95,"ritual":"Model
+        trains","coffee":4,"blood":1,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":1.0809556467857226,"pitchingRating":0.7920830204243436,"hittingRating":1.1572589256240415,"defenseRating":1.21642940437519,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":35.72708898046508,"state":{},"evolution":0,"items":[{"id":"2601ee31-e452-42d9-8f0a-d7fafeef266f","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.1268531630290618}]},"suffix":null,"durability":1,"health":0,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.045369608830035046,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1408'
+      - '1775'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:47 GMT
+      - Wed, 19 May 2021 20:49:14 GMT
       Etag:
-      - W/"580-9jnNyk+6pWWsl2ciYw+O+8BZULM"
+      - W/"6ef-Mg8AJx/POsj2Rp8vtu6rOcCcTTQ"
       Server:
       - Cowboy
       Vary:
@@ -94,20 +94,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=733d80f1-2485-40f7-828b-fd7cd8243a01
   response:
     body:
-      string: '[{"id":"733d80f1-2485-40f7-828b-fd7cd8243a01","anticapitalism":1.178704502411408,"baseThirst":0.5180224137471207,"buoyancy":0.3132818265091646,"chasiness":0.5172931754931909,"coldness":0.8294217431981931,"continuation":0.5826995176315298,"divinity":1.169295681111278,"groundFriction":0.5067587140246327,"indulgence":0.9714147526542813,"laserlikeness":0.7834259767128765,"martyrdom":1.223912558048123,"moxie":0.6751580926798798,"musclitude":0.7240405575035813,"name":"Rai
-        Spliff","bat":"","omniscience":1.136717581444753,"overpowerment":0.5912312315570738,"patheticism":0.001,"ruthlessness":0.2577309405760221,"shakespearianism":0.24659959410578305,"suppression":1.1609197821433188,"tenaciousness":0.41836362266731825,"thwackability":1.0664550806693294,"tragicness":0.0011164268660436918,"unthwackability":0.9967327650603687,"watchfulness":0.6282960803665834,"pressurization":0.26452826639413507,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6358327345589215,"fate":75,"armor":"","ritual":"Motivational
-        speech","coffee":6,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7314740049862997,"pitchingRating":0.46418191634278705,"hittingRating":1.027944053211422,"defenseRating":0.7830182828571913,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":29.0463278017839,"state":{},"evolution":0}]'
+      string: '[{"id":"733d80f1-2485-40f7-828b-fd7cd8243a01","anticapitalism":0.9967960956113966,"baseThirst":0.4322614532178606,"buoyancy":0.12628078483010358,"chasiness":0.4097189130770279,"coldness":0.7701997609558319,"continuation":0.44389553101504675,"divinity":1.0078299364716643,"groundFriction":0.31973160623570707,"indulgence":0.8812784589942135,"laserlikeness":0.6007702334443399,"martyrdom":1.0866842833102015,"moxie":0.5991590042507902,"musclitude":0.6269302784579293,"name":"Rai
+        Spliff","omniscience":0.9666921948425843,"overpowerment":0.5378256232643331,"patheticism":0.11952038390960595,"ruthlessness":0.06831604769843147,"shakespearianism":0.11862681069893652,"suppression":0.989751289026374,"tenaciousness":0.25846039080652383,"thwackability":0.914569514939877,"tragicness":0.1331385643307177,"unthwackability":0.8898847546258648,"watchfulness":0.4866525457335613,"pressurization":0.26452826639413507,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.5745295738405048,"fate":75,"ritual":"Motivational
+        speech","coffee":6,"blood":1,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5789576593406879,"pitchingRating":0.23586069277748112,"hittingRating":0.8975445650426508,"defenseRating":0.6447147046620288,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":22.49954335275994,"state":{},"evolution":0,"items":[{"id":"d8a1caa2-4cd8-4fa7-af31-b6d053c8ff2d","name":"Weird
+        Plant-Based Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Weird","adjustments":[{"stat":0,"type":1,"value":0.13683247888700834},{"stat":14,"type":1,"value":0.1662310076587841},{"stat":13,"type":1,"value":0.2031964093445314},{"stat":6,"type":1,"value":0.16647726457967763},{"stat":8,"type":1,"value":0.24753089669897557}]},{"name":"Plant-Based","adjustments":[{"stat":23,"type":1,"value":0.3826862538258089},{"stat":15,"type":1,"value":0.18384842694464723},{"stat":1,"type":1,"value":-0.06674846957181035}]}],"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.16083080807604216}]},"suffix":null,"durability":3,"health":3,"baserunningRating":0.02919475866205401,"pitchingRating":0.02159357696354558,"hittingRating":0.04084387009542245,"defenseRating":0.038511605423019346}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1431'
+      - '2345'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:47 GMT
+      - Wed, 19 May 2021 20:49:14 GMT
       Etag:
-      - W/"597-bO6K75/AQ2HtL/VqylJ0gLU1oqQ"
+      - W/"929-UdG8jIWFdi6fmMfGKyaGq8+BWlo"
       Server:
       - Cowboy
       Vary:
@@ -134,20 +135,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=733d80f1-2485-40f7-828b-fd7cd8243a01,733d80f1-2485-40f7-828b-fd7cd8243a01
   response:
     body:
-      string: '[{"id":"733d80f1-2485-40f7-828b-fd7cd8243a01","anticapitalism":1.178704502411408,"baseThirst":0.5180224137471207,"buoyancy":0.3132818265091646,"chasiness":0.5172931754931909,"coldness":0.8294217431981931,"continuation":0.5826995176315298,"divinity":1.169295681111278,"groundFriction":0.5067587140246327,"indulgence":0.9714147526542813,"laserlikeness":0.7834259767128765,"martyrdom":1.223912558048123,"moxie":0.6751580926798798,"musclitude":0.7240405575035813,"name":"Rai
-        Spliff","bat":"","omniscience":1.136717581444753,"overpowerment":0.5912312315570738,"patheticism":0.001,"ruthlessness":0.2577309405760221,"shakespearianism":0.24659959410578305,"suppression":1.1609197821433188,"tenaciousness":0.41836362266731825,"thwackability":1.0664550806693294,"tragicness":0.0011164268660436918,"unthwackability":0.9967327650603687,"watchfulness":0.6282960803665834,"pressurization":0.26452826639413507,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6358327345589215,"fate":75,"armor":"","ritual":"Motivational
-        speech","coffee":6,"blood":9,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7314740049862997,"pitchingRating":0.46418191634278705,"hittingRating":1.027944053211422,"defenseRating":0.7830182828571913,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":29.0463278017839,"state":{},"evolution":0}]'
+      string: '[{"id":"733d80f1-2485-40f7-828b-fd7cd8243a01","anticapitalism":0.9967960956113966,"baseThirst":0.4322614532178606,"buoyancy":0.12628078483010358,"chasiness":0.4097189130770279,"coldness":0.7701997609558319,"continuation":0.44389553101504675,"divinity":1.0078299364716643,"groundFriction":0.31973160623570707,"indulgence":0.8812784589942135,"laserlikeness":0.6007702334443399,"martyrdom":1.0866842833102015,"moxie":0.5991590042507902,"musclitude":0.6269302784579293,"name":"Rai
+        Spliff","omniscience":0.9666921948425843,"overpowerment":0.5378256232643331,"patheticism":0.11952038390960595,"ruthlessness":0.06831604769843147,"shakespearianism":0.11862681069893652,"suppression":0.989751289026374,"tenaciousness":0.25846039080652383,"thwackability":0.914569514939877,"tragicness":0.1331385643307177,"unthwackability":0.8898847546258648,"watchfulness":0.4866525457335613,"pressurization":0.26452826639413507,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.5745295738405048,"fate":75,"ritual":"Motivational
+        speech","coffee":6,"blood":1,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5789576593406879,"pitchingRating":0.23586069277748112,"hittingRating":0.8975445650426508,"defenseRating":0.6447147046620288,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":22.49954335275994,"state":{},"evolution":0,"items":[{"id":"d8a1caa2-4cd8-4fa7-af31-b6d053c8ff2d","name":"Weird
+        Plant-Based Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Weird","adjustments":[{"stat":0,"type":1,"value":0.13683247888700834},{"stat":14,"type":1,"value":0.1662310076587841},{"stat":13,"type":1,"value":0.2031964093445314},{"stat":6,"type":1,"value":0.16647726457967763},{"stat":8,"type":1,"value":0.24753089669897557}]},{"name":"Plant-Based","adjustments":[{"stat":23,"type":1,"value":0.3826862538258089},{"stat":15,"type":1,"value":0.18384842694464723},{"stat":1,"type":1,"value":-0.06674846957181035}]}],"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.16083080807604216}]},"suffix":null,"durability":3,"health":3,"baserunningRating":0.02919475866205401,"pitchingRating":0.02159357696354558,"hittingRating":0.04084387009542245,"defenseRating":0.038511605423019346}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1431'
+      - '2345'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:47 GMT
+      - Wed, 19 May 2021 20:49:14 GMT
       Etag:
-      - W/"597-bO6K75/AQ2HtL/VqylJ0gLU1oqQ"
+      - W/"929-UdG8jIWFdi6fmMfGKyaGq8+BWlo"
       Server:
       - Cowboy
       Vary:

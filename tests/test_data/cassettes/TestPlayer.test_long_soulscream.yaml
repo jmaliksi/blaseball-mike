@@ -14,19 +14,29 @@ interactions:
     uri: https://api.blaseball-reference.com/v1/playerIdsByName?name=Chorby%20Soul&current=True
   response:
     body:
-      string: '[{"player_id":"a1628d97-16ca-4a75-b8df-569bae02bef9","player_name":"Chorby
-        Soul","valid_from":"2021-03-21T18:02:01.015Z","valid_until":null}]'
+      string: !!binary |
+        H4sIAAAAAAAAAz3LwQoCIRRA0V8J17142qij2z6hVkUMz1QacDQkgyH699zU+tx7ebNHojXUafbM
+        MuJKjN5o4OpGMJCW4EYfQSrjKKBwIRq2/S2ZltCnw71Ut26OpaVuL0qzn2ItSyeBggNK4HhCbQdp
+        Uez4Xp3/XcvPOTGbW0qf6xdXbjyCjQAAAA==
     headers:
       Access-Control-Allow-Origin:
       - '*'
+      Content-Encoding:
+      - gzip
       Content-Length:
-      - '141'
+      - '139'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:30 GMT
+      - Wed, 19 May 2021 20:50:27 GMT
       Etag:
-      - W/"8d-SIP1xrIpcpy50yhw5Mr2jUbENZk"
+      - W/"8d-w95gErSZVj8tw59TE41m6uuom2k"
+      Server:
+      - nginx/1.19.9
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - STALE
       X-Powered-By:
       - Express
     status:
@@ -47,19 +57,19 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=a1628d97-16ca-4a75-b8df-569bae02bef9
   response:
     body:
-      string: '[{"id":"a1628d97-16ca-4a75-b8df-569bae02bef9","anticapitalism":0.8970355629627309,"baseThirst":0.058243218552248344,"buoyancy":0.5896518857978867,"chasiness":0.20439497456683964,"coldness":0.8893230012496356,"continuation":0.4373024995235495,"divinity":0.5898759131741964,"groundFriction":0.3276746719765562,"indulgence":0.4291972302866216,"laserlikeness":0.0113149411039275,"martyrdom":0.8975257761356807,"moxie":0.1928403921305042,"musclitude":0.05994458916975387,"name":"Chorby
-        Soul","bat":null,"omniscience":0.8057216322587384,"overpowerment":0.6031513392090022,"patheticism":0.1226889524593553,"ruthlessness":0.7273926455324549,"shakespearianism":0.45992426674459375,"suppression":0.7135199537920991,"tenaciousness":0.8395643991391997,"thwackability":0.42083430153259993,"tragicness":0.1,"unthwackability":0.3749185339228107,"watchfulness":0.5016257282203738,"pressurization":0.7113755233221608,"totalFingers":10,"soul":1777,"deceased":false,"peanutAllergy":false,"cinnamon":0.62584041346657,"fate":79,"armor":null,"ritual":null,"coffee":null,"blood":null,"permAttr":["RETURNED","DEBT_THREE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.060567390088304675,"pitchingRating":0.4610362587951204,"hittingRating":0.43519838097218294,"defenseRating":0.7284735294968893,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0}]'
+      string: '[{"id":"a1628d97-16ca-4a75-b8df-569bae02bef9","anticapitalism":0.001,"baseThirst":0.001,"buoyancy":0.001,"chasiness":0.001,"coldness":0.001,"continuation":0.001,"divinity":0.001,"groundFriction":0.001,"indulgence":0.001,"laserlikeness":0.001,"martyrdom":0.001,"moxie":0.001,"musclitude":0.001,"name":"Chorby
+        Soul","omniscience":0.001,"overpowerment":0.001,"patheticism":0.99,"ruthlessness":0.001,"shakespearianism":0.001,"suppression":0.001,"tenaciousness":0.001,"thwackability":0.001,"tragicness":0.999,"unthwackability":0.001,"watchfulness":0.001,"pressurization":0.7113755233221608,"totalFingers":10,"soul":1546,"deceased":false,"peanutAllergy":false,"cinnamon":0.001,"fate":79,"ritual":null,"coffee":null,"blood":null,"permAttr":["MARKED","LEGENDARY"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.0019952623149688785,"pitchingRating":0.00029853826189179584,"hittingRating":0.0018197008586099837,"defenseRating":0.007943282347242812,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":3098.584397486479,"state":{},"evolution":0,"items":[{"id":"1efa0c28-467f-4780-a84e-9d65afa337f0","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.14774192624151536}]},"suffix":null,"durability":1,"health":0,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.008660067674703526,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1439'
+      - '1510'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:31 GMT
+      - Wed, 19 May 2021 20:50:28 GMT
       Etag:
-      - W/"59f-626ciZ+f4/zzsL0612RHcWKv8II"
+      - W/"5e6-OuKvzdiLzrVFODhhot7mnV4xiRQ"
       Server:
       - Cowboy
       Vary:

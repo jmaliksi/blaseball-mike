@@ -14,18 +14,18 @@ interactions:
     uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6&type=stadium
   response:
     body:
-      string: '{"nextPage":"fH21zxhBCkuFzE46UaZstjbcAoUi3gAA","items":[{"entityId":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hash":"01315670-72fe-7de6-0d5d-6d3fd5596c87","validFrom":"2021-04-09T16:26:24.181151Z","validTo":null,"data":{"id":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hype":0,"mods":["PEANUT_MISTER","PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS"],"name":"Chesapeake
-        Racetrack and Ballpark","birds":0,"model":1,"state":{},"teamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","renoLog":{"big_bucket_mod":1,"flood_pumps_mod":1,"secret_base_mod":1,"peanut_mister_mod":1},"weather":{},"nickname":"The
-        Crabitat","renoCost":-1,"renoHand":[],"mainColor":"#593037","mysticism":0.5041285467234323,"viscosity":0.342355352110473,"elongation":0.4429810834155287,"filthiness":0.17090876339814468,"obtuseness":0.6692067275419404,"forwardness":0.5367446740414406,"grandiosity":0.5864887351526414,"ominousness":0.4703351350387238,"renoDiscard":["big_bucket_mod","black_hole_plus","flooding_plus","event_horizon_mod","coffee_one_plus","peanut_mister_mod","inconvenience_minus","fortifications_plus","inconvenience_plus","psychoacoustics_mod","big_bucket_mod","event_horizon_mod","solar_panels_mod","coffee_two_plus","fortifications_minus","mysticism_plus","viscosity_plus","sun_two_plus","secret_base_mod","echo_chamber_mod","soundsystem_mod","flood_pumps_mod","grind_rail_mod","fortifications_plus","mysticism_minus","peanuts_plus","inconvenience_plus"],"fortification":0.6530129161231448,"inconvenience":0.4262386576176254,"luxuriousness":0,"tertiaryColor":"#d9c1c3","secondaryColor":"#ab8287"}}]}'
+      string: '{"nextPage":"fH21zxhBCkuFzE46UaZstsonLTeI_QAA","items":[{"entityId":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hash":"e792b10d-406d-d348-4e48-f80e067ce0a5","validFrom":"2021-05-19T15:22:28.308577Z","validTo":null,"data":{"id":"cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6","hype":0.09000000000000002,"mods":["PEANUT_MISTER","PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS","SALMON_CANNONS","FAX_MACHINE","SMITHY"],"name":"Chesapeake
+        Racetrack and Ballpark","birds":0,"model":1,"state":{},"teamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","renoLog":{"big_bucket_mod":1,"turntables_mod":0,"fax_machine_mod":1,"flood_pumps_mod":1,"hotel_motel_mod":0,"secret_base_mod":1,"peanut_mister_mod":1,"salmon_cannons_mod":1},"weather":{"9":1,"14":1},"nickname":"The
+        Crabitat","renoCost":-1,"renoHand":["hoops_mod","grandiosity_plus","filthiness_cleanup","event_horizon_mod","fire_insurance_mod","obtuseness_plus","soundsystem_mod","viscosity_plus","grind_rail_mod"],"mainColor":"#593037","mysticism":0.5041285467234323,"viscosity":0.342355352110473,"elongation":0.4429810834155287,"filthiness":0.05420895008642218,"obtuseness":0.6692067275419404,"forwardness":0.5367446740414406,"grandiosity":0.5864887351526414,"ominousness":0.4703351350387238,"renoDiscard":["big_bucket_mod","black_hole_plus","flooding_plus","event_horizon_mod","coffee_one_plus","peanut_mister_mod","inconvenience_minus","fortifications_plus","inconvenience_plus","psychoacoustics_mod","big_bucket_mod","event_horizon_mod","solar_panels_mod","coffee_two_plus","fortifications_minus","mysticism_plus","viscosity_plus","sun_two_plus","secret_base_mod","echo_chamber_mod","soundsystem_mod","flood_pumps_mod","grind_rail_mod","fortifications_plus","mysticism_minus","peanuts_plus","inconvenience_plus","salmon_cannons_mod","sweetener_mod","viscosity_minus","forwardness_plus","ominousness_plus","flooding_plus","solar_panels_mod","obtuseness_plus","filthiness_cleanup","fax_machine_mod","blooddrain_plus","hotel_motel_mod","sun_two_plus","peanuts_plus","feedback_plus","solar_eclipse_plus","obtuseness_minus","soundsystem_mod","filthiness_cleanup","ominousness_minus","feedback_plus","salmon_plus","event_horizon_mod","elongation_plus","sweetener_mod","ominousness_plus","black_hole_plus"],"fortification":0.6530129161231448,"inconvenience":0.4262386576176254,"luxuriousness":0,"tertiaryColor":"#d9c1c3","secondaryColor":"#ab8287"}}]}'
     headers:
-      Content-Length:
-      - '1571'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 23:33:12 GMT
+      - Wed, 19 May 2021 20:50:47 GMT
       Server:
       - Kestrel
+      Transfer-Encoding:
+      - chunked
     status:
       code: 200
       message: OK

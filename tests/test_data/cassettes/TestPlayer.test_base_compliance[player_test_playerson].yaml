@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=766dfd1e-11c3-42b6-a167-9b2d568b5dc0
   response:
     body:
-      string: '[{"id":"766dfd1e-11c3-42b6-a167-9b2d568b5dc0","anticapitalism":0.6607333764974479,"baseThirst":0.5963993298472201,"buoyancy":0.8502586789110096,"chasiness":0.19944894296017104,"coldness":0.24964422796307367,"continuation":0.8319952920669782,"divinity":0.7961773480828651,"groundFriction":0.3544236883813392,"indulgence":0.9157216890755215,"laserlikeness":0.8756788665400987,"martyrdom":0.8064289315605551,"moxie":0.33622395264247384,"musclitude":0.6844197499063772,"name":"Sandie
-        Turner","omniscience":0.38085997836449537,"overpowerment":0.384339644351599,"patheticism":0.6197667597160794,"ruthlessness":0.6503200490136459,"shakespearianism":1.2182831179351,"suppression":0.18122710004566212,"tenaciousness":0.49527052240246505,"thwackability":1.0248047732717527,"tragicness":0.07702438415213625,"unthwackability":1.0773667038842145,"watchfulness":1.0459291351913256,"pressurization":0.5287515061488359,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.9308259755533657,"fate":64,"ritual":"Pining
-        for glory","coffee":7,"blood":6,"permAttr":["SPICY","PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7795910776942706,"pitchingRating":0.7458436052323034,"hittingRating":0.7906966557202726,"defenseRating":0.5875672598942242,"leagueTeamId":"36569151-a2fb-43c1-9df7-2df512424c82","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":58.32589018978749,"state":{},"evolution":0,"items":[]}]'
+      string: '[{"id":"766dfd1e-11c3-42b6-a167-9b2d568b5dc0","anticapitalism":0.5974453168669951,"baseThirst":0.4086000534067315,"buoyancy":0.732873060317137,"chasiness":0.009925589660976314,"coldness":0.10568397420150641,"continuation":0.6590478246459605,"divinity":0.742897207597354,"groundFriction":0.16861543750734223,"indulgence":0.7878568985348622,"laserlikeness":0.741465908062539,"martyrdom":0.6429868310211834,"moxie":0.19497150562182725,"musclitude":0.5498270608114117,"name":"Sandie
+        Turner","omniscience":0.19884043999711976,"overpowerment":0.32066266864704135,"patheticism":0.7104413832378385,"ruthlessness":0.5409618189952657,"shakespearianism":1.0664959202593844,"suppression":0.017270810975004686,"tenaciousness":0.3358911497180488,"thwackability":0.919446235146057,"tragicness":0.2745838696758947,"unthwackability":0.973316862665715,"watchfulness":0.8816185662463264,"pressurization":0.5287515061488359,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.8386986509587906,"fate":64,"ritual":"Pining
+        for glory","coffee":7,"blood":6,"permAttr":["SPICY","PERK"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6171654368460292,"pitchingRating":0.6190093057191488,"hittingRating":0.6873545394392532,"defenseRating":0.34417092245457065,"leagueTeamId":"36569151-a2fb-43c1-9df7-2df512424c82","tournamentTeamId":"d8f82163-2e74-496b-8e4b-2ab35b2d3ff1","eDensity":51.873901431213014,"state":{},"evolution":0,"items":[{"id":"07e5d2bc-29ca-47dc-b54e-4359dbe9e15e","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.13710934150029253}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.035524693369518356,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1484'
+      - '1865'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:05:59 GMT
+      - Wed, 19 May 2021 20:50:23 GMT
       Etag:
-      - W/"5cc-NhKA5l8EtwHDo4Mfi7zjNEdwjfI"
+      - W/"749-p+GuTkB62ibPNAtZn4QaHRYgkQs"
       Server:
       - Cowboy
       Vary:

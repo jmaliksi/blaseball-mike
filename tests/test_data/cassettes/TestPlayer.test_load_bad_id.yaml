@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=6644d767-ab15-4528-a4ce-ae1f8aadb65f,00000000-0000-0000-0000-000000000000
   response:
     body:
-      string: '[{"id":"6644d767-ab15-4528-a4ce-ae1f8aadb65f","anticapitalism":0.09820482794626617,"baseThirst":0.5981758490869238,"buoyancy":0.0008908716441011766,"chasiness":0.16980266728260318,"coldness":0.7788441451386205,"continuation":0.5086997271165257,"divinity":0.9271603638578974,"groundFriction":0.216137470040763,"indulgence":0.2340110011984089,"laserlikeness":0.17516216161185794,"martyrdom":0.1845429646426302,"moxie":0.9844870828631578,"musclitude":0.015154132030299916,"name":"Paula
-        Reddick","bat":"","omniscience":0.6143125481352854,"overpowerment":0.8185466769535259,"patheticism":0.18583044463894738,"ruthlessness":0.4186738122956346,"shakespearianism":0.8242078709412874,"suppression":0.8453860628420269,"tenaciousness":0.8992208318642234,"thwackability":0.7857708881577676,"tragicness":0.1,"unthwackability":0.14476802181878257,"watchfulness":0.19231573226607757,"pressurization":0.040072109597423244,"totalFingers":10,"soul":3,"deceased":false,"peanutAllergy":true,"cinnamon":0.06429302817673332,"fate":62,"armor":"","ritual":"Reading
-        theory","coffee":7,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.27570574753839294,"pitchingRating":0.2540581293455701,"hittingRating":0.6241492841411685,"defenseRating":0.5001040425764154,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":null,"eDensity":17.578120425210827,"state":{},"evolution":0}]'
+      string: '[{"id":"6644d767-ab15-4528-a4ce-ae1f8aadb65f","anticapitalism":0.21638585126057738,"baseThirst":0.7088650277668863,"buoyancy":0.102821094200512,"chasiness":0.31947315802048937,"coldness":0.8860402736329226,"continuation":0.6754728323618524,"divinity":1.025723108579267,"groundFriction":0.39660517508375626,"indulgence":0.398308154600915,"laserlikeness":0.3261031174280058,"martyrdom":0.3039322657124523,"moxie":1.0962145506198797,"musclitude":0.12628586724043722,"name":"Paula
+        Reddick","omniscience":0.7208275706510296,"overpowerment":0.9402286440834833,"patheticism":0.05887827487989102,"ruthlessness":0.5319423626719348,"shakespearianism":0.9372226263174125,"suppression":0.9463840255574854,"tenaciousness":1.0188060458645376,"thwackability":0.9078268859199926,"tragicness":0.001,"unthwackability":0.2622462884080141,"watchfulness":0.3135779664774694,"pressurization":0.040072109597423244,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.17512258917460827,"fate":62,"ritual":"Reading
+        theory","coffee":7,"blood":4,"permAttr":["AMBITIOUS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.44111555897257176,"pitchingRating":0.39044165144488274,"hittingRating":0.8186322838486249,"defenseRating":0.6408928965767862,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":null,"eDensity":26.037576735900057,"state":{"permModSources":{}},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1440'
+      - '1471'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:31 GMT
+      - Wed, 19 May 2021 20:50:29 GMT
       Etag:
-      - W/"5a0-5dPOaau9J2pD5+tbAFce7o0dp/s"
+      - W/"5bf-hRAfNizTFsG6frMTFyr19ZsNWII"
       Server:
       - Cowboy
       Vary:

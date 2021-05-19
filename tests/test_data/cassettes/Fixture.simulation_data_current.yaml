@@ -14,19 +14,19 @@ interactions:
     uri: https://www.blaseball.com/database/simulationData
   response:
     body:
-      string: '{"id":"thisidisstaticyo","day":116,"league":"d8545021-e9fc-48a3-af74-48685950a183","nextPhaseTime":"2021-03-21T09:00:00.838Z","phase":0,"playOffRound":3,"playoffs":"49ccd82a-8b27-45be-b7ce-ce1a19ede9ee","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","season":13,"seasonId":"0db52b0a-d235-49d4-a8b4-f426ced20e79","terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","eraColor":"#ffbe00","eraTitle":"THE
-        EXPANSION ERA","subEraColor":"#715f00","subEraTitle":"OFF SEASON","attr":["OPENED_BOOK","UNLOCKED_PEANUTS","EAT_THE_RICH","UNLOCKED_INTERVIEWS","UNLOCKED_IDOLS","PARTY_TIME","UNLOCKED_HALL","WILD_CARDS","BLACK_HOLE","SIM_BOOK_EAT","SIM_TAROT","SIM_BOOK_DEFACE","SIM_BOOK_CLOSE","SIM_GROUNDBROKEN","SIM_BASED_EVOLUTION","SIM_EVOLUTION_CONCEPTUALIZED","SIM_FREE_WILL","SIM_SHOW_LEVELS","SIM_ALL_YOU_CAN_EAT"],"agitations":325,"salutations":56,"tournament":-1,"tournamentRound":3,"godsDayDate":"2021-03-21T18:00:00.594Z","preseasonDate":"2021-03-22T08:00:00.594Z","earlseasonDate":"2021-03-22T15:00:00.594Z","earlsiestaDate":"2021-03-23T18:00:00.594Z","midseasonDate":"2021-03-23T19:00:00.594Z","latesiestaDate":"2021-03-25T16:00:00.594Z","lateseasonDate":"2021-03-25T17:00:00.594Z","endseasonDate":"2021-03-26T20:00:00.594Z","earlpostseasonDate":"2021-03-26T21:00:00.594Z","latepostseasonDate":"2021-03-27T15:00:00.594Z","electionDate":"2021-03-28T18:00:00.594Z"}'
+      string: '{"id":"thisidisstaticyo","day":52,"league":"d8545021-e9fc-48a3-af74-48685950a183","nextPhaseTime":"2021-05-18T19:00:00.000Z","phase":4,"playOffRound":0,"playoffs":"b3c9e35f-b420-4286-8625-97e5fe63cc39","rules":"4ae9d46a-5408-460a-84fb-cbd8d03fff6c","season":18,"seasonId":"df087320-9e21-436f-bd70-230129617ca9","terminology":"b67e9bbb-1495-4e1b-b517-f1444b0a6c8b","eraColor":"#ffbe00","eraTitle":"THE
+        EXPANSION ERA","subEraColor":"#a16dc3","subEraTitle":"UNDERTOW","attr":["OPENED_BOOK","UNLOCKED_PEANUTS","EAT_THE_RICH","UNLOCKED_INTERVIEWS","UNLOCKED_IDOLS","SIM_PARTY_TIME","UNLOCKED_HALL","WILD_CARDS","BLACK_HOLE","SIM_BOOK_EAT","SIM_TAROT","SIM_BOOK_DEFACE","SIM_BOOK_CLOSE","SIM_GROUNDBROKEN","SIM_BASED_EVOLUTION","SIM_EVOLUTION_CONCEPTUALIZED","SIM_FREE_WILL","SIM_SHOW_LEVELS","SIM_ALL_YOU_CAN_EAT","SIM_ITEM_SYSTEM","SIM_COMMUNITY_CHEST","SIM_LIBRARY","SIM_SMITHY","SIM_FAIRGROUNDS","SIM_HYPE_TRAIN","SIM_RATIFICATION","HOTEL_MOTEL","TURNTABLES"],"agitations":374,"salutations":110,"tournament":-1,"tournamentRound":3,"godsDayDate":"2021-05-16T18:00:00.786Z","preseasonDate":"2021-05-17T08:00:00.862Z","earlseasonDate":"2021-05-17T15:00:00.048Z","earlsiestaDate":"2021-05-18T18:00:00.048Z","midseasonDate":"2021-05-18T19:00:00.048Z","latesiestaDate":"2021-05-20T16:00:00.048Z","lateseasonDate":"2021-05-20T17:00:00.048Z","endseasonDate":"2021-05-21T20:00:00.048Z","earlpostseasonDate":"2021-05-21T21:00:00.048Z","latepostseasonDate":"2021-05-22T15:00:00.048Z","electionDate":"2021-05-23T18:00:00.048Z","menu":"S19"}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1363'
+      - '1526'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 28 Mar 2021 20:07:00 GMT
+      - Wed, 19 May 2021 20:50:16 GMT
       Etag:
-      - W/"553-FVVIuZVsAfH9aYE6GwOHkf4Xv7w"
+      - W/"5f6-Enm6kbdzVsC0eCZscTiQPjzv1ec"
       Server:
       - Cowboy
       Vary:
