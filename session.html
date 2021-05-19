@@ -26,7 +26,8 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import requests_cache
+<pre><code class="python">import os
+import requests_cache
 from json.decoder import JSONDecodeError
 
 TIMESTAMP_FORMAT = &#34;%Y-%m-%dT%H:%M:%S.%fZ&#34;
@@ -35,6 +36,11 @@ _SESSIONS_BY_EXPIRY = {}
 
 def session(expiry=0):
     &#34;&#34;&#34;Get a caching HTTP session&#34;&#34;&#34;
+
+     # Testing requires caching be disabled or tests may fetch network data from previous tests which would be incorrect.
+    if os.getenv(&#34;BLASEBALL_MIKE_NOCACHE&#34;, None):
+        expiry = 0
+
     if expiry not in _SESSIONS_BY_EXPIRY:
         _SESSIONS_BY_EXPIRY[expiry] = requests_cache.CachedSession(backend=&#34;memory&#34;, expire_after=expiry)
     return _SESSIONS_BY_EXPIRY[expiry]
@@ -91,6 +97,11 @@ def check_network_response(response):
 </summary>
 <pre><code class="python">def session(expiry=0):
     &#34;&#34;&#34;Get a caching HTTP session&#34;&#34;&#34;
+
+     # Testing requires caching be disabled or tests may fetch network data from previous tests which would be incorrect.
+    if os.getenv(&#34;BLASEBALL_MIKE_NOCACHE&#34;, None):
+        expiry = 0
+
     if expiry not in _SESSIONS_BY_EXPIRY:
         _SESSIONS_BY_EXPIRY[expiry] = requests_cache.CachedSession(backend=&#34;memory&#34;, expire_after=expiry)
     return _SESSIONS_BY_EXPIRY[expiry]</code></pre>
