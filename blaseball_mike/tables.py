@@ -24,6 +24,8 @@ class Weather(Enum):
     COFFEE_3S = 17, "Coffee 3s"
     FLOODING = 18, "Flooding"
     SALMON = 19, "Salmon"
+    POLARITY_PLUS = 20, "Polarity +"
+    POLARITY_MINUS = 21, "Polarity -"
 
     @classmethod
     def _missing_(cls, value):
