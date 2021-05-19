@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/feed/team?category=0&id=a37f9158-7f82-46bc-908c-c9e2dda7c33b&limit=2
   response:
     body:
-      string: '[{"id":"34d9a192-daa8-45a8-a6c9-8e5e760746fa","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","b63be8c2-576a-4d6e-8daf-814f8bcea96f"],"gameTags":["e5b4308b-9df9-4c59-8873-37bbb55b7f2b"],"metadata":{"play":302,"subPlay":-1},"created":"2021-03-19T19:26:29.943Z","season":13,"tournament":-1,"type":8,"day":98,"phase":6,"category":0,"description":"Stephens
-        Lightner hit a ground out to Randy Dennis."},{"id":"13711e59-0821-4b29-8330-b34fcc5fb753","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","b63be8c2-576a-4d6e-8daf-814f8bcea96f"],"gameTags":["e5b4308b-9df9-4c59-8873-37bbb55b7f2b"],"metadata":{"play":301,"subPlay":-1},"created":"2021-03-19T19:26:24.899Z","season":13,"tournament":-1,"type":12,"day":98,"phase":6,"category":0,"description":"Stephens
-        Lightner batting for the Jazz Hands."}]'
+      string: '[{"id":"a3f02dfd-31cf-4d9b-946c-5dcc4c654280","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","c73b705c-40ad-4633-a6ed-d357ee2e2bcf"],"gameTags":["99c2eaac-ec24-4eaf-b09b-6b410ec375b9"],"metadata":{"play":376,"subPlay":-1},"created":"2021-05-19T20:31:58.886Z","season":18,"tournament":-1,"type":8,"day":52,"phase":4,"category":0,"description":"Gerund
+        Pantheocide hit into a double play!","nuts":0},{"id":"9e18456d-9a33-478f-a290-961a579c67e7","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","c73b705c-40ad-4633-a6ed-d357ee2e2bcf"],"gameTags":["99c2eaac-ec24-4eaf-b09b-6b410ec375b9"],"metadata":{"play":375,"subPlay":-1},"created":"2021-05-19T20:31:53.824Z","season":18,"tournament":-1,"type":12,"day":52,"phase":4,"category":0,"description":"Gerund
+        Pantheocide batting for the Lift.","nuts":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '828'
+      - '832'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:36 GMT
+      - Wed, 19 May 2021 20:48:56 GMT
       Etag:
-      - W/"33c-+y1kco1o1D/Hnq9hndYB6bj52j4"
+      - W/"340-uWrKz25dIvvcLTHg6zMTrBvmYoM"
       Server:
       - Cowboy
       Vary:

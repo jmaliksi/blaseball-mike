@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=083d09d4-7ed3-4100-b021-8fbe30dd43e8
   response:
     body:
-      string: '[{"id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","anticapitalism":0.6715585414248714,"baseThirst":1.0837081572225478,"buoyancy":0.9190386558929515,"chasiness":0.5821760105524166,"coldness":0.5542490771184405,"continuation":0.9751231462319436,"divinity":1.2164554950661912,"groundFriction":1.0870693806274312,"indulgence":0.7691018871160651,"laserlikeness":0.5783179230872257,"martyrdom":1.5743961867934053,"moxie":0.9824746391865744,"musclitude":1.3262941924123677,"name":"Jessica
-        Telephone","bat":"GUNBLADE_A","omniscience":0.6104289779019639,"overpowerment":0.6892427934187828,"patheticism":0.21590198952572454,"ruthlessness":0.5221803174782815,"shakespearianism":0.9957369039444792,"suppression":1.0028774318124143,"tenaciousness":0.3457180604303871,"thwackability":1.1132820621017052,"tragicness":0.1,"unthwackability":0.40018316390635833,"watchfulness":0.5569065120599864,"pressurization":0.19240544381174618,"totalFingers":13,"soul":12,"deceased":false,"peanutAllergy":true,"cinnamon":0.3542455840750931,"fate":16,"armor":"","ritual":"Batting
-        Practice","coffee":2,"blood":5,"permAttr":["SUPERALLERGIC","HONEY_ROASTED","EGO1"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7511118622491207,"pitchingRating":0.4543813795792961,"hittingRating":1.1295899431099057,"defenseRating":0.6290186032002889,"leagueTeamId":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":51.24871251697028,"state":{},"evolution":0}]'
+      string: '[{"id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","anticapitalism":0.3842534654853399,"baseThirst":0.5024982069934809,"buoyancy":0.8079711083268983,"chasiness":1.2760210007230226,"coldness":0.5168206402023043,"continuation":1.4284160705215576,"divinity":0.9377578240973384,"groundFriction":0.2555308049690182,"indulgence":0.755209345462344,"laserlikeness":1.0983619233822883,"martyrdom":0.8619677913909676,"moxie":0.5774071891842834,"musclitude":1.0742385007316477,"name":"Jessica
+        Telephone","omniscience":0.37734496593212863,"overpowerment":0.6924189744016984,"patheticism":0.3034245998875711,"ruthlessness":1.1020079418456339,"shakespearianism":0.9613514808303262,"suppression":0.09460526561985648,"tenaciousness":0.13657797910391575,"thwackability":0.8395682769284523,"tragicness":0.9292996075101755,"unthwackability":0.6606215611819624,"watchfulness":0.7250952034187675,"pressurization":0.900128751899383,"totalFingers":13,"soul":17,"deceased":false,"peanutAllergy":false,"cinnamon":0.4722910489382883,"fate":16,"ritual":"Batting
+        Practice","coffee":2,"blood":5,"permAttr":["HONEY_ROASTED","EGO2","ALTERNATE","NEGATIVE"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":0.8600480603437604,"pitchingRating":0.7834789308145736,"hittingRating":0.8461503025162664,"defenseRating":0.4983229780749088,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"9e42c12a-7561-42a2-b2d0-7cf81a817a5e","eDensity":-67.91600190224656,"state":{},"evolution":0,"items":[{"id":"04030302-df31-49b9-8745-75b44bcea952","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.120266839557077}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.041293656494496345,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1517'
+      - '1895'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:37 GMT
+      - Wed, 19 May 2021 20:48:57 GMT
       Etag:
-      - W/"5ed-dQcoP893ymO96myI9w1+trAiYTY"
+      - W/"767-eb2tfLKLCFeo2zVmzKt4+W/5d8Q"
       Server:
       - Cowboy
       Vary:

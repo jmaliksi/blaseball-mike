@@ -11,25 +11,27 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION,UNHOLEY
+    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION,UNHOLEY,0
   response:
     body:
       string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
         the Crabs activate the Black Hole, they will steal the other team''s best
         hitter for the remainder of the game."},{"id":"UNHOLEY","color":"#ffffff","textColor":"#ffffff","background":"#863490","title":"Unholey","description":"When
         this Team activates the Black Hole, a random player on their opponent''s Team
-        will be impaired by 1%."}]'
+        will be impaired by 1%."},{"id":"0","color":"#cffff0","textColor":"#cffff0","background":"#904899","title":"0","description":"Players
+        with 0 will always swing at strikes while there are 0 Balls and 0 Strikes
+        in the At Bat."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '463'
+      - '662'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:54 GMT
+      - Wed, 19 May 2021 20:51:00 GMT
       Etag:
-      - W/"1cf-nYdL+Pz/Tc2QG8nuBhNxs4VEabE"
+      - W/"296-AuQy+9ld/Zc3AjErbJQDKWLmCRo"
       Server:
       - Cowboy
       Vary:

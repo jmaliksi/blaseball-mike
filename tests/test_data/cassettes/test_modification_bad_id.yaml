@@ -24,9 +24,48 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 20:03:22 GMT
+      - Wed, 19 May 2021 20:50:22 GMT
       Etag:
       - W/"8b-Jr+pw03BmVOTZOoK1eDdvyY2d4c"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=FIREPROOF
+  response:
+    body:
+      string: '[{"id":"FIREPROOF","color":"#a5c5f0","textColor":"#a5c5f0","background":"#4c77b0","title":"Fireproof","description":"A
+        Fireproof player can not be incinerated."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:50:22 GMT
+      Etag:
+      - W/"a2-l6aRyP64TBgfQJ+EpYFMNSfKeic"
       Server:
       - Cowboy
       Vary:

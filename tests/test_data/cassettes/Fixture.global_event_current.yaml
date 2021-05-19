@@ -14,26 +14,22 @@ interactions:
     uri: https://www.blaseball.com/database/globalEvents
   response:
     body:
-      string: '[{"id":"blaseball_back","msg":"Blaseball is BACK","expire":null},{"id":"i_am_ticker","msg":"I
-        am the ticker. I live atop the page.","expire":null},{"id":"i_feel_alive","msg":"I
-        feel so ALIVE","expire":null},{"id":"what_is_feed","msg":"What is this ''Feed''
-        thing","expire":null},{"id":"thank_you","msg":"i hear all of your kind words.
-        thank you. we are all love me, the ticker","expire":null},{"id":"snack_opinions","msg":"wait
-        i love slushies","expire":null},{"id":"parker","msg":"can someone introduce
-        me to the commissioner","expire":null},{"id":"ballparks","msg":"so many ballparks
-        now. where''s mine?","expire":null},{"id":"crabs","msg":"congratulations to
-        the baltimore crabs! my claws go up to you","expire":null}]'
+      string: '[{"id":"uhhh","msg":"oh are we back","expire":null},{"id":"ticker_bat","msg":"Give
+        me a Bat","expire":null},{"id":"season_18","msg":"hyped for season 18","expire":null},{"id":"rested","msg":"hope
+        you all had a great siesta. ticker never sleeps","expire":null},{"id":"news","msg":"where
+        is chorby btw","expire":null},{"id":"i_feel_alive","msg":"I feel so ALIVE","expire":null},{"id":"thank_you","msg":"i
+        hear all of your kind words. thank you. we are all love me, the ticker","expire":null}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '718'
+      - '490'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:23 GMT
+      - Wed, 19 May 2021 20:50:17 GMT
       Etag:
-      - W/"2ce-9xh3YJ1gYPB9d25rR6/rgLu565U"
+      - W/"1ea-Bj1DPPLNJGbsYlsT4CImFR4nHlo"
       Server:
       - Cowboy
       Vary:

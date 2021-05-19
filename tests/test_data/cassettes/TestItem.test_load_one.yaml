@@ -14,7 +14,7 @@ interactions:
     uri: https://www.blaseball.com/database/items?ids=c42d0c94-aafb-4045-9f75-dee241bad500
   response:
     body:
-      string: '[{"id":"c42d0c94-aafb-4045-9f75-dee241bad500","name":"Inflatable Sunglasses","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Inflatable","adjustments":[{"stat":1,"type":1,"value":0.08018538943653307},{"stat":18,"type":1,"value":-0.057625704007659484},{"stat":6,"type":1,"value":0.09361321296435508}]}],"postPrefix":null,"root":{"name":"Sunglasses","adjustments":[{"stat":8,"type":1,"value":0.10106190330006283}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":-0.007925706301007307,"hittingRating":-0.009156785264647693,"defenseRating":0}]'
+      string: '[{"id":"c42d0c94-aafb-4045-9f75-dee241bad500","name":"Inflatable Sunglasses","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Inflatable","adjustments":[{"stat":1,"type":1,"value":0.08018538943653307},{"stat":18,"type":1,"value":-0.057625704007659484},{"stat":6,"type":1,"value":0.09361321296435508}]}],"postPrefix":null,"root":{"name":"Sunglasses","adjustments":[{"stat":8,"type":1,"value":0.10106190330006283}]},"suffix":null,"durability":2,"health":1,"baserunningRating":0,"pitchingRating":-0.007925706301007307,"hittingRating":-0.009156785264647693,"defenseRating":0}]'
     headers:
       Connection:
       - keep-alive
@@ -23,9 +23,9 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 15 Apr 2021 00:47:15 GMT
+      - Wed, 19 May 2021 20:49:32 GMT
       Etag:
-      - W/"251-NV2JmMLW9qRfgkNvwFohMa+CoWo"
+      - W/"251-cz/PjD6Wwc8Jfu/AX27QewOjB2A"
       Server:
       - Cowboy
       Vary:

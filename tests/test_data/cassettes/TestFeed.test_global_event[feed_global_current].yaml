@@ -11,23 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/team?id=7966eb04-efcc-499b-8f03-d13916330531
+    uri: https://www.blaseball.com/database/team?id=23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7
   response:
     body:
-      string: '{"id":"7966eb04-efcc-499b-8f03-d13916330531","lineup":["e16c3f28-eecd-4571-be1a-606bbac36b2b","114100a4-1bf7-4433-b304-6aad75904055","44c92d97-bb39-469d-a13b-f2dd9ae644d1","ac69dba3-6225-4afd-ab4b-23fc78f730fb","2ffbaec8-a646-4435-a17a-3a0a2b5f3e16","a3947fbc-50ec-45a4-bca4-49ffebb77dbe","9a031b9a-16f8-4165-a468-5d0e28a81151","aa6c2662-75f8-4506-aa06-9a0993313216","63512571-2eca-4bc4-8ad9-a5308a22ae22"],"rotation":["89ec77d8-c186-4027-bd45-f407b4800c2c","8adb084b-19fe-4295-bcd2-f92afdb62bd7","b6aa8ce8-2587-4627-83c1-2a48d44afaee","09f2787a-3352-41a6-8810-d80e97b253b5","24f6829e-7bb4-4e1e-8b59-a07514657e72"],"bullpen":["17392be2-7344-48a0-b4db-8a040a7fb532","450e6483-d116-41d8-933b-1b541d5f0026","1af239ae-7e12-42be-9120-feff90453c85","94f30f21-f889-4a2e-9b94-818475bb1ca0","1ded0384-d290-4ea1-a72b-4f9d220cbe37","82733eb4-103d-4be1-843e-6eb6df35ecd7","db53211c-f841-4f33-accf-0c3e167889a0","b77dffaa-e0f5-408f-b9f2-1894ed26e744","3205f4ff-7050-470b-8970-8d7ea56564bc"],"bench":["945974c5-17d9-43e7-92f6-ba49064bbc59","c6146c45-3d9b-4749-9f03-d4faae61e2c3","ac57cf28-556f-47af-9154-6bcea2ace9fc","7b779947-46ef-4b77-be37-962d60875647"],"seasAttr":[],"permAttr":["O_NO"],"fullName":"Yellowstone
-        Magic","location":"Yellowstone","mainColor":"#bf0043","nickname":"Magic","secondaryColor":"#f60f63","shorthand":"YELL","emoji":"0x2728","slogan":"As
-        Above, So Below","shameRuns":0,"totalShames":65,"totalShamings":58,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":0,"tournamentWins":0,"stadium":"2a1a52b3-9759-44aa-ba49-b1437396d895","eDensity":2133.7201148076415,"state":{},"evolution":0,"winStreak":-2,"level":5}'
+      string: '{"id":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","lineup":["32810dca-825c-4dbc-8b65-0702794c424e","26cfccf2-850e-43eb-b085-ff73ad0749b8","b323f897-ccf9-4200-8870-249cbe19f904","814bae61-071a-449b-981e-e7afc839d6d6","405dfadf-d435-4307-82f6-8eba2287e87a","da0bbbe6-d13c-40cc-9594-8c476975d93d","667cb445-c288-4e62-b603-27291c1e475d","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e"],"rotation":["c6e2e389-ed04-4626-a5ba-fe398fe89568","80dff591-2393-448a-8d88-122bd424fa4c","d2a1e734-60d9-4989-b7d9-6eacda70486b"],"bullpen":["0672a4be-7e00-402c-b8d6-0b813f58ba96","62111c49-1521-4ca7-8678-cd45dacf0858","7f379b72-f4f0-4d8f-b88b-63211cf50ba6","906a5728-5454-44a0-adfe-fd8be15b8d9b","90cc0211-cd04-4cac-bdac-646c792773fc","a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","b85161da-7f4c-42a8-b7f6-19789cf6861d","ca26d8cc-8668-48c9-a061-28f6fdf5f44d","ce99d7af-ba75-48a7-a5d8-d46f543829f2"],"bench":["20395b48-279d-44ff-b5bf-7cf2624a2d30","d8bc482e-9309-4230-abcb-2c5a6412446d","cd5494b4-05d0-4b2e-8578-357f0923ff4c","e495cadc-a645-439d-a556-e41de7493f18","a0e7445f-2b93-4ca7-a69d-ff32593700ee","7f3f2e75-900e-40b6-846b-db585541490d","190a0f31-d686-4ac4-a7f3-cfc87b72c145","dd6044ef-c635-4aed-97bd-d18068432b8f","4ec6951f-6822-4861-bc25-79826dd8c554","3d52ace6-a0a0-467e-80e0-ae86b289ad32"],"seasAttr":[],"permAttr":["AFFINITY_FOR_CROWS","AA"],"fullName":"Philly
+        Pies","location":"Philly","mainColor":"#399d8f","nickname":"Pies","secondaryColor":"#58c3b4","shorthand":"PHIL","emoji":"0x1F967","slogan":"Pie
+        or Die.","shameRuns":0,"totalShames":97,"totalShamings":67,"seasonShames":2,"seasonShamings":5,"championships":2,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":8,"tournamentWins":0,"stadium":"a109bd65-bfd3-43c7-9eb8-70dddc4d8a29","eDensity":1169.399328566105,"state":{},"evolution":0,"winStreak":-1,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1689'
+      - '1807'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:30:21 GMT
+      - Wed, 19 May 2021 20:48:52 GMT
       Etag:
-      - W/"699-vZWDKFyUuXFtoJ2l7n3Wp0Zgv9E"
+      - W/"70f-jSdtqwAvb7MjqfPkYlqeyKgxf/M"
       Server:
       - Cowboy
       Vary:
@@ -51,22 +51,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=89ec77d8-c186-4027-bd45-f407b4800c2c
+    uri: https://www.blaseball.com/database/players?ids=f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e
   response:
     body:
-      string: '[{"id":"89ec77d8-c186-4027-bd45-f407b4800c2c","anticapitalism":0.9025985785509185,"baseThirst":1.190029612403846,"buoyancy":1.2556745260032869,"chasiness":0.9848209971398874,"coldness":1.1777782999054442,"continuation":0.8039387587645803,"divinity":0.7309074298893101,"groundFriction":0.8224578496178949,"indulgence":1.130113150322562,"laserlikeness":0.5410764252182185,"martyrdom":1.2697684338477329,"moxie":0.8932900218682891,"musclitude":1.2002244267178848,"name":"James
-        Mora","bat":"","omniscience":1.0967065070653637,"overpowerment":0.9667930946461867,"patheticism":0.001,"ruthlessness":0.7111722401429681,"shakespearianism":1.2242466377856291,"suppression":1.4034149548715666,"tenaciousness":0.836203302205804,"thwackability":1.4068953085080174,"tragicness":0.001,"unthwackability":0.9018322966897173,"watchfulness":1.5042862238723613,"pressurization":0.5408376821510407,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.6142448000190904,"fate":72,"armor":"","ritual":"Pre-visualizing","coffee":3,"blood":2,"permAttr":["SUPERYUMMY"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.726994185551288,"pitchingRating":0.8447268959631368,"hittingRating":1.0199079943970664,"defenseRating":1.0118093818269216,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"b3b9636a-f88a-47dc-a91d-86ecc79f9934","eDensity":31.224069204168888,"state":{},"evolution":0}]'
+      string: '[{"id":"f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e","anticapitalism":0.3902912779462566,"baseThirst":0.22252641133703843,"buoyancy":0.48717615719020657,"chasiness":0.6460386149033233,"coldness":0.582188207346529,"continuation":0.9968711327113444,"divinity":0.2935028084443835,"groundFriction":0.015430561930310116,"indulgence":0.013190626926588012,"laserlikeness":0.8297265307168118,"martyrdom":0.28356140505806915,"moxie":0.869795418591938,"musclitude":1.0227260741508968,"name":"Usurper
+        Violet","omniscience":1.0641833902725621,"overpowerment":0.9800220156896806,"patheticism":0.56969862378002,"ruthlessness":0.5806022860535796,"shakespearianism":0.17228905993092325,"suppression":0.8473046456923368,"tenaciousness":0.7407913643433623,"thwackability":0.8946480834145719,"tragicness":0.1,"unthwackability":0.9168613097949796,"watchfulness":0.5338764916163041,"pressurization":0.03931466142577866,"totalFingers":10,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.6862363627042429,"fate":2,"ritual":"Kneeling","coffee":1,"blood":2,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.33491474234477886,"pitchingRating":0.6355373077552257,"hittingRating":0.5797153654203558,"defenseRating":0.7802814629351721,"leagueTeamId":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","tournamentTeamId":"70eab4ab-6cb1-41e7-ac8b-1050ee12eecc","eDensity":24.313142149188728,"state":{"itemModSources":{"SOUNDPROOF":["4ce639be-405e-4a16-98dc-438d73747d72"]}},"evolution":1,"items":[{"id":"4ce639be-405e-4a16-98dc-438d73747d72","name":"Noise-Cancelling
+        Jersey of Charisma","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Noise-Cancelling","adjustments":[{"mod":"SOUNDPROOF","type":0}]}],"postPrefix":null,"root":{"name":"Jersey","adjustments":[{"stat":5,"type":1,"value":0.11883491616951883}]},"suffix":{"name":"Charisma","adjustments":[{"stat":3,"type":1,"value":0.1744100115057281},{"stat":8,"type":1,"value":0.13842978798752847},{"stat":4,"type":1,"value":0.10385976834184547}]},"durability":3,"health":2,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.07915367953276287,"defenseRating":0},{"id":"8772a70f-e2a7-4d14-b182-ca815c755925","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.174906431616488}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.037387485615455573,"defenseRating":0}],"itemAttr":["SOUNDPROOF"]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1456'
+      - '2554'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:30:21 GMT
+      - Wed, 19 May 2021 20:48:52 GMT
       Etag:
-      - W/"5b0-vTUYTNWIVtzGRPYlZKPHUgIINAE"
+      - W/"9fa-/xOSGnquyv3wBd+PA1ayDTIvKEg"
       Server:
       - Cowboy
       Vary:
@@ -90,22 +91,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=b6aa8ce8-2587-4627-83c1-2a48d44afaee
+    uri: https://www.blaseball.com/database/team?id=b024e975-1c4a-4575-8936-a3754a08806a
   response:
     body:
-      string: '[{"id":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","anticapitalism":0.6203953247643341,"baseThirst":0.8443793874839141,"buoyancy":0.27591677111698526,"chasiness":0.6350559273838529,"coldness":0.5662005689542737,"continuation":0.18787445893786564,"divinity":0.24501908172911846,"groundFriction":1.135592439636556,"indulgence":0.3584439361602173,"laserlikeness":0.5562343106871288,"martyrdom":0.513413389416473,"moxie":0.426630331765121,"musclitude":0.3345286106142956,"name":"Inky
-        Rutledge","bat":"INKY_BLAGONBALL","omniscience":0.32431281514024984,"overpowerment":0.27022138121134437,"patheticism":0.7172406280488961,"ruthlessness":0.48994391202655946,"shakespearianism":0.8797101463452612,"suppression":0.750921028818443,"tenaciousness":0.32491354700213826,"thwackability":0.4437022207395701,"tragicness":0.1,"unthwackability":1.1595661899888028,"watchfulness":0.8343292362849792,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":false,"cinnamon":0.6431148428775638,"fate":33,"armor":"","ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5670662455092618,"pitchingRating":0.6474742366111432,"hittingRating":0.3677994052237692,"defenseRating":0.5704639189732517,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16","eDensity":33.069626644221984,"state":{},"evolution":0}]'
+      string: '{"id":"b024e975-1c4a-4575-8936-a3754a08806a","lineup":["97f5a9cd-72f0-413e-9e68-a6ee6a663489","817dee99-9ccf-4f41-84e3-dc9773237bc8","2d07ccd0-cac7-4ccd-bab6-a078bb983174","cbd19e6f-3d08-4734-b23f-585330028665","c3dc7aa2-e27b-4859-bbf0-47ba66c03186","733d80f1-2485-40f7-828b-fd7cd8243a01","042962c8-4d8b-44a6-b854-6ccef3d82716","d35ccee1-9559-49a1-aaa4-7809f7b5c46e","b39b5aae-8571-4c90-887a-6a00f2a2f6fd"],"rotation":["b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","6b8d128f-ed51-496d-a965-6614476f8256","82d1b7b4-ce00-4536-8631-a025f05150ce","41bdb527-1fb2-487d-8237-093958e737e4","e4034192-4dc6-4901-bb30-07fe3cf77b5e"],"bullpen":["fdfd36c7-e0c1-4fce-98f7-921c3d17eafe","dd7e710f-da4e-475b-b870-2c29fe9d8c00","3f08f8cd-6418-447a-84d3-22a981c68f16","721fb947-7548-49ea-8cbe-7721b0ed49e0","c6bd21a8-7880-4c00-8abe-33560fe84ac5","4fe28bc1-f690-4ad6-ad09-1b2e984bf30b","ebf2da50-7711-46ba-9e49-341ce3487e00","d796d287-77ef-49f0-89ef-87bcdeb280ee"],"bench":["a1ed3396-114a-40bc-9ff0-54d7e1ad1718","de52d5c0-cba4-4ace-8308-e2ed3f8799d0","13cfbadf-b048-4c4f-903d-f9b52616b15c","e7ecf646-e5e4-49ef-a0e3-10a78e87f5f4","732899a3-2082-4d9f-b1c2-74c8b75e15fb","7d388846-8f4c-407f-aacb-b844d2561c5e","266abcc0-8abc-4570-b32e-e5668e5d38f3","35a99ff3-cf9e-4682-ba6e-0a6044aa3a4b","6fa08e08-6a95-4fbc-9d00-5c39c5302b60"],"seasAttr":[],"permAttr":["AAA"],"fullName":"Dallas
+        Steaks","location":"Dallas","mainColor":"#8c8d8f","nickname":"Steaks","secondaryColor":"#b2b3b5","shorthand":"DAL","emoji":"0x1F969","slogan":"Well
+        Done.","shameRuns":0,"totalShames":63,"totalShamings":82,"seasonShames":5,"seasonShamings":1,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":3,"tournamentWins":0,"stadium":"6bfd22e7-831d-4ba9-a9f9-2cf7ab00c39d","eDensity":1440.4442823180086,"state":{"permModSources":{}},"evolution":0,"winStreak":-1,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1472'
+      - '1848'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:30:21 GMT
+      - Wed, 19 May 2021 20:48:52 GMT
       Etag:
-      - W/"5c0-EDq5G0Vf5e1Fnr6f9HrjAPU2as8"
+      - W/"738-q0jOd2S3d9ATBtDWB80s/SmGA4w"
       Server:
       - Cowboy
       Vary:
@@ -129,23 +131,64 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=8adb084b-19fe-4295-bcd2-f92afdb62bd7
+    uri: https://www.blaseball.com/database/players?ids=2d07ccd0-cac7-4ccd-bab6-a078bb983174
   response:
     body:
-      string: '[{"id":"8adb084b-19fe-4295-bcd2-f92afdb62bd7","anticapitalism":0.9604832366671635,"baseThirst":1.1060597927528484,"buoyancy":0.6376821083626597,"chasiness":0.3452345196626939,"coldness":0.7250803092571447,"continuation":0.2118860253509109,"divinity":0.28102233652373243,"groundFriction":0.8549046687216506,"indulgence":0.6207647536517344,"laserlikeness":0.5129812517493181,"martyrdom":1.106461501910646,"moxie":0.37401755467142744,"musclitude":0.4218210296477622,"name":"Logan
-        Rodriguez","bat":"","omniscience":0.9365341165911456,"overpowerment":0.9623185334142681,"patheticism":0.001,"ruthlessness":0.39175001681977123,"shakespearianism":1.1357655174557513,"suppression":0.6668852989660476,"tenaciousness":1.0963219884888857,"thwackability":0.31027524377989335,"tragicness":0.03819730566410828,"unthwackability":0.5936651510109021,"watchfulness":0.9746253425654001,"pressurization":0.4283501541053425,"totalFingers":12,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":0.826153300894639,"fate":71,"armor":"","ritual":"Biting
-        fingernails","coffee":5,"blood":6,"permAttr":["SIPHON"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5814646437092733,"pitchingRating":0.5290670755055911,"hittingRating":0.37128736006014995,"defenseRating":0.8979176653276654,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":null,"eDensity":22.658157212218757,"state":{},"evolution":0}]'
+      string: '[{"id":"2d07ccd0-cac7-4ccd-bab6-a078bb983174","anticapitalism":0.9462853801173916,"baseThirst":1.1936008235113051,"buoyancy":0.7279906969107638,"chasiness":0.364053162986947,"coldness":0.8537725021603602,"continuation":0.46441698493455086,"divinity":0.3942724021638573,"groundFriction":1.2924442238549676,"indulgence":1.1758218031436973,"laserlikeness":1.185557266327525,"martyrdom":0.4998932027399722,"moxie":0.7243903375662549,"musclitude":1.197659719977405,"name":"Engine
+        Eberhardt","omniscience":1.3522353054450427,"overpowerment":0.673169097111801,"patheticism":0.001,"ruthlessness":0.8225360425106668,"shakespearianism":0.8974479121632402,"suppression":0.8440072066145166,"tenaciousness":0.55344923398137,"thwackability":0.9927901504474266,"tragicness":0.001,"unthwackability":1.2184156483167246,"watchfulness":0.6953597747069382,"pressurization":0.0038283472010332,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":1.1214101357980808,"fate":80,"ritual":"Narcolepsy","coffee":8,"blood":8,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":4,"baserunningRating":1.070319211223799,"pitchingRating":0.9479006341379294,"hittingRating":0.7026730132220605,"defenseRating":0.8180232785170184,"leagueTeamId":"b024e975-1c4a-4575-8936-a3754a08806a","tournamentTeamId":null,"eDensity":34.772412959705655,"state":{"itemModSources":{"PRO_SKATER":["3543801d-4fcc-432c-a8c7-cade99808bc3"]}},"evolution":0,"items":[{"id":"3543801d-4fcc-432c-a8c7-cade99808bc3","name":"Skate
+        Ring","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":{"name":"Skate","adjustments":[{"mod":"PRO_SKATER","type":0}]},"root":{"name":"Ring","adjustments":[{"stat":19,"type":1,"value":0.1204559687908387}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":0.05326064455688384,"hittingRating":0,"defenseRating":0}],"itemAttr":["PRO_SKATER"]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1447'
+      - '1926'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:30:21 GMT
+      - Wed, 19 May 2021 20:48:52 GMT
       Etag:
-      - W/"5a7-LdMgh6LMom5pH0N8xCDkOjbYZu4"
+      - W/"786-Engt/Nrkeg5aBzmg1ALpQ0SWAj8"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/team?id=bfd38797-8404-4b38-8b82-341da28b1f83
+  response:
+    body:
+      string: '{"id":"bfd38797-8404-4b38-8b82-341da28b1f83","lineup":["03f920cc-411f-44ef-ae66-98a44e883291","020ed630-8bae-4441-95cc-0e4ecc27253b","eaaef47e-82cc-4c90-b77d-75c3fb279e83","b88d313f-e546-407e-8bc6-94040499daa5","d47dd08e-833c-4302-a965-a391d345455c","30218684-7fa1-41a5-a3b3-5d9cd97dd36b","4ca52626-58cd-449d-88bb-f6d631588640","2859166d-6aed-4262-b05b-db85c49b3391","b8ab86c6-9054-4832-9b96-508dbd4eb624"],"rotation":["63512571-2eca-4bc4-8ad9-a5308a22ae22","fe3e8ba5-6687-400d-9828-2b70d63ea8be","34267632-8c32-4a8b-b5e6-ce1568bb0639","f741dc01-2bae-4459-bfc0-f97536193eea","f7847de2-df43-4236-8dbe-ae403f5f3ab3","5e4dfa16-f1b9-400f-b8ef-a1613c2b026a"],"bullpen":["99e7de75-d2b8-4330-b897-a7334708aff9","50154d56-c58a-461f-976d-b06a4ae467f9","5b3f0a43-45e7-44e7-9496-512c24c040f0","93502db3-85fa-4393-acae-2a5ff3980dde","5b5bcc6c-d011-490f-b084-6fdc2c52f958","2d22f026-2873-410b-a45f-3b1dac665ffd","d002946f-e7ed-4ce4-a405-63bdaf5eabb5"],"bench":["d6e9a211-7b33-45d9-8f09-6d1a1a7a3c78","3531c282-cb48-43df-b549-c5276296aaa7","b056a825-b629-4856-856b-53a15ad34acb","198fd9c8-cb75-482d-873e-e6b91d42a446","3e0f7f48-675b-4f72-bb40-8a8c676f0054","9416dfa3-05e9-46f3-b1df-4fa6703e9b5b","60026a9d-fc9a-4f5a-94fd-2225398fa3da","b1b141fc-e867-40d1-842a-cea30a97ca4f"],"seasAttr":[],"permAttr":["TRAVELING","A","GOOD_RIDDANCE"],"fullName":"Charleston
+        Shoe Thieves","location":"Charleston","mainColor":"#ffce0a","nickname":"Shoe
+        Thieves","secondaryColor":"#ffce0a","shorthand":"CHST","emoji":"0x1F45F","slogan":"Your
+        Kicks are Our Kicks","shameRuns":0,"totalShames":94,"totalShamings":65,"seasonShames":1,"seasonShamings":1,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":9,"tournamentWins":0,"stadium":"36ae955c-6264-4437-8669-3053f62992e5","eDensity":1269.7338152736431,"state":{},"evolution":0,"winStreak":-6,"level":3}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1851'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:48:52 GMT
+      Etag:
+      - W/"73b-7c9jgrlwawU/Si19K7B4etCd8g8"
       Server:
       - Cowboy
       Vary:

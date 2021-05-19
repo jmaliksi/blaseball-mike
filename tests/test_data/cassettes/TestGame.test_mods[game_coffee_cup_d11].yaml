@@ -24,7 +24,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:10 GMT
       Etag:
       - W/"96-7LPXEm10+WRkQz90UrTsDnePdIw"
       Server:
@@ -66,9 +66,90 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:44 GMT
+      - Wed, 19 May 2021 20:49:10 GMT
       Etag:
       - W/"16d-jEOdPi/30rhsveRN8Sx+lpJuphQ"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=TRIPLE_THREAT
+  response:
+    body:
+      string: '[{"id":"TRIPLE_THREAT","color":"#cc527a","textColor":"#cc527a","background":"#5dbcd2","title":"Triple
+        Threat","description":"This pitcher''s strikeouts score Unruns when there
+        are 3 runners on base, a runner on 3rd, or 3 Balls in the count. Each condition
+        met is worth .3 Unruns. At the end of the 3rd Inning, there''s a 33.33% chance
+        that this mod will disappear."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '365'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:49:10 GMT
+      Etag:
+      - W/"16d-jEOdPi/30rhsveRN8Sx+lpJuphQ"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/mods?ids=COFFEE_RALLY
+  response:
+    body:
+      string: '[{"id":"COFFEE_RALLY","color":"#2e1406","textColor":"#fffcd9","background":"#44c97c","title":"Free
+        Refill","description":"Good for one Free Refill."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '150'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:49:10 GMT
+      Etag:
+      - W/"96-7LPXEm10+WRkQz90UrTsDnePdIw"
       Server:
       - Cowboy
       Vary:

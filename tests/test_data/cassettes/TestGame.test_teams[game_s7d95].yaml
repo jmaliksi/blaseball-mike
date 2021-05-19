@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e
   response:
     body:
-      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["28964497-0efe-420c-9c1d-8574f224a4e9","718dea1a-d9a8-4c2b-933a-f0667b5250e6","855775c1-266f-40f6-b07b-3a67ccdf8551","c09e64b6-8248-407e-b3af-1931b880dbee","51c5473a-7545-4a9a-920d-d9b718d0e8d1","8acc97fa-4bf1-49f6-bb93-fb52513a015b","d51f1fe8-4ab8-411e-b836-5bba92984d32","8cd06abf-be10-4a35-a3ab-1a408a329147","75f9d874-5e69-438d-900d-a3fcb1d429b3","4ffd2e50-bb5b-45d0-b7c4-e24d41b2ff5d","be18d363-752d-4e4a-b06b-1a7e4641400b"],"rotation":["ff5a37d9-a6dd-49aa-b6fb-b935fd670820","7dcf6902-632f-48c5-936a-7cf88802b93a","defbc540-a36d-460b-afd8-07da2375ee63","2da49de2-34e5-49d0-b752-af2a2ee061be","a647388d-fc59-4c1b-90d3-8c1826e07775"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f"],"bench":["dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","3e008f60-6842-42e7-b125-b88c7e5c1a95","6caa8180-e178-4f8b-865c-f1af47119bc2"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
+      string: '{"id":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","lineup":["a647388d-fc59-4c1b-90d3-8c1826e07775","855775c1-266f-40f6-b07b-3a67ccdf8551","04931546-1b4a-469f-b391-7ed67afe824c","8acc97fa-4bf1-49f6-bb93-fb52513a015b","28964497-0efe-420c-9c1d-8574f224a4e9","ff5a37d9-a6dd-49aa-b6fb-b935fd670820","c09e64b6-8248-407e-b3af-1931b880dbee","718dea1a-d9a8-4c2b-933a-f0667b5250e6","be18d363-752d-4e4a-b06b-1a7e4641400b","04e14d7b-5021-4250-a3cd-932ba8e0a889","c6a19154-7438-4c4f-b786-2dfaf5951f0f","e9a46e0c-0437-443a-be81-956665ec588e","1f159bab-923a-4811-b6fa-02bfde50925a"],"rotation":["2da49de2-34e5-49d0-b752-af2a2ee061be","8cd06abf-be10-4a35-a3ab-1a408a329147","a3947fbc-50ec-45a4-bca4-49ffebb77dbe","97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5"],"bullpen":["51985516-5033-4ab8-a185-7bda07829bdb","98f26a25-905f-4850-8960-b741b0c583a4","4b73367f-b2bb-4df6-b2eb-2a0dd373eead","a938f586-f5c1-4a35-9e7f-8eaab6de67a6","c771abab-f468-46e9-bac5-43db4c5b410f","a98917bc-e9df-4b0e-bbde-caa6168aa3d7","2cadc28c-88a5-4e25-a6eb-cdab60dd446d","e3e1d190-2b94-40c0-8e88-baa3fd198d0f","828c5080-4543-4bf2-9d84-436d58c7fd66"],"bench":["73a934de-3db1-4553-97f2-9e7b57744b34","dfd5ccbb-90ed-4bfe-83e0-dae9cc763f10","d9a072f5-1cbb-45ce-87fb-b138e4d8f769","de67b585-9bf4-4e49-b410-101483ca2fbc","81b25b16-3370-4eb0-9d1b-6d630194c680","710541f4-bb89-4134-8973-958c82b29a41","3e008f60-6842-42e7-b125-b88c7e5c1a95","6caa8180-e178-4f8b-865c-f1af47119bc2"],"seasAttr":[],"permAttr":["GROWTH"],"fullName":"Boston
         Flowers","location":"Boston","mainColor":"#f7d1ff","nickname":"Flowers","secondaryColor":"#f7d1ff","shorthand":"BOF","emoji":"0x1F339","slogan":"Let''s
-        Grow!","shameRuns":0,"totalShames":54,"totalShamings":56,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":2,"tournamentWins":0,"stadium":"d37abba6-9fba-463a-8f4f-7cf49de3c7b6","eDensity":2004.5472981391508,"state":{},"evolution":0,"winStreak":-1,"level":5}'
+        Grow!","shameRuns":0,"totalShames":80,"totalShamings":83,"seasonShames":7,"seasonShamings":2,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":2,"tournamentWins":0,"stadium":"d37abba6-9fba-463a-8f4f-7cf49de3c7b6","eDensity":1585.9927443457996,"state":{"permModSources":{}},"evolution":0,"winStreak":1,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1834'
+      - '1970'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:39 GMT
+      - Wed, 19 May 2021 20:49:04 GMT
       Etag:
-      - W/"72a-OWJTbBNiuZYumcDnL4bfDjn+fLc"
+      - W/"7b2-eiwmH2O6kTDMoJXZ6TPmNgB3wJQ"
       Server:
       - Cowboy
       Vary:
@@ -54,20 +54,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=b72f3061-f573-40d7-832a-5ad475bd7909
   response:
     body:
-      string: '{"id":"b72f3061-f573-40d7-832a-5ad475bd7909","lineup":["0268b35f-b19b-4b2f-90c4-89fb36403686","ee55248b-318a-4bfb-8894-1cc70e4e0720","c9e4a49e-e35a-4034-a4c7-293896b40c58","58c9e294-bd49-457c-883f-fb3162fc668e","2b157c5c-9a6a-45a6-858f-bf4cf4cbc0bd","db33a54c-3934-478f-bad4-fc313ac2580e","d1a198d6-b05a-47cf-ab8e-39a6fa1ed831","7c5ae357-e079-4427-a90f-97d164c7262e","0eea4a48-c84b-4538-97e7-3303671934d2","11de4da3-8208-43ff-a1ff-0b3480a0fbf1"],"rotation":["1f159bab-923a-4811-b6fa-02bfde50925a","f2c477fb-28ea-4fcb-943a-9fab22df3da0","c3ae0552-59e8-44bf-ba66-48a96aff35e6","73265ee3-bb35-40d1-b696-1f241a6f5966","d97835fd-2e92-4698-8900-1f5abea0a3b6","7158d158-e7bf-4e9b-9259-62e5b25e3de8"],"bullpen":["1e8b09bd-fbdd-444e-bd7e-10326bd57156","b390b28c-df96-443e-b81f-f0104bd37860","0f62c20c-72d0-4c12-a9d7-312ea3d3bcd1","23e78d92-ee2d-498a-a99c-f40bc4c5fe99","f1185b20-7b4a-4ccc-a977-dc1afdfd4cb9","9313e41c-3bf7-436d-8bdc-013d3a1ecdeb","3be2c730-b351-43f7-a832-a5294fe8468f","e749dc27-ca3b-456e-889c-d2ec02ac7f5f","bd24e18b-800d-4f15-878d-e334fb4803c4"],"bench":["26f01324-9d1c-470b-8eaa-1b9bfbcd8b65","9f6d06d6-c616-4599-996b-ec4eefcff8b8","0e27df51-ad0c-4546-acf5-96b3cb4d7501","8997123f-b24d-4326-80c8-3c862f80f623","331d9910-0991-40c8-9345-a7cddb7465c6"],"seasAttr":[],"permAttr":["LOVE"],"fullName":"San
+      string: '{"id":"b72f3061-f573-40d7-832a-5ad475bd7909","lineup":["ee55248b-318a-4bfb-8894-1cc70e4e0720","c9e4a49e-e35a-4034-a4c7-293896b40c58","740d5fef-d59f-4dac-9a75-739ec07f91cf","91f5298e-a2ec-4f54-a541-1818702d1b6d","db33a54c-3934-478f-bad4-fc313ac2580e","a6ec8d00-a78f-4f6b-b51a-db9f5507cf0a","0eea4a48-c84b-4538-97e7-3303671934d2","9965eed5-086c-4977-9470-fe410f92d353"],"rotation":["bd24e18b-800d-4f15-878d-e334fb4803c4","9f6d06d6-c616-4599-996b-ec4eefcff8b8","f2c477fb-28ea-4fcb-943a-9fab22df3da0","c3ae0552-59e8-44bf-ba66-48a96aff35e6","d97835fd-2e92-4698-8900-1f5abea0a3b6","7158d158-e7bf-4e9b-9259-62e5b25e3de8"],"bullpen":["1e8b09bd-fbdd-444e-bd7e-10326bd57156","b390b28c-df96-443e-b81f-f0104bd37860","0f62c20c-72d0-4c12-a9d7-312ea3d3bcd1","23e78d92-ee2d-498a-a99c-f40bc4c5fe99","f1185b20-7b4a-4ccc-a977-dc1afdfd4cb9","9313e41c-3bf7-436d-8bdc-013d3a1ecdeb","3be2c730-b351-43f7-a832-a5294fe8468f","e749dc27-ca3b-456e-889c-d2ec02ac7f5f"],"bench":["26f01324-9d1c-470b-8eaa-1b9bfbcd8b65","7c5ae357-e079-4427-a90f-97d164c7262e","0e27df51-ad0c-4546-acf5-96b3cb4d7501","0268b35f-b19b-4b2f-90c4-89fb36403686","8997123f-b24d-4326-80c8-3c862f80f623","331d9910-0991-40c8-9345-a7cddb7465c6","114100a4-1bf7-4433-b304-6aad75904055"],"seasAttr":[],"permAttr":["LOVE"],"fullName":"San
         Francisco Lovers","location":"San Francisco","mainColor":"#780018","nickname":"Lovers","secondaryColor":"#da0000","shorthand":"SFL","emoji":"0x1F48B","slogan":"Let''s
-        Go All The Way!","shameRuns":0,"totalShames":73,"totalShamings":61,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":19,"tournamentWins":0,"stadium":"1c1614b3-abdb-4008-98eb-12aeb8f7bb54","eDensity":1845.590409018822,"state":{},"evolution":0,"winStreak":-4,"level":4}'
+        Go All The Way!","shameRuns":0,"totalShames":86,"totalShamings":79,"seasonShames":2,"seasonShamings":1,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":54,"teamSpirit":0,"card":19,"tournamentWins":0,"stadium":"1c1614b3-abdb-4008-98eb-12aeb8f7bb54","eDensity":1080.3113403571888,"state":{},"evolution":0,"winStreak":1,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1815'
+      - '1777'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:39 GMT
+      - Wed, 19 May 2021 20:49:04 GMT
       Etag:
-      - W/"717-/Fnu8y2DlfBidrCBf5LnUA4nS98"
+      - W/"6f1-s7wmhi61U/W6siooJ2rYyQMBhZQ"
       Server:
       - Cowboy
       Vary:

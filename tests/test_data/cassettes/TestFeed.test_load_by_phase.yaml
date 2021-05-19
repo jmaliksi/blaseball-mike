@@ -15,23 +15,23 @@ interactions:
   response:
     body:
       string: '[{"id":"758c38cf-753d-49a2-97d8-ef633d93917e","playerTags":["09f2787a-3352-41a6-8810-d80e97b253b5","316abea7-9890-4fb8-aaea-86b35e24d9be"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531","ca3f1c8c-c025-4d8e-8eef-5be6accbeb16"],"gameTags":[],"metadata":{"count":"20","spread":[0,11,13],"tarotId":"over_under"},"created":"2021-03-02T18:32:50.777Z","season":11,"tournament":-1,"type":81,"day":27,"phase":3,"category":1,"description":"OVER
-        UNDER\nUNDER OVER"},{"id":"0d96d9ed-8e40-47ca-a543-b27518b276ef","playerTags":["09f2787a-3352-41a6-8810-d80e97b253b5"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"mod":"OVERUNDER","type":0},"created":"2021-03-02T18:32:51.022Z","season":11,"tournament":-1,"type":106,"day":27,"phase":3,"category":1,"description":"OVER
-        UNDER, CURRY ALICIAKEYES"},{"id":"6dd0204e-213b-4798-9fad-e042a232edc6","playerTags":["316abea7-9890-4fb8-aaea-86b35e24d9be"],"teamTags":["ca3f1c8c-c025-4d8e-8eef-5be6accbeb16"],"gameTags":[],"metadata":{"mod":"UNDEROVER","type":0},"created":"2021-03-02T18:32:51.029Z","season":11,"tournament":-1,"type":106,"day":27,"phase":3,"category":1,"description":"UNDER
-        OVER, KENNEDY RODGERS"},{"id":"328c253f-5c16-410e-935b-ba058ad62268","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:35:58.212Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"I
-        The Magician"},{"id":"7320d050-a6ce-46a6-87df-8b5bfe245030","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:36:41.492Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"XII
-        The Hanged Man"},{"id":"9faea178-ec86-4bac-8968-beebd5de1e64","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:37:17.289Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"XIIII
-        Temperance"}]'
+        UNDER\nUNDER OVER","nuts":3},{"id":"0d96d9ed-8e40-47ca-a543-b27518b276ef","playerTags":["09f2787a-3352-41a6-8810-d80e97b253b5"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"mod":"OVERUNDER","type":0},"created":"2021-03-02T18:32:51.022Z","season":11,"tournament":-1,"type":106,"day":27,"phase":3,"category":1,"description":"OVER
+        UNDER, CURRY ALICIAKEYES","nuts":2},{"id":"6dd0204e-213b-4798-9fad-e042a232edc6","playerTags":["316abea7-9890-4fb8-aaea-86b35e24d9be"],"teamTags":["ca3f1c8c-c025-4d8e-8eef-5be6accbeb16"],"gameTags":[],"metadata":{"mod":"UNDEROVER","type":0},"created":"2021-03-02T18:32:51.029Z","season":11,"tournament":-1,"type":106,"day":27,"phase":3,"category":1,"description":"UNDER
+        OVER, KENNEDY RODGERS","nuts":2},{"id":"328c253f-5c16-410e-935b-ba058ad62268","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:35:58.212Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"I
+        The Magician","nuts":42},{"id":"7320d050-a6ce-46a6-87df-8b5bfe245030","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:36:41.492Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"XII
+        The Hanged Man","nuts":41},{"id":"9faea178-ec86-4bac-8968-beebd5de1e64","playerTags":[],"teamTags":[],"gameTags":[],"metadata":{"being":3},"created":"2021-03-02T18:37:17.289Z","season":11,"tournament":-1,"type":29,"day":27,"phase":3,"category":4,"description":"XIIII
+        Temperance","nuts":42}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1936'
+      - '1993'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:37 GMT
+      - Wed, 19 May 2021 20:48:56 GMT
       Etag:
-      - W/"790-DbhJ5pR1/idKiAyDEyHhj8DNYa8"
+      - W/"7c9-eiuAiq597VAjEbvRYPub64UN83M"
       Server:
       - Cowboy
       Vary:

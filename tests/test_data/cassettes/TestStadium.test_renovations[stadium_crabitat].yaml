@@ -11,7 +11,61 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus,psychoacoustics_mod,big_bucket_mod,event_horizon_mod,solar_panels_mod,coffee_two_plus,fortifications_minus,mysticism_plus,viscosity_plus,sun_two_plus,secret_base_mod,echo_chamber_mod,soundsystem_mod,flood_pumps_mod,grind_rail_mod,fortifications_plus,mysticism_minus,peanuts_plus,inconvenience_plus
+    uri: https://www.blaseball.com/database/renovations?ids=hoops_mod,grandiosity_plus,filthiness_cleanup,event_horizon_mod,fire_insurance_mod,obtuseness_plus,soundsystem_mod,viscosity_plus,grind_rail_mod
+  response:
+    body:
+      string: '[{"id":"hoops_mod","title":"Hoops","type":1,"effects":["Modification"],"description":"With
+        Hoops in your Ballpark, every Home Run can be a Slam Dunk."},{"id":"grandiosity_plus","title":"Grandiosity
+        +","type":0,"effects":["Home Run % -","Hit % +"],"description":"Raise the
+        Grandiosity of your Ballpark."},{"id":"filthiness_cleanup","title":"Ballpark
+        Cleanup","type":0,"effects":["eDensity -"],"description":"Clean up your Ballpark,
+        removing all Filthiness."},{"id":"event_horizon_mod","title":"Event Horizon","type":1,"effects":["Modification"],"description":"Add
+        an Event Horizon to save each game''s first overflow of Black Hole for later."},{"id":"fire_insurance_mod","title":"Heat
+        Magnet","type":1,"effects":["Modification"],"description":"Add a Heat Magnet
+        to absorb and repurpose heat from any incinerations in your Ballpark."},{"id":"obtuseness_plus","title":"Obtuseness
+        +","type":0,"effects":["Hit % +","Foul % -"],"description":"Raise the Obtuseness
+        of your Ballpark."},{"id":"soundsystem_mod","title":"LCD Soundsystem","type":1,"effects":["Modification"],"description":"Build
+        a luminous, towering LCD Soundsystem to make Feedback more exciting for both
+        players involved."},{"id":"viscosity_plus","title":"Viscosity +","type":0,"effects":["Hard
+        Hit % -","Contact % +"],"description":"Raise the Viscosity of your Ballpark."},{"id":"grind_rail_mod","title":"Grind
+        Rail","type":1,"effects":["Modification"],"description":"Build the Grind Rail
+        to pull off an extreme transfer from first to third base, skipping second
+        entirely."}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1533'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:50:49 GMT
+      Etag:
+      - W/"5fd-rL1PEiVB98M7Kv9kWmE//YIHDRY"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/renovations?ids=big_bucket_mod,black_hole_plus,flooding_plus,event_horizon_mod,coffee_one_plus,peanut_mister_mod,inconvenience_minus,fortifications_plus,inconvenience_plus,psychoacoustics_mod,big_bucket_mod,event_horizon_mod,solar_panels_mod,coffee_two_plus,fortifications_minus,mysticism_plus,viscosity_plus,sun_two_plus,secret_base_mod,echo_chamber_mod,soundsystem_mod,flood_pumps_mod,grind_rail_mod,fortifications_plus,mysticism_minus,peanuts_plus,inconvenience_plus,salmon_cannons_mod,sweetener_mod,viscosity_minus,forwardness_plus,ominousness_plus,flooding_plus,solar_panels_mod,obtuseness_plus,filthiness_cleanup,fax_machine_mod,blooddrain_plus,hotel_motel_mod,sun_two_plus,peanuts_plus,feedback_plus,solar_eclipse_plus,obtuseness_minus,soundsystem_mod,filthiness_cleanup,ominousness_minus,feedback_plus,salmon_plus,event_horizon_mod,elongation_plus,sweetener_mod,ominousness_plus,black_hole_plus
   response:
     body:
       string: '[{"id":"big_bucket_mod","title":"Big Buckets","type":1,"effects":["Modification"],"description":"Place
@@ -62,18 +116,67 @@ interactions:
         +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
         Peanuts weather more often."},{"id":"inconvenience_plus","title":"Inconvenience
         +","type":0,"effects":["Steal Attempt % -","Hit % -"],"description":"Raise
-        the Inconvenience of your Ballpark."}]'
+        the Inconvenience of your Ballpark."},{"id":"salmon_cannons_mod","title":"Salmon
+        Cannons","type":1,"effects":["Modification"],"description":"Build Salmon Cannons
+        to expel pests from your Stadium."},{"id":"sweetener_mod","title":"Sweetener","type":1,"effects":["Modification"],"description":"With
+        a dedicated supply of Sweetener in your Ballpark, Coffee weathers will be
+        your favorite part of the season."},{"id":"viscosity_minus","title":"Viscosity
+        -","type":0,"effects":["Hard Hit % +","Contact % -"],"description":"Lower
+        the Viscosity of your Ballpark."},{"id":"forwardness_plus","title":"Forwardness
+        +","type":0,"effects":["Strike % +","Hard Hit % +"],"description":"Raise the
+        Forwardness of your Ballpark."},{"id":"ominousness_plus","title":"Ominousness
+        +","type":0,"effects":["Hard Hit % -","Groundout % +"],"description":"Raise
+        the Ominousness of your Ballpark."},{"id":"flooding_plus","title":"Flooding
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Flooding weather more often."},{"id":"solar_panels_mod","title":"Solar Panels","type":1,"effects":["Modification"],"description":"Add
+        Solar Panels to your Ballpark to save each game''s first overflow of Sun 2
+        for later."},{"id":"obtuseness_plus","title":"Obtuseness +","type":0,"effects":["Hit
+        % +","Foul % -"],"description":"Raise the Obtuseness of your Ballpark."},{"id":"filthiness_cleanup","title":"Ballpark
+        Cleanup","type":0,"effects":["eDensity -"],"description":"Clean up your Ballpark,
+        removing all Filthiness."},{"id":"fax_machine_mod","title":"Fax Machine","type":1,"effects":["Modification"],"description":"The
+        Fax Machine will offer you Shadow Relief, promoting your Best Pitcher from
+        the Shadows in your time of need."},{"id":"blooddrain_plus","title":"Blooddrain
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Blooddrain weather more often."},{"id":"hotel_motel_mod","title":"Hotel Motel","type":1,"effects":["Modification"],"description":"The
+        Hotel Motel will occasionally create Holiday Innings during the Earlseason,
+        where you Party instead of Score."},{"id":"sun_two_plus","title":"Sun 2 +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Sun 2 weather more often."},{"id":"peanuts_plus","title":"Peanuts
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Peanuts weather more often."},{"id":"feedback_plus","title":"Feedback +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Feedback more often."},{"id":"solar_eclipse_plus","title":"Solar
+        Eclipses +","type":0,"effects":["Weather % +"],"description":"Your Ballpark
+        will have Solar Eclipses more often."},{"id":"obtuseness_minus","title":"Obtuseness
+        -","type":0,"effects":["Hit % -","Foul % +"],"description":"Lower the Obtuseness
+        of your Ballpark."},{"id":"soundsystem_mod","title":"LCD Soundsystem","type":1,"effects":["Modification"],"description":"Build
+        a luminous, towering LCD Soundsystem to make Feedback more exciting for both
+        players involved."},{"id":"filthiness_cleanup","title":"Ballpark Cleanup","type":0,"effects":["eDensity
+        -"],"description":"Clean up your Ballpark, removing all Filthiness."},{"id":"ominousness_minus","title":"Ominousness
+        -","type":0,"effects":["Hard Hit % +","Groundout % -"],"description":"Lower
+        the Ominousness of your Ballpark."},{"id":"feedback_plus","title":"Feedback
+        +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will have
+        Feedback more often."},{"id":"salmon_plus","title":"Salmon +","type":0,"effects":["Weather
+        % +"],"description":"Your Ballpark will have Salmon weather more often."},{"id":"event_horizon_mod","title":"Event
+        Horizon","type":1,"effects":["Modification"],"description":"Add an Event Horizon
+        to save each game''s first overflow of Black Hole for later."},{"id":"elongation_plus","title":"Elongation
+        +","type":0,"effects":["Steal Success % -","Double Play % -"],"description":"Raise
+        the Elongation of your Ballpark."},{"id":"sweetener_mod","title":"Sweetener","type":1,"effects":["Modification"],"description":"With
+        a dedicated supply of Sweetener in your Ballpark, Coffee weathers will be
+        your favorite part of the season."},{"id":"ominousness_plus","title":"Ominousness
+        +","type":0,"effects":["Hard Hit % -","Groundout % +"],"description":"Raise
+        the Ominousness of your Ballpark."},{"id":"black_hole_plus","title":"Black
+        Hole +","type":0,"effects":["Weather % +"],"description":"Your Ballpark will
+        have Black Holes more often."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '4622'
+      - '9057'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 23:43:52 GMT
+      - Wed, 19 May 2021 20:50:49 GMT
       Etag:
-      - W/"120e-20FXtZZJDLH7y7WgUV4ViFOqxLQ"
+      - W/"2361-SE2IXcltGCAnj779citTAL3+K5I"
       Server:
       - Cowboy
       Vary:

@@ -14,19 +14,29 @@ interactions:
     uri: https://api.blaseball-reference.com/v1/playerIdsByName?name=August%20Mina&current=True
   response:
     body:
-      string: '[{"player_id":"c17a4397-4dcc-440e-8c53-d897e971cae9","player_name":"August
-        Mina","valid_from":"2021-03-18T12:24:01.389Z","valid_until":null}]'
+      string: !!binary |
+        H4sIAAAAAAAAAz2MQQrCMBBFryJZO5JpU9Jk5wHcdaVIGSZRAtMobSOIeHfjQuHv3n/v9FJ3oWec
+        xxSUV4yWTOssmMAMxugIPXcthN7Z6CwyRae2PyXTFKu0L9eyrJtDylTZgySF8TLfpooa3SDoDhAH
+        bfx3uKvV4/9X8ppE+VxE3ucPTurf+o0AAAA=
     headers:
       Access-Control-Allow-Origin:
       - '*'
+      Content-Encoding:
+      - gzip
       Content-Length:
-      - '141'
+      - '140'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:32 GMT
+      - Wed, 19 May 2021 20:50:30 GMT
       Etag:
-      - W/"8d-73G02NVlwLoc6f2RUwKyFYeph9I"
+      - W/"8d-61+4KMeXLRv5Qr79OgasBXqLZQI"
+      Server:
+      - nginx/1.19.9
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - MISS
       X-Powered-By:
       - Express
     status:
@@ -48,19 +58,19 @@ interactions:
   response:
     body:
       string: '[{"id":"c17a4397-4dcc-440e-8c53-d897e971cae9","anticapitalism":0.27823373447071154,"baseThirst":0.1444813657717241,"buoyancy":0.42767297745781385,"chasiness":0.5488068797217673,"coldness":0.029122036620556457,"continuation":0.06270654856247249,"divinity":0.7190284119188852,"groundFriction":0.8723409862002314,"indulgence":0.07475076452566376,"laserlikeness":0.4099959290799151,"martyrdom":0.1629109581042285,"moxie":0.775334128956795,"musclitude":0.35687078778152803,"name":"August
-        Mina","bat":"","omniscience":0.5502160214317255,"overpowerment":0.12729665063432427,"patheticism":0.7652653607688311,"ruthlessness":0.15881491419351468,"shakespearianism":0.27333482393594255,"suppression":0.7901647478144345,"tenaciousness":0.9979712194939745,"thwackability":0.01325991643836133,"tragicness":0.1,"unthwackability":0.5792989861180196,"watchfulness":0.013064198650530212,"pressurization":0.634520222045976,"totalFingers":10,"soul":3,"deceased":true,"peanutAllergy":true,"cinnamon":0.6698219262927751,"fate":16,"armor":"","ritual":"Fishing
-        for compliments","coffee":4,"blood":3,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":1,"baserunningRating":0.3044615384353079,"pitchingRating":0.21518177451624892,"hittingRating":0.15966534962063808,"defenseRating":0.47634483502409325,"leagueTeamId":null,"tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0}]'
+        Mina","omniscience":0.5502160214317255,"overpowerment":0.12729665063432427,"patheticism":0.7652653607688311,"ruthlessness":0.15881491419351468,"shakespearianism":0.27333482393594255,"suppression":0.7901647478144345,"tenaciousness":0.9979712194939745,"thwackability":0.01325991643836133,"tragicness":0.1,"unthwackability":0.5792989861180196,"watchfulness":0.013064198650530212,"pressurization":0.634520222045976,"totalFingers":10,"soul":3,"deceased":true,"peanutAllergy":true,"cinnamon":0.6698219262927751,"fate":16,"ritual":"Fishing
+        for compliments","coffee":4,"blood":3,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":["WIRED"],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.3044615384353079,"pitchingRating":0.21518177451624892,"hittingRating":0.15966534962063808,"defenseRating":0.47634483502409325,"leagueTeamId":null,"tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1395'
+      - '1407'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:33 GMT
+      - Wed, 19 May 2021 20:50:30 GMT
       Etag:
-      - W/"573-B+ysTGEsCqX67smgDcyj7kmC4Pw"
+      - W/"57f-I20EoF+O3cyl5+xM1PmeeE8XcJw"
       Server:
       - Cowboy
       Vary:

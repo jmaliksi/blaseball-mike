@@ -14,19 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=3d3be7b8-1cbf-450d-8503-fce0daf46cbf
   response:
     body:
-      string: '[{"id":"3d3be7b8-1cbf-450d-8503-fce0daf46cbf","anticapitalism":0.4386409581436979,"baseThirst":0.6432772429822662,"buoyancy":0.316825320931078,"chasiness":0.6412342200303531,"coldness":0.522018095595872,"continuation":0.9781895058318322,"divinity":0.715703169856751,"groundFriction":0.9889442172866877,"indulgence":0.25997935514166703,"laserlikeness":0.8669226506918096,"martyrdom":0.46774892460307915,"moxie":0.7018017234854356,"musclitude":0.4271514730929309,"name":"Zack
-        Sanders","bat":"","omniscience":1.179563878549894,"overpowerment":0.7336562428423392,"patheticism":0.001,"ruthlessness":0.9682367726193304,"shakespearianism":0.519537499386037,"suppression":0.6713759562902777,"tenaciousness":1.1834378361479734,"thwackability":0.5189909351078359,"tragicness":0.03469284292434677,"unthwackability":0.37144331148292165,"watchfulness":0.5111405144045624,"pressurization":0.9398150163500756,"totalFingers":13,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.6222866056830362,"fate":72,"armor":"","ritual":"Whispering","coffee":9,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7760386644276405,"pitchingRating":0.5292570135192174,"hittingRating":0.6359857144624891,"defenseRating":0.8805215730783632,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"49181b72-7f1c-4f1c-929f-928d763ad7fb","eDensity":33.75262075841397,"state":{},"evolution":0}]'
+      string: '[{"id":"3d3be7b8-1cbf-450d-8503-fce0daf46cbf","anticapitalism":0.5067533407723847,"baseThirst":0.6914988551708078,"buoyancy":0.33409473444060395,"chasiness":0.6826388142712023,"coldness":0.7878246281170745,"continuation":1.024187763572771,"divinity":0.7140684796436005,"groundFriction":1.0379386714435588,"indulgence":0.3186391871837896,"laserlikeness":0.9390439583720773,"martyrdom":0.4906178234445857,"moxie":0.6983609668349411,"musclitude":0.43104154475679946,"name":"Zack
+        Sanders","omniscience":1.2571598021221786,"overpowerment":0.9764309295565486,"patheticism":0.001,"ruthlessness":1.290672915399166,"shakespearianism":0.8346614613809711,"suppression":0.9181104077647523,"tenaciousness":1.2324903118037986,"thwackability":0.5117820136251028,"tragicness":0.04912538215592917,"unthwackability":0.6249770029663944,"watchfulness":0.5698990530958269,"pressurization":0.9398150163500756,"totalFingers":13,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.6754911322784035,"fate":72,"ritual":"Whispering","coffee":9,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.838121832989695,"pitchingRating":0.851660492426724,"hittingRating":0.6330791543289788,"defenseRating":0.9279260209911361,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"49181b72-7f1c-4f1c-929f-928d763ad7fb","eDensity":36.755512505155735,"state":{},"evolution":0,"items":[{"id":"de2dd81a-5a89-44bd-a39b-b218d060a9e1","name":"Head
+        Cannon","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":{"name":"Head","adjustments":[{"stat":3,"type":1,"value":0.11291369938789952},{"stat":21,"type":1,"value":0.14803091223924084}]},"root":{"name":"Cannon","adjustments":[{"stat":18,"type":1,"value":0.11726030066244163}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":0.014611915279987286,"hittingRating":0.007156137710225385,"defenseRating":0.020890658122331596}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1456'
+      - '1999'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:49 GMT
+      - Wed, 19 May 2021 20:49:18 GMT
       Etag:
-      - W/"5b0-WHJiP2VtaaO7o4LdQFUquaaG3B8"
+      - W/"7cf-uDqDF23ZwV9D/mBuMO5SVXu6lOg"
       Server:
       - Cowboy
       Vary:
@@ -53,20 +54,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=cf8e152e-2d27-4dcc-ba2b-68127de4e6a4
   response:
     body:
-      string: '[{"id":"cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","anticapitalism":0.478976753723757,"baseThirst":0.5100165936799052,"buoyancy":0.2516370637129077,"chasiness":0.34732188287168414,"coldness":0.575743863953883,"continuation":0.32,"divinity":0.3966743202211887,"groundFriction":0.8615033731221033,"indulgence":0.8694892039116198,"laserlikeness":0.6850704745504269,"martyrdom":0.9942777315656379,"moxie":0.5772779914216734,"musclitude":0.6064185499663931,"name":"Hendricks
-        Richardson","bat":"","omniscience":0.07,"overpowerment":0.29532449952165485,"patheticism":0.23376890259039454,"ruthlessness":0.5690675590427077,"shakespearianism":0.3578218176028243,"suppression":0.4212366013843887,"tenaciousness":0.3371364495207882,"thwackability":0.7287945032755325,"tragicness":0.060000000000000005,"unthwackability":0.03,"watchfulness":0.7211420259877999,"pressurization":0.6638795184418913,"totalFingers":15,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.8387872345132348,"fate":65,"armor":"","ritual":"Cold
-        tub","coffee":10,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6708001813427511,"pitchingRating":0.10245743870510812,"hittingRating":0.5903029362206407,"defenseRating":0.38237323790166966,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"a3ea6358-ce03-4f23-85f9-deb38cb81b20","eDensity":26.221536559191186,"state":{},"evolution":0}]'
+      string: '[{"id":"cf8e152e-2d27-4dcc-ba2b-68127de4e6a4","anticapitalism":0.478976753723757,"baseThirst":0.5387801333535553,"buoyancy":0.2516370637129077,"chasiness":0.34732188287168414,"coldness":0.575743863953883,"continuation":0.34275733913638873,"divinity":0.3966743202211887,"groundFriction":0.8822709916747892,"indulgence":0.8897828511241573,"laserlikeness":0.7144071411498595,"martyrdom":0.9942777315656379,"moxie":0.7272779914216734,"musclitude":0.6064185499663931,"name":"Hendricks
+        Richardson","omniscience":0.07,"overpowerment":0.29532449952165485,"patheticism":0.23376890259039454,"ruthlessness":0.5690675590427077,"shakespearianism":0.3578218176028243,"suppression":0.4212366013843887,"tenaciousness":0.3371364495207882,"thwackability":0.8287945032755325,"tragicness":0.060000000000000005,"unthwackability":0.03,"watchfulness":0.7211420259877999,"pressurization":0.6638795184418913,"totalFingers":15,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.8387872345132348,"fate":65,"ritual":"Cold
+        tub","coffee":10,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6967890711144789,"pitchingRating":0.10245743870510812,"hittingRating":0.6282655154395461,"defenseRating":0.38237323790166966,"leagueTeamId":"f02aeae2-5e6a-4098-9842-02d2273f25c7","tournamentTeamId":"a3ea6358-ce03-4f23-85f9-deb38cb81b20","eDensity":26.669196842125622,"state":{"itemModSources":{"DOUBLE_PAYOUTS":["d1fb3626-6e48-4efe-bfe9-0b48968ade25"]}},"evolution":0,"items":[{"id":"d1fb3626-6e48-4efe-bfe9-0b48968ade25","name":"Golden
+        Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Golden","adjustments":[{"mod":"DOUBLE_PAYOUTS","type":0}]}],"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.10704444736221813}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.029004185895669332,"defenseRating":0}],"itemAttr":["DOUBLE_PAYOUTS"]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1441'
+      - '1988'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:49 GMT
+      - Wed, 19 May 2021 20:49:18 GMT
       Etag:
-      - W/"5a1-vgqcgooPqVeAgWyjKdZpF4npt8Y"
+      - W/"7c4-DnmvJzjIQVpCDIGgQ0j38FBNHrc"
       Server:
       - Cowboy
       Vary:
@@ -94,19 +96,19 @@ interactions:
   response:
     body:
       string: '[{"id":"c549f280-82ba-4d8e-a4ce-c49e56461fb6","anticapitalism":0.5279112891930355,"baseThirst":0.5578969977698054,"buoyancy":0.40414179587659604,"chasiness":0.7057143986572794,"coldness":0.1682804839207075,"continuation":0.7454874331059417,"divinity":0.5192661723859414,"groundFriction":0.24682253746255517,"indulgence":0.8256354200913768,"laserlikeness":0.49109789895627665,"martyrdom":0.15233431465636113,"moxie":0.9820552062158953,"musclitude":0.6899232094380122,"name":"Val
-        Hitherto","bat":"","omniscience":0.75768621548359,"overpowerment":0.6676399169868206,"patheticism":0.11083274919064151,"ruthlessness":0.5155364120036835,"shakespearianism":0.32210724508512567,"suppression":0.6673112385352147,"tenaciousness":1.1429322927936751,"thwackability":0.4145742113238973,"tragicness":0.001,"unthwackability":0.714527568769564,"watchfulness":0.5168356288582757,"pressurization":0.9890302659779149,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.4143980790727257,"fate":86,"armor":"","ritual":"Cup
-        of tea","coffee":5,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5475210062966158,"pitchingRating":0.5212492824546421,"hittingRating":0.5432107326959471,"defenseRating":0.8240550310925823,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":null,"eDensity":26.214130214149918,"state":{},"evolution":0}]'
+        Hitherto","omniscience":0.75768621548359,"overpowerment":0.6676399169868206,"patheticism":0.11083274919064151,"ruthlessness":0.5155364120036835,"shakespearianism":0.32210724508512567,"suppression":0.6673112385352147,"tenaciousness":1.1429322927936751,"thwackability":0.4145742113238973,"tragicness":0.001,"unthwackability":0.714527568769564,"watchfulness":0.5168356288582757,"pressurization":0.9890302659779149,"totalFingers":10,"soul":5,"deceased":false,"peanutAllergy":false,"cinnamon":0.4143980790727257,"fate":86,"ritual":"Cup
+        of tea","coffee":5,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5475210062966158,"pitchingRating":0.5212492824546421,"hittingRating":0.5432107326959471,"defenseRating":0.8240550310925823,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":null,"eDensity":27.05225236777851,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1427'
+      - '1431'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:49 GMT
+      - Wed, 19 May 2021 20:49:18 GMT
       Etag:
-      - W/"593-N0ouwwsQi/V/ygX/DBCLl9uTYTY"
+      - W/"597-HWrZeAd7rElDdQsC49WtyMYQMi0"
       Server:
       - Cowboy
       Vary:

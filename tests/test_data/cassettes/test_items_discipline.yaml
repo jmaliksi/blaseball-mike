@@ -42,11 +42,11 @@ interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Date:
-      - Mon, 12 Apr 2021 23:28:15 GMT
+      - Wed, 19 May 2021 20:49:33 GMT
       ETag:
       - W/"5782dce0c2430103dbaa6d72b9a38ba6e68ab0b41125bdb3a7115dae8a76e649"
       Expires:
-      - Mon, 12 Apr 2021 23:33:15 GMT
+      - Wed, 19 May 2021 20:54:33 GMT
       Source-Age:
       - '0'
       Strict-Transport-Security:
@@ -62,17 +62,55 @@ interactions:
       X-Content-Type-Options:
       - nosniff
       X-Fastly-Request-ID:
-      - 37403cb2e75608536c8626b4a8fb97c0737c36bc
+      - 42ca6a3249e9ae03ac5f8e9b1ea5b69189461732
       X-Frame-Options:
       - deny
       X-GitHub-Request-Id:
-      - 1106:1EF6:6D0F5:9E971:6074D4D3
+      - 089A:6503:38A4D1:62F2BE:60A579DD
       X-Served-By:
-      - cache-dca17743-DCA
+      - cache-dca17762-DCA
       X-Timer:
-      - S1618270095.365005,VS0,VE87
+      - S1621457374.823154,VS0,VE97
       X-XSS-Protection:
       - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://www.blaseball.com/database/items?ids=aab9ce81-6fd4-439b-867c-a9da07b3e011
+  response:
+    body:
+      string: '[{"id":"aab9ce81-6fd4-439b-867c-a9da07b3e011","name":"Concrete Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":{"name":"Concrete","adjustments":[{"type":3,"value":2}]},"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.11636700336056469}]},"suffix":null,"durability":4,"health":4,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.11139757415520618,"defenseRating":0}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '425'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 19 May 2021 20:49:34 GMT
+      Etag:
+      - W/"1a9-pri72wpvfFYMWDA8bWUv7/HyPIk"
+      Server:
+      - Cowboy
+      Vary:
+      - Host, X-Forwarded-Proto
+      Via:
+      - 1.1 vegur
+      X-Powered-By:
+      - Express
     status:
       code: 200
       message: OK
@@ -101,7 +139,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 12 Apr 2021 23:28:15 GMT
+      - Wed, 19 May 2021 20:49:34 GMT
       Etag:
       - W/"a2-l6aRyP64TBgfQJ+EpYFMNSfKeic"
       Server:

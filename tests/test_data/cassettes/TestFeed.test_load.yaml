@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/feed/global?category=0&limit=2
   response:
     body:
-      string: '[{"id":"bf631ad8-b8e2-47ac-a902-0637d7f76f90","playerTags":[],"teamTags":["878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["b2cafd20-a799-48f6-abd7-c99bd79a6bd1"],"metadata":{"play":291,"subPlay":-1},"created":"2021-03-20T23:24:43.186Z","season":13,"tournament":-1,"type":8,"day":116,"phase":11,"category":0,"description":"Halexandrey
-        Walton hit a ground out to Lachlan Shelton."},{"id":"ed5e97c9-02ff-4827-bb16-043b9e5a5f3e","playerTags":[],"teamTags":["878c1bf6-0d21-4659-bfee-916c8314d69c","eb67ae5e-c4bf-46ca-bbbc-425cd34182ff"],"gameTags":["b2cafd20-a799-48f6-abd7-c99bd79a6bd1"],"metadata":{"play":290,"subPlay":-1},"created":"2021-03-20T23:24:38.148Z","season":13,"tournament":-1,"type":13,"day":116,"phase":11,"category":0,"description":"Strike,
-        looking. 0-2"}]'
+      string: '[{"id":"a3f02dfd-31cf-4d9b-946c-5dcc4c654280","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","c73b705c-40ad-4633-a6ed-d357ee2e2bcf"],"gameTags":["99c2eaac-ec24-4eaf-b09b-6b410ec375b9"],"metadata":{"play":376,"subPlay":-1},"created":"2021-05-19T20:31:58.886Z","season":18,"tournament":-1,"type":8,"day":52,"phase":4,"category":0,"description":"Gerund
+        Pantheocide hit into a double play!","nuts":0},{"id":"9e18456d-9a33-478f-a290-961a579c67e7","playerTags":[],"teamTags":["a37f9158-7f82-46bc-908c-c9e2dda7c33b","c73b705c-40ad-4633-a6ed-d357ee2e2bcf"],"gameTags":["99c2eaac-ec24-4eaf-b09b-6b410ec375b9"],"metadata":{"play":375,"subPlay":-1},"created":"2021-05-19T20:31:53.824Z","season":18,"tournament":-1,"type":12,"day":52,"phase":4,"category":0,"description":"Gerund
+        Pantheocide batting for the Lift.","nuts":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '811'
+      - '832'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:35 GMT
+      - Wed, 19 May 2021 20:48:53 GMT
       Etag:
-      - W/"32b-KQCL1IPQmuiGwsQXx76La+c+/Ss"
+      - W/"340-uWrKz25dIvvcLTHg6zMTrBvmYoM"
       Server:
       - Cowboy
       Vary:

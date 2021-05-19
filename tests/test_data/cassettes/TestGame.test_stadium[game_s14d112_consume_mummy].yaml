@@ -14,18 +14,18 @@ interactions:
     uri: https://api.sibr.dev/chronicler/v2/entities?count=1000&id=36b94380-39a6-4e32-b525-3e888215798a&type=stadium
   response:
     body:
-      string: "{\"nextPage\":\"gEO5NqY5Mk61JT6IghV5itrMTGhR3gAA\",\"items\":[{\"entityId\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hash\":\"46982c08-c844-b489-13be-8d0b58a453fc\",\"validFrom\":\"2021-04-09T22:02:02.358089Z\",\"validTo\":null,\"data\":{\"id\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hype\":0,\"mods\":[\"BIG_BUCKET\",\"PSYCHOACOUSTICS\",\"SECRET_BASE\"],\"name\":\"Al
-        Pastor Memorial Park\",\"birds\":0,\"model\":8,\"state\":{},\"teamId\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"renoLog\":{\"big_bucket_mod\":1,\"secret_base_mod\":1,\"psychoacoustics_mod\":1},\"weather\":{},\"nickname\":\"LA
-        Taquer\xEDa\",\"renoCost\":-1,\"renoHand\":[],\"mainColor\":\"#64376e\",\"mysticism\":0.4382990376095283,\"viscosity\":0.4962028180294879,\"elongation\":0.5039366548531963,\"filthiness\":0.21288929801347561,\"obtuseness\":0.7566629545867662,\"forwardness\":0.5101363245618917,\"grandiosity\":0.5103603930943879,\"ominousness\":0.4253079342393487,\"renoDiscard\":[\"psychoacoustics_mod\",\"elongation_minus\",\"peanut_mister_mod\",\"event_horizon_mod\",\"solar_panels_mod\",\"big_bucket_mod\",\"obtuseness_minus\",\"obtuseness_plus\",\"coffee_one_plus\",\"secret_base_mod\",\"obtuseness_minus\",\"grandiosity_minus\",\"elongation_minus\",\"elongation_plus\",\"grind_rail_mod\",\"echo_chamber_mod\",\"flood_pumps_mod\",\"peanut_mister_mod\"],\"fortification\":0.4519595330300567,\"inconvenience\":0.4712119725231586,\"luxuriousness\":0,\"tertiaryColor\":\"#eadcef\",\"secondaryColor\":\"#bb8fc4\"}}]}"
+      string: "{\"nextPage\":\"gEO5NqY5Mk61JT6IghV5iiKpNsqy_QAA\",\"items\":[{\"entityId\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hash\":\"ae4642e5-4b38-47e1-faa3-3df026749df1\",\"validFrom\":\"2021-05-19T20:27:13.858589Z\",\"validTo\":null,\"data\":{\"id\":\"36b94380-39a6-4e32-b525-3e888215798a\",\"hype\":0,\"mods\":[\"BIG_BUCKET\",\"PSYCHOACOUSTICS\",\"SECRET_BASE\",\"FAX_MACHINE\",\"BIRDHOUSES\",\"GRIND_RAIL\"],\"name\":\"Al
+        Pastor Memorial Park\",\"birds\":60,\"model\":8,\"state\":{},\"teamId\":\"878c1bf6-0d21-4659-bfee-916c8314d69c\",\"renoLog\":{\"big_bucket_mod\":1,\"birdhouses_mod\":1,\"grind_rail_mod\":1,\"turntables_mod\":0,\"fax_machine_mod\":1,\"hotel_motel_mod\":0,\"secret_base_mod\":1,\"psychoacoustics_mod\":1},\"weather\":{\"1\":1},\"nickname\":\"LA
+        Taquer\xEDa\",\"renoCost\":-1,\"renoHand\":[\"hoops_mod\",\"fortifications_plus\",\"fire_insurance_mod\",\"mysticism_plus\",\"ominousness_plus\",\"inconvenience_plus\",\"echo_chamber_mod\",\"blooddrain_plus\",\"feedback_plus\"],\"mainColor\":\"#64376e\",\"mysticism\":0.4382990376095283,\"viscosity\":0.4962028180294879,\"elongation\":0.5039366548531963,\"filthiness\":0.4535203689942757,\"obtuseness\":0.8292078482366367,\"forwardness\":0.5101363245618917,\"grandiosity\":0.5103603930943879,\"ominousness\":0.4253079342393487,\"renoDiscard\":[\"psychoacoustics_mod\",\"elongation_minus\",\"peanut_mister_mod\",\"event_horizon_mod\",\"solar_panels_mod\",\"big_bucket_mod\",\"obtuseness_minus\",\"obtuseness_plus\",\"coffee_one_plus\",\"secret_base_mod\",\"obtuseness_minus\",\"grandiosity_minus\",\"elongation_minus\",\"elongation_plus\",\"grind_rail_mod\",\"echo_chamber_mod\",\"flood_pumps_mod\",\"peanut_mister_mod\",\"salmon_cannons_mod\",\"sweetener_mod\",\"solar_panels_mod\",\"fortifications_plus\",\"fortifications_minus\",\"sun_two_plus\",\"obtuseness_plus\",\"inconvenience_plus\",\"viscosity_plus\",\"fax_machine_mod\",\"grandiosity_plus\",\"solar_eclipse_plus\",\"hotel_motel_mod\",\"forwardness_minus\",\"obtuseness_minus\",\"blooddrain_plus\",\"inconvenience_plus\",\"viscosity_minus\",\"fire_insurance_mod\",\"mysticism_minus\",\"obtuseness_minus\",\"mysticism_plus\",\"fortifications_minus\",\"black_hole_plus\",\"grind_rail_mod\",\"birdhouses_mod\",\"flooding_plus\"],\"fortification\":0.32786732460522816,\"inconvenience\":0.4712119725231586,\"luxuriousness\":0,\"tertiaryColor\":\"#eadcef\",\"secondaryColor\":\"#bb8fc4\"}}]}"
     headers:
-      Content-Length:
-      - '1359'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Apr 2021 23:27:25 GMT
+      - Wed, 19 May 2021 20:49:20 GMT
       Server:
       - Kestrel
+      Transfer-Encoding:
+      - chunked
     status:
       code: 200
       message: OK

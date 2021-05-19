@@ -14,21 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/feed/global?limit=3
   response:
     body:
-      string: '[{"id":"324075e5-095c-494e-b13f-2d0ae0b70080","playerTags":["89ec77d8-c186-4027-bd45-f407b4800c2c"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"mod":"SUPERYUMMY","type":0,"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:51:45.795Z","season":13,"tournament":-1,"type":106,"day":116,"phase":13,"category":1,"description":"James
-        Mora is Superyummy..."},{"id":"95d69c10-be2a-405c-846e-eaba8a080dd5","playerTags":["b6aa8ce8-2587-4627-83c1-2a48d44afaee"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:51:26.124Z","season":13,"tournament":-1,"type":168,"day":116,"phase":13,"category":1,"description":"Inky
-        Rutledge is no longer allergic to Peanuts."},{"id":"9afd8382-4614-4f0d-b06f-5f7aebf6933e","playerTags":["8adb084b-19fe-4295-bcd2-f92afdb62bd7"],"teamTags":["7966eb04-efcc-499b-8f03-d13916330531"],"gameTags":[],"metadata":{"parent":"6ad86057-b1d4-444b-b885-01ef7a96feb6"},"created":"2021-03-21T18:50:50.980Z","season":13,"tournament":-1,"type":168,"day":116,"phase":13,"category":1,"description":"Logan
-        Rodriguez is no longer allergic to Peanuts."}]'
+      string: '[{"id":"fee7385a-cfcf-4927-a2e5-932871992873","playerTags":["f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e"],"teamTags":["23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7"],"gameTags":[],"metadata":{"mods":["OVERPERFORMING"],"type":3},"created":"2021-05-19T20:32:04.522Z","season":18,"tournament":-1,"type":108,"day":52,"phase":4,"category":1,"description":"Usurper
+        Violet''s game mods wore off.","nuts":0},{"id":"9b6a2053-9160-4b15-bccf-8d823d59b200","playerTags":["2d07ccd0-cac7-4ccd-bab6-a078bb983174"],"teamTags":["b024e975-1c4a-4575-8936-a3754a08806a"],"gameTags":[],"metadata":{"mods":["OVERPERFORMING"],"type":3},"created":"2021-05-19T20:32:04.367Z","season":18,"tournament":-1,"type":108,"day":52,"phase":4,"category":1,"description":"Engine
+        Eberhardt''s game mods wore off.","nuts":0},{"id":"d5fa2734-1f1d-4fe2-a652-9439bd0dca72","playerTags":[],"teamTags":["bfd38797-8404-4b38-8b82-341da28b1f83"],"gameTags":[],"metadata":{"mods":["0"],"type":3},"created":"2021-05-19T20:32:04.315Z","season":18,"tournament":-1,"type":108,"day":52,"phase":4,"category":1,"description":"The
+        Shoe Thieves'' game mods wore off.","nuts":0}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1214'
+      - '1105'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:34 GMT
+      - Wed, 19 May 2021 20:48:51 GMT
       Etag:
-      - W/"4be-nw/+9F7G5525ZoX++Ym4upscx+8"
+      - W/"451-TJYMdFyCgIoaIDAJfhqmHkM0fyE"
       Server:
       - Cowboy
       Vary:

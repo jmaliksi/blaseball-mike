@@ -11,23 +11,23 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5
+    uri: https://www.blaseball.com/database/players?ids=3af96a6b-866c-4b03-bc14-090acf6ecee5
   response:
     body:
-      string: '[{"id":"97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","anticapitalism":1.1009320366796362,"baseThirst":0.6771638064151392,"buoyancy":1.0267877416768048,"chasiness":0.8697247232366522,"coldness":0.6573119920149351,"continuation":0.24848264909321316,"divinity":0.39478679161081554,"groundFriction":0.7428805345686874,"indulgence":0.5450668528414812,"laserlikeness":0.957922496404547,"martyrdom":0.08850439985962211,"moxie":0.11500315776657663,"musclitude":0.2863804762734838,"name":"Brock
-        Forbes","bat":"","omniscience":0.8606974496304113,"overpowerment":0.47105048020855766,"patheticism":0.22852560776261677,"ruthlessness":1.289278056253604,"shakespearianism":0.5549510915655834,"suppression":1.0639356259860633,"tenaciousness":0.7575204576264043,"thwackability":0.15734831852184103,"tragicness":0.001,"unthwackability":1.040106759690124,"watchfulness":0.45004701253451124,"pressurization":0.49843552394620527,"totalFingers":14,"soul":8,"deceased":false,"peanutAllergy":true,"cinnamon":0.5721252077856721,"fate":67,"armor":"","ritual":"Playing
-        fetch","coffee":6,"blood":7,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7481712955770872,"pitchingRating":0.9408220195652431,"hittingRating":0.2752666946046606,"defenseRating":0.8438961338603685,"leagueTeamId":"8d87c468-699a-47a8-b40d-cfb73a5660ad","tournamentTeamId":null,"eDensity":35.65709300525152,"state":{},"evolution":1}]'
+      string: '[{"id":"3af96a6b-866c-4b03-bc14-090acf6ecee5","anticapitalism":0.3469603430006694,"baseThirst":0.8690630598490787,"buoyancy":0.7238111435577803,"chasiness":1.1960269313923606,"coldness":1.6193007577226046,"continuation":0.4662266760068119,"divinity":0.35225361197729477,"groundFriction":0.8818945269381331,"indulgence":0.5716817401125811,"laserlikeness":0.2671708033089475,"martyrdom":0.439620087639228,"moxie":0.7096743624281436,"musclitude":0.48202652712292604,"name":"Axel
+        Trololol","omniscience":0.8047442441120651,"overpowerment":1.229625071185445,"patheticism":0.19205201434874186,"ruthlessness":0.9518058456763223,"shakespearianism":1.160939803685265,"suppression":1.6862234401221348,"tenaciousness":0.9251061606086934,"thwackability":0.5944207199679405,"tragicness":0.1,"unthwackability":1.3087018521578744,"watchfulness":1.05833337358486,"pressurization":0.3729562413771852,"totalFingers":66,"soul":2,"deceased":false,"peanutAllergy":true,"cinnamon":0.09111023582618527,"fate":12,"ritual":"Remembering
+        past lives","coffee":8,"blood":8,"permAttr":["HONEY_ROASTED","SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["LIBERATED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.44097750491701937,"pitchingRating":1.188556332333526,"hittingRating":0.5189974069440935,"defenseRating":0.8682288631869919,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1437'
+      - '1469'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:38 GMT
+      - Wed, 19 May 2021 20:48:59 GMT
       Etag:
-      - W/"59d-EUgwyjrUBG5ueLlN5Bcp3VKHpSI"
+      - W/"5bd-LFq0TKqmhE/q60TPLGL/H2tMdBE"
       Server:
       - Cowboy
       Vary:
@@ -51,23 +51,24 @@ interactions:
       User-Agent:
       - python-requests/2.24.0
     method: GET
-    uri: https://www.blaseball.com/database/players?ids=3af96a6b-866c-4b03-bc14-090acf6ecee5
+    uri: https://www.blaseball.com/database/players?ids=97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5
   response:
     body:
-      string: '[{"id":"3af96a6b-866c-4b03-bc14-090acf6ecee5","anticapitalism":0.3469603430006694,"baseThirst":0.8690630598490787,"buoyancy":0.7238111435577803,"chasiness":1.1960269313923606,"coldness":1.6193007577226046,"continuation":0.4662266760068119,"divinity":0.35225361197729477,"groundFriction":0.8818945269381331,"indulgence":0.5716817401125811,"laserlikeness":0.2671708033089475,"martyrdom":0.439620087639228,"moxie":0.7096743624281436,"musclitude":0.48202652712292604,"name":"Axel
-        Trololol","omniscience":0.8047442441120651,"overpowerment":1.229625071185445,"patheticism":0.19205201434874186,"ruthlessness":0.9518058456763223,"shakespearianism":1.160939803685265,"suppression":1.6862234401221348,"tenaciousness":0.9251061606086934,"thwackability":0.5944207199679405,"tragicness":0.1,"unthwackability":1.3087018521578744,"watchfulness":1.05833337358486,"pressurization":0.3729562413771852,"totalFingers":66,"soul":2,"deceased":false,"peanutAllergy":true,"cinnamon":0.09111023582618527,"fate":12,"ritual":"Remembering
-        past lives","coffee":8,"blood":8,"permAttr":["HONEY_ROASTED","SQUIDDISH","RETIRED"],"seasAttr":[],"weekAttr":["LIBERATED"],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.44097750491701937,"pitchingRating":1.188556332333526,"hittingRating":0.5189974069440935,"defenseRating":0.8682288631869919,"leagueTeamId":"c6c01051-cdd4-47d6-8a98-bb5b754f937f","tournamentTeamId":null,"eDensity":0,"state":{},"evolution":0,"items":[]}]'
+      string: '[{"id":"97dfc1f6-ac94-4cdc-b0d5-1cb9f8984aa5","anticapitalism":1.1169162365359946,"baseThirst":0.571105903396509,"buoyancy":1.065686609010643,"chasiness":0.8942767768813893,"coldness":0.60787588117926,"continuation":0.254609401218989,"divinity":0.4357760366781567,"groundFriction":0.7691983965276779,"indulgence":0.5642875397995648,"laserlikeness":0.8959204124811861,"martyrdom":0.22231789755574288,"moxie":0.26079543673212413,"musclitude":0.34990627899382865,"name":"Brock
+        Forbes","omniscience":0.9073490142209667,"overpowerment":0.8904764563002208,"patheticism":0.1597208118765192,"ruthlessness":1.1967478109304417,"shakespearianism":0.5803982436461391,"suppression":0.9900142501657666,"tenaciousness":0.716734528918642,"thwackability":0.23903010713856854,"tragicness":0.001,"unthwackability":0.8510196025292269,"watchfulness":0.3546429777814785,"pressurization":0.49843552394620527,"totalFingers":14,"soul":7,"deceased":false,"peanutAllergy":false,"cinnamon":0.6631429267576128,"fate":67,"ritual":"Playing
+        fetch","coffee":6,"blood":7,"permAttr":["WILD"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.7180384609371049,"pitchingRating":0.911133860378356,"hittingRating":0.36423006041548744,"defenseRating":0.8270941174548238,"leagueTeamId":"3f8bbb15-61c0-4e3f-8e4a-907a5fb1565e","tournamentTeamId":null,"eDensity":33.7434754943004,"state":{},"evolution":1,"items":[{"id":"31ae090d-a769-4ab3-a372-319dc2510835","name":"Cryogenic
+        Helmet","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Cryogenic","adjustments":[{"stat":15,"type":1,"value":0.22808571860750126},{"stat":17,"type":1,"value":0.24386018801816237},{"stat":18,"type":1,"value":0.11006907098936819}]}],"postPrefix":null,"root":{"name":"Helmet","adjustments":[{"stat":20,"type":1,"value":0.11826253583986751}]},"suffix":null,"durability":2,"health":2,"baserunningRating":0,"pitchingRating":0.023919944502193036,"hittingRating":0,"defenseRating":0},{"id":"935c0266-b5cf-4cc5-ad14-9a8ce130f39b","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.13042187752627232}]},"suffix":null,"durability":1,"health":0,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.07519808354740903,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1455'
+      - '2359'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:01:49 GMT
+      - Wed, 19 May 2021 20:48:59 GMT
       Etag:
-      - W/"5af-HyF8o6OlFL+lin0g5sfBiIqffsw"
+      - W/"937-sETDskEOC2GixzJx59FBgybiq2g"
       Server:
       - Cowboy
       Vary:

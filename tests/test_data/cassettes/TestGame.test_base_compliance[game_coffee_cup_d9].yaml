@@ -19,18 +19,18 @@ interactions:
         Haley","awayBatter":null,"awayBatterName":null,"awayTeam":"b024e975-1c4a-4575-8936-a3754a08806a","awayTeamName":"Dallas
         Steaks","awayTeamNickname":"Steaks","awayTeamColor":"#8c8d8f","awayTeamEmoji":"0x1F969","awayOdds":0.34906203563576943,"awayStrikes":3,"awayScore":6,"awayTeamBatterCount":36,"homePitcher":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","homePitcherName":"Inky
         Rutledge","homeBatter":null,"homeBatterName":null,"homeTeam":"7966eb04-efcc-499b-8f03-d13916330531","homeTeamName":"Yellowstone
-        Magic","homeTeamNickname":"Magic","homeTeamColor":"#bf0043","homeTeamEmoji":"0x2728","homeOdds":0.6509379643642306,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":34,"season":2,"isPostseason":false,"day":2,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":3,"shame":false,"weather":10,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Magic","homeTeamNickname":"Magic","homeTeamColor":"#bf0043","homeTeamEmoji":"0x2728","homeOdds":0.6509379643642306,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":34,"season":2,"isPostseason":false,"day":2,"phase":4,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":3,"shame":false,"weather":10,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1785'
+      - '1814'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 10 Apr 2021 21:08:50 GMT
+      - Wed, 19 May 2021 20:49:09 GMT
       Etag:
-      - W/"6f9-o2KU5xQTekA9h+MXIo10W6poMJw"
+      - W/"716-jhNqDydEYLgGLYsCXudGRVWxzvY"
       Server:
       - Cowboy
       Vary:

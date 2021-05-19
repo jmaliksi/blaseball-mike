@@ -14,20 +14,21 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=a691f2ba-9b69-41f8-892c-1acd42c336e4
   response:
     body:
-      string: '[{"id":"a691f2ba-9b69-41f8-892c-1acd42c336e4","anticapitalism":0.35319692402606884,"baseThirst":0.01,"buoyancy":0.2115320650687611,"chasiness":0.05518798026433758,"coldness":0.2568681864878104,"continuation":0.01,"divinity":0.6530734037531807,"groundFriction":0.5314611379802637,"indulgence":0.250641898318651,"laserlikeness":0.1324029455811809,"martyrdom":0.3843815676825175,"moxie":0.49912923514194585,"musclitude":0.026948103087579334,"name":"Jenkins
-        Good","bat":"","omniscience":0.883147780293642,"overpowerment":0.5360770345052601,"patheticism":0.18627995926653051,"ruthlessness":0.8900624714533705,"shakespearianism":0.11160057455880534,"suppression":0.0888044270184154,"tenaciousness":0.8195986524804952,"thwackability":0.2161383648357671,"tragicness":0.1,"unthwackability":0.8177046605836391,"watchfulness":0.005446576804651215,"pressurization":0.7071860243831654,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.4081373245219726,"fate":78,"armor":"","ritual":"Collective
-        bargaining","coffee":12,"blood":8,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.11841353380687494,"pitchingRating":0.6101827331465499,"hittingRating":0.35384239677662,"defenseRating":0.37542693512662567,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"9a5ab308-41f2-4889-a3c3-733b9aab806e","eDensity":22.205059191996696,"state":{},"evolution":0}]'
+      string: '[{"id":"a691f2ba-9b69-41f8-892c-1acd42c336e4","anticapitalism":0.40706930014870657,"baseThirst":0.06075073273090413,"buoyancy":0.3070653103913532,"chasiness":0.12276552988364456,"coldness":0.3435547896343929,"continuation":0.07983046423184632,"divinity":0.7325835657564812,"groundFriction":0.5952900642615573,"indulgence":0.30438982070858095,"laserlikeness":0.18130336378700546,"martyrdom":0.4484046852929482,"moxie":0.5501551082186955,"musclitude":0.1180241187442599,"name":"Jenkins
+        Good","omniscience":0.9379881446013921,"overpowerment":0.6095441653955972,"patheticism":0.11657316503900782,"ruthlessness":0.9832449173108893,"shakespearianism":0.20756732006330592,"suppression":0.1782665374474638,"tenaciousness":0.9011995218807582,"thwackability":0.2777279208831013,"tragicness":0.017450762881110166,"unthwackability":0.9132199339072635,"watchfulness":0.08645010818528946,"pressurization":0.7071860243831654,"totalFingers":10,"soul":6,"deceased":false,"peanutAllergy":true,"cinnamon":0.46219847798046737,"fate":78,"ritual":"Collective
+        bargaining","coffee":12,"blood":8,"permAttr":["ALTERNATE","FRIEND_OF_CROWS"],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.2106642416494858,"pitchingRating":0.7331940808472789,"hittingRating":0.45621180536883965,"defenseRating":0.5609894498069079,"leagueTeamId":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","tournamentTeamId":"9a5ab308-41f2-4889-a3c3-733b9aab806e","eDensity":25.727417043707586,"state":{},"evolution":0,"items":[{"id":"e2c10c6f-0a4a-454c-9c31-b85847e1717b","name":"Weird
+        Air Cannon","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Weird","adjustments":[{"stat":0,"type":1,"value":0.1099023648449446},{"stat":14,"type":1,"value":0.20110300095851522},{"stat":13,"type":1,"value":0.19973593001938392},{"stat":6,"type":1,"value":0.19727963758218098},{"stat":8,"type":1,"value":0.20676441746789465}]}],"postPrefix":{"name":"Air","adjustments":[{"stat":1,"type":1,"value":0.09499194886434288},{"stat":4,"type":1,"value":0.09040284960133457},{"stat":10,"type":1,"value":0.1267348297017586}]},"root":{"name":"Cannon","adjustments":[{"stat":18,"type":1,"value":0.14299770403176815}]},"suffix":null,"durability":3,"health":3,"baserunningRating":0.05261720597567743,"pitchingRating":0.09064311524169366,"hittingRating":0.010845912313196315,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1475'
+      - '2386'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:48 GMT
+      - Wed, 19 May 2021 20:49:15 GMT
       Etag:
-      - W/"5c3-2/5vyRQ5h+tV6CEjW6HpIq1kmpY"
+      - W/"952-w/oUmB8FOYIChEGccJ1Kap9AABs"
       Server:
       - Cowboy
       Vary:
@@ -54,19 +55,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=b6aa8ce8-2587-4627-83c1-2a48d44afaee
   response:
     body:
-      string: '[{"id":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","anticapitalism":0.6203953247643341,"baseThirst":0.8443793874839141,"buoyancy":0.27591677111698526,"chasiness":0.6350559273838529,"coldness":0.5662005689542737,"continuation":0.18787445893786564,"divinity":0.24501908172911846,"groundFriction":1.135592439636556,"indulgence":0.3584439361602173,"laserlikeness":0.5562343106871288,"martyrdom":0.513413389416473,"moxie":0.426630331765121,"musclitude":0.3345286106142956,"name":"Inky
-        Rutledge","bat":"INKY_BLAGONBALL","omniscience":0.32431281514024984,"overpowerment":0.27022138121134437,"patheticism":0.7172406280488961,"ruthlessness":0.48994391202655946,"shakespearianism":0.8797101463452612,"suppression":0.750921028818443,"tenaciousness":0.32491354700213826,"thwackability":0.4437022207395701,"tragicness":0.1,"unthwackability":1.1595661899888028,"watchfulness":0.8343292362849792,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":false,"cinnamon":0.6431148428775638,"fate":33,"armor":"","ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5670662455092618,"pitchingRating":0.6474742366111432,"hittingRating":0.3677994052237692,"defenseRating":0.5704639189732517,"leagueTeamId":"7966eb04-efcc-499b-8f03-d13916330531","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16","eDensity":33.069626644221984,"state":{},"evolution":0}]'
+      string: '[{"id":"b6aa8ce8-2587-4627-83c1-2a48d44afaee","anticapitalism":0.615738459293122,"baseThirst":0.936846696297063,"buoyancy":0.337147939966043,"chasiness":0.6514272628690578,"coldness":0.9506425498136655,"continuation":0.265449730029941,"divinity":0.2960775959330068,"groundFriction":1.1843475054079857,"indulgence":0.4197503185622761,"laserlikeness":0.635717103458786,"martyrdom":0.5905482020508246,"moxie":0.5078365331983524,"musclitude":0.3868282343954421,"name":"Inky
+        Rutledge","omniscience":0.37484354710608114,"overpowerment":0.6246999081056431,"patheticism":0.6688745256666171,"ruthlessness":0.8645378649839379,"shakespearianism":1.1137889109318282,"suppression":1.0820864732591406,"tenaciousness":0.314204170577763,"thwackability":0.5262935163796336,"tragicness":0.007158510270223073,"unthwackability":1.515456652304867,"watchfulness":0.8774230168376285,"pressurization":0.6865362684784002,"totalFingers":12,"soul":9,"deceased":false,"peanutAllergy":false,"cinnamon":0.6993251393494997,"fate":92,"ritual":"Gonging","coffee":6,"blood":6,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.6469102734422202,"pitchingRating":1.0926141068036885,"hittingRating":0.43232310027018483,"defenseRating":0.5872993500471361,"leagueTeamId":"c73b705c-40ad-4633-a6ed-d357ee2e2bcf","tournamentTeamId":"4e5d0063-73b4-440a-b2d1-214a7345cf16","eDensity":37.31402781394261,"state":{"itemModSources":{"CAREFUL":["5350c1fb-c621-4ca0-b1da-8d513e02a829"]}},"evolution":0,"items":[{"id":"5350c1fb-c621-4ca0-b1da-8d513e02a829","name":"Careful
+        Bat of Strength","forger":null,"forgerName":null,"prePrefix":null,"prefixes":[{"name":"Careful","adjustments":[{"mod":"CAREFUL","type":0}]}],"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.164997066343128}]},"suffix":{"name":"Strength","adjustments":[{"stat":5,"type":1,"value":0.14755438408409421},{"stat":18,"type":1,"value":0.2475323180819518}]},"durability":3,"health":3,"baserunningRating":0,"pitchingRating":0.055713886087874864,"hittingRating":0.05445246348629823,"defenseRating":0}],"itemAttr":["CAREFUL"]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1472'
+      - '2133'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:24:48 GMT
+      - Wed, 19 May 2021 20:49:15 GMT
       Etag:
-      - W/"5c0-EDq5G0Vf5e1Fnr6f9HrjAPU2as8"
+      - W/"855-nhlYwvIj40z1n/FAnm2jIL470eE"
       Server:
       - Cowboy
       Vary:

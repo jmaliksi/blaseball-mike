@@ -14,18 +14,18 @@ interactions:
     uri: https://www.blaseball.com/database/renovationProgress?id=cfb57d7c-4118-4b0a-85cc-4e3a51a66cb6
   response:
     body:
-      string: '{"progress":{"total":0,"toNext":0},"stats":[]}'
+      string: '{"progress":{"total":2,"toNext":0.04880088888888889},"stats":[{"percent":"11.4","id":"event_horizon_mod"},{"percent":"1.6","id":"filthiness_cleanup"},{"percent":"15.3","id":"fire_insurance_mod"},{"percent":"0.4","id":"grandiosity_plus"},{"percent":"8.4","id":"grind_rail_mod"},{"percent":"23.8","id":"hoops_mod"},{"percent":"0.4","id":"obtuseness_plus"},{"percent":"4.2","id":"soundsystem_mod"},{"percent":"34.4","id":"viscosity_plus"}]}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '46'
+      - '437'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 05 Apr 2021 02:39:53 GMT
+      - Wed, 19 May 2021 20:50:49 GMT
       Etag:
-      - W/"2e-NZcubP00N/BbbVeaVnUQI+CP1Ss"
+      - W/"1b5-Xpmogwo31Dq0qjqGrgbK2uXnGvI"
       Server:
       - Cowboy
       Vary:

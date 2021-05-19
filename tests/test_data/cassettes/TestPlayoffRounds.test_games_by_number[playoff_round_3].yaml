@@ -19,18 +19,18 @@ interactions:
         Brown","awayBatter":null,"awayBatterName":"","awayTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","awayTeamName":"San
         Francisco Lovers","awayTeamNickname":"Lovers","awayTeamColor":"#780018","awayTeamEmoji":"0x1F48B","awayOdds":0.6050469483117872,"awayStrikes":3,"awayScore":7,"awayTeamBatterCount":42,"homePitcher":"740d5fef-d59f-4dac-9a75-739ec07f91cf","homePitcherName":"Conner
         Haley","homeBatter":null,"homeBatterName":"","homeTeam":"b024e975-1c4a-4575-8936-a3754a08806a","homeTeamName":"Dallas
-        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.39495305168821276,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.39495305168821276,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1785'
+      - '1814'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"6f9-pySiniCIwzJVDl/az4HKy3qfqWM"
+      - W/"716-lVc9c2FypHTP8PWS0R+7v5OMj+A"
       Server:
       - Cowboy
       Vary:
@@ -62,18 +62,18 @@ interactions:
         Doyle","awayBatter":null,"awayBatterName":"","awayTeam":"36569151-a2fb-43c1-9df7-2df512424c82","awayTeamName":"New
         York Millennials","awayTeamNickname":"Millennials","awayTeamColor":"#ffd4d8","awayTeamEmoji":"0x1F4F1","awayOdds":0.4490813555387658,"awayStrikes":3,"awayScore":4,"awayTeamBatterCount":37,"homePitcher":"4bf352d2-6a57-420a-9d45-b23b2b947375","homePitcherName":"Rivers
         Rosa","homeBatter":null,"homeBatterName":"","homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
-        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5509186444612343,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.5509186444612343,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1800'
+      - '1829'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"708-P/8DtZb54EySx2mwqr2CskMA+Aw"
+      - W/"725-pXycvzWKHVDMJSUh/fBKp5G+aic"
       Server:
       - Cowboy
       Vary:
@@ -106,18 +106,18 @@ interactions:
         Bullock","awayBatter":null,"awayBatterName":"","awayTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","awayTeamName":"Baltimore
         Crabs","awayTeamNickname":"Crabs","awayTeamColor":"#593037","awayTeamEmoji":"0x1F980","awayOdds":0.5033699480276809,"awayStrikes":3,"awayScore":1,"awayTeamBatterCount":44,"homePitcher":"a691f2ba-9b69-41f8-892c-1acd42c336e4","homePitcherName":"Jenkins
         Good","homeBatter":null,"homeBatterName":"","homeTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","homeTeamName":"Canada
-        Moist Talkers","homeTeamNickname":"Moist Talkers","homeTeamColor":"#f5feff","homeTeamEmoji":"0x1F5E3","homeOdds":0.496630051972319,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":50,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":12,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":true,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Moist Talkers","homeTeamNickname":"Moist Talkers","homeTeamColor":"#f5feff","homeTeamEmoji":"0x1F5E3","homeOdds":0.496630051972319,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":50,"season":4,"isPostseason":true,"day":102,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":12,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":4,"seriesLength":5,"shame":true,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1851'
+      - '1880'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"73b-SnjzpvCrBfJ/ZIqJX90o2I+2E8g"
+      - W/"758-GdEm4Feq4BEo+ddkyMeF3fhsf2Y"
       Server:
       - Cowboy
       Vary:
@@ -149,18 +149,18 @@ interactions:
         Griffith","awayBatter":null,"awayBatterName":"","awayTeam":"b024e975-1c4a-4575-8936-a3754a08806a","awayTeamName":"Dallas
         Steaks","awayTeamNickname":"Steaks","awayTeamColor":"#8c8d8f","awayTeamEmoji":"0x1F969","awayOdds":0.4959192090579234,"awayStrikes":3,"awayScore":5,"awayTeamBatterCount":41,"homePitcher":"db33a54c-3934-478f-bad4-fc313ac2580e","homePitcherName":"Percival
         Wheeler","homeBatter":null,"homeBatterName":"","homeTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","homeTeamName":"San
-        Francisco Lovers","homeTeamNickname":"Lovers","homeTeamColor":"#780018","homeTeamEmoji":"0x1F48B","homeOdds":0.5040807909420766,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":29,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Francisco Lovers","homeTeamNickname":"Lovers","homeTeamColor":"#780018","homeTeamEmoji":"0x1F48B","homeOdds":0.5040807909420766,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":29,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1793'
+      - '1822'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"701-JsZjPvY/KetBCXwt2qPzmCLBmys"
+      - W/"71e-Z3ysrm8me+le/NsGw+4qzdwB9YA"
       Server:
       - Cowboy
       Vary:
@@ -192,18 +192,18 @@ interactions:
         Tosser","awayBatter":null,"awayBatterName":"","awayTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","awayTeamName":"Chicago
         Firefighters","awayTeamNickname":"Firefighters","awayTeamColor":"#8c2a3e","awayTeamEmoji":"0x1F525","awayOdds":0.5260986944094087,"awayStrikes":3,"awayScore":9,"awayTeamBatterCount":43,"homePitcher":"18af933a-4afa-4cba-bda5-45160f3af99b","homePitcherName":"Felix
         Garbage","homeBatter":null,"homeBatterName":"","homeTeam":"36569151-a2fb-43c1-9df7-2df512424c82","homeTeamName":"New
-        York Millennials","homeTeamNickname":"Millennials","homeTeamColor":"#ffd4d8","homeTeamEmoji":"0x1F4F1","homeOdds":0.4739013055905912,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":37,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        York Millennials","homeTeamNickname":"Millennials","homeTeamColor":"#ffd4d8","homeTeamEmoji":"0x1F4F1","homeOdds":0.4739013055905912,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":37,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1804'
+      - '1833'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"70c-jvLCvZReA4S6nySlxw1/QVjQ81o"
+      - W/"729-XcYIqfLlrscKBJY0v5DIoo4PYa4"
       Server:
       - Cowboy
       Vary:
@@ -235,18 +235,18 @@ interactions:
         Doctor","awayBatter":null,"awayBatterName":"","awayTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","awayTeamName":"Canada
         Moist Talkers","awayTeamNickname":"Moist Talkers","awayTeamColor":"#f5feff","awayTeamEmoji":"0x1F5E3","awayOdds":0.44130137317877255,"awayStrikes":3,"awayScore":4,"awayTeamBatterCount":38,"homePitcher":"f9930cb1-7ed2-4b9a-bf4f-7e35f2586d71","homePitcherName":"Finn
         James","homeBatter":null,"homeBatterName":"","homeTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","homeTeamName":"Baltimore
-        Crabs","homeTeamNickname":"Crabs","homeTeamColor":"#593037","homeTeamEmoji":"0x1F980","homeOdds":0.5586986268212274,"homeStrikes":3,"homeScore":1,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":7,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Crabs","homeTeamNickname":"Crabs","homeTeamColor":"#593037","homeTeamEmoji":"0x1F980","homeOdds":0.5586986268212274,"homeStrikes":3,"homeScore":1,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":7,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1792'
+      - '1821'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:44 GMT
       Etag:
-      - W/"700-0fYlLG6wLtCwZd8ETbRariLUFpA"
+      - W/"71d-4ArAdv2pNORaKhKvuE5glMhJ20I"
       Server:
       - Cowboy
       Vary:
@@ -278,18 +278,18 @@ interactions:
         Owens","awayBatter":null,"awayBatterName":"","awayTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","awayTeamName":"Hades
         Tigers","awayTeamNickname":"Tigers","awayTeamColor":"#5c1c1c","awayTeamEmoji":"0x1F405","awayOdds":0.46980125210746904,"awayStrikes":3,"awayScore":1,"awayTeamBatterCount":32,"homePitcher":"f3c07eaf-3d6c-4cc3-9e54-cbecc9c08286","homePitcherName":"Campos
         Arias","homeBatter":null,"homeBatterName":"","homeTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","homeTeamName":"Breckenridge
-        Jazz Hands","homeTeamNickname":"Jazz Hands","homeTeamColor":"#6388ad","homeTeamEmoji":"0x1F450","homeOdds":0.5301987478925311,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":29,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Jazz Hands","homeTeamNickname":"Jazz Hands","homeTeamColor":"#6388ad","homeTeamEmoji":"0x1F450","homeOdds":0.5301987478925311,"homeStrikes":3,"homeScore":3,"homeTeamBatterCount":29,"season":4,"isPostseason":true,"day":99,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":1,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1791'
+      - '1820'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"6ff-N4pK81BsbsVQg4+2kJCgj9NGnMM"
+      - W/"71c-xSdOKqhYElVvQdqw6WKMINyo6Jk"
       Server:
       - Cowboy
       Vary:
@@ -321,18 +321,18 @@ interactions:
         Carpenter","awayBatter":null,"awayBatterName":"","awayTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","awayTeamName":"San
         Francisco Lovers","awayTeamNickname":"Lovers","awayTeamColor":"#780018","awayTeamEmoji":"0x1F48B","awayOdds":0.6671822616530833,"awayStrikes":3,"awayScore":8,"awayTeamBatterCount":39,"homePitcher":"b7ca8f3f-2fdc-477b-84f4-157f2802e9b5","homePitcherName":"Leach
         Herman","homeBatter":null,"homeBatterName":"","homeTeam":"b024e975-1c4a-4575-8936-a3754a08806a","homeTeamName":"Dallas
-        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.3328177383469167,"homeStrikes":3,"homeScore":1,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Steaks","homeTeamNickname":"Steaks","homeTeamColor":"#8c8d8f","homeTeamEmoji":"0x1F969","homeOdds":0.3328177383469167,"homeStrikes":3,"homeScore":1,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1788'
+      - '1817'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"6fc-0LnJBOp8rSSkfYvVQDWXhaicT1s"
+      - W/"719-QM7wHnZIioEq+4JCNJhj8yUlG9I"
       Server:
       - Cowboy
       Vary:
@@ -364,18 +364,18 @@ interactions:
         Cervantes","awayBatter":null,"awayBatterName":"","awayTeam":"36569151-a2fb-43c1-9df7-2df512424c82","awayTeamName":"New
         York Millennials","awayTeamNickname":"Millennials","awayTeamColor":"#ffd4d8","awayTeamEmoji":"0x1F4F1","awayOdds":0.5430423327848953,"awayStrikes":3,"awayScore":10,"awayTeamBatterCount":40,"homePitcher":"e4e4c17d-8128-4704-9e04-f244d4573c4d","homePitcherName":"Wesley
         Poole","homeBatter":null,"homeBatterName":"","homeTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","homeTeamName":"Chicago
-        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.4569576672151047,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":34,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":7,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Firefighters","homeTeamNickname":"Firefighters","homeTeamColor":"#8c2a3e","homeTeamEmoji":"0x1F525","homeOdds":0.4569576672151047,"homeStrikes":3,"homeScore":4,"homeTeamBatterCount":34,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":7,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1810'
+      - '1839'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"712-56j1tFp6G4z253843Yd+HQrFbtY"
+      - W/"72f-KAL0/3nt7OHzxC5D4PUZ62PajV8"
       Server:
       - Cowboy
       Vary:
@@ -407,18 +407,18 @@ interactions:
         Forbes","awayBatter":null,"awayBatterName":"","awayTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","awayTeamName":"Baltimore
         Crabs","awayTeamNickname":"Crabs","awayTeamColor":"#593037","awayTeamEmoji":"0x1F980","awayOdds":0.4995705458904653,"awayStrikes":3,"awayScore":4,"awayTeamBatterCount":39,"homePitcher":"338694b7-6256-4724-86b6-3884299a5d9e","homePitcherName":"PolkaDot
         Patterson","homeBatter":null,"homeBatterName":"","homeTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","homeTeamName":"Canada
-        Moist Talkers","homeTeamNickname":"Moist Talkers","homeTeamColor":"#f5feff","homeTeamEmoji":"0x1F5E3","homeOdds":0.5004294541095347,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":39,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":10,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Moist Talkers","homeTeamNickname":"Moist Talkers","homeTeamColor":"#f5feff","homeTeamEmoji":"0x1F5E3","homeOdds":0.5004294541095347,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":39,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":10,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1801'
+      - '1830'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"709-iLuLnOu75lo+2bKYlI1Gdp3s6ps"
+      - W/"726-BYGrra0bmQ42DUyaghyW8XENHC8"
       Server:
       - Cowboy
       Vary:
@@ -450,18 +450,18 @@ interactions:
         Sky","awayBatter":null,"awayBatterName":"","awayTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","awayTeamName":"Breckenridge
         Jazz Hands","awayTeamNickname":"Jazz Hands","awayTeamColor":"#6388ad","awayTeamEmoji":"0x1F450","awayOdds":0.555825041434969,"awayStrikes":3,"awayScore":11,"awayTeamBatterCount":44,"homePitcher":"9abe02fb-2b5a-432f-b0af-176be6bd62cf","homePitcherName":"Nagomi
         Meng","homeBatter":null,"homeBatterName":"","homeTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","homeTeamName":"Hades
-        Tigers","homeTeamNickname":"Tigers","homeTeamColor":"#5c1c1c","homeTeamEmoji":"0x1F405","homeOdds":0.444174958565031,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Tigers","homeTeamNickname":"Tigers","homeTeamColor":"#5c1c1c","homeTeamEmoji":"0x1F405","homeOdds":0.444174958565031,"homeStrikes":3,"homeScore":5,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":100,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":2,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1788'
+      - '1817'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"6fc-y+5r9jx8IyZhjXc7D9XCutfrLSI"
+      - W/"719-0yhDon4BtneZf2ctQXxbxZpDFzk"
       Server:
       - Cowboy
       Vary:
@@ -493,18 +493,18 @@ interactions:
         Manco","awayBatter":null,"awayBatterName":"","awayTeam":"b024e975-1c4a-4575-8936-a3754a08806a","awayTeamName":"Dallas
         Steaks","awayTeamNickname":"Steaks","awayTeamColor":"#8c8d8f","awayTeamEmoji":"0x1F969","awayOdds":0.42797644708798993,"awayStrikes":3,"awayScore":2,"awayTeamBatterCount":33,"homePitcher":"f2c477fb-28ea-4fcb-943a-9fab22df3da0","homePitcherName":"Sandford
         Garner","homeBatter":null,"homeBatterName":"","homeTeam":"b72f3061-f573-40d7-832a-5ad475bd7909","homeTeamName":"San
-        Francisco Lovers","homeTeamNickname":"Lovers","homeTeamColor":"#780018","homeTeamEmoji":"0x1F48B","homeOdds":0.57202355291201,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":true,"weather":11,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Francisco Lovers","homeTeamNickname":"Lovers","homeTeamColor":"#780018","homeTeamEmoji":"0x1F48B","homeOdds":0.57202355291201,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":35,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":true,"weather":11,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1788'
+      - '1817'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"6fc-ysOyarqBsoLm1DeNDMbQBLIO1Vo"
+      - W/"719-DH/Jr8qgqCDYSE4l9e6QNAaxgjY"
       Server:
       - Cowboy
       Vary:
@@ -536,18 +536,18 @@ interactions:
         Alvarado","awayBatter":null,"awayBatterName":"","awayTeam":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","awayTeamName":"Chicago
         Firefighters","awayTeamNickname":"Firefighters","awayTeamColor":"#8c2a3e","awayTeamEmoji":"0x1F525","awayOdds":0.5270341298905519,"awayStrikes":3,"awayScore":10,"awayTeamBatterCount":41,"homePitcher":"81d7d022-19d6-427d-aafc-031fcb79b29e","homePitcherName":"Patty
         Fox","homeBatter":null,"homeBatterName":"","homeTeam":"36569151-a2fb-43c1-9df7-2df512424c82","homeTeamName":"New
-        York Millennials","homeTeamNickname":"Millennials","homeTeamColor":"#ffd4d8","homeTeamEmoji":"0x1F4F1","homeOdds":0.4729658701094481,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":41,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        York Millennials","homeTeamNickname":"Millennials","homeTeamColor":"#ffd4d8","homeTeamEmoji":"0x1F4F1","homeOdds":0.4729658701094481,"homeStrikes":3,"homeScore":7,"homeTeamBatterCount":41,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1804'
+      - '1833'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"70c-GE1H1FMPoM6ncQD01IfQ7JuhD9s"
+      - W/"729-Ri/jFMTtaBJoSD6RK6cBVoVhecM"
       Server:
       - Cowboy
       Vary:
@@ -579,18 +579,18 @@ interactions:
         Lott","awayBatter":null,"awayBatterName":"","awayTeam":"eb67ae5e-c4bf-46ca-bbbc-425cd34182ff","awayTeamName":"Canada
         Moist Talkers","awayTeamNickname":"Moist Talkers","awayTeamColor":"#f5feff","awayTeamEmoji":"0x1F5E3","awayOdds":0.4254752601198272,"awayStrikes":3,"awayScore":4,"awayTeamBatterCount":41,"homePitcher":"d6c69d2d-9344-4b19-85a4-6cfcbaead5d2","homePitcherName":"Joshua
         Watson","homeBatter":null,"homeBatterName":"","homeTeam":"8d87c468-699a-47a8-b40d-cfb73a5660ad","homeTeamName":"Baltimore
-        Crabs","homeTeamNickname":"Crabs","homeTeamColor":"#593037","homeTeamEmoji":"0x1F980","homeOdds":0.5745247398801727,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Crabs","homeTeamNickname":"Crabs","homeTeamColor":"#593037","homeTeamEmoji":"0x1F980","homeOdds":0.5745247398801727,"homeStrikes":3,"homeScore":2,"homeTeamBatterCount":30,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":false,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":12,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1793'
+      - '1822'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:44 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"701-SqHdTct0LqIKY1+5TgvMkCxEiSw"
+      - W/"71e-5UVn579+pI+HOVIUOXYI2RlTLPQ"
       Server:
       - Cowboy
       Vary:
@@ -622,18 +622,18 @@ interactions:
         Mason","awayBatter":null,"awayBatterName":"","awayTeam":"747b8e4a-7e50-4638-a973-ea7950a3e739","awayTeamName":"Hades
         Tigers","awayTeamNickname":"Tigers","awayTeamColor":"#5c1c1c","awayTeamEmoji":"0x1F405","awayOdds":0.6395706938162283,"awayStrikes":3,"awayScore":2,"awayTeamBatterCount":40,"homePitcher":"b348c037-eefc-4b81-8edd-dfa96188a97e","homePitcherName":"Lowe
         Forbes","homeBatter":null,"homeBatterName":"","homeTeam":"a37f9158-7f82-46bc-908c-c9e2dda7c33b","homeTeamName":"Breckenridge
-        Jazz Hands","homeTeamNickname":"Jazz Hands","homeTeamColor":"#6388ad","homeTeamEmoji":"0x1F450","homeOdds":0.3604293061837716,"homeStrikes":3,"homeScore":10,"homeTeamBatterCount":39,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false}'
+        Jazz Hands","homeTeamNickname":"Jazz Hands","homeTeamColor":"#6388ad","homeTeamEmoji":"0x1F450","homeOdds":0.3604293061837716,"homeStrikes":3,"homeScore":10,"homeTeamBatterCount":39,"season":4,"isPostseason":true,"day":101,"phase":6,"gameComplete":true,"finalized":true,"gameStart":true,"halfInningOuts":0,"halfInningScore":0,"inning":8,"topOfInning":true,"atBatBalls":0,"atBatStrikes":0,"seriesIndex":3,"seriesLength":5,"shame":false,"weather":13,"baserunnerCount":0,"homeBases":4,"awayBases":4,"repeatCount":0,"awayTeamSecondaryColor":"","homeTeamSecondaryColor":"","homeBalls":4,"awayBalls":4,"homeOuts":3,"awayOuts":3,"playCount":0,"tournament":-1,"baseRunnerMods":[],"homePitcherMod":"","homeBatterMod":"","awayPitcherMod":"","awayBatterMod":"","scoreUpdate":"","scoreLedger":"","stadiumId":null,"secretBaserunner":null,"topInningScore":0,"bottomInningScore":0,"newInningPhase":-1,"gameStartPhase":-1,"isTitleMatch":false,"queuedEvents":[],"state":{}}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1791'
+      - '1820'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:45 GMT
+      - Wed, 19 May 2021 20:50:45 GMT
       Etag:
-      - W/"6ff-iMEg2uamIm9mwwSCZZlmGibXraU"
+      - W/"71c-RkUh6EQbG8+d6lEFsXEP2dhqviw"
       Server:
       - Cowboy
       Vary:

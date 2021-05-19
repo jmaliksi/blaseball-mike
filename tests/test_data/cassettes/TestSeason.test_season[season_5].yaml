@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:24 GMT
+      - Wed, 19 May 2021 20:50:19 GMT
       Etag:
       - W/"349-FMN2o9dzZjKWgN8RUdWlv83P7mY"
       Server:
@@ -61,7 +61,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:24 GMT
+      - Wed, 19 May 2021 20:50:20 GMT
       Etag:
       - W/"6ec-dL0PUjy1gHgLaIz5zxTxLFwTfFI"
       Server:
@@ -91,7 +91,7 @@ interactions:
   response:
     body:
       string: '{"id":"d8545021-e9fc-48a3-af74-48685950a183","subleagues":["aabc11a1-81af-4036-9f18-229c759ca8a9","4fe65afa-804f-4bb2-9b15-1281b2eab110"],"name":"Internet
-        League Blaseball","tiebreakers":"c38608a0-c3de-4351-a938-c946be452cfb"}'
+        League Blaseball","tiebreakers":"2684bb41-a8c2-4a8f-975b-eaa9ef7deed0"}'
     headers:
       Connection:
       - keep-alive
@@ -100,9 +100,9 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:24 GMT
+      - Wed, 19 May 2021 20:50:20 GMT
       Etag:
-      - W/"e2-XBgHl2u7qvThhNiJd1JO13+zpS0"
+      - W/"e2-STvsEFfdFxLRu6OOHK5vBh481zY"
       Server:
       - Cowboy
       Vary:

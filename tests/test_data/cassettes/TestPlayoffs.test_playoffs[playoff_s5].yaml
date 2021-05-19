@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=ca3f1c8c-c025-4d8e-8eef-5be6accbeb16
   response:
     body:
-      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["ab36c776-b520-429b-a85f-bf633d7b081a","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20e13b56-599b-4a22-b752-8059effc81dc","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","5831a238-8efe-4d53-a483-1ad681e50ac3","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","2268f452-01b9-4e16-98bb-c07e3ce767e3"],"rotation":["316abea7-9890-4fb8-aaea-86b35e24d9be","e4e4c17d-8128-4704-9e04-f244d4573c4d","1513aab6-142c-48c6-b43e-fbda65fd64e8","94baa9ac-ff96-4f56-a987-10358e917d91","f4a5d734-0ade-4410-abb6-c0cd5a7a1c26"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","ce0a156b-ba7b-4313-8fea-75807b4bc77f","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365","ee29020f-1964-4fce-80f4-35a5e7edfb95"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","97387580-1f7c-49ea-a9e7-44be89329130"],"seasAttr":[],"permAttr":[],"fullName":"Chicago
+      string: '{"id":"ca3f1c8c-c025-4d8e-8eef-5be6accbeb16","lineup":["e4e4c17d-8128-4704-9e04-f244d4573c4d","b59cdb56-4a85-476f-b775-62204eefbe92","c182f33c-aea5-48a2-97ed-dc74fa29b3c0","ad8d15f4-e041-4a12-a10e-901e6285fdc5","20c529b3-947e-4a77-b56f-69fe25fb3717","43d5da5f-c6a1-42f1-ab7f-50ea956b6cd5","68f98a04-204f-4675-92a7-8823f2277075","5831a238-8efe-4d53-a483-1ad681e50ac3","5ff66eae-7111-4e3b-a9b8-a9579165b0a5","2268f452-01b9-4e16-98bb-c07e3ce767e3"],"rotation":["20e13b56-599b-4a22-b752-8059effc81dc","316abea7-9890-4fb8-aaea-86b35e24d9be","1513aab6-142c-48c6-b43e-fbda65fd64e8","94baa9ac-ff96-4f56-a987-10358e917d91","ce0a156b-ba7b-4313-8fea-75807b4bc77f"],"bullpen":["f071889c-f10f-4d2f-a1dd-c5dda34b3e2b","3c051b92-4a86-4157-988a-e334bf6dc691","c8de53a4-d90f-4192-955b-cec1732d920e","54e5f222-fb16-47e0-adf9-21813218dafa","88ca603e-b2e5-4916-bef5-d6bba03235f5","520e6066-b14b-45cf-985c-0a6ee2dc3f7a","5f3b5dc2-351a-4dee-a9d6-fa5f44f2a365","ee29020f-1964-4fce-80f4-35a5e7edfb95","e0839b6c-70fd-4228-ae3a-60c713d00d09"],"bench":["a7edbf19-caf6-45dd-83d5-46496c99aa88","7e4f012e-828c-43bb-8b8a-6c33bdfd7e3f","64aaa3cb-7daf-47e3-89a8-e565a3715b5d","bfd9ff52-9bf6-4aaf-a859-d308d8f29616","97387580-1f7c-49ea-a9e7-44be89329130","21555bfb-6aed-4510-863a-801be3b6d997","d86f836e-4edf-4dbd-9743-14f30461ee14","070758a0-092a-4a2c-8a16-253c835887cb"],"seasAttr":[],"permAttr":[],"fullName":"Chicago
         Firefighters","location":"Chicago","mainColor":"#8c2a3e","nickname":"Firefighters","secondaryColor":"#d13757","shorthand":"CHIF","emoji":"0x1F525","slogan":"We
-        Are From Chicago","shameRuns":0,"totalShames":55,"totalShamings":60,"seasonShames":0,"seasonShamings":0,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":13,"tournamentWins":0,"stadium":"06c991f6-4ef3-4a9a-8254-8a2bc7d3a1e1","eDensity":1841.3189409984911,"state":{},"evolution":0,"winStreak":-1,"level":4}'
+        Are From Chicago","shameRuns":0,"totalShames":80,"totalShamings":75,"seasonShames":3,"seasonShamings":4,"championships":1,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":13,"tournamentWins":0,"stadium":"06c991f6-4ef3-4a9a-8254-8a2bc7d3a1e1","eDensity":1226.5381071019867,"state":{},"evolution":0,"winStreak":5,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1770'
+      - '1887'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:41 GMT
+      - Wed, 19 May 2021 20:50:41 GMT
       Etag:
-      - W/"6ea-TX723tkuhNIRKJjdNpxpFRLP6qM"
+      - W/"75f-cmP+j0Y1J/d0l8+CoA8kBs4HQz0"
       Server:
       - Cowboy
       Vary:
@@ -64,7 +64,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:41 GMT
+      - Wed, 19 May 2021 20:50:41 GMT
       Etag:
       - W/"453-WV8phylRZVnR82nTx22q31ouaWQ"
       Server:
@@ -103,7 +103,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:41 GMT
+      - Wed, 19 May 2021 20:50:41 GMT
       Etag:
       - W/"2dd-VK/+KkloxkjoVQYj6KM1RxuWwJE"
       Server:
@@ -142,7 +142,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:42 GMT
+      - Wed, 19 May 2021 20:50:41 GMT
       Etag:
       - W/"1ce-nCe1PIyhFMQdMkMe1MJBKI5rVTY"
       Server:

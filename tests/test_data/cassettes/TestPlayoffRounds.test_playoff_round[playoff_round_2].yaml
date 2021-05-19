@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:43 GMT
+      - Wed, 19 May 2021 20:50:43 GMT
       Etag:
       - W/"f5-0t1dB5NOePxTGC1MEmjz97sFs3c"
       Server:
@@ -52,20 +52,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7
   response:
     body:
-      string: '{"id":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","lineup":["32810dca-825c-4dbc-8b65-0702794c424e","26cfccf2-850e-43eb-b085-ff73ad0749b8","b323f897-ccf9-4200-8870-249cbe19f904","405dfadf-d435-4307-82f6-8eba2287e87a","da0bbbe6-d13c-40cc-9594-8c476975d93d","dd6044ef-c635-4aed-97bd-d18068432b8f","083d09d4-7ed3-4100-b021-8fbe30dd43e8"],"rotation":["c6e2e389-ed04-4626-a5ba-fe398fe89568","190a0f31-d686-4ac4-a7f3-cfc87b72c145","ca26d8cc-8668-48c9-a061-28f6fdf5f44d","814bae61-071a-449b-981e-e7afc839d6d6","80dff591-2393-448a-8d88-122bd424fa4c"],"bullpen":["0672a4be-7e00-402c-b8d6-0b813f58ba96","62111c49-1521-4ca7-8678-cd45dacf0858","7f379b72-f4f0-4d8f-b88b-63211cf50ba6","906a5728-5454-44a0-adfe-fd8be15b8d9b","90cc0211-cd04-4cac-bdac-646c792773fc","a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","b85161da-7f4c-42a8-b7f6-19789cf6861d","d2a1e734-60d9-4989-b7d9-6eacda70486b","ce99d7af-ba75-48a7-a5d8-d46f543829f2"],"bench":["20395b48-279d-44ff-b5bf-7cf2624a2d30","d8bc482e-9309-4230-abcb-2c5a6412446d","cd5494b4-05d0-4b2e-8578-357f0923ff4c","e495cadc-a645-439d-a556-e41de7493f18","a0e7445f-2b93-4ca7-a69d-ff32593700ee","7f3f2e75-900e-40b6-846b-db585541490d"],"seasAttr":[],"permAttr":["AFFINITY_FOR_CROWS"],"fullName":"Philly
+      string: '{"id":"23e4cbc1-e9cd-47fa-a35b-bfa06f726cb7","lineup":["32810dca-825c-4dbc-8b65-0702794c424e","26cfccf2-850e-43eb-b085-ff73ad0749b8","b323f897-ccf9-4200-8870-249cbe19f904","814bae61-071a-449b-981e-e7afc839d6d6","405dfadf-d435-4307-82f6-8eba2287e87a","da0bbbe6-d13c-40cc-9594-8c476975d93d","667cb445-c288-4e62-b603-27291c1e475d","f245f6c6-4613-40f5-bc3b-85aa9ee3cf7e"],"rotation":["c6e2e389-ed04-4626-a5ba-fe398fe89568","80dff591-2393-448a-8d88-122bd424fa4c","d2a1e734-60d9-4989-b7d9-6eacda70486b"],"bullpen":["0672a4be-7e00-402c-b8d6-0b813f58ba96","62111c49-1521-4ca7-8678-cd45dacf0858","7f379b72-f4f0-4d8f-b88b-63211cf50ba6","906a5728-5454-44a0-adfe-fd8be15b8d9b","90cc0211-cd04-4cac-bdac-646c792773fc","a7b0bef3-ee3c-42d4-9e6d-683cd9f5ed84","b85161da-7f4c-42a8-b7f6-19789cf6861d","ca26d8cc-8668-48c9-a061-28f6fdf5f44d","ce99d7af-ba75-48a7-a5d8-d46f543829f2"],"bench":["20395b48-279d-44ff-b5bf-7cf2624a2d30","d8bc482e-9309-4230-abcb-2c5a6412446d","cd5494b4-05d0-4b2e-8578-357f0923ff4c","e495cadc-a645-439d-a556-e41de7493f18","a0e7445f-2b93-4ca7-a69d-ff32593700ee","7f3f2e75-900e-40b6-846b-db585541490d","190a0f31-d686-4ac4-a7f3-cfc87b72c145","dd6044ef-c635-4aed-97bd-d18068432b8f","4ec6951f-6822-4861-bc25-79826dd8c554","3d52ace6-a0a0-467e-80e0-ae86b289ad32"],"seasAttr":[],"permAttr":["AFFINITY_FOR_CROWS","AA"],"fullName":"Philly
         Pies","location":"Philly","mainColor":"#399d8f","nickname":"Pies","secondaryColor":"#58c3b4","shorthand":"PHIL","emoji":"0x1F967","slogan":"Pie
-        or Die.","shameRuns":0,"totalShames":75,"totalShamings":49,"seasonShames":0,"seasonShamings":0,"championships":2,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":8,"tournamentWins":0,"stadium":"a109bd65-bfd3-43c7-9eb8-70dddc4d8a29","eDensity":1849.8566714226831,"state":{},"evolution":0,"winStreak":-1,"level":4}'
+        or Die.","shameRuns":0,"totalShames":97,"totalShamings":67,"seasonShames":2,"seasonShamings":5,"championships":2,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":8,"tournamentWins":0,"stadium":"a109bd65-bfd3-43c7-9eb8-70dddc4d8a29","eDensity":1169.399328566105,"state":{},"evolution":0,"winStreak":-1,"level":2}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1685'
+      - '1807'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:43 GMT
+      - Wed, 19 May 2021 20:50:43 GMT
       Etag:
-      - W/"695-rgNU3hVhahsCkTAVBn0yFwrlhzk"
+      - W/"70f-jSdtqwAvb7MjqfPkYlqeyKgxf/M"
       Server:
       - Cowboy
       Vary:

@@ -25,7 +25,7 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:27 GMT
+      - Wed, 19 May 2021 20:50:23 GMT
       Etag:
       - W/"69e-svzjC8ryEcWjz97QBPAgslI4plk"
       Server:
@@ -54,20 +54,20 @@ interactions:
     uri: https://www.blaseball.com/database/team?id=105bc3ff-1320-4e37-8ef0-8d595cb95dd0
   response:
     body:
-      string: '{"id":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","lineup":["542af915-79c5-431c-a271-f7185e37c6ae","86adac6f-c694-44ac-9560-758de7eac937","9f218ed1-d793-437d-a1b9-79f88f69154d","1301ee81-406e-43d9-b2bb-55ca6e0f7765","b88d313f-e546-407e-8bc6-94040499daa5","8b53ce82-4b1a-48f0-999d-1774b3719202","f3ddfd87-73a2-4681-96fe-829476c97886","c18961e9-ef3f-4954-bd6b-9fe01c615186","1c73f91e-0562-480d-9543-2aab1d5e5acd","d5c24c97-f3d3-4b3d-8c13-0debb61346c5"],"rotation":["1732e623-ffc2-40f0-87ba-fdcf97131f1f","e3c514ae-f813-470e-9c91-d5baf5ffcf16","a1628d97-16ca-4a75-b8df-569bae02bef9","68dd9d47-b9a8-4fd3-a89c-5c112eb1982e","f2468055-e880-40bf-8ac6-a0763d846eb2","4ed61b18-c1f6-4d71-aea3-caac01470b5c","7e9a514a-7850-4ed0-93ab-f3a6e2f41c03","f1cc4d7d-bef0-43dd-ba0a-17c7628aa775"],"bullpen":["6f9de777-e812-4c84-915c-ef283c9f0cde","ce58415f-4e62-47e2-a2c9-4d6a85961e1e","efa73de4-af17-4f88-99d6-d0d69ed1d200","f6b38e56-0d98-4e00-a96e-345aaac1e653","8a6fc67d-a7fe-443b-a084-744294cec647","f968532a-bf06-478e-89e0-3856b7f4b124","c6a277c3-d2b5-4363-839b-950896a5ec5e","dd0b48fe-2d49-4344-83ed-9f0770b370a8","d8742d68-8fce-4d52-9a49-f4e33bd2a6fc","019ce117-2399-4382-8036-8c14db7e1d30"],"bench":["81a0889a-4606-4f49-b419-866b57331383","25581c43-f8da-4657-9e96-e704df0a8878","04e14d7b-5021-4250-a3cd-932ba8e0a889","061b209a-9cda-44e8-88ce-6a4a37251970","2d95d41c-ff54-4fa1-89a0-76b84dd8fe2b","04651d05-44ef-40c1-abd3-4d0c14b6845d"],"seasAttr":[],"permAttr":[],"fullName":"Seattle
+      string: '{"id":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","lineup":["6f9de777-e812-4c84-915c-ef283c9f0cde","f2468055-e880-40bf-8ac6-a0763d846eb2","542af915-79c5-431c-a271-f7185e37c6ae","8cf78b49-d0ca-4703-88e8-4bcad26c44b1","9f218ed1-d793-437d-a1b9-79f88f69154d","1301ee81-406e-43d9-b2bb-55ca6e0f7765","5f5764c7-c3a0-4dae-ad17-c6689f1e8c27","8b53ce82-4b1a-48f0-999d-1774b3719202","1c73f91e-0562-480d-9543-2aab1d5e5acd","d5c24c97-f3d3-4b3d-8c13-0debb61346c5"],"rotation":["1732e623-ffc2-40f0-87ba-fdcf97131f1f","8a6fc67d-a7fe-443b-a084-744294cec647","0c83e3b6-360e-4b7d-85e3-d906633c9ca0","f1cc4d7d-bef0-43dd-ba0a-17c7628aa775","f0594932-8ef7-4d70-9894-df4be64875d8","68dd9d47-b9a8-4fd3-a89c-5c112eb1982e","7e9a514a-7850-4ed0-93ab-f3a6e2f41c03","e3c514ae-f813-470e-9c91-d5baf5ffcf16"],"bullpen":["ce58415f-4e62-47e2-a2c9-4d6a85961e1e","efa73de4-af17-4f88-99d6-d0d69ed1d200","81a0889a-4606-4f49-b419-866b57331383","f6b38e56-0d98-4e00-a96e-345aaac1e653","c6a277c3-d2b5-4363-839b-950896a5ec5e","f968532a-bf06-478e-89e0-3856b7f4b124","dd0b48fe-2d49-4344-83ed-9f0770b370a8","d8742d68-8fce-4d52-9a49-f4e33bd2a6fc","019ce117-2399-4382-8036-8c14db7e1d30"],"bench":["f3ddfd87-73a2-4681-96fe-829476c97886","4ed61b18-c1f6-4d71-aea3-caac01470b5c","25581c43-f8da-4657-9e96-e704df0a8878","94844fad-9519-4c14-8ab3-d38606a7bb44","061b209a-9cda-44e8-88ce-6a4a37251970","2d95d41c-ff54-4fa1-89a0-76b84dd8fe2b","04651d05-44ef-40c1-abd3-4d0c14b6845d"],"seasAttr":["SHAME_GIVER"],"permAttr":[],"fullName":"Seattle
         Garages","location":"Seattle","mainColor":"#2b4075","nickname":"Garages","secondaryColor":"#5a83ea","shorthand":"SEA","emoji":"0x1F3B8","slogan":"Park
-        It!","shameRuns":0,"totalShames":66,"totalShamings":60,"seasonShames":0,"seasonShamings":0,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":0,"teamSpirit":0,"card":7,"tournamentWins":0,"stadium":"cb94ac8b-003b-4d95-baf3-7c14b1c3fc29","eDensity":1646.5098886391115,"state":{},"evolution":0,"winStreak":-1,"level":4}'
+        It!","shameRuns":0,"totalShames":80,"totalShamings":71,"seasonShames":1,"seasonShamings":2,"championships":0,"weekAttr":[],"gameAttr":[],"rotationSlot":53,"teamSpirit":0,"card":7,"tournamentWins":0,"stadium":"cb94ac8b-003b-4d95-baf3-7c14b1c3fc29","eDensity":1434.4753919490045,"state":{},"evolution":0,"winStreak":-1,"level":3}'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1942'
+      - '1956'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:27 GMT
+      - Wed, 19 May 2021 20:50:23 GMT
       Etag:
-      - W/"796-r49rJXtjbHZgfP+ic2pEq2R5m6A"
+      - W/"7a4-p4DxbyolEl1ZeQWSQDMai/UTMwE"
       Server:
       - Cowboy
       Vary:

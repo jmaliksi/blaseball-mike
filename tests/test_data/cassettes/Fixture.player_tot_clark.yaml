@@ -14,20 +14,20 @@ interactions:
     uri: https://www.blaseball.com/database/players?ids=e3c514ae-f813-470e-9c91-d5baf5ffcf16
   response:
     body:
-      string: '[{"id":"e3c514ae-f813-470e-9c91-d5baf5ffcf16","anticapitalism":0.20576446156335876,"baseThirst":0.8632259524673187,"buoyancy":1.1159357545348738,"chasiness":0.38430469762986524,"coldness":1.3043603684453502,"continuation":0.8417744410801449,"divinity":0.920673612637974,"groundFriction":0.8413439775041618,"indulgence":0.7983027933654425,"laserlikeness":0.409114725809328,"martyrdom":0.47635866211202554,"moxie":0.5238417492180591,"musclitude":1.0179941456496577,"name":"Tot
-        Clark","bat":"","omniscience":0.9256630243409769,"overpowerment":0.5509711337954428,"patheticism":0.5672372672234167,"ruthlessness":0.6259527412139376,"shakespearianism":1.2482987288177703,"suppression":0.4649647521202477,"tenaciousness":0.44102839718635406,"thwackability":0.7164540018235002,"tragicness":0.1,"unthwackability":0.8063593901461441,"watchfulness":1.1462858989400964,"pressurization":0.25770338518165786,"totalFingers":13,"soul":4,"deceased":false,"peanutAllergy":false,"cinnamon":0.8258030623098149,"fate":60,"armor":"","ritual":"Breaking
-        bones","coffee":5,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.5953449886251823,"pitchingRating":0.7007563820590816,"hittingRating":0.7783723611660275,"defenseRating":0.6575333652513509,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":"e3f90fa1-0bbe-40df-88ce-578d0723a23b","eDensity":27.124049679711494,"state":{},"evolution":0}]'
+      string: '[{"id":"e3c514ae-f813-470e-9c91-d5baf5ffcf16","anticapitalism":0.40448100989845703,"baseThirst":1.0561598057120216,"buoyancy":1.3516844684333278,"chasiness":0.6705812114947152,"coldness":1.601749346300988,"continuation":1.0598706557079747,"divinity":1.1923627679317519,"groundFriction":1.126436336807483,"indulgence":1.0914632216348106,"laserlikeness":0.6077868095054803,"martyrdom":0.7720298861484367,"moxie":0.7763495462838013,"musclitude":1.320476456887691,"name":"Tot
+        Clark","omniscience":1.1361878979247948,"overpowerment":0.8513161540615235,"patheticism":0.2972299225384636,"ruthlessness":0.9798102224099445,"shakespearianism":1.4161039127061712,"suppression":0.7678653987597093,"tenaciousness":0.6806769183211429,"thwackability":1.04976197826641,"tragicness":0.001,"unthwackability":1.0385752376522794,"watchfulness":1.4430101531954576,"pressurization":0.25770338518165786,"totalFingers":13,"soul":3,"deceased":false,"peanutAllergy":false,"cinnamon":1.091344019042086,"fate":60,"ritual":"Breaking
+        bones","coffee":5,"blood":4,"permAttr":[],"seasAttr":[],"weekAttr":[],"gameAttr":[],"hitStreak":0,"consecutiveHits":0,"baserunningRating":0.8049065498270198,"pitchingRating":1.033745841758168,"hittingRating":1.0593094181827758,"defenseRating":0.8648486803386614,"leagueTeamId":"105bc3ff-1320-4e37-8ef0-8d595cb95dd0","tournamentTeamId":"e3f90fa1-0bbe-40df-88ce-578d0723a23b","eDensity":32.33967343074637,"state":{},"evolution":0,"items":[{"id":"f0650f80-1d51-4e6e-bf26-16b1fc4c2adb","name":"Bat","forger":null,"forgerName":null,"prePrefix":null,"prefixes":null,"postPrefix":null,"root":{"name":"Bat","adjustments":[{"stat":2,"type":1,"value":0.14838976122429057}]},"suffix":null,"durability":1,"health":1,"baserunningRating":0,"pitchingRating":0,"hittingRating":0.05184258877297965,"defenseRating":0}],"itemAttr":[]}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '1460'
+      - '1820'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 23 Mar 2021 19:25:26 GMT
+      - Wed, 19 May 2021 20:50:22 GMT
       Etag:
-      - W/"5b4-hjykd2mM07PIJ456A7+sA9PWxm4"
+      - W/"71c-VE0NPVs090Enu6m/3Ekd7JlrpPc"
       Server:
       - Cowboy
       Vary:
