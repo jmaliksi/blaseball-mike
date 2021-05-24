@@ -4,7 +4,8 @@ from .player import Player
 from .statsheet import GameStatsheet
 from .team import Team
 from .stadium import Stadium
-from .. import database, chronicler, tables
+from .weather import Weather
+from .. import database, chronicler
 
 
 class Game(Base):
@@ -102,7 +103,7 @@ class Game(Base):
 
     @Base.lazy_load("_weather", use_default=False)
     def weather(self):
-        return tables.Weather(self._weather)
+        return Weather.load_one(self._weather)
 
     @Base.lazy_load("_home_team_id", cache_name="_home_team")
     def home_team(self):
