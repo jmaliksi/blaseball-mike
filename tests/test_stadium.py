@@ -81,6 +81,20 @@ class TestStadium(TestBase):
         stadium = Stadium.load_one("8a84154e-80d7-47d5-8f56-295e9a9653d9")
         assert isinstance(stadium, Stadium)
 
+    @pytest.mark.vcr
+    def test_load_one_by_gameday(self):
+        stadium = Stadium.load_by_gameday("8a84154e-80d7-47d5-8f56-295e9a9653d9", 17, 17)
+        assert isinstance(stadium, Stadium)
+
+    @pytest.mark.vcr
+    def test_load_all_by_gameday(self):
+        stadiums = Stadium.load_all_by_gameday(17, 17)
+        assert isinstance(stadiums, dict)
+        assert len(stadiums) > 0
+        for id_, stadium in stadiums.items():
+            assert isinstance(stadium, Stadium)
+            assert stadium.id == id_
+
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.stadium_crabitat.yaml')
     def stadium_crabitat(self):

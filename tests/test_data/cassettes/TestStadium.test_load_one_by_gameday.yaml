@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://api.sibr.dev/chronicler/v2/entities?at=2021-04-20T07%3A00%3A05.443951Z&count=1000&id=8a84154e-80d7-47d5-8f56-295e9a9653d9&type=stadium
+  response:
+    body:
+      string: '{"nextPage":"ThWEiteA1UePVilempZT2d5xQZBq5gAA","items":[{"entityId":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hash":"cf74ad5c-62e9-a8f2-c070-ba60c9351cd0","validFrom":"2021-04-20T05:22:16.112995Z","validTo":"2021-04-20T09:00:59.930286Z","data":{"id":"8a84154e-80d7-47d5-8f56-295e9a9653d9","hype":0,"mods":["PSYCHOACOUSTICS","SECRET_BASE","FLOOD_PUMPS","SALMON_CANNONS"],"name":"Wapakoneta
+        Air, Space, and Worm Museum and Ballpark","birds":0,"model":3,"state":{},"teamId":"bb4a9de5-c924-4923-a0cb-9d1445f1ee5d","renoLog":{"flood_pumps_mod":1,"secret_base_mod":1,"salmon_cannons_mod":1,"psychoacoustics_mod":1},"weather":{"14":1},"nickname":"The
+        Wormhole","renoCost":-1,"renoHand":[],"mainColor":"#5c4822","mysticism":0.4617130261512937,"viscosity":0.263229502203971,"elongation":0.4040771749168108,"filthiness":0.27132850518520907,"obtuseness":0.5981744694032705,"forwardness":0.7006272118342692,"grandiosity":0.5053671963554746,"ominousness":0.5474000831124898,"renoDiscard":["psychoacoustics_mod","coffee_one_plus","black_hole_plus","mysticism_minus","event_horizon_mod","solar_panels_mod","feedback_plus","forwardness_plus","grandiosity_plus","secret_base_mod","sun_two_plus","flood_pumps_mod","elongation_plus","flooding_plus","soundsystem_mod","elongation_minus","echo_chamber_mod","blooddrain_plus","sweetener_mod","salmon_cannons_mod","peanut_mister_mod","forwardness_plus","flooding_plus","fortifications_minus","soundsystem_mod","reverb_plus","mysticism_plus"],"fortification":0.5247785781278169,"inconvenience":0.6819910875419015,"luxuriousness":0,"tertiaryColor":"#ffe0a8","secondaryColor":"#ba9c65"}}]}'
+    headers:
+      Content-Length:
+      - '1611'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 24 May 2021 21:24:20 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1
