@@ -4,7 +4,8 @@ Unit Tests for Election Models
 
 import pytest
 import vcr
-from blaseball_mike.models import ElectionResult, Election, DecreeResult, BlessingResult, TidingResult, Team
+from blaseball_mike.models import Election, Decree, Blessing, Will, Gift, \
+    ElectionResult, DecreeResult, BlessingResult, TidingResult, Team
 from .helpers import TestBase, CASSETTE_DIR
 
 
@@ -16,10 +17,29 @@ class TestElection(TestBase):
     def test_current_election(self, election):
         """Test that the currently running Election does not error"""
         assert isinstance(election, Election)
+
+        if getattr(election, "decrees_to_pass", None) is not None:
+            assert isinstance(election.decrees_to_pass, int)
+        if getattr(election, "wills_to_pass", None) is not None:
+            assert isinstance(election.wills_to_pass, int)
+
         assert isinstance(election.decrees, list)
+        for decree in election.decrees:
+            assert isinstance(decree, Decree)
+
         assert isinstance(election.blessings, list)
+        for blessing in election.blessings:
+            assert isinstance(blessing, Blessing)
+
         if getattr(election, "wills", None) is not None:
             assert isinstance(election.wills, list)
+            for will in election.wills:
+                assert isinstance(will, Will)
+
+        if getattr(election, "gift", None) is not None:
+            assert isinstance(election.gifts, list)
+            for gift in election.gifts:
+                assert isinstance(gift, Gift)
 
     @pytest.fixture(scope="module")
     @vcr.use_cassette(f'{CASSETTE_DIR}/Fixture.election_current.yaml')
