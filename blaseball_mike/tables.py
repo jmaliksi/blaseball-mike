@@ -2,44 +2,6 @@
 from enum import Enum
 
 
-class Weather(Enum):
-    INVALID = -1, "Invalid Weather"
-    VOID = 0, "Void"
-    SUNNY = 1, "Sun 2"
-    OVERCAST = 2, "Overcast"
-    RAINY = 3, "Rainy"
-    SANDSTORM = 4, "Sandstorm"
-    SNOWY = 5, "Snowy"
-    ACIDIC = 6, "Acidic"
-    SOLAR_ECLIPSE = 7, "Solar Eclipse"
-    GLITTER = 8, "Glitter"
-    BLOODRAIN = 9, "Blooddrain"
-    PEANUTS = 10, "Peanuts"
-    BIRDS = 11, "Birds"
-    FEEDBACK = 12, "Feedback"
-    REVERB = 13, "Reverb"
-    BLACK_HOLE = 14, "Black Hole"
-    COFFEE = 15, "Coffee"
-    COFFEE_2 = 16, "Coffee 2"
-    COFFEE_3S = 17, "Coffee 3s"
-    FLOODING = 18, "Flooding"
-    SALMON = 19, "Salmon"
-    POLARITY_PLUS = 20, "Polarity +"
-    POLARITY_MINUS = 21, "Polarity -"
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        return obj
-
-
 class Tarot(Enum):
     INVALID = -1, "----"
     MAGICIAN = 0, "I The Magician"

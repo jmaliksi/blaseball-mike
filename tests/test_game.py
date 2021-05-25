@@ -4,8 +4,7 @@ Unit Tests for Game Model
 
 import pytest
 import vcr
-from blaseball_mike.models import Game, Player, Team, GameStatsheet, Modification, Stadium
-from blaseball_mike.tables import Weather
+from blaseball_mike.models import Game, Player, Team, GameStatsheet, Modification, Stadium, Weather
 from .helpers import TestBase, CASSETTE_DIR
 
 
@@ -56,11 +55,11 @@ class TestGame(TestBase):
         assert isinstance(game.away_batter_mod, (Modification, type(None)))
 
     @staticmethod
+    @pytest.mark.vcr
     def test_weather(game):
         """Test that weather does not error"""
         assert isinstance(game.weather, Weather)
-        if game.weather.value != None:
-            assert game.weather.text != "Invalid Weather"
+        assert game.weather.name != "????"
 
     @staticmethod
     @pytest.mark.vcr

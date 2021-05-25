@@ -1,0 +1,166 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data/weather.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2+bMBTA7/0UT9lxXUUgQNil6qZ1O3VRmq2HaQdjnoNXYyPbNIqmfffZpGuj
+        KTFpGiMhhI3f7z2/f/w4Azd+93c/RpI0OHoPo++KV6Pz5/clofdLrTpZ+dk3WZ7lU7K9gCqhdD8X
+        9WN7rkJDNW8tV9KvuFFAayIpgmIgla25XF6M+uV/zvcB3XYS4gARqxgr6G4i1o8A0V2NEghYJA24
+        zwRSa2AcwbyT5hx60bDiQvybBFvj4ySRFRi07us7LqFrlXSTxPZ7DSr19QE1JcYG9KLMX7v1yhN/
+        BfQakj8nXK4DwpPJFAvcc8x5nJPpK4TfOtMZq3QTAJjmeZbGuwEwqgh9jfa3Uq1C2mfTItun/aBL
+        DQm/orziNCC9iEmVTndLj5O0GOevUV0JouETFbw1GICIopgl5ZEmuNoKcy4pl6iJnzODcfFZcGtR
+        h8KdFRO2JyxeBGZaou8FDjN9EEpVlXYRE8BK4yiNToFlNZGGdcabC0q0K3QZqhVkjXoYdYZEdtYE
+        OCfOg8bFkZwLTSia3nhE2D4D1kri+uJi2IhcV0Gu1IEdG3L95lCTB3QWc+ayCu5diPcP6FJyuzFL
+        D0w0wq/OWFiid0sh1rDUfhHTHF1eGtTkGrHy8KHsOfXXCZxhc+5gVqR9dgZfYIYx5+hKTBmy+CRJ
+        s/EJILUy1kPWHWOHxZMDgS9KhPPP/73Eyar6s/xNaXfWFUKtnkr7xk36qs60avr3qm2Vcd3KYdX9
+        o2IMQ9oVJC8nx2aL2SYZQEOc67oG5I5rrEBpWPiHA+GCLVVEJ1G8p/i+GO9aO2lzZM7Uw77xCJeE
+        UkXKSMGOddwZt7T2eP3Rl0hVg7BwC5w3LGqfCA7IAL4gOGcIBVeWsiw5NrgkXFHXJaC0w90xEY0K
+        FabSuVqR7yGJaY6hRmqz+1ZmfUqrZsUb+NYaqw8JiJnvOrhdw9uQ101iHGe7SasEE4wDpDddU/pj
+        XSrXih/O8y6UxUtHtDcKshKzw3gqZ7JBosvLy5BpcIL7/roYc9Ea+uvyW2+kn/38C1pMaHT3DQAA
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - max-age=300
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '798'
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Tue, 25 May 2021 00:01:52 GMT
+      ETag:
+      - W/"44d23172dc384292932896fd7fd00106a0a400f59f8b8371bc51c48acd8aaa85"
+      Expires:
+      - Tue, 25 May 2021 00:06:52 GMT
+      Source-Age:
+      - '40'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Content-Type-Options:
+      - nosniff
+      X-Fastly-Request-ID:
+      - ff7a13fa6570230ec8278f114a86d49de9ba4e22
+      X-Frame-Options:
+      - deny
+      X-GitHub-Request-Id:
+      - 30FE:2D18:CF7511:109DEE7:60AC3CE6
+      X-Served-By:
+      - cache-dca17754-DCA
+      X-Timer:
+      - S1621900913.550386,VS0,VE1
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data/weather.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2+bMBTA7/0UT9lxXUUgQNil6qZ1O3VRmq2HaQdjnoNXYyPbNIqmfffZpGuj
+        KTFpGiMhhI3f7z2/f/w4Azd+93c/RpI0OHoPo++KV6Pz5/clofdLrTpZ+dk3WZ7lU7K9gCqhdD8X
+        9WN7rkJDNW8tV9KvuFFAayIpgmIgla25XF6M+uV/zvcB3XYS4gARqxgr6G4i1o8A0V2NEghYJA24
+        zwRSa2AcwbyT5hx60bDiQvybBFvj4ySRFRi07us7LqFrlXSTxPZ7DSr19QE1JcYG9KLMX7v1yhN/
+        BfQakj8nXK4DwpPJFAvcc8x5nJPpK4TfOtMZq3QTAJjmeZbGuwEwqgh9jfa3Uq1C2mfTItun/aBL
+        DQm/orziNCC9iEmVTndLj5O0GOevUV0JouETFbw1GICIopgl5ZEmuNoKcy4pl6iJnzODcfFZcGtR
+        h8KdFRO2JyxeBGZaou8FDjN9EEpVlXYRE8BK4yiNToFlNZGGdcabC0q0K3QZqhVkjXoYdYZEdtYE
+        OCfOg8bFkZwLTSia3nhE2D4D1kri+uJi2IhcV0Gu1IEdG3L95lCTB3QWc+ayCu5diPcP6FJyuzFL
+        D0w0wq/OWFiid0sh1rDUfhHTHF1eGtTkGrHy8KHsOfXXCZxhc+5gVqR9dgZfYIYx5+hKTBmy+CRJ
+        s/EJILUy1kPWHWOHxZMDgS9KhPPP/73Eyar6s/xNaXfWFUKtnkr7xk36qs60avr3qm2Vcd3KYdX9
+        o2IMQ9oVJC8nx2aL2SYZQEOc67oG5I5rrEBpWPiHA+GCLVVEJ1G8p/i+GO9aO2lzZM7Uw77xCJeE
+        UkXKSMGOddwZt7T2eP3Rl0hVg7BwC5w3LGqfCA7IAL4gOGcIBVeWsiw5NrgkXFHXJaC0w90xEY0K
+        FabSuVqR7yGJaY6hRmqz+1ZmfUqrZsUb+NYaqw8JiJnvOrhdw9uQ101iHGe7SasEE4wDpDddU/pj
+        XSrXih/O8y6UxUtHtDcKshKzw3gqZ7JBosvLy5BpcIL7/roYc9Ea+uvyW2+kn/38C1pMaHT3DQAA
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - max-age=300
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '798'
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Tue, 25 May 2021 00:01:52 GMT
+      ETag:
+      - W/"44d23172dc384292932896fd7fd00106a0a400f59f8b8371bc51c48acd8aaa85"
+      Expires:
+      - Tue, 25 May 2021 00:06:52 GMT
+      Source-Age:
+      - '40'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '2'
+      X-Content-Type-Options:
+      - nosniff
+      X-Fastly-Request-ID:
+      - b738e3429f0d987c931530d8f84e8e3149372a02
+      X-Frame-Options:
+      - deny
+      X-GitHub-Request-Id:
+      - 30FE:2D18:CF7511:109DEE7:60AC3CE6
+      X-Served-By:
+      - cache-dca17754-DCA
+      X-Timer:
+      - S1621900913.586626,VS0,VE0
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
