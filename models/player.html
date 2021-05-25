@@ -1072,41 +1072,6 @@ class Player(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.player.Player.game_attr"><code class="name">var <span class="ident">game_attr</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.item_attr"><code class="name">var <span class="ident">item_attr</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.items"><code class="name">var <span class="ident">items</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.league_team_id"><code class="name">var <span class="ident">league_team_id</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.perm_attr"><code class="name">var <span class="ident">perm_attr</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.seas_attr"><code class="name">var <span class="ident">seas_attr</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.tournament_team_id"><code class="name">var <span class="ident">tournament_team_id</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.player.Player.week_attr"><code class="name">var <span class="ident">week_attr</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.player.Player.find_by_name"><code class="name flex">
@@ -1333,6 +1298,10 @@ def make_random(cls, name=&#34;Random Player&#34;, seed=None):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.player.Player.baserunning_rating"><code class="name">var <span class="ident">baserunning_rating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.baserunning_stars"><code class="name">var <span class="ident">baserunning_stars</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1361,6 +1330,10 @@ def batting_stars(self):
     return self.hitting_stars</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.blood"><code class="name">var <span class="ident">blood</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.buoyancy"><code class="name">var <span class="ident">buoyancy</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1370,6 +1343,10 @@ def batting_stars(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.cinnamon"><code class="name">var <span class="ident">cinnamon</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.coffee"><code class="name">var <span class="ident">coffee</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1386,6 +1363,10 @@ def batting_stars(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.deceased"><code class="name">var <span class="ident">deceased</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.defense_rating"><code class="name">var <span class="ident">defense_rating</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1419,11 +1400,19 @@ def defense_stars(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.player.Player.game_attr"><code class="name">var <span class="ident">game_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.ground_friction"><code class="name">var <span class="ident">ground_friction</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.hit_streak"><code class="name">var <span class="ident">hit_streak</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.hitting_rating"><code class="name">var <span class="ident">hitting_rating</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1449,6 +1438,14 @@ def hitting_stars(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.player.Player.item_attr"><code class="name">var <span class="ident">item_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.items"><code class="name">var <span class="ident">items</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.laserlikeness"><code class="name">var <span class="ident">laserlikeness</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1465,6 +1462,10 @@ def league_team(self):
     # alias to league_team_id
     return self.league_team_id</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.player.Player.league_team_id"><code class="name">var <span class="ident">league_team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.martyrdom"><code class="name">var <span class="ident">martyrdom</span></code></dt>
 <dd>
@@ -1495,6 +1496,14 @@ def league_team(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.peanut_allergy"><code class="name">var <span class="ident">peanut_allergy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.perm_attr"><code class="name">var <span class="ident">perm_attr</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.pitching_rating"><code class="name">var <span class="ident">pitching_rating</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1545,6 +1554,10 @@ def player_name(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.ruthlessness"><code class="name">var <span class="ident">ruthlessness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.seas_attr"><code class="name">var <span class="ident">seas_attr</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1601,6 +1614,10 @@ def tournament_team(self):
     return self.tournament_team_id</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.player.Player.tournament_team_id"><code class="name">var <span class="ident">tournament_team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.player.Player.tragicness"><code class="name">var <span class="ident">tragicness</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1610,6 +1627,10 @@ def tournament_team(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.player.Player.watchfulness"><code class="name">var <span class="ident">watchfulness</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.player.Player.week_attr"><code class="name">var <span class="ident">week_attr</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1628,23 +1649,6 @@ def tournament_team(self):
 <pre><code class="python">@Base.lazy_load(&#34;_armor_id&#34;, cache_name=&#34;_armor&#34;, use_default=False)
 def armor(self):
     return Item.load_one_discipline(getattr(self, &#34;_armor_id&#34;, None))</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.baserunning_rating"><code class="name flex">
-<span>def <span class="ident">baserunning_rating</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_baserunning_rating&#34;, use_default=False)
-def baserunning_rating(self):
-    if getattr(self, &#34;_baserunning_rating&#34;, None) is not None:
-        return self._baserunning_rating
-    return ((self.laserlikeness**0.5) *
-            ((self.continuation * self.base_thirst * self.indulgence * self.ground_friction) ** 0.1))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.bat"><code class="name flex">
@@ -1677,55 +1681,6 @@ def hitting_rating(self):
     return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
             ((self.thwackability * self.divinity) ** 0.35) *
             ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.blood"><code class="name flex">
-<span>def <span class="ident">blood</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_blood_id&#34;, cache_name=&#34;_blood&#34;, use_default=False)
-def blood(self):
-    if isinstance(getattr(self, &#34;_blood_id&#34;, None), str):
-        return self._blood_id
-    return database.get_blood(getattr(self, &#34;_blood_id&#34;, None))[0]</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.coffee"><code class="name flex">
-<span>def <span class="ident">coffee</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_coffee_id&#34;, cache_name=&#34;_coffee&#34;, use_default=False)
-def coffee(self):
-    if isinstance(getattr(self, &#34;_coffee_id&#34;, None), str):
-        return self._coffee_id
-    return database.get_coffee(getattr(self, &#34;_coffee_id&#34;, None))[0]</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.defense_rating"><code class="name flex">
-<span>def <span class="ident">defense_rating</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_defense_rating&#34;, use_default=False)
-def defense_rating(self):
-    if getattr(self, &#34;_defense_rating&#34;, None) is not None:
-        return self._defense_rating
-    return (((self.omniscience * self.tenaciousness) ** 0.2) *
-            ((self.watchfulness * self.anticapitalism * self.chasiness) ** 0.1))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.get_baserunning_rating"><code class="name flex">
@@ -1910,41 +1865,6 @@ def defense_rating(self):
     return 0.5 * ((self.pressurization + self.cinnamon) *
                   math.sin(math.pi * (2 / (6 + round(10 * self.buoyancy)) * (day - 1) + 0.5)) -
                   self.pressurization + self.cinnamon)</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.hitting_rating"><code class="name flex">
-<span>def <span class="ident">hitting_rating</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_hitting_rating&#34;, use_default=False)
-def hitting_rating(self):
-    if getattr(self, &#34;_hitting_rating&#34;, None) is not None:
-        return self._hitting_rating
-    return (((1 - self.tragicness) ** 0.01) * ((1 - self.patheticism) ** 0.05) *
-            ((self.thwackability * self.divinity) ** 0.35) *
-            ((self.moxie * self.musclitude) ** 0.075) * (self.martyrdom ** 0.02))</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.player.Player.pitching_rating"><code class="name flex">
-<span>def <span class="ident">pitching_rating</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_pitching_rating&#34;, use_default=False)
-def pitching_rating(self):
-    if getattr(self, &#34;_pitching_rating&#34;, None) is not None:
-        return self._pitching_rating
-    return ((self.unthwackability ** 0.5) * (self.ruthlessness ** 0.4) *
-            (self.overpowerment ** 0.15) * (self.shakespearianism ** 0.1) * (self.coldness ** 0.025))</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.player.Player.simulated_copy"><code class="name flex">

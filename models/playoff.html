@@ -207,17 +207,6 @@ class PlayoffMatchup(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.playoff.Playoff.rounds"><code class="name">var <span class="ident">rounds</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.playoff.Playoff.winner"><code class="name">var <span class="ident">winner</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.playoff.Playoff.load_by_season"><code class="name flex">
@@ -255,11 +244,23 @@ def load_by_season(cls, season):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.playoff.Playoff.rounds"><code class="name">var <span class="ident">rounds</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.season"><code class="name">var <span class="ident">season</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.playoff.Playoff.tomorrow_round"><code class="name">var <span class="ident">tomorrow_round</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.playoff.Playoff.tournament"><code class="name">var <span class="ident">tournament</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.Playoff.winner"><code class="name">var <span class="ident">winner</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -283,20 +284,6 @@ def load_by_season(cls, season):
     if num &gt;= len(self._rounds_ids) or num &lt; 0:
         return None
     return self.rounds[num]</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.playoff.Playoff.season"><code class="name flex">
-<span>def <span class="ident">season</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
-def season(self):
-    return self._season + 1</code></pre>
 </details>
 </dd>
 </dl>
@@ -343,17 +330,6 @@ def season(self):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.playoff.PlayoffMatchup.away_team"><code class="name">var <span class="ident">away_team</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.playoff.PlayoffMatchup.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.playoff.PlayoffMatchup.load"><code class="name flex">
@@ -395,6 +371,10 @@ def load_one(cls, id_):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.away_team"><code class="name">var <span class="ident">away_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.playoff.PlayoffMatchup.away_wins"><code class="name">var <span class="ident">away_wins</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -408,6 +388,10 @@ def load_one(cls, id_):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffMatchup.home_seed"><code class="name">var <span class="ident">home_seed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffMatchup.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -493,17 +477,6 @@ def load_one(cls, id_):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.playoff.PlayoffRound.matchups"><code class="name">var <span class="ident">matchups</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.playoff.PlayoffRound.winners"><code class="name">var <span class="ident">winners</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.playoff.PlayoffRound.load"><code class="name flex">
@@ -531,26 +504,13 @@ def load(cls, id_):
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffRound.games"><code class="name">var <span class="ident">games</span></code></dt>
 <dd>
-<div class="desc"><p>Get all games in this round.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def games(self):
-    &#34;&#34;&#34;
-    Get all games in this round.
-    &#34;&#34;&#34;
-    if all(self._games):
-        return self._games
-    for day, games in enumerate(self._games_ids):
-        if self._games[day]:
-            continue
-        self._games[day] = [Game.load_by_id(id_) for id_ in games if id_ != &#34;none&#34;]
-    return self._games</code></pre>
-</details>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffRound.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.matchups"><code class="name">var <span class="ident">matchups</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -567,6 +527,10 @@ def games(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.playoff.PlayoffRound.winner_seeds"><code class="name">var <span class="ident">winner_seeds</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.playoff.PlayoffRound.winners"><code class="name">var <span class="ident">winners</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>

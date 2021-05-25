@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
 <title>blaseball_mike.database API documentation</title>
-<meta name="description" content="GET endpoints for blaseball /database/ path …" />
+<meta name="description" content="Wrappers for the Official Blaseball API …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,15 +22,16 @@
 <h1 class="title">Module <code>blaseball_mike.database</code></h1>
 </header>
 <section id="section-intro">
-<p>GET endpoints for blaseball /database/ path.</p>
-<p>Based off spec: <a href="https://github.com/Society-for-Internet-Blaseball-Research/blaseball-api-spec">https://github.com/Society-for-Internet-Blaseball-Research/blaseball-api-spec</a></p>
+<p>Wrappers for the Official Blaseball API</p>
+<p><a href="https://docs.sibr.dev/docs/apis/reference/Blaseball-API.v1.yaml">https://docs.sibr.dev/docs/apis/reference/Blaseball-API.v1.yaml</a></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#34;&#34;&#34;GET endpoints for blaseball /database/ path.
+<pre><code class="python">&#34;&#34;&#34;
+Wrappers for the Official Blaseball API
 
-Based off spec: https://github.com/Society-for-Internet-Blaseball-Research/blaseball-api-spec
+https://docs.sibr.dev/docs/apis/reference/Blaseball-API.v1.yaml
 &#34;&#34;&#34;
 from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
 from datetime import datetime
@@ -40,6 +41,12 @@ BASE_GITHUB = &#39;https://raw.githubusercontent.com/xSke/blaseball-site-files/m
 
 
 def get_global_events(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get Current Global Events (Ticker Text).
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)
@@ -47,7 +54,10 @@ def get_global_events(*, cache_time=5):
 
 def get_all_teams(*, cache_time=5):
     &#34;&#34;&#34;
-    Returns dictionary keyed by team ID
+    Get All Teams, including Tournament teams and Hall Stars. Returns dictionary keyed by team ID.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
@@ -56,7 +66,10 @@ def get_all_teams(*, cache_time=5):
 
 def get_all_divisions(*, cache_time=5):
     &#34;&#34;&#34;
-    Returns dictionary keyed by division ID
+    Get list of all divisions, including removed divisions. Returns dictionary keyed by division ID.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
@@ -64,24 +77,52 @@ def get_all_divisions(*, cache_time=5):
 
 
 def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;, cache_time=5):
+    &#34;&#34;&#34;
+    Get league by ID.
+
+    Args:
+        id_: league ID, defaults to current league (Internet League Blaseball)
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_subleague(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get subleague by ID (eg: Mild, Evil, etc).
+
+    Args:
+        id_: subleague ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_division(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get division by ID.
+
+    Args:
+        id_: division ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_team(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get team by ID.
+
+    Args:
+        id_: team ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)
@@ -89,8 +130,11 @@ def get_team(id_, cache_time=5):
 
 def get_player(id_, cache_time=5):
     &#34;&#34;&#34;
-    Accepts single string id_, comma separated string, or list.
-    Returns a dictionary with ID as key
+    Get players by ID. Returns a dictionary with player ID as key
+
+    Args:
+        id_: player ID(s). Can be single string id_, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if len(id_) == 0:
         return {}
@@ -103,8 +147,12 @@ def get_player(id_, cache_time=5):
 
 def get_games(season, day, cache_time=5):
     &#34;&#34;&#34;
-    Season and day will be 1 indexed.
-    Returns as dictionary with game ID as key.
+    Get games by season and day. Returns as dictionary with game ID as key.
+
+    Args:
+        season: Season, 1 indexed
+        day: Day, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
@@ -113,8 +161,12 @@ def get_games(season, day, cache_time=5):
 
 def get_tournament(tournament, day, cache_time=5):
     &#34;&#34;&#34;
-    Day will be 1 indexed. Tournament is 0 indexed.
-    Returns as dictionary with game ID as key.
+    Get games by tournament and day. Returns as dictionary with game ID as key.
+
+    Args:
+        tournament: Tournament ID
+        day: Day, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
@@ -122,12 +174,25 @@ def get_tournament(tournament, day, cache_time=5):
 
 
 def get_game_by_id(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get game by ID.
+
+    Args:
+        id_: game ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)
 
 
 def get_offseason_election_details(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Election ballot.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)
@@ -135,7 +200,11 @@ def get_offseason_election_details(*, cache_time=5):
 
 def get_offseason_recap(season, cache_time=5):
     &#34;&#34;&#34;
-    Season will be 1 indexed.
+    Get Election results by season.
+
+    Args:
+        season: Season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
@@ -144,7 +213,11 @@ def get_offseason_recap(season, cache_time=5):
 
 def get_offseason_bonus_results(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get blessing results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -155,7 +228,11 @@ def get_offseason_bonus_results(id_, cache_time=5):
 
 def get_offseason_decree_results(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get decree results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -165,6 +242,13 @@ def get_offseason_decree_results(id_, cache_time=5):
 
 
 def get_offseason_event_results(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get tiding results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
     s = session(cache_time)
@@ -174,7 +258,11 @@ def get_offseason_event_results(id_, cache_time=5):
 
 def get_playoff_details(season, cache_time=5):
     &#34;&#34;&#34;
-    Season will be 1 indexed.
+    Get playoff information by season.
+
+    Args:
+        season: season, 1 indexed.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
@@ -182,6 +270,13 @@ def get_playoff_details(season, cache_time=5):
 
 
 def get_playoff_round(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get playoff round by ID
+
+    Args:
+        id_: playoff round ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)
@@ -189,7 +284,11 @@ def get_playoff_round(id_, cache_time=5):
 
 def get_playoff_matchups(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get playoff matchups (one team vs one team) by ID
+
+    Args:
+        id: playoff matchup ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -199,6 +298,13 @@ def get_playoff_matchups(id_, cache_time=5):
 
 
 def get_standings(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get league standings by ID
+
+    Args:
+        id_: standings ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)
@@ -206,7 +312,11 @@ def get_standings(id_, cache_time=5):
 
 def get_season(season_number, cache_time=5):
     &#34;&#34;&#34;
-    Season number is 1 indexed
+    Get season info by season number
+
+    Args:
+        season_number: season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
@@ -214,12 +324,26 @@ def get_season(season_number, cache_time=5):
 
 
 def get_tiebreakers(id, cache_time=5):
+    &#34;&#34;&#34;
+    Get tiebreakers (Divine Favor) by ID
+
+    Args:
+        id_: tiebreaker ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}
 
 
 def get_game_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a game by statsheet ID
+
+    Args:
+        id: game statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -228,6 +352,13 @@ def get_game_statsheets(ids, cache_time=5):
 
 
 def get_player_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a player by statsheet ID
+
+    Args:
+        id: player statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -236,6 +367,13 @@ def get_player_statsheets(ids, cache_time=5):
 
 
 def get_season_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a season by statsheet ID
+
+    Args:
+        id: season statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -244,6 +382,13 @@ def get_season_statsheets(ids, cache_time=5):
 
 
 def get_team_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a team by statsheet ID
+
+    Args:
+        id: team statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -252,24 +397,49 @@ def get_team_statsheets(ids, cache_time=5):
 
 
 def get_idols(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Idol board
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)
 
 
 def get_tributes(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Hall of Flame
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)
 
 
 def get_simulation_data(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current simulation state
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)
 
 
 def get_attributes(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get modification by ID
+
+    Args:
+        ids: modification ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -278,6 +448,13 @@ def get_attributes(ids, cache_time=5):
 
 
 def get_items(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get item by ID
+
+    Args:
+        ids: item ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -286,12 +463,26 @@ def get_items(ids, cache_time=5):
 
 
 def get_weather(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get weather by ID
+
+    Args:
+        ids: weather ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)
 
 
 def get_blood(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get blood type by ID
+
+    Args:
+        ids: blood ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -300,6 +491,13 @@ def get_blood(ids, cache_time=5):
 
 
 def get_coffee(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get coffee preference by ID
+
+    Args:
+        ids: coffee ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -433,6 +631,11 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
 def get_feed_phase(season, phase, cache_time=5):
     &#34;&#34;&#34;
     Get Feed by Phase
+
+    Args:
+        season: season, 1 indexed
+        phase: sim phase number
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
@@ -440,12 +643,26 @@ def get_feed_phase(season, phase, cache_time=5):
 
 
 def get_feed_story(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get Feed story item by ID
+
+    Args:
+        id_: Event ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/story?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_renovations(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get stadium renovation by ID
+
+    Args:
+        ids: renovation ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -454,48 +671,100 @@ def get_renovations(ids, cache_time=5):
 
 
 def get_renovation_progress(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get stadium renovation progress by stadium ID
+
+    Args:
+        id_: stadium ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
     return check_network_response(res)
 
 
 def get_season_day_count(season, cache_time=5):
+    &#34;&#34;&#34;
+    Get number of days in a season, by season
+
+    Args:
+        season: season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/seasondaycount?season={season - 1}&#39;)
     return check_network_response(res)
 
 
 def get_team_election_stats(team_id, cache_time=5):
+    &#34;&#34;&#34;
+    Get will contribution percentage by team ID
+
+    Args:
+        team_id: team ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/teamElectionStats?id={team_id}&#39;)
     return check_network_response(res)
 
 
 def get_previous_champ(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get winner of previous championship
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/getPreviousChamp&#39;)
     return check_network_response(res)
 
 
 def get_community_chest_progress(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current progress to community chest opening
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/communityChestProgress&#39;)
     return check_network_response(res)
 
 
 def get_players_by_item(item, cache_time=5):
+    &#34;&#34;&#34;
+    Get player holding an item
+
+    Args:
+        item: item ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playersByItemId?id={item}&#39;)
     return check_network_response(res)
 
 
 def get_gift_progress(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get league-wide gift shop progress
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/giftProgress&#39;)
     return check_network_response(res)
 
 
 def get_all_players(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get list of player names and IDs
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playerNamesIds&#39;)
     return check_network_response(res)</code></pre>
@@ -512,14 +781,22 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_all_divisions</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns dictionary keyed by division ID</p></div>
+<div class="desc"><p>Get list of all divisions, including removed divisions. Returns dictionary keyed by division ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_all_divisions(*, cache_time=5):
     &#34;&#34;&#34;
-    Returns dictionary keyed by division ID
+    Get list of all divisions, including removed divisions. Returns dictionary keyed by division ID.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allDivisions&#39;)
@@ -530,12 +807,23 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_all_players</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get list of player names and IDs</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_all_players(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get list of player names and IDs
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playerNamesIds&#39;)
     return check_network_response(res)</code></pre>
@@ -545,14 +833,22 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_all_teams</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns dictionary keyed by team ID</p></div>
+<div class="desc"><p>Get All Teams, including Tournament teams and Hall Stars. Returns dictionary keyed by team ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_all_teams(*, cache_time=5):
     &#34;&#34;&#34;
-    Returns dictionary keyed by team ID
+    Get All Teams, including Tournament teams and Hall Stars. Returns dictionary keyed by team ID.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/allTeams&#39;)
@@ -563,12 +859,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_attributes</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get modification by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>modification ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_attributes(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get modification by ID
+
+    Args:
+        ids: modification ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -580,12 +890,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_blood</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get blood type by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>blood ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_blood(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get blood type by ID
+
+    Args:
+        ids: blood ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -597,12 +921,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_coffee</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get coffee preference by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>coffee ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_coffee(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get coffee preference by ID
+
+    Args:
+        ids: coffee ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -614,12 +952,23 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_community_chest_progress</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get current progress to community chest opening</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_community_chest_progress(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current progress to community chest opening
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/communityChestProgress&#39;)
     return check_network_response(res)</code></pre>
@@ -629,12 +978,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_division</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get division by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>division ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_division(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get division by ID.
+
+    Args:
+        id_: division ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/division?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -755,7 +1118,16 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_feed_phase</span></span>(<span>season, phase, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get Feed by Phase</p></div>
+<div class="desc"><p>Get Feed by Phase</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>season, 1 indexed</dd>
+<dt><strong><code>phase</code></strong></dt>
+<dd>sim phase number</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -763,6 +1135,11 @@ def get_all_players(*, cache_time=5):
 <pre><code class="python">def get_feed_phase(season, phase, cache_time=5):
     &#34;&#34;&#34;
     Get Feed by Phase
+
+    Args:
+        season: season, 1 indexed
+        phase: sim phase number
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feedbyphase?season={season-1}&amp;phase={phase}&#39;)
@@ -830,12 +1207,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_feed_story</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get Feed story item by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>Event ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_feed_story(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get Feed story item by ID
+
+    Args:
+        id_: Event ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/story?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -902,12 +1293,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_game_by_id</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get game by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>game ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_game_by_id(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get game by ID.
+
+    Args:
+        id_: game ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/gameById/{id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -917,12 +1322,26 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_game_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get statsheets for a game by statsheet ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>game statsheet ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_game_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a game by statsheet ID
+
+    Args:
+        id: game statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -934,16 +1353,28 @@ def get_all_players(*, cache_time=5):
 <span>def <span class="ident">get_games</span></span>(<span>season, day, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Season and day will be 1 indexed.
-Returns as dictionary with game ID as key.</p></div>
+<div class="desc"><p>Get games by season and day. Returns as dictionary with game ID as key.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>Season, 1 indexed</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>Day, 1 indexed</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_games(season, day, cache_time=5):
     &#34;&#34;&#34;
-    Season and day will be 1 indexed.
-    Returns as dictionary with game ID as key.
+    Get games by season and day. Returns as dictionary with game ID as key.
+
+    Args:
+        season: Season, 1 indexed
+        day: Day, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?season={season - 1}&amp;day={day - 1}&#39;)
@@ -954,12 +1385,23 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_gift_progress</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get league-wide gift shop progress</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_gift_progress(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get league-wide gift shop progress
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/giftProgress&#39;)
     return check_network_response(res)</code></pre>
@@ -969,12 +1411,23 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_global_events</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get Current Global Events (Ticker Text).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_global_events(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get Current Global Events (Ticker Text).
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/globalEvents&#39;)
     return check_network_response(res)</code></pre>
@@ -984,12 +1437,23 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_idols</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get current Idol board</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_idols(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Idol board
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getIdols&#39;)
     return check_network_response(res)</code></pre>
@@ -999,12 +1463,26 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_items</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get item by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>item ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_items(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get item by ID
+
+    Args:
+        ids: item ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -1016,12 +1494,26 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_league</span></span>(<span>id_='d8545021-e9fc-48a3-af74-48685950a183', cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get league by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>league ID, defaults to current league (Internet League Blaseball)</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_league(id_=&#39;d8545021-e9fc-48a3-af74-48685950a183&#39;, cache_time=5):
+    &#34;&#34;&#34;
+    Get league by ID.
+
+    Args:
+        id_: league ID, defaults to current league (Internet League Blaseball)
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/league?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1031,14 +1523,25 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_offseason_bonus_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
+<div class="desc"><p>Get blessing results by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>blessing ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_bonus_results(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get blessing results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -1051,14 +1554,25 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_offseason_decree_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
+<div class="desc"><p>Get decree results by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>blessing ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_decree_results(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get decree results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -1071,12 +1585,23 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_offseason_election_details</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get current Election ballot.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_election_details(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Election ballot.
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonSetup&#39;)
     return check_network_response(res)</code></pre>
@@ -1086,12 +1611,26 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_offseason_event_results</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get tiding results by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>blessing ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_event_results(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get tiding results by ID.
+
+    Args:
+        id: blessing ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
     s = session(cache_time)
@@ -1103,14 +1642,25 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_offseason_recap</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Season will be 1 indexed.</p></div>
+<div class="desc"><p>Get Election results by season.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>Season, 1 indexed</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_offseason_recap(season, cache_time=5):
     &#34;&#34;&#34;
-    Season will be 1 indexed.
+    Get Election results by season.
+
+    Args:
+        season: Season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/offseasonRecap?season={season - 1}&#39;)
@@ -1121,16 +1671,25 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_player</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Accepts single string id_, comma separated string, or list.
-Returns a dictionary with ID as key</p></div>
+<div class="desc"><p>Get players by ID. Returns a dictionary with player ID as key</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>player ID(s). Can be single string id_, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_player(id_, cache_time=5):
     &#34;&#34;&#34;
-    Accepts single string id_, comma separated string, or list.
-    Returns a dictionary with ID as key
+    Get players by ID. Returns a dictionary with player ID as key
+
+    Args:
+        id_: player ID(s). Can be single string id_, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if len(id_) == 0:
         return {}
@@ -1145,12 +1704,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_player_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get statsheets for a player by statsheet ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>player statsheet ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_player_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a player by statsheet ID
+
+    Args:
+        id: player statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -1162,12 +1735,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_players_by_item</span></span>(<span>item, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get player holding an item</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>item</code></strong></dt>
+<dd>item ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_players_by_item(item, cache_time=5):
+    &#34;&#34;&#34;
+    Get player holding an item
+
+    Args:
+        item: item ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playersByItemId?id={item}&#39;)
     return check_network_response(res)</code></pre>
@@ -1177,14 +1764,25 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_playoff_details</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Season will be 1 indexed.</p></div>
+<div class="desc"><p>Get playoff information by season.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>season, 1 indexed.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_playoff_details(season, cache_time=5):
     &#34;&#34;&#34;
-    Season will be 1 indexed.
+    Get playoff information by season.
+
+    Args:
+        season: season, 1 indexed.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffs?number={season - 1}&#39;)
@@ -1195,14 +1793,25 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_playoff_matchups</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>id_ can be a single string ID, comma separated string, or list.</p></div>
+<div class="desc"><p>Get playoff matchups (one team vs one team) by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>playoff matchup ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_playoff_matchups(id_, cache_time=5):
     &#34;&#34;&#34;
-    id_ can be a single string ID, comma separated string, or list.
+    Get playoff matchups (one team vs one team) by ID
+
+    Args:
+        id: playoff matchup ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(id_, list):
         id_ = &#39;,&#39;.join(id_)
@@ -1215,12 +1824,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_playoff_round</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get playoff round by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>playoff round ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_playoff_round(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get playoff round by ID
+
+    Args:
+        id_: playoff round ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playoffRound?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1230,12 +1853,23 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_previous_champ</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get winner of previous championship</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_previous_champ(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get winner of previous championship
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/getPreviousChamp&#39;)
     return check_network_response(res)</code></pre>
@@ -1245,12 +1879,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_renovation_progress</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get stadium renovation progress by stadium ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>stadium ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_renovation_progress(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get stadium renovation progress by stadium ID
+
+    Args:
+        id_: stadium ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/renovationProgress?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1260,12 +1908,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_renovations</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get stadium renovation by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>renovation ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_renovations(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get stadium renovation by ID
+
+    Args:
+        ids: renovation ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -1277,14 +1939,25 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_season</span></span>(<span>season_number, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Season number is 1 indexed</p></div>
+<div class="desc"><p>Get season info by season number</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season_number</code></strong></dt>
+<dd>season, 1 indexed</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_season(season_number, cache_time=5):
     &#34;&#34;&#34;
-    Season number is 1 indexed
+    Get season info by season number
+
+    Args:
+        season_number: season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/season?number={season_number - 1}&#39;)
@@ -1295,12 +1968,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_season_day_count</span></span>(<span>season, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get number of days in a season, by season</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>season</code></strong></dt>
+<dd>season, 1 indexed</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_season_day_count(season, cache_time=5):
+    &#34;&#34;&#34;
+    Get number of days in a season, by season
+
+    Args:
+        season: season, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/seasondaycount?season={season - 1}&#39;)
     return check_network_response(res)</code></pre>
@@ -1310,12 +1997,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_season_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get statsheets for a season by statsheet ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>season statsheet ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_season_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a season by statsheet ID
+
+    Args:
+        id: season statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -1327,12 +2028,23 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_simulation_data</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get current simulation state</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_simulation_data(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current simulation state
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/simulationData&#39;)
     return check_network_response(res)</code></pre>
@@ -1342,12 +2054,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_standings</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get league standings by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>standings ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_standings(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get league standings by ID
+
+    Args:
+        id_: standings ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/standings?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1357,12 +2083,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_subleague</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get subleague by ID (eg: Mild, Evil, etc).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>subleague ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_subleague(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get subleague by ID (eg: Mild, Evil, etc).
+
+    Args:
+        id_: subleague ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/subleague?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1372,12 +2112,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_team</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get team by ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>team ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_team(id_, cache_time=5):
+    &#34;&#34;&#34;
+    Get team by ID.
+
+    Args:
+        id_: team ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/team?id={id_}&#39;)
     return check_network_response(res)</code></pre>
@@ -1387,12 +2141,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_team_election_stats</span></span>(<span>team_id, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get will contribution percentage by team ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>team_id</code></strong></dt>
+<dd>team ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_team_election_stats(team_id, cache_time=5):
+    &#34;&#34;&#34;
+    Get will contribution percentage by team ID
+
+    Args:
+        team_id: team ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/teamElectionStats?id={team_id}&#39;)
     return check_network_response(res)</code></pre>
@@ -1402,12 +2170,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_team_statsheets</span></span>(<span>ids, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get statsheets for a team by statsheet ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>team statsheet ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_team_statsheets(ids, cache_time=5):
+    &#34;&#34;&#34;
+    Get statsheets for a team by statsheet ID
+
+    Args:
+        id: team statsheet ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     if isinstance(ids, list):
         ids = &#39;,&#39;.join(ids)
     s = session(cache_time)
@@ -1419,12 +2201,26 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_tiebreakers</span></span>(<span>id, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get tiebreakers (Divine Favor) by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id_</code></strong></dt>
+<dd>tiebreaker ID</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tiebreakers(id, cache_time=5):
+    &#34;&#34;&#34;
+    Get tiebreakers (Divine Favor) by ID
+
+    Args:
+        id_: tiebreaker ID
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/tiebreakers?id={id}&#39;)
     return {g[&#39;id&#39;]: g for g in check_network_response(res)}</code></pre>
@@ -1434,16 +2230,28 @@ Returns a dictionary with ID as key</p></div>
 <span>def <span class="ident">get_tournament</span></span>(<span>tournament, day, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Day will be 1 indexed. Tournament is 0 indexed.
-Returns as dictionary with game ID as key.</p></div>
+<div class="desc"><p>Get games by tournament and day. Returns as dictionary with game ID as key.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tournament</code></strong></dt>
+<dd>Tournament ID</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>Day, 1 indexed</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tournament(tournament, day, cache_time=5):
     &#34;&#34;&#34;
-    Day will be 1 indexed. Tournament is 0 indexed.
-    Returns as dictionary with game ID as key.
+    Get games by tournament and day. Returns as dictionary with game ID as key.
+
+    Args:
+        tournament: Tournament ID
+        day: Day, 1 indexed
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/games?tournament={tournament}&amp;day={day - 1}&#39;)
@@ -1454,12 +2262,23 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_tributes</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get current Hall of Flame</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_tributes(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get current Hall of Flame
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(&#39;https://www.blaseball.com/api/getTribute&#39;)
     return check_network_response(res)</code></pre>
@@ -1469,12 +2288,26 @@ Returns as dictionary with game ID as key.</p></div>
 <span>def <span class="ident">get_weather</span></span>(<span>*, cache_time=5)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get weather by ID</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>weather ID(s). Can be a single string ID, comma separated string, or list.</dd>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_weather(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get weather by ID
+
+    Args:
+        ids: weather ID(s). Can be a single string ID, comma separated string, or list.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_GITHUB}/weather.json&#39;)
     return check_network_response(res)</code></pre>

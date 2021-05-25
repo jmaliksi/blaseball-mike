@@ -647,49 +647,6 @@ class Game(Base):
 <ul class="hlist">
 <li><a title="blaseball_mike.models.fight.Fight" href="fight.html#blaseball_mike.models.fight.Fight">Fight</a></li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.game.Game.away_batter"><code class="name">var <span class="ident">away_batter</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.away_pitcher"><code class="name">var <span class="ident">away_pitcher</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.away_team"><code class="name">var <span class="ident">away_team</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.base_runner_mods"><code class="name">var <span class="ident">base_runner_mods</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.base_runners"><code class="name">var <span class="ident">base_runners</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.home_batter"><code class="name">var <span class="ident">home_batter</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.home_pitcher"><code class="name">var <span class="ident">home_pitcher</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.stadium_id"><code class="name">var <span class="ident">stadium_id</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.game.Game.statsheet"><code class="name">var <span class="ident">statsheet</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.game.Game.load_by_day"><code class="name flex">
@@ -856,6 +813,14 @@ def at_bat_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.away_batter"><code class="name">var <span class="ident">away_batter</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.away_batter_mod"><code class="name">var <span class="ident">away_batter_mod</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.away_batter_name"><code class="name">var <span class="ident">away_batter_name</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -868,6 +833,14 @@ def at_bat_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.away_pitcher"><code class="name">var <span class="ident">away_pitcher</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.away_pitcher_mod"><code class="name">var <span class="ident">away_pitcher_mod</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.away_pitcher_name"><code class="name">var <span class="ident">away_pitcher_name</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -877,6 +850,10 @@ def at_bat_team_nickname(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.away_strikes"><code class="name">var <span class="ident">away_strikes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.away_team"><code class="name">var <span class="ident">away_team</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -904,7 +881,15 @@ def at_bat_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.base_runner_mods"><code class="name">var <span class="ident">base_runner_mods</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.base_runner_names"><code class="name">var <span class="ident">base_runner_names</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.base_runners"><code class="name">var <span class="ident">base_runners</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -980,6 +965,10 @@ def current_pitcher_name(self):
         return self.away_pitcher_name</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.game.Game.day"><code class="name">var <span class="ident">day</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.end_phase"><code class="name">var <span class="ident">end_phase</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1016,6 +1005,14 @@ def current_pitcher_name(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.home_batter"><code class="name">var <span class="ident">home_batter</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.home_batter_mod"><code class="name">var <span class="ident">home_batter_mod</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.home_batter_name"><code class="name">var <span class="ident">home_batter_name</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1028,6 +1025,14 @@ def current_pitcher_name(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.home_pitcher"><code class="name">var <span class="ident">home_pitcher</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.home_pitcher_mod"><code class="name">var <span class="ident">home_pitcher_mod</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.home_pitcher_name"><code class="name">var <span class="ident">home_pitcher_name</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1037,6 +1042,10 @@ def current_pitcher_name(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.home_strikes"><code class="name">var <span class="ident">home_strikes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.home_team"><code class="name">var <span class="ident">home_team</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1065,6 +1074,10 @@ def current_pitcher_name(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.inning"><code class="name">var <span class="ident">inning</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1209,6 +1222,10 @@ def pitching_team_nickname(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.game.Game.season"><code class="name">var <span class="ident">season</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.secret_baserunner"><code class="name">var <span class="ident">secret_baserunner</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -1238,7 +1255,15 @@ def stadium(self):
     return self.stadium_id</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.game.Game.stadium_id"><code class="name">var <span class="ident">stadium_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.game.Game.state"><code class="name">var <span class="ident">state</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.statsheet"><code class="name">var <span class="ident">statsheet</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1255,6 +1280,10 @@ def stadium(self):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.game.Game.tournament"><code class="name">var <span class="ident">tournament</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.game.Game.weather"><code class="name">var <span class="ident">weather</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1309,20 +1338,6 @@ def winning_team_nickname(self):
 </dl>
 <h3>Methods</h3>
 <dl>
-<dt id="blaseball_mike.models.game.Game.away_batter_mod"><code class="name flex">
-<span>def <span class="ident">away_batter_mod</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_away_batter_mod_id&#34;, cache_name=&#34;_away_batter_mod&#34;, use_default=False)
-def away_batter_mod(self):
-    return Modification.load_one(getattr(self, &#34;_away_batter_mod_id&#34;, None))</code></pre>
-</details>
-</dd>
 <dt id="blaseball_mike.models.game.Game.away_payout"><code class="name flex">
 <span>def <span class="ident">away_payout</span></span>(<span>self, bet, season=None)</span>
 </code></dt>
@@ -1347,48 +1362,6 @@ def away_batter_mod(self):
         return self._payout_calc(self.away_odds, bet)</code></pre>
 </details>
 </dd>
-<dt id="blaseball_mike.models.game.Game.away_pitcher_mod"><code class="name flex">
-<span>def <span class="ident">away_pitcher_mod</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_away_pitcher_mod_id&#34;, cache_name=&#34;_away_pitcher_mod&#34;, use_default=False)
-def away_pitcher_mod(self):
-    return Modification.load_one(getattr(self, &#34;_away_pitcher_mod_id&#34;, None))</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.day"><code class="name flex">
-<span>def <span class="ident">day</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_day&#34;, use_default=False)
-def day(self):
-    return self._day + 1</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.home_batter_mod"><code class="name flex">
-<span>def <span class="ident">home_batter_mod</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_home_batter_mod_id&#34;, cache_name=&#34;_home_batter_mod&#34;, use_default=False)
-def home_batter_mod(self):
-    return Modification.load_one(getattr(self, &#34;_home_batter_mod_id&#34;, None))</code></pre>
-</details>
-</dd>
 <dt id="blaseball_mike.models.game.Game.home_payout"><code class="name flex">
 <span>def <span class="ident">home_payout</span></span>(<span>self, bet, season=None)</span>
 </code></dt>
@@ -1411,62 +1384,6 @@ def home_batter_mod(self):
         return self._payout_calc_s12(self.home_odds, bet)
     else:
         return self._payout_calc(self.home_odds, bet)</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.home_pitcher_mod"><code class="name flex">
-<span>def <span class="ident">home_pitcher_mod</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_home_pitcher_mod_id&#34;, cache_name=&#34;_home_pitcher_mod&#34;, use_default=False)
-def home_pitcher_mod(self):
-    return Modification.load_one(getattr(self, &#34;_home_pitcher_mod_id&#34;, None))</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.inning"><code class="name flex">
-<span>def <span class="ident">inning</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_inning&#34;, use_default=False)
-def inning(self):
-    return self._inning + 1</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.season"><code class="name flex">
-<span>def <span class="ident">season</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
-def season(self):
-    return self._season + 1</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.game.Game.weather"><code class="name flex">
-<span>def <span class="ident">weather</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_weather&#34;, use_default=False)
-def weather(self):
-    return Weather.load_one(self._weather)</code></pre>
 </details>
 </dd>
 </dl>

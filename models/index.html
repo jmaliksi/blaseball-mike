@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
 <title>blaseball_mike.models API documentation</title>
-<meta name="description" content="For deserializing the json responses …" />
+<meta name="description" content="Models includes wrapped objects for easily consuming data from the Blaseball API and other community sources. Every
+known API response has a …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,23 +23,69 @@
 <h1 class="title">Module <code>blaseball_mike.models</code></h1>
 </header>
 <section id="section-intro">
-<p>For deserializing the json responses.</p>
-<p>To accommodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
-properties from the returned JSON rather than explicitly mapping each property. This means
-that documentation of available fields with ultimately be incomplete. The easiest way
-to find available properties outside of looking at the spec is to look at the <code>fields</code>
-property to see what JSON keys have been deserialized.</p>
+<p>Models includes wrapped objects for easily consuming data from the Blaseball API and other community sources. Every
+known API response has a respective object, found in one of the included sub-modules.</p>
+<p>Models are loaded by using one of their class method loaders, depending on context. For example, if you wanted a list of
+all players and their internal attributes on a given in-game day:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from blaseball_mike.models import Player
+&gt;&gt;&gt; all_players = Player.load_all_by_gameday(season=18, day=3)
+</code></pre>
+<p>This will return a list of Player objects. Objects contain all the traditional fields found in the API, as well as
+helper functions for common tasks. For example:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; york = Player.find_by_name(&quot;York Silk&quot;)
+&gt;&gt;&gt; york.get_hitting_stars()
+4.3
+</code></pre>
+<p>In addition, fields that previously referenced IDs of other objects will lazy-load those objects automatically.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from blaseball_mike.models import Team
+&gt;&gt;&gt; fridays = Team.load_by_name('fridays')
+&gt;&gt;&gt; [player.name for player in fridays.lineup]
+['Elijah Valenzuela', 'Juice Collins', 'York Silk', 'Baldwin Breadwinner', 'Terrell Bradley', 'Sixpack Dogwalker', 'Fletcher Yamamoto', 'Bevan Underbuck', 'Christian Combs']
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="simulated-stlats">Simulated stlats</h3>
+<p>If you want to see how a decree/blessing may shake out, you can make a simulated copy of a player with modified stats.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; york = Player.load_one('86d4e22b-f107-4bcf-9625-32d387fcb521')
+&gt;&gt;&gt; yorks = [york.simulated_copy(multipliers={'overall_rating': n/100.0}) for n in range(1, 10)]
+&gt;&gt;&gt; [y.batting_rating for y in yorks]
+[0.9823391734764451, 0.991192294100704, 1.000038548392815, 1.0088780122143204, 1.0177107598404203, 1.026536864008585, 1.0353563959652192, 1.0441694255104683, 1.0529760210412604]
+</code></pre>
+<h3 id="find-player-by-name">Find player by name</h3>
+<p>This hooks into the blaseball-reference API for reverse name lookup (relatively slow, please be gentle)</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; kiki = Player.find_by_name('Kiki Familia')
+&gt;&gt;&gt; kiki.name
+'Kiki Familia'
+</code></pre>
+<h3 id="stlats-viewer-cli">stlats viewer CLI</h3>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from blaseball_mike.utils import print_stlats
+&gt;&gt;&gt; fridays = Team.load_by_name('fridays')
+&gt;&gt;&gt; print_stlats(*fridays.rotation)
+name        base  cont  grou  indu  lase  divi  mart  moxi  musc  path  thwa  trag  anti  chas  omni  tena  watc  cold  over  ruth  shak  unth  cinn  dece  pean  pres  soul  tota
+Bevan Unde  0.91  0.74  0.81  0.57  0.81  0.22  0.76  0.61  0.11  0.01  0.11  0.10  0.21  0.38  0.59  0.97  0.70  0.42  0.34  0.15  0.93  0.50  0.56  0.00  1.00  0.20  6.00  13.00
+Stevenson   0.97  0.23  0.38  0.57  0.85  0.88  0.28  0.17  0.42  0.20  0.52  0.10  1.04  0.65  0.16  0.97  0.80  0.40  0.36  0.83  0.08  0.42  0.67  0.00  1.00  0.47  4.00  12.00
+James Mora  0.80  0.41  0.33  0.66  0.11  0.36  0.86  0.49  0.76  0.10  0.92  0.10  0.51  0.57  0.69  0.46  1.08  0.09  0.59  0.52  0.12  0.23  0.18  0.00  1.00  0.54  3.00  12.00
+Sixpack Do  0.98  0.10  0.92  0.18  0.03  0.55  0.24  0.75  0.89  0.90  0.66  0.10  0.89  0.18  0.69  0.43  0.55  0.78  0.78  0.46  0.09  0.55  0.89  0.00  0.00  0.60  4.00  12.00
+Evelton Mc  0.38  0.48  0.34  0.10  0.43  0.16  0.42  0.04  0.15  0.69  0.16  0.10  0.20  1.14  0.56  0.64  0.19  0.99  0.85  0.65  0.17  0.12  0.88  0.00  1.00  0.81  4.00  12.00
+</code></pre>
+<h3 id="current-day">Current day</h3>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from blaseball_mike.models import SimulationData
+&gt;&gt;&gt; sim = SimulationData.load()
+&gt;&gt;&gt; sim.day
+71
+</code></pre>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#34;&#34;&#34;For deserializing the json responses.
+<pre><code class="python">&#34;&#34;&#34;
+Models includes wrapped objects for easily consuming data from the Blaseball API and other community sources. Every
+known API response has a respective object, found in one of the included sub-modules.
 
-To accommodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
-properties from the returned JSON rather than explicitly mapping each property. This means
-that documentation of available fields with ultimately be incomplete. The easiest way
-to find available properties outside of looking at the spec is to look at the `fields`
-property to see what JSON keys have been deserialized.
+
+.. include:: ../../docs/models.md
+
+.. include:: ../../docs/examples.md
+
 &#34;&#34;&#34;
 
 from .base import *
@@ -148,7 +195,15 @@ from .weather import *</code></pre>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#simulated-stlats">Simulated stlats</a></li>
+<li><a href="#find-player-by-name">Find player by name</a></li>
+<li><a href="#stlats-viewer-cli">stlats viewer CLI</a></li>
+<li><a href="#current-day">Current day</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>

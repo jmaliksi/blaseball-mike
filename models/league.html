@@ -247,13 +247,6 @@ class Tiebreaker(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.league.Division.teams"><code class="name">var <span class="ident">teams</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.league.Division.load"><code class="name flex">
@@ -327,6 +320,10 @@ def load_by_name(cls, name):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.league.Division.teams"><code class="name">var <span class="ident">teams</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 </dl>
 </dd>
 <dt id="blaseball_mike.models.league.League"><code class="flex name class">
@@ -382,17 +379,6 @@ def load_by_name(cls, name):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.league.League.subleagues"><code class="name">var <span class="ident">subleagues</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.league.League.tiebreakers"><code class="name">var <span class="ident">tiebreakers</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.league.League.load"><code class="name flex">
@@ -434,6 +420,10 @@ def load_by_id(cls, id_):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.league.League.subleagues"><code class="name">var <span class="ident">subleagues</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.league.League.teams"><code class="name">var <span class="ident">teams</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -449,6 +439,10 @@ def teams(self):
         self._teams.update(subleague.teams)
     return self._teams</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.league.League.tiebreakers"><code class="name">var <span class="ident">tiebreakers</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -500,13 +494,6 @@ def teams(self):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.league.Subleague.divisions"><code class="name">var <span class="ident">divisions</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.league.Subleague.load"><code class="name flex">
@@ -529,6 +516,10 @@ def load(cls, id_):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.league.Subleague.divisions"><code class="name">var <span class="ident">divisions</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.league.Subleague.id"><code class="name">var <span class="ident">id</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -595,13 +586,6 @@ def teams(self):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.league.Tiebreaker.order"><code class="name">var <span class="ident">order</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.league.Tiebreaker.load"><code class="name flex">
@@ -639,6 +623,10 @@ def load_one(cls, id_):
 <h3>Instance variables</h3>
 <dl>
 <dt id="blaseball_mike.models.league.Tiebreaker.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.league.Tiebreaker.order"><code class="name">var <span class="ident">order</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>

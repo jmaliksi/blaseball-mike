@@ -214,21 +214,6 @@ class Feed(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.feed.Feed.game_tags"><code class="name">var <span class="ident">game_tags</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.feed.Feed.player_tags"><code class="name">var <span class="ident">player_tags</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.feed.Feed.team_tags"><code class="name">var <span class="ident">team_tags</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.feed.Feed.load"><code class="name flex">
@@ -321,7 +306,19 @@ def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=N
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.feed.Feed.created"><code class="name">var <span class="ident">created</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.feed.Feed.day"><code class="name">var <span class="ident">day</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.feed.Feed.description"><code class="name">var <span class="ident">description</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.feed.Feed.game_tags"><code class="name">var <span class="ident">game_tags</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -341,6 +338,18 @@ def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=N
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.feed.Feed.player_tags"><code class="name">var <span class="ident">player_tags</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.feed.Feed.season"><code class="name">var <span class="ident">season</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.feed.Feed.team_tags"><code class="name">var <span class="ident">team_tags</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.feed.Feed.tournament"><code class="name">var <span class="ident">tournament</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -348,51 +357,6 @@ def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=N
 <dt id="blaseball_mike.models.feed.Feed.type"><code class="name">var <span class="ident">type</span></code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="blaseball_mike.models.feed.Feed.created"><code class="name flex">
-<span>def <span class="ident">created</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_created&#34;, use_default=False)
-def created(self):
-    return parse(self._created)</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.feed.Feed.day"><code class="name flex">
-<span>def <span class="ident">day</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_day&#34;, use_default=False)
-def day(self):
-    return self._day + 1</code></pre>
-</details>
-</dd>
-<dt id="blaseball_mike.models.feed.Feed.season"><code class="name flex">
-<span>def <span class="ident">season</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
-def season(self):
-    return self._season + 1</code></pre>
-</details>
 </dd>
 </dl>
 </dd>

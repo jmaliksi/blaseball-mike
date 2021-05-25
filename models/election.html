@@ -356,17 +356,6 @@ class EventResult(TidingResult):
 <ul class="hlist">
 <li><a title="blaseball_mike.models.election.BonusResult" href="#blaseball_mike.models.election.BonusResult">BonusResult</a></li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.election.BlessingResult.highest_team"><code class="name">var <span class="ident">highest_team</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.BlessingResult.team_id"><code class="name">var <span class="ident">team_id</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.election.BlessingResult.load"><code class="name flex">
@@ -445,6 +434,10 @@ def blessing_title(self):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.election.BlessingResult.highest_team"><code class="name">var <span class="ident">highest_team</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.BlessingResult.highest_team_votes"><code class="name">var <span class="ident">highest_team_votes</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -464,6 +457,10 @@ def blessing_title(self):
 def team(self):
     return self.team_id</code></pre>
 </details>
+</dd>
+<dt id="blaseball_mike.models.election.BlessingResult.team_id"><code class="name">var <span class="ident">team_id</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.election.BlessingResult.team_votes"><code class="name">var <span class="ident">team_votes</span></code></dt>
 <dd>
@@ -711,25 +708,6 @@ def load_one(cls, id_):
 <ul class="hlist">
 <li><a title="blaseball_mike.models.election.OffseasonSetup" href="#blaseball_mike.models.election.OffseasonSetup">OffseasonSetup</a></li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.election.Election.blessings"><code class="name">var <span class="ident">blessings</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.Election.decrees"><code class="name">var <span class="ident">decrees</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.Election.gifts"><code class="name">var <span class="ident">gifts</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.Election.wills"><code class="name">var <span class="ident">wills</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.election.Election.load"><code class="name flex">
@@ -751,7 +729,23 @@ def load(cls):
 </dl>
 <h3>Instance variables</h3>
 <dl>
+<dt id="blaseball_mike.models.election.Election.blessings"><code class="name">var <span class="ident">blessings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.decrees"><code class="name">var <span class="ident">decrees</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.Election.decrees_to_pass"><code class="name">var <span class="ident">decrees_to_pass</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.gifts"><code class="name">var <span class="ident">gifts</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.Election.wills"><code class="name">var <span class="ident">wills</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -823,21 +817,6 @@ def load(cls):
 <ul class="hlist">
 <li><a title="blaseball_mike.models.election.OffseasonResult" href="#blaseball_mike.models.election.OffseasonResult">OffseasonResult</a></li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.election.ElectionResult.bonus_results"><code class="name">var <span class="ident">bonus_results</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.ElectionResult.decree_results"><code class="name">var <span class="ident">decree_results</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.election.ElectionResult.event_results"><code class="name">var <span class="ident">event_results</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.election.ElectionResult.load_by_season"><code class="name flex">
@@ -872,11 +851,27 @@ def blessing_results(self):
     return self.bonus_results</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.models.election.ElectionResult.bonus_results"><code class="name">var <span class="ident">bonus_results</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.decree_results"><code class="name">var <span class="ident">decree_results</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.event_results"><code class="name">var <span class="ident">event_results</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.election.ElectionResult.id"><code class="name">var <span class="ident">id</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.election.ElectionResult.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.election.ElectionResult.season"><code class="name">var <span class="ident">season</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -911,23 +906,6 @@ def tiding_results(self):
 <dt id="blaseball_mike.models.election.ElectionResult.will_results"><code class="name">var <span class="ident">will_results</span></code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="blaseball_mike.models.election.ElectionResult.season"><code class="name flex">
-<span>def <span class="ident">season</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_season&#34;, use_default=False)
-def season(self):
-    return self._season + 1</code></pre>
-</details>
 </dd>
 </dl>
 </dd>

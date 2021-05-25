@@ -272,14 +272,6 @@ def load_by_day(cls, season, day):
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.away_team_stats"><code class="name">var <span class="ident">away_team_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def away_team_stats(self):
-    return self.team_stats()[self._away_team_stats_id]</code></pre>
-</details>
 </dd>
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.away_team_total_batters"><code class="name">var <span class="ident">away_team_total_batters</span></code></dt>
 <dd>
@@ -292,14 +284,6 @@ def away_team_stats(self):
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.home_team_stats"><code class="name">var <span class="ident">home_team_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@property
-def home_team_stats(self):
-    return self.team_stats()[self._home_team_stats_id]</code></pre>
-</details>
 </dd>
 <dt id="blaseball_mike.models.statsheet.GameStatsheet.home_team_total_batters"><code class="name">var <span class="ident">home_team_total_batters</span></code></dt>
 <dd>
@@ -553,13 +537,6 @@ property to see what JSON keys have been deserialized.</p></div>
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.statsheet.SeasonStatsheet.team_stats"><code class="name">var <span class="ident">team_stats</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.statsheet.SeasonStatsheet.load"><code class="name flex">
@@ -601,6 +578,10 @@ def load_by_season(cls, season):
 <h3>Instance variables</h3>
 <dl>
 <dt id="blaseball_mike.models.statsheet.SeasonStatsheet.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.SeasonStatsheet.team_stats"><code class="name">var <span class="ident">team_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -646,13 +627,6 @@ property to see what JSON keys have been deserialized.</p></div>
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.statsheet.TeamStatsheet.player_stats"><code class="name">var <span class="ident">player_stats</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.statsheet.TeamStatsheet.load"><code class="name flex">
@@ -689,6 +663,10 @@ def load(cls, ids):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.statsheet.TeamStatsheet.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.statsheet.TeamStatsheet.player_stats"><code class="name">var <span class="ident">player_stats</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>

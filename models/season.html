@@ -133,21 +133,6 @@ class Standings(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.models.season.Season.league"><code class="name">var <span class="ident">league</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.season.Season.standings"><code class="name">var <span class="ident">standings</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.season.Season.stats"><code class="name">var <span class="ident">stats</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.season.Season.load"><code class="name flex">
@@ -173,6 +158,10 @@ def load(cls, season_number):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.season.Season.league"><code class="name">var <span class="ident">league</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.season.Season.rules"><code class="name">var <span class="ident">rules</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -181,26 +170,21 @@ def load(cls, season_number):
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="blaseball_mike.models.season.Season.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dt id="blaseball_mike.models.season.Season.season_number"><code class="name">var <span class="ident">season_number</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="blaseball_mike.models.season.Season.season_number"><code class="name flex">
-<span>def <span class="ident">season_number</span></span>(<span>self)</span>
-</code></dt>
+<dt id="blaseball_mike.models.season.Season.standings"><code class="name">var <span class="ident">standings</span></code></dt>
 <dd>
 <div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@Base.lazy_load(&#34;_season_number&#34;, use_default=False)
-def season_number(self):
-    return self._season_number + 1</code></pre>
-</details>
+</dd>
+<dt id="blaseball_mike.models.season.Season.stats"><code class="name">var <span class="ident">stats</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.season.Season.terminology"><code class="name">var <span class="ident">terminology</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
