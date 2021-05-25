@@ -17,15 +17,72 @@ class Election(Base):
         offseason = database.get_offseason_election_details()
         return cls(offseason)
 
+    @Base.lazy_load("_blessings", default_value=list())
+    def blessings(self):
+        return [Blessing(b) for b in self._blessings]
 
-OffseasonSetup = Election
+    @Base.lazy_load("_decrees", default_value=list())
+    def decrees(self):
+        return [Decree(b) for b in self._decrees]
+
+    @Base.lazy_load("_wills", default_value=list())
+    def wills(self):
+        return [Will(b) for b in self._wills]
+
+    @Base.lazy_load("_gifts", default_value=list())
+    def gifts(self):
+        return [Gift(b) for b in self._gifts]
+
+
+class OffseasonSetup(Election):
+    pass
+
+
+class Decree(Base):
+    """Represents a decree currently up for vote"""
+    @classmethod
+    def _get_fields(cls):
+        p = getattr(Election.load(), "decrees", [])
+        if len(p) == 0:
+            return []
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+
+class Blessing(Base):
+    """Represents a blessing currently up for vote"""
+    @classmethod
+    def _get_fields(cls):
+        p = getattr(Election.load(), "blessings", [])
+        if len(p) == 0:
+            return []
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+
+class Will(Base):
+    """Represents a will currently up for vote"""
+    @classmethod
+    def _get_fields(cls):
+        p = getattr(Election.load(), "wills", [])
+        if len(p) == 0:
+            return []
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+
+class Gift(Base):
+    """Represents a gift currently available"""
+    @classmethod
+    def _get_fields(cls):
+        p = getattr(Election.load(), "gifts", [])
+        if len(p) == 0:
+            return []
+        return [cls._from_api_conversion(x) for x in p.fields]
 
 
 class ElectionResult(Base):
     """Represents the results of an election"""
     @classmethod
     def _get_fields(cls):
-        p = cls.load_by_season(11)
+        p = cls.load_by_season(19)
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
@@ -65,7 +122,8 @@ class ElectionResult(Base):
         return self._season + 1
 
 
-OffseasonResult = ElectionResult
+class OffseasonResult(ElectionResult):
+    pass
 
 
 class DecreeResult(Base):
@@ -142,6 +200,10 @@ class BlessingResult(Base):
         return self.bonus_id
 
 
+class BonusResult(BlessingResult):
+    pass
+
+
 class TidingResult(Base):
     """Represents the results of a single election tiding"""
     @classmethod
@@ -161,4 +223,5 @@ class TidingResult(Base):
         return cls.load(id_).get(id_)
 
 
-EventResult = TidingResult
+class EventResult(TidingResult):
+    pass
