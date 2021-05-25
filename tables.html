@@ -31,46 +31,9 @@
 from enum import Enum
 
 
-class Weather(Enum):
-    INVALID = -1, &#34;Invalid Weather&#34;
-    VOID = 0, &#34;Void&#34;
-    SUNNY = 1, &#34;Sun 2&#34;
-    OVERCAST = 2, &#34;Overcast&#34;
-    RAINY = 3, &#34;Rainy&#34;
-    SANDSTORM = 4, &#34;Sandstorm&#34;
-    SNOWY = 5, &#34;Snowy&#34;
-    ACIDIC = 6, &#34;Acidic&#34;
-    SOLAR_ECLIPSE = 7, &#34;Solar Eclipse&#34;
-    GLITTER = 8, &#34;Glitter&#34;
-    BLOODRAIN = 9, &#34;Blooddrain&#34;
-    PEANUTS = 10, &#34;Peanuts&#34;
-    BIRDS = 11, &#34;Birds&#34;
-    FEEDBACK = 12, &#34;Feedback&#34;
-    REVERB = 13, &#34;Reverb&#34;
-    BLACK_HOLE = 14, &#34;Black Hole&#34;
-    COFFEE = 15, &#34;Coffee&#34;
-    COFFEE_2 = 16, &#34;Coffee 2&#34;
-    COFFEE_3S = 17, &#34;Coffee 3s&#34;
-    FLOODING = 18, &#34;Flooding&#34;
-    SALMON = 19, &#34;Salmon&#34;
-    POLARITY_PLUS = 20, &#34;Polarity +&#34;
-    POLARITY_MINUS = 21, &#34;Polarity -&#34;
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        return obj
-
-
 class Tarot(Enum):
-    INVALID = -1, &#34;----&#34;
+    INVALID = -2, &#34;----&#34;
+    FOOL = -1, &#34;Fool&#34;
     MAGICIAN = 0, &#34;I The Magician&#34;
     HIGH_PRIESTESS = 1, &#34;II The High Priestess&#34;
     EMPRESS = 2, &#34;III The Empress&#34;
@@ -825,7 +788,8 @@ Note: This is not the order they will appear in chronologically!</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Tarot(Enum):
-    INVALID = -1, &#34;----&#34;
+    INVALID = -2, &#34;----&#34;
+    FOOL = -1, &#34;Fool&#34;
     MAGICIAN = 0, &#34;I The Magician&#34;
     HIGH_PRIESTESS = 1, &#34;II The High Priestess&#34;
     EMPRESS = 2, &#34;III The Empress&#34;
@@ -882,6 +846,10 @@ Note: This is not the order they will appear in chronologically!</p></div>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.tables.Tarot.EMPRESS"><code class="name">var <span class="ident">EMPRESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.Tarot.FOOL"><code class="name">var <span class="ident">FOOL</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -946,153 +914,6 @@ Note: This is not the order they will appear in chronologically!</p></div>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.tables.Tarot.WHEEL_OF_FORTUNE"><code class="name">var <span class="ident">WHEEL_OF_FORTUNE</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
-<dt id="blaseball_mike.tables.Weather"><code class="flex name class">
-<span>class <span class="ident">Weather</span></span>
-<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>An enumeration.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class Weather(Enum):
-    INVALID = -1, &#34;Invalid Weather&#34;
-    VOID = 0, &#34;Void&#34;
-    SUNNY = 1, &#34;Sun 2&#34;
-    OVERCAST = 2, &#34;Overcast&#34;
-    RAINY = 3, &#34;Rainy&#34;
-    SANDSTORM = 4, &#34;Sandstorm&#34;
-    SNOWY = 5, &#34;Snowy&#34;
-    ACIDIC = 6, &#34;Acidic&#34;
-    SOLAR_ECLIPSE = 7, &#34;Solar Eclipse&#34;
-    GLITTER = 8, &#34;Glitter&#34;
-    BLOODRAIN = 9, &#34;Blooddrain&#34;
-    PEANUTS = 10, &#34;Peanuts&#34;
-    BIRDS = 11, &#34;Birds&#34;
-    FEEDBACK = 12, &#34;Feedback&#34;
-    REVERB = 13, &#34;Reverb&#34;
-    BLACK_HOLE = 14, &#34;Black Hole&#34;
-    COFFEE = 15, &#34;Coffee&#34;
-    COFFEE_2 = 16, &#34;Coffee 2&#34;
-    COFFEE_3S = 17, &#34;Coffee 3s&#34;
-    FLOODING = 18, &#34;Flooding&#34;
-    SALMON = 19, &#34;Salmon&#34;
-    POLARITY_PLUS = 20, &#34;Polarity +&#34;
-    POLARITY_MINUS = 21, &#34;Polarity -&#34;
-
-    @classmethod
-    def _missing_(cls, value):
-        t = cls.INVALID
-        t._value_ = value
-        return t
-
-    def __new__(cls, keycode, text):
-        obj = object.__new__(cls)
-        obj._value_ = keycode
-        obj.text = text
-        return obj</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>enum.Enum</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="blaseball_mike.tables.Weather.ACIDIC"><code class="name">var <span class="ident">ACIDIC</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.BIRDS"><code class="name">var <span class="ident">BIRDS</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.BLACK_HOLE"><code class="name">var <span class="ident">BLACK_HOLE</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.BLOODRAIN"><code class="name">var <span class="ident">BLOODRAIN</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.COFFEE"><code class="name">var <span class="ident">COFFEE</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.COFFEE_2"><code class="name">var <span class="ident">COFFEE_2</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.COFFEE_3S"><code class="name">var <span class="ident">COFFEE_3S</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.FEEDBACK"><code class="name">var <span class="ident">FEEDBACK</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.FLOODING"><code class="name">var <span class="ident">FLOODING</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.GLITTER"><code class="name">var <span class="ident">GLITTER</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.INVALID"><code class="name">var <span class="ident">INVALID</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.OVERCAST"><code class="name">var <span class="ident">OVERCAST</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.PEANUTS"><code class="name">var <span class="ident">PEANUTS</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.POLARITY_MINUS"><code class="name">var <span class="ident">POLARITY_MINUS</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.POLARITY_PLUS"><code class="name">var <span class="ident">POLARITY_PLUS</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.RAINY"><code class="name">var <span class="ident">RAINY</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.REVERB"><code class="name">var <span class="ident">REVERB</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.SALMON"><code class="name">var <span class="ident">SALMON</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.SANDSTORM"><code class="name">var <span class="ident">SANDSTORM</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.SNOWY"><code class="name">var <span class="ident">SNOWY</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.SOLAR_ECLIPSE"><code class="name">var <span class="ident">SOLAR_ECLIPSE</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.SUNNY"><code class="name">var <span class="ident">SUNNY</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.tables.Weather.VOID"><code class="name">var <span class="ident">VOID</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1240,6 +1061,7 @@ Note: This is not the order they will appear in chronologically!</p></div>
 <li><code><a title="blaseball_mike.tables.Tarot.DEVIL" href="#blaseball_mike.tables.Tarot.DEVIL">DEVIL</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.EMPEROR" href="#blaseball_mike.tables.Tarot.EMPEROR">EMPEROR</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.EMPRESS" href="#blaseball_mike.tables.Tarot.EMPRESS">EMPRESS</a></code></li>
+<li><code><a title="blaseball_mike.tables.Tarot.FOOL" href="#blaseball_mike.tables.Tarot.FOOL">FOOL</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.HANGED_MAN" href="#blaseball_mike.tables.Tarot.HANGED_MAN">HANGED_MAN</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.HERMIT" href="#blaseball_mike.tables.Tarot.HERMIT">HERMIT</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.HIGH_PRIESTESS" href="#blaseball_mike.tables.Tarot.HIGH_PRIESTESS">HIGH_PRIESTESS</a></code></li>
@@ -1256,34 +1078,6 @@ Note: This is not the order they will appear in chronologically!</p></div>
 <li><code><a title="blaseball_mike.tables.Tarot.TEMPERANCE" href="#blaseball_mike.tables.Tarot.TEMPERANCE">TEMPERANCE</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.TOWER" href="#blaseball_mike.tables.Tarot.TOWER">TOWER</a></code></li>
 <li><code><a title="blaseball_mike.tables.Tarot.WHEEL_OF_FORTUNE" href="#blaseball_mike.tables.Tarot.WHEEL_OF_FORTUNE">WHEEL_OF_FORTUNE</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="blaseball_mike.tables.Weather" href="#blaseball_mike.tables.Weather">Weather</a></code></h4>
-<ul class="two-column">
-<li><code><a title="blaseball_mike.tables.Weather.ACIDIC" href="#blaseball_mike.tables.Weather.ACIDIC">ACIDIC</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.BIRDS" href="#blaseball_mike.tables.Weather.BIRDS">BIRDS</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.BLACK_HOLE" href="#blaseball_mike.tables.Weather.BLACK_HOLE">BLACK_HOLE</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.BLOODRAIN" href="#blaseball_mike.tables.Weather.BLOODRAIN">BLOODRAIN</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.COFFEE" href="#blaseball_mike.tables.Weather.COFFEE">COFFEE</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.COFFEE_2" href="#blaseball_mike.tables.Weather.COFFEE_2">COFFEE_2</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.COFFEE_3S" href="#blaseball_mike.tables.Weather.COFFEE_3S">COFFEE_3S</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.FEEDBACK" href="#blaseball_mike.tables.Weather.FEEDBACK">FEEDBACK</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.FLOODING" href="#blaseball_mike.tables.Weather.FLOODING">FLOODING</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.GLITTER" href="#blaseball_mike.tables.Weather.GLITTER">GLITTER</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.INVALID" href="#blaseball_mike.tables.Weather.INVALID">INVALID</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.OVERCAST" href="#blaseball_mike.tables.Weather.OVERCAST">OVERCAST</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.PEANUTS" href="#blaseball_mike.tables.Weather.PEANUTS">PEANUTS</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.POLARITY_MINUS" href="#blaseball_mike.tables.Weather.POLARITY_MINUS">POLARITY_MINUS</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.POLARITY_PLUS" href="#blaseball_mike.tables.Weather.POLARITY_PLUS">POLARITY_PLUS</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.RAINY" href="#blaseball_mike.tables.Weather.RAINY">RAINY</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.REVERB" href="#blaseball_mike.tables.Weather.REVERB">REVERB</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.SALMON" href="#blaseball_mike.tables.Weather.SALMON">SALMON</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.SANDSTORM" href="#blaseball_mike.tables.Weather.SANDSTORM">SANDSTORM</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.SNOWY" href="#blaseball_mike.tables.Weather.SNOWY">SNOWY</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.SOLAR_ECLIPSE" href="#blaseball_mike.tables.Weather.SOLAR_ECLIPSE">SOLAR_ECLIPSE</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.SUNNY" href="#blaseball_mike.tables.Weather.SUNNY">SUNNY</a></code></li>
-<li><code><a title="blaseball_mike.tables.Weather.VOID" href="#blaseball_mike.tables.Weather.VOID">VOID</a></code></li>
 </ul>
 </li>
 </ul>
