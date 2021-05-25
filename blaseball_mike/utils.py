@@ -1,4 +1,7 @@
 """Misc utils"""
+import datetime
+
+from . import chronicler
 
 
 def print_stlats(*players, headers=None):
@@ -62,3 +65,16 @@ def csv_format(*models, headers=None):
     for model in models:
         res.append([getattr(model, header, None) for header in headers])
     return res
+
+
+def get_gameday_start_time(season, day):
+    # TIME_FUDGE accounts for latency in the streamdata polling vs the player/team endpoint polls
+    TIME_FUDGE = datetime.timedelta(seconds=5)
+    if season < 1:
+        raise ValueError("Season must be >= 1")
+    if day < 1:
+        raise ValueError("Day must be >= 1")
+    timestamp = chronicler.time_map(season=season, day=day)
+    if len(timestamp) == 0:
+        return None
+    return timestamp[0]["startTime"] + TIME_FUDGE

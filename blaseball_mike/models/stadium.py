@@ -1,6 +1,6 @@
 from .base import Base
 from .modification import Modification
-from .. import chronicler, database
+from .. import chronicler, database, utils
 
 
 class Stadium(Base):
@@ -22,6 +22,26 @@ class Stadium(Base):
     @classmethod
     def load_one(cls, id_):
         stadiums = list(chronicler.get_entities("stadium", id_=id_))
+        if len(stadiums) < 1:
+            return None
+        return cls(stadiums[0]["data"])
+
+    @classmethod
+    def load_all_by_gameday(cls, season, day):
+        timestamp = utils.get_gameday_start_time(season, day)
+        if not timestamp:
+            return {}
+        stadiums = chronicler.get_entities("stadium", at=timestamp)
+        return {
+            x['entityId']: cls(x['data']) for x in stadiums
+        }
+
+    @classmethod
+    def load_by_gameday(cls, id_, season, day):
+        timestamp = utils.get_gameday_start_time(season, day)
+        if not timestamp:
+            return None
+        stadiums = list(chronicler.get_entities("stadium", id_=id_, at=timestamp))
         if len(stadiums) < 1:
             return None
         return cls(stadiums[0]["data"])
