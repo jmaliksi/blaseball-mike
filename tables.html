@@ -180,7 +180,50 @@ class StatType(Enum):
         obj = object.__new__(cls)
         obj._value_ = keycode
         obj.stat_name = stat_name
-        return obj</code></pre>
+        return obj
+
+
+class SimPhase(Enum):
+    &#34;&#34;&#34;
+    Simulation Data Phase number mapping
+    &#34;&#34;&#34;
+    REST = 0
+    PRESEASON = 1
+    EARLSEASON = 2
+    EARLSIESTA = 3
+    MIDSEASON = 4
+    LATESIESTA = 5
+    LATESEASON = 6
+    SEASON_END = 7
+    PRE_POSTSEASON = 8
+    EARLY_POSTSEASON = 9
+    EARLY_POSTSEASON_END = 10
+    POSTSEASON = 11
+    POSTSEASON_END = 12
+    ELECTION = 13
+
+
+class SimPhaseDiscipline(Enum):
+    &#34;&#34;&#34;
+    Simulation Data Phase number mapping for the Discipline Era (Season 1 - 11)
+    Note: This is not the order they will appear in chronologically!
+    &#34;&#34;&#34;
+    REST = 0
+    SEASON_PREP = 1
+    SEASON = 2
+    SEASON_END = 3
+    PLAYOFFS = 4
+    PLAYOFFS_END = 5
+    OFFSEASON = 6
+    IDOL_RESULTS = 7
+    BLOODBATH = 8
+    BOSS_FIGHT = 9
+    WILDCARD = 10
+    WILDCARD_END = 11
+    TOURNAMENT_START = 12
+    TOURNAMENT_PLAY = 13
+    TOURNAMENT_WAIT = 14
+    TOURNAMENT_END = 15</code></pre>
 </details>
 </section>
 <section>
@@ -412,6 +455,204 @@ class StatType(Enum):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.tables.DamageType.WALK"><code class="name">var <span class="ident">WALK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase"><code class="flex name class">
+<span>class <span class="ident">SimPhase</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simulation Data Phase number mapping</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SimPhase(Enum):
+    &#34;&#34;&#34;
+    Simulation Data Phase number mapping
+    &#34;&#34;&#34;
+    REST = 0
+    PRESEASON = 1
+    EARLSEASON = 2
+    EARLSIESTA = 3
+    MIDSEASON = 4
+    LATESIESTA = 5
+    LATESEASON = 6
+    SEASON_END = 7
+    PRE_POSTSEASON = 8
+    EARLY_POSTSEASON = 9
+    EARLY_POSTSEASON_END = 10
+    POSTSEASON = 11
+    POSTSEASON_END = 12
+    ELECTION = 13</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.tables.SimPhase.EARLSEASON"><code class="name">var <span class="ident">EARLSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.EARLSIESTA"><code class="name">var <span class="ident">EARLSIESTA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.EARLY_POSTSEASON"><code class="name">var <span class="ident">EARLY_POSTSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.EARLY_POSTSEASON_END"><code class="name">var <span class="ident">EARLY_POSTSEASON_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.ELECTION"><code class="name">var <span class="ident">ELECTION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.LATESEASON"><code class="name">var <span class="ident">LATESEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.LATESIESTA"><code class="name">var <span class="ident">LATESIESTA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.MIDSEASON"><code class="name">var <span class="ident">MIDSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.POSTSEASON"><code class="name">var <span class="ident">POSTSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.POSTSEASON_END"><code class="name">var <span class="ident">POSTSEASON_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.PRESEASON"><code class="name">var <span class="ident">PRESEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.PRE_POSTSEASON"><code class="name">var <span class="ident">PRE_POSTSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.REST"><code class="name">var <span class="ident">REST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhase.SEASON_END"><code class="name">var <span class="ident">SEASON_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline"><code class="flex name class">
+<span>class <span class="ident">SimPhaseDiscipline</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simulation Data Phase number mapping for the Discipline Era (Season 1 - 11)
+Note: This is not the order they will appear in chronologically!</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SimPhaseDiscipline(Enum):
+    &#34;&#34;&#34;
+    Simulation Data Phase number mapping for the Discipline Era (Season 1 - 11)
+    Note: This is not the order they will appear in chronologically!
+    &#34;&#34;&#34;
+    REST = 0
+    SEASON_PREP = 1
+    SEASON = 2
+    SEASON_END = 3
+    PLAYOFFS = 4
+    PLAYOFFS_END = 5
+    OFFSEASON = 6
+    IDOL_RESULTS = 7
+    BLOODBATH = 8
+    BOSS_FIGHT = 9
+    WILDCARD = 10
+    WILDCARD_END = 11
+    TOURNAMENT_START = 12
+    TOURNAMENT_PLAY = 13
+    TOURNAMENT_WAIT = 14
+    TOURNAMENT_END = 15</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.BLOODBATH"><code class="name">var <span class="ident">BLOODBATH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.BOSS_FIGHT"><code class="name">var <span class="ident">BOSS_FIGHT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.IDOL_RESULTS"><code class="name">var <span class="ident">IDOL_RESULTS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.OFFSEASON"><code class="name">var <span class="ident">OFFSEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS"><code class="name">var <span class="ident">PLAYOFFS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS_END"><code class="name">var <span class="ident">PLAYOFFS_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.REST"><code class="name">var <span class="ident">REST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.SEASON"><code class="name">var <span class="ident">SEASON</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.SEASON_END"><code class="name">var <span class="ident">SEASON_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.SEASON_PREP"><code class="name">var <span class="ident">SEASON_PREP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_END"><code class="name">var <span class="ident">TOURNAMENT_END</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_PLAY"><code class="name">var <span class="ident">TOURNAMENT_PLAY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_START"><code class="name">var <span class="ident">TOURNAMENT_START</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_WAIT"><code class="name">var <span class="ident">TOURNAMENT_WAIT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.WILDCARD"><code class="name">var <span class="ident">WILDCARD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.tables.SimPhaseDiscipline.WILDCARD_END"><code class="name">var <span class="ident">WILDCARD_END</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -918,6 +1159,46 @@ class StatType(Enum):
 <li><code><a title="blaseball_mike.tables.DamageType.TRIPLE" href="#blaseball_mike.tables.DamageType.TRIPLE">TRIPLE</a></code></li>
 <li><code><a title="blaseball_mike.tables.DamageType.UNSHELLED" href="#blaseball_mike.tables.DamageType.UNSHELLED">UNSHELLED</a></code></li>
 <li><code><a title="blaseball_mike.tables.DamageType.WALK" href="#blaseball_mike.tables.DamageType.WALK">WALK</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="blaseball_mike.tables.SimPhase" href="#blaseball_mike.tables.SimPhase">SimPhase</a></code></h4>
+<ul class="">
+<li><code><a title="blaseball_mike.tables.SimPhase.EARLSEASON" href="#blaseball_mike.tables.SimPhase.EARLSEASON">EARLSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.EARLSIESTA" href="#blaseball_mike.tables.SimPhase.EARLSIESTA">EARLSIESTA</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.EARLY_POSTSEASON" href="#blaseball_mike.tables.SimPhase.EARLY_POSTSEASON">EARLY_POSTSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.EARLY_POSTSEASON_END" href="#blaseball_mike.tables.SimPhase.EARLY_POSTSEASON_END">EARLY_POSTSEASON_END</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.ELECTION" href="#blaseball_mike.tables.SimPhase.ELECTION">ELECTION</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.LATESEASON" href="#blaseball_mike.tables.SimPhase.LATESEASON">LATESEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.LATESIESTA" href="#blaseball_mike.tables.SimPhase.LATESIESTA">LATESIESTA</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.MIDSEASON" href="#blaseball_mike.tables.SimPhase.MIDSEASON">MIDSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.POSTSEASON" href="#blaseball_mike.tables.SimPhase.POSTSEASON">POSTSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.POSTSEASON_END" href="#blaseball_mike.tables.SimPhase.POSTSEASON_END">POSTSEASON_END</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.PRESEASON" href="#blaseball_mike.tables.SimPhase.PRESEASON">PRESEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.PRE_POSTSEASON" href="#blaseball_mike.tables.SimPhase.PRE_POSTSEASON">PRE_POSTSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.REST" href="#blaseball_mike.tables.SimPhase.REST">REST</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhase.SEASON_END" href="#blaseball_mike.tables.SimPhase.SEASON_END">SEASON_END</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="blaseball_mike.tables.SimPhaseDiscipline" href="#blaseball_mike.tables.SimPhaseDiscipline">SimPhaseDiscipline</a></code></h4>
+<ul class="two-column">
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.BLOODBATH" href="#blaseball_mike.tables.SimPhaseDiscipline.BLOODBATH">BLOODBATH</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.BOSS_FIGHT" href="#blaseball_mike.tables.SimPhaseDiscipline.BOSS_FIGHT">BOSS_FIGHT</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.IDOL_RESULTS" href="#blaseball_mike.tables.SimPhaseDiscipline.IDOL_RESULTS">IDOL_RESULTS</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.OFFSEASON" href="#blaseball_mike.tables.SimPhaseDiscipline.OFFSEASON">OFFSEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS" href="#blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS">PLAYOFFS</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS_END" href="#blaseball_mike.tables.SimPhaseDiscipline.PLAYOFFS_END">PLAYOFFS_END</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.REST" href="#blaseball_mike.tables.SimPhaseDiscipline.REST">REST</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.SEASON" href="#blaseball_mike.tables.SimPhaseDiscipline.SEASON">SEASON</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.SEASON_END" href="#blaseball_mike.tables.SimPhaseDiscipline.SEASON_END">SEASON_END</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.SEASON_PREP" href="#blaseball_mike.tables.SimPhaseDiscipline.SEASON_PREP">SEASON_PREP</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_END" href="#blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_END">TOURNAMENT_END</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_PLAY" href="#blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_PLAY">TOURNAMENT_PLAY</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_START" href="#blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_START">TOURNAMENT_START</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_WAIT" href="#blaseball_mike.tables.SimPhaseDiscipline.TOURNAMENT_WAIT">TOURNAMENT_WAIT</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.WILDCARD" href="#blaseball_mike.tables.SimPhaseDiscipline.WILDCARD">WILDCARD</a></code></li>
+<li><code><a title="blaseball_mike.tables.SimPhaseDiscipline.WILDCARD_END" href="#blaseball_mike.tables.SimPhaseDiscipline.WILDCARD_END">WILDCARD_END</a></code></li>
 </ul>
 </li>
 <li>
