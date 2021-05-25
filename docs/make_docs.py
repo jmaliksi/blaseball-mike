@@ -1,7 +1,6 @@
 import pdoc
 import os
 import os.path as path
-from blaseball_mike.models.base import Base
 
 # Output directory, relative to the location of this script
 output_dir = '_build'
@@ -34,7 +33,7 @@ mike_module = pdoc.Module('blaseball_mike')
 # Dynamically pull fields for models and add them to the documentation
 for module in recurse_modules(mike_module):
     for class_ in module.classes():
-        if Base not in [x.obj for x in class_.mro()]:
+        if not any((x.obj and 'Base' == x.obj.__name__ for x in class_.mro())):
             continue
 
         try:
