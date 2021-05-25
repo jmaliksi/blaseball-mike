@@ -152,3 +152,46 @@ class StatType(Enum):
         obj._value_ = keycode
         obj.stat_name = stat_name
         return obj
+
+
+class SimPhase(Enum):
+    """
+    Simulation Data Phase number mapping
+    """
+    REST = 0
+    PRESEASON = 1
+    EARLSEASON = 2
+    EARLSIESTA = 3
+    MIDSEASON = 4
+    LATESIESTA = 5
+    LATESEASON = 6
+    SEASON_END = 7
+    PRE_POSTSEASON = 8
+    EARLY_POSTSEASON = 9
+    EARLY_POSTSEASON_END = 10
+    POSTSEASON = 11
+    POSTSEASON_END = 12
+    ELECTION = 13
+
+
+class SimPhaseDiscipline(Enum):
+    """
+    Simulation Data Phase number mapping for the Discipline Era (Season 1 - 11)
+    Note: This is not the order they will appear in chronologically!
+    """
+    REST = 0
+    SEASON_PREP = 1
+    SEASON = 2
+    SEASON_END = 3
+    PLAYOFFS = 4
+    PLAYOFFS_END = 5
+    OFFSEASON = 6
+    IDOL_RESULTS = 7
+    BLOODBATH = 8
+    BOSS_FIGHT = 9
+    WILDCARD = 10
+    WILDCARD_END = 11
+    TOURNAMENT_START = 12
+    TOURNAMENT_PLAY = 13
+    TOURNAMENT_WAIT = 14
+    TOURNAMENT_END = 15

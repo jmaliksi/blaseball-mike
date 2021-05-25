@@ -409,6 +409,12 @@ def get_feed_phase(season, phase, cache_time=5):
     return check_network_response(res)
 
 
+def get_feed_story(id_, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/feed/story?id={id_}')
+    return check_network_response(res)
+
+
 def get_renovations(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
@@ -428,3 +434,38 @@ def get_season_day_count(season, cache_time=5):
     res = s.get(f'{BASE_URL}/seasondaycount?season={season - 1}')
     return check_network_response(res)
 
+
+def get_team_election_stats(team_id, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/teamElectionStats?id={team_id}')
+    return check_network_response(res)
+
+
+def get_previous_champ(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/getPreviousChamp')
+    return check_network_response(res)
+
+
+def get_community_chest_progress(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/communityChestProgress')
+    return check_network_response(res)
+
+
+def get_players_by_item(item, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/playersByItemId?id={item}')
+    return check_network_response(res)
+
+
+def get_gift_progress(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/giftProgress')
+    return check_network_response(res)
+
+
+def get_all_players(*, cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/playerNamesIds')
+    return check_network_response(res)
