@@ -41,7 +41,8 @@ class Weather(Enum):
 
 
 class Tarot(Enum):
-    INVALID = -1, "----"
+    INVALID = -2, "----"
+    FOOL = -1, "Fool"
     MAGICIAN = 0, "I The Magician"
     HIGH_PRIESTESS = 1, "II The High Priestess"
     EMPRESS = 2, "III The Empress"
