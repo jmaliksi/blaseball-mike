@@ -33,12 +33,12 @@ jobs:
           pip install -r requirements.txt
           pip install pdoc3
       - name: Generate Docs
-        run: python make_docs.py
+        run: python docs/make_docs.py
       - name: Deploy docs
         uses: Cecilapp/GitHub-Pages-deploy@3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: 'joe.maliksi@gmail.com'
-          build_dir: 'docs/blaseball_mike'
+          build_dir: 'docs/_build/blaseball_mike'
           branch: 'docs-branch'
