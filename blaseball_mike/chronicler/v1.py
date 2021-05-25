@@ -1,4 +1,4 @@
-"""Client for chronicler APIs
+"""Chronicler V1 Endpoints
 
 API Reference (out of date): https://astrid.stoplight.io/docs/sibr/reference/Chronicler.v1.yaml
 """
