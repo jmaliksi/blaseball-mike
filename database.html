@@ -505,7 +505,7 @@ def get_coffee(ids, cache_time=5):
     return check_network_response(res)
 
 
-def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Global Feed
 
@@ -515,6 +515,7 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -529,6 +530,8 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
@@ -566,7 +569,7 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=Non
     return check_network_response(res)
 
 
-def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Team Feed
 
@@ -577,6 +580,7 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -591,13 +595,15 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
     return check_network_response(res)
 
 
-def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Player Feed
 
@@ -608,6 +614,7 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -622,6 +629,8 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
@@ -767,6 +776,18 @@ def get_all_players(*, cache_time=5):
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/playerNamesIds&#39;)
+    return check_network_response(res)
+
+
+def get_store_info(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get menu, price, and payout info for the Store
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/shopSetup&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </section>
@@ -1061,7 +1082,7 @@ def get_all_players(*, cache_time=5):
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_global"><code class="name flex">
-<span>def <span class="ident">get_feed_global</span></span>(<span>limit=50, sort=None, category=None, start=None, type_=None, cache_time=5)</span>
+<span>def <span class="ident">get_feed_global</span></span>(<span>limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Global Feed</p>
@@ -1077,6 +1098,8 @@ def get_all_players(*, cache_time=5):
 <dd>timestamp</dd>
 <dt><strong><code>type_</code></strong></dt>
 <dd>event type ID</dd>
+<dt><strong><code>season</code></strong></dt>
+<dd>season, 1-indexed</dd>
 <dt><strong><code>cache_time</code></strong></dt>
 <dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
 </dl></div>
@@ -1084,7 +1107,7 @@ def get_all_players(*, cache_time=5):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+<pre><code class="python">def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Global Feed
 
@@ -1094,6 +1117,7 @@ def get_all_players(*, cache_time=5):
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -1108,6 +1132,8 @@ def get_all_players(*, cache_time=5):
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/global&#39;, params=params)
@@ -1147,7 +1173,7 @@ def get_all_players(*, cache_time=5):
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_player"><code class="name flex">
-<span>def <span class="ident">get_feed_player</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5)</span>
+<span>def <span class="ident">get_feed_player</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Player Feed</p>
@@ -1165,6 +1191,8 @@ def get_all_players(*, cache_time=5):
 <dd>timestamp</dd>
 <dt><strong><code>type_</code></strong></dt>
 <dd>event type ID</dd>
+<dt><strong><code>season</code></strong></dt>
+<dd>season, 1-indexed</dd>
 <dt><strong><code>cache_time</code></strong></dt>
 <dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
 </dl></div>
@@ -1172,7 +1200,7 @@ def get_all_players(*, cache_time=5):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+<pre><code class="python">def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Player Feed
 
@@ -1183,6 +1211,7 @@ def get_all_players(*, cache_time=5):
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -1197,6 +1226,8 @@ def get_all_players(*, cache_time=5):
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/player&#39;, params=params)
@@ -1233,7 +1264,7 @@ def get_all_players(*, cache_time=5):
 </details>
 </dd>
 <dt id="blaseball_mike.database.get_feed_team"><code class="name flex">
-<span>def <span class="ident">get_feed_team</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5)</span>
+<span>def <span class="ident">get_feed_team</span></span>(<span>id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Get Team Feed</p>
@@ -1251,6 +1282,8 @@ def get_all_players(*, cache_time=5):
 <dd>timestamp</dd>
 <dt><strong><code>type_</code></strong></dt>
 <dd>event type ID</dd>
+<dt><strong><code>season</code></strong></dt>
+<dd>1-indexed</dd>
 <dt><strong><code>cache_time</code></strong></dt>
 <dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
 </dl></div>
@@ -1258,7 +1291,7 @@ def get_all_players(*, cache_time=5):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+<pre><code class="python">def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     &#34;&#34;&#34;
     Get Team Feed
 
@@ -1269,6 +1302,7 @@ def get_all_players(*, cache_time=5):
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     &#34;&#34;&#34;
     if isinstance(start, datetime):
@@ -1283,6 +1317,8 @@ def get_all_players(*, cache_time=5):
         params[&#34;start&#34;] = start
     if type_ is not None:
         params[&#34;type&#34;] = type_
+    if season is not None:
+        params[&#34;season&#34;] = season - 1
 
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/feed/team&#39;, params=params)
@@ -2079,6 +2115,32 @@ def get_all_players(*, cache_time=5):
     return check_network_response(res)</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.database.get_store_info"><code class="name flex">
+<span>def <span class="ident">get_store_info</span></span>(<span>*, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get menu, price, and payout info for the Store</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_store_info(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get menu, price, and payout info for the Store
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/shopSetup&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.database.get_subleague"><code class="name flex">
 <span>def <span class="ident">get_subleague</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
@@ -2372,6 +2434,7 @@ def get_all_players(*, cache_time=5):
 <li><code><a title="blaseball_mike.database.get_season_statsheets" href="#blaseball_mike.database.get_season_statsheets">get_season_statsheets</a></code></li>
 <li><code><a title="blaseball_mike.database.get_simulation_data" href="#blaseball_mike.database.get_simulation_data">get_simulation_data</a></code></li>
 <li><code><a title="blaseball_mike.database.get_standings" href="#blaseball_mike.database.get_standings">get_standings</a></code></li>
+<li><code><a title="blaseball_mike.database.get_store_info" href="#blaseball_mike.database.get_store_info">get_store_info</a></code></li>
 <li><code><a title="blaseball_mike.database.get_subleague" href="#blaseball_mike.database.get_subleague">get_subleague</a></code></li>
 <li><code><a title="blaseball_mike.database.get_team" href="#blaseball_mike.database.get_team">get_team</a></code></li>
 <li><code><a title="blaseball_mike.database.get_team_election_stats" href="#blaseball_mike.database.get_team_election_stats">get_team_election_stats</a></code></li>

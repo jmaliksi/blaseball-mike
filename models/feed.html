@@ -47,23 +47,24 @@ class Feed(Base):
         return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
-    def load(cls, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load(cls, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items&#34;&#34;&#34;
-        entries = database.get_feed_global(limit=count, sort=order, category=category, start=start_time, type_=type_id)
+        entries = database.get_feed_global(limit=count, sort=order, category=category,
+                                           start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items filtered by player&#34;&#34;&#34;
         entries = database.get_feed_player(player_id, limit=count, sort=order, category=category,
-                                           start=start_time, type_=type_id)
+                                           start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items filtered by team&#34;&#34;&#34;
         entries = database.get_feed_team(team_id, limit=count, sort=order, category=category,
-                                         start=start_time, type_=type_id)
+                                         start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
@@ -144,23 +145,24 @@ class Feed(Base):
         return [cls._from_api_conversion(x) for x in p[0].fields]
 
     @classmethod
-    def load(cls, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load(cls, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items&#34;&#34;&#34;
-        entries = database.get_feed_global(limit=count, sort=order, category=category, start=start_time, type_=type_id)
+        entries = database.get_feed_global(limit=count, sort=order, category=category,
+                                           start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items filtered by player&#34;&#34;&#34;
         entries = database.get_feed_player(player_id, limit=count, sort=order, category=category,
-                                           start=start_time, type_=type_id)
+                                           start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
-    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None):
+    def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
         &#34;&#34;&#34;Returns a list of feed items filtered by team&#34;&#34;&#34;
         entries = database.get_feed_team(team_id, limit=count, sort=order, category=category,
-                                         start=start_time, type_=type_id)
+                                         start=start_time, type_=type_id, season=season)
         return [cls(entry) for entry in entries]
 
     @classmethod
@@ -217,7 +219,7 @@ class Feed(Base):
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.feed.Feed.load"><code class="name flex">
-<span>def <span class="ident">load</span></span>(<span>count=50, order=None, category=None, start_time=None, type_id=None)</span>
+<span>def <span class="ident">load</span></span>(<span>count=50, order=None, category=None, start_time=None, type_id=None, season=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of feed items</p></div>
@@ -226,9 +228,10 @@ class Feed(Base):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
-def load(cls, count=50, order=None, category=None, start_time=None, type_id=None):
+def load(cls, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
     &#34;&#34;&#34;Returns a list of feed items&#34;&#34;&#34;
-    entries = database.get_feed_global(limit=count, sort=order, category=category, start=start_time, type_=type_id)
+    entries = database.get_feed_global(limit=count, sort=order, category=category,
+                                       start=start_time, type_=type_id, season=season)
     return [cls(entry) for entry in entries]</code></pre>
 </details>
 </dd>
@@ -266,7 +269,7 @@ def load_by_phase(cls, season, phase):
 </details>
 </dd>
 <dt id="blaseball_mike.models.feed.Feed.load_by_player"><code class="name flex">
-<span>def <span class="ident">load_by_player</span></span>(<span>player_id, count=50, order=None, category=None, start_time=None, type_id=None)</span>
+<span>def <span class="ident">load_by_player</span></span>(<span>player_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of feed items filtered by player</p></div>
@@ -275,15 +278,15 @@ def load_by_phase(cls, season, phase):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
-def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None):
+def load_by_player(cls, player_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
     &#34;&#34;&#34;Returns a list of feed items filtered by player&#34;&#34;&#34;
     entries = database.get_feed_player(player_id, limit=count, sort=order, category=category,
-                                       start=start_time, type_=type_id)
+                                       start=start_time, type_=type_id, season=season)
     return [cls(entry) for entry in entries]</code></pre>
 </details>
 </dd>
 <dt id="blaseball_mike.models.feed.Feed.load_by_team"><code class="name flex">
-<span>def <span class="ident">load_by_team</span></span>(<span>team_id, count=50, order=None, category=None, start_time=None, type_id=None)</span>
+<span>def <span class="ident">load_by_team</span></span>(<span>team_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of feed items filtered by team</p></div>
@@ -292,10 +295,10 @@ def load_by_player(cls, player_id, count=50, order=None, category=None, start_ti
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
-def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None):
+def load_by_team(cls, team_id, count=50, order=None, category=None, start_time=None, type_id=None, season=None):
     &#34;&#34;&#34;Returns a list of feed items filtered by team&#34;&#34;&#34;
     entries = database.get_feed_team(team_id, limit=count, sort=order, category=category,
-                                     start=start_time, type_=type_id)
+                                     start=start_time, type_=type_id, season=season)
     return [cls(entry) for entry in entries]</code></pre>
 </details>
 </dd>
