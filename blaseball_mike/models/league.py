@@ -1,17 +1,18 @@
 from collections import OrderedDict
 
-from .base import Base
+from .base import Base, BaseChronicler
 from .team import Team
-from .. import database
 
 
-class League(Base):
+class League(BaseChronicler):
+    _entity_type = "league"
+
     """
     Represents the entire league
     """
     @classmethod
     def _get_fields(cls):
-        p = cls.load()
+        p = cls.load('d8545021-e9fc-48a3-af74-48685950a183')
         return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
@@ -19,17 +20,13 @@ class League(Base):
         self._teams = {}
 
     @classmethod
-    def load(cls):
-        return cls(database.get_league())
-
-    @classmethod
-    def load_by_id(cls, id_):
-        return cls(database.get_league(id_))
+    def load(cls, id_='d8545021-e9fc-48a3-af74-48685950a183', *args, **kwargs):
+        return super().load(id_, *args, *kwargs).get(id_)
 
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
         """Returns dictionary keyed by subleague ID."""
-        return {id_: Subleague.load(id_) for id_ in self._subleague_ids}
+        return {id_: Subleague.load_one(id_) for id_ in self._subleague_ids}
 
     @property
     def teams(self):
@@ -41,10 +38,12 @@ class League(Base):
 
     @Base.lazy_load("_tiebreakers_id", cache_name="_tiebreaker")
     def tiebreakers(self):
-        return Tiebreaker.load(self._tiebreakers_id)
+        return Tiebreaker.load_one(self._tiebreakers_id)
 
 
-class Subleague(Base):
+class Subleague(BaseChronicler):
+    _entity_type = "subleague"
+
     """
     Represents a subleague, ie Mild vs Wild
     """
@@ -57,17 +56,10 @@ class Subleague(Base):
         super().__init__(data)
         self._teams = {}
 
-    @classmethod
-    def load(cls, id_):
-        """
-        Load by ID.
-        """
-        return cls(database.get_subleague(id_))
-
     @Base.lazy_load("_division_ids", cache_name="_divisions", default_value=dict())
     def divisions(self):
         """Returns dictionary keyed by division ID."""
-        return {id_: Division.load(id_) for id_ in self._division_ids}
+        return {id_: Division.load_one(id_) for id_ in self._division_ids}
 
     @property
     def teams(self):
@@ -78,7 +70,9 @@ class Subleague(Base):
         return self._teams
 
 
-class Division(Base):
+class Division(BaseChronicler):
+    _entity_type = "division"
+
     """
     Represents a blaseball division ie Mild Low, Mild High, Wild Low, Wild High.
     """
@@ -86,24 +80,6 @@ class Division(Base):
     def _get_fields(cls):
         p = cls.load("f711d960-dc28-4ae2-9249-e1f320fec7d7")
         return [cls._from_api_conversion(x) for x in p.fields]
-
-    @classmethod
-    def load(cls, id_):
-        """
-        Load by ID
-        """
-        return cls(database.get_division(id_))
-
-    @classmethod
-    def load_all(cls):
-        """
-        Load all divisions, including historical divisions (Chaotic Good, Lawful Evil, etc.)
-
-        Returns dictionary keyed by division ID.
-        """
-        return {
-            id_: cls(div) for id_, div in database.get_all_divisions().items()
-        }
 
     @classmethod
     def load_by_name(cls, name):
@@ -121,26 +97,17 @@ class Division(Base):
         """
         Comes back as dictionary keyed by team ID
         """
-        return {id_: Team.load(id_) for id_ in self._team_ids}
+        return {id_: Team.load_one(id_) for id_ in self._team_ids}
 
 
-class Tiebreaker(Base):
+class Tiebreaker(BaseChronicler):
+    _entity_type = "tiebreakers"
+
     """Represents a league's tiebreaker order"""
     @classmethod
     def _get_fields(cls):
         p = cls.load_one("370c436f-79fa-418b-bc98-5db48442ba3f")
         return [cls._from_api_conversion(x) for x in p.fields]
-
-    @classmethod
-    def load(cls, id_):
-        tiebreakers = database.get_tiebreakers(id_)
-        return {
-            id_: cls(tiebreaker) for (id_, tiebreaker) in tiebreakers.items()
-        }
-
-    @classmethod
-    def load_one(cls, id_):
-        return cls.load(id_).get(id_)
 
     @Base.lazy_load("_order_ids", cache_name="_order", default_value=OrderedDict())
     def order(self):

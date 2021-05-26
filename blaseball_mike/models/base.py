@@ -2,6 +2,8 @@ import abc
 import functools
 import re
 
+from dateutil.parser import parse
+
 from blaseball_mike import chronicler, utils
 
 
@@ -147,11 +149,13 @@ class BaseChronicler(Base):
 
     @classmethod
     def load(cls, ids, time=None, season=None, day=None):
-        print('using new load')
         if season and day:
             timestamp = utils.get_gameday_start_time(season, day)
         else:
-            timestamp = time
+            if isinstance(time, str):
+                timestamp = parse(time)
+            else:
+                timestamp = time
         entities = chronicler.get_entities(cls._entity_type, id_=ids, at=timestamp)
         return {e["entityId"]: cls(dict(e["data"], timestamp=e['validFrom'])) for e in entities}
 

@@ -25,9 +25,9 @@ class Player(BaseChronicler):
         """
         Load single player by ID with historical stats at the provided IRL datetime.
         """
-        warnings.warn("instead of .load_one_at_time(id_, time), use .load(id_, time=time)",
+        warnings.warn("instead of .load_one_at_time(id_, time), use .load_one(id_, time=time)",
                       DeprecationWarning, stacklevel=2)
-        return cls.load(id_, time=time)
+        return cls.load_one(id_, time=time)
 
     @classmethod
     def load_all_by_gameday(cls, season, day):
