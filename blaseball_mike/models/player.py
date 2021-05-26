@@ -3,15 +3,15 @@ import random
 import uuid
 import warnings
 
-from dateutil.parser import parse
-
-from .base import Base
+from .base import Base, BaseChronicler
 from .item import Item
 from .modification import Modification
-from .. import database, chronicler, reference
+from .. import database, reference
 
 
-class Player(Base):
+class Player(BaseChronicler):
+    _entity_type = "player"
+
     """
     Represents a blaseball player.
     """
@@ -21,69 +21,31 @@ class Player(Base):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
-    def load(cls, *ids):
-        """
-        Load one or more players by ID.
-
-        Returns a dictionary of players keyed by Player ID.
-        """
-        players = database.get_player(list(ids))
-        return {
-            id_: cls(player) for (id_, player) in players.items()
-        }
-
-    @classmethod
-    def load_one(cls, id_):
-        """
-        Load single player by ID.
-        """
-        return cls.load(id_).get(id_)
-
-    @classmethod
     def load_one_at_time(cls, id_, time):
         """
         Load single player by ID with historical stats at the provided IRL datetime.
         """
-        if isinstance(time, str):
-            time = parse(time)
-
-        players = list(chronicler.get_entities("player", id_=id_, at=time))
-        if len(players) == 0:
-            return None
-        return cls(dict(players[0]["data"], timestamp=time))
-
-    @classmethod
-    def load_all(cls):
-        """
-        Load all players
-        """
-        players = chronicler.get_entities("player")
-        return {x["entityId"]: cls(x["data"]) for x in players}
-
-    @classmethod
-    def load_history(cls, id_, order='desc', count=None):
-        """
-        Returns array of Player stat changes with most recent first.
-        """
-        players = chronicler.get_versions("player", id_=id_, order=order, count=count)
-        return [cls(dict(p['data'], timestamp=p['validFrom'])) for p in players]
+        warnings.warn("instead of .load_one_at_time(id_, time), use .load(id_, time=time)",
+                      DeprecationWarning, stacklevel=2)
+        return cls.load(id_, time=time)
 
     @classmethod
     def load_all_by_gameday(cls, season, day):
         """
         Returns dict of all players and their fk stats on the given season/day. 1-indexed.
         """
-        players = reference.get_all_players_for_gameday(season, day)
-        return {
-            player['player_id']: cls(player) for player in players
-        }
+        warnings.warn("instead of .load_all_by_gameday(season, day), use .load_all(season=season, day=day)",
+                      DeprecationWarning, stacklevel=2)
+        return cls.load_all(season=season, day=day)
 
     @classmethod
     def load_by_gameday(cls, id_, season, day):
         """
         Returns one player and their fk stats on the given season/day. 1-indexed.
         """
-        return cls.load_all_by_gameday(season, day).get(id_)
+        warnings.warn("instead of .load_by_gameday(id_, season, day), use .load(id_, season=season, day=day)",
+                      DeprecationWarning, stacklevel=2)
+        return cls.load(id_, season=season, day=day)
 
     @classmethod
     def find_by_name(cls, name):

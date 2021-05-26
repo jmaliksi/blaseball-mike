@@ -2,6 +2,8 @@ import abc
 import functools
 import re
 
+from blaseball_mike import chronicler, utils
+
 
 class _LazyLoadDecorator:
 
@@ -130,3 +132,30 @@ class Base(abc.ABC):
         if "timestamp" in data and not isinstance(data["timestamp"], str):
             data["timestamp"] = data["timestamp"].strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         return data
+
+
+class BaseChronicler(Base):
+    _entity_type = NotImplemented
+
+    @classmethod
+    def load_all(cls, time=None, season=None, day=None):
+        return cls.load(None, time=time, season=season, day=day)
+
+    @classmethod
+    def load_one(cls, id_, time=None, season=None, day=None):
+        return cls.load(id_, time=time, season=season, day=day).get(id_)
+
+    @classmethod
+    def load(cls, ids, time=None, season=None, day=None):
+        print('using new load')
+        if season and day:
+            timestamp = utils.get_gameday_start_time(season, day)
+        else:
+            timestamp = time
+        entities = chronicler.get_entities(cls._entity_type, id_=ids, at=timestamp)
+        return {e["entityId"]: cls(dict(e["data"], timestamp=e['validFrom'])) for e in entities}
+
+    @classmethod
+    def load_history(cls, id_, order='desc', count=None):
+        entities = chronicler.get_versions(cls._entity_type, id_=id_, order=order, count=count)
+        return [cls(dict(e['data'], timestamp=e['validFrom'])) for e in entities]
