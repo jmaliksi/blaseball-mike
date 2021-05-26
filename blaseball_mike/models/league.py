@@ -21,12 +21,13 @@ class League(BaseChronicler):
 
     @classmethod
     def load(cls, id_='d8545021-e9fc-48a3-af74-48685950a183', *args, **kwargs):
-        return super().load(id_, *args, *kwargs).get(id_)
+        return super().load(id_, *args, **kwargs).get(id_)
 
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
         """Returns dictionary keyed by subleague ID."""
-        return {id_: Subleague.load_one(id_) for id_ in self._subleague_ids}
+        timestamp = self.timestamp if hasattr(self, "timestamp") else None
+        return {id_: Subleague.load_one(id_, time=timestamp) for id_ in self._subleague_ids}
 
     @property
     def teams(self):
@@ -38,7 +39,8 @@ class League(BaseChronicler):
 
     @Base.lazy_load("_tiebreakers_id", cache_name="_tiebreaker")
     def tiebreakers(self):
-        return Tiebreaker.load_one(self._tiebreakers_id)
+        timestamp = self.timestamp if hasattr(self, "timestamp") else None
+        return Tiebreaker.load_one(self._tiebreakers_id, time=timestamp)
 
 
 class Subleague(BaseChronicler):
@@ -59,7 +61,8 @@ class Subleague(BaseChronicler):
     @Base.lazy_load("_division_ids", cache_name="_divisions", default_value=dict())
     def divisions(self):
         """Returns dictionary keyed by division ID."""
-        return {id_: Division.load_one(id_) for id_ in self._division_ids}
+        timestamp = self.timestamp if hasattr(self, "timestamp") else None
+        return {id_: Division.load_one(id_, time=timestamp) for id_ in self._division_ids}
 
     @property
     def teams(self):
@@ -97,7 +100,8 @@ class Division(BaseChronicler):
         """
         Comes back as dictionary keyed by team ID
         """
-        return {id_: Team.load_one(id_) for id_ in self._team_ids}
+        timestamp = self.timestamp if hasattr(self, "timestamp") else None
+        return {id_: Team.load_one(id_, time=timestamp) for id_ in self._team_ids}
 
 
 class Tiebreaker(BaseChronicler):
@@ -111,7 +115,8 @@ class Tiebreaker(BaseChronicler):
 
     @Base.lazy_load("_order_ids", cache_name="_order", default_value=OrderedDict())
     def order(self):
+        timestamp = self.timestamp if hasattr(self, "timestamp") else None
         order = OrderedDict()
         for id_ in self._order_ids:
-            order[id_] = Team.load(id_)
+            order[id_] = Team.load(id_, time=timestamp)
         return order
