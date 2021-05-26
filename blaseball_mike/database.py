@@ -475,7 +475,7 @@ def get_coffee(ids, cache_time=5):
     return check_network_response(res)
 
 
-def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     """
     Get Global Feed
 
@@ -485,6 +485,7 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -499,6 +500,8 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         params["start"] = start
     if type_ is not None:
         params["type"] = type_
+    if season is not None:
+        params["season"] = season - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/global', params=params)
@@ -536,7 +539,7 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=Non
     return check_network_response(res)
 
 
-def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     """
     Get Team Feed
 
@@ -547,6 +550,7 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -561,13 +565,15 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params["start"] = start
     if type_ is not None:
         params["type"] = type_
+    if season is not None:
+        params["season"] = season - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/team', params=params)
     return check_network_response(res)
 
 
-def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
     """
     Get Player Feed
 
@@ -578,6 +584,7 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        season: season, 1-indexed
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -592,6 +599,8 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         params["start"] = start
     if type_ is not None:
         params["type"] = type_
+    if season is not None:
+        params["season"] = season - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/player', params=params)
@@ -737,4 +746,16 @@ def get_all_players(*, cache_time=5):
     """
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/playerNamesIds')
+    return check_network_response(res)
+
+
+def get_store_info(*, cache_time=5):
+    """
+    Get menu, price, and payout info for the Store
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/shopSetup')
     return check_network_response(res)
