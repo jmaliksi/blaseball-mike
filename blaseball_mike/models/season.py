@@ -19,7 +19,7 @@ class Season(Base):
 
     @Base.lazy_load("_league_id", cache_name="_league")
     def league(self):
-        return League.load_by_id(self._league_id)
+        return League.load_one(self._league_id)
 
     @Base.lazy_load("_standings_id", cache_name="_standings")
     def standings(self):

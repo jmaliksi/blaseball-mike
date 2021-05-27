@@ -6,13 +6,14 @@ from .team import Team
 
 class League(BaseChronicler):
     _entity_type = "league"
+    ILB = 'd8545021-e9fc-48a3-af74-48685950a183'
 
     """
     Represents the entire league
     """
     @classmethod
     def _get_fields(cls):
-        p = cls.load('d8545021-e9fc-48a3-af74-48685950a183')
+        p = cls.load(cls.ILB)
         return [cls._from_api_conversion(x) for x in p.fields]
 
     def __init__(self, data):
@@ -20,8 +21,8 @@ class League(BaseChronicler):
         self._teams = {}
 
     @classmethod
-    def load(cls, id_='d8545021-e9fc-48a3-af74-48685950a183', *args, **kwargs):
-        return super().load(id_, *args, **kwargs).get(id_)
+    def load_ilb(cls, id_=ILB, *args, **kwargs):
+        return cls.load_one(id_, *args, **kwargs)
 
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
