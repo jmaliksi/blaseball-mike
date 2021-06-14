@@ -27,8 +27,8 @@ class League(BaseChronicler):
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())
     def subleagues(self):
         """Returns dictionary keyed by subleague ID."""
-        timestamp = self.timestamp if hasattr(self, "timestamp") else None
-        return {id_: Subleague.load_one(id_, time=timestamp) for id_ in self._subleague_ids}
+        subleagues = Subleague.load(self._subleague_ids, time=getattr(self, "timestamp", None))
+        return {id_: subleagues[id_] for id_ in self._subleague_ids}
 
     @property
     def teams(self):
