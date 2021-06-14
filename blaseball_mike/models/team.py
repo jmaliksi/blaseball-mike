@@ -41,35 +41,23 @@ class Team(BaseChronicler):
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one(x, time=self.timestamp) for x in self._lineup_ids]
-        else:
-            players = Player.load(*self._lineup_ids)
-            return [players.get(id_) for id_ in self._lineup_ids]
+        players = Player.load(*self._lineup_ids, time=getattr(self, "timestamp", None))
+        return [players.get(id_) for id_ in self._lineup_ids]
 
     @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one(x, time=self.timestamp) for x in self._rotation_ids]
-        else:
-            players = Player.load(*self._rotation_ids)
-            return [players.get(id_) for id_ in self._rotation_ids]
+        players = Player.load(*self._rotation_ids, time=getattr(self, "timestamp", None))
+        return [players.get(id_) for id_ in self._rotation_ids]
 
     @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one(x, time=self.timestamp) for x in self._bullpen_ids]
-        else:
-            players = Player.load(*self._bullpen_ids)
-            return [players.get(id_) for id_ in self._bullpen_ids]
+        players = Player.load(*self._bullpen_ids, time=getattr(self, "timestamp", None))
+        return [players.get(id_) for id_ in self._bullpen_ids]
 
     @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
     def bench(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one(x, time=self.timestamp) for x in self._bench_ids]
-        else:
-            players = Player.load(*self._bench_ids)
-            return [players.get(id_) for id_ in self._bench_ids]
+        players = Player.load(*self._bench_ids, time=getattr(self, "timestamp", None))
+        return [players.get(id_) for id_ in self._bench_ids]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
