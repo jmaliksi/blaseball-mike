@@ -28,11 +28,11 @@ class TestSimulationData(TestBase):
         assert isinstance(simulation_data.day, int)
         assert simulation_data.day > 0
         assert isinstance(simulation_data.phase, int)
-        assert isinstance(simulation_data.play_off_round, int)
+
         assert isinstance(simulation_data.rules, str)
         assert isinstance(simulation_data.terminology, str)
         assert isinstance(simulation_data.league, League)
-        assert isinstance(simulation_data.playoffs, str)
+        assert isinstance(simulation_data.playoffs, (list, str))
         assert isinstance(simulation_data.season_id, str)
 
     def test_added_fields(self, simulation_data):
@@ -50,6 +50,8 @@ class TestSimulationData(TestBase):
             assert isinstance(simulation_data.agitations, int)
         if getattr(simulation_data, "salutations", None) is not None:
             assert isinstance(simulation_data.salutations, int)
+        if getattr(simulation_data, "play_off_round", None) is not None:
+            assert isinstance(simulation_data.play_off_round, int)
 
         if getattr(simulation_data, "attr", None) is not None:
             assert isinstance(simulation_data.attr, list)

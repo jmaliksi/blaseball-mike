@@ -46,6 +46,14 @@ class TestTeam(TestBase):
             assert player.deceased is False
 
     @pytest.mark.vcr
+    def test_shadows(self, team):
+        """Test players in the shadows are valid and also alive"""
+        assert isinstance(team.shadows, list)
+        for player in team.shadows:
+            assert isinstance(player, Player)
+            assert player.deceased is False
+
+    @pytest.mark.vcr
     def test_perm_mods(self, team):
         assert isinstance(team.perm_attr, list)
         for mod in team.perm_attr:

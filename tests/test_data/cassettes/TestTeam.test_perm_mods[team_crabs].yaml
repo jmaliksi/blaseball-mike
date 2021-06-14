@@ -9,29 +9,34 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
-    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION,UNHOLEY,0
+    uri: https://www.blaseball.com/database/mods?ids=CARCINIZATION,UNHOLEY,0,FREE_GIFT
   response:
     body:
       string: '[{"id":"CARCINIZATION","color":"#ff4258","textColor":"#ff4258","background":"#38040a","title":"Carcinization","description":"When
-        the Crabs activate the Black Hole, they will steal the other team''s best
+        this Team activates the Black Hole, they will steal their opponent''s best
         hitter for the remainder of the game."},{"id":"UNHOLEY","color":"#ffffff","textColor":"#ffffff","background":"#863490","title":"Unholey","description":"When
-        this Team activates the Black Hole, a random player on their opponent''s Team
+        this Team activates the Black Hole, a random Player on their opponent''s Team
         will be impaired by 1%."},{"id":"0","color":"#cffff0","textColor":"#cffff0","background":"#904899","title":"0","description":"Players
         with 0 will always swing at strikes while there are 0 Balls and 0 Strikes
-        in the At Bat."}]'
+        in the At Bat.","descriptions":{"player":"This Player will always swing at
+        strikes while there are 0 Balls and 0 Strikes in the At Bat.","team":"Players
+        batting for this Team will always swin at strikes while there are 0 Balls
+        and 0 Strikes in the At Bat."}},{"id":"FREE_GIFT","color":"#ffffff","textColor":"#ffffff","background":"#9e0000","title":"Free
+        Gift","description":"This Team will receive an Extra Gift from the next Gift
+        Shop."}]'
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '662'
+      - '1085'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 19 May 2021 20:51:00 GMT
+      - Mon, 14 Jun 2021 22:12:45 GMT
       Etag:
-      - W/"296-AuQy+9ld/Zc3AjErbJQDKWLmCRo"
+      - W/"43d-kREZd0h4nSNgC40soQcswgcmYZo"
       Server:
       - Cowboy
       Vary:

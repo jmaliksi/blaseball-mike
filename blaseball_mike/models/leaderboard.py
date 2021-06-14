@@ -42,7 +42,7 @@ class Tribute(Base):
     @classmethod
     def load(cls):
         """Load current hall of flame. Returns ordered dictionary of tributes keyed by player ID."""
-        tributes = database.get_tributes()
+        tributes = database.get_tributes().get("players", list())
         tributes_dict = OrderedDict()
         for tribute in tributes:
             tributes_dict[tribute['playerId']] = cls(tribute)
@@ -58,7 +58,10 @@ class Tribute(Base):
         tributes_dict = OrderedDict()
         if len(tributes) == 0:
             return tributes_dict
-        for tribute in tributes[0]["data"]:
+        tribute_list = tributes[0]["data"]
+        if isinstance(tribute_list, dict):  # S20 changed it to a dictionary
+            tribute_list = tribute_list["players"]
+        for tribute in tribute_list:
             tributes_dict[tribute['playerId']] = cls(tribute)
         return tributes_dict
 
