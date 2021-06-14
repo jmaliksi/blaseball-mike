@@ -162,4 +162,4 @@ class BaseChronicler(Base):
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
         entities = chronicler.get_versions(cls._entity_type, id_=id_, order=order, count=count)
-        return [cls(dict(e['data'], timestamp=e['validFrom'])) for e in entities]
+        return (cls(dict(e['data'], timestamp=e['validFrom'])) for e in entities)
