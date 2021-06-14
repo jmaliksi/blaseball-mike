@@ -127,6 +127,14 @@ class Team(Base):
             players = Player.load(*self._bench_ids)
             return [players.get(id_) for id_ in self._bench_ids]
 
+    @Base.lazy_load(&#34;_shadows_ids&#34;, cache_name=&#34;_shadows&#34;, default_value=list())
+    def shadows(self):
+        if getattr(self, &#34;timestamp&#34;, None):
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._shadows_ids]
+        else:
+            players = Player.load(*self._shadows_ids)
+            return [players.get(id_) for id_ in self._shadows_ids]
+
     @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
     def perm_attr(self):
         return Modification.load(*self._perm_attr_ids)
@@ -265,6 +273,14 @@ class Team(Base):
             players = Player.load(*self._bench_ids)
             return [players.get(id_) for id_ in self._bench_ids]
 
+    @Base.lazy_load(&#34;_shadows_ids&#34;, cache_name=&#34;_shadows&#34;, default_value=list())
+    def shadows(self):
+        if getattr(self, &#34;timestamp&#34;, None):
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._shadows_ids]
+        else:
+            players = Player.load(*self._shadows_ids)
+            return [players.get(id_) for id_ in self._shadows_ids]
+
     @Base.lazy_load(&#34;_perm_attr_ids&#34;, cache_name=&#34;_perm_attr&#34;, default_value=list())
     def perm_attr(self):
         return Modification.load(*self._perm_attr_ids)
@@ -296,6 +312,17 @@ class Team(Base):
 <li><a title="blaseball_mike.models.base.Base" href="base.html#blaseball_mike.models.base.Base">Base</a></li>
 <li>abc.ABC</li>
 </ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="blaseball_mike.models.team.Team.bench"><code class="name">var <span class="ident">bench</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.bullpen"><code class="name">var <span class="ident">bullpen</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 <h3>Static methods</h3>
 <dl>
 <dt id="blaseball_mike.models.team.Team.load"><code class="name flex">
@@ -403,19 +430,15 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="blaseball_mike.models.team.Team.bench"><code class="name">var <span class="ident">bench</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="blaseball_mike.models.team.Team.bullpen"><code class="name">var <span class="ident">bullpen</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
 <dt id="blaseball_mike.models.team.Team.card"><code class="name">var <span class="ident">card</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.team.Team.championships"><code class="name">var <span class="ident">championships</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.deceased"><code class="name">var <span class="ident">deceased</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -440,6 +463,10 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <div class="desc"></div>
 </dd>
 <dt id="blaseball_mike.models.team.Team.id"><code class="name">var <span class="ident">id</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="blaseball_mike.models.team.Team.im_position"><code class="name">var <span class="ident">im_position</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -491,6 +518,10 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.team.Team.shadows"><code class="name">var <span class="ident">shadows</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.team.Team.shame_runs"><code class="name">var <span class="ident">shame_runs</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -527,6 +558,10 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="blaseball_mike.models.team.Team.underchampionships"><code class="name">var <span class="ident">underchampionships</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="blaseball_mike.models.team.Team.week_attr"><code class="name">var <span class="ident">week_attr</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -560,12 +595,14 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <li><code><a title="blaseball_mike.models.team.Team.bullpen" href="#blaseball_mike.models.team.Team.bullpen">bullpen</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.card" href="#blaseball_mike.models.team.Team.card">card</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.championships" href="#blaseball_mike.models.team.Team.championships">championships</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.deceased" href="#blaseball_mike.models.team.Team.deceased">deceased</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.e_density" href="#blaseball_mike.models.team.Team.e_density">e_density</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.emoji" href="#blaseball_mike.models.team.Team.emoji">emoji</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.evolution" href="#blaseball_mike.models.team.Team.evolution">evolution</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.full_name" href="#blaseball_mike.models.team.Team.full_name">full_name</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.game_attr" href="#blaseball_mike.models.team.Team.game_attr">game_attr</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.id" href="#blaseball_mike.models.team.Team.id">id</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.im_position" href="#blaseball_mike.models.team.Team.im_position">im_position</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.level" href="#blaseball_mike.models.team.Team.level">level</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.lineup" href="#blaseball_mike.models.team.Team.lineup">lineup</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.load" href="#blaseball_mike.models.team.Team.load">load</a></code></li>
@@ -583,6 +620,7 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <li><code><a title="blaseball_mike.models.team.Team.season_shames" href="#blaseball_mike.models.team.Team.season_shames">season_shames</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.season_shamings" href="#blaseball_mike.models.team.Team.season_shamings">season_shamings</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.secondary_color" href="#blaseball_mike.models.team.Team.secondary_color">secondary_color</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.shadows" href="#blaseball_mike.models.team.Team.shadows">shadows</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.shame_runs" href="#blaseball_mike.models.team.Team.shame_runs">shame_runs</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.shorthand" href="#blaseball_mike.models.team.Team.shorthand">shorthand</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.slogan" href="#blaseball_mike.models.team.Team.slogan">slogan</a></code></li>
@@ -592,6 +630,7 @@ def load_history(cls, id_, order=&#39;desc&#39;, count=None):
 <li><code><a title="blaseball_mike.models.team.Team.total_shames" href="#blaseball_mike.models.team.Team.total_shames">total_shames</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.total_shamings" href="#blaseball_mike.models.team.Team.total_shamings">total_shamings</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.tournament_wins" href="#blaseball_mike.models.team.Team.tournament_wins">tournament_wins</a></code></li>
+<li><code><a title="blaseball_mike.models.team.Team.underchampionships" href="#blaseball_mike.models.team.Team.underchampionships">underchampionships</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.week_attr" href="#blaseball_mike.models.team.Team.week_attr">week_attr</a></code></li>
 <li><code><a title="blaseball_mike.models.team.Team.win_streak" href="#blaseball_mike.models.team.Team.win_streak">win_streak</a></code></li>
 </ul>

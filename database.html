@@ -788,6 +788,18 @@ def get_store_info(*, cache_time=5):
     &#34;&#34;&#34;
     s = session(cache_time)
     res = s.get(f&#39;{BASE_URL}/shopSetup&#39;)
+    return check_network_response(res)
+
+
+def get_sunsun_info(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get information about the status of Sun(Sun) (pressure)
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/sunsun&#39;)
     return check_network_response(res)</code></pre>
 </details>
 </section>
@@ -2170,6 +2182,32 @@ def get_store_info(*, cache_time=5):
     return check_network_response(res)</code></pre>
 </details>
 </dd>
+<dt id="blaseball_mike.database.get_sunsun_info"><code class="name flex">
+<span>def <span class="ident">get_sunsun_info</span></span>(<span>*, cache_time=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get information about the status of Sun(Sun) (pressure)</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cache_time</code></strong></dt>
+<dd>response cache lifetime in seconds, or <code>None</code> for infinite cache</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sunsun_info(*, cache_time=5):
+    &#34;&#34;&#34;
+    Get information about the status of Sun(Sun) (pressure)
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    &#34;&#34;&#34;
+    s = session(cache_time)
+    res = s.get(f&#39;{BASE_URL}/sunsun&#39;)
+    return check_network_response(res)</code></pre>
+</details>
+</dd>
 <dt id="blaseball_mike.database.get_team"><code class="name flex">
 <span>def <span class="ident">get_team</span></span>(<span>id_, cache_time=5)</span>
 </code></dt>
@@ -2436,6 +2474,7 @@ def get_store_info(*, cache_time=5):
 <li><code><a title="blaseball_mike.database.get_standings" href="#blaseball_mike.database.get_standings">get_standings</a></code></li>
 <li><code><a title="blaseball_mike.database.get_store_info" href="#blaseball_mike.database.get_store_info">get_store_info</a></code></li>
 <li><code><a title="blaseball_mike.database.get_subleague" href="#blaseball_mike.database.get_subleague">get_subleague</a></code></li>
+<li><code><a title="blaseball_mike.database.get_sunsun_info" href="#blaseball_mike.database.get_sunsun_info">get_sunsun_info</a></code></li>
 <li><code><a title="blaseball_mike.database.get_team" href="#blaseball_mike.database.get_team">get_team</a></code></li>
 <li><code><a title="blaseball_mike.database.get_team_election_stats" href="#blaseball_mike.database.get_team_election_stats">get_team_election_stats</a></code></li>
 <li><code><a title="blaseball_mike.database.get_team_statsheets" href="#blaseball_mike.database.get_team_statsheets">get_team_statsheets</a></code></li>
