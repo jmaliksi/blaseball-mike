@@ -99,6 +99,14 @@ class Team(Base):
             players = Player.load(*self._bench_ids)
             return [players.get(id_) for id_ in self._bench_ids]
 
+    @Base.lazy_load("_shadows_ids", cache_name="_shadows", default_value=list())
+    def shadows(self):
+        if getattr(self, "timestamp", None):
+            return [Player.load_one_at_time(x, self.timestamp) for x in self._shadows_ids]
+        else:
+            players = Player.load(*self._shadows_ids)
+            return [players.get(id_) for id_ in self._shadows_ids]
+
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
         return Modification.load(*self._perm_attr_ids)

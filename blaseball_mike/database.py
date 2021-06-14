@@ -759,3 +759,15 @@ def get_store_info(*, cache_time=5):
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/shopSetup')
     return check_network_response(res)
+
+
+def get_sunsun_info(*, cache_time=5):
+    """
+    Get information about the status of Sun(Sun) (pressure)
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/sunsun')
+    return check_network_response(res)
