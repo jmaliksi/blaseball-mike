@@ -157,7 +157,7 @@ class BaseChronicler(Base):
             else:
                 timestamp = time
         entities = chronicler.get_entities(cls._entity_type, id_=ids, at=timestamp)
-        return {e["entityId"]: cls(dict(e["data"], timestamp=e['validFrom'])) for e in entities}
+        return {e["entityId"]: cls(dict(e["data"], timestamp=timestamp or e['validFrom'])) for e in entities}
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
