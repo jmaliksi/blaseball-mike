@@ -23,7 +23,7 @@
 </header>
 <section id="section-intro">
 <p>Wrappers for eventually API for feed events</p>
-<p><a href="https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml">https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml</a></p>
+<p><a href="https://alisww.github.io/eventually">https://alisww.github.io/eventually</a></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -31,12 +31,12 @@
 <pre><code class="python">&#34;&#34;&#34;
 Wrappers for eventually API for feed events
 
-https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml
+https://alisww.github.io/eventually
 &#34;&#34;&#34;
 
 from blaseball_mike.session import session, check_network_response
 
-BASE_URL = &#39;https://api.sibr.dev/eventually&#39;
+BASE_URL = &#39;https://api.sibr.dev/eventually/v2&#39;
 
 
 def search(cache_time=5, limit=100, query={}):
@@ -44,7 +44,7 @@ def search(cache_time=5, limit=100, query={}):
     Search through feed events.
     Set to limit -1 to get everything.
     Returns a generator that only gets the following page when needed.
-    Possible parameters for query: https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get
+    Possible parameters for query: https://alisww.github.io/eventually/#/default/events
     &#34;&#34;&#34;
     s = session(cache_time)
 
@@ -75,7 +75,7 @@ def search(cache_time=5, limit=100, query={}):
 <div class="desc"><p>Search through feed events.
 Set to limit -1 to get everything.
 Returns a generator that only gets the following page when needed.
-Possible parameters for query: <a href="https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get">https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get</a></p></div>
+Possible parameters for query: <a href="https://alisww.github.io/eventually/#/default/events">https://alisww.github.io/eventually/#/default/events</a></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -85,7 +85,7 @@ Possible parameters for query: <a href="https://allie-signet.stoplight.io/docs/e
     Search through feed events.
     Set to limit -1 to get everything.
     Returns a generator that only gets the following page when needed.
-    Possible parameters for query: https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get
+    Possible parameters for query: https://alisww.github.io/eventually/#/default/events
     &#34;&#34;&#34;
     s = session(cache_time)
 
