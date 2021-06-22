@@ -1,12 +1,12 @@
 """
 Wrappers for eventually API for feed events
 
-https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml
+https://alisww.github.io/eventually
 """
 
 from blaseball_mike.session import session, check_network_response
 
-BASE_URL = 'https://api.sibr.dev/eventually'
+BASE_URL = 'https://api.sibr.dev/eventually/v2'
 
 
 def search(cache_time=5, limit=100, query={}):
@@ -14,7 +14,7 @@ def search(cache_time=5, limit=100, query={}):
     Search through feed events.
     Set to limit -1 to get everything.
     Returns a generator that only gets the following page when needed.
-    Possible parameters for query: https://allie-signet.stoplight.io/docs/eventually/reference/eventually-api.v1.yaml/paths/~1events/get
+    Possible parameters for query: https://alisww.github.io/eventually/#/default/events
     """
     s = session(cache_time)
 
