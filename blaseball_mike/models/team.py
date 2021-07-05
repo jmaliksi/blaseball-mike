@@ -17,22 +17,41 @@ class Team(Base):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
-    def load(cls, id_):
+    def load(cls, id_, time=None):
         """
         Load team by ID.
         """
-        return cls(database.get_team(id_))
+        if time is None:
+            return cls(database.get_team(id_))
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            team = list(chronicler.get_entities("team", id_, at=time))
+            if len(team) == 0:
+                return None
+            return cls(dict(team[0]["data"], timestamp=time))
+
 
     @classmethod
-    def load_all(cls):
+    def load_all(cls, time=None):
         """
         Load all teams, including historical and tournament teams. Currently does not include the PODs.
 
         Returns dictionary keyed by team ID.
         """
-        return {
-            id_: cls(team) for id_, team in database.get_all_teams().items()
-        }
+        if time is None:
+            return {
+                id_: cls(team) for id_, team in database.get_all_teams().items()
+            }
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            teams = chronicler.get_entities("team", at=time)
+            return {
+                team["entityId"]: cls(dict(team["data"], timestamp=time)) for team in teams
+            }
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
@@ -43,11 +62,11 @@ class Team(Base):
         return [cls(dict(p['data'], timestamp=p['validFrom'])) for p in teams]
 
     @classmethod
-    def load_by_name(cls, name):
+    def load_by_name(cls, name, time=None):
         """
         Name can be full name or nickname, case insensitive.
         """
-        teams = cls.load_all().values()
+        teams = cls.load_all(time=time).values()
         name = name.lower()
         for team in teams:
             if name in team.full_name.lower():
@@ -59,53 +78,37 @@ class Team(Base):
         """
         Load blaseball team with roster at given datetime.
         """
-        if isinstance(time, str):
-            time = parse(time)
-
-        team = list(chronicler.get_entities("team", id_, at=time))
-        if len(team) == 0:
-            return None
-        return cls(dict(team[0]["data"], timestamp=time))
+        return cls.load(id_, time=time)
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one_at_time(x, self.timestamp) for x in self._lineup_ids]
-        else:
-            players = Player.load(*self._lineup_ids)
-            return [players.get(id_) for id_ in self._lineup_ids]
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._lineup_ids, time=time)
+        return [players.get(id_) for id_ in self._lineup_ids]
 
     @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one_at_time(x, self.timestamp) for x in self._rotation_ids]
-        else:
-            players = Player.load(*self._rotation_ids)
-            return [players.get(id_) for id_ in self._rotation_ids]
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._rotation_ids, time=time)
+        return [players.get(id_) for id_ in self._rotation_ids]
 
     @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one_at_time(x, self.timestamp) for x in self._bullpen_ids]
-        else:
-            players = Player.load(*self._bullpen_ids)
-            return [players.get(id_) for id_ in self._bullpen_ids]
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._bullpen_ids, time=time)
+        return [players.get(id_) for id_ in self._bullpen_ids]
 
     @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
     def bench(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one_at_time(x, self.timestamp) for x in self._bench_ids]
-        else:
-            players = Player.load(*self._bench_ids)
-            return [players.get(id_) for id_ in self._bench_ids]
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._bench_ids, time=time)
+        return [players.get(id_) for id_ in self._bench_ids]
 
     @Base.lazy_load("_shadows_ids", cache_name="_shadows", default_value=list())
     def shadows(self):
-        if getattr(self, "timestamp", None):
-            return [Player.load_one_at_time(x, self.timestamp) for x in self._shadows_ids]
-        else:
-            players = Player.load(*self._shadows_ids)
-            return [players.get(id_) for id_ in self._shadows_ids]
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._shadows_ids, time=time)
+        return [players.get(id_) for id_ in self._shadows_ids]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
