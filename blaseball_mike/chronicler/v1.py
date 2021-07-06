@@ -288,7 +288,7 @@ def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, 
             raise ValueError("page_size must be between 1 and 250")
         params["count"] = page_size
     if player_ids:
-        params["team"] = prepare_id(player_ids)
+        params["player"] = prepare_id(player_ids)
     if team_ids:
         params["team"] = prepare_id(team_ids)
 

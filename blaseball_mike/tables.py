@@ -97,7 +97,7 @@ class StatType(Enum):
     CONTINUATION = 11, "continuation"
     INDULGENCE = 12, "indulgence"
     GROUND_FRICTION = 13, "ground_friction"
-    SHAKESPEARIANISM = 14, "shakesperianism"
+    SHAKESPEARIANISM = 14, "shakespearianism"
     SUPPRESSION = 15, "suppression"
     UNTHWACKABILITY = 16, "unthwackability"
     COLDNESS = 17, "coldness"
