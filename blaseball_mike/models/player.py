@@ -21,44 +21,51 @@ class Player(Base):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
-    def load(cls, *ids):
+    def load(cls, *ids, time=None):
         """
         Load one or more players by ID.
 
         Returns a dictionary of players keyed by Player ID.
         """
-        players = database.get_player(list(ids))
-        return {
-            id_: cls(player) for (id_, player) in players.items()
-        }
+        if time is None:
+            players = database.get_player(list(ids))
+            return {
+                id_: cls(player) for (id_, player) in players.items()
+            }
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+            players = chronicler.get_entities("player", id_=list(ids), at=time)
+            return {
+                player["entityId"]: cls(dict(player["data"], timestamp=time)) for player in players
+            }
 
     @classmethod
-    def load_one(cls, id_):
+    def load_one(cls, id_, time=None):
         """
         Load single player by ID.
         """
-        return cls.load(id_).get(id_)
+        return cls.load(id_, time=time).get(id_)
 
     @classmethod
     def load_one_at_time(cls, id_, time):
         """
         Load single player by ID with historical stats at the provided IRL datetime.
         """
-        if isinstance(time, str):
-            time = parse(time)
-
-        players = list(chronicler.get_entities("player", id_=id_, at=time))
-        if len(players) == 0:
-            return None
-        return cls(dict(players[0]["data"], timestamp=time))
+        return cls.load_one(id_, time=time)
 
     @classmethod
-    def load_all(cls):
+    def load_all(cls, time=None):
         """
         Load all players
         """
-        players = chronicler.get_entities("player")
-        return {x["entityId"]: cls(x["data"]) for x in players}
+        players = chronicler.get_entities("player", at=time)
+        result = {}
+        for player in players:
+            if time is not None:
+                player["data"]["timestamp"] = time
+            result[player["entityId"]] = cls(player["data"])
+        return result
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
