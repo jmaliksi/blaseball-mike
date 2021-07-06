@@ -9,80 +9,24 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=20395b48-279d-44ff-b5bf-7cf2624a2d30&type=player
+    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=20395b48-279d-44ff-b5bf-7cf2624a2d30%2Cd8bc482e-9309-4230-abcb-2c5a6412446d%2Ccd5494b4-05d0-4b2e-8578-357f0923ff4c&type=player
   response:
     body:
-      string: '{"nextPage":"SFs5IJ0n_0S1v3zyYkotMGBMO2xFFgAA","items":[{"entityId":"20395b48-279d-44ff-b5bf-7cf2624a2d30","hash":"4bcae7b4-112a-ca35-cf65-52f19c38934a","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"20395b48-279d-44ff-b5bf-7cf2624a2d30","name":"Adrian
-        Melon","soul":9,"moxie":0.10225877640000158,"buoyancy":0.5437635473095974,"coldness":0.5860902208807217,"deceased":false,"divinity":0.7081218819110053,"chasiness":0.9365502057757844,"martyrdom":0.3321696433918815,"baseThirst":0.48505135697445145,"indulgence":0.17639897173746566,"musclitude":0.9516492322832693,"tragicness":0,"omniscience":0.18883964504542616,"patheticism":0.2756779195238306,"suppression":0.7291815857899175,"continuation":0.5846402837130693,"ruthlessness":0.9567121749455225,"totalFingers":10,"watchfulness":0.9059084059051399,"laserlikeness":0.8408308179797273,"overpowerment":0.021131591106097636,"tenaciousness":0.3436618537062246,"thwackability":0.3021708129296865,"anticapitalism":0.516713166763427,"groundFriction":0.4212408963263039,"pressurization":0.8471593499885721,"unthwackability":0.19229073647690798,"shakespearianism":0.09248311272404242}}]}'
-    headers:
-      Content-Length:
-      - '1172'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:04 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=d8bc482e-9309-4230-abcb-2c5a6412446d&type=player
-  response:
-    body:
-      string: '{"nextPage":"Lki82AmTMEKryyxaZBJEbWBMO2xFFgAA","items":[{"entityId":"d8bc482e-9309-4230-abcb-2c5a6412446d","hash":"e2d13458-19da-820b-6503-f47ad2227882","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"d8bc482e-9309-4230-abcb-2c5a6412446d","name":"August
+      string: '{"nextPage":"Lki82AmTMEKryyxaZBJEbWBMO2xFFgAA","items":[{"entityId":"20395b48-279d-44ff-b5bf-7cf2624a2d30","hash":"4bcae7b4-112a-ca35-cf65-52f19c38934a","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"20395b48-279d-44ff-b5bf-7cf2624a2d30","name":"Adrian
+        Melon","soul":9,"moxie":0.10225877640000158,"buoyancy":0.5437635473095974,"coldness":0.5860902208807217,"deceased":false,"divinity":0.7081218819110053,"chasiness":0.9365502057757844,"martyrdom":0.3321696433918815,"baseThirst":0.48505135697445145,"indulgence":0.17639897173746566,"musclitude":0.9516492322832693,"tragicness":0,"omniscience":0.18883964504542616,"patheticism":0.2756779195238306,"suppression":0.7291815857899175,"continuation":0.5846402837130693,"ruthlessness":0.9567121749455225,"totalFingers":10,"watchfulness":0.9059084059051399,"laserlikeness":0.8408308179797273,"overpowerment":0.021131591106097636,"tenaciousness":0.3436618537062246,"thwackability":0.3021708129296865,"anticapitalism":0.516713166763427,"groundFriction":0.4212408963263039,"pressurization":0.8471593499885721,"unthwackability":0.19229073647690798,"shakespearianism":0.09248311272404242}},{"entityId":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","hash":"a9d38b0d-4f59-e748-6b82-e6a3226a7b43","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","name":"Mcfarland
+        Vargas","soul":5,"moxie":0.17536565318653308,"buoyancy":0.5513425134621988,"coldness":0.810602623494298,"deceased":false,"divinity":0.7761498650873726,"chasiness":0.9041344884360119,"martyrdom":0.41783221023675665,"baseThirst":0.8121678499582619,"indulgence":0.4823765299344567,"musclitude":0.30771382366062583,"tragicness":0,"omniscience":0.054401227767283844,"patheticism":0.9842787327040725,"suppression":0.34918514042209337,"continuation":0.5570853001905556,"ruthlessness":0.8422971150742167,"totalFingers":10,"watchfulness":0.5902285286481459,"laserlikeness":0.9227647403979307,"overpowerment":0.28616424969491816,"tenaciousness":0.3561821586396947,"thwackability":0.11708364590817744,"anticapitalism":0.741914802161207,"groundFriction":0.42124604961685796,"pressurization":0.5190558277454449,"unthwackability":0.1879497991434833,"shakespearianism":0.34850304608233995}},{"entityId":"d8bc482e-9309-4230-abcb-2c5a6412446d","hash":"e2d13458-19da-820b-6503-f47ad2227882","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"d8bc482e-9309-4230-abcb-2c5a6412446d","name":"August
         Obrien","soul":7,"moxie":0.4927077729451237,"buoyancy":0.463957840433034,"coldness":0.10018759576122194,"deceased":false,"divinity":0.9275694151611666,"chasiness":0.6522605583404881,"martyrdom":0.5568485065916828,"baseThirst":0.7018121676191835,"indulgence":0.4811489817369903,"musclitude":0.913890776522519,"tragicness":0,"omniscience":0.054615220178514834,"patheticism":0.9238543398682508,"suppression":0.32270838379791233,"continuation":0.14038893524840823,"ruthlessness":0.26147707929592445,"totalFingers":10,"watchfulness":0.8371028453277864,"laserlikeness":0.9664701456330411,"overpowerment":0.8878299922012265,"tenaciousness":0.48336818288460215,"thwackability":0.6412171610190165,"anticapitalism":0.32792794611504017,"groundFriction":0.41534449839541443,"pressurization":0.33700819467736887,"unthwackability":0.23672335921111576,"shakespearianism":0.09774303312517918}}]}'
     headers:
-      Content-Length:
-      - '1176'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 19 May 2021 20:51:04 GMT
+      - Tue, 06 Jul 2021 15:38:54 GMT
       Server:
       - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=cd5494b4-05d0-4b2e-8578-357f0923ff4c&type=player
-  response:
-    body:
-      string: '{"nextPage":"tJRUzdAFLkuFeDV_CSP_TGBMO2xFFgAA","items":[{"entityId":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","hash":"a9d38b0d-4f59-e748-6b82-e6a3226a7b43","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"cd5494b4-05d0-4b2e-8578-357f0923ff4c","name":"Mcfarland
-        Vargas","soul":5,"moxie":0.17536565318653308,"buoyancy":0.5513425134621988,"coldness":0.810602623494298,"deceased":false,"divinity":0.7761498650873726,"chasiness":0.9041344884360119,"martyrdom":0.41783221023675665,"baseThirst":0.8121678499582619,"indulgence":0.4823765299344567,"musclitude":0.30771382366062583,"tragicness":0,"omniscience":0.054401227767283844,"patheticism":0.9842787327040725,"suppression":0.34918514042209337,"continuation":0.5570853001905556,"ruthlessness":0.8422971150742167,"totalFingers":10,"watchfulness":0.5902285286481459,"laserlikeness":0.9227647403979307,"overpowerment":0.28616424969491816,"tenaciousness":0.3561821586396947,"thwackability":0.11708364590817744,"anticapitalism":0.741914802161207,"groundFriction":0.42124604961685796,"pressurization":0.5190558277454449,"unthwackability":0.1879497991434833,"shakespearianism":0.34850304608233995}}]}'
-    headers:
-      Content-Length:
-      - '1177'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:04 GMT
-      Server:
-      - Kestrel
+      Transfer-Encoding:
+      - chunked
     status:
       code: 200
       message: OK
