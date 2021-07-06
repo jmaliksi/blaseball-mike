@@ -709,7 +709,7 @@ __all__ = [x for x in [*dir(v1), *dir(v2)] if str(x).startswith(&#34;get&#34;)]<
             raise ValueError(&#34;page_size must be between 1 and 250&#34;)
         params[&#34;count&#34;] = page_size
     if player_ids:
-        params[&#34;team&#34;] = prepare_id(player_ids)
+        params[&#34;player&#34;] = prepare_id(player_ids)
     if team_ids:
         params[&#34;team&#34;] = prepare_id(team_ids)
 

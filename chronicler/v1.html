@@ -318,7 +318,7 @@ def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, 
             raise ValueError(&#34;page_size must be between 1 and 250&#34;)
         params[&#34;count&#34;] = page_size
     if player_ids:
-        params[&#34;team&#34;] = prepare_id(player_ids)
+        params[&#34;player&#34;] = prepare_id(player_ids)
     if team_ids:
         params[&#34;team&#34;] = prepare_id(team_ids)
 
@@ -1250,7 +1250,7 @@ def get_old_items(ids=None):
             raise ValueError(&#34;page_size must be between 1 and 250&#34;)
         params[&#34;count&#34;] = page_size
     if player_ids:
-        params[&#34;team&#34;] = prepare_id(player_ids)
+        params[&#34;player&#34;] = prepare_id(player_ids)
     if team_ids:
         params[&#34;team&#34;] = prepare_id(team_ids)
 
