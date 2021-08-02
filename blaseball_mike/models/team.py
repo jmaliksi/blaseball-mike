@@ -19,6 +19,25 @@ class Team(BaseChronicler):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     def load_by_name(cls, name, time=None):
+        if time is None:
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            team = list(chronicler.get_entities("team", id_, at=time))
+            if len(team) == 0:
+                return None
+            return cls(dict(team[0]["data"], timestamp=time))
+
+        if time is None:
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            teams = chronicler.get_entities("team", at=time)
+            return {
+                team["entityId"]: cls(dict(team["data"], timestamp=time)) for team in teams
+            }
         """
         Name can be full name or nickname, case insensitive.
         """
@@ -40,17 +59,17 @@ class Team(BaseChronicler):
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        players = Player.load(*self._lineup_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._lineup_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._lineup_ids]
 
     @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        players = Player.load(*self._rotation_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._rotation_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._rotation_ids]
 
     @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        players = Player.load(*self._bullpen_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._bullpen_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bullpen_ids]
 
     @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
