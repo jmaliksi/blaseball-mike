@@ -18,6 +18,7 @@ class Team(BaseChronicler):
         p = cls.load("8d87c468-699a-47a8-b40d-cfb73a5660ad")
         return [cls._from_api_conversion(x) for x in p.fields]
 
+    @classmethod
     def load_by_name(cls, name, time=None):
         """
         Name can be full name or nickname, case insensitive.
@@ -40,28 +41,28 @@ class Team(BaseChronicler):
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        players = Player.load(*self._lineup_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._lineup_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._lineup_ids]
 
     @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        players = Player.load(*self._rotation_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._rotation_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._rotation_ids]
 
     @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        players = Player.load(*self._bullpen_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._bullpen_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bullpen_ids]
 
     @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
     def bench(self):
-        players = Player.load(*self._bench_ids, time=getattr(self, "timestamp", None))
+        players = Player.load(self._bench_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bench_ids]
 
     @Base.lazy_load("_shadows_ids", cache_name="_shadows", default_value=list())
     def shadows(self):
         time = getattr(self, "timestamp", None)
-        players = Player.load(*self._shadows_ids, time=time)
+        players = Player.load(self._shadows_ids, time=time)
         return [players.get(id_) for id_ in self._shadows_ids]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
