@@ -20,6 +20,25 @@ class Team(BaseChronicler):
 
     @classmethod
     def load_by_name(cls, name, time=None):
+        if time is None:
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            team = list(chronicler.get_entities("team", id_, at=time))
+            if len(team) == 0:
+                return None
+            return cls(dict(team[0]["data"], timestamp=time))
+
+        if time is None:
+        else:
+            if isinstance(time, str):
+                time = parse(time)
+
+            teams = chronicler.get_entities("team", at=time)
+            return {
+                team["entityId"]: cls(dict(team["data"], timestamp=time)) for team in teams
+            }
         """
         Name can be full name or nickname, case insensitive.
         """
