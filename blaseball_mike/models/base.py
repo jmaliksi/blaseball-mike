@@ -157,9 +157,29 @@ class BaseChronicler(Base):
             else:
                 timestamp = time
         entities = chronicler.get_entities(cls._entity_type, id_=ids, at=timestamp)
-        return {e["entityId"]: cls(dict(e["data"], timestamp=timestamp or e['validFrom'])) for e in entities}
+        return {e["entityId"]: cls(dict(e["data"] if type(e["data"]) == dict else {"data": e["data"]}, timestamp=timestamp or e['validFrom'])) for e in entities}
 
     @classmethod
     def load_history(cls, id_, order='desc', count=None):
         entities = chronicler.get_versions(cls._entity_type, id_=id_, order=order, count=count)
         return (cls(dict(e['data'], timestamp=e['validFrom'])) for e in entities)
+
+
+class BaseChroniclerSingle(BaseChronicler):
+    """
+    For Chronicler entries that only have a single entity ID
+    """
+    _entity_id = "00000000-0000-0000-0000-000000000000"
+
+    @classmethod
+    def _get_fields(cls):
+        p = cls.load()
+        return [cls._from_api_conversion(x) for x in p.fields]
+
+    @classmethod
+    def load(cls, time=None, season=None, day=None):
+        return super(BaseChroniclerSingle, cls).load(cls._entity_id, time=time, season=season, day=day).get(cls._entity_id)
+
+    @classmethod
+    def load_one(cls, time=None, season=None, day=None):
+        return super(BaseChroniclerSingle, cls).load(cls._entity_id, time=time, season=season, day=day).get(cls._entity_id)

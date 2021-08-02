@@ -1,11 +1,13 @@
+import warnings
+
 from dateutil.parser import parse
 
-from .base import Base
+from .base import Base, BaseChroniclerSingle
 from .league import League
-from .. import database, chronicler
 
 
-class SimulationData(Base):
+class SimulationData(BaseChroniclerSingle):
+    _entity_type = "sim"
     """
     Represents the current simulation state.
     """
@@ -15,24 +17,13 @@ class SimulationData(Base):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
-    def load(cls):
-        """Returns the current simulation state"""
-        return cls(database.get_simulation_data())
-
-    @classmethod
     def load_at_time(cls, time):
-        """Returns the simulation state at a given time"""
-        if isinstance(time, str):
-            time = parse(time)
-
-        updates = list(chronicler.get_entities("sim", at=time))
-        if len(updates) == 0:
-            return None
-        return cls(dict(updates[0]["data"], timestamp=time))
+        warnings.warn("instead of .load_at_time(time), use .load(time=time)", DeprecationWarning, stacklevel=2)
+        return cls.load(time=time)
 
     @Base.lazy_load("_league_id", cache_name="_league")
     def league(self):
-        return League.load_by_id(self._league_id)
+        return League.load_one(self._league_id)
 
     @Base.lazy_load("_next_election_end")
     def next_election_end(self):
