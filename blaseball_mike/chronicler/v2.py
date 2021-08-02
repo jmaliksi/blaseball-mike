@@ -1,62 +1,30 @@
 """
 Chronicler V2 Endpoints
+
+.. include:: ../../docs/chron_types.md
 """
 from .chron_helpers import prepare_id, paged_get
 from datetime import datetime
-from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
+from blaseball_mike.session import session, TIMESTAMP_FORMAT
 
 BASE_URL_V2 = 'https://api.sibr.dev/chronicler/v2'
 
-"""List of Types:
-* player
-* team
-* stream
-* game
-* idols
-* tributes
-* temporal
-* tiebreakers
-* sim
-* globalevents
-* offseasonsetup
-* standings
-* season
-* league
-* subleague
-* division
-* gamestatsheet
-* teamstatsheet
-* playerstatsheet
-* seasonstatsheet
-* bossfight
-* offseasonrecap
-* bonusresult
-* decreeresult
-* eventresult
-* playoffs
-* playoffround
-* playoffmatchup
-* tournament
-* stadium
-* renovationprogress
-* teamelectionstats
-"""
-
-
-# WRAPPER FUNCTIONS
 
 def get_entities(type_, id_=None, at=None, count=None, page_size=1000, cache_time=5):
     """
     Chronicler V2 Entities endpoint
-    Returns list of all entities of a certain type at one point in time
 
     Args:
         type_: type of entity to filter by (player, team, etc)
         id_: id or list of ids to filter type by
-        at: return entities at this timestamp
+        at: return entities at this timestamp (ISO string or python `datetime`)
         count: number of entries to return.
         page_size: number of elements to get per-page
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
+
+    Returns:
+        generator of all entities of a certain type at one point in time
+
     """
     if isinstance(at, datetime):
         at = at.strftime(TIMESTAMP_FORMAT)
@@ -82,17 +50,19 @@ def get_entities(type_, id_=None, at=None, count=None, page_size=1000, cache_tim
 def get_versions(type_, id_=None, before=None, after=None, order=None, count=None, page_size=1000, cache_time=5):
     """
     Chronicler V2 Versions endpoint
-    Returns generator of changes to entities over time
 
     Args:
         type_: type of entity to filter by (player, team, etc)
         id_: id or list of ids to filter type by
-        before: return elements before this string or datetime timestamp.
-        after: return elements after this string or datetime timestamp.
+        before: return elements before this string or datetime timestamp (ISO string or python `datetime`).
+        after: return elements after this string or datetime timestamp (ISO string or python `datetime`).
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         page_size: number of elements to get per-page
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
+
+    Returns:
+         generator of changes to entities over time
     """
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)

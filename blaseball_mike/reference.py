@@ -1,4 +1,5 @@
-"""Client for blaseball-reference APIs
+"""
+Wrapper for Blaseball Reference/Datablase API
 
 Swagger docs: https://api.blaseball-reference.com/docs
 """
@@ -67,6 +68,10 @@ def get_player_ids_by_name(name, current=True, cache_time=3600):
     Args:
         name: Player name.
         current: If false, include previous names in search.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+
+    Returns:
+        List of player guids
     """
     s = session(cache_time)
     players = s.get(f'{BASE_URL}/playerIdsByName?name={name}&current={current}')
@@ -80,6 +85,10 @@ def get_all_players_for_gameday(season, day, cache_time=600):
     Args:
         season: 1-indexed int for season.
         day: 1-indexed int for day.
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+
+    Returns:
+        List of dictionaries containing player info
     """
     if season < 1:
         raise ValueError("Season must be >= 1")
@@ -97,6 +106,7 @@ def get_stat_leaders(season='current', group='hitting,pitching', cache_time=600)
     Args:
         season: "current" for current season, or 1-indexed int for season.
         group: "hitting", "pitching", or "hitting,pitching".
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
 
     Returns:
     ```
@@ -149,8 +159,7 @@ def get_stats(type_='season',
               limit=None,
               cache_time=600):
     """
-    Get the stats filtered by team/player/season. Defaults to fetching all stats which is
-    *extremely slow*, be warned.
+    Get the stats filtered by team/player/season.
 
     Args:
         type_ (str): The type of stat split (defaults to season).
@@ -163,6 +172,7 @@ def get_stats(type_='season',
         player_id (str): The ID of a player.
         team_id (str): The ID of a team to retrieve player stats for.
         limit (int): The number of rows to return for each field (e.g. 5).
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
 
     Returns:
     ```

@@ -1,8 +1,13 @@
 # blaseball-mike tests
+Tests use [pytest](https://docs.pytest.org/en/stable/contents.html) and are automatically run on all pull requests and
+merges.
+
+### Disable Caching
+To improve testing, please set `BLASEBALL_MIKE_NOCACHE=1` in your environment variables before running tests.
 
 ### Run test suite
 ```shell
-# Install dependancies
+# Install dependencies
 pip install pytest pytest-cov pytest-recording
 
 # Run whole test suite

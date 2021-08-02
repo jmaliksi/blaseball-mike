@@ -18,12 +18,11 @@ class Team(BaseChronicler):
         p = cls.load("8d87c468-699a-47a8-b40d-cfb73a5660ad")
         return [cls._from_api_conversion(x) for x in p.fields]
 
-    @classmethod
-    def load_by_name(cls, name):
+    def load_by_name(cls, name, time=None):
         """
         Name can be full name or nickname, case insensitive.
         """
-        teams = cls.load_all().values()
+        teams = cls.load_all(time=time).values()
         name = name.lower()
         for team in teams:
             if name in team.full_name.lower():
@@ -58,6 +57,12 @@ class Team(BaseChronicler):
     def bench(self):
         players = Player.load(*self._bench_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bench_ids]
+
+    @Base.lazy_load("_shadows_ids", cache_name="_shadows", default_value=list())
+    def shadows(self):
+        time = getattr(self, "timestamp", None)
+        players = Player.load(*self._shadows_ids, time=time)
+        return [players.get(id_) for id_ in self._shadows_ids]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
     def perm_attr(self):
