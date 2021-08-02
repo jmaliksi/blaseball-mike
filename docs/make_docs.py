@@ -1,10 +1,9 @@
 import pdoc
 import os
 import os.path as path
-import re
-from blaseball_mike.models.base import Base
 
-output_dir = 'docs'
+# Output directory, relative to the location of this script
+output_dir = '_build'
 
 
 def recurse_modules(mod):
@@ -14,7 +13,8 @@ def recurse_modules(mod):
 
 
 def recursive_write_files(m):
-    filepath = path.join(output_dir, m.url())
+    self_path = os.path.dirname(os.path.realpath(__file__))
+    filepath = path.join(self_path, output_dir, m.url())
 
     dirpath = path.dirname(filepath)
     if not os.access(dirpath, os.R_OK):
@@ -33,7 +33,7 @@ mike_module = pdoc.Module('blaseball_mike')
 # Dynamically pull fields for models and add them to the documentation
 for module in recurse_modules(mike_module):
     for class_ in module.classes():
-        if Base not in [x.obj for x in class_.mro()]:
+        if not any((x.obj and 'Base' == x.obj.__name__ for x in class_.mro())):
             continue
 
         try:
@@ -42,8 +42,6 @@ for module in recurse_modules(mike_module):
             continue
 
         for field in fields:
-            if field in class_.doc:
-                continue
             class_.doc[field] = pdoc.Variable(field, module, "", cls=class_, instance_var=True)
 
 # Write to files

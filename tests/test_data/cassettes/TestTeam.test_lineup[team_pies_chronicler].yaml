@@ -9,254 +9,30 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=1ba715f2-caa3-44c0-9118-b045ea702a34&type=player
+    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=1ba715f2-caa3-44c0-9118-b045ea702a34%2C26cfccf2-850e-43eb-b085-ff73ad0749b8%2C13a05157-6172-4431-947b-a058217b4aa5%2C80dff591-2393-448a-8d88-122bd424fa4c%2C6fc3689f-bb7d-4382-98a2-cf6ddc76909d%2C15ae64cd-f698-4b00-9d61-c9fffd037ae2%2C083d09d4-7ed3-4100-b021-8fbe30dd43e8%2C06ced607-7f96-41e7-a8cd-b501d11d1a7e%2C66cebbbf-9933-4329-924a-72bd3718f321&type=player
   response:
     body:
-      string: '{"nextPage":"8hWnG6PKwESRGLBF6nAqNGBMO2xFFgAA","items":[{"entityId":"1ba715f2-caa3-44c0-9118-b045ea702a34","hash":"feb9bfed-91b9-0ba4-32c4-bb2a7009d8c2","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"1ba715f2-caa3-44c0-9118-b045ea702a34","name":"Juan
-        Rangel","soul":7,"moxie":0.7902667065860169,"buoyancy":0.5704539863180131,"coldness":0.8728283012639908,"deceased":false,"divinity":0.23092286428295772,"chasiness":0.45220067395227703,"martyrdom":0.15604374403800514,"baseThirst":0.2567450240376663,"indulgence":0.8987065506269727,"musclitude":0.761296177150365,"tragicness":0,"omniscience":0.8030959144190009,"patheticism":0.5600703314870863,"suppression":0.6315923651209989,"continuation":0.05203350816128083,"ruthlessness":0.568086727107028,"totalFingers":10,"watchfulness":0.483012047119856,"laserlikeness":0.6257205547810696,"overpowerment":0.5742813697105611,"tenaciousness":0.05779127133944528,"thwackability":0.5768468959098274,"anticapitalism":0.22083607963084173,"groundFriction":0.11941254093212628,"pressurization":0.708898424261198,"unthwackability":0.02624770155449463,"shakespearianism":0.042643577818908485}}]}'
-    headers:
-      Content-Length:
-      - '1170'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:00 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=26cfccf2-850e-43eb-b085-ff73ad0749b8&type=player
-  response:
-    body:
-      string: '{"nextPage":"8szPJg6F60Owhf9zrQdJuGBMO2xFFgAA","items":[{"entityId":"26cfccf2-850e-43eb-b085-ff73ad0749b8","hash":"c4ee7e55-b904-72dc-3b2a-ab64e231841a","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"26cfccf2-850e-43eb-b085-ff73ad0749b8","name":"Beasley
-        Day","soul":7,"moxie":0.21847893618360725,"buoyancy":0.7636715920818513,"coldness":0.42777417805875917,"deceased":false,"divinity":0.6988008268552313,"chasiness":0.3351822986456432,"martyrdom":0.5337063906006141,"baseThirst":0.9716688761224026,"indulgence":0.34023923654578336,"musclitude":0.08766872597987896,"tragicness":0,"omniscience":0.17034040121857275,"patheticism":0.4589637303345073,"suppression":0.027565210773816684,"continuation":0.42622108945969606,"ruthlessness":0.3210712206419353,"totalFingers":10,"watchfulness":0.9944423319354665,"laserlikeness":0.4060984087240962,"overpowerment":0.6391487424170927,"tenaciousness":0.20210984819198607,"thwackability":0.6949999691666375,"anticapitalism":0.25851172907829967,"groundFriction":0.6832047932250018,"pressurization":0.28545395980628685,"unthwackability":0.5582072005100558,"shakespearianism":0.9165470207578321}}]}'
-    headers:
-      Content-Length:
-      - '1175'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:00 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=13a05157-6172-4431-947b-a058217b4aa5&type=player
-  response:
-    body:
-      string: '{"nextPage":"V1GgE3JhMUSUe6BYIXtKpWBMO2xFFgAA","items":[{"entityId":"13a05157-6172-4431-947b-a058217b4aa5","hash":"4026b94c-ec73-6181-bf26-e012506f4f37","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"13a05157-6172-4431-947b-a058217b4aa5","name":"Spears
-        Taylor","soul":8,"moxie":0.5933545051300815,"buoyancy":0.9092949990370298,"coldness":0.3178665091324593,"deceased":false,"divinity":0.3363760308913626,"chasiness":0.8536497309348097,"martyrdom":0.7634234358765017,"baseThirst":0.06762117579774207,"indulgence":0.9277081797730382,"musclitude":0.8345433568436755,"tragicness":0,"omniscience":0.4469344514315474,"patheticism":0.44043909919994517,"suppression":0.6565264280384788,"continuation":0.8714992867626326,"ruthlessness":0.7155282241744596,"totalFingers":10,"watchfulness":0.8244479278902566,"laserlikeness":0.2998456607069935,"overpowerment":0.1852346723357048,"tenaciousness":0.854012384964312,"thwackability":0.40652171629982425,"anticapitalism":0.9991844847773148,"groundFriction":0.4386159394711977,"pressurization":0.7418632026108982,"unthwackability":0.45248562814012216,"shakespearianism":0.33066853312748745}}]}'
-    headers:
-      Content-Length:
-      - '1170'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:00 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=80dff591-2393-448a-8d88-122bd424fa4c&type=player
-  response:
-    body:
-      string: '{"nextPage":"kfXfgJMjikSNiBIr1CT6TGBMO2xFFgAA","items":[{"entityId":"80dff591-2393-448a-8d88-122bd424fa4c","hash":"5de7babc-c9a6-dbd0-cdf2-da86819fd08d","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"80dff591-2393-448a-8d88-122bd424fa4c","name":"Elvis
+      string: '{"nextPage":"kfXfgJMjikSNiBIr1CT6TGBMO2xFFgAA","items":[{"entityId":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","hash":"21823741-2827-45ff-ea77-abee05f21c52","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","name":"Morrow
+        Wilson","soul":8,"moxie":0.5098271735720075,"buoyancy":0.07180377008997119,"coldness":0.00996592432982002,"deceased":false,"divinity":0.4232458500138414,"chasiness":0.9482805780238897,"martyrdom":0.3762843951419368,"baseThirst":0.44753989326318,"indulgence":0.5031793286354087,"musclitude":0.39916927039006067,"tragicness":0,"omniscience":0.8771022885131188,"patheticism":0.8532119766355108,"suppression":0.2394163864630796,"continuation":0.6604766776265041,"ruthlessness":0.716770606203132,"totalFingers":10,"watchfulness":0.052403835248049147,"laserlikeness":0.33409359560637686,"overpowerment":0.06938720820506816,"tenaciousness":0.8385342961947018,"thwackability":0.41846803152729906,"anticapitalism":0.955766342313032,"groundFriction":0.05281653002680864,"pressurization":0.529783667036968,"unthwackability":0.01681987863259593,"shakespearianism":0.4036740566960553}},{"entityId":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","hash":"359a41b2-6790-c46f-89f7-e25a8a8d07e2","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","name":"Jessica
+        Telephone","soul":7,"moxie":0.7924746391865745,"buoyancy":0.7290386558929516,"coldness":0.36424907711844057,"deceased":false,"divinity":1.0264554950661913,"chasiness":0.49217601055241667,"martyrdom":1.3843961867934054,"baseThirst":0.8937081572225478,"indulgence":0.5791018871160651,"musclitude":1.1362941924123677,"tragicness":0,"omniscience":0.520428977901964,"patheticism":0.40590198952572454,"suppression":0.8128774318124143,"continuation":0.7851231462319437,"ruthlessness":0.3321803174782816,"totalFingers":10,"watchfulness":0.46690651205998646,"laserlikeness":0.3883179230872258,"overpowerment":0.49924279341878286,"tenaciousness":0.25571806043038703,"thwackability":0.9232820621017053,"anticapitalism":0.5815585414248714,"groundFriction":0.8970693806274312,"pressurization":0.19240544381174618,"unthwackability":0.21018316390635827,"shakespearianism":0.8057369039444793}},{"entityId":"13a05157-6172-4431-947b-a058217b4aa5","hash":"4026b94c-ec73-6181-bf26-e012506f4f37","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"13a05157-6172-4431-947b-a058217b4aa5","name":"Spears
+        Taylor","soul":8,"moxie":0.5933545051300815,"buoyancy":0.9092949990370298,"coldness":0.3178665091324593,"deceased":false,"divinity":0.3363760308913626,"chasiness":0.8536497309348097,"martyrdom":0.7634234358765017,"baseThirst":0.06762117579774207,"indulgence":0.9277081797730382,"musclitude":0.8345433568436755,"tragicness":0,"omniscience":0.4469344514315474,"patheticism":0.44043909919994517,"suppression":0.6565264280384788,"continuation":0.8714992867626326,"ruthlessness":0.7155282241744596,"totalFingers":10,"watchfulness":0.8244479278902566,"laserlikeness":0.2998456607069935,"overpowerment":0.1852346723357048,"tenaciousness":0.854012384964312,"thwackability":0.40652171629982425,"anticapitalism":0.9991844847773148,"groundFriction":0.4386159394711977,"pressurization":0.7418632026108982,"unthwackability":0.45248562814012216,"shakespearianism":0.33066853312748745}},{"entityId":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","hash":"a3456a53-3d8a-a18b-eeb2-24ce563699f8","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","name":"Mickey
+        Woods","soul":4,"moxie":0.2890269139582906,"buoyancy":0.6985810897611886,"coldness":0.40507403414030874,"deceased":false,"divinity":0.31105894138310486,"chasiness":0.9197797502918548,"martyrdom":0.8290948975572121,"baseThirst":0.49670014370186943,"indulgence":0.6187203236772589,"musclitude":0.34656898625798127,"tragicness":0,"omniscience":0.6642324804650381,"patheticism":0.005840907993729161,"suppression":0.7122905143896505,"continuation":0.36522585172416044,"ruthlessness":0.09115864894752534,"totalFingers":10,"watchfulness":0.8340084576017894,"laserlikeness":0.3742030347824221,"overpowerment":0.3558625754862925,"tenaciousness":0.4822468488306879,"thwackability":0.50176169265881,"anticapitalism":0.9822432200909246,"groundFriction":0.5110373060438149,"pressurization":0.08906305153183114,"unthwackability":0.5991497958990193,"shakespearianism":0.9154691147302345}},{"entityId":"1ba715f2-caa3-44c0-9118-b045ea702a34","hash":"feb9bfed-91b9-0ba4-32c4-bb2a7009d8c2","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"1ba715f2-caa3-44c0-9118-b045ea702a34","name":"Juan
+        Rangel","soul":7,"moxie":0.7902667065860169,"buoyancy":0.5704539863180131,"coldness":0.8728283012639908,"deceased":false,"divinity":0.23092286428295772,"chasiness":0.45220067395227703,"martyrdom":0.15604374403800514,"baseThirst":0.2567450240376663,"indulgence":0.8987065506269727,"musclitude":0.761296177150365,"tragicness":0,"omniscience":0.8030959144190009,"patheticism":0.5600703314870863,"suppression":0.6315923651209989,"continuation":0.05203350816128083,"ruthlessness":0.568086727107028,"totalFingers":10,"watchfulness":0.483012047119856,"laserlikeness":0.6257205547810696,"overpowerment":0.5742813697105611,"tenaciousness":0.05779127133944528,"thwackability":0.5768468959098274,"anticapitalism":0.22083607963084173,"groundFriction":0.11941254093212628,"pressurization":0.708898424261198,"unthwackability":0.02624770155449463,"shakespearianism":0.042643577818908485}},{"entityId":"26cfccf2-850e-43eb-b085-ff73ad0749b8","hash":"c4ee7e55-b904-72dc-3b2a-ab64e231841a","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"26cfccf2-850e-43eb-b085-ff73ad0749b8","name":"Beasley
+        Day","soul":7,"moxie":0.21847893618360725,"buoyancy":0.7636715920818513,"coldness":0.42777417805875917,"deceased":false,"divinity":0.6988008268552313,"chasiness":0.3351822986456432,"martyrdom":0.5337063906006141,"baseThirst":0.9716688761224026,"indulgence":0.34023923654578336,"musclitude":0.08766872597987896,"tragicness":0,"omniscience":0.17034040121857275,"patheticism":0.4589637303345073,"suppression":0.027565210773816684,"continuation":0.42622108945969606,"ruthlessness":0.3210712206419353,"totalFingers":10,"watchfulness":0.9944423319354665,"laserlikeness":0.4060984087240962,"overpowerment":0.6391487424170927,"tenaciousness":0.20210984819198607,"thwackability":0.6949999691666375,"anticapitalism":0.25851172907829967,"groundFriction":0.6832047932250018,"pressurization":0.28545395980628685,"unthwackability":0.5582072005100558,"shakespearianism":0.9165470207578321}},{"entityId":"66cebbbf-9933-4329-924a-72bd3718f321","hash":"0943db04-6933-6487-c75f-b3ab9195c652","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"66cebbbf-9933-4329-924a-72bd3718f321","name":"Kennedy
+        Cena","soul":6,"moxie":0.4478996779949296,"buoyancy":0.17978069041392297,"coldness":0.2931454634699837,"deceased":false,"divinity":0.5511325080695815,"chasiness":0.9487743366133163,"martyrdom":0.5303331747298141,"baseThirst":0.43999887069828203,"indulgence":0.3043581420848025,"musclitude":0.7801343463508277,"tragicness":0,"omniscience":0.9509325710195569,"patheticism":0.33330406246142297,"suppression":0.9004684843462387,"continuation":0.838144810313604,"ruthlessness":0.6976902684669866,"totalFingers":10,"watchfulness":0.6179038615868464,"laserlikeness":0.25137056363043153,"overpowerment":0.8260308898644133,"tenaciousness":0.1702571411121696,"thwackability":0.43474454367616966,"anticapitalism":0.5675170593669698,"groundFriction":0.7430679512990324,"pressurization":0.96912891962523,"unthwackability":0.7999133768454478,"shakespearianism":0.9173213545773562}},{"entityId":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","hash":"401df7b8-96f9-ca92-31bf-f16aa74dc7ce","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-09-23T11:45:00.944364Z","data":{"_id":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","name":"Cedric
+        Gonzalez","soul":8,"moxie":0.7308839766278601,"buoyancy":0.19754995199182424,"coldness":0.2259430797140487,"deceased":false,"divinity":0.7322778779056598,"chasiness":0.7594798365525544,"martyrdom":0.9212237424812677,"baseThirst":0.9071590101770224,"indulgence":0.9045394382951197,"musclitude":0.6556191033360019,"tragicness":0,"omniscience":0.38916781817839885,"patheticism":0.5579355445022727,"suppression":0.7943337786491538,"continuation":0.8417063586531535,"ruthlessness":0.7273262886629401,"totalFingers":10,"watchfulness":0.6245254149277251,"laserlikeness":0.5726688244379927,"overpowerment":0.6105835111933524,"tenaciousness":0.09401020478242028,"thwackability":0.06625030925194264,"anticapitalism":0.9861894229093435,"groundFriction":0.954107231870895,"pressurization":0.42325226322634646,"unthwackability":0.12351931476247424,"shakespearianism":0.7829229311315367}},{"entityId":"80dff591-2393-448a-8d88-122bd424fa4c","hash":"5de7babc-c9a6-dbd0-cdf2-da86819fd08d","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"80dff591-2393-448a-8d88-122bd424fa4c","name":"Elvis
         Figueroa","soul":4,"moxie":0.8505701339595302,"buoyancy":0.08564969961788105,"coldness":0.24985876945243635,"deceased":false,"divinity":0.28721908675667795,"chasiness":0.4225581160962857,"martyrdom":0.08990301483882934,"baseThirst":0.31052864740766095,"indulgence":0.12249448719924061,"musclitude":0.5882432491900036,"tragicness":0,"omniscience":0.6378472505104091,"patheticism":0.25819237392106364,"suppression":0.535254417147577,"continuation":0.18013776550053184,"ruthlessness":0.9466486055675885,"totalFingers":10,"watchfulness":0.14443656916164094,"laserlikeness":0.22919373225829642,"overpowerment":0.8651561819892015,"tenaciousness":0.6516541941832756,"thwackability":0.7658365637455811,"anticapitalism":0.17359097970473347,"groundFriction":0.05269413845935045,"pressurization":0.5638952031876983,"unthwackability":0.9502800523457162,"shakespearianism":0.6374082427315357}}]}'
     headers:
-      Content-Length:
-      - '1178'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 19 May 2021 20:51:00 GMT
+      - Tue, 06 Jul 2021 15:38:53 GMT
       Server:
       - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=6fc3689f-bb7d-4382-98a2-cf6ddc76909d&type=player
-  response:
-    body:
-      string: '{"nextPage":"n2jDb327gkOYos9t3HaQnWBMO2xFFgAA","items":[{"entityId":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","hash":"401df7b8-96f9-ca92-31bf-f16aa74dc7ce","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-09-23T11:45:00.944364Z","data":{"_id":"6fc3689f-bb7d-4382-98a2-cf6ddc76909d","name":"Cedric
-        Gonzalez","soul":8,"moxie":0.7308839766278601,"buoyancy":0.19754995199182424,"coldness":0.2259430797140487,"deceased":false,"divinity":0.7322778779056598,"chasiness":0.7594798365525544,"martyrdom":0.9212237424812677,"baseThirst":0.9071590101770224,"indulgence":0.9045394382951197,"musclitude":0.6556191033360019,"tragicness":0,"omniscience":0.38916781817839885,"patheticism":0.5579355445022727,"suppression":0.7943337786491538,"continuation":0.8417063586531535,"ruthlessness":0.7273262886629401,"totalFingers":10,"watchfulness":0.6245254149277251,"laserlikeness":0.5726688244379927,"overpowerment":0.6105835111933524,"tenaciousness":0.09401020478242028,"thwackability":0.06625030925194264,"anticapitalism":0.9861894229093435,"groundFriction":0.954107231870895,"pressurization":0.42325226322634646,"unthwackability":0.12351931476247424,"shakespearianism":0.7829229311315367}}]}'
-    headers:
-      Content-Length:
-      - '1176'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:01 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=15ae64cd-f698-4b00-9d61-c9fffd037ae2&type=player
-  response:
-    body:
-      string: '{"nextPage":"zWSuFZj2AEudYcn__QN64mBMO2xFFgAA","items":[{"entityId":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","hash":"a3456a53-3d8a-a18b-eeb2-24ce563699f8","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"15ae64cd-f698-4b00-9d61-c9fffd037ae2","name":"Mickey
-        Woods","soul":4,"moxie":0.2890269139582906,"buoyancy":0.6985810897611886,"coldness":0.40507403414030874,"deceased":false,"divinity":0.31105894138310486,"chasiness":0.9197797502918548,"martyrdom":0.8290948975572121,"baseThirst":0.49670014370186943,"indulgence":0.6187203236772589,"musclitude":0.34656898625798127,"tragicness":0,"omniscience":0.6642324804650381,"patheticism":0.005840907993729161,"suppression":0.7122905143896505,"continuation":0.36522585172416044,"ruthlessness":0.09115864894752534,"totalFingers":10,"watchfulness":0.8340084576017894,"laserlikeness":0.3742030347824221,"overpowerment":0.3558625754862925,"tenaciousness":0.4822468488306879,"thwackability":0.50176169265881,"anticapitalism":0.9822432200909246,"groundFriction":0.5110373060438149,"pressurization":0.08906305153183114,"unthwackability":0.5991497958990193,"shakespearianism":0.9154691147302345}}]}'
-    headers:
-      Content-Length:
-      - '1172'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:01 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=083d09d4-7ed3-4100-b021-8fbe30dd43e8&type=player
-  response:
-    body:
-      string: '{"nextPage":"1Ak9CNN-AEGwIY--MN1D6GBMO2xFFgAA","items":[{"entityId":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","hash":"359a41b2-6790-c46f-89f7-e25a8a8d07e2","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"083d09d4-7ed3-4100-b021-8fbe30dd43e8","name":"Jessica
-        Telephone","soul":7,"moxie":0.7924746391865745,"buoyancy":0.7290386558929516,"coldness":0.36424907711844057,"deceased":false,"divinity":1.0264554950661913,"chasiness":0.49217601055241667,"martyrdom":1.3843961867934054,"baseThirst":0.8937081572225478,"indulgence":0.5791018871160651,"musclitude":1.1362941924123677,"tragicness":0,"omniscience":0.520428977901964,"patheticism":0.40590198952572454,"suppression":0.8128774318124143,"continuation":0.7851231462319437,"ruthlessness":0.3321803174782816,"totalFingers":10,"watchfulness":0.46690651205998646,"laserlikeness":0.3883179230872258,"overpowerment":0.49924279341878286,"tenaciousness":0.25571806043038703,"thwackability":0.9232820621017053,"anticapitalism":0.5815585414248714,"groundFriction":0.8970693806274312,"pressurization":0.19240544381174618,"unthwackability":0.21018316390635827,"shakespearianism":0.8057369039444793}}]}'
-    headers:
-      Content-Length:
-      - '1177'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:01 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=06ced607-7f96-41e7-a8cd-b501d11d1a7e&type=player
-  response:
-    body:
-      string: '{"nextPage":"B9bOBpZ_50GozbUB0R0afmBMO2xFFgAA","items":[{"entityId":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","hash":"21823741-2827-45ff-ea77-abee05f21c52","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"06ced607-7f96-41e7-a8cd-b501d11d1a7e","name":"Morrow
-        Wilson","soul":8,"moxie":0.5098271735720075,"buoyancy":0.07180377008997119,"coldness":0.00996592432982002,"deceased":false,"divinity":0.4232458500138414,"chasiness":0.9482805780238897,"martyrdom":0.3762843951419368,"baseThirst":0.44753989326318,"indulgence":0.5031793286354087,"musclitude":0.39916927039006067,"tragicness":0,"omniscience":0.8771022885131188,"patheticism":0.8532119766355108,"suppression":0.2394163864630796,"continuation":0.6604766776265041,"ruthlessness":0.716770606203132,"totalFingers":10,"watchfulness":0.052403835248049147,"laserlikeness":0.33409359560637686,"overpowerment":0.06938720820506816,"tenaciousness":0.8385342961947018,"thwackability":0.41846803152729906,"anticapitalism":0.955766342313032,"groundFriction":0.05281653002680864,"pressurization":0.529783667036968,"unthwackability":0.01681987863259593,"shakespearianism":0.4036740566960553}}]}'
-    headers:
-      Content-Length:
-      - '1171'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:01 GMT
-      Server:
-      - Kestrel
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.24.0
-    method: GET
-    uri: https://api.sibr.dev/chronicler/v2/entities?at=2020-07-30T02%3A13%3A38.328000Z&count=1000&id=66cebbbf-9933-4329-924a-72bd3718f321&type=player
-  response:
-    body:
-      string: '{"nextPage":"v7vOZjOZKUOSSnK9NxjzIWBMO2xFFgAA","items":[{"entityId":"66cebbbf-9933-4329-924a-72bd3718f321","hash":"0943db04-6933-6487-c75f-b3ab9195c652","validFrom":"2020-07-29T08:12:22.438Z","validTo":"2020-08-02T10:22:50.243Z","data":{"_id":"66cebbbf-9933-4329-924a-72bd3718f321","name":"Kennedy
-        Cena","soul":6,"moxie":0.4478996779949296,"buoyancy":0.17978069041392297,"coldness":0.2931454634699837,"deceased":false,"divinity":0.5511325080695815,"chasiness":0.9487743366133163,"martyrdom":0.5303331747298141,"baseThirst":0.43999887069828203,"indulgence":0.3043581420848025,"musclitude":0.7801343463508277,"tragicness":0,"omniscience":0.9509325710195569,"patheticism":0.33330406246142297,"suppression":0.9004684843462387,"continuation":0.838144810313604,"ruthlessness":0.6976902684669866,"totalFingers":10,"watchfulness":0.6179038615868464,"laserlikeness":0.25137056363043153,"overpowerment":0.8260308898644133,"tenaciousness":0.1702571411121696,"thwackability":0.43474454367616966,"anticapitalism":0.5675170593669698,"groundFriction":0.7430679512990324,"pressurization":0.96912891962523,"unthwackability":0.7999133768454478,"shakespearianism":0.9173213545773562}}]}'
-    headers:
-      Content-Length:
-      - '1167'
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 19 May 2021 20:51:01 GMT
-      Server:
-      - Kestrel
+      Transfer-Encoding:
+      - chunked
     status:
       code: 200
       message: OK

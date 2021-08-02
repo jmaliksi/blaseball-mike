@@ -19,8 +19,6 @@ class Player(BaseChronicler):
     def _get_fields(cls):
         p = cls.load_one("766dfd1e-11c3-42b6-a167-9b2d568b5dc0")
         return [cls._from_api_conversion(x) for x in p.fields]
-
-    @classmethod
     def load_one_at_time(cls, id_, time):
         """
         Load single player by ID with historical stats at the provided IRL datetime.
@@ -28,6 +26,7 @@ class Player(BaseChronicler):
         warnings.warn("instead of .load_one_at_time(id_, time), use .load_one(id_, time=time)",
                       DeprecationWarning, stacklevel=2)
         return cls.load_one(id_, time=time)
+
 
     @classmethod
     def load_all_by_gameday(cls, season, day):

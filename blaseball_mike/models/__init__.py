@@ -1,10 +1,12 @@
-"""For deserializing the json responses.
+"""
+Models includes wrapped objects for easily consuming data from the Blaseball API and other community sources. Every
+known API response has a respective object, found in one of the included sub-modules.
 
-To accommodate the ever-changing nature of the blaseball API, blaseball_mike mainly infers
-properties from the returned JSON rather than explicitly mapping each property. This means
-that documentation of available fields with ultimately be incomplete. The easiest way
-to find available properties outside of looking at the spec is to look at the `fields`
-property to see what JSON keys have been deserialized.
+
+.. include:: ../../docs/models.md
+
+.. include:: ../../docs/examples.md
+
 """
 
 from .base import *

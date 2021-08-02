@@ -21,7 +21,7 @@ class TestStadium(TestBase):
         assert isinstance(stadium.tertiary_color, str)
 
         assert isinstance(stadium.model, (int, type(None)))
-        assert isinstance(stadium.hype, float)
+        assert isinstance(stadium.hype, (int, float))
         assert isinstance(stadium.birds, int)
         assert isinstance(stadium.reno_cost, int)
 
