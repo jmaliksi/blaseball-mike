@@ -80,6 +80,39 @@ class Team(Base):
         """
         return cls.load(id_, time=time)
 
+    def get_full_name(self, unscatter=True):
+        name = None
+        if unscatter and getattr(self, "state", None) is not None:
+            obj = self.state.get("scattered", None)
+            if obj is not None:
+                name = obj.get("fullName", None)
+
+        if name is not None:
+            return name
+        return self.full_name
+
+    def get_nickname(self, unscatter=True):
+        name = None
+        if unscatter and getattr(self, "state", None) is not None:
+            obj = self.state.get("scattered", None)
+            if obj is not None:
+                name = obj.get("nickname", None)
+
+        if name is not None:
+            return name
+        return self.nickname
+
+    def get_location(self, unscatter=True):
+        name = None
+        if unscatter and getattr(self, "state", None) is not None:
+            obj = self.state.get("scattered", None)
+            if obj is not None:
+                name = obj.get("location", None)
+
+        if name is not None:
+            return name
+        return self.location
+
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
         time = getattr(self, "timestamp", None)
