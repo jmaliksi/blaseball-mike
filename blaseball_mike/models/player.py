@@ -149,6 +149,15 @@ class Player(Base):
             'fate': rng.randint(1, 99),
         })
 
+    def get_name(self, unscatter=True):
+        name = None
+        if unscatter and getattr(self, "state", None) is not None:
+            name = self.state.get("unscatteredName", None)
+
+        if name is not None:
+            return name
+        return self.name
+
     @Base.lazy_load("_hitting_rating", use_default=False)
     def hitting_rating(self):
         if getattr(self, "_hitting_rating", None) is not None:
