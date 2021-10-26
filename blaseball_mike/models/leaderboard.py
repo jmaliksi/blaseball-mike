@@ -17,7 +17,7 @@ class Idol(Base):
     @classmethod
     def load(cls):
         """Load current idol board. Returns ordered dictionary of idols keyed by player ID."""
-        idols = database.get_idols()
+        idols = list(chronicler.get_entities("idols"))[0]["data"]
         idols_dict = OrderedDict()
         for idol in idols['idols']:
             idols_dict[idol] = cls({"playerId": idol})
