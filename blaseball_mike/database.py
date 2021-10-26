@@ -365,18 +365,6 @@ def get_team_statsheets(ids, cache_time=5):
     res = s.get(f'{BASE_URL}/teamStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
-# Deprecated
-# def get_idols(*, cache_time=5):
-#     """
-#     Get current Idol board
-
-#     Args:
-#         cache_time: response cache lifetime in seconds, or `None` for infinite cache
-#     """
-#     s = session(cache_time)
-#     res = s.get('https://www.blaseball.com/api/getIdols')
-#     return check_network_response(res)
-
 
 def get_tributes(*, cache_time=5):
     """
@@ -688,31 +676,6 @@ def get_team_election_stats(team_id, cache_time=5):
     return check_network_response(res)
 
 
-# Gives "Invalid Request" ??
-# def get_previous_champ(*, cache_time=5): 
-#     """
-#     Get winner of previous championship
-
-#     Args:
-#         cache_time: response cache lifetime in seconds, or `None` for infinite cache
-#     """
-#     s = session(cache_time)
-#     res = s.get(f'{BASE_URL}/getPreviousChamp')
-#     return check_network_response(res)
-
-# Deprecated
-# def get_community_chest_progress(*, cache_time=5):
-#     """
-#     Get current progress to community chest opening
-
-#     Args:
-#         cache_time: response cache lifetime in seconds, or `None` for infinite cache
-#     """
-#     s = session(cache_time)
-#     res = s.get(f'{BASE_URL}/communityChestProgress')
-#     return check_network_response(res)
-
-
 def get_players_by_item(item, cache_time=5):
     """
     Get player holding an item
@@ -748,27 +711,3 @@ def get_all_players(*, cache_time=5):
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/playerNamesIds')
     return check_network_response(res)
-
-# Deprecated
-# def get_store_info(*, cache_time=5):
-#     """
-#     Get menu, price, and payout info for the Store
-
-#     Args:
-#         cache_time: response cache lifetime in seconds, or `None` for infinite cache
-#     """
-#     s = session(cache_time)
-#     res = s.get(f'{BASE_URL}/shopSetup')
-#     return check_network_response(res)
-
-# Deprecated
-# def get_sunsun_info(*, cache_time=5):
-#     """
-#     Get information about the status of Sun(Sun) (pressure)
-
-#     Args:
-#         cache_time: response cache lifetime in seconds, or `None` for infinite cache
-#     """
-#     s = session(cache_time)
-#     res = s.get(f'{BASE_URL}/sunsun')
-#     return check_network_response(res)
