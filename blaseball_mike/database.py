@@ -463,7 +463,7 @@ def get_coffee(ids, cache_time=5):
     return check_network_response(res)
 
 
-def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
+def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, season=None, sim=None, season_start=None, season_end=None, cache_time=5):
     """
     Get Global Feed
 
@@ -474,6 +474,9 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         start: timestamp
         type_: event type ID
         season: season, 1-indexed
+        sim: sim ID
+        season_start: return items after this season (inclusive)
+        season_end: return items before this season (inclusive)
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -490,13 +493,19 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         params["type"] = type_
     if season is not None:
         params["season"] = season - 1
+    if sim is not None:
+        params["sim"] = sim
+    if season_start is not None:
+        params["seasonStart"] = season_start - 1
+    if season_end is not None:
+        params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/global', params=params)
     return check_network_response(res)
 
 
-def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=None, cache_time=5):
+def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=None, sim=None, season_start=None, season_end=None, cache_time=5):
     """
     Get Game Feed
 
@@ -507,6 +516,9 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=Non
         category: 0 - Game, 1 - Changes, 2 - Abilities, 3 - Outcomes, 4 - Narrative
         start: timestamp
         type_: event type ID
+        sim: sim ID
+        season_start: return items after this season (inclusive)
+        season_end: return items before this season (inclusive)
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -521,13 +533,19 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params["start"] = start
     if type_ is not None:
         params["type"] = type_
+    if sim is not None:
+        params["sim"] = sim
+    if season_start is not None:
+        params["seasonStart"] = season_start - 1
+    if season_end is not None:
+        params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/game', params=params)
     return check_network_response(res)
 
 
-def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
+def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, sim=None, season_start=None, season_end=None, cache_time=5):
     """
     Get Team Feed
 
@@ -539,6 +557,9 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         start: timestamp
         type_: event type ID
         season: 1-indexed
+        sim: sim ID
+        season_start: return items after this season (inclusive)
+        season_end: return items before this season (inclusive)
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -555,13 +576,19 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params["type"] = type_
     if season is not None:
         params["season"] = season - 1
+    if sim is not None:
+        params["sim"] = sim
+    if season_start is not None:
+        params["seasonStart"] = season_start - 1
+    if season_end is not None:
+        params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/team', params=params)
     return check_network_response(res)
 
 
-def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, cache_time=5):
+def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=None, season=None, sim=None, season_start=None, season_end=None,  cache_time=5):
     """
     Get Player Feed
 
@@ -573,6 +600,9 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         start: timestamp
         type_: event type ID
         season: season, 1-indexed
+        sim: sim ID
+        season_start: return items after this season (inclusive)
+        season_end: return items before this season (inclusive)
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     if isinstance(start, datetime):
@@ -589,6 +619,12 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         params["type"] = type_
     if season is not None:
         params["season"] = season - 1
+    if sim is not None:
+        params["sim"] = sim
+    if season_start is not None:
+        params["seasonStart"] = season_start - 1
+    if season_end is not None:
+        params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/feed/player', params=params)
@@ -710,4 +746,49 @@ def get_all_players(*, cache_time=5):
     """
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/playerNamesIds')
+    return check_network_response(res)
+
+
+def get_days_since_incineration(*, cache_time=5):
+    """
+    Get the timestamp of the most recent incineration
+
+    Args:
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/daysSinceLastIncineration')
+    return check_network_response(res)
+
+
+def get_schedule(season=None, sim=None, day=None, start_day=None, end_day=None, cache_time=5):
+    """
+    Get the list of list of games for a particular season/sim
+    By default will return the full schedule for the current season/sim
+
+    Args:
+        season: filter by season number, if omitted defaults to current season
+        sim: filter by sim ID, if omitted defaults to current sim
+        day: filter by single day. If set, returns a list of games rather than a list of lists
+        start_day: return schedule after this day (inclusive)
+        end_day: return schedule before this day (inclusive)
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    params = {}
+    if start_day is not None and end_day is None:
+        raise ValueError("Must set both start_day and end_day")
+
+    if season is not None:
+        params["season"] = season - 1
+    if sim is not None:
+        params["sim"] = sim
+    if day is not None:
+        params["day"] = day - 1
+    if start_day is not None:
+        params["startDay"] = start_day - 1
+    if end_day is not None:
+        params["endDay"] = end_day - 1
+
+    s = session(cache_time)
+    res = s.get(f'{BASE_URL}/games/schedule', params=params)
     return check_network_response(res)
