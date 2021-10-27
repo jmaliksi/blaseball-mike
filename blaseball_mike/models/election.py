@@ -1,6 +1,6 @@
 from .base import Base
 from .team import Team
-from .. import database
+from .. import database, chronicler
 
 
 class Election(Base):
@@ -90,7 +90,11 @@ class ElectionResult(Base):
         """
         Load results by season. Season is 1-indexed.
         """
-        return cls(database.get_offseason_recap(season))
+        elections = chronicler.get_versions("offseasonRecap")
+        for election in elections:
+            if election["data"]["season"] == season - 1:
+                return cls(election["data"])
+        return None
 
     @Base.lazy_load("_bonus_results_ids", cache_name="_bonus_results", default_value=list())
     def bonus_results(self):
