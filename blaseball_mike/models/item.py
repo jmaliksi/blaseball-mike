@@ -1,28 +1,16 @@
-from .base import Base
+from .base import Base, BaseChronicler
 from .modification import Modification
-from .. import chronicler, database
+from .. import chronicler
 
 
-class Item(Base):
+class Item(BaseChronicler):
+    _entity_type = "item"
+    
     """Represents an single item, such as a bat or armor"""
     @classmethod
     def _get_fields(cls):
         p = cls.load_one("aab9ce81-6fd4-439b-867c-a9da07b3e011")
         return [cls._from_api_conversion(x) for x in p.fields]
-
-    @classmethod
-    def load(cls, *ids):
-        return [cls(item) for item in database.get_items(list(ids))]
-
-    @classmethod
-    def load_one(cls, id_):
-        return cls.load(id_)[0]
-
-    @classmethod
-    def load_all(cls, count=None):
-        return {
-            x["entityId"]: cls(x["data"]) for x in chronicler.get_entities("item", count=count)
-        }
 
     @classmethod
     def load_discipline(cls, *ids):

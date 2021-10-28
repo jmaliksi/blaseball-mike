@@ -1,13 +1,15 @@
-from dateutil.parser import parse
+import warnings
 
-from .base import Base
+from .base import Base, BaseChronicler
 from .modification import Modification
 from .player import Player
 from .stadium import Stadium
-from .. import database, chronicler, tables
+from .. import tables
 
 
-class Team(Base):
+class Team(BaseChronicler):
+    _entity_type = "team"
+
     """
     Represents a blaseball team.
     """
@@ -17,12 +19,8 @@ class Team(Base):
         return [cls._from_api_conversion(x) for x in p.fields]
 
     @classmethod
-    def load(cls, id_, time=None):
-        """
-        Load team by ID.
-        """
+    def load_by_name(cls, name, time=None):
         if time is None:
-            return cls(database.get_team(id_))
         else:
             if isinstance(time, str):
                 time = parse(time)
@@ -32,18 +30,7 @@ class Team(Base):
                 return None
             return cls(dict(team[0]["data"], timestamp=time))
 
-
-    @classmethod
-    def load_all(cls, time=None):
-        """
-        Load all teams, including historical and tournament teams. Currently does not include the PODs.
-
-        Returns dictionary keyed by team ID.
-        """
         if time is None:
-            return {
-                id_: cls(team) for id_, team in database.get_all_teams().items()
-            }
         else:
             if isinstance(time, str):
                 time = parse(time)
@@ -52,17 +39,6 @@ class Team(Base):
             return {
                 team["entityId"]: cls(dict(team["data"], timestamp=time)) for team in teams
             }
-
-    @classmethod
-    def load_history(cls, id_, order='desc', count=None):
-        """
-        Returns array of Team changes with most recent first.
-        """
-        teams = chronicler.get_versions("team", id_=id_, order=order, count=count)
-        return [cls(dict(p['data'], timestamp=p['validFrom'])) for p in teams]
-
-    @classmethod
-    def load_by_name(cls, name, time=None):
         """
         Name can be full name or nickname, case insensitive.
         """
@@ -78,7 +54,9 @@ class Team(Base):
         """
         Load blaseball team with roster at given datetime.
         """
-        return cls.load(id_, time=time)
+        warnings.warn("instead of .load_at_time(id_, time), use .load_one(id_, time=time)",
+                      DeprecationWarning, stacklevel=2)
+        return cls.load_one(id_, time=time)
 
     def get_full_name(self, unscatter=True):
         name = None
@@ -115,32 +93,28 @@ class Team(Base):
 
     @Base.lazy_load("_lineup_ids", cache_name="_lineup", default_value=list())
     def lineup(self):
-        time = getattr(self, "timestamp", None)
-        players = Player.load(*self._lineup_ids, time=time)
+        players = Player.load(self._lineup_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._lineup_ids]
 
     @Base.lazy_load("_rotation_ids", cache_name="_rotation", default_value=list())
     def rotation(self):
-        time = getattr(self, "timestamp", None)
-        players = Player.load(*self._rotation_ids, time=time)
+        players = Player.load(self._rotation_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._rotation_ids]
 
     @Base.lazy_load("_bullpen_ids", cache_name="_bullpen", default_value=list())
     def bullpen(self):
-        time = getattr(self, "timestamp", None)
-        players = Player.load(*self._bullpen_ids, time=time)
+        players = Player.load(self._bullpen_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bullpen_ids]
 
     @Base.lazy_load("_bench_ids", cache_name="_bench", default_value=list())
     def bench(self):
-        time = getattr(self, "timestamp", None)
-        players = Player.load(*self._bench_ids, time=time)
+        players = Player.load(self._bench_ids, time=getattr(self, "timestamp", None))
         return [players.get(id_) for id_ in self._bench_ids]
 
     @Base.lazy_load("_shadows_ids", cache_name="_shadows", default_value=list())
     def shadows(self):
         time = getattr(self, "timestamp", None)
-        players = Player.load(*self._shadows_ids, time=time)
+        players = Player.load(self._shadows_ids, time=time)
         return [players.get(id_) for id_ in self._shadows_ids]
 
     @Base.lazy_load("_perm_attr_ids", cache_name="_perm_attr", default_value=list())
