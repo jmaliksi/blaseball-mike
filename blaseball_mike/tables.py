@@ -135,6 +135,7 @@ class SimPhase(Enum):
     POSTSEASON = 11
     POSTSEASON_END = 12
     ELECTION = 13
+    EXHIBITION = 14
 
 
 class SimPhaseDiscipline(Enum):
