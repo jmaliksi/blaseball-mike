@@ -6,7 +6,7 @@ https://docs.sibr.dev/docs/apis/reference/Blaseball-API.v1.yaml
 from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
 from datetime import datetime
 
-BASE_URL = 'https://api.blaseball.com/database'
+BASE_URL = 'https://api.blaseball.com'
 BASE_GITHUB = 'https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data'
 
 
@@ -18,7 +18,7 @@ def get_global_events(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/globalEvents')
+    res = s.get(f'{BASE_URL}/database/globalEvents')
     return check_network_response(res)
 
 
@@ -30,7 +30,7 @@ def get_all_teams(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/allTeams')
+    res = s.get(f'{BASE_URL}/database/allTeams')
     return {t['id']: t for t in check_network_response(res)}
 
 
@@ -42,7 +42,7 @@ def get_all_divisions(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/allDivisions')
+    res = s.get(f'{BASE_URL}/database/allDivisions')
     return {d['id']: d for d in check_network_response(res)}
 
 
@@ -55,7 +55,7 @@ def get_league(id_='d8545021-e9fc-48a3-af74-48685950a183', cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/league?id={id_}')
+    res = s.get(f'{BASE_URL}/database/league?id={id_}')
     return check_network_response(res)
 
 
@@ -68,7 +68,7 @@ def get_subleague(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/subleague?id={id_}')
+    res = s.get(f'{BASE_URL}/database/subleague?id={id_}')
     return check_network_response(res)
 
 
@@ -81,7 +81,7 @@ def get_division(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/division?id={id_}')
+    res = s.get(f'{BASE_URL}/database/division?id={id_}')
     return check_network_response(res)
 
 
@@ -94,7 +94,7 @@ def get_team(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/team?id={id_}')
+    res = s.get(f'{BASE_URL}/database/team?id={id_}')
     return check_network_response(res)
 
 
@@ -111,7 +111,7 @@ def get_player(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/players?ids={id_}')
+    res = s.get(f'{BASE_URL}/database/players?ids={id_}')
     return {p['id']: p for p in check_network_response(res)}
 
 
@@ -125,7 +125,7 @@ def get_games(season, day, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/games?season={season - 1}&day={day - 1}')
+    res = s.get(f'{BASE_URL}/database/games?season={season - 1}&day={day - 1}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -139,7 +139,7 @@ def get_tournament(tournament, day, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/games?tournament={tournament}&day={day - 1}')
+    res = s.get(f'{BASE_URL}/database/games?tournament={tournament}&day={day - 1}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -152,7 +152,7 @@ def get_game_by_id(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/gameById/{id_}')
+    res = s.get(f'{BASE_URL}/database/gameById/{id_}')
     return check_network_response(res)
 
 
@@ -164,7 +164,7 @@ def get_offseason_election_details(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/offseasonSetup')
+    res = s.get(f'{BASE_URL}/database/offseasonSetup')
     return check_network_response(res)
 
 
@@ -177,7 +177,7 @@ def get_offseason_recap(season, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/offseasonRecap?season={season - 1}')
+    res = s.get(f'{BASE_URL}/database/offseasonRecap?season={season - 1}')
     return check_network_response(res)
 
 
@@ -192,7 +192,7 @@ def get_offseason_bonus_results(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/bonusResults?ids={id_}')
+    res = s.get(f'{BASE_URL}/database/bonusResults?ids={id_}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -207,7 +207,7 @@ def get_offseason_decree_results(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/decreeResults?ids={id_}')
+    res = s.get(f'{BASE_URL}/database/decreeResults?ids={id_}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -222,7 +222,7 @@ def get_offseason_event_results(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/eventResults?ids={id_}')
+    res = s.get(f'{BASE_URL}/database/eventResults?ids={id_}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -235,7 +235,7 @@ def get_playoff_details(season, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playoffs?number={season - 1}')
+    res = s.get(f'{BASE_URL}/database/playoffs?number={season - 1}')
     return check_network_response(res)
 
 
@@ -248,7 +248,7 @@ def get_playoff_round(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playoffRound?id={id_}')
+    res = s.get(f'{BASE_URL}/database/playoffRound?id={id_}')
     return check_network_response(res)
 
 
@@ -263,7 +263,7 @@ def get_playoff_matchups(id_, cache_time=5):
     if isinstance(id_, list):
         id_ = ','.join(id_)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playoffMatchups?ids={id_}')
+    res = s.get(f'{BASE_URL}/database/playoffMatchups?ids={id_}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -276,7 +276,7 @@ def get_standings(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/standings?id={id_}')
+    res = s.get(f'{BASE_URL}/database/standings?id={id_}')
     return check_network_response(res)
 
 
@@ -289,7 +289,7 @@ def get_season(season_number, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/season?number={season_number - 1}')
+    res = s.get(f'{BASE_URL}/database/season?number={season_number - 1}')
     return check_network_response(res)
 
 
@@ -302,7 +302,7 @@ def get_tiebreakers(id, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/tiebreakers?id={id}')
+    res = s.get(f'{BASE_URL}/database/tiebreakers?id={id}')
     return {g['id']: g for g in check_network_response(res)}
 
 
@@ -317,7 +317,7 @@ def get_game_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/gameStatsheets?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/gameStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 
@@ -332,7 +332,7 @@ def get_player_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playerStatsheets?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/playerStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 
@@ -347,7 +347,7 @@ def get_season_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/seasonStatsheets?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/seasonStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 
@@ -362,7 +362,7 @@ def get_team_statsheets(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/teamStatsheets?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/teamStatsheets?ids={ids}')
     return {s['id']: s for s in check_network_response(res)}
 
 
@@ -374,7 +374,7 @@ def get_tributes(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get('https://api.blaseball.com/api/getTribute')
+    res = s.get(f'{BASE_URL}/api/getTribute')
     return check_network_response(res)
 
 
@@ -386,7 +386,7 @@ def get_simulation_data(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/simulationData')
+    res = s.get(f'{BASE_URL}/database/simulationData')
     return check_network_response(res)
 
 
@@ -401,7 +401,7 @@ def get_attributes(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/mods?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/mods?ids={ids}')
     return check_network_response(res)
 
 
@@ -416,7 +416,7 @@ def get_items(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/items?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/items?ids={ids}')
     return check_network_response(res)
 
 
@@ -429,7 +429,7 @@ def get_weather(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_GITHUB}/weather.json')
+    res = s.get(f'{BASE_GITHUB}/database/weather.json')
     return check_network_response(res)
 
 
@@ -444,7 +444,7 @@ def get_blood(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/blood?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/blood?ids={ids}')
     return check_network_response(res)
 
 
@@ -459,7 +459,7 @@ def get_coffee(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/coffee?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/coffee?ids={ids}')
     return check_network_response(res)
 
 
@@ -501,7 +501,7 @@ def get_feed_global(limit=50, sort=None, category=None, start=None, type_=None, 
         params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feed/global', params=params)
+    res = s.get(f'{BASE_URL}/database/feed/global', params=params)
     return check_network_response(res)
 
 
@@ -541,7 +541,7 @@ def get_feed_game(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feed/game', params=params)
+    res = s.get(f'{BASE_URL}/database/feed/game', params=params)
     return check_network_response(res)
 
 
@@ -584,7 +584,7 @@ def get_feed_team(id_, limit=50, sort=None, category=None, start=None, type_=Non
         params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feed/team', params=params)
+    res = s.get(f'{BASE_URL}/database/feed/team', params=params)
     return check_network_response(res)
 
 
@@ -627,7 +627,7 @@ def get_feed_player(id_, limit=50, sort=None, category=None, start=None, type_=N
         params["seasonEnd"] = season_end - 1
 
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feed/player', params=params)
+    res = s.get(f'{BASE_URL}/database/feed/player', params=params)
     return check_network_response(res)
 
 
@@ -654,7 +654,7 @@ def get_feed_story(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feed/story?id={id_}')
+    res = s.get(f'{BASE_URL}/database/feed/story?id={id_}')
     return check_network_response(res)
 
 
@@ -669,7 +669,7 @@ def get_renovations(ids, cache_time=5):
     if isinstance(ids, list):
         ids = ','.join(ids)
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/renovations?ids={ids}')
+    res = s.get(f'{BASE_URL}/database/renovations?ids={ids}')
     return check_network_response(res)
 
 
@@ -682,7 +682,7 @@ def get_renovation_progress(id_, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/renovationProgress?id={id_}')
+    res = s.get(f'{BASE_URL}/database/renovationProgress?id={id_}')
     return check_network_response(res)
 
 
@@ -695,7 +695,7 @@ def get_season_day_count(season, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/seasondaycount?season={season - 1}')
+    res = s.get(f'{BASE_URL}/database/seasondaycount?season={season - 1}')
     return check_network_response(res)
 
 
@@ -708,7 +708,7 @@ def get_team_election_stats(team_id, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/teamElectionStats?id={team_id}')
+    res = s.get(f'{BASE_URL}/database/teamElectionStats?id={team_id}')
     return check_network_response(res)
 
 
@@ -721,7 +721,7 @@ def get_players_by_item(item, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playersByItemId?id={item}')
+    res = s.get(f'{BASE_URL}/database/playersByItemId?id={item}')
     return check_network_response(res)
 
 
@@ -733,7 +733,7 @@ def get_gift_progress(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/giftProgress')
+    res = s.get(f'{BASE_URL}/database/giftProgress')
     return check_network_response(res)
 
 
@@ -745,7 +745,7 @@ def get_all_players(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/playerNamesIds')
+    res = s.get(f'{BASE_URL}/database/playerNamesIds')
     return check_network_response(res)
 
 
@@ -757,7 +757,7 @@ def get_days_since_incineration(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/daysSinceLastIncineration')
+    res = s.get(f'{BASE_URL}/api/daysSinceLastIncineration')
     return check_network_response(res)
 
 
@@ -790,5 +790,5 @@ def get_schedule(season=None, sim=None, day=None, start_day=None, end_day=None, 
         params["endDay"] = end_day - 1
 
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/games/schedule', params=params)
+    res = s.get(f'{BASE_URL}/api/games/schedule', params=params)
     return check_network_response(res)

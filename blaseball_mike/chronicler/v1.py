@@ -11,7 +11,7 @@ BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 
 
 def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids=None, weather=None, started=None,
-              finished=None, outcomes=None, order=None, count=None, before=None, after=None, cache_time=5):
+              finished=None, outcomes=None, sim=None, order=None, count=None, before=None, after=None, cache_time=5):
     """
     Get Games
 
@@ -25,6 +25,7 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
         started: boolean for if game has started.
         finished: boolean for if game has ended.
         outcomes: search string to filter game outcomes.
+        sim: sim ID.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         before: return elements before this string or datetime timestamp.
@@ -41,43 +42,45 @@ def get_games(season=None, tournament=None, day=None, team_ids=None, pitcher_ids
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
 
-    if before:
+    if before is not None:
         params["before"] = before
-    if after:
+    if after is not None:
         params["after"] = after
     if tournament is not None:
         params["tournament"] = tournament
-    if season:
+    if season is not None:
         params["season"] = season - 1
-    if day:
+    if day is not None:
         params["day"] = day - 1
-    if order:
+    if order is not None:
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if count:
+    if count is not None:
         params["count"] = count
-    if team_ids:
+    if team_ids is not None:
         params["team"] = prepare_id(team_ids)
-    if pitcher_ids:
+    if pitcher_ids is not None:
         params["pitcher"] = prepare_id(pitcher_ids)
-    if started:
+    if started is not None:
         params["started"] = started
-    if finished:
+    if finished is not None:
         params["finished"] = finished
-    if outcomes:
+    if outcomes is not None:
         params["outcomes"] = outcomes
-    if weather:
+    if weather is not None:
         if not isinstance(weather, int):
             raise ValueError("Weather must be an integer")
         params["weather"] = weather
+    if sim is not None:
+        params["sim"] = sim
 
     s = session(cache_time)
     return check_network_response(s.get(f'{BASE_URL}/games', params=params)).get("data", [])
 
 
-def get_game_updates(season=None, tournament=None, day=None, game_ids=None, started=None, search=None, order=None,
-                     count=None, before=None, after=None, page_size=1000, lazy=False, cache_time=5):
+def get_game_updates(season=None, tournament=None, day=None, game_ids=None, started=None, search=None, sim=None,
+                     order=None, count=None, before=None, after=None, page_size=1000, lazy=False, cache_time=5):
     """
     Get Game Updates
 
@@ -88,6 +91,7 @@ def get_game_updates(season=None, tournament=None, day=None, game_ids=None, star
         game_ids: list or comma-separated string of game IDs.
         started: boolean for if game has started.
         search: search string to filter game events.
+        sim: sim ID.
         order: sort in ascending ('asc') or descending ('desc') order.
         count: number of entries to return.
         before: return elements before this string or datetime timestamp.
@@ -105,30 +109,32 @@ def get_game_updates(season=None, tournament=None, day=None, game_ids=None, star
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
 
-    if before:
+    if before is not None:
         params["before"] = before
-    if after:
+    if after is not None:
         params["after"] = after
     if tournament is not None:
         params["tournament"] = tournament
-    if season:
+    if season is not None:
         params["season"] = season - 1
-    if day:
+    if day is not None:
         params["day"] = day - 1
-    if order:
+    if order is not None:
         if order.lower() not in ('asc', 'desc'):
             raise ValueError("Order must be 'asc' or 'desc'")
         params["order"] = order
-    if page_size:
+    if page_size is not None:
         if page_size < 1 or page_size > 1000:
             raise ValueError("page_size must be between 1 and 1000")
         params["count"] = page_size
-    if game_ids:
+    if game_ids is not None:
         params["game"] = prepare_id(game_ids)
-    if started:
+    if started is not None:
         params["started"] = started
-    if search:
+    if search is not None:
         params["search"] = search
+    if sim is not None:
+        params["sim"] = sim
 
     s = session(cache_time)
     return paged_get(f'{BASE_URL}/games/updates', params=params, session=s, total_count=count, page_size=page_size, lazy=lazy)
