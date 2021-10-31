@@ -9,7 +9,7 @@ from aiohttp_sse_client import client as sse_client
 from aiohttp.client_exceptions import ClientPayloadError, ClientConnectorError, ServerDisconnectedError
 
 
-async def stream_events(url='https://www.blaseball.com/events/streamData', retry_base=0.01, retry_max=300):
+async def stream_events(url='https://api.blaseball.com/events/streamData', retry_base=0.01, retry_max=300):
     """
     Async generator for the events API.
     `retry_base` will be the minimum time to delay if there's a connection error
