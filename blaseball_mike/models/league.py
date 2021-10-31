@@ -20,10 +20,13 @@ class League(Base):
 
     @classmethod
     def load(cls):
-        return cls(database.get_league())
+        """Load the current active League."""
+        league_id = database.get_simulation_data().get("league", None)
+        return cls(database.get_league(league_id))
 
     @classmethod
     def load_by_id(cls, id_):
+        """Load a League by ID."""
         return cls(database.get_league(id_))
 
     @Base.lazy_load("_subleague_ids", cache_name="_subleagues", default_value=dict())

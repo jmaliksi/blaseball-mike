@@ -429,7 +429,7 @@ def get_weather(*, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_GITHUB}/database/weather.json')
+    res = s.get(f'{BASE_GITHUB}/weather.json')
     return check_network_response(res)
 
 
