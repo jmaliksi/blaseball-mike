@@ -17,7 +17,7 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
     `retry_max` is the maximum time to delay if there's a connection error
     """
     retry_delay = retry_base
-    event_tmp = {}
+    event_current = {}
     while True:
         try:
             async with sse_client.EventSource(url, read_bufsize=2 ** 19) as src:
@@ -30,6 +30,7 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                         payload = raw_event['value']
                         event_tmp = payload
                     else: # If this is a delta (modification) of a past event, modify event_tmp.
+                        event_tmp = event_current
                         for delta in raw_event['delta']:
                             path = '/'+'/'.join([str(item) for item in delta['path']])
                             if delta['kind'] == 'E': # Replace a full dict element
@@ -72,7 +73,9 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                             else:
                                 print("Unknown delta kind code!!")
                                 print(delta)
-                        payload = event_tmp
+                        else:
+                            event_current = event_tmp
+                        payload = event_current
                     yield payload
         except (ConnectionError,
                 TimeoutError,
