@@ -32,47 +32,51 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                     else: # If this is a delta (modification) of a past event, modify event_tmp.
                         event_tmp = event_current
                         for delta in raw_event['delta']:
-                            path = '/'+'/'.join([str(item) for item in delta['path']])
-                            if delta['kind'] == 'E': # Replace a full dict element
-                                if 'lhs' in delta:
-                                    if delta['lhs'] == jsonpointer.resolve_pointer(event_tmp, path):
-                                        jsonpointer.set_pointer(event_tmp, path, delta['rhs'])
-                                    else:
-                                        print("Error. LHS does not match event_tmp!")
-                                        break
-                            elif delta['kind'] == 'A': # Modify a list
-                                if delta['item']['kind'] == 'D': # Delete a list element
-                                    thislist = jsonpointer.resolve_pointer(event_tmp, path)
-                                    if thislist[delta['index']] == delta['item']['lhs']:
-                                        del thislist[delta['index']]
+                            try:
+                                path = '/'+'/'.join([str(item) for item in delta['path']])
+                                if delta['kind'] == 'E': # Replace a full dict element
+                                    if 'lhs' in delta:
+                                        if delta['lhs'] == jsonpointer.resolve_pointer(event_tmp, path):
+                                            jsonpointer.set_pointer(event_tmp, path, delta['rhs'])
+                                        else:
+                                            print("Error. LHS does not match event_tmp!")
+                                            break
+                                elif delta['kind'] == 'A': # Modify a list
+                                    if delta['item']['kind'] == 'D': # Delete a list element
+                                        thislist = jsonpointer.resolve_pointer(event_tmp, path)
+                                        if thislist[delta['index']] == delta['item']['lhs']:
+                                            del thislist[delta['index']]
+                                            jsonpointer.set_pointer(event_tmp, path, thislist)
+                                        else:
+                                            print("Error. LHS does not match event_tmp!")
+                                            break
+                                    elif delta['item']['kind'] == 'N': # Add a new list element
+                                        thislist = jsonpointer.resolve_pointer(event_tmp, path)
+                                        thislist.insert(delta['index'], delta['item']['rhs'])
                                         jsonpointer.set_pointer(event_tmp, path, thislist)
                                     else:
+                                        print("Unknown delta A item kind code!!")
+                                        print(delta)
+                                elif delta['kind'] == 'N': # Add a new element to a dict
+                                    path,newkey = path.rsplit('/',1)
+                                    thisdict = jsonpointer.resolve_pointer(event_tmp, path)
+                                    thisdict[newkey] = delta['rhs']
+                                    jsonpointer.set_pointer(event_tmp, path, thisdict)
+                                elif delta['kind'] == 'D': # Delete a dict element
+                                    path,oldkey = path.rsplit('/',1)
+                                    thisdict = jsonpointer.resolve_pointer(event_tmp, path)
+                                    if thisdict[oldkey] == delta['lhs']:
+                                        del thisdict[oldkey]
+                                        jsonpointer.set_pointer(event_tmp, path, thisdict)
+                                    else:
                                         print("Error. LHS does not match event_tmp!")
                                         break
-                                elif delta['item']['kind'] == 'N': # Add a new list element
-                                    thislist = jsonpointer.resolve_pointer(event_tmp, path)
-                                    thislist.insert(delta['index'], delta['item']['rhs'])
-                                    jsonpointer.set_pointer(event_tmp, path, thislist)
                                 else:
-                                    print("Unknown delta A item kind code!!")
+                                    print("Unknown delta kind code!!")
                                     print(delta)
-                            elif delta['kind'] == 'N': # Add a new element to a dict
-                                path,newkey = path.rsplit('/',1)
-                                thisdict = jsonpointer.resolve_pointer(event_tmp, path)
-                                thisdict[newkey] = delta['rhs']
-                                jsonpointer.set_pointer(event_tmp, path, thisdict)
-                            elif delta['kind'] == 'D': # Delete a dict element
-                                path,oldkey = path.rsplit('/',1)
-                                thisdict = jsonpointer.resolve_pointer(event_tmp, path)
-                                if thisdict[oldkey] == delta['lhs']:
-                                    del thisdict[oldkey]
-                                    jsonpointer.set_pointer(event_tmp, path, thisdict)
-                                else:
-                                    print("Error. LHS does not match event_tmp!")
-                                    break
-                            else:
-                                print("Unknown delta kind code!!")
-                                print(delta)
+                            except:
+                                print("Error applying delta, likely due to bad set of deltas.")
+                                break
                         else:
                             event_current = event_tmp
                         payload = event_current
