@@ -28,7 +28,7 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                     raw_event = ujson.loads(event.data)
                     if 'value' in raw_event.keys():
                         payload = raw_event['value']
-                        event_tmp = payload
+                        event_current = payload
                     else: # If this is a delta (modification) of a past event, modify event_tmp.
                         event_tmp = event_current
                         for delta in raw_event['delta']:
