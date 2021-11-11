@@ -25,12 +25,13 @@ class Game(Base):
         return cls(database.get_game_by_id(id_))
 
     @classmethod
-    def load_by_day(cls, season, day):
+    def load_by_day(cls, season, day, sim=None):
         """
         Load by in-game season and day. Season and Day are 1-indexed
         """
         return {
             id_: cls(game) for id_, game in database.get_games(season, day).items()
+            if not sim or game.get('sim', sim) == sim
         }
 
     @classmethod
@@ -44,13 +45,13 @@ class Game(Base):
         }
 
     @classmethod
-    def load_by_season(cls, season, team_id=None, day=None):
+    def load_by_season(cls, season, team_id=None, day=None, sim=None):
         """
         Return dictionary of games for a given season keyed by game ID.
         Can optionally be filtered by in-game day or team ID. Season and Day are 1-indexed
         """
         return {
-            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day)
+            game["gameId"]: cls(game["data"]) for game in chronicler.get_games(team_ids=team_id, season=season, day=day, sim=sim)
         }
 
     @classmethod
