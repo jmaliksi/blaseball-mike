@@ -32,12 +32,15 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                         delta_previous = None
                         event_current = raw_event['value']
                         payload = event_current
-                    else: # Delta event
+                    elif 'delta' in raw_event.keys(): # Delta event
                         if raw_event['delta'] == delta_previous:
                             continue
                         delta_previous = raw_event['delta']
                         jsonpatch.apply_patch(event_current, raw_event['delta'], in_place=True)
                         payload = event_current
+                    else:
+                        print("Unknown event type.")
+                        continue
                     yield payload
         except (ConnectionError,
                 TimeoutError,
@@ -45,9 +48,10 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                 futures.TimeoutError,
                 asyncio.exceptions.TimeoutError,
                 ClientConnectorError,
-                ServerDisconnectedError,
-                jsonpatch.JsonPatchConflict,
-                jsonpointer.JsonPointerException,
-                IndexError):
+                ServerDisconnectedError):
             await asyncio.sleep(retry_delay)
             retry_delay = min(retry_delay * 2, retry_max)
+        except (jsonpatch.JsonPatchConflict,
+                jsonpointer.JsonPointerException,
+                IndexError):
+            pass
