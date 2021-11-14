@@ -641,7 +641,7 @@ def get_feed_phase(season, phase, cache_time=5):
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
     s = session(cache_time)
-    res = s.get(f'{BASE_URL}/feedbyphase?season={season-1}&phase={phase}')
+    res = s.get(f'{BASE_URL}/database/feedbyphase?season={season-1}&phase={phase}')
     return check_network_response(res)
 
 
