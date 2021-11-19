@@ -11,7 +11,7 @@ from aiohttp_sse_client import client as sse_client
 from aiohttp.client_exceptions import ClientPayloadError, ClientConnectorError, ServerDisconnectedError
 
 
-async def stream_events(url='https://api.blaseball.com/events/streamData', retry_base=0.01, retry_max=300):
+async def stream_events(url='https://api.blaseball.com/events/streamData', retry_base=0.01, retry_max=300, on_parse_error='LOG'):
     """
     Async generator for the events API.
     `retry_base` will be the minimum time to delay if there's a connection error
@@ -39,8 +39,7 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
                         jsonpatch.apply_patch(event_current, raw_event['delta'], in_place=True)
                         payload = event_current
                     else:
-                        print("Unknown event type.")
-                        continue
+                        raise ValueError("Unknown event type: {}".format(raw_event.keys()))
                     yield payload
         except (ConnectionError,
                 TimeoutError,
@@ -53,5 +52,13 @@ async def stream_events(url='https://api.blaseball.com/events/streamData', retry
             retry_delay = min(retry_delay * 2, retry_max)
         except (jsonpatch.JsonPatchConflict,
                 jsonpointer.JsonPointerException,
-                IndexError):
-            pass
+                IndexError,
+                ValueError) as error:
+            if on_parse_error.lower()=='skip':
+                pass
+            elif on_parse_error.lower()=='raise':
+                print("Event parse error.")
+                raise
+            else: # log and restart, default
+                print("Event parse error.")
+                print(error)
