@@ -5,6 +5,8 @@ attrs==20.1.0
 certifi==2020.6.20
 chardet==3.0.4
 idna==2.10
+jsonpatch==1.22
+jsonpointer==2.0
 multidict==4.7.6
 python-dateutil==2.8.1
 requests==2.24.0
