@@ -8,6 +8,7 @@ from datetime import datetime
 
 BASE_URL = 'https://api.blaseball.com'
 BASE_GITHUB = 'https://raw.githubusercontent.com/xSke/blaseball-site-files/main/data'
+CONFIG_S3_URL = 'https://blaseball-configs.s3.us-west-2.amazonaws.com'
 
 
 def get_global_events(*, cache_time=5):
@@ -791,4 +792,58 @@ def get_schedule(season=None, sim=None, day=None, start_day=None, end_day=None, 
 
     s = session(cache_time)
     res = s.get(f'{BASE_URL}/api/games/schedule', params=params)
+    return check_network_response(res)
+
+
+def get_season_sim_map(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/feed_season_list.json')
+    return check_network_response(res)
+
+
+def get_glossary(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/glossary_words.json')
+    return check_network_response(res)
+
+
+def get_book(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/the_book.json')
+    return check_network_response(res)
+
+
+def get_library(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/library.json')
+    return check_network_response(res)
+
+
+def get_sponsor(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/sponsor_data.json')
+    return check_network_response(res)
+
+
+def get_all_attributes(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/attributes.json')
+    return check_network_response(res)
+
+
+def get_stadium_prefabs(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/stadium_prefabs.json')
+    return check_network_response(res)
+
+
+def get_blaseball_beat(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/the_beat.json')
+    return check_network_response(res)
+
+
+def get_fanart(cache_time=5):
+    s = session(cache_time)
+    res = s.get(f'{CONFIG_S3_URL}/fanart.json')
     return check_network_response(res)
