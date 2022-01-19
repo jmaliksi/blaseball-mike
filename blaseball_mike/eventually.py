@@ -9,10 +9,11 @@ from blaseball_mike.session import session, check_network_response
 BASE_URL = 'https://api.sibr.dev/eventually/v2'
 
 
-def search(cache_time=5, limit=100, query={}):
+def search(cache_time=5, limit=100, batch_size=100, query={}):
     """
     Search through feed events.
-    Set to limit -1 to get everything.
+    Set limit to -1 to get everything.
+    batch_size controls how many events are fetched at once; defaults to 100.
     Returns a generator that only gets the following page when needed.
     Possible parameters for query: https://alisww.github.io/eventually/#/default/events
     """
@@ -21,9 +22,9 @@ def search(cache_time=5, limit=100, query={}):
     res_len = 0
 
     while limit == -1 or res_len < limit:
-        out = check_network_response(s.get(f"{BASE_URL}/events",params={'offset': res_len, 'limit': 100, **query}))
+        out = check_network_response(s.get(f"{BASE_URL}/events",params={'offset': res_len, 'limit': batch_size, **query}))
         out_len = len(out)
-        if out_len < 100:
+        if out_len < batch_size:
             yield from out
             break
         else:
