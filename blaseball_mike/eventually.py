@@ -9,7 +9,7 @@ from blaseball_mike.session import session, check_network_response
 BASE_URL = 'https://api.sibr.dev/eventually/v2'
 
 
-def search(cache_time=5, limit=100, batch_size=100, query={}):
+def search(cache_time=5, limit=100, query={}, batch_size=100):
     """
     Search through feed events.
     Set limit to -1 to get everything.
