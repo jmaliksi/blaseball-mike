@@ -30,3 +30,34 @@ def search(cache_time=5, limit=100, query={}, batch_size=100):
         else:
             res_len += out_len
             yield from out
+
+
+def material_time(season, day=None, sim="thisidisstaticyo", cache_time=5):
+    """
+    Return start and end times for season or day. May be incorrect for future game/season ranges or days without games.
+
+    Args:
+        season: season number (1-indexed)
+        sim: sim ID, if omitted defaults to "thisidisstaticyo"
+        day: day (1-indexed)
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+
+    if day is None:
+        ret = s.get(f"{BASE_URL}/time/{sim}/{season - 1}")
+    else:
+        ret = s.get(f"{BASE_URL}/time/{sim}/{season - 1}/{day - 1}")
+    return check_network_response(ret)
+
+
+def sachet_packets(game_id, cache_time=5):
+    """
+    Get fused Feed item and Game Update
+
+    Args
+        game_id: ID of game
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+    return check_network_response(s.get(f"{BASE_URL}/sachet/packets", params={"id": game_id}))
