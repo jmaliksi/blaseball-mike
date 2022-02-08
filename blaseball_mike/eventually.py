@@ -30,3 +30,21 @@ def search(cache_time=5, limit=100, query={}, batch_size=100):
         else:
             res_len += out_len
             yield from out
+
+def time(season, day=None, sim="thisidisstaticyo", cache_time=5):
+    """
+    Return start and end times for season or day
+
+    Args:
+        season: season number (1-indexed)
+        sim: sim ID, if omitted defaults to "thisidisstaticyo"
+        day: day (1-indexed)
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+
+    if day is None:
+        ret = s.get(f"{BASE_URL}/time/{sim}/{season - 1}")
+    else:
+        ret = s.get(f"{BASE_URL}/time/{sim}/{season - 1}/{day - 1}")
+    return check_network_response(ret)
