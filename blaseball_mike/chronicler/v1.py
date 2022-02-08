@@ -6,6 +6,7 @@ from .chron_helpers import paged_get, prepare_id
 from datetime import datetime
 from dateutil.parser import parse
 from blaseball_mike.session import session, check_network_response, TIMESTAMP_FORMAT
+import warnings
 
 BASE_URL = 'https://api.sibr.dev/chronicler/v1'
 
@@ -149,6 +150,8 @@ def get_players(forbidden=None, incinerated=None, cache_time=5):
         incinerated: filter by deceased and non-deceased, default returns all
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_entities(type_="player")`', DeprecationWarning)
+
     params = {}
     if forbidden:
         params["forbidden"] = forbidden
@@ -166,6 +169,9 @@ def get_player_names(*, cache_time=5):
     Args:
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_entities(type_="player")` \
+                    or `database.get_all_players()`', DeprecationWarning)
+
     s = session(cache_time)
     return check_network_response(s.get(f'{BASE_URL}/players/names'))
 
@@ -184,6 +190,8 @@ def get_player_updates(ids=None, before=None, after=None, order=None, count=None
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="player")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -216,6 +224,8 @@ def get_teams(*, cache_time=5):
     Args:
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_entities(type_="team")`', DeprecationWarning)
+
     s = session(cache_time)
     return check_network_response(s.get(f'{BASE_URL}/teams')).get("data", [])
 
@@ -234,6 +244,8 @@ def get_team_updates(ids=None, before=None, after=None, order=None, count=None, 
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="team")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -275,6 +287,8 @@ def get_roster_updates(team_ids=None, player_ids=None, before=None, after=None, 
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -315,6 +329,8 @@ def get_tribute_updates(before=None, after=None, order=None, count=None, page_si
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="tributes")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -361,6 +377,8 @@ def time_map(season=None, tournament=None, day=None, include_nongame=True, cache
       }
     ]
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `eventually.time()`', DeprecationWarning)
+
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
     if season is not None:
@@ -417,6 +435,8 @@ def time_season(season=None, tournament=None, cache_time=3600):
       }
     ]
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `eventually.time()`', DeprecationWarning)
+
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
     if season is not None:
@@ -454,6 +474,8 @@ def get_fights(id_=None, season=0, cache_time=3600):
         season: 1-indexed season. if 0 do not filter by season.
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_entities(type_="bossfight")`', DeprecationWarning)
+
     season = season - 1
 
     s = session(cache_time)
@@ -480,6 +502,8 @@ def get_fight_updates(game_ids=None, before=None, after=None, order=None, count=
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="bossfight")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -509,6 +533,8 @@ def get_stadiums(*, cache_time=3600):
     """
     Return a list of stadiums
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_entities(type_="stadium")`', DeprecationWarning)
+
     s = session(cache_time)
     return s.get(f'{BASE_URL}/stadiums').json()['data']
 
@@ -527,6 +553,8 @@ def get_temporal_updates(before=None, after=None, order=None, count=None, page_s
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="temporal")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -563,6 +591,8 @@ def get_sim_updates(before=None, after=None, order=None, count=None, page_size=1
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="sim")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
@@ -599,6 +629,8 @@ def get_globalevent_updates(before=None, after=None, order=None, count=None, pag
         lazy: whether to return a list or a generator
         cache_time: response cache lifetime in seconds, or `None` for infinite cache
     """
+    warnings.warn('Chronicler v1 is deprecated, please use `chronicler.get_versions(type_="globalevents")`', DeprecationWarning)
+
     if isinstance(before, datetime):
         before = before.strftime(TIMESTAMP_FORMAT)
     if isinstance(after, datetime):
