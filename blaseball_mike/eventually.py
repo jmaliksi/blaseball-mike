@@ -48,3 +48,15 @@ def time(season, day=None, sim="thisidisstaticyo", cache_time=5):
     else:
         ret = s.get(f"{BASE_URL}/time/{sim}/{season - 1}/{day - 1}")
     return check_network_response(ret)
+
+
+def sachet_packets(game_id, cache_time=5):
+    """
+    Get fused Feed item and Game Update
+
+    Args
+        game_id: ID of game
+        cache_time: response cache lifetime in seconds, or `None` for infinite cache
+    """
+    s = session(cache_time)
+    return check_network_response(s.get(f"{BASE_URL}/sachet/packets", params={"id": game_id}))
