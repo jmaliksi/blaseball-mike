@@ -377,7 +377,7 @@ def time_map(season=None, tournament=None, day=None, include_nongame=True, cache
       }
     ]
     """
-    warnings.warn('Chronicler v1 is deprecated, similar but limited functionality found with `eventually.time()`', DeprecationWarning)
+    warnings.warn('Chronicler v1 is deprecated, similar but limited functionality found with `eventually.material_time()`', DeprecationWarning)
 
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")
@@ -435,7 +435,7 @@ def time_season(season=None, tournament=None, cache_time=3600):
       }
     ]
     """
-    warnings.warn('Chronicler v1 is deprecated, similar but limited functionality found with `eventually.time()`', DeprecationWarning)
+    warnings.warn('Chronicler v1 is deprecated, similar but limited functionality found with `eventually.material_time()`', DeprecationWarning)
 
     if season is not None and tournament is not None:
         raise ValueError("Cannot set both Season and Tournament")

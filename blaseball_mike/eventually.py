@@ -31,9 +31,10 @@ def search(cache_time=5, limit=100, query={}, batch_size=100):
             res_len += out_len
             yield from out
 
-def time(season, day=None, sim="thisidisstaticyo", cache_time=5):
+
+def material_time(season, day=None, sim="thisidisstaticyo", cache_time=5):
     """
-    Return start and end times for season or day
+    Return start and end times for season or day. May be incorrect for future game/season ranges or days without games.
 
     Args:
         season: season number (1-indexed)
